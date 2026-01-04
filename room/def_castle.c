@@ -14,14 +14,16 @@
  * definitions.
  */
 #ifndef NAME
-#  define NAME "Nobody"
+#define NAME "Nobody"
 #endif
 
 #ifndef DEST
-#  define DEST "/room/church"
+#define DEST "/room/church"
 #endif
 
-int id(string str) { return str == "castle"; }
+int id(string str) {
+    return str == "castle";
+}
 
 string short() {
     return "Castle of " + NAME;
@@ -39,13 +41,13 @@ void init() {
 
 int enter(string str) {
     if (!id(str))
-	return 0;
+        return 0;
     write("It is not an open castle.\n");
     return 1;
 }
 
 void reset(int arg) {
     if (arg)
-	return;
+        return;
     move_object(this_object(), DEST);
 }

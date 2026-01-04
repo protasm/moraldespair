@@ -31,29 +31,26 @@ object worn_by;
 object next;
 string info;
 
-void reset(int arg)
-{
-    if(arg)
-	return;
+void reset(int arg) {
+    if (arg)
+        return;
     type = "armour";
 }
 
-void link(object ob)
-{
+void link(object ob) {
     next = ob;
 }
 
-object remove_link(string str)
-{
+object remove_link(string str) {
     object ob;
 
     if (str == name) {
-	ob = next;
-	next = 0;
-	return ob;
+        ob = next;
+        next = 0;
+        return ob;
     }
     if (next)
-	next = next->remove_link(str);
+        next = next->remove_link(str);
     return this_object();
 }
 
@@ -62,18 +59,17 @@ void init() {
     add_action("remove", "remove");
 }
 
-string rec_short()
-{
-    if(next)
-	return name + ", " + next->rec_short();
+string rec_short() {
+    if (next)
+        return name + ", " + next->rec_short();
     return name;
 }
 
 string short() {
     if (!short_desc)
-	return 0;
+        return 0;
     if (worn)
-	return short_desc + " (worn)";
+        return short_desc + " (worn)";
     return short_desc;
 }
 
@@ -81,81 +77,90 @@ void long(string str) {
     write(long_desc);
 }
 
-int id(string str)
-{
+int id(string str) {
     return str == name || str == alias || str == type;
 }
 
-object test_type(string str)
-{
-    if(str == type)
-	return this_object();
-    if(next)
-	return next->test_type(str);
+object test_type(string str) {
+    if (str == type)
+        return this_object();
+    if (next)
+        return next->test_type(str);
     return 0;
 }
 
-int tot_ac()
-{
-    if(next)
-	return ac + next->tot_ac();
+int tot_ac() {
+    if (next)
+        return ac + next->tot_ac();
     return ac;
 }
 
-string query_type() { return type; }
+string query_type() {
+    return type;
+}
 
-int query_value() { return value; }
+int query_value() {
+    return value;
+}
 
-int query_worn() { return worn; }
+int query_worn() {
+    return worn;
+}
 
-string query_name() { return name; }
+string query_name() {
+    return name;
+}
 
-int armour_class() { return ac; }
+int armour_class() {
+    return ac;
+}
 
-int wear(string str)
-{
+int wear(string str) {
     object ob;
 
     if (!id(str))
-	return 0;
+        return 0;
     if (environment() != this_player()) {
-	write("You must get it first!\n");
-	return 1;
+        write("You must get it first!\n");
+        return 1;
     }
     if (worn) {
-	write("You already wear it!\n");
-	return 1;
+        write("You already wear it!\n");
+        return 1;
     }
     next = 0;
     ob = this_player()->wear(this_object());
-    if(!ob) {
-	worn_by = this_player();
-	worn = 1;
-	return 1;
+    if (!ob) {
+        worn_by = this_player();
+        worn = 1;
+        return 1;
     }
     write("You already have an armour of class " + type + ".\n");
-write("Worn armour " + ob->short() + ".\n");
+    write("Worn armour " + ob->short() + ".\n");
     return 1;
 }
 
-int get() { return 1; }
+int get() {
+    return 1;
+}
 
 int drop(int silently) {
     if (worn) {
-	worn_by->stop_wearing(name);
-	worn = 0;
-	worn_by = 0;
-	if (!silently)
-	    tell_object(environment(this_object()),"You drop your worn armour.\n");
+        worn_by->stop_wearing(name);
+        worn = 0;
+        worn_by = 0;
+        if (!silently)
+            tell_object(environment(this_object()),
+                        "You drop your worn armour.\n");
     }
     return 0;
 }
 
 int remove(string str) {
     if (!id(str))
-	return 0;
+        return 0;
     if (!worn) {
-	return 0;
+        return 0;
     }
     worn_by->stop_wearing(name);
     worn_by = 0;
@@ -163,20 +168,41 @@ int remove(string str) {
     return 1;
 }
 
-int query_weight() { return weight; }
-
-void set_id(string n) { name = n; }
-void set_name(string n) { name = n; }
-void set_short(string s) { short_desc = s; long_desc = s + ".\n"; }
-void set_value(int v) { value = v; }
-void set_weight(int w) { weight = w; }
-void set_ac(int a) { ac = a; }
-void set_alias(string a) { alias = a; }
-void set_long(string l) { long_desc = l; }
-void set_type(string t) {
- type = t;
+int query_weight() {
+    return weight;
 }
-void set_arm_light(int l) { set_light(l); }
+
+void set_id(string n) {
+    name = n;
+}
+void set_name(string n) {
+    name = n;
+}
+void set_short(string s) {
+    short_desc = s;
+    long_desc = s + ".\n";
+}
+void set_value(int v) {
+    value = v;
+}
+void set_weight(int w) {
+    weight = w;
+}
+void set_ac(int a) {
+    ac = a;
+}
+void set_alias(string a) {
+    alias = a;
+}
+void set_long(string l) {
+    long_desc = l;
+}
+void set_type(string t) {
+    type = t;
+}
+void set_arm_light(int l) {
+    set_light(l);
+}
 void set_info(string i) {
     info = i;
 }

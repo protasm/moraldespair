@@ -6,7 +6,9 @@ void init() {
     add_action("close", "close");
 }
 
-int id(string str) { return str == "chest"; }
+int id(string str) {
+    return str == "chest";
+}
 
 string short() {
     return "chest";
@@ -15,27 +17,34 @@ string short() {
 void long() {
     write("A chest that seems to be of a high value.\n");
     if (chest_is_open)
-	write("It is open.\n");
+        write("It is open.\n");
     else
-	write("It is closed.\n");
+        write("It is closed.\n");
 }
 
-int query_value() { return 200; }
+int query_value() {
+    return 200;
+}
 
-int query_weight() { return 8; }
+int query_weight() {
+    return 8;
+}
 
-int get() { return 1; }
+int get() {
+    return 1;
+}
 
-int can_put_and_get() { return chest_is_open; }
+int can_put_and_get() {
+    return chest_is_open;
+}
 
 void add_weight(int w) {
     if (w + local_weight > 8)
-	return 0;
+        return 0;
     local_weight += w;
 }
 
-int close(string str)
-{
+int close(string str) {
     if (!id(str))
         return 0;
     chest_is_open = 0;
@@ -43,8 +52,7 @@ int close(string str)
     return 1;
 }
 
-int open(string str)
-{
+int open(string str) {
     if (!id(str))
         return 0;
     chest_is_open = 1;
@@ -54,6 +62,6 @@ int open(string str)
 
 void reset(int arg) {
     if (arg)
-	return;
+        return;
     chest_is_open = 0;
 }

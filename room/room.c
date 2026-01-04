@@ -6,7 +6,7 @@
  */
 
 /* An array with destinations and directions: "room/church", "north" ... */
-string * dest_dir;
+string *dest_dir;
 
 /* Short description of the room */
 string short_desc;
@@ -15,7 +15,7 @@ string short_desc;
 string long_desc;
 
 /* Special items in the room. "table", "A nice table", "window", "A window" */
-string * items;
+string *items;
 
 /* Fact about this room. ex: "no_fight", "no_steal" */
 mixed property;
@@ -24,27 +24,27 @@ mixed property;
 int no_castle_flag;
 
 string convert_number(int n);
-string * query_numbers();
+string *query_numbers();
 
 void init() {
     int i;
     if (!dest_dir)
-	return;
+        return;
     i = 1;
-    while(i < sizeof(dest_dir)) {
-	add_action("move", dest_dir[i]);
-	i += 2;
+    while (i < sizeof(dest_dir)) {
+        add_action("move", dest_dir[i]);
+        i += 2;
     }
 }
 
 int id(string str) {
     int i;
     if (!items)
-	return 0;
-    while(i < sizeof(items)) {
-	if (items[i] == str)
-	    return 1;
-	i += 2;
+        return 0;
+    while (i < sizeof(items)) {
+        if (items[i] == str)
+            return 1;
+        i += 2;
     }
     return 0;
 }
@@ -54,67 +54,61 @@ string exitsDescription(int brief) {
     string desc;
 
     if (brief) {
-	if (!dest_dir)
-	    return "(Exits: none)";
-	i = 1;
-	desc = "(Exits:";
-	while(i < sizeof(dest_dir)) {
-	    desc += " " + ([
-		"north":"n",
-		"south":"s",
-		"east":"e",
-		"west":"w",
-		"up":"u",
-		"down":"d",
-		"northeast":"ne",
-		"northwest":"nw",
-		"southeast":"se",
-		"southwest":"sw",
-	    ])[dest_dir[i]] || dest_dir[i];
-	    i += 2;
-	}
-	return desc + ")";
+        if (!dest_dir)
+            return "(Exits: none)";
+        i = 1;
+        desc = "(Exits:";
+        while (i < sizeof(dest_dir)) {
+            desc +=
+                " " + (["north":"n",
+                              "south":"s", "east":"e", "west":"w", "up":"u",
+                               "down":"d", "northeast":"ne", "northwest":"nw",
+                          "southeast":"se", "southwest":"sw", ])[dest_dir[i]] ||
+                dest_dir[i];
+            i += 2;
+        }
+        return desc + ")";
     }
 
     if (!dest_dir)
-	return "    No obvious exits.\n";
+        return "    No obvious exits.\n";
     i = 1;
     if (sizeof(dest_dir) == 2)
-	desc = "    There is one obvious exit:";
+        desc = "    There is one obvious exit:";
     else
-	desc = "    There are " + convert_number(sizeof(dest_dir)/2) +
-	       " obvious exits:";
-    while(i < sizeof(dest_dir)) {
-	desc += " " + dest_dir[i];
-	i += 2;
-	if (i == sizeof(dest_dir) - 1)
-	    desc += " and";
-	else if (i < sizeof(dest_dir))
-	    desc += ",";
+        desc = "    There are " + convert_number(sizeof(dest_dir) / 2) +
+               " obvious exits:";
+    while (i < sizeof(dest_dir)) {
+        desc += " " + dest_dir[i];
+        i += 2;
+        if (i == sizeof(dest_dir) - 1)
+            desc += " and";
+        else if (i < sizeof(dest_dir))
+            desc += ",";
     }
     return desc + "\n";
 }
 
 void long(string str) {
     int i;
-    if (set_light(0) == 0){
-       write("It is dark.\n");
-       return;
+    if (set_light(0) == 0) {
+        write("It is dark.\n");
+        return;
     }
     if (!str) {
-	write(long_desc);
-	write(exitsDescription(0));
-	return;
+        write(long_desc);
+        write(exitsDescription(0));
+        return;
     }
     if (!items)
-	return;
+        return;
     i = 0;
-    while(i < sizeof(items)) {
-	if (items[i] == str) {
-	    write(items[i+1] + ".\n");
-	    return;
-	}
-	i += 2;
+    while (i < sizeof(items)) {
+        if (items[i] == str) {
+            write(items[i + 1] + ".\n");
+            return;
+        }
+        i += 2;
     }
 }
 
@@ -126,15 +120,15 @@ void long(string str) {
 mixed query_property(string str) {
     int i;
     if (str == 0)
-	return property;
+        return property;
     if (!property)
-	return 0;
+        return 0;
     if (stringp(property))
-	return str == property;
-    while(i < sizeof(property)) {
-	if (property[i] == str)
-	    return 1;
-	i += 1;
+        return str == property;
+    while (i < sizeof(property)) {
+        if (property[i] == str)
+            return 1;
+        i += 1;
     }
     return 0;
 }
@@ -143,23 +137,23 @@ int move(string str) {
     int i;
 
     i = 1;
-    while(i < sizeof(dest_dir)) {
-	if (query_verb() == dest_dir[i]) {
-	    this_player()->move_player(dest_dir[i] + "#" + dest_dir[i-1]);
-	    return 1;
-	}
-	i += 2;
+    while (i < sizeof(dest_dir)) {
+        if (query_verb() == dest_dir[i]) {
+            this_player()->move_player(dest_dir[i] + "#" + dest_dir[i - 1]);
+            return 1;
+        }
+        i += 2;
     }
     return 1;
 }
 
 string short() {
     if (set_light(0))
-	return short_desc + "\n" + exitsDescription(1);
+        return short_desc + "\n" + exitsDescription(1);
     return "Dark room";
 }
 
-string * query_dest_dir() {
+string *query_dest_dir() {
     return dest_dir;
 }
 
@@ -171,23 +165,23 @@ string query_long() {
  * Convert a number to a word. The array is being created by the
  * standard room/room, and shared by all rooms.
  */
-string * numbers;
+string *numbers;
 
 string convert_number(int n) {
     if (!pointerp(numbers))
-	numbers = query_numbers();
+        numbers = query_numbers();
     if (n > 9)
-	return "lot of";
+        return "lot of";
     return numbers[n];
 }
 
-string * query_numbers() {
+string *query_numbers() {
     if (!numbers) {
-	if (object_name(this_object()) == "room/room")
-	    numbers = ({"no", "one", "two", "three", "four", "five",
-			    "six", "seven", "eight", "nine" });
-	else
-	    numbers = "room/room"->query_numbers();
+        if (object_name(this_object()) == "room/room")
+            numbers = ({"no", "one", "two", "three", "four", "five", "six",
+                        "seven", "eight", "nine"});
+        else
+            numbers = "room/room"->query_numbers();
     }
     return numbers;
 }

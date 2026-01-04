@@ -6,7 +6,7 @@ int a;
 
 void reset(int arg) {
     if (arg)
-	return;
+        return;
     set_light(1);
     east_door_open = 0;
     amiga_present = 0;
@@ -25,14 +25,14 @@ void init() {
 
 void long() {
     if (east_door_open)
-	write("An empty room with an open door to the east.\n");
+        write("An empty room with an open door to the east.\n");
     if (!east_door_open)
-	write("An empty room with a closed door to the east.\n");
+        write("An empty room with a closed door to the east.\n");
     if (amiga_present) {
-	if (!amiga_power)
-	    write("There is an amiga here.\n");
-	if (amiga_power)
-	    write("There is a powered on amiga here.\n");
+        if (!amiga_power)
+            write("There is an amiga here.\n");
+        if (amiga_power)
+            write("There is a powered on amiga here.\n");
     }
 }
 
@@ -48,9 +48,9 @@ void close_door() {
 
 void go_east() {
     if (!east_door_open)
-	write("The door is closed\n");
+        write("The door is closed\n");
     if (east_door_open)
-	move_object(this_player(), "room/rum2");
+        move_object(this_player(), "room/rum2");
 }
 
 void sesam() {
@@ -79,32 +79,34 @@ void summon() {
 
 void hit() {
     if (!name) {
-	write("Hit what ?\n");
-	return;
+        write("Hit what ?\n");
+        return;
     }
     name->hit_player(3);
 }
 
 int fac(int n) {
     if (n <= 0)
-	return 1;
-    return n * fac(n-1);
+        return 1;
+    return n * fac(n - 1);
 }
-
 
 void test() {
     a = a + 1;
-    write("Fac "); write(a); write(" is "); write(fac(a)); write("\n");
+    write("Fac ");
+    write(a);
+    write(" is ");
+    write(fac(a));
+    write("\n");
 }
 
 string short() {
     write("Computer room\n");
     if (amiga_present) {
-	if (amiga_power)
-	    write("A powered amiga.\n");
-	if (!amiga_power)
-	    write("An amiga.\n");
+        if (amiga_power)
+            write("A powered amiga.\n");
+        if (!amiga_power)
+            write("An amiga.\n");
     }
     return 0;
 }
-

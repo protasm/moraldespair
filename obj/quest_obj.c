@@ -13,7 +13,9 @@ void set_name(string n) {
     name = n;
 }
 
-int id(string str) { return str == name || str == "quest"; }
+int id(string str) {
+    return str == name || str == "quest";
+}
 
 string short() {
     return name;
@@ -24,4 +26,6 @@ void long() {
     write(hint_string);
 }
 
-string hint() { return hint_string; }
+string hint() {
+    return hint_string;
+}

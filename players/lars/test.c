@@ -1,18 +1,18 @@
 inherit "room/room";
 
-void reset(int  arg) {
-    if (arg) return;
+void reset(int arg) {
+    if (arg)
+        return;
 
     set_light(1);
     short_desc = "A room";
     no_castle_flag = 0;
-    long_desc =
-        "Long desc.\n";
-    dest_dir =
-        ({
-        "/players/lars/workroom", "north",
-        });
-    1/0;
+    long_desc = "Long desc.\n";
+    dest_dir = ({
+        "/players/lars/workroom",
+        "north",
+    });
+    1 / 0;
 }
 
 int query_light() {
@@ -39,5 +39,5 @@ room_is_modified() {
 */
 
 void exit() {
-    1/0;
+    1 / 0;
 }

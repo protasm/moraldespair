@@ -25,8 +25,7 @@ string short() {
     return "Sanctuary";
 }
 
-void long(string str)
-{
+void long(string str) {
     if (str == "clock") {
         int i, j;
 
@@ -97,7 +96,8 @@ int prevent_look_at_inv(string str) {
 }
 
 int south() {
-    this_player()->move_player("south#domain/original/area/vesla/peaceful_park1");
+    this_player()->move_player(
+        "south#domain/original/area/vesla/peaceful_park1");
 
     return 1;
 }

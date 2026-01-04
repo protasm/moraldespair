@@ -21,36 +21,36 @@ void set_monster(object m) {
 int chat(int nr) {
     object room;
 
-    if (nr == 0){
-	room = environment(monster);
-	if(room)
-        {
-	    tell_room(room,chat_str);
+    if (nr == 0) {
+        room = environment(monster);
+        if (room) {
+            tell_room(room, chat_str);
             return 0;
         }
     }
     nr -= 1;
     if (next)
-	return next->chat(nr);
+        return next->chat(nr);
     else
-	return 0;
+        return 0;
 }
 
 object remove_chat(string str) {
     if (str == chat_str) {
-	destruct(this_object());
-	return next;
+        destruct(this_object());
+        return next;
     }
     if (next)
-	next = next->remove_chat(str);
+        next = next->remove_chat(str);
     return this_object();
 }
 
-void collaps()
-{
-    if(next)
-	next->collaps();
+void collaps() {
+    if (next)
+        next->collaps();
     destruct(this_object());
 }
 
-int drop() { return 1; }
+int drop() {
+    return 1;
+}

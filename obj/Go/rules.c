@@ -24,14 +24,14 @@ void init() {
 int rule(string str) {
     int n;
     if (sscanf(str, "%d", n) != 1)
-	return 0;
+        return 0;
     if (n < 1 || n > 5) {
-	write("Not that many rules.\n");
-	return 1;
+        write("Not that many rules.\n");
+        return 1;
     }
     say(this_player()->query_name() + " reads rule " + n + "\n");
     cat("/obj/Go/rule" + n);
     if (n == 5)
-	log_file("GO_RULES", this_player()->query_name() + "\n");
+        log_file("GO_RULES", this_player()->query_name() + "\n");
     return 1;
 }

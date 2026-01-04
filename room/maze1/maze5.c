@@ -21,14 +21,14 @@ int e1() {
 
 void reset() {
     if (!leather || !present(leather)) {
-	leather = clone_object("obj/armour");
-	leather->set_ac(3);
-	leather->set_name("armour");
-	leather->set_alias("leather armour");
-	leather->set_value(110);
-	leather->set_short("A leather armour");
-	leather->set_weight(3);
-	leather->set_type("armour");
-	move_object(leather, this_object());
+        leather = clone_object("obj/armour");
+        leather->set_ac(3);
+        leather->set_name("armour");
+        leather->set_alias("leather armour");
+        leather->set_value(110);
+        leather->set_short("A leather armour");
+        leather->set_weight(3);
+        leather->set_type("armour");
+        move_object(leather, this_object());
     }
 }
