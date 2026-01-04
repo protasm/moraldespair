@@ -102,7 +102,7 @@ static string _include_dirs_hook (string include_name, string current_file)
 //   0 if no such file exists.
 //
 // If include_name can't be found as such, the function looks in /sys
-// and /room for /sys/<include_name> resp. /room/<include_name>.
+// and /room for /sys/<include_name> resp. /domain/lp-245/room/<include_name>.
 
 {
   string name, part;
@@ -113,7 +113,7 @@ static string _include_dirs_hook (string include_name, string current_file)
   name = "sys/"+include_name;
   if (file_size(ADD_SLASH(name)) >= 0)
     return name;
-  name = "room/"+include_name;
+  name = "domain/lp-245/room/"+include_name;
   if (file_size(ADD_SLASH(name)) >= 0)
     return name;
   return 0;
@@ -897,9 +897,9 @@ void destruct_environment_of(object ob)
     if (!interactive(ob))
 	return;
     tell_object(ob, "Everything you see is disolved. Luckily, you are transported somewhere...\n");
-    if (error = catch(ob->move_player("is transfered#room/void"))) {
+    if (error = catch(ob->move_player("is transfered#domain/lp-245/room/void"))) {
 	write(error);
-	if (error = catch(move_object(ob, "room/void"))) {
+	if (error = catch(move_object(ob, "domain/lp-245/room/void"))) {
 	    object new_player;
 
 	    write(error);
@@ -909,7 +909,7 @@ void destruct_environment_of(object ob)
 		return;
 	    }
 	    exec(new_player, ob);
-	    if (error = catch(new_player->replace_player(ob, "room/void"))) {
+	    if (error = catch(new_player->replace_player(ob, "domain/lp-245/room/void"))) {
 		write(error);
 	    }
 	}
@@ -1723,7 +1723,7 @@ mixed valid_write (string path, string euid, string fun, object caller)
             user = user[1..];
 #endif
             if ( user[0..3] == "obj/"
-             ||  user[0..4] == "room/"
+             ||  user[0..4] == "domain/lp-245/room/"
              ||  user[0..3] == "std/"  )
                 return ADD_SLASH(path);
         }
@@ -2120,7 +2120,7 @@ int verify_create_wizard (object ob)
 {
     int dummy;
 
-    if (sscanf(object_name(ob), "room/port_castle#%d", dummy) == 1
+    if (sscanf(object_name(ob), "domain/lp-245/room/port_castle#%d", dummy) == 1
       || sscanf(object_name(ob), "global/port_castle#%d", dummy) == 1)
 	return 1;
     return 0;
@@ -2164,7 +2164,7 @@ string master_create_wizard(string owner, string domain, object caller)
     }
     dest = object_name(environment(player));
     def_castle = "#define NAME \"" + owner + "\"\n#define DEST \"" +
-	dest + "\"\n" + read_file("/room/def_castle.c");
+	dest + "\"\n" + read_file("/domain/lp-245/room/def_castle.c");
     if (file_size(castle) > 0) {
 	tell_object(player, "You already had a castle !\n");
     } else {

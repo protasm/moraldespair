@@ -73,7 +73,7 @@ descriptions of commonly used local functions.
 It can happend that you won't find what you look for in the documentation.
 In that case, either ask another wizard, read the code (which actually
 contains some very useful comments), or find out by testing. You can also
-use the built in 'man' command defined by /obj/trace. It will list
+use the built in 'man' command defined by /domain/lp-245/obj/trace. It will list
 search for and list documentations.
 
 One of the first things you should do is to read the entire contents of
@@ -126,9 +126,9 @@ this is enough.
 
 If you need to create several instances of a class of objects, you
 clone it. Objects can be cloned using the wizard command "clone",
-as in "clone /obj/torch", and with the LPC function clone_object(),
+as in "clone /domain/lp-245/obj/torch", and with the LPC function clone_object(),
 as in
-	this_torch = clone_object("obj/torch");
+	this_torch = clone_object("domain/lp-245/obj/torch");
 
 Cloning an object will cause it to be loaded, if it wasn't already loaded.
 
@@ -213,8 +213,8 @@ Building
 
 Start by looking at the existing rooms. As a wizard, when you enter a room,
 LPmud prints the path name of the object that is the room, for example
-"/room/forest2". You can look at the definition of the room by using the
-command "more /room/forest2.c" or "cat /room/forest2.c".
+"/domain/lp-245/room/forest2". You can look at the definition of the room by using the
+command "more /domain/lp-245/room/forest2.c" or "cat /domain/lp-245/room/forest2.c".
 
 For most purposes it is sufficient to use the standard room routines that
 you get by inheriting "/room/room".
@@ -229,7 +229,7 @@ An example of a room
 --------------------
 
 This is an example of how a file describing a room can look like
-(This file exists and is called "/room/workroom.c"):
+(This file exists and is called "/domain/lp-245/room/workroom.c"):
 
 /* Generic workroom, just change it to your fit your tastes */
 
@@ -254,9 +254,9 @@ reset(arg)
 
 	dest_dir =
 	({
-		"room/church", "church",
-		"room/shop", "shop",
-		"room/adv_guild", "guild"
+		"domain/lp-245/room/church", "church",
+		"domain/lp-245/room/shop", "shop",
+		"domain/lp-245/room/adv_guild", "guild"
 		/* Just add on rooms as you if you need more exits */
         });
 
@@ -264,7 +264,7 @@ reset(arg)
 
 When the first player enters the room after the game was started, the
 file is run through the C preprocessor, yielding a much larger code
-that is stored in a file called "/room/workroom.i". These ".i"-files
+that is stored in a file called "/domain/lp-245/room/workroom.i". These ".i"-files
 makes the loading of the game after reboot much quicker. Don't touch
 them since they are created and modified by the program itself. Of course,
 if you remove or rename the c-file you can remove the .i-file since it
@@ -309,7 +309,7 @@ have one. To get the workroom described above do like this:
 
 	> cd
 	> ed workroom.c
-	: r /room/workroom.c
+	: r /domain/lp-245/room/workroom.c
 	: w workroom.c
 	: q
 
@@ -478,7 +478,7 @@ Don't build lots and lots of extra pubs and shops!
 	it (for example in a quest or for a guild).
 
 Don't make your own "perfect tool". It seems that every wizard wants to make
-	a perfect tool that can do anything. Use /obj/trace instead,
+	a perfect tool that can do anything. Use /domain/lp-245/obj/trace instead,
 	and the quicktyper if are are a lazy typist.
 
 Prices of equipment.

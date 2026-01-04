@@ -293,7 +293,7 @@ int silence(string str) {
         write("No such player.\n");
         return 0;
     }
-    call_other(clone_object("obj/shout_curse"), "start", ob);
+    call_other(clone_object("domain/lp-245/obj/shout_curse"), "start", ob);
     write("Ok.\n");
     return 1;
 }
