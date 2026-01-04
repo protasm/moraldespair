@@ -2,7 +2,7 @@ Do '#include "../../room/std.h" first in your file.
 
 THREE_EXIT("/players/peter/room", "west",
 	 "/players/peter/another_room", "east",
-	 "/room/church", "sesam",
+	 "/domain/lp-245/room/church", "sesam",
 	 "Funny room",
 	 "You are in the funny room",
 	 1)

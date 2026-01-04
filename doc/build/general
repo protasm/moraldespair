@@ -1,2 +1,2 @@
 The best way to start building things, is to copy standard files from
-obj/* and room/*. See ed4 for hints how to do it.
+domain/lp-245/obj/* and domain/lp-245/room/*. See ed4 for hints how to do it.

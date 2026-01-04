@@ -1260,7 +1260,7 @@ static void new_password(string p) {
         return;
     }
     password = crypt(password, 0); /* Generate new seed. */
-    "room/adv_guild"->advance(0);
+    "domain/lp-245/room/adv_guild"->advance(0);
     set_level(1);
     set_str(1);
     set_con(1);
@@ -1395,7 +1395,7 @@ static void move_player_to_start3(mixed where) {
         write("YOU ARE INVISIBLE !\n\n");
     if (level >= 21)
         cat("/WIZNEWS");
-    "room/post"->query_mail();
+    "domain/lp-245/room/post"->query_mail();
     if (query_ip_number() != called_from_ip && called_from_ip)
         write("Your last login was from " + called_from_ip + "\n");
     called_from_ip = query_ip_number();
@@ -1902,7 +1902,7 @@ int second_life() {
                             "You can see your own dead body from above.\n\n");
 
 #if 1
-    death_mark = clone_object("/room/death/death_mark");
+    death_mark = clone_object("/domain/lp-245/room/death/death_mark");
     move_object(death_mark, myself);
 #endif
     return 1;
@@ -2402,8 +2402,8 @@ mixed valid_write(string str) {
         return "open/" + file;
     if (sscanf(str, "/ftp/%s", file) == 1)
         return "ftp/" + file;
-    if (sscanf(str, "/room/%s/%s", who, file) == 2)
-        return check_access_list("room/", who, file);
+    if (sscanf(str, "/domain/lp-245/room/%s/%s", who, file) == 2)
+        return check_access_list("domain/lp-245/room/", who, file);
     return 0;
 }
 

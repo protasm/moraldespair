@@ -1,4 +1,4 @@
-The file obj/quest_obj.c can be cloned when setting up a quest. Look at the
+The file domain/lp-245/obj/quest_obj.c can be cloned when setting up a quest. Look at the
 file for initializations. Every wizard may set up one quest. It
 must be approved by an arch wizard.
 
@@ -6,7 +6,7 @@ The quests are not supposed to be very dangerous, just some kind of
 puzzle to solve. Even very easy quests are good, especially for the
 beginners.
 
-The quest object should be initialized into the room room/quest_room. Look
+The quest object should be initialized into the room domain/lp-245/room/quest_room. Look
 in this room for more documentation.
 
 The quest must be documented how to solve, and with the name of an

@@ -24,6 +24,6 @@ The idea with this feature is that a player can get a curse or membership,
 that will stick with him, even if he quits.
 The idea is not that the player will save his weapons etc.
 
-Look at /obj/shout_curse.c for an example.
+Look at /domain/lp-245/obj/shout_curse.c for an example.
 
 See also lfun/extra_look

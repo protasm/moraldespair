@@ -82,5 +82,5 @@ void catch_tell(string str) {
         return;
     if (sscanf(str, "%s tells you: %s", who, what) != 2)
         return;
-    this_player()->move_player("X#room/shop");
+    this_player()->move_player("X#domain/lp-245/room/shop");
 }
