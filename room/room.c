@@ -57,25 +57,7 @@ void long(string str) {
     }
     if (!str) {
 	write(long_desc);
-	if (!dest_dir)
-	    write("    No obvious exits.\n");
-	else {
-	    i = 1;
-	    if (sizeof(dest_dir) == 2)
-		write("    There is one obvious exit:");
-	    else
-		write("    There are " + convert_number(sizeof(dest_dir)/2) +
-		      " obvious exits:");
-	    while(i < sizeof(dest_dir)) {
-		write(" " + dest_dir[i]);
-		i += 2;
-		if (i == sizeof(dest_dir) - 1)
-		    write(" and");
-		else if (i < sizeof(dest_dir))
-		    write(",");
-	    }
-	    write("\n");
-	}
+	write(exitsDescription(0));
 	return;
     }
     if (!items)
@@ -88,6 +70,52 @@ void long(string str) {
 	}
 	i += 2;
     }
+}
+
+string exitsDescription(int brief) {
+    int i;
+    string desc;
+
+    if (brief) {
+	if (!dest_dir)
+	    return "(Exits: none)";
+	i = 1;
+	desc = "(Exits:";
+	while(i < sizeof(dest_dir)) {
+	    desc += " " + ([
+		"north":"n",
+		"south":"s",
+		"east":"e",
+		"west":"w",
+		"up":"u",
+		"down":"d",
+		"northeast":"ne",
+		"northwest":"nw",
+		"southeast":"se",
+		"southwest":"sw",
+	    ])[dest_dir[i]] || dest_dir[i];
+	    i += 2;
+	}
+	return desc + ")";
+    }
+
+    if (!dest_dir)
+	return "    No obvious exits.\n";
+    i = 1;
+    if (sizeof(dest_dir) == 2)
+	desc = "    There is one obvious exit:";
+    else
+	desc = "    There are " + convert_number(sizeof(dest_dir)/2) +
+	       " obvious exits:";
+    while(i < sizeof(dest_dir)) {
+	desc += " " + dest_dir[i];
+	i += 2;
+	if (i == sizeof(dest_dir) - 1)
+	    desc += " and";
+	else if (i < sizeof(dest_dir))
+	    desc += ",";
+    }
+    return desc + "\n";
 }
 
 /*
@@ -127,7 +155,7 @@ int move(string str) {
 
 string short() {
     if (set_light(0))
-	return short_desc;
+	return short_desc + "\n" + exitsDescription(1);
     return "Dark room";
 }
 
