@@ -1,19 +1,10 @@
-2026.01.04 14:56:02 LDMud 3.6.8 (3.6.8) (release)
-2026.01.04 14:56:02 Seeding PRG from /dev/urandom.
-2026.01.04 14:56:02 Attempting to start erq '/opt/ldmud/bin/erq'.
-2026.01.04 14:56:02 UDP recv-socket requested for port: 4246
-2026.01.04 14:56:02 Function south() not found in /room/wiz_hall.
-2026.01.04 14:56:02 program: obj/simul_efun.c, object: room/wiz_hall line 484
-2026.01.04 14:56:02 LDMud ready for users.
-2026.01.04 14:56:03 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 14:56:03 program: players/lars/mapper.c, object: players/lars/mapper line 108
-2026.01.04 14:56:07 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 14:56:07 program: players/lars/mapper.c, object: players/lars/mapper line 108
-2026.01.04 14:56:13 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 14:56:13 program: players/lars/mapper.c, object: players/lars/mapper line 108
-2026.01.04 14:56:15 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 14:56:15 program: players/lars/mapper.c, object: players/lars/mapper line 108
-2026.01.04 14:56:17 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 14:56:17 program: players/lars/mapper.c, object: players/lars/mapper line 108
-2026.01.04 14:56:19 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 14:56:19 program: players/lars/mapper.c, object: players/lars/mapper line 108
+2026.01.04 15:21:45 LDMud 3.6.8 (3.6.8) (release)
+2026.01.04 15:21:45 Seeding PRG from /dev/urandom.
+2026.01.04 15:21:45 Attempting to start erq '/opt/ldmud/bin/erq'.
+2026.01.04 15:21:45 UDP recv-socket requested for port: 4246
+2026.01.04 15:21:45 Error in loading object: 'secure/master'.
+No program to trace.
+2026.01.04 15:21:45 Failed to load master object 'secure/master'!
+2026.01.04 15:21:45 Current object was <null>
+2026.01.04 15:21:45 Dump of the call chain:
+No program to trace.

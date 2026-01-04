@@ -15,17 +15,18 @@
 #define LIVING_NAME 3
 #define NAME_LIVING 4
 
-#include "/sys/configuration.h"
-#include "/sys/driver_info.h"
+#include "/sys/wizlist.h"
 #include "/sys/erq.h"
 #include "/sys/files.h"
+#include "/sys/configuration.h"
 #include "/sys/interactive_info.h"
 #include "/sys/object_info.h"
-#include "/sys/wizlist.h"
+#include "/sys/driver_info.h"
+
 
 mapping living_name_m, name_living_m;
-/* Living -> Name and Name -> Living mappings.
- */
+  /* Living -> Name and Name -> Living mappings.
+   */
 
 //---------------------------------------------------------------------------
 void start_simul_efun()
@@ -36,16 +37,16 @@ void start_simul_efun()
 {
     mixed *info;
 
-    if (!(info = get_extra_wizinfo(0)))
-        set_extra_wizinfo(0, info = allocate(BACKBONE_WIZINFO_SIZE));
+    if ( !(info = get_extra_wizinfo(0)) )
+	set_extra_wizinfo(0, info = allocate(BACKBONE_WIZINFO_SIZE));
     if (!(living_name_m = info[LIVING_NAME]))
-        living_name_m = info[LIVING_NAME] = m_allocate(0, 1);
+	living_name_m = info[LIVING_NAME] = m_allocate(0, 1);
     if (!(name_living_m = info[NAME_LIVING]))
-        name_living_m = info[NAME_LIVING] = m_allocate(0, 1);
+	name_living_m = info[NAME_LIVING] = m_allocate(0, 1);
 }
 
 //---------------------------------------------------------------------------
-void ls(string path)
+void ls (string path)
 
 /* Print the directory listing of <path>, like the unix command.
  */
@@ -55,20 +56,21 @@ void ls(string path)
     status trunc_flag;
     mixed *dir;
     set_this_object(previous_object());
-    dir = get_dir(path, GETDIR_NAMES | GETDIR_SIZES);
+    dir = get_dir (path, GETDIR_NAMES|GETDIR_SIZES);
     if (path != "/")
-        path += "/";
+	path += "/";
     if (!dir) {
         write("No such directory.\n");
         return;
     }
-    if (sizeof(dir) > 999) {
+    if (sizeof(dir) > 999)
+    {
         dir = dir[0..998];
         trunc_flag = 1;
     }
-    for (i = sizeof(dir); i--;) {
-        if (dir[i--] == -2)
-            dir[i] += "/";
+    for(i = sizeof(dir); i--; ) {
+        if(dir[i--] == -2)
+            dir[i]+="/";
         len = sizeof(dir[i]);
         if (len > max)
             max = len;
@@ -76,91 +78,93 @@ void ls(string path)
     ++max;
     if (max > 79)
         max = 79;
-    for (i = 0; i < sizeof(dir); i += 2) {
-        string name;
-        name = dir[i];
-        tmp = sizeof(name);
-        if (len + tmp > 79) {
-            len = 0;
-            write("\n");
-        }
-        write(name);
+    for (i=0; i < sizeof(dir); i+=2) {
+	string name;
+            name = dir[i];
+	tmp = sizeof(name);
+	if (len + tmp > 79) {
+	    len = 0;
+	    write("\n");
+	}
+	write(name);
         if (len + max > 79) {
             write("\n");
             len = 0;
         } else {
-            write("                                                            "
-                  "                    "[80 - max + tmp..]);
+            write("                                                                                "[80-max+tmp..]);
             len += max;
         }
     }
     write("\n");
-    if (trunc_flag)
-        write("***TRUNCATED***\n");
+    if (trunc_flag) write("***TRUNCATED***\n");
 }
 
 //---------------------------------------------------------------------------
-string create_wizard(string owner, string domain) {
+string create_wizard(string owner, string domain)
+{
     mixed result;
 
     set_this_object(previous_object());
-    result = __MASTER_OBJECT__->master_create_wizard(owner, domain,
-                                                     previous_object());
-    if (stringp(result))
-        return result;
+    result =
+      __MASTER_OBJECT__->master_create_wizard(owner, domain, previous_object());
+    if (stringp(result)) return result;
     return 0;
 }
 
 //---------------------------------------------------------------------------
-void log_file(string file, string str) {
+void log_file(string file,string str)
+{
     string file_name;
     int *st;
 
     file_name = "/log/" + file;
 #ifdef COMPAT_FLAG
-    if (sizeof(regexp(({file}), "/")) || file[0] == '.' || sizeof(file) > 30) {
-        write("Illegal file name to log_file(" + file + ")\n");
+    if (sizeof(regexp(({file}), "/")) || file[0] == '.' || sizeof(file) > 30 )
+    {
+        write("Illegal file name to log_file("+file+")\n");
         return;
     }
 #endif
-    if (sizeof(st = get_dir(file_name, 2)) && st[0] > MAX_LOG_SIZE) {
-        catch(rename(file_name, file_name + ".old")); /* No panic if failure */
+    if ( sizeof(st = get_dir(file_name,2) ) && st[0] > MAX_LOG_SIZE) {
+	catch(rename(file_name, file_name + ".old")); /* No panic if failure */
     }
     set_this_object(previous_object());
     write_file(file_name, str);
 }
 
 //---------------------------------------------------------------------------
-void localcmd() {
+void localcmd()
+{
     string *verbs;
-    int i, j;
+    int i,j;
 
     verbs = query_actions(this_player());
-    for (i = 0, j = sizeof(verbs); --j >= 0; i++) {
-        write(verbs[i] + " ");
+    for (i=0, j = sizeof(verbs); --j >= 0; i++) {
+	write(verbs[i]+" ");
     }
     write("\n");
 }
 
 //---------------------------------------------------------------------------
-mixed *unique_array(mixed *arr, string func, mixed skipnum) {
+mixed *unique_array(mixed *arr,string func,mixed skipnum)
+{
     mixed *al, last;
     mapping m;
     int i, j, k, *ordinals;
 
     if (sizeof(arr) < 32)
         return efun::unique_array(arr, func, skipnum);
-    for (ordinals = allocate(i = sizeof(arr)); i--;)
-        ordinals[i] = i;
+    for (ordinals = allocate(i = sizeof(arr)); i--; )
+	    ordinals[i] = i;
     m = mkmapping(map_objects(arr, func), ordinals, arr);
     al = m_indices(m);
     ordinals = m_values(m, 0);
     arr = m_values(m, 1);
     if (k = i = sizeof(al)) {
-        for (last = al[j = --i]; i--;) {
+        for (last = al[j = --i]; i--; ) {
             if (al[i] != last) {
                 if (last != skipnum) {
-                    arr[--k] = arr[i + 1..j];
+                    arr[--k] = arr[i+1..j];
                     ordinals[k] = ordinals[j];
                 }
                 last = al[j = i];
@@ -171,58 +175,59 @@ mixed *unique_array(mixed *arr, string func, mixed skipnum) {
             ordinals[k] = ordinals[j];
         }
     }
-    return m_values(mkmapping(ordinals[k..], arr[k..]), 0);
+    return m_values(mkmapping(ordinals[k..], arr[k..]),0);
 }
 
 //---------------------------------------------------------------------------
-varargs mixed snoop(mixed snoopee) {
+varargs mixed snoop(mixed snoopee)
+{
     int result;
 
-    if (snoopee && interactive(snoopee) &&
-        interactive_info(snoopee, II_SNOOP_NEXT)) {
+    if (snoopee && interactive(snoopee) && interactive_info(snoopee, II_SNOOP_NEXT)) {
         write("Busy.\n");
         return 0;
     }
     result = snoopee ? efun::snoop(this_player(), snoopee)
                      : efun::snoop(this_player());
     switch (result) {
-    case -1:
-        write("Busy.\n");
-        break;
-    case 0:
-        write("Failed.\n");
-        break;
-    case 1:
-        write("Ok.\n");
-        break;
+	case -1:
+	    write("Busy.\n");
+	    break;
+	case  0:
+	    write("Failed.\n");
+	    break;
+	case  1:
+	    write("Ok.\n");
+	    break;
     }
-    if (result > 0)
-        return snoopee;
+    if (result > 0) return snoopee;
 
     return 0;
 }
 
 //---------------------------------------------------------------------------
-void notify_fail(mixed message) {
-    if (!(stringp(message) && strstr(message, "@@") < 0)) {
-        efun::notify_fail(message);
-        return;
+void notify_fail(mixed message)
+{
+    if ( !(stringp(message) && strstr(message, "@@") < 0) ) {
+	efun::notify_fail(message);
+	return;
     }
     efun::notify_fail(
       funcall(
         bind_lambda(#'lambda, previous_object()),
-        0, ({
-#'process_string, message}) ));
+        0, ({#'process_string, message})
+      )
+    );
 }
 
 //---------------------------------------------------------------------------
 string version() {
-        return __VERSION__;
+    return __VERSION__;
 }
 
 //---------------------------------------------------------------------------
 string query_host_name() {
-        return __HOST_NAME__;
+    return __HOST_NAME__;
 }
 
 //---------------------------------------------------------------------------
@@ -233,46 +238,46 @@ nomask void set_this_player() {}
 //---------------------------------------------------------------------------
 varargs void add_worth(int value, object ob)
 {
-        mixed old;
+    mixed old;
 #ifdef __COMPAT_MODE__
-        switch (explode(object_name(previous_object()), "/")[0]) {
+    switch (explode(object_name(previous_object()), "/")[0]) {
 #else
-        switch (explode(object_name(previous_object()), "/")[1]) {
+    switch (explode(object_name(previous_object()), "/")[1]) {
 #endif
-        default:
-            raise_error("Illegal call of add_worth.\n");
-        case "obj":
-        case "std":
-        case "room":
-        }
-        if (!ob) {
-            if (!(ob = previous_object(1)))
-                return;
-        }
-        if (intp(old = get_extra_wizinfo(ob)))
-            set_extra_wizinfo(ob, old + value);
+      default:
+	raise_error("Illegal call of add_worth.\n");
+      case "obj":
+      case "std":
+      case "room":
+    }
+    if (!ob) {
+	if ( !(ob = previous_object(1)) )
+	    return;
+    }
+    if (intp(old = get_extra_wizinfo(ob)))
+        set_extra_wizinfo(ob, old + value);
 }
 
 //---------------------------------------------------------------------------
 varargs void wizlist(string name)
 {
-        int i, pos, total_cmd;
-        int *cmds;
-        mixed *a;
-        mixed *b;
+    int i, pos, total_cmd;
+    int *cmds;
+    mixed *a;
+    mixed *b;
 
-        if (!name) {
-            name = this_player()->query_real_name();
-            if (!name) {
-                write("Need to provide a name or 'ALL' to the wizlist "
-                      "function.\n");
-                return;
-            }
+    if (!name) {
+        name = this_player()->query_real_name();
+        if (!name)
+        {
+            write("Need to provide a name or 'ALL' to the wizlist function.\n");
+            return;
         }
-        a = transpose_array(wizlist_info());
-        cmds = a[WL_COMMANDS];
-        a[WL_COMMANDS] = a[0];
-        a[0] = cmds;
+    }
+    a = transpose_array(wizlist_info());
+    cmds = a[WL_COMMANDS];
+    a[WL_COMMANDS] = a[0];
+    a[0] = cmds;
 
     a = unmkmapping(apply(#'mkmapping, a));
     cmds = a[0];
@@ -281,42 +286,44 @@ varargs void wizlist(string name)
 
     if ((pos = member(a[WL_NAME], name)) < 0 && name != "ALL")
     {
-            write("No wizlist info for '" + name + "' found.\n");
-            return;
+        write("No wizlist info for '"+name+"' found.\n");
+        return;
     }
     b = allocate(sizeof(cmds));
     for (i = sizeof(cmds); i;) {
-            b[ < i] = i;
-            total_cmd += cmds[--i];
+        b[<i] = i;
+        total_cmd += cmds[--i];
     }
     a = transpose_array(a + ({b}) );
     if (name != "ALL") {
-            if (pos + 18 < sizeof(cmds)) {
-                a = a[pos - 2..pos + 2] + a[ < 15..];
-            } else if (pos < sizeof(cmds) - 13) {
-                a = a[pos - 2..];
-            } else {
-                a = a[ < 15..];
-            }
+        if (pos + 18 < sizeof(cmds)) {
+            a = a[pos-2..pos+2]+a[<15..];
+        } else if (pos < sizeof(cmds) - 13) {
+            a = a[pos-2..];
+        } else {
+            a = a[<15..];
+        }
     }
     write("\nWizard top score list\n\n");
     if (total_cmd == 0)
         total_cmd = 1;
     for (i = sizeof(a); i; ) {
-            b = a[ < i--];
-            if (b[WL_GIGACOST] > 1000)
-                printf("%-15s %5d %2d%% (%d)\t[%d%4dk,%5d] %6d %d\n",
-                       b[WL_NAME], b[WL_COMMANDS],
-                       b[WL_COMMANDS] * 100 / total_cmd, b[ < 1],
-                       b[WL_GIGACOST] / 1000,
-                       b[WL_COST] / 1000 + (b[WL_GIGACOST] % 1000) * 1000000000,
-                       b[WL_HEART_BEATS], b[WL_EXTRA], b[WL_ARRAY_TOTAL]);
-            else
-                printf("%-15s %5d %2d%% (%d)\t[%4dk,%5d] %6d %d\n", b[WL_NAME],
-                       b[WL_COMMANDS], b[WL_COMMANDS] * 100 / total_cmd,
-                       b[ < 1],
-                       b[WL_COST] / 1000 + (b[WL_GIGACOST] % 1000) * 1000000000,
-                       b[WL_HEART_BEATS], b[WL_EXTRA], b[WL_ARRAY_TOTAL]);
+        b = a[<i--];
+        if (b[WL_GIGACOST] > 1000)
+            printf("%-15s %5d %2d%% (%d)\t[%d%4dk,%5d] %6d %d\n",
+              b[WL_NAME], b[WL_COMMANDS],
+              b[WL_COMMANDS] * 100 / total_cmd, b[<1],
+              b[WL_GIGACOST] / 1000,
+              b[WL_COST] / 1000 + (b[WL_GIGACOST] % 1000) * 1000000000,
+              b[WL_HEART_BEATS], b[WL_EXTRA], b[WL_ARRAY_TOTAL]
+            );
+        else
+            printf("%-15s %5d %2d%% (%d)\t[%4dk,%5d] %6d %d\n",
+              b[WL_NAME], b[WL_COMMANDS],
+              b[WL_COMMANDS] * 100 / total_cmd, b[<1],
+              b[WL_COST] / 1000 + (b[WL_GIGACOST] % 1000) * 1000000000,
+              b[WL_HEART_BEATS], b[WL_EXTRA], b[WL_ARRAY_TOTAL]
+            );
     }
     printf("\nTotal         %7d     (%d)\n\n", total_cmd, sizeof(cmds));
 }
@@ -325,168 +332,164 @@ varargs void wizlist(string name)
 void shout(string s)
 {
     filter(users(), lambda(({'u}),({#'&&,
-      ({
-#'environment, ' u}),
-      ({
-#'!=, ' u, (
-                { #'this_player})}), ({#'tell_object, ' u, to_string(s) }) })));
+      ({#'environment, 'u}),
+      ({#'!=, 'u, ({#'this_player})}),
+      ({#'tell_object, 'u, to_string(s)})
+    })));
 }
 
 //---------------------------------------------------------------------------
 void set_living_name(string name)
 {
-                string old;
-                mixed a;
-                int i;
+    string old;
+    mixed a;
+    int i;
 
-                if (old = living_name_m[previous_object()]) {
-                    if (pointerp(a = name_living_m[old])) {
-                        a[member(a, previous_object())] = 0;
-                    } else {
-                        efun::m_delete(name_living_m, old);
-                    }
-                }
-                living_name_m[previous_object()] = name;
-                if (a = name_living_m[name]) {
-                    if (!pointerp(a)) {
-                        name_living_m[name] = ({a, previous_object()});
-                        return;
-                    }
-                    /* Try to reallocate entry from destructed object */
-                    if ((i = member(a, 0)) >= 0) {
-                        a[i] = previous_object();
-                        return;
-                    }
-                    name_living_m[name] = a + ({previous_object()});
-                    return;
-                }
-                name_living_m[name] = previous_object();
+    if (old = living_name_m[previous_object()]) {
+	if (pointerp(a = name_living_m[old])) {
+	    a[member(a, previous_object())] = 0;
+	} else {
+	    efun::m_delete(name_living_m, old);
+	}
+    }
+    living_name_m[previous_object()] = name;
+    if (a = name_living_m[name]) {
+	if (!pointerp(a)) {
+	    name_living_m[name] = ({a, previous_object()});
+	    return;
+	}
+	/* Try to reallocate entry from destructed object */
+	if ((i = member(a, 0)) >= 0) {
+	    a[i] = previous_object();
+	    return;
+	}
+	name_living_m[name] = a + ({previous_object()});
+	return;
+    }
+    name_living_m[name] = previous_object();
 }
 
 //---------------------------------------------------------------------------
 object find_living(string name)
 {
-                mixed *a, r;
-                int i;
+    mixed *a, r;
+    int i;
 
-                if (pointerp(r = name_living_m[name])) {
-                    if (!living(r = (a = r)[0])) {
-                        for (i = sizeof(a); --i;) {
-                            if (living(a[ < i])) {
-                                r = a[ < i];
-                                a[ < i] = a[0];
-                                return a[0] = r;
-                            }
-                        }
-                    }
-                    return r;
-                }
-                return living(r) && r;
+    if (pointerp(r = name_living_m[name])) {
+	if ( !living(r = (a = r)[0])) {
+	    for (i = sizeof(a); --i;) {
+		if (living(a[<i])) {
+		    r = a[<i];
+		    a[<i] = a[0];
+		    return a[0] = r;
+		}
+	    }
+	}
+	return r;
+    }
+    return living(r) && r;
 }
 
 //---------------------------------------------------------------------------
 object find_player(string name)
 {
-                mixed *a, r;
-                int i;
+    mixed *a, r;
+    int i;
 
-                if (pointerp(r = name_living_m[name])) {
-                    if (!(r = (a = r)[0]) ||
-                        !efun::object_info(r, OI_ONCE_INTERACTIVE)) {
-                        for (i = sizeof(a); --i;) {
-                            if (a[ < i] && efun::object_info(
-                                               a[ < i], OI_ONCE_INTERACTIVE)) {
-                                r = a[ < i];
-                                a[ < i] = a[0];
-                                return a[0] = r;
-                            }
-                        }
-                        return 0;
-                    }
-                    return r;
-                }
-                return r && efun::object_info(r, OI_ONCE_INTERACTIVE) && r;
+    if (pointerp(r = name_living_m[name])) {
+	if ( !(r = (a = r)[0]) || !efun::object_info(r, OI_ONCE_INTERACTIVE)) {
+	    for (i = sizeof(a); --i;) {
+		if (a[<i] && efun::object_info(a[<i], OI_ONCE_INTERACTIVE)) {
+		    r = a[<i];
+		    a[<i] = a[0];
+		    return a[0] = r;
+		}
+	    }
+	    return 0;
+	}
+	return r;
+    }
+    return r && efun::object_info(r, OI_ONCE_INTERACTIVE) && r;
 }
 
-            /*===========================================================================
-             * The following functions provide the necessary compatibility of
-             * this compat-mode mudlib with a plain driver. Just the
-             * parse_command() efun is not simulated.
-             */
+/*===========================================================================
+ * The following functions provide the necessary compatibility of this
+ * compat-mode mudlib with a plain driver.
+ * Just the parse_command() efun is not simulated.
+ */
 
 #ifndef __COMPAT_MODE__
 //---------------------------------------------------------------------------
 string function_exists (string str, object ob)
 {
-                string rc;
+    string rc;
 
-                rc = efun::function_exists(str, ob);
-                return stringp(rc) ? rc[1..] : 0;
+    rc = efun::function_exists(str, ob);
+    return stringp(rc) ? rc[1..] : 0;
 }
 
 //---------------------------------------------------------------------------
 string object_name(object ob)
 {
-                string rc;
+    string rc;
 
-                rc = efun::object_name(ob);
-                return stringp(rc) ? rc[1..] : 0;
+    rc = efun::object_name(ob);
+    return stringp(rc) ? rc[1..] : 0;
 }
 
 //---------------------------------------------------------------------------
 string program_name(object ob)
 {
-                string rc;
+    string rc;
 
-                rc = efun::program_name(ob);
-                return stringp(rc) ? rc[1..] : 0;
+    rc = efun::program_name(ob);
+    return stringp(rc) ? rc[1..] : 0;
 }
 
 //---------------------------------------------------------------------------
 string* inherit_list(object ob)
 {
-                string *rc;
-                int i;
+    string *rc;
+    int i;
 
-                rc = efun::inherit_list(ob);
-                for (i = sizeof(rc); i-- > 0;)
-                    rc[i] = rc[i][1..];
-                return rc;
+    rc = efun::inherit_list(ob);
+    for (i = sizeof(rc); i-- > 0; )
+        rc[i] = rc[i][1..];
+    return rc;
 }
 
 //---------------------------------------------------------------------------
 string to_string(mixed arg)
 {
-                string rc;
+    string rc;
 
-                rc = efun::to_string(arg);
-                return objectp(arg) ? rc[1..] : rc;
+    rc = efun::to_string(arg);
+    return objectp(arg) ? rc[1..] : rc;
 }
 
 //---------------------------------------------------------------------------
 string creator(object ob)
 {
-                return getuid(ob);
+    return getuid(ob);
 }
 
 //---------------------------------------------------------------------------
 varargs void add_action(string fun, string cmd, int flag)
 {
-                if (fun == "exit")
-                    raise_error("Illegal to define a command to the exit() "
-                                "function.\n");
+    if (fun == "exit")
+        raise_error("Illegal to define a command to the exit() function.\n");
 
-                efun::set_this_object(previous_object());
-                if (cmd)
-                    efun::add_action(fun, cmd, flag);
+    efun::set_this_object(previous_object());
+    if (cmd)
+        efun::add_action(fun, cmd, flag);
 }
 
 //---------------------------------------------------------------------------
 object present_clone (mixed obj, object env)
 {
-                if (stringp(obj) && '/' != obj[0])
-                    obj = "/" + obj;
-                return efun::present_clone(obj, env);
+  if (stringp(obj) && '/' != obj[0])
+      obj = "/"+obj;
+  return efun::present_clone(obj, env);
 }
 
 //---------------------------------------------------------------------------
@@ -496,64 +499,72 @@ object present_clone (mixed obj, object env)
 //---------------------------------------------------------------------------
 varargs object present(mixed ob, object env)
 {
-                int specific, num, i;
-                object found;
-                string str;
+    int specific, num, i;
+    object found;
+    string str;
 
-                if (!env) {
-                    env = previous_object();
-                    specific = 0;
-                } else
-                    specific = 1;
+    if (!env)
+    {
+        env = previous_object();
+        specific = 0;
+    }
+    else
+        specific = 1;
 
-                if (objectp(ob)) {
-                    /* Quick check: is ob there or not? */
+    if (objectp(ob))
+    {
+        /* Quick check: is ob there or not? */
 
-                    if (specific)
-                        return environment(ob) == env ? ob : 0;
-                    if (environment(ob) == env ||
-                        (environment(env) &&
-                         environment(ob) == environment(env)))
-                        return ob;
-                    return 0;
-                }
+        if (specific)
+            return environment(ob) == env ? ob : 0;
+        if (environment(ob) == env
+         || (environment(env) && environment(ob) == environment(env))
+           )
+            return ob;
+        return 0;
+    }
 
-                /* Search by name. Prepare the search parameters */
-                if (2 != sscanf(ob, "%s %d", str, num)) {
-                    num = 1;
-                    str = ob;
-                }
+    /* Search by name. Prepare the search parameters */
+    if (2 != sscanf(ob, "%s %d", str, num))
+    {
+        num = 1;
+        str = ob;
+    }
 
-                /* First, search in env by name */
-                for (found = first_inventory(env), i = 0; found;
-                     found = next_inventory(env)) {
-                    if (found->id(str) && ++i == num)
-                        break;
-                    if (!found) /* may happen */
-                        break;
-                }
+    /* First, search in env by name */
+    for (found = first_inventory(env), i = 0
+        ; found
+        ; found = next_inventory(env))
+    {
+        if (found->id(str) && ++i == num)
+            break;
+        if (!found)  /* may happen */
+            break;
+    }
 
-                if (found || specific)
-                    return found;
+    if (found || specific)
+        return found;
 
-                /* If not found, search in environment(env) by name */
-                env = environment(env);
-                if (!env)
-                    return 0;
-                if (env->id(ob))
-                    return env;
-                if (!env) /* the id() may have destructed env */
-                    return 0;
+    /* If not found, search in environment(env) by name */
+    env = environment(env);
+    if (!env)
+        return 0;
+    if (env->id(ob))
+        return env;
+    if (!env) /* the id() may have destructed env */
+        return 0;
 
-                for (found = first_inventory(env), i = 0; found;
-                     found = next_inventory(env)) {
-                    if (found->id(str) && ++i == num)
-                        break;
-                    if (!found) /* may happen */
-                        break;
-                }
+    for (found = first_inventory(env), i = 0
+        ; found
+        ; found = next_inventory(env))
+    {
+        if (found->id(str) && ++i == num)
+            break;
+        if (!found)  /* may happen */
+            break;
+    }
 
-                return found;
+    return found;
 }
 
 #endif /* !efun_defined(present) */
@@ -575,71 +586,76 @@ varargs object present(mixed ob, object env)
  */
 int transfer(object item, object dest)
 {
-                int weight;
-                object from;
+    int weight;
+    object from;
 
-                efun::set_this_object(previous_object());
+    efun::set_this_object(previous_object());
 
-                weight = item->query_weight();
-                if (!item)
-                    return 3;
+    weight = item->query_weight();
+    if (!item)
+        return 3;
 
-                from = environment(item);
-                if (from) {
-                    /*
-                     * If the original place of the object is a living object,
-                     * then we must call drop() to check that the object can be
-                     * dropped.
-                     */
-                    if (living(from)) {
-                        if (item->drop() || !item)
-                            return 2;
-                    }
-                    /*
-                     * If 'from' is not a room and not a player, check that we
-                     * may remove things out of it.
-                     */
-                    else if (environment(from)) {
-                        if (!from->can_put_and_get() || !from)
-                            return 3;
-                    }
-                }
+    from = environment(item);
+    if (from)
+    {
+        /*
+         * If the original place of the object is a living object,
+         * then we must call drop() to check that the object can be dropped.
+         */
+        if (living(from))
+        {
+            if (item->drop() || !item)
+                return 2;
+        }
+        /*
+         * If 'from' is not a room and not a player, check that we may
+         * remove things out of it.
+         */
+        else if (environment(from))
+        {
+            if (!from->can_put_and_get() || !from)
+                return 3;
+        }
+    }
 
-                /*
-                 * If the destination is not a room, and not a player,
-                 * Then we must test 'prevent_insert', and 'can_put_and_get'.
-                 */
-                if (environment(dest) && !living(dest)) {
-                    if (item->prevent_insert())
-                        return 4;
-                    if (!dest->can_put_and_get() || !dest)
-                        return 5;
-                }
+    /*
+     * If the destination is not a room, and not a player,
+     * Then we must test 'prevent_insert', and 'can_put_and_get'.
+     */
+    if (environment(dest) && !living(dest))
+    {
+        if (item->prevent_insert())
+            return 4;
+        if (!dest->can_put_and_get() || !dest)
+            return 5;
+    }
 
-                if (living(dest)) {
-                    if (!item->get() || !item)
-                        return 6;
-                }
+    if (living(dest))
+    {
+        if (!item->get() || !item)
+            return 6;
+    }
 
-                /*
-                 * If it is not a room, correct the total weight in the
-                 * destination.
-                 */
-                if (environment(dest) && weight) {
-                    if (!dest->add_weight(weight) || !dest)
-                        return 1;
-                }
+    /*
+     * If it is not a room, correct the total weight in the destination.
+     */
+    if (environment(dest) && weight)
+    {
+        if (!dest->add_weight(weight) || !dest)
+            return 1;
+    }
 
-                /*
-                 * If it is not a room, correct the weight in the 'from' object.
-                 */
-                if (from && environment(from) && weight) {
-                    from->add_weight(-weight);
-                }
+    /*
+     * If it is not a room, correct the weight in the 'from' object.
+     */
+    if (from && environment(from) && weight)
+    {
+        from->add_weight(-weight);
+    }
 
-                move_object(item, dest);
+    move_object(item, dest);
 
-                return 0;
+    return 0;
 }
 
 #endif /* !efun_define(transfer) */
@@ -649,192 +665,191 @@ int transfer(object item, object dest)
 mixed extract (mixed data, varargs mixed*from_to)
 
 {
-                int from, to;
+    int from, to;
 
-                if (!stringp(data) && !pointerp(data)) {
-                    raise_error("Illegal type for extract(): must be string or "
-                                "array.\n");
-                    return 0;
-                }
+    if (!stringp(data) && !pointerp(data))
+    {
+        raise_error("Illegal type for extract(): must be string or array.\n");
+        return 0;
+    }
 
-                switch (sizeof(from_to)) {
-                case 0:
-                    return data;
-                case 1:
-                    if (!intp(from_to[0])) {
-                        raise_error("Illegal 'from' index for extract(): must "
-                                    "be a number.\n");
-                        return 0;
-                    }
-                    from = from_to[0];
-                    if (from >= 0)
-                        return data[from..];
-                    return data[ < -from..];
-                case 2:
-                    if (!intp(from_to[0]) || !intp(from_to[1])) {
-                        raise_error(
-                            "Illegal index for extract(): must be a number.\n");
-                        return 0;
-                    }
-                    from = from_to[0];
-                    to = from_to[1];
-                    if (from >= 0) {
-                        if (to >= 0)
-                            return data[from..to];
-                        return data[ < from..< -to];
-                    }
-                    if (to >= 0)
-                        return data[ < -from..to];
-                    return data[ < from..< -to];
-                }
+    switch(sizeof(from_to))
+    {
+    case 0: return data;
+    case 1:
+        if (!intp(from_to[0]))
+        {
+            raise_error("Illegal 'from' index for extract(): must be a number.\n");
+            return 0;
+        }
+        from = from_to[0];
+        if (from >= 0)
+            return data[from..];
+        return data[<-from..];
+    case 2:
+        if (!intp(from_to[0]) || !intp(from_to[1]))
+        {
+            raise_error("Illegal index for extract(): must be a number.\n");
+            return 0;
+        }
+        from = from_to[0];
+        to = from_to[1];
+        if (from >= 0)
+        {
+            if (to >= 0)
+                return data[from..to];
+            return data[<from..<-to];
+        }
+        if (to >= 0)
+            return data[<-from..to];
+        return data[<from..<-to];
+    }
 
-                raise_error("Illegal number of arguments for extract().\n");
-                return 0;
+    raise_error("Illegal number of arguments for extract().\n");
+    return 0;
 }
 
 #endif /* !efun_defined(extract) */
 
-#if !__EFUN_DEFINED__(set_heart_beat)
+#if ! __EFUN_DEFINED__(set_heart_beat)
 //---------------------------------------------------------------------------
 int set_heart_beat(int flag)
 {
-                object ob = previous_object();
-                int hb = object_info(ob, OC_HEART_BEAT);
+    object ob = previous_object();
+    int hb = object_info(ob, OC_HEART_BEAT);
 
-                if (!flag == !hb)
-                    return 0;
+    if (!flag == !hb)
+        return 0;
 
-                configure_object(ob, OC_HEART_BEAT, flag);
+    configure_object(ob, OC_HEART_BEAT, flag);
 
-                return 1;
+    return 1;
 }
 
 #endif
 
-#if !__EFUN_DEFINED__(enable_commands)
+#if ! __EFUN_DEFINED__(enable_commands)
 //---------------------------------------------------------------------------
 void enable_commands()
 {
-                object ob = previous_object();
+    object ob = previous_object();
 
-                configure_object(ob, OC_COMMANDS_ENABLED, 1);
-                efun::set_this_player(ob);
+    configure_object(ob, OC_COMMANDS_ENABLED, 1);
+    efun::set_this_player(ob);
 }
 
 #endif
 
-#if !__EFUN_DEFINED__(query_ip_name)
+#if ! __EFUN_DEFINED__(query_ip_name)
 //---------------------------------------------------------------------------
 varargs string query_ip_name(object player)
 {
-                return interactive_info(player || this_player(), II_IP_NAME);
+    return interactive_info(player || this_player(), II_IP_NAME);
 }
 
 #endif
 
-#if !__EFUN_DEFINED__(query_ip_number)
+#if ! __EFUN_DEFINED__(query_ip_number)
 //---------------------------------------------------------------------------
 varargs string query_ip_number(object player)
 {
-                return interactive_info(player || this_player(), II_IP_NUMBER);
+    return interactive_info(player || this_player(), II_IP_NUMBER);
 }
 
 #endif
 
-#if !__EFUN_DEFINED__(query_idle)
+#if ! __EFUN_DEFINED__(query_idle)
 //---------------------------------------------------------------------------
 int query_idle(object ob)
 {
-                return interactive_info(ob, II_IDLE);
+    return interactive_info(ob, II_IDLE);
 }
 
 #endif
 
-#if !__EFUN_DEFINED__(query_load_average)
+#if ! __EFUN_DEFINED__(query_load_average)
 //---------------------------------------------------------------------------
 string query_load_average()
 {
-                return sprintf("%.2f cmds/s, %.2f comp lines/s",
-                               driver_info(DI_LOAD_AVERAGE_COMMANDS),
-                               driver_info(DI_LOAD_AVERAGE_LINES));
+    return sprintf("%.2f cmds/s, %.2f comp lines/s",
+        driver_info(DI_LOAD_AVERAGE_COMMANDS),
+        driver_info(DI_LOAD_AVERAGE_LINES));
 }
 
 #endif
 
-#if !__EFUN_DEFINED__(query_snoop)
+#if ! __EFUN_DEFINED__(query_snoop)
 //---------------------------------------------------------------------------
 object query_snoop(object ob)
 {
-                if (!interactive(ob))
-                    return 0;
+    if(!interactive(ob))
+        return 0;
 
-                object prev = previous_object();
-                set_this_object(prev);
+    object prev = previous_object();
+    set_this_object(prev);
 
-                return interactive_info(ob, II_SNOOP_NEXT);
+    return interactive_info(ob, II_SNOOP_NEXT);
 }
 #endif
 
-#if !__EFUN_DEFINED__(cat)
+#if ! __EFUN_DEFINED__(cat)
 //---------------------------------------------------------------------------
 #define CAT_MAX_LINES 50
 varargs int cat(string file, int start, int num)
 {
-                set_this_object(previous_object());
-                int more;
+    set_this_object(previous_object());
+    int more;
 
-                if (num < 0 || !this_player())
-                    return 0;
+    if (num < 0 || !this_player())
+        return 0;
 
-                if (!start)
-                    start = 1;
+    if (!start)
+        start = 1;
 
-                if (!num || num > CAT_MAX_LINES) {
-                    num = CAT_MAX_LINES;
-                    more = sizeof(read_file(file, start + num, 1));
-                }
+    if (!num || num > CAT_MAX_LINES) {
+        num = CAT_MAX_LINES;
+        more = sizeof(read_file(file, start+num, 1));
+    }
 
-                string txt = read_file(file, start, num);
-                if (!txt)
-                    return 0;
+    string txt = read_file(file, start, num);
+    if (!txt)
+        return 0;
 
-                tell_object(this_player(), txt);
+    tell_object(this_player(), txt);
 
-                if (more)
-                    tell_object(this_player(), "*****TRUNCATED****\n");
+    if (more)
+        tell_object(this_player(), "*****TRUNCATED****\n");
 
-                return sizeof(txt & "\n");
+    return sizeof(txt & "\n");
 }
 #endif
 
-#if !__EFUN_DEFINED__(tail)
+#if ! __EFUN_DEFINED__(tail)
 //---------------------------------------------------------------------------
 #define TAIL_MAX_BYTES 1000
 varargs int tail(string file)
 {
-                if (extern_call())
-                    set_this_object(previous_object());
+    if (extern_call())
+        set_this_object(previous_object());
 
-                if (!stringp(file) || !this_player())
-                    return 0;
-                string txt = to_text(read_bytes(file, -(TAIL_MAX_BYTES + 80),
-                                                (TAIL_MAX_BYTES + 80)),
-                                     "ASCII");
-                if (!stringp(txt))
-                    return 0;
+    if (!stringp(file) || !this_player())
+        return 0;
+    string txt = to_text(read_bytes(file, -(TAIL_MAX_BYTES + 80), (TAIL_MAX_BYTES + 80)), "ASCII");
+    if (!stringp(txt))
+        return 0;
 
-                // cut off first (incomplete) line
-                int index = strstr(txt, "\n");
-                if (index > -1) {
-                    if (index + 1 < sizeof(txt))
-                        txt = txt[index + 1..];
-                    else
-                        txt = "";
-                }
+    // cut off first (incomplete) line
+    int index = strstr(txt, "\n");
+    if (index > -1) {
+        if (index + 1 < sizeof(txt))
+            txt = txt[index+1..];
+        else
+            txt = "";
+    }
 
-                tell_object(this_player(), txt);
+    tell_object(this_player(), txt);
 
-                return 1;
+    return 1;
 }
 #endif
 
