@@ -49,29 +49,6 @@ int id(string str) {
     return 0;
 }
 
-void long(string str) {
-    int i;
-    if (set_light(0) == 0){
-       write("It is dark.\n");
-       return;
-    }
-    if (!str) {
-	write(long_desc);
-	write(exitsDescription(0));
-	return;
-    }
-    if (!items)
-	return;
-    i = 0;
-    while(i < sizeof(items)) {
-	if (items[i] == str) {
-	    write(items[i+1] + ".\n");
-	    return;
-	}
-	i += 2;
-    }
-}
-
 string exitsDescription(int brief) {
     int i;
     string desc;
@@ -116,6 +93,29 @@ string exitsDescription(int brief) {
 	    desc += ",";
     }
     return desc + "\n";
+}
+
+void long(string str) {
+    int i;
+    if (set_light(0) == 0){
+       write("It is dark.\n");
+       return;
+    }
+    if (!str) {
+	write(long_desc);
+	write(exitsDescription(0));
+	return;
+    }
+    if (!items)
+	return;
+    i = 0;
+    while(i < sizeof(items)) {
+	if (items[i] == str) {
+	    write(items[i+1] + ".\n");
+	    return;
+	}
+	i += 2;
+    }
 }
 
 /*

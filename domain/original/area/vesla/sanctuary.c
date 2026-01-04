@@ -80,6 +80,8 @@ void long(string str)
     }
 
     write(short() + "\n");
+    write("There is a clock here.\n");
+    write("There is an exit to the south.\n");
 }
 
 int id(string str) {

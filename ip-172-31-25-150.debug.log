@@ -1,19 +1,19 @@
-2026.01.04 02:05:25 LDMud 3.6.8 (3.6.8) (release)
-2026.01.04 02:05:25 Seeding PRG from /dev/urandom.
-2026.01.04 02:05:25 Attempting to start erq '/opt/ldmud/bin/erq'.
-2026.01.04 02:05:25 UDP recv-socket requested for port: 4246
-2026.01.04 02:05:25 Function south() not found in /room/wiz_hall.
-2026.01.04 02:05:25 program: obj/simul_efun.c, object: room/wiz_hall line 484
-2026.01.04 02:05:25 LDMud ready for users.
-2026.01.04 02:05:26 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 02:05:26 program: players/lars/mapper.c, object: players/lars/mapper line 108
-2026.01.04 02:05:28 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 02:05:28 program: players/lars/mapper.c, object: players/lars/mapper line 108
-2026.01.04 02:05:30 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 02:05:30 program: players/lars/mapper.c, object: players/lars/mapper line 108
-2026.01.04 02:05:32 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 02:05:32 program: players/lars/mapper.c, object: players/lars/mapper line 108
-2026.01.04 02:05:46 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 02:05:46 program: players/lars/mapper.c, object: players/lars/mapper line 108
-2026.01.04 02:06:32 Warning: Indexing past string end is deprecated: index 0, string length: 0.
-2026.01.04 02:06:32 program: players/lars/mapper.c, object: players/lars/mapper line 108
+2026.01.04 14:56:02 LDMud 3.6.8 (3.6.8) (release)
+2026.01.04 14:56:02 Seeding PRG from /dev/urandom.
+2026.01.04 14:56:02 Attempting to start erq '/opt/ldmud/bin/erq'.
+2026.01.04 14:56:02 UDP recv-socket requested for port: 4246
+2026.01.04 14:56:02 Function south() not found in /room/wiz_hall.
+2026.01.04 14:56:02 program: obj/simul_efun.c, object: room/wiz_hall line 484
+2026.01.04 14:56:02 LDMud ready for users.
+2026.01.04 14:56:03 Warning: Indexing past string end is deprecated: index 0, string length: 0.
+2026.01.04 14:56:03 program: players/lars/mapper.c, object: players/lars/mapper line 108
+2026.01.04 14:56:07 Warning: Indexing past string end is deprecated: index 0, string length: 0.
+2026.01.04 14:56:07 program: players/lars/mapper.c, object: players/lars/mapper line 108
+2026.01.04 14:56:13 Warning: Indexing past string end is deprecated: index 0, string length: 0.
+2026.01.04 14:56:13 program: players/lars/mapper.c, object: players/lars/mapper line 108
+2026.01.04 14:56:15 Warning: Indexing past string end is deprecated: index 0, string length: 0.
+2026.01.04 14:56:15 program: players/lars/mapper.c, object: players/lars/mapper line 108
+2026.01.04 14:56:17 Warning: Indexing past string end is deprecated: index 0, string length: 0.
+2026.01.04 14:56:17 program: players/lars/mapper.c, object: players/lars/mapper line 108
+2026.01.04 14:56:19 Warning: Indexing past string end is deprecated: index 0, string length: 0.
+2026.01.04 14:56:19 program: players/lars/mapper.c, object: players/lars/mapper line 108
