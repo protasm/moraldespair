@@ -9,7 +9,7 @@ void long() {
 
 void reset(int arg) {
     if (arg)
-	return;
+        return;
     set_light(1);
 }
 
@@ -17,4 +17,6 @@ void init() {
     add_action("quit", "quit");
 }
 
-int quit() { return 1; }
+int quit() {
+    return 1;
+}

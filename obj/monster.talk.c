@@ -33,7 +33,7 @@
 string short_desc, long_desc, alias, alt_name, race;
 int move_at_reset, aggressive;
 object kill_ob;
-status healing;		/* True if this monster is healing itself. */
+status healing; /* True if this monster is healing itself. */
 
 object chat_head;
 int chat_chance;
@@ -51,7 +51,6 @@ string talk_type;
 string the_text;
 int have_text;
 
-
 object dead_ob;
 object init_ob;
 
@@ -66,12 +65,11 @@ void random_move();
 void heal_slowly();
 void pick_any_obj();
 
-void reset(int arg)
-{
+void reset(int arg) {
     if (arg) {
-	if (move_at_reset)
-	    random_move();
-	return;
+        if (move_at_reset)
+            random_move();
+        return;
     }
     is_npc = 1;
     enable_commands();
@@ -79,18 +77,17 @@ void reset(int arg)
     create_room = environment(me);
 }
 
-void random_move()
-{
+void random_move() {
     int n;
     n = random(4);
     if (n == 0)
-	command("west");
+        command("west");
     else if (n == 1)
-	command("east");
+        command("east");
     else if (n == 2)
-	command("south");
+        command("south");
     else if (n == 3)
-	command("north");
+        command("north");
 }
 
 string short() {
@@ -98,73 +95,73 @@ string short() {
 }
 
 void long() {
-    write (long_desc);
+    write(long_desc);
 }
 
-int id(string str) { return str == name || str == alias || str == race || str == alt_name; }
+int id(string str) {
+    return str == name || str == alias || str == race || str == alt_name;
+}
 
-void heart_beat()
-{
+void heart_beat() {
     int c;
 
     age += 1;
     /* If there is none here test_if_any_here will turn of heat_beat */
-    if(!test_if_any_here()) {
-	if(have_text && head) {
-	    have_text = 0;
-	    head->test_match(the_text);
-	} else {
-	    set_heart_beat(0);
-	    if (!healing)
-		heal_slowly();
-	    return;
-	}
+    if (!test_if_any_here()) {
+        if (have_text && head) {
+            have_text = 0;
+            head->test_match(the_text);
+        } else {
+            set_heart_beat(0);
+            if (!healing)
+                heal_slowly();
+            return;
+        }
     }
     if (kill_ob && present(kill_ob, environment(this_object()))) {
-	if (random(2) == 1)
-	    return;		/* Delay attack some */
-	attack_object(kill_ob);
-	kill_ob = 0;
-	return;
+        if (random(2) == 1)
+            return; /* Delay attack some */
+        attack_object(kill_ob);
+        kill_ob = 0;
+        return;
     }
     if (attacker_ob && present(attacker_ob, environment(this_object())) &&
-      spell_chance > random(100)) {
-	say(spell_mess1 + "\n", attacker_ob);
-	tell_object(attacker_ob, spell_mess2 + "\n");
-	attacker_ob->hit_player(random(spell_dam));
+        spell_chance > random(100)) {
+        say(spell_mess1 + "\n", attacker_ob);
+        tell_object(attacker_ob, spell_mess2 + "\n");
+        attacker_ob->hit_player(random(spell_dam));
     }
     attack();
-    if (attacker_ob && whimpy && hit_point < max_hp/5)
-	run_away();
-    if(chat_head || a_chat_head){
-	c = random(100);
-	if(attacker_ob && a_chat_head) {
-	    if(c < a_chat_chance){
-		c = random(a_chat_nr);
-		a_chat_head->chat(c);
-	    }
-	} else {
-	    if(c < chat_chance && chat_head){
-		c = random(chat_nr);
-		chat_head->chat(c);
-	    }
-	}
+    if (attacker_ob && whimpy && hit_point < max_hp / 5)
+        run_away();
+    if (chat_head || a_chat_head) {
+        c = random(100);
+        if (attacker_ob && a_chat_head) {
+            if (c < a_chat_chance) {
+                c = random(a_chat_nr);
+                a_chat_head->chat(c);
+            }
+        } else {
+            if (c < chat_chance && chat_head) {
+                c = random(chat_nr);
+                chat_head->chat(c);
+            }
+        }
     }
-    if(random_pick) {
-	c = random(100);
-	if(c < random_pick)
-	    pick_any_obj();
+    if (random_pick) {
+        c = random(100);
+        if (c < random_pick)
+            pick_any_obj();
     }
-    if(have_text && head) {
-	have_text = 0;
-	head->test_match(the_text);
+    if (have_text && head) {
+        have_text = 0;
+        head->test_match(the_text);
     }
 }
 
-int can_put_and_get(string str)
-{
+int can_put_and_get(string str) {
     if (!str)
-	return 0;
+        return 0;
     return 1;
 }
 
@@ -173,19 +170,19 @@ int busy_catch_tell;
 void catch_tell(string str) {
     string who;
 
-    if (busy_catch_tell)	/* Should not happen, but does ! */
-	return;
+    if (busy_catch_tell) /* Should not happen, but does ! */
+        return;
     busy_catch_tell = 1;
-    if(head) {
-	if(have_text) {
-	    who = the_text;
-	    the_text = str;
-	    have_text = 1;
-	    head->test_match(the_text);
-	} else {
-	    the_text = str;
-	    have_text = 1;
-	}
+    if (head) {
+        if (have_text) {
+            who = the_text;
+            the_text = str;
+            have_text = 1;
+            head->test_match(the_text);
+        } else {
+            the_text = str;
+            have_text = 1;
+        }
     }
     busy_catch_tell = 0;
 }
@@ -197,7 +194,7 @@ void catch_tell(string str) {
 
 void set_name(string n) {
     name = n;
-    alignment = 0;		/* Neutral monster */
+    alignment = 0; /* Neutral monster */
     cap_name = capitalize(n);
     short_desc = cap_name;
     long_desc = "You see nothing special.\n";
@@ -207,37 +204,62 @@ void set_level(int l) {
     level = l;
     weapon_class = level / 2 + 3;
     armour_class = level / 4;
-    hit_point = 50 + (level - 1) * 8;	/* Same as a player */
+    hit_point = 50 + (level - 1) * 8; /* Same as a player */
     max_hp = hit_point;
     spell_points = max_hp;
-    experience = "room/adv_guild"->query_cost(l-1);
+    experience = "room/adv_guild"->query_cost(l - 1);
     /* This is for level 1 monsters. */
     if (experience == 0)
-	experience = random(500);
+        experience = random(500);
 }
 
 /* Optional */
-void set_alias(string a) { alias = a; }
+void set_alias(string a) {
+    alias = a;
+}
 /* Optional */
-void set_alt_name(string a) { alt_name = a; }
+void set_alt_name(string a) {
+    alt_name = a;
+}
 /* Optional */
-void set_race(string r) { race = r; }
+void set_race(string r) {
+    race = r;
+}
 /* optional */
-void set_hp(int hp) { max_hp = hp; hit_point = hp; }
+void set_hp(int hp) {
+    max_hp = hp;
+    hit_point = hp;
+}
 /* optional. Can only be lowered */
-void set_ep(int ep) { if (ep < experience) experience = ep; }
+void set_ep(int ep) {
+    if (ep < experience)
+        experience = ep;
+}
 /* optional */
-void set_al(int al) { alignment = al; }
+void set_al(int al) {
+    alignment = al;
+}
 /* optional */
-void set_short(string sh) { short_desc = sh; long_desc = short_desc + "\n";}
+void set_short(string sh) {
+    short_desc = sh;
+    long_desc = short_desc + "\n";
+}
 /* optional */
-void set_long(string lo) { long_desc = lo; }
+void set_long(string lo) {
+    long_desc = lo;
+}
 /* optional */
-void set_wc(int wc) { weapon_class = wc; }
+void set_wc(int wc) {
+    weapon_class = wc;
+}
 /* optional */
-void set_ac(int ac) { armour_class = ac; }
+void set_ac(int ac) {
+    armour_class = ac;
+}
 /* optional */
-void set_move_at_reset() { move_at_reset = 1; }
+void set_move_at_reset() {
+    move_at_reset = 1;
+}
 /* optional
  * 0: Peaceful.
  * 1: Attack on sight.
@@ -306,7 +328,6 @@ void remove_a_chat(string str) {
     head = a_chat_head->remove_chat(str);
 }
 
-
 /* Catch the talk */
 
 void set_object(object ob) {
@@ -321,31 +342,27 @@ void set_type(string type) {
     talk_type = type;
 }
 
-
 void remove_match(string match) {
     head = head->remove_match(match);
 }
 
-void set_dead_ob(object ob)
-{
+void set_dead_ob(object ob) {
     dead_ob = ob;
 }
 
-void second_life()
-{
+void second_life() {
     /* We have died remove chat and catch_talk */
-    if(head)
-	head->collaps();
-    if(chat_head)
-	chat_head->collaps();
-    if(a_chat_head)
-	a_chat_head->collaps();
-    if(dead_ob)
-	return dead_ob->monster_died(this_object());
+    if (head)
+        head->collaps();
+    if (chat_head)
+        chat_head->collaps();
+    if (a_chat_head)
+        a_chat_head->collaps();
+    if (dead_ob)
+        return dead_ob->monster_died(this_object());
 }
 
-void set_random_pick(int r)
-{
+void set_random_pick(int r) {
     random_pick = r;
 }
 
@@ -354,52 +371,55 @@ void pick_any_obj() {
     int weight;
 
     ob = first_inventory(environment(this_object()));
-    while(ob) {
-	if (ob->get() && ob->short()) {
-	    weight = ob->query_weight();
-	    if (!add_weight(weight)) {
-		say(cap_name + " tries to take " + ob->short() +
-		    " but fails.\n");
-		return;
-	    }
-	    move_object(ob, this_object());
-	    say(cap_name + " takes " + ob->short() + ".\n");
-	    if (ob->weapon_class())
-		ob->wield(ob->query_name());
-	    else if (ob->armour_class())
-		ob->wear(ob->query_name());
-	    return;
-	}
-	ob = next_inventory(ob);
+    while (ob) {
+        if (ob->get() && ob->short()) {
+            weight = ob->query_weight();
+            if (!add_weight(weight)) {
+                say(cap_name + " tries to take " + ob->short() +
+                    " but fails.\n");
+                return;
+            }
+            move_object(ob, this_object());
+            say(cap_name + " takes " + ob->short() + ".\n");
+            if (ob->weapon_class())
+                ob->wield(ob->query_name());
+            else if (ob->armour_class())
+                ob->wear(ob->query_name());
+            return;
+        }
+        ob = next_inventory(ob);
     }
 }
 
-void set_init_ob(object ob)
-{
+void set_init_ob(object ob) {
     init_ob = ob;
 }
 
 void init() {
 
     create_room = environment(me);
-    if(this_player() == me)
-	return;
-    if(init_ob)
-	if(init_ob->monster_init(this_object()))
-	    return;
+    if (this_player() == me)
+        return;
+    if (init_ob)
+        if (init_ob->monster_init(this_object()))
+            return;
     if (attacker_ob) {
-	set_heart_beat(1); /* Turn on heart beat */
+        set_heart_beat(1); /* Turn on heart beat */
     }
-    if(this_player() && !this_player()->query_npc()) {
-	set_heart_beat(1);
-	if (aggressive == 1)
-	    kill_ob = this_player();
+    if (this_player() && !this_player()->query_npc()) {
+        set_heart_beat(1);
+        if (aggressive == 1)
+            kill_ob = this_player();
     }
 }
 
-object query_create_room() { return create_room; }
+object query_create_room() {
+    return create_room;
+}
 
-string query_race() { return race; }
+string query_race() {
+    return race;
+}
 
 /*
  * The monster will heal itself slowly.
@@ -407,13 +427,13 @@ string query_race() { return race; }
 void heal_slowly() {
     hit_point += 120 / (INTERVAL_BETWEEN_HEALING * 2);
     if (hit_point > max_hp)
-	hit_point = max_hp;
+        hit_point = max_hp;
     spell_points += 120 / (INTERVAL_BETWEEN_HEALING * 2);
     if (spell_points > max_hp)
-	spell_points = max_hp;
+        spell_points = max_hp;
     healing = 1;
     if (hit_point < max_hp || spell_points < max_hp)
-	call_out("heal_slowly", 120);
+        call_out("heal_slowly", 120);
     else
-	healing = 0;
+        healing = 0;
 }

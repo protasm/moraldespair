@@ -23,7 +23,9 @@ void long() {
     write("How can you look at a curse ?\n");
 }
 
-int drop() { return 1; }
+int drop() {
+    return 1;
+}
 
 void init() {
     add_action("do_shout", "shout");
@@ -31,13 +33,12 @@ void init() {
 
 int do_shout() {
     if (time() < start_time + 3600) {
-	write("You can't shout with a sore throat !\n");
-	say(this_player()->query_name() +
-	    " makes croaking sounds.\n");
-	return 1;
+        write("You can't shout with a sore throat !\n");
+        say(this_player()->query_name() + " makes croaking sounds.\n");
+        return 1;
     } else {
-	destruct(this_object());
-	return 0;
+        destruct(this_object());
+        return 0;
     }
 }
 

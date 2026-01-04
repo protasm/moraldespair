@@ -40,21 +40,24 @@ object hit_func;
 object wield_func;
 string info;
 
-string query_name() { return name_of_weapon; }
+string query_name() {
+    return name_of_weapon;
+}
 
-void  long() {
+void long() {
     write(long_desc);
 }
 
-void  reset(int arg) {
+void reset(int arg) {
     if (arg)
-	return;
-    wielded = 0; value = 0;
+        return;
+    wielded = 0;
+    value = 0;
 }
 
-void  init() {
+void init() {
     if (read_msg) {
-	add_action("read", "read");
+        add_action("read", "read");
     }
     add_action("wield", "wield");
 }
@@ -65,18 +68,18 @@ int id(string str) {
 
 int wield(string str) {
     if (!id(str))
-	return 0;
+        return 0;
     if (environment() != this_player()) {
-	/* write("You must get it first!\n"); */
-	return 0;
+        /* write("You must get it first!\n"); */
+        return 0;
     }
     if (wielded) {
-	write("You already wield it!\n");
-	return 1;
+        write("You already wield it!\n");
+        return 1;
     }
-    if(wield_func)
-	if(!wield_func->wield(this_object()))
-	    return 1;
+    if (wield_func)
+        if (!wield_func->wield(this_object()))
+            return 1;
     wielded_by = this_player();
     this_player()->wield(this_object());
     wielded = 1;
@@ -85,8 +88,8 @@ int wield(string str) {
 
 string short() {
     if (wielded)
-	if(short_desc)
-	    return short_desc + " (wielded)";
+        if (short_desc)
+            return short_desc + " (wielded)";
     return short_desc;
 }
 
@@ -96,23 +99,22 @@ int weapon_class() {
 
 int drop(int silently) {
     if (wielded) {
-	wielded_by->stop_wielding();
-	wielded = 0;
-	if (!silently)
-	    write("You drop your wielded weapon.\n");
+        wielded_by->stop_wielding();
+        wielded = 0;
+        if (!silently)
+            write("You drop your wielded weapon.\n");
     }
     return 0;
 }
 
 void un_wield() {
     if (wielded)
-	wielded = 0;
+        wielded = 0;
 }
 
-mixed hit(object attacker)
-{
+mixed hit(object attacker) {
     if (hit_func)
-	return hit_func->weapon_hit(attacker);
+        return hit_func->weapon_hit(attacker);
     return 0;
 }
 
@@ -132,7 +134,7 @@ void set_name(string n) {
 
 int read(string str) {
     if (!id(str))
-	return 0;
+        return 0;
     write(read_msg);
     return 1;
 }
@@ -141,29 +143,54 @@ int query_value() {
     return value;
 }
 
-int get() { return 1; }
+int get() {
+    return 1;
+}
 
-int query_weight() { return local_weight; }
+int query_weight() {
+    return local_weight;
+}
 
-void set_class(int c) { class_of_weapon = c; }
+void set_class(int c) {
+    class_of_weapon = c;
+}
 
-void set_weight(int w) { local_weight = w; }
+void set_weight(int w) {
+    local_weight = w;
+}
 
-void set_value(int v) { value = v; }
+void set_value(int v) {
+    value = v;
+}
 
-void set_alt_name(string n) { alt_name = n; }
+void set_alt_name(string n) {
+    alt_name = n;
+}
 
-void set_hit_func(object ob) { hit_func = ob; }
+void set_hit_func(object ob) {
+    hit_func = ob;
+}
 
-void set_wield_func(object ob) { wield_func = ob; }
+void set_wield_func(object ob) {
+    wield_func = ob;
+}
 
-void set_alias(string n) { alias_name = n; }
+void set_alias(string n) {
+    alias_name = n;
+}
 
-void set_short(string sh) { short_desc = sh; long_desc = short_desc + "\n";}
+void set_short(string sh) {
+    short_desc = sh;
+    long_desc = short_desc + "\n";
+}
 
-void set_long(string long) { long_desc = long; }
+void set_long(string long) {
+    long_desc = long;
+}
 
-void set_read(string str) { read_msg = str; }
+void set_read(string str) {
+    read_msg = str;
+}
 
 void set_info(string i) {
     info = i;

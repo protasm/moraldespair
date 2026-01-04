@@ -3,7 +3,7 @@
  * when a player or monster die.
  */
 
-#define DECAY_TIME	120
+#define DECAY_TIME 120
 
 string name;
 int decay;
@@ -19,20 +19,19 @@ void init() {
 
 void reset(string arg) {
     if (arg)
-	return;
+        return;
     name = "noone";
     decay = 2;
 }
 
-void set_name(string n)
-{
+void set_name(string n) {
     name = n;
     call_out("decay", DECAY_TIME);
 }
 
 string short() {
     if (decay < 2)
-	return "The somewhat decayed remains of " + capitalize(name);
+        return "The somewhat decayed remains of " + capitalize(name);
     return "Corpse of " + capitalize(name);
 }
 
@@ -41,54 +40,52 @@ void long() {
 }
 
 int id(string str) {
-    return str == "corpse" || str == "corpse of " + name ||
-	str == "remains";
+    return str == "corpse" || str == "corpse of " + name || str == "remains";
 }
 
-void decay()
-{
+void decay() {
     decay -= 1;
     if (decay > 0) {
-	call_out("decay", 20);
-	return;
+        call_out("decay", 20);
+        return;
     }
     destruct(this_object());
 }
 
-int can_put_and_get() { return 1; }
+int can_put_and_get() {
+    return 1;
+}
 
-int search_obj(object cont)
-{
+int search_obj(object cont) {
     object ob;
     int total;
 
     if (!cont->can_put_and_get())
-	return 0;
+        return 0;
     ob = first_inventory(cont);
-    while(ob) {
-	total += 1;
-	write(ob->short() + ", ");
-	ob = next_inventory(ob);
+    while (ob) {
+        total += 1;
+        write(ob->short() + ", ");
+        ob = next_inventory(ob);
     }
     return total;
 }
 
-int search(string str)
-{
+int search(string str) {
     object ob;
     if (!str || !id(str))
-	return 0;
+        return 0;
     ob = present(str, environment(this_player()));
     if (!ob)
-	ob = present(str, this_player());
+        ob = present(str, this_player());
     if (!ob)
-	return 0;
+        return 0;
     write("You search " + str + ", and find:\n");
     say(this_player()->query_name() + " searches " + str + ".\n");
     if (!search_obj(ob))
-	write("\tNothing.\n");
+        write("\tNothing.\n");
     else
-	write("\n");
+        write("\n");
     return 1;
 }
 

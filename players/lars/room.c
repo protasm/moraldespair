@@ -3,16 +3,14 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg) return;
+    if (arg)
+        return;
 
     set_light(1);
     short_desc = "A room";
     no_castle_flag = 0;
-    long_desc =
-        "A long room\n";
-    dest_dir =
-        ({
-        });
+    long_desc = "A long room\n";
+    dest_dir = ({});
 }
 
 int query_light() {
@@ -37,4 +35,3 @@ int room_is_modified() {
  make your additions below this comment, do NOT remove this comment
 --END-ROOM-MAKER-CODE--
 */
-

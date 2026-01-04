@@ -21,7 +21,7 @@ void long() {
 
 void reset(int arg) {
     if (arg)
-	return;
+        return;
     set_heart_beat(1);
     enable_commands();
     current_room = "start";
@@ -34,12 +34,12 @@ string get_dir(string dir) {
     string rest, tmp_dir, tmp_dest;
 
     rest = data_this_room;
-    while(rest != "") {
-	sscanf(rest, "%s-%s,%s", tmp_dir, tmp_dest, rest);
-	if (tmp_dir == "!" + dir)
-	    return "!";
-	if (tmp_dir == dir)
-	    return tmp_dest;
+    while (rest != "") {
+        sscanf(rest, "%s-%s,%s", tmp_dir, tmp_dest, rest);
+        if (tmp_dir == "!" + dir)
+            return "!";
+        if (tmp_dir == dir)
+            return tmp_dest;
     }
     return "";
 }
@@ -50,15 +50,14 @@ void mark_dir_complete(string dir) {
     rest = data_this_room;
     data_this_room = "";
     room_complete += 1;
-    while(rest != "") {
-	sscanf(rest, "%s-%s,%s", tmp_dir, tmp_dest, rest);
-	if (tmp_dir == dir) {
-	    data_this_room = data_this_room + "!" + tmp_dir + "-" +
-		tmp_dest + "," + rest;
-	    return;
-	}
-	data_this_room = data_this_room + tmp_dir + "-" +
-	    tmp_dest + ",";
+    while (rest != "") {
+        sscanf(rest, "%s-%s,%s", tmp_dir, tmp_dest, rest);
+        if (tmp_dir == dir) {
+            data_this_room =
+                data_this_room + "!" + tmp_dir + "-" + tmp_dest + "," + rest;
+            return;
+        }
+        data_this_room = data_this_room + tmp_dir + "-" + tmp_dest + ",";
     }
     data_this_room = data_this_room + "!" + dir + "-" + ",";
 }
@@ -72,14 +71,14 @@ void get_this_room() {
 
     rest = data;
     data = "";
-    while(rest != "") {
-	sscanf(rest, "%s\n%s", tmp, rest);
-	if (sscanf(tmp, current_room + ":%s(%d)", data_this_room,
-		   room_complete) == 2) {
-	    data = data + rest;
-	    return;
-	}
-	data = data + tmp + "\n";
+    while (rest != "") {
+        sscanf(rest, "%s\n%s", tmp, rest);
+        if (sscanf(tmp, current_room + ":%s(%d)", data_this_room,
+                   room_complete) == 2) {
+            data = data + rest;
+            return;
+        }
+        data = data + tmp + "\n";
     }
     data_this_room = "";
     num_room += 1;
@@ -93,57 +92,56 @@ void heart_beat() {
 
     i = random(6);
     if (i == 0)
-	cmd = "north";
+        cmd = "north";
     else if (i == 1)
-	cmd = "west";
+        cmd = "west";
     else if (i == 2)
-	cmd = "south";
+        cmd = "south";
     else if (i == 3)
-	cmd = "east";
+        cmd = "east";
     else if (i == 4)
-	cmd = "up";
+        cmd = "up";
     else if (i == 5)
-	cmd = "down";
+        cmd = "down";
     scratch = get_dir(cmd);
     if (scratch[0] == '!') {
-	last_fail = cmd;
-	return;
+        last_fail = cmd;
+        return;
     }
     last_fail = "";
     here = environment(this_object());
     command(cmd);
     if (here == environment(this_object()))
-	mark_dir_complete(cmd);
+        mark_dir_complete(cmd);
 }
 
 void insert() {
     if (current_room == "start")
-	return;
-    data = data + current_room + ":" + data_this_room +
-	"(" + room_complete + ")\n";
+        return;
+    data = data + current_room + ":" + data_this_room + "(" + room_complete +
+           ")\n";
 }
 
-void move_player(string dir_dest)
-{
+void move_player(string dir_dest) {
     string dir, dest;
     object ob;
     int is_light;
 
     if (sscanf(dir_dest, "%s#%s", dir, dest) != 2)
-	return;
+        return;
     if (get_dir(dir) == "")
-	data_this_room = data_this_room + dir + "-" + dest + ",";
+        data_this_room = data_this_room + dir + "-" + dest + ",";
     insert();
     log_file("mapper", current_room + ":\t" + dir + "\t" + dest + "\n");
     current_room = dest;
     if (dir == "X")
-	say("The mapper robot falls through a singularity\n");
+        say("The mapper robot falls through a singularity\n");
     else
-	say("The mapper robot leaves " + dir + ".\n");
+        say("The mapper robot leaves " + dir + ".\n");
     move_object(this_object(), dest);
     is_light = set_light(0);
-    if(is_light < 0)
-	is_light = 0;
+    if (is_light < 0)
+        is_light = 0;
     say("The mapper robot arrives.\n");
     get_this_room();
 }
@@ -161,7 +159,6 @@ void show_stats() {
     write("Data:\n" + data + "\n");
     write("Last failed dir: " + last_fail + "\n");
 }
-
 
 void force_us(string str) {
     command(str);

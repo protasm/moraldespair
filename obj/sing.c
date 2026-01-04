@@ -19,6 +19,10 @@ int id(string str) {
     return str == "singularity";
 }
 
-int get() { return 1; }
+int get() {
+    return 1;
+}
 
-int query_value() { return 1; }
+int query_value() {
+    return 1;
+}

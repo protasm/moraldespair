@@ -10,7 +10,7 @@ void long() {
 }
 
 void reset() {
-    exit_num = random(4);	/* "grin" */
+    exit_num = random(4); /* "grin" */
 }
 
 void init() {
@@ -22,32 +22,32 @@ void init() {
 
 int e0() {
     if (exit_num == 0)
-	this_player()->move_player("north#room/maze1/maze4");
+        this_player()->move_player("north#room/maze1/maze4");
     else
-	this_player()->move_player("north#room/maze1/maze2");
+        this_player()->move_player("north#room/maze1/maze2");
     return 1;
 }
 
 int e1() {
     if (exit_num == 1)
-	this_player()->move_player("south#room/maze1/maze4");
+        this_player()->move_player("south#room/maze1/maze4");
     else
-	this_player()->move_player("south#room/maze1/maze1");
+        this_player()->move_player("south#room/maze1/maze1");
     return 1;
 }
 
 int e2() {
     if (exit_num == 2)
-	this_player()->move_player("east#room/maze1/maze4");
+        this_player()->move_player("east#room/maze1/maze4");
     else
-	this_player()->move_player("east#room/well");
+        this_player()->move_player("east#room/well");
     return 1;
 }
 
 int e3() {
     if (exit_num == 3)
-	this_player()->move_player("west#room/maze1/maze4");
+        this_player()->move_player("west#room/maze1/maze4");
     else
-	this_player()->move_player("west#room/well");
+        this_player()->move_player("west#room/well");
     return 1;
 }

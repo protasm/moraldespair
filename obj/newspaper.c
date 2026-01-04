@@ -1,5 +1,5 @@
 string short() {
-    return "A newspaper" ;
+    return "A newspaper";
 }
 
 void long() {
@@ -16,14 +16,20 @@ int id(string str) {
 
 int read(string str) {
     if (!id(str))
-	return 0;
+        return 0;
     say(this_player()->query_name() + " reads the newspaper.\n");
     long();
     return 1;
 }
 
-int query_weight() { return 1; }
+int query_weight() {
+    return 1;
+}
 
-int get() { return 1; }
+int get() {
+    return 1;
+}
 
-int query_value() { return 5; }
+int query_value() {
+    return 5;
+}

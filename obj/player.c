@@ -1,6 +1,6 @@
 #include "input_to.h"
-#include "log.h"
 #include "living.h"
+#include "log.h"
 #if defined(__TLS__)
 #include "configuration.h"
 #include "tls.h"
@@ -9,28 +9,28 @@
 #define WIZ 1
 #define ARCH 0
 
-static object myself;                /* Ourselfs. */
-string title;                /* Our official title. Wiz's can change it. */
-string password;        /* This players crypted password. */
-static string password2;        /* Temporary when setting new password */
+static object myself;    /* Ourselfs. */
+string title;            /* Our official title. Wiz's can change it. */
+string password;         /* This players crypted password. */
+static string password2; /* Temporary when setting new password */
 string al_title;
-int intoxicated;        /* How many ticks to stay intoxicated. */
-int stuffed;                /* How many ticks to stay stuffed */
-int soaked;                /* How many ticks to stay soaked */
+int intoxicated; /* How many ticks to stay intoxicated. */
+int stuffed;     /* How many ticks to stay stuffed */
+int soaked;      /* How many ticks to stay soaked */
 int headache, max_headache;
-string called_from_ip;        /* IP number was used last time */
-string quests;                /* A list of all quests */
-static int time_to_save;        /* Time to autosave. */
+string called_from_ip;   /* IP number was used last time */
+string quests;           /* A list of all quests */
+static int time_to_save; /* Time to autosave. */
 
-static mixed saved_where;     /* Temp... */
-string mailaddr;        /* Email address of player */
-static string it;                /* Last thing referenced. */
-int tot_value;                /* Saved values of this player. */
-static string current_path;        /* Current directory */
-string access_list;        /* What extra directories can be modified */
+static mixed saved_where;   /* Temp... */
+string mailaddr;            /* Email address of player */
+static string it;           /* Last thing referenced. */
+int tot_value;              /* Saved values of this player. */
+static string current_path; /* Current directory */
+string access_list;         /* What extra directories can be modified */
 int stats_is_updated;
 
-#define MAX_SCAR        10
+#define MAX_SCAR 10
 int scar;
 
 static int logon();
@@ -59,24 +59,41 @@ void tls_init(int handshake_result);
 
 /* Some functions to set moving messages. */
 
-int setmout(string m) { msgout = m; return 1; }
-int setmin(string m) { msgin = m; return 1; }
-int setmmout(string m) { mmsgout = m; return 1; }
-int setmmin(string m) { mmsgin = m; return 1; }
+int setmout(string m) {
+    msgout = m;
+    return 1;
+}
+int setmin(string m) {
+    msgin = m;
+    return 1;
+}
+int setmmout(string m) {
+    mmsgout = m;
+    return 1;
+}
+int setmmin(string m) {
+    mmsgin = m;
+    return 1;
+}
 
 int review() {
-    write("mout:\t" + msgout +
-          "\nmin:\t" + msgin +
-          "\nmmout:\t" + mmsgout +
+    write("mout:\t" + msgout + "\nmin:\t" + msgin + "\nmmout:\t" + mmsgout +
           "\nmmin:\t" + mmsgin + "\n");
     return 1;
 }
 
-string query_msgin() { return msgin; }
-string query_msgout() { return msgout; }
-string query_mmsgin() { return mmsgin; }
-string query_mmsgout() { return mmsgout; }
-
+string query_msgin() {
+    return msgin;
+}
+string query_msgout() {
+    return msgout;
+}
+string query_mmsgin() {
+    return mmsgin;
+}
+string query_mmsgout() {
+    return mmsgout;
+}
 
 string version() {
     return "2.04.05";
@@ -84,13 +101,11 @@ string version() {
 
 #if defined(__TLS__)
 /* tls_logon() is called when TLS connections are finished initializing. */
-void tls_logon(int handshake_result)
-{
+void tls_logon(int handshake_result) {
     // Check that the initialization was successful.
-    if (handshake_result < 0)
-    {
+    if (handshake_result < 0) {
         printf("Can't establish a TLS/SSL encrypted connection: %s\n",
-            tls_error(handshake_result));
+               tls_error(handshake_result));
         destruct(this_object());
         return;
     }
@@ -116,8 +131,7 @@ static int logon() {
 
 object other_copy;
 
-static void try_throw_out(string str)
-{
+static void try_throw_out(string str) {
     object ob;
     if (str == "" || (str[0] != 'y' && str[0] != 'Y')) {
         write("Welcome another time then !\n");
@@ -125,7 +139,7 @@ static void try_throw_out(string str)
         return;
     }
     ob = first_inventory(other_copy);
-    while(ob) {
+    while (ob) {
         int weight;
         object next_ob;
         weight = ob->query_weight();
@@ -145,7 +159,7 @@ static void try_throw_out(string str)
     if (restore_object("players/" + name))
         write("Points restored from the other object.\n");
     else
-        destruct(other_copy);        /* Is this really needed ? */
+        destruct(other_copy); /* Is this really needed ? */
     other_copy = 0;
     move_player_to_start(ob);
 #ifdef LOG_ENTER
@@ -157,8 +171,7 @@ static void try_throw_out(string str)
  * Check that a player name is valid. Only allow
  * lowercase letters.
  */
-int valid_name(string str)
-{
+int valid_name(string str) {
     int i, length;
     if (str == "logon") {
         write("Invalid name");
@@ -169,11 +182,11 @@ int valid_name(string str)
         write("Too long name.\n");
         return 0;
     }
-    i=0;
-    while(i<length) {
+    i = 0;
+    while (i < length) {
         if (str[i] < 'a' || str[i] > 'z') {
             write("Invalid characters in name:" + str + "\n");
-            write("Character number was " + (i+1) + ".\n");
+            write("Character number was " + (i + 1) + ".\n");
             return 0;
         }
         i += 1;
@@ -208,7 +221,7 @@ static void logon2(string str) {
     /*
      * Don't do this before the restore !
      */
-    name = str;                        /* Must be here for a new player. */
+    name = str; /* Must be here for a new player. */
     dead = ghost;
     myself = this_player();
     if (is_invis)
@@ -245,10 +258,11 @@ int save_character() {
 void reset(int arg) {
     if (arg)
         return;
-/*
- *   With arg = 0 this function should only be entered once!
- */
-    if(myself) return;
+    /*
+     *   With arg = 0 this function should only be entered once!
+     */
+    if (myself)
+        return;
     if (creator(this_object())) {
         illegal_patch("Cloned player.c");
         destruct(this_object());
@@ -257,7 +271,8 @@ void reset(int arg) {
     level = -1;
     name = "logon";
     cap_name = "Logon";
-    msgin = "arrives"; msgout = "leaves";
+    msgin = "arrives";
+    msgout = "leaves";
     mmsgin = "arrives in a puff of smoke";
     mmsgout = "disappears in a puff of smoke";
     title = "the title less";
@@ -282,20 +297,20 @@ string short() {
 
 void show_scar() {
     int i, j, first, old_value;
-    string * scar_desc;
+    string *scar_desc;
 
-    scar_desc = ({ "left leg", "right leg", "nose", "left arm", "right arm",
-                   "left hand", "right hand", "forhead", "left cheek",
-                   "right cheek" });
+    scar_desc =
+        ({"left leg", "right leg", "nose", "left arm", "right arm", "left hand",
+          "right hand", "forhead", "left cheek", "right cheek"});
     j = 1;
     first = 1;
     old_value = scar;
-    while(i < MAX_SCAR) {
+    while (i < MAX_SCAR) {
         if (scar & j) {
             old_value &= ~j;
             if (first) {
-                write(cap_name + " has a scar on " + query_possessive() +
-                      " " + scar_desc[i]);
+                write(cap_name + " has a scar on " + query_possessive() + " " +
+                      scar_desc[i]);
                 first = 0;
             } else if (old_value) {
                 write(", " + query_possessive() + " " + scar_desc[i]);
@@ -324,15 +339,15 @@ void long() {
     if (ghost || frog)
         return;
     show_scar();
-    if (hit_point < max_hp/10) {
+    if (hit_point < max_hp / 10) {
         write(cap_pronoun + " is in very bad shape.\n");
         return;
     }
-    if (hit_point < max_hp/5) {
+    if (hit_point < max_hp / 5) {
         write(cap_pronoun + " is in bad shape.\n");
         return;
     }
-    if (hit_point < max_hp/2) {
+    if (hit_point < max_hp / 2) {
         write(cap_pronoun + " is not in a good shape.\n");
         return;
     }
@@ -343,8 +358,7 @@ void long() {
     write(cap_pronoun + " is in good shape.\n");
 }
 
-int score(string arg)
-{
+int score(string arg) {
 
     string tmp;
 
@@ -353,8 +367,7 @@ int score(string arg)
         return 1;
     }
 
-    if (arg)
-    {
+    if (arg) {
         write("Str: " + Str + "\n");
         write("Dex: " + Dex + "\n");
         write("Int: " + Int + "\n");
@@ -362,23 +375,20 @@ int score(string arg)
         return 1;
     }
 
-    write("You have " + experience + " experience points, " +
-          money + " gold coins, ");
+    write("You have " + experience + " experience points, " + money +
+          " gold coins, ");
     write(hit_point + " hit points(" + max_hp + ").\n");
     write(spell_points + " spell points.\n");
     if (hunter)
         write("You are hunted by " + hunter->query_name() + ".\n");
-    if (intoxicated || stuffed || soaked)
-    {
+    if (intoxicated || stuffed || soaked) {
         tmp = "You are ";
 
-        if (intoxicated)
-        {
+        if (intoxicated) {
             tmp += "intoxicated";
             if (stuffed && soaked)
                 tmp += ", ";
-            else
-            {
+            else {
                 if (stuffed || soaked)
                     tmp += " and ";
                 else
@@ -386,8 +396,7 @@ int score(string arg)
             }
         }
 
-        if (stuffed)
-        {
+        if (stuffed) {
             tmp += "satiated";
 
             if (soaked)
@@ -410,17 +419,17 @@ int score(string arg)
 
 /* Identify ourself. */
 int id(string str, int lvl) {
-  /*
-   *  Some wizzies make invisibility items useable by
-   *  players , and this will prevent cheating.
-   */
-    if(level < 20)
-        if(str == name || str == "ghost of " + name)
+    /*
+     *  Some wizzies make invisibility items useable by
+     *  players , and this will prevent cheating.
+     */
+    if (level < 20)
+        if (str == name || str == "ghost of " + name)
             return 1;
-  /*
-   *  I think this looks stupid. When I am invisible it is
-   *  because I want to work in PEACE.
-   */
+    /*
+     *  I think this looks stupid. When I am invisible it is
+     *  because I want to work in PEACE.
+     */
     if (is_invis && lvl <= level)
         return 0;
     if (ghost)
@@ -436,16 +445,16 @@ string query_title() {
 
 void set_level(int lev) {
     object scroll;
-    if (lev > 21 || lev < level && level >= 20)
-    {
-        illegal_patch("set_level");                /* NOPE ! */
+    if (lev > 21 || lev < level && level >= 20) {
+        illegal_patch("set_level"); /* NOPE ! */
         return;
     }
     level = lev;
     if (level == 20) {
         scroll = clone_object("doc/examples/init_scroll");
         move_object(scroll, myself);
-        tell_object(myself, "You have been given a scroll containing valuable information. Read it now!\n");
+        tell_object(myself, "You have been given a scroll containing valuable "
+                            "information. Read it now!\n");
         tell_object(myself, "Adding wizard commands...\n");
         wiz_commands();
     }
@@ -524,7 +533,9 @@ static void wiz_commands() {
 */
 
 #define SHOUT_OLD(x) shout(x)
-#define SHOUT(x) gTellstring=x; filter_objects(users(),"filter_tell",this_object())
+#define SHOUT(x)                                                               \
+    gTellstring = x;                                                           \
+    filter_objects(users(), "filter_tell", this_object())
 
 static string gTellstring;
 static int listen_to_shouts_from_level;
@@ -536,11 +547,10 @@ int filter_tell(object ob) {
 }
 
 /* This is called for every shouted string to this player.
-*/
-int catch_shout(string str)
-{
+ */
+int catch_shout(string str) {
     if (this_player()->query_level() >= listen_to_shouts_from_level) {
-        tell_object(this_object(),str);
+        tell_object(this_object(), str);
         return 1;
     }
     return 0;
@@ -551,9 +561,9 @@ int catch_shout(string str)
    This means you can not stop higher level players from shouting to you,
    but you can stop lower levels and your own level.
  */
-int listen_shout(int lev)
-{
-    if (lev && lev <= level+1) listen_to_shouts_from_level=lev;
+int listen_shout(int lev) {
+    if (lev && lev <= level + 1)
+        listen_to_shouts_from_level = lev;
     return listen_to_shouts_from_level;
 }
 
@@ -567,8 +577,8 @@ int earmuffs(string str) {
 
 static int echo_all(string str) {
     if (!str) {
-       write("Echoall what?\n");
-       return 1;
+        write("Echoall what?\n");
+        return 1;
     }
     SHOUT(str + "\n");
     write("You echo: " + str + "\n");
@@ -577,16 +587,15 @@ static int echo_all(string str) {
 
 static int echo(string str) {
     if (!str) {
-       write ("Echo what?\n");
-       return 1;
+        write("Echo what?\n");
+        return 1;
     }
-    say (str + "\n");
-    write ("You echo: " + str + "\n");
+    say(str + "\n");
+    write("You echo: " + str + "\n");
     return 1;
 }
 
-static int echo_to(string str)
-{
+static int echo_to(string str) {
     object ob;
     string who;
     string msg;
@@ -613,17 +622,17 @@ int teleport(string dest) {
     ob = find_living(dest);
     if (ob) {
         ob = environment(ob);
-        if(!is_invis)
+        if (!is_invis)
             say(cap_name + " " + mmsgout + ".\n");
         move_object(myself, ob);
-        if(!is_invis)
+        if (!is_invis)
             say(cap_name + " " + mmsgin + ".\n");
         if (brief)
             write(ob->short() + ".\n");
         else
             ob->long();
         ob = first_inventory(ob);
-        while(ob) {
+        while (ob) {
             if (ob != this_object()) {
                 string short_str;
                 short_str = ob->short();
@@ -646,7 +655,9 @@ int teleport(string dest) {
 int quit() {
     save_me(0);
     drop_all(1);
-    write("Saving "); write(capitalize(name)); write(".\n");
+    write("Saving ");
+    write(capitalize(name));
+    write(".\n");
     if (!is_invis) {
         say(cap_name + " left the game.\n");
     }
@@ -734,8 +745,8 @@ static void heart_beat() {
 
     /* No obvious effects of being stuffed or soaked */
 
-    if (hit_point < max_hp || spell_points < max_sp || intoxicated || headache)
-    {
+    if (hit_point < max_hp || spell_points < max_sp || intoxicated ||
+        headache) {
         time_to_heal -= 1;
         if (time_to_heal < 0) {
             if (headache) {
@@ -762,8 +773,9 @@ static void heart_beat() {
                 if (intoxicated == 0) {
                     headache = max_headache;
                     max_headache = 0;
-                    tell_object(myself,
-                       "You suddenly without reason get a bad headache.\n");
+                    tell_object(
+                        myself,
+                        "You suddenly without reason get a bad headache.\n");
                     hit_point -= 3;
                     if (hit_point < 0)
                         hit_point = 0;
@@ -781,7 +793,7 @@ static void heart_beat() {
 
     if (attacker_ob)
         attack();
-    if (attacker_ob && whimpy && hit_point < max_hp/5)
+    if (attacker_ob && whimpy && hit_point < max_hp / 5)
         run_away();
 }
 
@@ -794,7 +806,7 @@ void add_alignment(int a) {
         write("Bad type argument to add_alignment.\n");
         return;
     }
-    alignment = alignment*9/10 + a;
+    alignment = alignment * 9 / 10 + a;
     if (level > 20)
         return;
     if (alignment > KILL_NEUTRAL_ALIGNMENT * 100) {
@@ -809,15 +821,15 @@ void add_alignment(int a) {
         al_title = "nice";
         return;
     }
-    if (alignment > - KILL_NEUTRAL_ALIGNMENT * 4) {
+    if (alignment > -KILL_NEUTRAL_ALIGNMENT * 4) {
         al_title = "neutral";
         return;
     }
-    if (alignment > - KILL_NEUTRAL_ALIGNMENT * 20) {
+    if (alignment > -KILL_NEUTRAL_ALIGNMENT * 20) {
         al_title = "nasty";
         return;
     }
-    if (alignment > - KILL_NEUTRAL_ALIGNMENT * 100) {
+    if (alignment > -KILL_NEUTRAL_ALIGNMENT * 100) {
         al_title = "evil";
         return;
     }
@@ -930,13 +942,12 @@ int pick_up(string str) {
         return 1;
     }
     item_o = present(item, container_o);
-    if (!item_o){
+    if (!item_o) {
         write("There is no " + item + " in the " + container + ".\n");
         return 1;
     }
     if (!item_o->get(item)) {
-        write("You can not take " + item + " from " +
-              container + ".\n");
+        write("You can not take " + item + " from " + container + ".\n");
         return 1;
     }
     weight = item_o->query_weight();
@@ -1030,7 +1041,7 @@ int add_weight(int w) {
         max = max / 2;
     if (w + local_weight > max)
         return 0;
-    if(w + local_weight < 0)
+    if (w + local_weight < 0)
         return 0;
     local_weight += w;
     return 1;
@@ -1041,8 +1052,7 @@ int add_weight(int w) {
  * a command.
  */
 
-static int in_room(string str)
-{
+static int in_room(string str) {
     string room;
     object old_room;
     string cmd;
@@ -1082,9 +1092,10 @@ int shout_to_all(string str) {
         write("You fail.\n");
         return 1;
     }
-    if (!frog) { SHOUT(cap_name + " shouts: " + str + "\n"); }
-    else {
-      SHOUT(cap_name + " the frog shouts: " + "Hriibit! Hrriiibit!" + "\n");
+    if (!frog) {
+        SHOUT(cap_name + " shouts: " + str + "\n");
+    } else {
+        SHOUT(cap_name + " the frog shouts: " + "Hriibit! Hrriiibit!" + "\n");
     }
     write("Ok.\n");
     return 1;
@@ -1105,7 +1116,7 @@ int inventory() {
     if (test_dark())
         return 1;
     ob = first_inventory(myself);
-    while(ob) {
+    while (ob) {
         string str;
         str = ob->short();
         if (str) {
@@ -1127,7 +1138,7 @@ int look(string str) {
         environment()->long();
         ob = first_inventory(environment());
         max = MAX_LIST;
-        while(ob && max > 0) {
+        while (ob && max > 0) {
             if (ob != myself) {
                 string short_str;
                 short_str = ob->short();
@@ -1167,7 +1178,7 @@ int look(string str) {
         if (living(ob)) {
             object special;
             special = first_inventory(ob);
-            while(special) {
+            while (special) {
                 string extra_str;
                 extra_str = special->extra_look();
                 if (extra_str)
@@ -1176,17 +1187,17 @@ int look(string str) {
             }
         }
         ob_tmp = first_inventory(ob);
-        while(ob_tmp && ob_tmp->short() == 0)
+        while (ob_tmp && ob_tmp->short() == 0)
             ob_tmp = next_inventory(ob_tmp);
         if (ob_tmp) {
-           if (living(ob)) {
+            if (living(ob)) {
                 write("\t" + capitalize(item) + " is carrying:\n");
             } else
                 write("\t" + capitalize(item) + " contains:\n");
         }
         max = MAX_LIST;
         ob = first_inventory(ob);
-        while(ob && max > 0) {
+        while (ob && max > 0) {
             string sh;
             sh = ob->short();
             if (sh)
@@ -1204,8 +1215,7 @@ static int examine(string str) {
     return look("at " + str);
 }
 
-static void check_password(string p)
-{
+static void check_password(string p) {
     write("\n");
     remove_call_out("time_out");
     if (password == 0)
@@ -1217,15 +1227,14 @@ static void check_password(string p)
     }
     move_player_to_start(0);
 #ifdef LOG_ENTER
-    log_file("ENTER", cap_name + ", " + ctime(time())[4..15]+ ".\n");
+    log_file("ENTER", cap_name + ", " + ctime(time())[4..15] + ".\n");
 #endif
 }
 
 /*
  * Give a new password to a player.
  */
-static void new_password(string p)
-{
+static void new_password(string p) {
     write("\n");
     if (!p || p == "") {
         write("Try again another time then.\n");
@@ -1250,9 +1259,13 @@ static void new_password(string p)
         destruct(myself);
         return;
     }
-    password = crypt(password, 0);        /* Generate new seed. */
+    password = crypt(password, 0); /* Generate new seed. */
     "room/adv_guild"->advance(0);
-    set_level(1); set_str(1); set_con(1); set_int(1); set_dex(1);
+    set_level(1);
+    set_str(1);
+    set_con(1);
+    set_int(1);
+    set_dex(1);
     hit_point = max_hp;
     move_player_to_start(0);
 #ifdef LOG_NEWPLAYER
@@ -1260,40 +1273,38 @@ static void new_password(string p)
 #endif
 }
 
-
 static void move_player_to_start(mixed where) {
-  if (!mailaddr || mailaddr == "")
-  {
-    write("Please enter your email address (or 'none'): ");
-    saved_where = where;
-    input_to("getmailaddr");
-    return;
-  }
+    if (!mailaddr || mailaddr == "") {
+        write("Please enter your email address (or 'none'): ");
+        saved_where = where;
+        input_to("getmailaddr");
+        return;
+    }
 
-  move_player_to_start2(where);
+    move_player_to_start2(where);
 }
 
 void set_mailaddr(string addr) {
-  mailaddr = addr;
+    mailaddr = addr;
 }
 
 string query_mailaddr() {
-  return mailaddr;
+    return mailaddr;
 }
 
 static void getmailaddr(string maddr) {
-  mailaddr = maddr;
+    mailaddr = maddr;
 
-  move_player_to_start2(saved_where);
+    move_player_to_start2(saved_where);
 }
 
 static void move_player_to_start2(mixed where) {
-  if (gender == -1) {
-    write("Are you, male, female or other: ");
-    input_to("getgender", 0);
-    return;
-  }
-  move_player_to_start3(where);
+    if (gender == -1) {
+        write("Are you, male, female or other: ");
+        input_to("getgender", 0);
+        return;
+    }
+    move_player_to_start3(where);
 }
 
 /*  This function is called using input_to, and sets the
@@ -1301,27 +1312,24 @@ static void move_player_to_start2(mixed where) {
  */
 static void getgender(string gender_string) {
 
-  gender_string = lower_case(gender_string);
-  if (gender_string[0] == 'm') {
-      write("Welcome, Sir!\n");
-      set_male();
-  }
-  else if (gender_string[0] == 'f') {
-      write("Welcome, Madam!\n");
-      set_female();
-  }
-  else if (gender_string[0] == 'o') {
-      write("Welcome, Creature!\n");
-      set_neuter();
-  }
-  else {
-      write("Sorry, but that is too weird for this game!\n");
-      write("Are you, male, female or other (type m, f or o): ");
-      input_to("getgender");
-      return;
-  }
+    gender_string = lower_case(gender_string);
+    if (gender_string[0] == 'm') {
+        write("Welcome, Sir!\n");
+        set_male();
+    } else if (gender_string[0] == 'f') {
+        write("Welcome, Madam!\n");
+        set_female();
+    } else if (gender_string[0] == 'o') {
+        write("Welcome, Creature!\n");
+        set_neuter();
+    } else {
+        write("Sorry, but that is too weird for this game!\n");
+        write("Are you, male, female or other (type m, f or o): ");
+        input_to("getgender");
+        return;
+    }
 
-  move_player_to_start3(saved_where);
+    move_player_to_start3(saved_where);
 }
 
 static void move_player_to_start3(mixed where) {
@@ -1350,7 +1358,10 @@ static void move_player_to_start3(mixed where) {
         tmp = level;
         if (tmp > 20)
             tmp = 20;
-        set_str(tmp); set_int(tmp); set_con(tmp); set_dex(tmp);
+        set_str(tmp);
+        set_int(tmp);
+        set_con(tmp);
+        set_dex(tmp);
         stats_is_updated = 1;
     }
     /*
@@ -1389,7 +1400,7 @@ static void move_player_to_start3(mixed where) {
         write("Your last login was from " + called_from_ip + "\n");
     called_from_ip = query_ip_number();
     ob = first_inventory(environment());
-    while(ob) {
+    while (ob) {
         if (ob != this_object()) {
             string sh;
             sh = ob->short();
@@ -1402,8 +1413,7 @@ static void move_player_to_start3(mixed where) {
     set_living_name(name);
 }
 
-static int list_files(string path)
-{
+static int list_files(string path) {
     if (!path)
         path = "/" + current_path;
     if (path != "/")
@@ -1412,8 +1422,7 @@ static int list_files(string path)
     return 1;
 }
 
-int tail_file(string path)
-{
+int tail_file(string path) {
     if (!path)
         return 0;
     if (!tail(path))
@@ -1421,8 +1430,7 @@ int tail_file(string path)
     return 1;
 }
 
-int cat_file(string path)
-{
+int cat_file(string path) {
     if (!path)
         return 0;
     if (!cat(path))
@@ -1443,8 +1451,7 @@ static int help(string what) {
     return 1;
 }
 
-static int tell(string str)
-{
+static int tell(string str) {
     object ob;
     string who;
     string msg;
@@ -1473,8 +1480,7 @@ static int tell(string str)
     return 1;
 }
 
-int whisper(string str)
-{
+int whisper(string str) {
     object ob;
     string who;
     string msg;
@@ -1499,18 +1505,18 @@ int whisper(string str)
 }
 
 int list_peoples() {
-    object * list;
+    object *list;
     int i, a;
 
     list = users();
     write("There are now " + sizeof(list) + " players");
-    for (i=0, a=0; i < sizeof(list); i++)
+    for (i = 0, a = 0; i < sizeof(list); i++)
         if (query_idle(list[i]) >= 5 * 60)
             a++;
     if (a)
         write(" (" + (sizeof(list) - a) + " active)");
     write(". " + query_load_average() + "\n");
-    for(i=0; i<sizeof(list); i++) {
+    for (i = 0; i < sizeof(list); i++) {
         string name;
         name = list[i]->query_real_name();
         if (!name)
@@ -1569,8 +1575,7 @@ static int update_object(string str) {
     return 1;
 }
 
-static int edit(string file)
-{
+static int edit(string file) {
     string tmp_file;
     if (!file) {
         ed();
@@ -1585,8 +1590,7 @@ static int edit(string file)
     return 1;
 }
 
-static int heal(string name)
-{
+static int heal(string name) {
     object ob;
 
     if (!name)
@@ -1603,8 +1607,7 @@ static int heal(string name)
     return 1;
 }
 
-static int stat(string name)
-{
+static int stat(string name) {
     object ob;
 
     if (!name)
@@ -1626,8 +1629,7 @@ static int stat(string name)
  * We return true if success.
  */
 
-int drop_one_item(object ob)
-{
+int drop_one_item(object ob) {
     int weight;
 
     if (ob->drop())
@@ -1640,14 +1642,13 @@ int drop_one_item(object ob)
     return 1;
 }
 
-void drop_all(int verbose)
-{
+void drop_all(int verbose) {
     object ob;
     object next_ob;
     if (!myself || !living(myself))
         return;
     ob = first_inventory(myself);
-    while(ob) {
+    while (ob) {
         string out;
         next_ob = next_inventory(ob);
         it = ob->short();
@@ -1660,16 +1661,15 @@ void drop_all(int verbose)
     }
 }
 
-static int shut_down_game(string str)
-{
+static int shut_down_game(string str) {
     if (!str) {
         write("You must give a shutdown reason as argument.\n");
         return 1;
     }
     shout("Game is shut down by " + capitalize(name) + ".\n");
 #ifdef LOG_SHUTDOWN
-    log_file("GAME_LOG", ctime(time()) + " Game shutdown by " + name +
-             "(" + str + ")\n");
+    log_file("GAME_LOG",
+             ctime(time()) + " Game shutdown by " + name + "(" + str + ")\n");
 #endif
     shutdown();
     return 1;
@@ -1678,8 +1678,7 @@ static int shut_down_game(string str)
 /*
  * This one is called when the player wants to change his password.
  */
-static int change_password(string str)
-{
+static int change_password(string str) {
     if (password != 0 && !str) {
         write("Give old password as an argument.\n");
         return 1;
@@ -1694,8 +1693,7 @@ static int change_password(string str)
     return 1;
 }
 
-static void change_password2(string str)
-{
+static void change_password2(string str) {
     if (!str) {
         write("Password not changed.\n");
         return;
@@ -1710,7 +1708,7 @@ static void change_password2(string str)
         write("Wrong! Password not changed.\n");
         return;
     }
-    password = crypt(password2, 0);        /* Generate new seed */
+    password = crypt(password2, 0); /* Generate new seed */
     password2 = 0;
     write("Password changed.\n");
 }
@@ -1725,37 +1723,34 @@ void smart_report(string str) {
     log_file(who + ".rep", current_room + " " + str + "\n");
 }
 
-static int bug(string str)
-{
+static int bug(string str) {
     if (!str) {
         write("Give an argument.\n");
         return 1;
     }
     log_file("BUGS", "\n");
-    log_file("BUGS", cap_name + " (" +
-             object_name(environment(this_object())) + "):\n");
+    log_file("BUGS", cap_name + " (" + object_name(environment(this_object())) +
+                         "):\n");
     log_file("BUGS", str + "\n");
     smart_report("Bug " + cap_name + "\n" + str);
     write("Ok.\n");
     return 1;
 }
 
-static int typo(string str)
-{
+static int typo(string str) {
     if (!str) {
         write("Give an argument.\n");
         return 1;
     }
-    log_file("TYPO", cap_name + " (" +
-             object_name(environment(this_object())) + "):\n");
+    log_file("TYPO", cap_name + " (" + object_name(environment(this_object())) +
+                         "):\n");
     log_file("TYPO", str + "\n");
     smart_report("Typo " + cap_name + "\n" + str);
     write("Ok.\n");
     return 1;
 }
 
-static int idea(string str)
-{
+static int idea(string str) {
     if (!str) {
         write("Give an argument.\n");
         return 1;
@@ -1767,16 +1762,14 @@ static int idea(string str)
     return 1;
 }
 
-static int converse()
-{
+static int converse() {
     write("Give '**' to stop.\n");
     write("]");
     input_to("converse_more");
     return 1;
 }
 
-static void converse_more(string str)
-{
+static void converse_more(string str) {
     string cmd;
     if (str == "**") {
         write("Ok.\n");
@@ -1792,8 +1785,7 @@ static void converse_more(string str)
     input_to("converse_more");
 }
 
-static int toggle_whimpy()
-{
+static int toggle_whimpy() {
     whimpy = !whimpy;
     if (whimpy)
         write("Wimpy mode.\n");
@@ -1802,10 +1794,11 @@ static int toggle_whimpy()
     return 1;
 }
 
-int query_brief() { return brief; }
+int query_brief() {
+    return brief;
+}
 
-int toggle_brief()
-{
+int toggle_brief() {
     brief = !brief;
     if (brief)
         write("Brief mode.\n");
@@ -1817,10 +1810,11 @@ int toggle_brief()
 void add_exp(int e) {
 #ifdef LOG_EXP
     if (this_player() && this_player() != this_object() &&
-      query_ip_number(this_player()) && level < 20 && e >= ROOM_EXP_LIMIT)
-        log_file("EXPERIENCE", ctime(time()) + " " + name + "(" + level +
-                ") " + e + " exp by " + this_player()->query_real_name() +
-                "(" + this_player()->query_level() + ")" +"\n");
+        query_ip_number(this_player()) && level < 20 && e >= ROOM_EXP_LIMIT)
+        log_file("EXPERIENCE", ctime(time()) + " " + name + "(" + level + ") " +
+                                   e + " exp by " +
+                                   this_player()->query_real_name() + "(" +
+                                   this_player()->query_level() + ")" + "\n");
 #endif
     experience += e;
     if (level <= 19)
@@ -1828,34 +1822,29 @@ void add_exp(int e) {
 }
 
 void add_intoxination(int i) {
-    if(i < 0)
-    {
+    if (i < 0) {
         if (-i > intoxicated / 10)
-                i = -intoxicated / 10;
+            i = -intoxicated / 10;
     }
     intoxicated += i;
-    if(intoxicated < 0)
+    if (intoxicated < 0)
         intoxicated = 0;
 }
 
-void add_stuffed(int i)
-{
-    if(i < 0)
-    {
+void add_stuffed(int i) {
+    if (i < 0) {
         if (-i > stuffed / 10)
-                i = -stuffed / 10;
+            i = -stuffed / 10;
     }
     stuffed += i;
     if (stuffed < 0)
         stuffed = 0;
 }
 
-void add_soaked(int i)
-{
-    if(i < 0)
-    {
+void add_soaked(int i) {
+    if (i < 0) {
         if (-i > soaked / 10)
-                i = -soaked / 10;
+            i = -soaked / 10;
     }
     soaked += i;
     if (soaked < 0)
@@ -1866,13 +1855,11 @@ int query_intoxination() {
     return intoxicated;
 }
 
-int query_stuffed()
-{
+int query_stuffed() {
     return stuffed;
 }
 
-int query_soaked()
-{
+int query_soaked() {
     return soaked;
 }
 
@@ -1887,13 +1874,13 @@ int second_life() {
     if (level > 1)
         level = level - 1;
     if (Str > 1)
-        set_str(Str-1);
+        set_str(Str - 1);
     if (Con > 1)
-        set_con(Con-1);
+        set_con(Con - 1);
     if (Dex > 1)
-        set_dex(Dex-1);
+        set_dex(Dex - 1);
     if (Int > 1)
-        set_int(Int-1);
+        set_int(Int - 1);
     msgin = "drifts around";
     msgout = "blows";
     headache = 0;
@@ -1905,14 +1892,14 @@ int second_life() {
 #ifdef LOG_KILLS
     if (attacker_ob)
         log_file("KILLS", name + "(" + level + ")" + " killed by " +
-                 attacker_ob->short() + "(" +
-                 attacker_ob->query_real_name() + "), creator: " +
-                 creator(attacker_ob) + "\n");
+                              attacker_ob->short() + "(" +
+                              attacker_ob->query_real_name() +
+                              "), creator: " + creator(attacker_ob) + "\n");
 #endif
     attacker_ob = 0;
     alt_attacker_ob = 0;
     tell_object(myself, "\nYou die.\nYou have a strange feeling.\n" +
-                "You can see your own dead body from above.\n\n");
+                            "You can see your own dead body from above.\n\n");
 
 #if 1
     death_mark = clone_object("/room/death/death_mark");
@@ -1937,8 +1924,7 @@ int remove_ghost() {
     return 1;
 }
 
-static int trans(string str)
-{
+static int trans(string str) {
     object ob;
     string out;
 
@@ -1953,8 +1939,7 @@ static int trans(string str)
     tell_object(ob, "You are magically transfered somewhere.\n");
     out = ob->query_mmsgin();
     if (!out)
-        out = ob->query_name() +
-            " arrives in a puff of smoke.\n";
+        out = ob->query_name() + " arrives in a puff of smoke.\n";
     else
         out = ob->query_name() + " " + out + ".\n";
     say(out);
@@ -1963,8 +1948,7 @@ static int trans(string str)
     return 1;
 }
 
-int stop_hunting_mode()
-{
+int stop_hunting_mode() {
     if (!hunted) {
         write("You are not hunting anyone.\n");
         return 1;
@@ -1975,8 +1959,7 @@ int stop_hunting_mode()
     return 1;
 }
 
-int drink_alcohol(int strength)
-{
+int drink_alcohol(int strength) {
     if (intoxicated > level + 3) {
         write("You fail to reach the drink with your mouth.\n");
         return 0;
@@ -1997,77 +1980,70 @@ int drink_alcohol(int strength)
     return 1;
 }
 
-int drink_alco(int strength)
-{
-        if (intoxicated + strength > level * 3)
-        {
-                write("You fail to reach the drink with your mouth.\n");
-                return 0;
-        }
+int drink_alco(int strength) {
+    if (intoxicated + strength > level * 3) {
+        write("You fail to reach the drink with your mouth.\n");
+        return 0;
+    }
 
-        intoxicated += strength / 2;
+    intoxicated += strength / 2;
 
-        if (intoxicated < 0)
-                intoxicated = 0;
+    if (intoxicated < 0)
+        intoxicated = 0;
 
-        if (intoxicated == 0)
-                write("You are completely sober.\n");
+    if (intoxicated == 0)
+        write("You are completely sober.\n");
 
-        if (intoxicated > 0 && headache)
-        {
-                headache = 0;
-                tell_object(myself, "Your headache disappears.\n");
-        }
+    if (intoxicated > 0 && headache) {
+        headache = 0;
+        tell_object(myself, "Your headache disappears.\n");
+    }
 
-        if (intoxicated > max_headache)
-                max_headache = intoxicated;
+    if (intoxicated > max_headache)
+        max_headache = intoxicated;
 
-        if (max_headache > 8)
-                max_headache = 8;
+    if (max_headache > 8)
+        max_headache = 8;
 
-        return 1;
+    return 1;
 }
-int drink_soft(int strength)
-{
-        if (soaked + strength > level * 8)
-        {
-                write("You can't possibly drink that much right now!\n" +
-                        "You feel crosslegged enough as it is.\n");
-                return 0;
-        }
+int drink_soft(int strength) {
+    if (soaked + strength > level * 8) {
+        write("You can't possibly drink that much right now!\n" +
+              "You feel crosslegged enough as it is.\n");
+        return 0;
+    }
 
-        soaked += strength * 2;
+    soaked += strength * 2;
 
-        if (soaked < 0)
-                soaked = 0;
+    if (soaked < 0)
+        soaked = 0;
 
-        if (soaked == 0)
-                write("You feel a bit dry in the mouth.\n");
+    if (soaked == 0)
+        write("You feel a bit dry in the mouth.\n");
 
-        return 1;
+    return 1;
 }
 
-int eat_food(int strength)
-{
-        if (stuffed + strength > level * 8)
-        {
-                write("This is much too rich for you right now! Perhaps something lighter?\n");
-                return 0;
-        }
+int eat_food(int strength) {
+    if (stuffed + strength > level * 8) {
+        write("This is much too rich for you right now! Perhaps something "
+              "lighter?\n");
+        return 0;
+    }
 
-        stuffed += strength * 2;
+    stuffed += strength * 2;
 
-        if (stuffed < 0)
-                stuffed = 0;
+    if (stuffed < 0)
+        stuffed = 0;
 
-        if (stuffed == 0)
-                write("Your stomach makes a rumbling sound.\n");
+    if (stuffed == 0)
+        write("Your stomach makes a rumbling sound.\n");
 
-        return 1;
+    return 1;
 }
 
-int spell_missile(string str)
-{
+int spell_missile(string str) {
     object ob;
     if (test_dark())
         return 1;
@@ -2089,8 +2065,7 @@ int spell_missile(string str)
     return 1;
 }
 
-int spell_shock(string str)
-{
+int spell_shock(string str) {
     object ob;
     if (test_dark())
         return 1;
@@ -2112,8 +2087,7 @@ int spell_shock(string str)
     return 1;
 }
 
-int spell_fire_ball(string str)
-{
+int spell_fire_ball(string str) {
     object ob;
     if (test_dark())
         return 1;
@@ -2135,8 +2109,7 @@ int spell_fire_ball(string str)
     return 1;
 }
 
-static int spell_zap(string str)
-{
+static int spell_zap(string str) {
     object ob;
     if (!str)
         ob = attacker_ob;
@@ -2150,8 +2123,7 @@ static int spell_zap(string str)
     return 1;
 }
 
-int give_object(string str)
-{
+int give_object(string str) {
     string item, dest;
     object item_ob, dest_ob;
     int weight;
@@ -2163,9 +2135,9 @@ int give_object(string str)
         return 1;
     if (sscanf(str, "%d coins to %s", coins, dest) == 2)
         item = 0;
-    else if ( sscanf(str, "1 coin to %s", dest) == 1)
+    else if (sscanf(str, "1 coin to %s", dest) == 1)
         coins = 1;
-    else if ( sscanf(str, "coin to %s", dest) == 1)
+    else if (sscanf(str, "coin to %s", dest) == 1)
         coins = 1;
     else if (sscanf(str, "one coin to %s", dest) == 1)
         coins = 1;
@@ -2182,8 +2154,7 @@ int give_object(string str)
             return 1;
         }
         it = item;
-        if (environment(item_ob) == this_object() &&
-            item_ob->drop() == 1) {
+        if (environment(item_ob) == this_object() && item_ob->drop() == 1) {
             return 1;
         } else {
             if (!item_ob->get()) {
@@ -2213,8 +2184,8 @@ int give_object(string str)
         if (coins > 1000 && level < 20)
             save_me(1);
         dest_ob->add_money(coins);
-        tell_object(dest_ob, cap_name + " gives you " + coins +
-            " gold coins.\n");
+        tell_object(dest_ob,
+                    cap_name + " gives you " + coins + " gold coins.\n");
         write("Ok.\n");
         return 1;
     }
@@ -2233,12 +2204,11 @@ int give_object(string str)
 /*
  * Get all items here.
  */
-static void get_all(object from)
-{
+static void get_all(object from) {
     object ob, next_ob;
 
     ob = first_inventory(from);
-    while(ob) {
+    while (ob) {
         string item;
         next_ob = next_inventory(ob);
         item = ob->short();
@@ -2258,8 +2228,7 @@ static void get_all(object from)
     }
 }
 
-static int force_player(string str)
-{
+static int force_player(string str) {
     string who, what;
     object ob;
     if (!str)
@@ -2309,8 +2278,7 @@ int pose() {
     return 0;
 }
 
-static int destruct_local_object(string str)
-{
+static int destruct_local_object(string str) {
     object ob;
     if (!str) {
         write("Destruct what ?\n");
@@ -2330,8 +2298,7 @@ static int destruct_local_object(string str)
     return 1;
 }
 
-static int load(string str)
-{
+static int load(string str) {
     object env;
     if (!str) {
         write("Load what ?\n");
@@ -2351,8 +2318,7 @@ static int load(string str)
     return 1;
 }
 
-static int snoop_on(string str)
-{
+static int snoop_on(string str) {
     object ob;
     int ob_level;
 
@@ -2374,8 +2340,7 @@ static int snoop_on(string str)
     return 1;
 }
 
-int invis()
-{
+int invis() {
     if (is_invis) {
         tell_object(this_object(), "You are already invisible.\n");
         return 1;
@@ -2387,8 +2352,7 @@ int invis()
     return 1;
 }
 
-int vis()
-{
+int vis() {
     if (!is_invis) {
         tell_object(this_object(), "You are not invisible.\n");
         return 1;
@@ -2448,8 +2412,8 @@ mixed valid_read(string str, int lvl) {
     int i;
 
     i = sizeof(str) - 1;
-    while(i>0) {
-        if (str[i] == '.' && str[i-1] == '.') {
+    while (i > 0) {
+        if (str[i] == '.' && str[i - 1] == '.') {
             write("Illegal to have '..' in path.\n");
             return 0;
         }
@@ -2458,21 +2422,20 @@ mixed valid_read(string str, int lvl) {
     file = valid_write(str);
     if (file)
         return file;
-    if (str[0] != '/'){
+    if (str[0] != '/') {
         if (current_path == "")
             str = "/" + str;
         else
             str = "/" + current_path + "/" + str;
     }
-    if (lvl == ARCH)
-    {
-            if (sscanf(str, "/players/%s", file) == 1 && level < 23)
-                return 0;
+    if (lvl == ARCH) {
+        if (sscanf(str, "/players/%s", file) == 1 && level < 23)
+            return 0;
     }
     if (sscanf(str, "/%s", file) == 1)
         return file;
     write("Bad file name: " + str + "\n");
-    return 0;                /* Should not happen */
+    return 0; /* Should not happen */
 }
 
 static int wiz_score_list(string arg) {
@@ -2501,7 +2464,7 @@ static int local_commands() {
  */
 int compute_values(object ob) {
     int v;
-    while(ob) {
+    while (ob) {
         int tmp;
         object next_ob;
 
@@ -2517,8 +2480,7 @@ int compute_values(object ob) {
     return v;
 }
 
-void save_me(int value_items)
-{
+void save_me(int value_items) {
     if (value_items)
         tot_value = compute_values(first_inventory(this_object()));
     else
@@ -2530,9 +2492,7 @@ void save_me(int value_items)
 int illegal_patch(string what) {
     write("You are struck by a mental bolt from the interior of the game.\n");
     log_file("ILLEGAL", ctime(time()) + ":\n");
-    log_file("ILLEGAL",
-             this_player()->query_real_name() + " " +
-             what + "\n");
+    log_file("ILLEGAL", this_player()->query_real_name() + " " + what + "\n");
     return 0;
 }
 
@@ -2540,18 +2500,17 @@ void load_auto_obj(string str) {
     string file, argument, rest;
     object ob;
 
-    while(str && str != "") {
+    while (str && str != "") {
         if (sscanf(str, "%s:%s^!%s", file, argument, rest) != 3) {
             write("Auto load string corrupt.\n");
             return;
         }
         str = rest;
         ob = find_object(file);
-        if (!ob)
-    {
-        write("Can't autoload '" + file + "': not in game.\n");
+        if (!ob) {
+            write("Can't autoload '" + file + "': not in game.\n");
             continue;
-    }
+        }
         ob = clone_object(file);
         if (argument)
             ob->init_arg(argument);
@@ -2565,7 +2524,7 @@ void compute_auto_str() {
 
     auto_load = "";
     ob = first_inventory(this_object());
-    while(ob) {
+    while (ob) {
         str = ob->query_auto_load();
         ob = next_inventory(ob);
         if (!str)
@@ -2581,7 +2540,7 @@ mixed query_quests(string str) {
     if (str == 0)
         return quests;
     rest = quests;
-    while(rest) {
+    while (rest) {
         if (str == rest)
             return 1;
         i = sscanf(rest, "%s#%s", tmp, rest_tmp);
@@ -2604,11 +2563,11 @@ int set_quest(string q) {
 #ifdef LOG_SET_QUEST
     if (previous_object()) {
         log_file("QUESTS", name + ": " + q + " from " +
-                 object_name(previous_object()) + "\n");
+                               object_name(previous_object()) + "\n");
         if (this_player() && this_player() != this_object() &&
-          query_ip_number(this_player()))
-            log_file("QUESTS", "Done by " +
-                     this_player()->query_real_name() + "\n");
+            query_ip_number(this_player()))
+            log_file("QUESTS",
+                     "Done by " + this_player()->query_real_name() + "\n");
     }
 #endif /* LOG_SET_QUEST */
     if (quests == 0)
@@ -2627,13 +2586,12 @@ void time_out() {
     destruct(this_object());
 }
 
-int who()
-{
-    object * list;
+int who() {
+    object *list;
     int i;
 
     list = users();
-    while(i<sizeof(list)) {
+    while (i < sizeof(list)) {
         string sh;
         sh = list[i]->short();
         if (sh == 0 && level >= 20)
@@ -2654,12 +2612,12 @@ static int cd(string str) {
         if (current_path == "")
             return 0;
         i = sizeof(current_path) - 1;
-        while(i > 0 && current_path[i] != '/')
+        while (i > 0 && current_path[i] != '/')
             i -= 1;
         if (i == 0)
             current_path = "";
         else
-            current_path = current_path[0..i-1];
+            current_path = current_path[0..i - 1];
     } else if (!str)
         current_path = "players/" + name;
     else if (str == "/")
@@ -2678,7 +2636,7 @@ static int cd(string str) {
 
 #define CHUNK 16
 
-static string more_file;        /* Used by the more command */
+static string more_file; /* Used by the more command */
 static int more_line;
 
 int more(string str) {
@@ -2804,20 +2762,17 @@ void add_standard_commands() {
 }
 
 #if defined(__TLS__)
-static int tls(string str)
-{
+static int tls(string str) {
     int secure_now = tls_query_connection_state(this_object()) > 0;
-    if(secure_now)
-    {
+    if (secure_now) {
         mixed *cipher_info = tls_query_connection_info(this_object());
         printf("You are presently connected via a TLS secured connection.\n"
                "Protocol: %s Ciphersuite: %s\n",
                to_string(cipher_info[TLS_PROT]),
                to_string(cipher_info[TLS_CIPHER]));
-    }
-    else
-    {
-        printf("You are presently connected via an insecure telnet connection.\n");
+    } else {
+        printf(
+            "You are presently connected via an insecure telnet connection.\n");
     }
     return 1;
 }

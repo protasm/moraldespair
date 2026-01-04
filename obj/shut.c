@@ -11,7 +11,7 @@ inherit "obj/monster";
 void reset(int arg) {
     ::reset(arg);
     if (arg)
-	return;
+        return;
     set_name("armageddon");
     set_level(19);
     set_wc(40);
@@ -23,27 +23,26 @@ void reset(int arg) {
     move_player("X#domain/original/area/vesla/sanctuary");
 }
 
-void shut(int seconds)
-{
+void shut(int seconds) {
     int i;
 
     if (!intp(seconds)) {
-	write("Bad argument\n");
-	return;
+        write("Bad argument\n");
+        return;
     }
     if (seconds == 0) {
-	write("No time given\n");
-	return;
+        write("No time given\n");
+        return;
     }
     set_long("He is firmly concentrated on counting.\n");
     i = remove_call_out("cont_shutting");
     if (i > 0) {
-	i = (i + 10) * 4;
-	if (i < seconds) {
-	    write("There was already a shutdown in process, " + i +
-		  " seconds.\n");
-	    seconds = i;
-	}
+        i = (i + 10) * 4;
+        if (i < seconds) {
+            write("There was already a shutdown in process, " + i +
+                  " seconds.\n");
+            seconds = i;
+        }
     }
     call_out("cont_shutting", 0, seconds * 60);
 }
@@ -55,24 +54,23 @@ void cont_shutting(int seconds) {
     int new_delay;
 
     if (seconds <= 0) {
-	shout(cap_name + " shouts: I will reboot now.\n");
-	shutdown();
-	return;
+        shout(cap_name + " shouts: I will reboot now.\n");
+        shutdown();
+        return;
     }
     if (seconds <= 240 && !transport_offer) {
-	shout(cap_name +
-	    " shouts: Tell me if you want a trip to the shop !\n");
-	transport_offer = 1;
+        shout(cap_name + " shouts: Tell me if you want a trip to the shop !\n");
+        transport_offer = 1;
     }
     new_delay = seconds * 3 / 4 - 10;
     call_out("cont_shutting", seconds - new_delay, new_delay);
     delay = "";
     if (seconds > 59) {
-	delay = seconds / 60 + " minutes ";
-	seconds = seconds % 60;
+        delay = seconds / 60 + " minutes ";
+        seconds = seconds % 60;
     }
     if (seconds != 0)
-	delay += seconds + " seconds";
+        delay += seconds + " seconds";
     shout(cap_name + " shouts: Game reboot in " + delay + ".\n");
 }
 
@@ -81,8 +79,8 @@ void catch_tell(string str) {
     object ob;
 
     if (!transport_offer)
-	return;
+        return;
     if (sscanf(str, "%s tells you: %s", who, what) != 2)
-	return;
+        return;
     this_player()->move_player("X#room/shop");
 }

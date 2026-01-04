@@ -1,5 +1,5 @@
 string short() {
-    return "A list of the top players" ;
+    return "A list of the top players";
 }
 
 void long() {
@@ -12,19 +12,25 @@ void init() {
 
 int id(string str) {
     return str == "list" || str == "top" || str == "top players" ||
-	str == "list of top players" || str == "top list";
+           str == "list of top players" || str == "top list";
 }
 
 int read(string str) {
     if (!id(str))
-	return 0;
+        return 0;
     say(this_player()->query_name() + " reads the top list.\n");
     long();
     return 1;
 }
 
-int query_weight() { return 1; }
+int query_weight() {
+    return 1;
+}
 
-int get() { return 1; }
+int get() {
+    return 1;
+}
 
-int query_value() { return 5; }
+int query_value() {
+    return 5;
+}
