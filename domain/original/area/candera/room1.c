@@ -12,5 +12,6 @@ void reset(int arg) {
         "domain/original/area/candera/room57", "south",
         "domain/original/area/candera/room2", "east",
         "domain/original/area/candera/room56", "west",
+	"domain/original/area/roadway/room1", "exit",
     });
 }

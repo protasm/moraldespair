@@ -10,5 +10,6 @@ void reset(int arg) {
     long_desc = "The Gate to the Wilderness.\n";
     dest_dir = ({
         "domain/original/area/vesla/room116", "west",
+	"domain/original/area/roadway/room14", "exit",
     });
 }
