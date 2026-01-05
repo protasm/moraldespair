@@ -6,3 +6,4 @@ obj/monster
 obj/treasure
 obj/weapon
 obj/armour
+domain/original/area/vesla/sanctuary.c

@@ -567,3 +567,7 @@ domain/lp-245/room/yard.c line 1 before 'object beg': Cannot #include 'room.h'
 domain/lp-245/room/yard.c line 13 before ' 1;': Variable no_castle_flag not declared
 obj/living.c line 1 before end of line: Cannot #include 'log.h'
 obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/original/area/vesla/peaceful_park1.c line 3 before ' reset(int': syntax error
+domain/original/area/vesla/peaceful_park1.c line 3 before ' reset(int': syntax error
+domain/original/area/vesla/peaceful_park1.c line 3 before ' reset(int': syntax error
+domain/original/area/vesla/sanctuary.c line 27 before ';': Undefined function 'show_clock'

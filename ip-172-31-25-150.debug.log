@@ -1,5 +1,5 @@
-2026.01.05 01:17:12 LDMud 3.6.8 (3.6.8) (release)
-2026.01.05 01:17:12 Seeding PRG from /dev/urandom.
-2026.01.05 01:17:12 Attempting to start erq '/opt/ldmud/bin/erq'.
-2026.01.05 01:17:12 UDP recv-socket requested for port: 4246
-2026.01.05 01:17:12 LDMud ready for users.
+2026.01.05 01:47:31 LDMud 3.6.8 (3.6.8) (release)
+2026.01.05 01:47:31 Seeding PRG from /dev/urandom.
+2026.01.05 01:47:31 Attempting to start erq '/opt/ldmud/bin/erq'.
+2026.01.05 01:47:31 UDP recv-socket requested for port: 4246
+2026.01.05 01:47:31 LDMud ready for users.

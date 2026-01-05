@@ -1,9 +1,9 @@
-#include "std.h"
+inherit "room/room";
 
 int reboot_time, time_from_reset, last_reset_cycle;
 int list_length;
 
-void reset(string arg) {
+void reset(int arg) {
     if (time_from_reset)
         last_reset_cycle = time() - time_from_reset;
 
@@ -15,72 +15,77 @@ void reset(string arg) {
     set_light(1);
 
     reboot_time = time();
+    short_desc = "Sanctuary";
+    long_desc = "Sanctuary.\n";
+    dest_dir = ({
+        "domain/original/area/vesla/peaceful_park1", "south",
+    });
 }
 
-void init() {
-    add_action("south", "south");
-}
+void show_clock() {
+    int i, j;
 
-string short() {
-    return "Sanctuary";
+    write("The clock shows ");
+
+    i = time() - reboot_time;
+    j = i / 60 / 60 / 24;
+
+    if (j == 1)
+        write("1 day ");
+    else if (j > 0)
+        write(j + " days ");
+
+    i -= j * 60 * 60 * 24;
+    j = i / 60 / 60;
+
+    if (j == 1)
+        write("1 hour ");
+    else if (j > 0)
+        write(j + " hours ");
+
+    i -= j * 60 * 60;
+    j = i / 60;
+
+    if (j == 1)
+        write("1 minute ");
+    else if (j > 0)
+        write(j + " minutes ");
+
+    i -= j * 60;
+
+    if (i == 1)
+        write("1 second");
+    else if (i > 0)
+        write(i + " seconds");
+
+    write("\n");
+
+    if (this_player()->query_level() < 20)
+        return;
+
+    write("Time since reset is " + (time() - time_from_reset) +
+      " seconds.\n");
+
+    if (last_reset_cycle)
+        write("Reset cycle: " + last_reset_cycle + "\n");
+
+    write("Free block list length: " + list_length + "\n");
+
+    return;
 }
 
 void long(string str) {
     if (str == "clock") {
-        int i, j;
-
-        write("The clock shows ");
-
-        i = time() - reboot_time;
-        j = i / 60 / 60 / 24;
-
-        if (j == 1)
-            write("1 day ");
-        else if (j > 0)
-            write(j + " days ");
-
-        i -= j * 60 * 60 * 24;
-        j = i / 60 / 60;
-
-        if (j == 1)
-            write("1 hour ");
-        else if (j > 0)
-            write(j + " hours ");
-
-        i -= j * 60 * 60;
-        j = i / 60;
-
-        if (j == 1)
-            write("1 minute ");
-        else if (j > 0)
-            write(j + " minutes ");
-
-        i -= j * 60;
-
-        if (i == 1)
-            write("1 second");
-        else if (i > 0)
-            write(i + " seconds");
-
-        write("\n");
-
-        if (this_player()->query_level() < 20)
-            return;
-
-        write("Time since reset is " + (time() - time_from_reset) +
-              " seconds.\n");
-
-        if (last_reset_cycle)
-            write("Reset cycle: " + last_reset_cycle + "\n");
-
-        write("Free block list length: " + list_length + "\n");
+        show_clock();
 
         return;
     }
 
-    write(short() + "\n");
+    write("Sanctuary\n");
     write("There is a clock here.\n");
     write("There is an exit to the south.\n");
+
+    return;
 }
 
 int id(string str) {
@@ -93,13 +98,6 @@ int pray() {
 
 int prevent_look_at_inv(string str) {
     return str != 0;
-}
-
-int south() {
-    this_player()->move_player(
-        "south#domain/original/area/vesla/peaceful_park1");
-
-    return 1;
 }
 
 int query_drop_castle() {
