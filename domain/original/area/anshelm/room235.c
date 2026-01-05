@@ -10,5 +10,6 @@ void reset(int arg) {
     long_desc = "Before the Anshelm Gatehouse.\n";
     dest_dir = ({
         "domain/original/area/anshelm/room236", "north",
+        "domain/original/area/roadway/room42", "exit",
     });
 }
