@@ -1,0 +1,17 @@
+inherit "room/room";
+
+void reset(int arg) {
+    if (arg)
+        return;
+
+    set_light(1);
+
+    short_desc = "A peaceful park";
+    long_desc = "A peaceful park.\n";
+    dest_dir = ({
+        "domain/original/area/vesla/room119", "south",
+        "domain/original/area/vesla/room815", "west",
+        "domain/original/area/vesla/peaceful_park1", "east",
+        "domain/original/area/vesla/room231", "north",
+    });
+}
