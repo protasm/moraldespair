@@ -97,6 +97,7 @@ void long(string str) {
     }
     if (!str) {
         write(long_desc);
+
         write(exitsDescription(0));
         return;
     }
