@@ -1,1 +1,476 @@
-{"mudlet":{"version":"unknown"},"rooms":[{"name":"North Moat","environment":-1,"exits":{"east":1651,"west":1673},"weight":1,"id":1650,"area":{"id":32}},{"name":"North Moat","environment":-1,"exits":{"east":1652,"west":1650},"weight":1,"id":1651,"area":{"id":32}},{"name":"North Moat","environment":-1,"exits":{"east":1654,"west":1651},"weight":1,"id":1652,"area":{"id":32}},{"name":"North Moat","environment":-1,"exits":{"west":1652,"south":1655},"weight":1,"id":1654,"area":{"id":32}},{"name":"East Moat","environment":-1,"exits":{"south":1656,"north":1654},"weight":1,"id":1655,"area":{"id":32}},{"name":"East Moat","environment":-1,"exits":{"south":1657,"north":1655},"weight":1,"id":1656,"area":{"id":32}},{"name":"East Moat","environment":-1,"exits":{"south":1658,"north":1656},"weight":1,"id":1657,"area":{"id":32}},{"name":"East Moat","environment":-1,"exits":{"south":1659,"north":1657},"weight":1,"id":1658,"area":{"id":32}},{"name":"East Moat","environment":-1,"exits":{"south":1660,"north":1658},"weight":1,"id":1659,"area":{"id":32}},{"name":"East Moat","environment":-1,"exits":{"south":1661,"north":1659},"weight":1,"id":1660,"area":{"id":32}},{"name":"East Moat","environment":-1,"exits":{"south":1662,"north":1660},"weight":1,"id":1661,"area":{"id":32}},{"name":"East Moat","environment":-1,"exits":{"south":1663,"north":1661},"weight":1,"id":1662,"area":{"id":32}},{"name":"East Moat","environment":-1,"exits":{"south":1664,"north":1662},"weight":1,"id":1663,"area":{"id":32}},{"name":"South Moat","environment":-1,"exits":{"west":1665,"north":1663},"weight":1,"id":1664,"area":{"id":32}},{"name":"South Moat","environment":-1,"exits":{"east":1664,"west":1666},"weight":1,"id":1665,"area":{"id":32}},{"name":"South Moat","environment":-1,"exits":{"east":1665,"west":1667},"weight":1,"id":1666,"area":{"id":32}},{"name":"South Moat","environment":-1,"exits":{"east":1666,"west":1668},"weight":1,"id":1667,"area":{"id":32}},{"name":"South Moat","environment":-1,"exits":{"east":1667,"west":1669},"weight":1,"id":1668,"area":{"id":32}},{"name":"South Moat","environment":-1,"exits":{"east":1668,"west":1670},"weight":1,"id":1669,"area":{"id":32}},{"name":"South Moat","environment":-1,"exits":{"east":1669,"west":1671},"weight":1,"id":1670,"area":{"id":32}},{"name":"South Moat","environment":-1,"exits":{"east":1670,"west":1672},"weight":1,"id":1671,"area":{"id":32}},{"name":"South Moat","environment":-1,"exits":{"east":1671,"north":1686},"weight":1,"id":1672,"area":{"id":32}},{"name":"North Moat - Under Draw Bridge","environment":-1,"exits":{"east":1650,"west":1674},"weight":1,"id":1673,"area":{"id":32}},{"name":"North Moat","environment":-1,"exits":{"east":1673,"west":1675},"weight":1,"id":1674,"area":{"id":32}},{"name":"North Moat","environment":-1,"exits":{"east":1674,"west":1676},"weight":1,"id":1675,"area":{"id":32}},{"name":"North Moat","environment":-1,"exits":{"east":1675,"west":1677},"weight":1,"id":1676,"area":{"id":32}},{"name":"North Moat","environment":-1,"exits":{"east":1676,"south":1678},"weight":1,"id":1677,"area":{"id":32}},{"name":"West Moat","environment":-1,"exits":{"south":1679,"north":1677},"weight":1,"id":1678,"area":{"id":32}},{"name":"West Moat","environment":-1,"exits":{"south":1680,"north":1678},"weight":1,"id":1679,"area":{"id":32}},{"name":"West Moat","environment":-1,"exits":{"south":1681,"north":1679},"weight":1,"id":1680,"area":{"id":32}},{"name":"West Moat","environment":-1,"exits":{"south":1682,"north":1680},"weight":1,"id":1681,"area":{"id":32}},{"name":"West Moat","environment":-1,"exits":{"south":1683,"north":1681},"weight":1,"id":1682,"area":{"id":32}},{"name":"West Moat","environment":-1,"exits":{"south":1684,"north":1682},"weight":1,"id":1683,"area":{"id":32}},{"name":"West Moat","environment":-1,"exits":{"south":1685,"north":1683},"weight":1,"id":1684,"area":{"id":32}},{"name":"West Moat","environment":-1,"exits":{"south":1686,"north":1684},"weight":1,"id":1685,"area":{"id":32}},{"name":"West Moat","environment":-1,"exits":{"south":1672,"north":1685},"weight":1,"id":1686,"area":{"id":32}}],"exportedAt":"2026-01-05T00:19:21Z"}
+{
+  "mudlet": {
+    "version": "unknown"
+  },
+  "rooms": [
+    {
+      "name": "North Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1651,
+        "west": 1673
+      },
+      "weight": 1,
+      "id": 1650,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "North Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1652,
+        "west": 1650
+      },
+      "weight": 1,
+      "id": 1651,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "North Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1654,
+        "west": 1651
+      },
+      "weight": 1,
+      "id": 1652,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "North Moat",
+      "environment": -1,
+      "exits": {
+        "west": 1652,
+        "south": 1655
+      },
+      "weight": 1,
+      "id": 1654,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "East Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1656,
+        "north": 1654
+      },
+      "weight": 1,
+      "id": 1655,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "East Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1657,
+        "north": 1655
+      },
+      "weight": 1,
+      "id": 1656,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "East Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1658,
+        "north": 1656
+      },
+      "weight": 1,
+      "id": 1657,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "East Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1659,
+        "north": 1657
+      },
+      "weight": 1,
+      "id": 1658,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "East Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1660,
+        "north": 1658
+      },
+      "weight": 1,
+      "id": 1659,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "East Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1661,
+        "north": 1659
+      },
+      "weight": 1,
+      "id": 1660,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "East Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1662,
+        "north": 1660
+      },
+      "weight": 1,
+      "id": 1661,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "East Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1663,
+        "north": 1661
+      },
+      "weight": 1,
+      "id": 1662,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "East Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1664,
+        "north": 1662
+      },
+      "weight": 1,
+      "id": 1663,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "South Moat",
+      "environment": -1,
+      "exits": {
+        "west": 1665,
+        "north": 1663
+      },
+      "weight": 1,
+      "id": 1664,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "South Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1664,
+        "west": 1666
+      },
+      "weight": 1,
+      "id": 1665,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "South Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1665,
+        "west": 1667
+      },
+      "weight": 1,
+      "id": 1666,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "South Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1666,
+        "west": 1668
+      },
+      "weight": 1,
+      "id": 1667,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "South Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1667,
+        "west": 1669
+      },
+      "weight": 1,
+      "id": 1668,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "South Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1668,
+        "west": 1670
+      },
+      "weight": 1,
+      "id": 1669,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "South Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1669,
+        "west": 1671
+      },
+      "weight": 1,
+      "id": 1670,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "South Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1670,
+        "west": 1672
+      },
+      "weight": 1,
+      "id": 1671,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "South Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1671,
+        "north": 1686
+      },
+      "weight": 1,
+      "id": 1672,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "North Moat - Under Draw Bridge",
+      "environment": -1,
+      "exits": {
+        "east": 1650,
+        "west": 1674
+      },
+      "weight": 1,
+      "id": 1673,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "North Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1673,
+        "west": 1675
+      },
+      "weight": 1,
+      "id": 1674,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "North Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1674,
+        "west": 1676
+      },
+      "weight": 1,
+      "id": 1675,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "North Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1675,
+        "west": 1677
+      },
+      "weight": 1,
+      "id": 1676,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "North Moat",
+      "environment": -1,
+      "exits": {
+        "east": 1676,
+        "south": 1678
+      },
+      "weight": 1,
+      "id": 1677,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "West Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1679,
+        "north": 1677
+      },
+      "weight": 1,
+      "id": 1678,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "West Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1680,
+        "north": 1678
+      },
+      "weight": 1,
+      "id": 1679,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "West Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1681,
+        "north": 1679
+      },
+      "weight": 1,
+      "id": 1680,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "West Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1682,
+        "north": 1680
+      },
+      "weight": 1,
+      "id": 1681,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "West Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1683,
+        "north": 1681
+      },
+      "weight": 1,
+      "id": 1682,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "West Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1684,
+        "north": 1682
+      },
+      "weight": 1,
+      "id": 1683,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "West Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1685,
+        "north": 1683
+      },
+      "weight": 1,
+      "id": 1684,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "West Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1686,
+        "north": 1684
+      },
+      "weight": 1,
+      "id": 1685,
+      "area": {
+        "id": 32
+      }
+    },
+    {
+      "name": "West Moat",
+      "environment": -1,
+      "exits": {
+        "south": 1672,
+        "north": 1685
+      },
+      "weight": 1,
+      "id": 1686,
+      "area": {
+        "id": 32
+      }
+    }
+  ],
+  "exportedAt": "2026-01-05T00:19:21Z"
+}

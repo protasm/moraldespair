@@ -1,1 +1,163 @@
-{"mudlet":{"version":"unknown"},"rooms":[{"name":"Cemetery Lane.","environment":-1,"exits":{"south":128,"north":882},"weight":1,"id":881,"area":{"id":12}},{"name":"Cemetery Lane.","environment":-1,"exits":{"south":881,"north":883},"weight":1,"id":882,"area":{"id":12}},{"name":"A cemetery.","environment":-1,"exits":{"east":884,"south":882},"weight":1,"id":883,"area":{"id":12}},{"name":"A cemetery.","environment":-1,"exits":{"west":883,"north":885},"weight":1,"id":884,"area":{"id":12}},{"name":"A cemetery.","environment":-1,"exits":{"west":886,"south":884},"weight":1,"id":885,"area":{"id":12}},{"name":"A cemetery.","environment":-1,"exits":{"east":885,"north":887},"weight":1,"id":886,"area":{"id":12}},{"name":"A cemetery.","environment":-1,"exits":{"south":886,"west":889,"east":892,"north":888},"weight":1,"id":887,"area":{"id":12}},{"name":"A cemetery.","environment":-1,"exits":{"south":887},"weight":1,"id":888,"area":{"id":12}},{"name":"A cemetery.","environment":-1,"exits":{"east":887,"south":890},"weight":1,"id":889,"area":{"id":12}},{"name":"A cemetery.","environment":-1,"exits":{"south":891,"north":889},"weight":1,"id":890,"area":{"id":12}},{"name":"Thieves Guild","environment":-1,"exits":{"north":890},"weight":1,"id":891,"area":{"id":12}},{"name":"A cemetery.","environment":-1,"exits":{"west":887},"weight":1,"id":892,"area":{"id":12}}],"exportedAt":"2026-01-05T00:19:21Z"}
+{
+  "mudlet": {
+    "version": "unknown"
+  },
+  "rooms": [
+    {
+      "name": "Cemetery Lane.",
+      "environment": -1,
+      "exits": {
+        "south": 128,
+        "north": 882
+      },
+      "weight": 1,
+      "id": 881,
+      "area": {
+        "id": 12
+      }
+    },
+    {
+      "name": "Cemetery Lane.",
+      "environment": -1,
+      "exits": {
+        "south": 881,
+        "north": 883
+      },
+      "weight": 1,
+      "id": 882,
+      "area": {
+        "id": 12
+      }
+    },
+    {
+      "name": "A cemetery.",
+      "environment": -1,
+      "exits": {
+        "east": 884,
+        "south": 882
+      },
+      "weight": 1,
+      "id": 883,
+      "area": {
+        "id": 12
+      }
+    },
+    {
+      "name": "A cemetery.",
+      "environment": -1,
+      "exits": {
+        "west": 883,
+        "north": 885
+      },
+      "weight": 1,
+      "id": 884,
+      "area": {
+        "id": 12
+      }
+    },
+    {
+      "name": "A cemetery.",
+      "environment": -1,
+      "exits": {
+        "west": 886,
+        "south": 884
+      },
+      "weight": 1,
+      "id": 885,
+      "area": {
+        "id": 12
+      }
+    },
+    {
+      "name": "A cemetery.",
+      "environment": -1,
+      "exits": {
+        "east": 885,
+        "north": 887
+      },
+      "weight": 1,
+      "id": 886,
+      "area": {
+        "id": 12
+      }
+    },
+    {
+      "name": "A cemetery.",
+      "environment": -1,
+      "exits": {
+        "south": 886,
+        "west": 889,
+        "east": 892,
+        "north": 888
+      },
+      "weight": 1,
+      "id": 887,
+      "area": {
+        "id": 12
+      }
+    },
+    {
+      "name": "A cemetery.",
+      "environment": -1,
+      "exits": {
+        "south": 887
+      },
+      "weight": 1,
+      "id": 888,
+      "area": {
+        "id": 12
+      }
+    },
+    {
+      "name": "A cemetery.",
+      "environment": -1,
+      "exits": {
+        "east": 887,
+        "south": 890
+      },
+      "weight": 1,
+      "id": 889,
+      "area": {
+        "id": 12
+      }
+    },
+    {
+      "name": "A cemetery.",
+      "environment": -1,
+      "exits": {
+        "south": 891,
+        "north": 889
+      },
+      "weight": 1,
+      "id": 890,
+      "area": {
+        "id": 12
+      }
+    },
+    {
+      "name": "Thieves Guild",
+      "environment": -1,
+      "exits": {
+        "north": 890
+      },
+      "weight": 1,
+      "id": 891,
+      "area": {
+        "id": 12
+      }
+    },
+    {
+      "name": "A cemetery.",
+      "environment": -1,
+      "exits": {
+        "west": 887
+      },
+      "weight": 1,
+      "id": 892,
+      "area": {
+        "id": 12
+      }
+    }
+  ],
+  "exportedAt": "2026-01-05T00:19:21Z"
+}

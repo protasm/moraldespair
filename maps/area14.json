@@ -1,1 +1,152 @@
-{"mudlet":{"version":"unknown"},"rooms":[{"name":"Headquarter Entrance","environment":-1,"exits":{"south":74,"east":1017,"north":1020},"weight":1,"id":1018,"area":{"id":14}},{"name":"Hallway","environment":-1,"exits":{"south":1018,"north":1021},"weight":1,"id":1020,"area":{"id":14}},{"name":"Hallway","environment":-1,"exits":{"south":1020,"east":1022,"north":1024},"weight":1,"id":1021,"area":{"id":14}},{"name":"Bunk Area","environment":-1,"exits":{"west":1021,"south":1023},"weight":1,"id":1022,"area":{"id":14}},{"name":"Banquet Hall","environment":-1,"exits":{"north":1022},"weight":1,"id":1023,"area":{"id":14}},{"name":"Hallway","environment":-1,"exits":{"south":1021,"east":1029,"north":1025},"weight":1,"id":1024,"area":{"id":14}},{"name":"Ready Room","environment":-1,"exits":{"south":1024,"east":1028,"north":1026},"weight":1,"id":1025,"area":{"id":14}},{"name":"Outer Wall","environment":-1,"exits":{"east":1027,"south":1025},"weight":1,"id":1026,"area":{"id":14}},{"name":"Outer Wall","environment":-1,"exits":{"east":963,"west":1026},"weight":1,"id":1027,"area":{"id":14}},{"name":"Armoury","environment":-1,"exits":{"west":1025},"weight":1,"id":1028,"area":{"id":14}},{"name":"Strategist's Room","environment":-1,"exits":{"west":1024},"weight":1,"id":1029,"area":{"id":14}}],"exportedAt":"2026-01-05T00:19:21Z"}
+{
+  "mudlet": {
+    "version": "unknown"
+  },
+  "rooms": [
+    {
+      "name": "Headquarter Entrance",
+      "environment": -1,
+      "exits": {
+        "south": 74,
+        "east": 1017,
+        "north": 1020
+      },
+      "weight": 1,
+      "id": 1018,
+      "area": {
+        "id": 14
+      }
+    },
+    {
+      "name": "Hallway",
+      "environment": -1,
+      "exits": {
+        "south": 1018,
+        "north": 1021
+      },
+      "weight": 1,
+      "id": 1020,
+      "area": {
+        "id": 14
+      }
+    },
+    {
+      "name": "Hallway",
+      "environment": -1,
+      "exits": {
+        "south": 1020,
+        "east": 1022,
+        "north": 1024
+      },
+      "weight": 1,
+      "id": 1021,
+      "area": {
+        "id": 14
+      }
+    },
+    {
+      "name": "Bunk Area",
+      "environment": -1,
+      "exits": {
+        "west": 1021,
+        "south": 1023
+      },
+      "weight": 1,
+      "id": 1022,
+      "area": {
+        "id": 14
+      }
+    },
+    {
+      "name": "Banquet Hall",
+      "environment": -1,
+      "exits": {
+        "north": 1022
+      },
+      "weight": 1,
+      "id": 1023,
+      "area": {
+        "id": 14
+      }
+    },
+    {
+      "name": "Hallway",
+      "environment": -1,
+      "exits": {
+        "south": 1021,
+        "east": 1029,
+        "north": 1025
+      },
+      "weight": 1,
+      "id": 1024,
+      "area": {
+        "id": 14
+      }
+    },
+    {
+      "name": "Ready Room",
+      "environment": -1,
+      "exits": {
+        "south": 1024,
+        "east": 1028,
+        "north": 1026
+      },
+      "weight": 1,
+      "id": 1025,
+      "area": {
+        "id": 14
+      }
+    },
+    {
+      "name": "Outer Wall",
+      "environment": -1,
+      "exits": {
+        "east": 1027,
+        "south": 1025
+      },
+      "weight": 1,
+      "id": 1026,
+      "area": {
+        "id": 14
+      }
+    },
+    {
+      "name": "Outer Wall",
+      "environment": -1,
+      "exits": {
+        "east": 963,
+        "west": 1026
+      },
+      "weight": 1,
+      "id": 1027,
+      "area": {
+        "id": 14
+      }
+    },
+    {
+      "name": "Armoury",
+      "environment": -1,
+      "exits": {
+        "west": 1025
+      },
+      "weight": 1,
+      "id": 1028,
+      "area": {
+        "id": 14
+      }
+    },
+    {
+      "name": "Strategist's Room",
+      "environment": -1,
+      "exits": {
+        "west": 1024
+      },
+      "weight": 1,
+      "id": 1029,
+      "area": {
+        "id": 14
+      }
+    }
+  ],
+  "exportedAt": "2026-01-05T00:19:21Z"
+}

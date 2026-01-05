@@ -1,1 +1,1116 @@
-{"mudlet":{"version":"unknown"},"rooms":[{"name":"The start of a forest path","environment":-1,"exits":{"northeast":530},"weight":1,"id":529,"area":{"id":8}},{"name":"The start of a forest path","environment":-1,"exits":{"southwest":529,"northeast":531,"northwest":532},"weight":1,"id":530,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"southwest":530,"northeast":539,"east":551},"weight":1,"id":531,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":535,"northeast":578,"southeast":530,"north":533},"weight":1,"id":532,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":534,"south":532,"southwest":535,"northeast":596,"east":578,"north":591},"weight":1,"id":533,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"south":535,"west":536,"northeast":591,"east":533,"north":592},"weight":1,"id":534,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"northeast":533,"east":532,"north":534},"weight":1,"id":535,"area":{"id":8}},{"name":"River Bank","environment":-1,"exits":{"southwest":537,"northeast":592,"east":534},"weight":1,"id":536,"area":{"id":8}},{"name":"River Bank","environment":-1,"exits":{"southwest":538,"northeast":536},"weight":1,"id":537,"area":{"id":8}},{"name":"Gryphon Nest","environment":-1,"exits":{"northeast":537},"weight":1,"id":538,"area":{"id":8}},{"name":"A clearing in the forest","environment":-1,"exits":{"southwest":531,"northeast":540,"east":550,"south":551},"weight":1,"id":539,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"southwest":539,"northeast":541,"east":549,"south":550},"weight":1,"id":540,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"south":549,"southwest":540,"northeast":542,"east":548,"west":575},"weight":1,"id":541,"area":{"id":8}},{"name":"A forest","environment":-1,"exits":{"southwest":541,"northeast":543,"east":547,"south":548},"weight":1,"id":542,"area":{"id":8}},{"name":"A dark forest","environment":-1,"exits":{"southwest":542,"northeast":544,"east":546,"south":547},"weight":1,"id":543,"area":{"id":8}},{"name":"A forest","environment":-1,"exits":{"southwest":543,"east":545,"south":546},"weight":1,"id":544,"area":{"id":8}},{"name":"A forest glade","environment":-1,"exits":{"southwest":546,"west":544,"east":558,"south":557},"weight":1,"id":545,"area":{"id":8}},{"name":"A forest glade","environment":-1,"exits":{"west":543,"south":556,"southwest":547,"northeast":545,"east":557,"north":544},"weight":1,"id":546,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":542,"south":555,"southwest":548,"northeast":546,"east":556,"north":543},"weight":1,"id":547,"area":{"id":8}},{"name":"A path in the forest","environment":-1,"exits":{"west":541,"south":554,"southwest":549,"northeast":547,"east":555,"north":542},"weight":1,"id":548,"area":{"id":8}},{"name":"A clearing in the forest","environment":-1,"exits":{"west":540,"south":553,"southwest":550,"northeast":548,"east":554,"north":541},"weight":1,"id":549,"area":{"id":8}},{"name":"A forest","environment":-1,"exits":{"west":539,"south":552,"southwest":551,"northeast":549,"east":553,"north":540},"weight":1,"id":550,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"south":576,"west":531,"northeast":550,"east":552,"north":539},"weight":1,"id":551,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":551,"northeast":553,"east":565,"north":550},"weight":1,"id":552,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":550,"south":565,"southwest":552,"northeast":554,"east":564,"north":549},"weight":1,"id":553,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":549,"south":564,"southwest":553,"northeast":555,"east":563,"north":548},"weight":1,"id":554,"area":{"id":8}},{"name":"A path through the forest","environment":-1,"exits":{"west":548,"south":563,"southwest":554,"northeast":556,"east":562,"north":547},"weight":1,"id":555,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":547,"south":562,"southwest":555,"northeast":557,"east":561,"north":546},"weight":1,"id":556,"area":{"id":8}},{"name":"A forest","environment":-1,"exits":{"west":546,"south":561,"southwest":556,"northeast":558,"east":560,"north":545},"weight":1,"id":557,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"southwest":557,"west":545,"east":559,"south":560},"weight":1,"id":558,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"southwest":560,"west":558,"south":573},"weight":1,"id":559,"area":{"id":8}},{"name":"A path in the forest","environment":-1,"exits":{"west":557,"south":572,"southwest":561,"northeast":559,"east":573,"north":558},"weight":1,"id":560,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":556,"south":571,"southwest":562,"northeast":560,"east":572,"north":557},"weight":1,"id":561,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":555,"south":570,"southwest":563,"northeast":561,"east":571,"north":556},"weight":1,"id":562,"area":{"id":8}},{"name":"A forest","environment":-1,"exits":{"west":554,"south":569,"southwest":564,"northeast":562,"east":570,"north":555},"weight":1,"id":563,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":553,"south":568,"southwest":565,"northeast":563,"east":569,"north":554},"weight":1,"id":564,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":552,"south":574,"southwest":566,"northeast":564,"east":568,"north":553},"weight":1,"id":565,"area":{"id":8}},{"name":"A dark forest glade","environment":-1,"exits":{"southwest":567,"northeast":565},"weight":1,"id":566,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":601,"northeast":566},"weight":1,"id":567,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"southwest":574,"northeast":569,"west":565,"north":564},"weight":1,"id":568,"area":{"id":8}},{"name":"A path through the forest","environment":-1,"exits":{"southwest":568,"northeast":570,"west":564,"north":563},"weight":1,"id":569,"area":{"id":8}},{"name":"A forest glade","environment":-1,"exits":{"southwest":569,"northeast":571,"west":563,"north":562},"weight":1,"id":570,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"southwest":570,"northeast":572,"west":562,"north":561},"weight":1,"id":571,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"southwest":571,"northeast":573,"west":561,"north":560},"weight":1,"id":572,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"southwest":572,"west":560,"north":559},"weight":1,"id":573,"area":{"id":8}},{"name":"Forest Glade","environment":-1,"exits":{"northeast":568,"north":565},"weight":1,"id":574,"area":{"id":8}},{"name":"A forest","environment":-1,"exits":{"east":541},"weight":1,"id":575,"area":{"id":8}},{"name":"The start of a forest path","environment":-1,"exits":{"southwest":577,"north":551},"weight":1,"id":576,"area":{"id":8}},{"name":"The start of a forest path","environment":-1,"exits":{"northeast":576},"weight":1,"id":577,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":533,"southwest":532,"northeast":579,"east":600,"north":596},"weight":1,"id":578,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"southwest":578,"northeast":580,"west":596,"north":597},"weight":1,"id":579,"area":{"id":8}},{"name":"A clearing in the forest","environment":-1,"exits":{"southwest":579,"northeast":581,"west":597,"north":598},"weight":1,"id":580,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"southwest":580,"northeast":582,"west":598,"north":585},"weight":1,"id":581,"area":{"id":8}},{"name":"Forest Mound","environment":-1,"exits":{"west":585,"southwest":581,"northeast":583,"east":599,"north":584},"weight":1,"id":582,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"southwest":582,"west":584},"weight":1,"id":583,"area":{"id":8}},{"name":"A forest glade","environment":-1,"exits":{"southwest":585,"west":586,"east":583,"south":582},"weight":1,"id":584,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"south":581,"west":595,"northeast":584,"east":582,"north":586},"weight":1,"id":585,"area":{"id":8}},{"name":"A forest glade","environment":-1,"exits":{"southwest":588,"west":587,"east":584,"south":585},"weight":1,"id":586,"area":{"id":8}},{"name":"A river bank","environment":-1,"exits":{"southwest":595,"east":586,"south":588},"weight":1,"id":587,"area":{"id":8}},{"name":"A dark forest glade","environment":-1,"exits":{"west":595,"south":598,"southwest":589,"northeast":586,"east":589,"north":587},"weight":1,"id":588,"area":{"id":8}},{"name":"A forest glade","environment":-1,"exits":{"west":594,"south":597,"southwest":590,"northeast":588,"east":598,"north":595},"weight":1,"id":589,"area":{"id":8}},{"name":"A forest","environment":-1,"exits":{"west":593,"south":596,"southwest":591,"northeast":589,"east":597,"north":594},"weight":1,"id":590,"area":{"id":8}},{"name":"A forest","environment":-1,"exits":{"west":592,"south":533,"southwest":534,"northeast":590,"east":596,"north":593},"weight":1,"id":591,"area":{"id":8}},{"name":"A river bank","environment":-1,"exits":{"southwest":536,"northeast":593,"east":591,"south":534},"weight":1,"id":592,"area":{"id":8}},{"name":"A river bank","environment":-1,"exits":{"southwest":592,"northeast":594,"east":590,"south":591},"weight":1,"id":593,"area":{"id":8}},{"name":"A riverbank","environment":-1,"exits":{"southwest":593,"northeast":595,"east":589,"south":590},"weight":1,"id":594,"area":{"id":8}},{"name":"A river bank","environment":-1,"exits":{"southwest":594,"northeast":587,"east":585,"south":589},"weight":1,"id":595,"area":{"id":8}},{"name":"A path through the forest","environment":-1,"exits":{"west":591,"south":578,"southwest":533,"northeast":597,"east":579,"north":590},"weight":1,"id":596,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":590,"south":579,"southwest":596,"northeast":598,"east":580,"north":589},"weight":1,"id":597,"area":{"id":8}},{"name":"A forest path","environment":-1,"exits":{"west":589,"south":580,"southwest":597,"northeast":589,"east":581,"north":588},"weight":1,"id":598,"area":{"id":8}},{"name":"A small clearing","environment":-1,"exits":{"west":582},"weight":1,"id":599,"area":{"id":8}},{"name":"Druids Guild","environment":-1,"exits":{"west":578},"weight":1,"id":600,"area":{"id":8}},{"name":"Large home","environment":-1,"exits":{"east":567},"weight":1,"id":601,"area":{"id":8}}],"exportedAt":"2026-01-05T00:19:21Z"}
+{
+  "mudlet": {
+    "version": "unknown"
+  },
+  "rooms": [
+    {
+      "name": "The start of a forest path",
+      "environment": -1,
+      "exits": {
+        "northeast": 530
+      },
+      "weight": 1,
+      "id": 529,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "The start of a forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 529,
+        "northeast": 531,
+        "northwest": 532
+      },
+      "weight": 1,
+      "id": 530,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 530,
+        "northeast": 539,
+        "east": 551
+      },
+      "weight": 1,
+      "id": 531,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 535,
+        "northeast": 578,
+        "southeast": 530,
+        "north": 533
+      },
+      "weight": 1,
+      "id": 532,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 534,
+        "south": 532,
+        "southwest": 535,
+        "northeast": 596,
+        "east": 578,
+        "north": 591
+      },
+      "weight": 1,
+      "id": 533,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "south": 535,
+        "west": 536,
+        "northeast": 591,
+        "east": 533,
+        "north": 592
+      },
+      "weight": 1,
+      "id": 534,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "northeast": 533,
+        "east": 532,
+        "north": 534
+      },
+      "weight": 1,
+      "id": 535,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "River Bank",
+      "environment": -1,
+      "exits": {
+        "southwest": 537,
+        "northeast": 592,
+        "east": 534
+      },
+      "weight": 1,
+      "id": 536,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "River Bank",
+      "environment": -1,
+      "exits": {
+        "southwest": 538,
+        "northeast": 536
+      },
+      "weight": 1,
+      "id": 537,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "Gryphon Nest",
+      "environment": -1,
+      "exits": {
+        "northeast": 537
+      },
+      "weight": 1,
+      "id": 538,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A clearing in the forest",
+      "environment": -1,
+      "exits": {
+        "southwest": 531,
+        "northeast": 540,
+        "east": 550,
+        "south": 551
+      },
+      "weight": 1,
+      "id": 539,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 539,
+        "northeast": 541,
+        "east": 549,
+        "south": 550
+      },
+      "weight": 1,
+      "id": 540,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "south": 549,
+        "southwest": 540,
+        "northeast": 542,
+        "east": 548,
+        "west": 575
+      },
+      "weight": 1,
+      "id": 541,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest",
+      "environment": -1,
+      "exits": {
+        "southwest": 541,
+        "northeast": 543,
+        "east": 547,
+        "south": 548
+      },
+      "weight": 1,
+      "id": 542,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A dark forest",
+      "environment": -1,
+      "exits": {
+        "southwest": 542,
+        "northeast": 544,
+        "east": 546,
+        "south": 547
+      },
+      "weight": 1,
+      "id": 543,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest",
+      "environment": -1,
+      "exits": {
+        "southwest": 543,
+        "east": 545,
+        "south": 546
+      },
+      "weight": 1,
+      "id": 544,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest glade",
+      "environment": -1,
+      "exits": {
+        "southwest": 546,
+        "west": 544,
+        "east": 558,
+        "south": 557
+      },
+      "weight": 1,
+      "id": 545,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest glade",
+      "environment": -1,
+      "exits": {
+        "west": 543,
+        "south": 556,
+        "southwest": 547,
+        "northeast": 545,
+        "east": 557,
+        "north": 544
+      },
+      "weight": 1,
+      "id": 546,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 542,
+        "south": 555,
+        "southwest": 548,
+        "northeast": 546,
+        "east": 556,
+        "north": 543
+      },
+      "weight": 1,
+      "id": 547,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A path in the forest",
+      "environment": -1,
+      "exits": {
+        "west": 541,
+        "south": 554,
+        "southwest": 549,
+        "northeast": 547,
+        "east": 555,
+        "north": 542
+      },
+      "weight": 1,
+      "id": 548,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A clearing in the forest",
+      "environment": -1,
+      "exits": {
+        "west": 540,
+        "south": 553,
+        "southwest": 550,
+        "northeast": 548,
+        "east": 554,
+        "north": 541
+      },
+      "weight": 1,
+      "id": 549,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest",
+      "environment": -1,
+      "exits": {
+        "west": 539,
+        "south": 552,
+        "southwest": 551,
+        "northeast": 549,
+        "east": 553,
+        "north": 540
+      },
+      "weight": 1,
+      "id": 550,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "south": 576,
+        "west": 531,
+        "northeast": 550,
+        "east": 552,
+        "north": 539
+      },
+      "weight": 1,
+      "id": 551,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 551,
+        "northeast": 553,
+        "east": 565,
+        "north": 550
+      },
+      "weight": 1,
+      "id": 552,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 550,
+        "south": 565,
+        "southwest": 552,
+        "northeast": 554,
+        "east": 564,
+        "north": 549
+      },
+      "weight": 1,
+      "id": 553,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 549,
+        "south": 564,
+        "southwest": 553,
+        "northeast": 555,
+        "east": 563,
+        "north": 548
+      },
+      "weight": 1,
+      "id": 554,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A path through the forest",
+      "environment": -1,
+      "exits": {
+        "west": 548,
+        "south": 563,
+        "southwest": 554,
+        "northeast": 556,
+        "east": 562,
+        "north": 547
+      },
+      "weight": 1,
+      "id": 555,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 547,
+        "south": 562,
+        "southwest": 555,
+        "northeast": 557,
+        "east": 561,
+        "north": 546
+      },
+      "weight": 1,
+      "id": 556,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest",
+      "environment": -1,
+      "exits": {
+        "west": 546,
+        "south": 561,
+        "southwest": 556,
+        "northeast": 558,
+        "east": 560,
+        "north": 545
+      },
+      "weight": 1,
+      "id": 557,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 557,
+        "west": 545,
+        "east": 559,
+        "south": 560
+      },
+      "weight": 1,
+      "id": 558,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 560,
+        "west": 558,
+        "south": 573
+      },
+      "weight": 1,
+      "id": 559,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A path in the forest",
+      "environment": -1,
+      "exits": {
+        "west": 557,
+        "south": 572,
+        "southwest": 561,
+        "northeast": 559,
+        "east": 573,
+        "north": 558
+      },
+      "weight": 1,
+      "id": 560,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 556,
+        "south": 571,
+        "southwest": 562,
+        "northeast": 560,
+        "east": 572,
+        "north": 557
+      },
+      "weight": 1,
+      "id": 561,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 555,
+        "south": 570,
+        "southwest": 563,
+        "northeast": 561,
+        "east": 571,
+        "north": 556
+      },
+      "weight": 1,
+      "id": 562,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest",
+      "environment": -1,
+      "exits": {
+        "west": 554,
+        "south": 569,
+        "southwest": 564,
+        "northeast": 562,
+        "east": 570,
+        "north": 555
+      },
+      "weight": 1,
+      "id": 563,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 553,
+        "south": 568,
+        "southwest": 565,
+        "northeast": 563,
+        "east": 569,
+        "north": 554
+      },
+      "weight": 1,
+      "id": 564,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 552,
+        "south": 574,
+        "southwest": 566,
+        "northeast": 564,
+        "east": 568,
+        "north": 553
+      },
+      "weight": 1,
+      "id": 565,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A dark forest glade",
+      "environment": -1,
+      "exits": {
+        "southwest": 567,
+        "northeast": 565
+      },
+      "weight": 1,
+      "id": 566,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 601,
+        "northeast": 566
+      },
+      "weight": 1,
+      "id": 567,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 574,
+        "northeast": 569,
+        "west": 565,
+        "north": 564
+      },
+      "weight": 1,
+      "id": 568,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A path through the forest",
+      "environment": -1,
+      "exits": {
+        "southwest": 568,
+        "northeast": 570,
+        "west": 564,
+        "north": 563
+      },
+      "weight": 1,
+      "id": 569,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest glade",
+      "environment": -1,
+      "exits": {
+        "southwest": 569,
+        "northeast": 571,
+        "west": 563,
+        "north": 562
+      },
+      "weight": 1,
+      "id": 570,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 570,
+        "northeast": 572,
+        "west": 562,
+        "north": 561
+      },
+      "weight": 1,
+      "id": 571,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 571,
+        "northeast": 573,
+        "west": 561,
+        "north": 560
+      },
+      "weight": 1,
+      "id": 572,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 572,
+        "west": 560,
+        "north": 559
+      },
+      "weight": 1,
+      "id": 573,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "Forest Glade",
+      "environment": -1,
+      "exits": {
+        "northeast": 568,
+        "north": 565
+      },
+      "weight": 1,
+      "id": 574,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest",
+      "environment": -1,
+      "exits": {
+        "east": 541
+      },
+      "weight": 1,
+      "id": 575,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "The start of a forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 577,
+        "north": 551
+      },
+      "weight": 1,
+      "id": 576,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "The start of a forest path",
+      "environment": -1,
+      "exits": {
+        "northeast": 576
+      },
+      "weight": 1,
+      "id": 577,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 533,
+        "southwest": 532,
+        "northeast": 579,
+        "east": 600,
+        "north": 596
+      },
+      "weight": 1,
+      "id": 578,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 578,
+        "northeast": 580,
+        "west": 596,
+        "north": 597
+      },
+      "weight": 1,
+      "id": 579,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A clearing in the forest",
+      "environment": -1,
+      "exits": {
+        "southwest": 579,
+        "northeast": 581,
+        "west": 597,
+        "north": 598
+      },
+      "weight": 1,
+      "id": 580,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 580,
+        "northeast": 582,
+        "west": 598,
+        "north": 585
+      },
+      "weight": 1,
+      "id": 581,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "Forest Mound",
+      "environment": -1,
+      "exits": {
+        "west": 585,
+        "southwest": 581,
+        "northeast": 583,
+        "east": 599,
+        "north": 584
+      },
+      "weight": 1,
+      "id": 582,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "southwest": 582,
+        "west": 584
+      },
+      "weight": 1,
+      "id": 583,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest glade",
+      "environment": -1,
+      "exits": {
+        "southwest": 585,
+        "west": 586,
+        "east": 583,
+        "south": 582
+      },
+      "weight": 1,
+      "id": 584,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "south": 581,
+        "west": 595,
+        "northeast": 584,
+        "east": 582,
+        "north": 586
+      },
+      "weight": 1,
+      "id": 585,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest glade",
+      "environment": -1,
+      "exits": {
+        "southwest": 588,
+        "west": 587,
+        "east": 584,
+        "south": 585
+      },
+      "weight": 1,
+      "id": 586,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A river bank",
+      "environment": -1,
+      "exits": {
+        "southwest": 595,
+        "east": 586,
+        "south": 588
+      },
+      "weight": 1,
+      "id": 587,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A dark forest glade",
+      "environment": -1,
+      "exits": {
+        "west": 595,
+        "south": 598,
+        "southwest": 589,
+        "northeast": 586,
+        "east": 589,
+        "north": 587
+      },
+      "weight": 1,
+      "id": 588,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest glade",
+      "environment": -1,
+      "exits": {
+        "west": 594,
+        "south": 597,
+        "southwest": 590,
+        "northeast": 588,
+        "east": 598,
+        "north": 595
+      },
+      "weight": 1,
+      "id": 589,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest",
+      "environment": -1,
+      "exits": {
+        "west": 593,
+        "south": 596,
+        "southwest": 591,
+        "northeast": 589,
+        "east": 597,
+        "north": 594
+      },
+      "weight": 1,
+      "id": 590,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest",
+      "environment": -1,
+      "exits": {
+        "west": 592,
+        "south": 533,
+        "southwest": 534,
+        "northeast": 590,
+        "east": 596,
+        "north": 593
+      },
+      "weight": 1,
+      "id": 591,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A river bank",
+      "environment": -1,
+      "exits": {
+        "southwest": 536,
+        "northeast": 593,
+        "east": 591,
+        "south": 534
+      },
+      "weight": 1,
+      "id": 592,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A river bank",
+      "environment": -1,
+      "exits": {
+        "southwest": 592,
+        "northeast": 594,
+        "east": 590,
+        "south": 591
+      },
+      "weight": 1,
+      "id": 593,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A riverbank",
+      "environment": -1,
+      "exits": {
+        "southwest": 593,
+        "northeast": 595,
+        "east": 589,
+        "south": 590
+      },
+      "weight": 1,
+      "id": 594,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A river bank",
+      "environment": -1,
+      "exits": {
+        "southwest": 594,
+        "northeast": 587,
+        "east": 585,
+        "south": 589
+      },
+      "weight": 1,
+      "id": 595,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A path through the forest",
+      "environment": -1,
+      "exits": {
+        "west": 591,
+        "south": 578,
+        "southwest": 533,
+        "northeast": 597,
+        "east": 579,
+        "north": 590
+      },
+      "weight": 1,
+      "id": 596,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 590,
+        "south": 579,
+        "southwest": 596,
+        "northeast": 598,
+        "east": 580,
+        "north": 589
+      },
+      "weight": 1,
+      "id": 597,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A forest path",
+      "environment": -1,
+      "exits": {
+        "west": 589,
+        "south": 580,
+        "southwest": 597,
+        "northeast": 589,
+        "east": 581,
+        "north": 588
+      },
+      "weight": 1,
+      "id": 598,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "A small clearing",
+      "environment": -1,
+      "exits": {
+        "west": 582
+      },
+      "weight": 1,
+      "id": 599,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "Druids Guild",
+      "environment": -1,
+      "exits": {
+        "west": 578
+      },
+      "weight": 1,
+      "id": 600,
+      "area": {
+        "id": 8
+      }
+    },
+    {
+      "name": "Large home",
+      "environment": -1,
+      "exits": {
+        "east": 567
+      },
+      "weight": 1,
+      "id": 601,
+      "area": {
+        "id": 8
+      }
+    }
+  ],
+  "exportedAt": "2026-01-05T00:19:21Z"
+}

@@ -1,1 +1,1456 @@
-{"mudlet":{"version":"unknown"},"rooms":[{"name":"Before the Anshelm Gatehouse","environment":-1,"exits":{"north":236},"weight":1,"id":235,"area":{"id":3}},{"name":"Under the Anshelmish Gatehouse","environment":-1,"exits":{"west":1143,"south":235,"north":237},"weight":1,"id":236,"area":{"id":3}},{"name":"Southern end of Rue du Nord","environment":-1,"exits":{"southwest":1135,"south":236,"southeast":1154,"north":238},"weight":1,"id":237,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"west":413,"south":237,"north":239},"weight":1,"id":238,"area":{"id":3}},{"name":"Intersection of Rue du Nord and Beitel Straat","environment":-1,"exits":{"south":238,"west":414,"east":1185,"north":240},"weight":1,"id":239,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"south":239,"west":415,"east":1192,"north":241},"weight":1,"id":240,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"west":416,"south":240,"north":242},"weight":1,"id":241,"area":{"id":3}},{"name":"Gateway to Middle Bailey","environment":-1,"exits":{"south":241,"north":243},"weight":1,"id":242,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"south":242,"north":244},"weight":1,"id":243,"area":{"id":3}},{"name":"Western intersection of Rue du Nord and Kirsch Lane","environment":-1,"exits":{"west":245,"east":250,"south":243},"weight":1,"id":244,"area":{"id":3}},{"name":"Kirsch Lane","environment":-1,"exits":{"east":244,"west":246},"weight":1,"id":245,"area":{"id":3}},{"name":"Kirsch Lane","environment":-1,"exits":{"west":247,"east":245,"south":249},"weight":1,"id":246,"area":{"id":3}},{"name":"Western end of Kirsch Lane","environment":-1,"exits":{"east":246,"south":248},"weight":1,"id":247,"area":{"id":3}},{"name":"Construction site","environment":-1,"exits":{"north":247},"weight":1,"id":248,"area":{"id":3}},{"name":"Kaneohe Armory","environment":-1,"exits":{"north":246},"weight":1,"id":249,"area":{"id":3}},{"name":"Eastern intersection of Rue du Nord and Kirsch Lane","environment":-1,"exits":{"west":244,"east":283,"north":251},"weight":1,"id":250,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"south":250,"east":1193,"north":252},"weight":1,"id":251,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"south":251,"north":253},"weight":1,"id":252,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"south":252,"north":254},"weight":1,"id":253,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"south":253,"north":255},"weight":1,"id":254,"area":{"id":3}},{"name":"Central Square on the Rue du Nord","environment":-1,"exits":{"south":254,"west":1195,"east":1194,"north":256},"weight":1,"id":255,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"south":255,"north":257},"weight":1,"id":256,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"south":256,"north":258},"weight":1,"id":257,"area":{"id":3}},{"name":"Intersection of Rue du Nord and East Geld Strasse","environment":-1,"exits":{"west":259,"east":281,"south":257},"weight":1,"id":258,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"east":258,"west":260},"weight":1,"id":259,"area":{"id":3}},{"name":"Intersection of Rue du Nord and West Geld Strasse","environment":-1,"exits":{"west":261,"east":259,"north":264},"weight":1,"id":260,"area":{"id":3}},{"name":"Geld Strasse","environment":-1,"exits":{"east":260,"west":262},"weight":1,"id":261,"area":{"id":3}},{"name":"Geld Strasse","environment":-1,"exits":{"east":261,"west":263},"weight":1,"id":262,"area":{"id":3}},{"name":"Western end of Geld Strasse","environment":-1,"exits":{"east":262},"weight":1,"id":263,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"south":260,"north":265},"weight":1,"id":264,"area":{"id":3}},{"name":"Gateway to Upper Bailey","environment":-1,"exits":{"south":264,"west":282,"east":1198,"north":266},"weight":1,"id":265,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"south":265,"north":267},"weight":1,"id":266,"area":{"id":3}},{"name":"Intersection of Rue du Nord and Kasernegade","environment":-1,"exits":{"south":266,"west":268,"east":276,"north":273},"weight":1,"id":267,"area":{"id":3}},{"name":"Kasernegade","environment":-1,"exits":{"east":267,"west":269},"weight":1,"id":268,"area":{"id":3}},{"name":"Kasernegade","environment":-1,"exits":{"east":268,"west":270},"weight":1,"id":269,"area":{"id":3}},{"name":"Kasernegade","environment":-1,"exits":{"west":271,"east":269,"south":1199},"weight":1,"id":270,"area":{"id":3}},{"name":"Western end of Kasernegade","environment":-1,"exits":{"east":270,"north":272},"weight":1,"id":271,"area":{"id":3}},{"name":"Construction site","environment":-1,"exits":{"south":271},"weight":1,"id":272,"area":{"id":3}},{"name":"Rue du Nord","environment":-1,"exits":{"south":267,"northwest":1202,"north":274},"weight":1,"id":273,"area":{"id":3}},{"name":"Under the Town Gate","environment":-1,"exits":{"south":273,"north":275},"weight":1,"id":274,"area":{"id":3}},{"name":"Before the Anshelm Town Gate","environment":-1,"exits":{"south":274},"weight":1,"id":275,"area":{"id":3}},{"name":"Kasernegade","environment":-1,"exits":{"west":267,"east":277,"north":1200},"weight":1,"id":276,"area":{"id":3}},{"name":"Kasernegade","environment":-1,"exits":{"east":278,"west":276},"weight":1,"id":277,"area":{"id":3}},{"name":"Kasernegade","environment":-1,"exits":{"east":279,"west":277},"weight":1,"id":278,"area":{"id":3}},{"name":"Kasernegade","environment":-1,"exits":{"east":280,"west":278},"weight":1,"id":279,"area":{"id":3}},{"name":"Eastern end of Kasernegade","environment":-1,"exits":{"west":279,"south":1201},"weight":1,"id":280,"area":{"id":3}},{"name":"Geld Strasse","environment":-1,"exits":{"west":258,"east":1328,"north":1197},"weight":1,"id":281,"area":{"id":3}},{"name":"You have to turn sideways a bit to squeeze through the narrow passage.","environment":-1,"exits":{"east":265},"weight":1,"id":282,"area":{"id":3}},{"name":"Kirsch Lane","environment":-1,"exits":{"west":250,"east":284,"north":1326},"weight":1,"id":283,"area":{"id":3}},{"name":"Kirsch Lane","environment":-1,"exits":{"west":283,"east":285,"north":1327},"weight":1,"id":284,"area":{"id":3}},{"name":"Eastern end of Kirsch Lane","environment":-1,"exits":{"west":284},"weight":1,"id":285,"area":{"id":3}},{"name":"Hawaiian Ryan's","environment":-1,"exits":{"east":238,"north":414},"weight":1,"id":413,"area":{"id":3}},{"name":"Beitel Straad","environment":-1,"exits":{"south":413,"west":1147,"east":239,"north":415},"weight":1,"id":414,"area":{"id":3}},{"name":"Club Femme Nu","environment":-1,"exits":{"east":240,"south":414},"weight":1,"id":415,"area":{"id":3}},{"name":"Western Guard Post","environment":-1,"exits":{"up":1136,"northeast":237},"weight":1,"id":1135,"area":{"id":3}},{"name":"Arleg bows to you.","environment":-1,"exits":{"down":1135,"up":1137},"weight":1,"id":1136,"area":{"id":3}},{"name":"Second Floor Landing","environment":-1,"exits":{"down":1136,"east":1142,"up":1138},"weight":1,"id":1137,"area":{"id":3}},{"name":"Third Floor Passage","environment":-1,"exits":{"down":1137,"east":1144,"up":1139},"weight":1,"id":1138,"area":{"id":3}},{"name":"Western Spire Stairwell","environment":-1,"exits":{"down":1138,"up":1140},"weight":1,"id":1139,"area":{"id":3}},{"name":"Roof of the Western Spire","environment":-1,"exits":{"down":1139},"weight":1,"id":1140,"area":{"id":3}},{"name":"Western Stairwell","environment":-1,"exits":{"up":1137},"weight":1,"id":1141,"area":{"id":3}},{"name":"Killing Room","environment":-1,"exits":{"east":1153,"west":1137},"weight":1,"id":1142,"area":{"id":3}},{"name":"Anshelm Lounge","environment":-1,"exits":{"east":236,"west":1204},"weight":1,"id":1143,"area":{"id":3}},{"name":"Gatehouse Mess Hall","environment":-1,"exits":{"east":1145,"west":1138},"weight":1,"id":1144,"area":{"id":3}},{"name":"Gatehouse Barracks","environment":-1,"exits":{"east":1146,"west":1144},"weight":1,"id":1145,"area":{"id":3}},{"name":"Third Floor Passage","environment":-1,"exits":{"up":1151,"west":1145},"weight":1,"id":1146,"area":{"id":3}},{"name":"Beitel Straad at the Promenade","environment":-1,"exits":{"west":1150,"east":414,"north":1169},"weight":1,"id":1147,"area":{"id":3}},{"name":"Eastern Stairwell","environment":-1,"exits":{"down":1149},"weight":1,"id":1148,"area":{"id":3}},{"name":"Base of the Eastern Stairwell","environment":-1,"exits":{"up":1148},"weight":1,"id":1149,"area":{"id":3}},{"name":"Beitel Straad","environment":-1,"exits":{"west":1157,"east":1147,"south":1168},"weight":1,"id":1150,"area":{"id":3}},{"name":"Eastern Spire Stairwell","environment":-1,"exits":{"down":1149,"up":1152},"weight":1,"id":1151,"area":{"id":3}},{"name":"Roof of the Eastern Spire","environment":-1,"exits":{"down":1151},"weight":1,"id":1152,"area":{"id":3}},{"name":"Tider bows to you.","environment":-1,"exits":{"west":1142},"weight":1,"id":1153,"area":{"id":3}},{"name":"Eastern Guard Post","environment":-1,"exits":{"northwest":237,"east":1155},"weight":1,"id":1154,"area":{"id":3}},{"name":"Ganran bows to you.","environment":-1,"exits":{"up":1158,"down":1156,"west":1154},"weight":1,"id":1155,"area":{"id":3}},{"name":"Gatehouse Armoury","environment":-1,"exits":{"up":1155},"weight":1,"id":1156,"area":{"id":3}},{"name":"Western end of Beitel Straad","environment":-1,"exits":{"east":1150,"north":1164},"weight":1,"id":1157,"area":{"id":3}},{"name":"Eastern Stairwell","environment":-1,"exits":{"down":1155,"up":1159},"weight":1,"id":1158,"area":{"id":3}},{"name":"Olotia bows to you.","environment":-1,"exits":{"down":1158,"west":1160},"weight":1,"id":1159,"area":{"id":3}},{"name":"Tiran bows to you.","environment":-1,"exits":{"east":1159,"west":1161},"weight":1,"id":1160,"area":{"id":3}},{"name":"Killing Room","environment":-1,"exits":{"east":1160,"west":1162},"weight":1,"id":1161,"area":{"id":3}},{"name":"Second Floor Landing","environment":-1,"exits":{"east":1161,"down":1163},"weight":1,"id":1162,"area":{"id":3}},{"name":"Western Stairwell","environment":-1,"exits":{"down":1135,"up":1162},"weight":1,"id":1163,"area":{"id":3}},{"name":"The Inner Bailey","environment":-1,"exits":{"north":1150},"weight":1,"id":1168,"area":{"id":3}},{"name":"Beitel Straad","environment":-1,"exits":{"west":239,"east":1186,"north":1191},"weight":1,"id":1185,"area":{"id":3}},{"name":"Beitel Straad","environment":-1,"exits":{"west":1185,"east":1187,"north":1190},"weight":1,"id":1186,"area":{"id":3}},{"name":"Beitel Straad","environment":-1,"exits":{"east":1188,"west":1186},"weight":1,"id":1187,"area":{"id":3}},{"name":"Beitel Straad","environment":-1,"exits":{"east":1189,"west":1187},"weight":1,"id":1188,"area":{"id":3}},{"name":"Eastern end of Beitel Straad","environment":-1,"exits":{"west":1188},"weight":1,"id":1189,"area":{"id":3}},{"name":"The Banana Hammock","environment":-1,"exits":{"west":1191,"south":1186},"weight":1,"id":1190,"area":{"id":3}},{"name":"Jack's Bistro","environment":-1,"exits":{"east":1190,"south":1185},"weight":1,"id":1191,"area":{"id":3}},{"name":"Second Bank of Anshelm","environment":-1,"exits":{"west":240},"weight":1,"id":1192,"area":{"id":3}},{"name":"The Anshelmish General Store","environment":-1,"exits":{"west":251},"weight":1,"id":1193,"area":{"id":3}},{"name":"Construction site","environment":-1,"exits":{"west":255},"weight":1,"id":1194,"area":{"id":3}},{"name":"Anshelmish Keep's drawbridge","environment":-1,"exits":{"east":255,"west":1196},"weight":1,"id":1195,"area":{"id":3}},{"name":"Construction site","environment":-1,"exits":{"east":1195},"weight":1,"id":1196,"area":{"id":3}},{"name":"Private Entry","environment":-1,"exits":{"south":281},"weight":1,"id":1197,"area":{"id":3}},{"name":"You have to turn sideways a bit to squeeze through the narrow passage.","environment":-1,"exits":{"west":265},"weight":1,"id":1198,"area":{"id":3}},{"name":"Armourer's Shack","environment":-1,"exits":{"north":270},"weight":1,"id":1199,"area":{"id":3}},{"name":"Construction site","environment":-1,"exits":{"south":276},"weight":1,"id":1200,"area":{"id":3}},{"name":"Construction site","environment":-1,"exits":{"north":280},"weight":1,"id":1201,"area":{"id":3}},{"name":"Construction site","environment":-1,"exits":{"southeast":273},"weight":1,"id":1202,"area":{"id":3}},{"name":"You feel a STRONG urge to read the Sanctuary board... You are responsible","environment":-1,"exits":{"east":1143},"weight":1,"id":1204,"area":{"id":3}},{"name":"La Cosa Nostra","environment":-1,"exits":{"south":283},"weight":1,"id":1326,"area":{"id":3}},{"name":"Anshelm Stables","environment":-1,"exits":{"south":284},"weight":1,"id":1327,"area":{"id":3}},{"name":"Eastern end of Geld Strasse","environment":-1,"exits":{"east":1329,"west":281},"weight":1,"id":1328,"area":{"id":3}},{"name":"With a little strain, you are able to pull open the heavy doors and enter","environment":-1,"exits":{"east":1330,"west":1328},"weight":1,"id":1329,"area":{"id":3}},{"name":"Naive","environment":-1,"exits":{"south":1332,"west":1329,"east":1331,"north":1333},"weight":1,"id":1330,"area":{"id":3}},{"name":"Altar of the Rose","environment":-1,"exits":{"west":1330},"weight":1,"id":1331,"area":{"id":3}},{"name":"Southern statuary","environment":-1,"exits":{"north":1330},"weight":1,"id":1332,"area":{"id":3}},{"name":"Northern statuary","environment":-1,"exits":{"south":1330},"weight":1,"id":1333,"area":{"id":3}}],"exportedAt":"2026-01-05T00:19:21Z"}
+{
+  "mudlet": {
+    "version": "unknown"
+  },
+  "rooms": [
+    {
+      "name": "Before the Anshelm Gatehouse",
+      "environment": -1,
+      "exits": {
+        "north": 236
+      },
+      "weight": 1,
+      "id": 235,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Under the Anshelmish Gatehouse",
+      "environment": -1,
+      "exits": {
+        "west": 1143,
+        "south": 235,
+        "north": 237
+      },
+      "weight": 1,
+      "id": 236,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Southern end of Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "southwest": 1135,
+        "south": 236,
+        "southeast": 1154,
+        "north": 238
+      },
+      "weight": 1,
+      "id": 237,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "west": 413,
+        "south": 237,
+        "north": 239
+      },
+      "weight": 1,
+      "id": 238,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Intersection of Rue du Nord and Beitel Straat",
+      "environment": -1,
+      "exits": {
+        "south": 238,
+        "west": 414,
+        "east": 1185,
+        "north": 240
+      },
+      "weight": 1,
+      "id": 239,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 239,
+        "west": 415,
+        "east": 1192,
+        "north": 241
+      },
+      "weight": 1,
+      "id": 240,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "west": 416,
+        "south": 240,
+        "north": 242
+      },
+      "weight": 1,
+      "id": 241,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Gateway to Middle Bailey",
+      "environment": -1,
+      "exits": {
+        "south": 241,
+        "north": 243
+      },
+      "weight": 1,
+      "id": 242,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 242,
+        "north": 244
+      },
+      "weight": 1,
+      "id": 243,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Western intersection of Rue du Nord and Kirsch Lane",
+      "environment": -1,
+      "exits": {
+        "west": 245,
+        "east": 250,
+        "south": 243
+      },
+      "weight": 1,
+      "id": 244,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kirsch Lane",
+      "environment": -1,
+      "exits": {
+        "east": 244,
+        "west": 246
+      },
+      "weight": 1,
+      "id": 245,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kirsch Lane",
+      "environment": -1,
+      "exits": {
+        "west": 247,
+        "east": 245,
+        "south": 249
+      },
+      "weight": 1,
+      "id": 246,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Western end of Kirsch Lane",
+      "environment": -1,
+      "exits": {
+        "east": 246,
+        "south": 248
+      },
+      "weight": 1,
+      "id": 247,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Construction site",
+      "environment": -1,
+      "exits": {
+        "north": 247
+      },
+      "weight": 1,
+      "id": 248,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kaneohe Armory",
+      "environment": -1,
+      "exits": {
+        "north": 246
+      },
+      "weight": 1,
+      "id": 249,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Eastern intersection of Rue du Nord and Kirsch Lane",
+      "environment": -1,
+      "exits": {
+        "west": 244,
+        "east": 283,
+        "north": 251
+      },
+      "weight": 1,
+      "id": 250,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 250,
+        "east": 1193,
+        "north": 252
+      },
+      "weight": 1,
+      "id": 251,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 251,
+        "north": 253
+      },
+      "weight": 1,
+      "id": 252,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 252,
+        "north": 254
+      },
+      "weight": 1,
+      "id": 253,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 253,
+        "north": 255
+      },
+      "weight": 1,
+      "id": 254,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Central Square on the Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 254,
+        "west": 1195,
+        "east": 1194,
+        "north": 256
+      },
+      "weight": 1,
+      "id": 255,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 255,
+        "north": 257
+      },
+      "weight": 1,
+      "id": 256,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 256,
+        "north": 258
+      },
+      "weight": 1,
+      "id": 257,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Intersection of Rue du Nord and East Geld Strasse",
+      "environment": -1,
+      "exits": {
+        "west": 259,
+        "east": 281,
+        "south": 257
+      },
+      "weight": 1,
+      "id": 258,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "east": 258,
+        "west": 260
+      },
+      "weight": 1,
+      "id": 259,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Intersection of Rue du Nord and West Geld Strasse",
+      "environment": -1,
+      "exits": {
+        "west": 261,
+        "east": 259,
+        "north": 264
+      },
+      "weight": 1,
+      "id": 260,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Geld Strasse",
+      "environment": -1,
+      "exits": {
+        "east": 260,
+        "west": 262
+      },
+      "weight": 1,
+      "id": 261,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Geld Strasse",
+      "environment": -1,
+      "exits": {
+        "east": 261,
+        "west": 263
+      },
+      "weight": 1,
+      "id": 262,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Western end of Geld Strasse",
+      "environment": -1,
+      "exits": {
+        "east": 262
+      },
+      "weight": 1,
+      "id": 263,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 260,
+        "north": 265
+      },
+      "weight": 1,
+      "id": 264,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Gateway to Upper Bailey",
+      "environment": -1,
+      "exits": {
+        "south": 264,
+        "west": 282,
+        "east": 1198,
+        "north": 266
+      },
+      "weight": 1,
+      "id": 265,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 265,
+        "north": 267
+      },
+      "weight": 1,
+      "id": 266,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Intersection of Rue du Nord and Kasernegade",
+      "environment": -1,
+      "exits": {
+        "south": 266,
+        "west": 268,
+        "east": 276,
+        "north": 273
+      },
+      "weight": 1,
+      "id": 267,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kasernegade",
+      "environment": -1,
+      "exits": {
+        "east": 267,
+        "west": 269
+      },
+      "weight": 1,
+      "id": 268,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kasernegade",
+      "environment": -1,
+      "exits": {
+        "east": 268,
+        "west": 270
+      },
+      "weight": 1,
+      "id": 269,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kasernegade",
+      "environment": -1,
+      "exits": {
+        "west": 271,
+        "east": 269,
+        "south": 1199
+      },
+      "weight": 1,
+      "id": 270,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Western end of Kasernegade",
+      "environment": -1,
+      "exits": {
+        "east": 270,
+        "north": 272
+      },
+      "weight": 1,
+      "id": 271,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Construction site",
+      "environment": -1,
+      "exits": {
+        "south": 271
+      },
+      "weight": 1,
+      "id": 272,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Rue du Nord",
+      "environment": -1,
+      "exits": {
+        "south": 267,
+        "northwest": 1202,
+        "north": 274
+      },
+      "weight": 1,
+      "id": 273,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Under the Town Gate",
+      "environment": -1,
+      "exits": {
+        "south": 273,
+        "north": 275
+      },
+      "weight": 1,
+      "id": 274,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Before the Anshelm Town Gate",
+      "environment": -1,
+      "exits": {
+        "south": 274
+      },
+      "weight": 1,
+      "id": 275,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kasernegade",
+      "environment": -1,
+      "exits": {
+        "west": 267,
+        "east": 277,
+        "north": 1200
+      },
+      "weight": 1,
+      "id": 276,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kasernegade",
+      "environment": -1,
+      "exits": {
+        "east": 278,
+        "west": 276
+      },
+      "weight": 1,
+      "id": 277,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kasernegade",
+      "environment": -1,
+      "exits": {
+        "east": 279,
+        "west": 277
+      },
+      "weight": 1,
+      "id": 278,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kasernegade",
+      "environment": -1,
+      "exits": {
+        "east": 280,
+        "west": 278
+      },
+      "weight": 1,
+      "id": 279,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Eastern end of Kasernegade",
+      "environment": -1,
+      "exits": {
+        "west": 279,
+        "south": 1201
+      },
+      "weight": 1,
+      "id": 280,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Geld Strasse",
+      "environment": -1,
+      "exits": {
+        "west": 258,
+        "east": 1328,
+        "north": 1197
+      },
+      "weight": 1,
+      "id": 281,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "You have to turn sideways a bit to squeeze through the narrow passage.",
+      "environment": -1,
+      "exits": {
+        "east": 265
+      },
+      "weight": 1,
+      "id": 282,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kirsch Lane",
+      "environment": -1,
+      "exits": {
+        "west": 250,
+        "east": 284,
+        "north": 1326
+      },
+      "weight": 1,
+      "id": 283,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Kirsch Lane",
+      "environment": -1,
+      "exits": {
+        "west": 283,
+        "east": 285,
+        "north": 1327
+      },
+      "weight": 1,
+      "id": 284,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Eastern end of Kirsch Lane",
+      "environment": -1,
+      "exits": {
+        "west": 284
+      },
+      "weight": 1,
+      "id": 285,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Hawaiian Ryan's",
+      "environment": -1,
+      "exits": {
+        "east": 238,
+        "north": 414
+      },
+      "weight": 1,
+      "id": 413,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Beitel Straad",
+      "environment": -1,
+      "exits": {
+        "south": 413,
+        "west": 1147,
+        "east": 239,
+        "north": 415
+      },
+      "weight": 1,
+      "id": 414,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Club Femme Nu",
+      "environment": -1,
+      "exits": {
+        "east": 240,
+        "south": 414
+      },
+      "weight": 1,
+      "id": 415,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Western Guard Post",
+      "environment": -1,
+      "exits": {
+        "up": 1136,
+        "northeast": 237
+      },
+      "weight": 1,
+      "id": 1135,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Arleg bows to you.",
+      "environment": -1,
+      "exits": {
+        "down": 1135,
+        "up": 1137
+      },
+      "weight": 1,
+      "id": 1136,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Second Floor Landing",
+      "environment": -1,
+      "exits": {
+        "down": 1136,
+        "east": 1142,
+        "up": 1138
+      },
+      "weight": 1,
+      "id": 1137,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Third Floor Passage",
+      "environment": -1,
+      "exits": {
+        "down": 1137,
+        "east": 1144,
+        "up": 1139
+      },
+      "weight": 1,
+      "id": 1138,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Western Spire Stairwell",
+      "environment": -1,
+      "exits": {
+        "down": 1138,
+        "up": 1140
+      },
+      "weight": 1,
+      "id": 1139,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Roof of the Western Spire",
+      "environment": -1,
+      "exits": {
+        "down": 1139
+      },
+      "weight": 1,
+      "id": 1140,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Western Stairwell",
+      "environment": -1,
+      "exits": {
+        "up": 1137
+      },
+      "weight": 1,
+      "id": 1141,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Killing Room",
+      "environment": -1,
+      "exits": {
+        "east": 1153,
+        "west": 1137
+      },
+      "weight": 1,
+      "id": 1142,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Anshelm Lounge",
+      "environment": -1,
+      "exits": {
+        "east": 236,
+        "west": 1204
+      },
+      "weight": 1,
+      "id": 1143,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Gatehouse Mess Hall",
+      "environment": -1,
+      "exits": {
+        "east": 1145,
+        "west": 1138
+      },
+      "weight": 1,
+      "id": 1144,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Gatehouse Barracks",
+      "environment": -1,
+      "exits": {
+        "east": 1146,
+        "west": 1144
+      },
+      "weight": 1,
+      "id": 1145,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Third Floor Passage",
+      "environment": -1,
+      "exits": {
+        "up": 1151,
+        "west": 1145
+      },
+      "weight": 1,
+      "id": 1146,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Beitel Straad at the Promenade",
+      "environment": -1,
+      "exits": {
+        "west": 1150,
+        "east": 414,
+        "north": 1169
+      },
+      "weight": 1,
+      "id": 1147,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Eastern Stairwell",
+      "environment": -1,
+      "exits": {
+        "down": 1149
+      },
+      "weight": 1,
+      "id": 1148,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Base of the Eastern Stairwell",
+      "environment": -1,
+      "exits": {
+        "up": 1148
+      },
+      "weight": 1,
+      "id": 1149,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Beitel Straad",
+      "environment": -1,
+      "exits": {
+        "west": 1157,
+        "east": 1147,
+        "south": 1168
+      },
+      "weight": 1,
+      "id": 1150,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Eastern Spire Stairwell",
+      "environment": -1,
+      "exits": {
+        "down": 1149,
+        "up": 1152
+      },
+      "weight": 1,
+      "id": 1151,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Roof of the Eastern Spire",
+      "environment": -1,
+      "exits": {
+        "down": 1151
+      },
+      "weight": 1,
+      "id": 1152,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Tider bows to you.",
+      "environment": -1,
+      "exits": {
+        "west": 1142
+      },
+      "weight": 1,
+      "id": 1153,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Eastern Guard Post",
+      "environment": -1,
+      "exits": {
+        "northwest": 237,
+        "east": 1155
+      },
+      "weight": 1,
+      "id": 1154,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Ganran bows to you.",
+      "environment": -1,
+      "exits": {
+        "up": 1158,
+        "down": 1156,
+        "west": 1154
+      },
+      "weight": 1,
+      "id": 1155,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Gatehouse Armoury",
+      "environment": -1,
+      "exits": {
+        "up": 1155
+      },
+      "weight": 1,
+      "id": 1156,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Western end of Beitel Straad",
+      "environment": -1,
+      "exits": {
+        "east": 1150,
+        "north": 1164
+      },
+      "weight": 1,
+      "id": 1157,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Eastern Stairwell",
+      "environment": -1,
+      "exits": {
+        "down": 1155,
+        "up": 1159
+      },
+      "weight": 1,
+      "id": 1158,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Olotia bows to you.",
+      "environment": -1,
+      "exits": {
+        "down": 1158,
+        "west": 1160
+      },
+      "weight": 1,
+      "id": 1159,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Tiran bows to you.",
+      "environment": -1,
+      "exits": {
+        "east": 1159,
+        "west": 1161
+      },
+      "weight": 1,
+      "id": 1160,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Killing Room",
+      "environment": -1,
+      "exits": {
+        "east": 1160,
+        "west": 1162
+      },
+      "weight": 1,
+      "id": 1161,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Second Floor Landing",
+      "environment": -1,
+      "exits": {
+        "east": 1161,
+        "down": 1163
+      },
+      "weight": 1,
+      "id": 1162,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Western Stairwell",
+      "environment": -1,
+      "exits": {
+        "down": 1135,
+        "up": 1162
+      },
+      "weight": 1,
+      "id": 1163,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "The Inner Bailey",
+      "environment": -1,
+      "exits": {
+        "north": 1150
+      },
+      "weight": 1,
+      "id": 1168,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Beitel Straad",
+      "environment": -1,
+      "exits": {
+        "west": 239,
+        "east": 1186,
+        "north": 1191
+      },
+      "weight": 1,
+      "id": 1185,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Beitel Straad",
+      "environment": -1,
+      "exits": {
+        "west": 1185,
+        "east": 1187,
+        "north": 1190
+      },
+      "weight": 1,
+      "id": 1186,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Beitel Straad",
+      "environment": -1,
+      "exits": {
+        "east": 1188,
+        "west": 1186
+      },
+      "weight": 1,
+      "id": 1187,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Beitel Straad",
+      "environment": -1,
+      "exits": {
+        "east": 1189,
+        "west": 1187
+      },
+      "weight": 1,
+      "id": 1188,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Eastern end of Beitel Straad",
+      "environment": -1,
+      "exits": {
+        "west": 1188
+      },
+      "weight": 1,
+      "id": 1189,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "The Banana Hammock",
+      "environment": -1,
+      "exits": {
+        "west": 1191,
+        "south": 1186
+      },
+      "weight": 1,
+      "id": 1190,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Jack's Bistro",
+      "environment": -1,
+      "exits": {
+        "east": 1190,
+        "south": 1185
+      },
+      "weight": 1,
+      "id": 1191,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Second Bank of Anshelm",
+      "environment": -1,
+      "exits": {
+        "west": 240
+      },
+      "weight": 1,
+      "id": 1192,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "The Anshelmish General Store",
+      "environment": -1,
+      "exits": {
+        "west": 251
+      },
+      "weight": 1,
+      "id": 1193,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Construction site",
+      "environment": -1,
+      "exits": {
+        "west": 255
+      },
+      "weight": 1,
+      "id": 1194,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Anshelmish Keep's drawbridge",
+      "environment": -1,
+      "exits": {
+        "east": 255,
+        "west": 1196
+      },
+      "weight": 1,
+      "id": 1195,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Construction site",
+      "environment": -1,
+      "exits": {
+        "east": 1195
+      },
+      "weight": 1,
+      "id": 1196,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Private Entry",
+      "environment": -1,
+      "exits": {
+        "south": 281
+      },
+      "weight": 1,
+      "id": 1197,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "You have to turn sideways a bit to squeeze through the narrow passage.",
+      "environment": -1,
+      "exits": {
+        "west": 265
+      },
+      "weight": 1,
+      "id": 1198,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Armourer's Shack",
+      "environment": -1,
+      "exits": {
+        "north": 270
+      },
+      "weight": 1,
+      "id": 1199,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Construction site",
+      "environment": -1,
+      "exits": {
+        "south": 276
+      },
+      "weight": 1,
+      "id": 1200,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Construction site",
+      "environment": -1,
+      "exits": {
+        "north": 280
+      },
+      "weight": 1,
+      "id": 1201,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Construction site",
+      "environment": -1,
+      "exits": {
+        "southeast": 273
+      },
+      "weight": 1,
+      "id": 1202,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "You feel a STRONG urge to read the Sanctuary board... You are responsible",
+      "environment": -1,
+      "exits": {
+        "east": 1143
+      },
+      "weight": 1,
+      "id": 1204,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "La Cosa Nostra",
+      "environment": -1,
+      "exits": {
+        "south": 283
+      },
+      "weight": 1,
+      "id": 1326,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Anshelm Stables",
+      "environment": -1,
+      "exits": {
+        "south": 284
+      },
+      "weight": 1,
+      "id": 1327,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Eastern end of Geld Strasse",
+      "environment": -1,
+      "exits": {
+        "east": 1329,
+        "west": 281
+      },
+      "weight": 1,
+      "id": 1328,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "With a little strain, you are able to pull open the heavy doors and enter",
+      "environment": -1,
+      "exits": {
+        "east": 1330,
+        "west": 1328
+      },
+      "weight": 1,
+      "id": 1329,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Naive",
+      "environment": -1,
+      "exits": {
+        "south": 1332,
+        "west": 1329,
+        "east": 1331,
+        "north": 1333
+      },
+      "weight": 1,
+      "id": 1330,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Altar of the Rose",
+      "environment": -1,
+      "exits": {
+        "west": 1330
+      },
+      "weight": 1,
+      "id": 1331,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Southern statuary",
+      "environment": -1,
+      "exits": {
+        "north": 1330
+      },
+      "weight": 1,
+      "id": 1332,
+      "area": {
+        "id": 3
+      }
+    },
+    {
+      "name": "Northern statuary",
+      "environment": -1,
+      "exits": {
+        "south": 1330
+      },
+      "weight": 1,
+      "id": 1333,
+      "area": {
+        "id": 3
+      }
+    }
+  ],
+  "exportedAt": "2026-01-05T00:19:21Z"
+}
