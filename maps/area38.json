@@ -1,1 +1,85 @@
-{"mudlet":{"version":"unknown"},"rooms":[{"name":"You cross the sharply arching bridge.","environment":-1,"exits":{"south":1861,"north":1864},"weight":1,"id":1863,"area":{"id":38}},{"name":"You push on the massive golden doors and, perfectly balanced, they swing open","environment":-1,"exits":{"south":1863,"north":1865},"weight":1,"id":1864,"area":{"id":38}},{"name":"You step down into the sandy courtyard.","environment":-1,"exits":{"south":1864,"north":1866},"weight":1,"id":1865,"area":{"id":38}},{"name":"Northwest Training Yard","environment":-1,"exits":{"south":1865,"north":1867},"weight":1,"id":1866,"area":{"id":38}},{"name":"You step up onto the boardwalk that rings the practice yard.","environment":-1,"exits":{"south":1866,"north":1868},"weight":1,"id":1867,"area":{"id":38}},{"name":"You slide back the fusumi with a flick of your hand.","environment":-1,"exits":{"south":1867},"weight":1,"id":1868,"area":{"id":38}}],"exportedAt":"2026-01-05T00:19:21Z"}
+{
+  "mudlet": {
+    "version": "unknown"
+  },
+  "rooms": [
+    {
+      "name": "You cross the sharply arching bridge.",
+      "environment": -1,
+      "exits": {
+        "south": 1861,
+        "north": 1864
+      },
+      "weight": 1,
+      "id": 1863,
+      "area": {
+        "id": 38
+      }
+    },
+    {
+      "name": "You push on the massive golden doors and, perfectly balanced, they swing open",
+      "environment": -1,
+      "exits": {
+        "south": 1863,
+        "north": 1865
+      },
+      "weight": 1,
+      "id": 1864,
+      "area": {
+        "id": 38
+      }
+    },
+    {
+      "name": "You step down into the sandy courtyard.",
+      "environment": -1,
+      "exits": {
+        "south": 1864,
+        "north": 1866
+      },
+      "weight": 1,
+      "id": 1865,
+      "area": {
+        "id": 38
+      }
+    },
+    {
+      "name": "Northwest Training Yard",
+      "environment": -1,
+      "exits": {
+        "south": 1865,
+        "north": 1867
+      },
+      "weight": 1,
+      "id": 1866,
+      "area": {
+        "id": 38
+      }
+    },
+    {
+      "name": "You step up onto the boardwalk that rings the practice yard.",
+      "environment": -1,
+      "exits": {
+        "south": 1866,
+        "north": 1868
+      },
+      "weight": 1,
+      "id": 1867,
+      "area": {
+        "id": 38
+      }
+    },
+    {
+      "name": "You slide back the fusumi with a flick of your hand.",
+      "environment": -1,
+      "exits": {
+        "south": 1867
+      },
+      "weight": 1,
+      "id": 1868,
+      "area": {
+        "id": 38
+      }
+    }
+  ],
+  "exportedAt": "2026-01-05T00:19:21Z"
+}

@@ -1,1 +1,297 @@
-{"mudlet":{"version":"unknown"},"rooms":[{"name":"Entryway","environment":-1,"exits":{"south":201,"north":932},"weight":1,"id":931,"area":{"id":10}},{"name":"Hallway","environment":-1,"exits":{"south":931,"west":933,"east":934,"north":937},"weight":1,"id":932,"area":{"id":10}},{"name":"Corner","environment":-1,"exits":{"east":932,"north":939},"weight":1,"id":933,"area":{"id":10}},{"name":"Corner","environment":-1,"exits":{"west":932,"north":935},"weight":1,"id":934,"area":{"id":10}},{"name":"Hallway","environment":-1,"exits":{"south":934,"east":945,"north":936},"weight":1,"id":935,"area":{"id":10}},{"name":"Hallway","environment":-1,"exits":{"south":935,"east":946,"north":947},"weight":1,"id":936,"area":{"id":10}},{"name":"Courtyard","environment":-1,"exits":{"south":932,"north":938},"weight":1,"id":937,"area":{"id":10}},{"name":"Courtyard","environment":-1,"exits":{"south":937,"north":941},"weight":1,"id":938,"area":{"id":10}},{"name":"Hallway","environment":-1,"exits":{"west":942,"south":933,"north":940},"weight":1,"id":939,"area":{"id":10}},{"name":"Hallway","environment":-1,"exits":{"west":943,"south":939,"north":944},"weight":1,"id":940,"area":{"id":10}},{"name":"Archway","environment":-1,"exits":{"south":938,"west":944,"east":947,"north":948},"weight":1,"id":941,"area":{"id":10}},{"name":"Quarters","environment":-1,"exits":{"east":939},"weight":1,"id":942,"area":{"id":10}},{"name":"Quarters","environment":-1,"exits":{"east":940},"weight":1,"id":943,"area":{"id":10}},{"name":"Corner","environment":-1,"exits":{"east":941,"south":940},"weight":1,"id":944,"area":{"id":10}},{"name":"Quarters","environment":-1,"exits":{"west":935},"weight":1,"id":945,"area":{"id":10}},{"name":"Quarters","environment":-1,"exits":{"west":936},"weight":1,"id":946,"area":{"id":10}},{"name":"Corner","environment":-1,"exits":{"west":941,"south":936},"weight":1,"id":947,"area":{"id":10}},{"name":"Temple Chamber","environment":-1,"exits":{"south":941,"west":951,"east":952,"north":949},"weight":1,"id":948,"area":{"id":10}},{"name":"Hallway","environment":-1,"exits":{"south":948,"north":950},"weight":1,"id":949,"area":{"id":10}},{"name":"Library","environment":-1,"exits":{"south":949},"weight":1,"id":950,"area":{"id":10}},{"name":"Kitchen","environment":-1,"exits":{"east":948},"weight":1,"id":951,"area":{"id":10}},{"name":"Storage","environment":-1,"exits":{"west":948},"weight":1,"id":952,"area":{"id":10}}],"exportedAt":"2026-01-05T00:19:21Z"}
+{
+  "mudlet": {
+    "version": "unknown"
+  },
+  "rooms": [
+    {
+      "name": "Entryway",
+      "environment": -1,
+      "exits": {
+        "south": 201,
+        "north": 932
+      },
+      "weight": 1,
+      "id": 931,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Hallway",
+      "environment": -1,
+      "exits": {
+        "south": 931,
+        "west": 933,
+        "east": 934,
+        "north": 937
+      },
+      "weight": 1,
+      "id": 932,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Corner",
+      "environment": -1,
+      "exits": {
+        "east": 932,
+        "north": 939
+      },
+      "weight": 1,
+      "id": 933,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Corner",
+      "environment": -1,
+      "exits": {
+        "west": 932,
+        "north": 935
+      },
+      "weight": 1,
+      "id": 934,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Hallway",
+      "environment": -1,
+      "exits": {
+        "south": 934,
+        "east": 945,
+        "north": 936
+      },
+      "weight": 1,
+      "id": 935,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Hallway",
+      "environment": -1,
+      "exits": {
+        "south": 935,
+        "east": 946,
+        "north": 947
+      },
+      "weight": 1,
+      "id": 936,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Courtyard",
+      "environment": -1,
+      "exits": {
+        "south": 932,
+        "north": 938
+      },
+      "weight": 1,
+      "id": 937,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Courtyard",
+      "environment": -1,
+      "exits": {
+        "south": 937,
+        "north": 941
+      },
+      "weight": 1,
+      "id": 938,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Hallway",
+      "environment": -1,
+      "exits": {
+        "west": 942,
+        "south": 933,
+        "north": 940
+      },
+      "weight": 1,
+      "id": 939,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Hallway",
+      "environment": -1,
+      "exits": {
+        "west": 943,
+        "south": 939,
+        "north": 944
+      },
+      "weight": 1,
+      "id": 940,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Archway",
+      "environment": -1,
+      "exits": {
+        "south": 938,
+        "west": 944,
+        "east": 947,
+        "north": 948
+      },
+      "weight": 1,
+      "id": 941,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Quarters",
+      "environment": -1,
+      "exits": {
+        "east": 939
+      },
+      "weight": 1,
+      "id": 942,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Quarters",
+      "environment": -1,
+      "exits": {
+        "east": 940
+      },
+      "weight": 1,
+      "id": 943,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Corner",
+      "environment": -1,
+      "exits": {
+        "east": 941,
+        "south": 940
+      },
+      "weight": 1,
+      "id": 944,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Quarters",
+      "environment": -1,
+      "exits": {
+        "west": 935
+      },
+      "weight": 1,
+      "id": 945,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Quarters",
+      "environment": -1,
+      "exits": {
+        "west": 936
+      },
+      "weight": 1,
+      "id": 946,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Corner",
+      "environment": -1,
+      "exits": {
+        "west": 941,
+        "south": 936
+      },
+      "weight": 1,
+      "id": 947,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Temple Chamber",
+      "environment": -1,
+      "exits": {
+        "south": 941,
+        "west": 951,
+        "east": 952,
+        "north": 949
+      },
+      "weight": 1,
+      "id": 948,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Hallway",
+      "environment": -1,
+      "exits": {
+        "south": 948,
+        "north": 950
+      },
+      "weight": 1,
+      "id": 949,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Library",
+      "environment": -1,
+      "exits": {
+        "south": 949
+      },
+      "weight": 1,
+      "id": 950,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Kitchen",
+      "environment": -1,
+      "exits": {
+        "east": 948
+      },
+      "weight": 1,
+      "id": 951,
+      "area": {
+        "id": 10
+      }
+    },
+    {
+      "name": "Storage",
+      "environment": -1,
+      "exits": {
+        "west": 948
+      },
+      "weight": 1,
+      "id": 952,
+      "area": {
+        "id": 10
+      }
+    }
+  ],
+  "exportedAt": "2026-01-05T00:19:21Z"
+}

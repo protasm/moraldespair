@@ -1,1 +1,1962 @@
-{"mudlet":{"version":"unknown"},"rooms":[{"name":"Entrance to Exedoria","environment":-1,"exits":{"east":287},"weight":1,"id":286,"area":{"id":4}},{"name":"Main Street","environment":-1,"exits":{"west":286,"east":288,"south":330},"weight":1,"id":287,"area":{"id":4}},{"name":"Main Street","environment":-1,"exits":{"south":368,"west":287,"east":289,"north":367},"weight":1,"id":288,"area":{"id":4}},{"name":"Main Street","environment":-1,"exits":{"west":288,"east":290,"south":366},"weight":1,"id":289,"area":{"id":4}},{"name":"Monument Circle, Main Street","environment":-1,"exits":{"south":299,"west":289,"east":291,"north":369},"weight":1,"id":290,"area":{"id":4}},{"name":"Main Street","environment":-1,"exits":{"south":298,"west":290,"east":292,"north":370},"weight":1,"id":291,"area":{"id":4}},{"name":"Main Street","environment":-1,"exits":{"west":291,"east":293,"south":383},"weight":1,"id":292,"area":{"id":4}},{"name":"Main Street","environment":-1,"exits":{"east":294,"west":292},"weight":1,"id":293,"area":{"id":4}},{"name":"Main Street","environment":-1,"exits":{"east":295,"west":293},"weight":1,"id":294,"area":{"id":4}},{"name":"Main Street","environment":-1,"exits":{"east":296,"west":294},"weight":1,"id":295,"area":{"id":4}},{"name":"Main Street","environment":-1,"exits":{"east":297,"west":295},"weight":1,"id":296,"area":{"id":4}},{"name":"Corigan Court Intersection","environment":-1,"exits":{"west":296},"weight":1,"id":297,"area":{"id":4}},{"name":"City Hall","environment":-1,"exits":{"north":291},"weight":1,"id":298,"area":{"id":4}},{"name":"Eithel Sirion","environment":-1,"exits":{"south":300,"north":290},"weight":1,"id":299,"area":{"id":4}},{"name":"Brapnor Road","environment":-1,"exits":{"south":301,"west":302,"east":385,"north":299},"weight":1,"id":300,"area":{"id":4}},{"name":"Frenchie's II","environment":-1,"exits":{"north":300},"weight":1,"id":301,"area":{"id":4}},{"name":"Brapnor Road","environment":-1,"exits":{"west":303,"east":300,"south":392},"weight":1,"id":302,"area":{"id":4}},{"name":"Middle of Brapnor Road","environment":-1,"exits":{"west":304,"east":302,"south":329},"weight":1,"id":303,"area":{"id":4}},{"name":"Brapnor Road","environment":-1,"exits":{"west":305,"east":303,"north":330},"weight":1,"id":304,"area":{"id":4}},{"name":"Brapnor Road","environment":-1,"exits":{"west":306,"east":304,"north":393},"weight":1,"id":305,"area":{"id":4}},{"name":"Brapnor Road","environment":-1,"exits":{"east":305,"west":307},"weight":1,"id":306,"area":{"id":4}},{"name":"End of Brapnor Road","environment":-1,"exits":{"east":306,"northwest":331,"south":308},"weight":1,"id":307,"area":{"id":4}},{"name":"Beginning of Lilu Lane","environment":-1,"exits":{"south":309,"north":307},"weight":1,"id":308,"area":{"id":4}},{"name":"Lilu Lane","environment":-1,"exits":{"south":310,"north":308},"weight":1,"id":309,"area":{"id":4}},{"name":"Middle of Lilu Lane","environment":-1,"exits":{"west":355,"south":311,"north":309},"weight":1,"id":310,"area":{"id":4}},{"name":"Lilu Lane","environment":-1,"exits":{"south":312,"north":310},"weight":1,"id":311,"area":{"id":4}},{"name":"End of Lilu Lane","environment":-1,"exits":{"west":354,"south":313,"north":311},"weight":1,"id":312,"area":{"id":4}},{"name":"Beginning of Embassy Row","environment":-1,"exits":{"east":314,"north":312},"weight":1,"id":313,"area":{"id":4}},{"name":"Embassy Row","environment":-1,"exits":{"west":313,"east":315,"south":322},"weight":1,"id":314,"area":{"id":4}},{"name":"Embassy Row","environment":-1,"exits":{"south":320,"west":314,"east":316,"north":321},"weight":1,"id":315,"area":{"id":4}},{"name":"Embassy Row","environment":-1,"exits":{"south":318,"west":315,"east":317,"north":319},"weight":1,"id":316,"area":{"id":4}},{"name":"Embassy Row","environment":-1,"exits":{"west":316,"east":323,"north":333},"weight":1,"id":317,"area":{"id":4}},{"name":"A Dark Hole in the Ground","environment":-1,"exits":{"north":316},"weight":1,"id":318,"area":{"id":4}},{"name":"Guard Post for Gnome Embassy","environment":-1,"exits":{"south":316,"north":926},"weight":1,"id":319,"area":{"id":4}},{"name":"Before a round door","environment":-1,"exits":{"north":315},"weight":1,"id":320,"area":{"id":4}},{"name":"Junk yard","environment":-1,"exits":{"south":315},"weight":1,"id":321,"area":{"id":4}},{"name":"Elven Embassy checkpoint","environment":-1,"exits":{"north":314},"weight":1,"id":322,"area":{"id":4}},{"name":"End of Embassy Row","environment":-1,"exits":{"west":317,"north":324},"weight":1,"id":323,"area":{"id":4}},{"name":"Southern end of alley","environment":-1,"exits":{"south":323,"north":325},"weight":1,"id":324,"area":{"id":4}},{"name":"Bend in an alley","environment":-1,"exits":{"west":326,"south":324},"weight":1,"id":325,"area":{"id":4}},{"name":"A bend in the alley","environment":-1,"exits":{"east":325,"north":327},"weight":1,"id":326,"area":{"id":4}},{"name":"Dark and narrow alley","environment":-1,"exits":{"south":326,"north":328},"weight":1,"id":327,"area":{"id":4}},{"name":"Dark alley","environment":-1,"exits":{"south":327,"north":329},"weight":1,"id":328,"area":{"id":4}},{"name":"Alley entrance","environment":-1,"exits":{"south":328,"north":303},"weight":1,"id":329,"area":{"id":4}},{"name":"The Excalibur, a closed guild","environment":-1,"exits":{"south":304,"north":287},"weight":1,"id":330,"area":{"id":4}},{"name":"Foyer of the Exedorian Inn","environment":-1,"exits":{"southeast":307,"west":332},"weight":1,"id":331,"area":{"id":4}},{"name":"Exedorian saloon","environment":-1,"exits":{"east":331},"weight":1,"id":332,"area":{"id":4}},{"name":"Before the Dwarven Embassy","environment":-1,"exits":{"south":317,"north":920},"weight":1,"id":333,"area":{"id":4}},{"name":"Keen Street West","environment":-1,"exits":{"east":335},"weight":1,"id":334,"area":{"id":4}},{"name":"Keen Street","environment":-1,"exits":{"east":336,"west":334},"weight":1,"id":335,"area":{"id":4}},{"name":"Keen Street","environment":-1,"exits":{"west":335,"east":337,"north":602},"weight":1,"id":336,"area":{"id":4}},{"name":"Keen Street","environment":-1,"exits":{"west":336,"east":338,"south":603},"weight":1,"id":337,"area":{"id":4}},{"name":"East Keen Street Bridge","environment":-1,"exits":{"west":337,"east":339,"north":604},"weight":1,"id":338,"area":{"id":4}},{"name":"Keen Street Bridge","environment":-1,"exits":{"east":340,"west":338},"weight":1,"id":339,"area":{"id":4}},{"name":"Keen Street","environment":-1,"exits":{"west":339,"east":341,"south":343},"weight":1,"id":340,"area":{"id":4}},{"name":"Keen Street East","environment":-1,"exits":{"west":340,"north":342},"weight":1,"id":341,"area":{"id":4}},{"name":"Guard Post","environment":-1,"exits":{"south":341,"north":350},"weight":1,"id":342,"area":{"id":4}},{"name":"Statued lawn","environment":-1,"exits":{"south":344,"north":340},"weight":1,"id":343,"area":{"id":4}},{"name":"Statued lawn","environment":-1,"exits":{"south":345,"north":343},"weight":1,"id":344,"area":{"id":4}},{"name":"Manicured lawn","environment":-1,"exits":{"south":346,"north":344},"weight":1,"id":345,"area":{"id":4}},{"name":"Cavernous foyer","environment":-1,"exits":{"west":348,"east":347,"north":345},"weight":1,"id":346,"area":{"id":4}},{"name":"Icy room","environment":-1,"exits":{"west":346},"weight":1,"id":347,"area":{"id":4}},{"name":"Cold hallway","environment":-1,"exits":{"east":346,"south":349},"weight":1,"id":348,"area":{"id":4}},{"name":"Snowy cave","environment":-1,"exits":{"north":348},"weight":1,"id":349,"area":{"id":4}},{"name":"With no gate guard present, you are able to enter the walled estate","environment":-1,"exits":{"south":342,"north":351},"weight":1,"id":350,"area":{"id":4}},{"name":"Foyer","environment":-1,"exits":{"east":352,"south":350},"weight":1,"id":351,"area":{"id":4}},{"name":"Wood-paneled Hallway","environment":-1,"exits":{"west":351,"north":353},"weight":1,"id":352,"area":{"id":4}},{"name":"Busy Kitchen","environment":-1,"exits":{"south":352},"weight":1,"id":353,"area":{"id":4}},{"name":"Mom's General Store","environment":-1,"exits":{"east":312},"weight":1,"id":354,"area":{"id":4}},{"name":"Drawbridge","environment":-1,"exits":{"east":310,"west":356},"weight":1,"id":355,"area":{"id":4}},{"name":"Library's entrance","environment":-1,"exits":{"south":357,"west":361,"east":355,"north":362},"weight":1,"id":356,"area":{"id":4}},{"name":"Cobblestoned hallway","environment":-1,"exits":{"south":358,"east":360,"north":356},"weight":1,"id":357,"area":{"id":4}},{"name":"A bend in the hallway","environment":-1,"exits":{"west":359,"north":357},"weight":1,"id":358,"area":{"id":4}},{"name":"A monk's cell","environment":-1,"exits":{"east":358},"weight":1,"id":359,"area":{"id":4}},{"name":"A monk's cell","environment":-1,"exits":{"west":357},"weight":1,"id":360,"area":{"id":4}},{"name":"With a grunt of effort, you manage to push open the heavy door, and enter","environment":-1,"exits":{"east":356},"weight":1,"id":361,"area":{"id":4}},{"name":"Cobblestoned hallway","environment":-1,"exits":{"south":356,"east":363,"north":364},"weight":1,"id":362,"area":{"id":4}},{"name":"A monk's cell","environment":-1,"exits":{"west":362},"weight":1,"id":363,"area":{"id":4}},{"name":"A bend in the hallway","environment":-1,"exits":{"west":365,"south":362},"weight":1,"id":364,"area":{"id":4}},{"name":"A monk's cell","environment":-1,"exits":{"east":364},"weight":1,"id":365,"area":{"id":4}},{"name":"The Cadaver Emporium","environment":-1,"exits":{"north":289},"weight":1,"id":366,"area":{"id":4}},{"name":"Velvet Unicorn","environment":-1,"exits":{"south":288},"weight":1,"id":367,"area":{"id":4}},{"name":"Eidolon Warlords","environment":-1,"exits":{"north":288},"weight":1,"id":368,"area":{"id":4}},{"name":"You feel a STRONG urge to read the Sanctuary board... You are responsible","environment":-1,"exits":{"south":290},"weight":1,"id":369,"area":{"id":4}},{"name":"Beginning of park path","environment":-1,"exits":{"south":291,"north":371},"weight":1,"id":370,"area":{"id":4}},{"name":"Park path intersection","environment":-1,"exits":{"south":370,"west":372,"east":378,"north":373},"weight":1,"id":371,"area":{"id":4}},{"name":"Exedoria Pet Cemetary","environment":-1,"exits":{"east":371},"weight":1,"id":372,"area":{"id":4}},{"name":"Park path on the hill","environment":-1,"exits":{"south":371,"north":374},"weight":1,"id":373,"area":{"id":4}},{"name":"Elevated park path","environment":-1,"exits":{"south":373,"north":375},"weight":1,"id":374,"area":{"id":4}},{"name":"End of park path","environment":-1,"exits":{"east":376,"south":374},"weight":1,"id":375,"area":{"id":4}},{"name":"Temple ruins","environment":-1,"exits":{"east":377,"west":375},"weight":1,"id":376,"area":{"id":4}},{"name":"Temple rotunda","environment":-1,"exits":{"west":376},"weight":1,"id":377,"area":{"id":4}},{"name":"Gravel path to the mansion","environment":-1,"exits":{"east":379,"west":371},"weight":1,"id":378,"area":{"id":4}},{"name":"Gravel path on the hill","environment":-1,"exits":{"east":380,"west":378},"weight":1,"id":379,"area":{"id":4}},{"name":"Intersection in the gravel path","environment":-1,"exits":{"west":379,"southeast":382,"north":381},"weight":1,"id":380,"area":{"id":4}},{"name":"Before a white mansion","environment":-1,"exits":{"south":380},"weight":1,"id":381,"area":{"id":4}},{"name":"Outside the cemetery gate","environment":-1,"exits":{"northwest":380},"weight":1,"id":382,"area":{"id":4}},{"name":"Guard Post","environment":-1,"exits":{"south":384,"north":292},"weight":1,"id":383,"area":{"id":4}},{"name":"Beginning of Brapnor Road","environment":-1,"exits":{"west":385,"southeast":386,"north":383},"weight":1,"id":384,"area":{"id":4}},{"name":"Brapnor Road","environment":-1,"exits":{"east":384,"west":300},"weight":1,"id":385,"area":{"id":4}},{"name":"Necrom's Gate","environment":-1,"exits":{"northwest":384,"southeast":387},"weight":1,"id":386,"area":{"id":4}},{"name":"Paved intersection","environment":-1,"exits":{"east":388,"northwest":386,"south":527},"weight":1,"id":387,"area":{"id":4}},{"name":"Eastern path through the University","environment":-1,"exits":{"east":389,"west":387},"weight":1,"id":388,"area":{"id":4}},{"name":"Eastern path through the University","environment":-1,"exits":{"east":390,"west":388},"weight":1,"id":389,"area":{"id":4}},{"name":"In front of a temporary building","environment":-1,"exits":{"west":389,"east":391,"south":904},"weight":1,"id":390,"area":{"id":4}},{"name":"Construction site","environment":-1,"exits":{"west":390},"weight":1,"id":391,"area":{"id":4}},{"name":"Delilah's Deli","environment":-1,"exits":{"north":302},"weight":1,"id":392,"area":{"id":4}},{"name":"Guard Tower Entrance","environment":-1,"exits":{"south":305},"weight":1,"id":393,"area":{"id":4}},{"name":"Southern path through the University","environment":-1,"exits":{"south":528,"north":387},"weight":1,"id":527,"area":{"id":4}},{"name":"Southern path through the University","environment":-1,"exits":{"south":896,"east":894,"north":527},"weight":1,"id":528,"area":{"id":4}},{"name":"Railed entrance","environment":-1,"exits":{"south":336},"weight":1,"id":602,"area":{"id":4}},{"name":"Flagstoned entry","environment":-1,"exits":{"south":915,"north":337},"weight":1,"id":603,"area":{"id":4}},{"name":"You rudely trespass on the private property.","environment":-1,"exits":{"northeast":907,"northwest":910,"south":338},"weight":1,"id":604,"area":{"id":4}},{"name":"Dormitory foyer","environment":-1,"exits":{"west":528,"south":895,"north":903},"weight":1,"id":894,"area":{"id":4}},{"name":"Dining commons","environment":-1,"exits":{"north":894},"weight":1,"id":895,"area":{"id":4}},{"name":"Southern path through the University","environment":-1,"exits":{"south":897,"north":528},"weight":1,"id":896,"area":{"id":4}},{"name":"Southern path through the University","environment":-1,"exits":{"south":898,"north":896},"weight":1,"id":897,"area":{"id":4}},{"name":"Southern path through the University","environment":-1,"exits":{"south":899,"north":897},"weight":1,"id":898,"area":{"id":4}},{"name":"Southern path through the University","environment":-1,"exits":{"south":902,"east":900,"north":898},"weight":1,"id":899,"area":{"id":4}},{"name":"School of Business","environment":-1,"exits":{"west":899,"north":901},"weight":1,"id":900,"area":{"id":4}},{"name":"Dean's office","environment":-1,"exits":{"south":900},"weight":1,"id":901,"area":{"id":4}},{"name":"Construction site","environment":-1,"exits":{"north":899},"weight":1,"id":902,"area":{"id":4}},{"name":"Resident Advisor's office","environment":-1,"exits":{"south":894},"weight":1,"id":903,"area":{"id":4}},{"name":"Science building's entry","environment":-1,"exits":{"west":905,"east":906,"north":390},"weight":1,"id":904,"area":{"id":4}},{"name":"Science laboratory","environment":-1,"exits":{"east":904},"weight":1,"id":905,"area":{"id":4}},{"name":"Science lecture hall","environment":-1,"exits":{"west":904},"weight":1,"id":906,"area":{"id":4}},{"name":"Gravel Path","environment":-1,"exits":{"northwest":908,"southwest":604},"weight":1,"id":907,"area":{"id":4}},{"name":"Vine-covered Entry","environment":-1,"exits":{"southwest":910,"southeast":907,"north":909},"weight":1,"id":908,"area":{"id":4}},{"name":"Grand Foyer","environment":-1,"exits":{"up":914,"west":911,"east":912,"south":908},"weight":1,"id":909,"area":{"id":4}},{"name":"Gravel Path","environment":-1,"exits":{"southeast":604,"northeast":908},"weight":1,"id":910,"area":{"id":4}},{"name":"Child's Den","environment":-1,"exits":{"east":909},"weight":1,"id":911,"area":{"id":4}},{"name":"Wooded Hallway","environment":-1,"exits":{"east":913,"west":909},"weight":1,"id":912,"area":{"id":4}},{"name":"Brushing aside the hanging vines, you walk east into the servants' quarters.","environment":-1,"exits":{"west":912},"weight":1,"id":913,"area":{"id":4}},{"name":"Treetop Bedroom","environment":-1,"exits":{"down":909},"weight":1,"id":914,"area":{"id":4}},{"name":"Flagstoned path","environment":-1,"exits":{"south":916,"west":919,"east":918,"north":603},"weight":1,"id":915,"area":{"id":4}},{"name":"Gray foyer","environment":-1,"exits":{"south":917,"north":915},"weight":1,"id":916,"area":{"id":4}},{"name":"Trinian merchant's office","environment":-1,"exits":{"north":916},"weight":1,"id":917,"area":{"id":4}},{"name":"Carriage house","environment":-1,"exits":{"west":915},"weight":1,"id":918,"area":{"id":4}},{"name":"Slave quarters","environment":-1,"exits":{"east":915},"weight":1,"id":919,"area":{"id":4}},{"name":"Dwarven Embassy foyer","environment":-1,"exits":{"west":923,"up":921,"south":333,"east":925,"north":924},"weight":1,"id":920,"area":{"id":4}},{"name":"Dwarven watchtower","environment":-1,"exits":{"down":920,"north":922},"weight":1,"id":921,"area":{"id":4}},{"name":"Ambassadors Suite","environment":-1,"exits":{"south":921},"weight":1,"id":922,"area":{"id":4}},{"name":"Dwarven brewery","environment":-1,"exits":{"east":920},"weight":1,"id":923,"area":{"id":4}},{"name":"Dwarven Ambassador's office","environment":-1,"exits":{"south":920},"weight":1,"id":924,"area":{"id":4}},{"name":"Dwarven armoury","environment":-1,"exits":{"west":920},"weight":1,"id":925,"area":{"id":4}},{"name":"Ground Floor of the Windmill","environment":-1,"exits":{"up":929,"west":927,"east":928,"south":319},"weight":1,"id":926,"area":{"id":4}},{"name":"Garden of Machines","environment":-1,"exits":{"east":926},"weight":1,"id":927,"area":{"id":4}},{"name":"Cemetery","environment":-1,"exits":{"west":926},"weight":1,"id":928,"area":{"id":4}},{"name":"Gnome Laboratory","environment":-1,"exits":{"down":926,"up":930},"weight":1,"id":929,"area":{"id":4}},{"name":"Machinery Room","environment":-1,"exits":{"down":929},"weight":1,"id":930,"area":{"id":4}}],"exportedAt":"2026-01-05T00:19:21Z"}
+{
+  "mudlet": {
+    "version": "unknown"
+  },
+  "rooms": [
+    {
+      "name": "Entrance to Exedoria",
+      "environment": -1,
+      "exits": {
+        "east": 287
+      },
+      "weight": 1,
+      "id": 286,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Main Street",
+      "environment": -1,
+      "exits": {
+        "west": 286,
+        "east": 288,
+        "south": 330
+      },
+      "weight": 1,
+      "id": 287,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Main Street",
+      "environment": -1,
+      "exits": {
+        "south": 368,
+        "west": 287,
+        "east": 289,
+        "north": 367
+      },
+      "weight": 1,
+      "id": 288,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Main Street",
+      "environment": -1,
+      "exits": {
+        "west": 288,
+        "east": 290,
+        "south": 366
+      },
+      "weight": 1,
+      "id": 289,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Monument Circle, Main Street",
+      "environment": -1,
+      "exits": {
+        "south": 299,
+        "west": 289,
+        "east": 291,
+        "north": 369
+      },
+      "weight": 1,
+      "id": 290,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Main Street",
+      "environment": -1,
+      "exits": {
+        "south": 298,
+        "west": 290,
+        "east": 292,
+        "north": 370
+      },
+      "weight": 1,
+      "id": 291,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Main Street",
+      "environment": -1,
+      "exits": {
+        "west": 291,
+        "east": 293,
+        "south": 383
+      },
+      "weight": 1,
+      "id": 292,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Main Street",
+      "environment": -1,
+      "exits": {
+        "east": 294,
+        "west": 292
+      },
+      "weight": 1,
+      "id": 293,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Main Street",
+      "environment": -1,
+      "exits": {
+        "east": 295,
+        "west": 293
+      },
+      "weight": 1,
+      "id": 294,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Main Street",
+      "environment": -1,
+      "exits": {
+        "east": 296,
+        "west": 294
+      },
+      "weight": 1,
+      "id": 295,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Main Street",
+      "environment": -1,
+      "exits": {
+        "east": 297,
+        "west": 295
+      },
+      "weight": 1,
+      "id": 296,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Corigan Court Intersection",
+      "environment": -1,
+      "exits": {
+        "west": 296
+      },
+      "weight": 1,
+      "id": 297,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "City Hall",
+      "environment": -1,
+      "exits": {
+        "north": 291
+      },
+      "weight": 1,
+      "id": 298,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Eithel Sirion",
+      "environment": -1,
+      "exits": {
+        "south": 300,
+        "north": 290
+      },
+      "weight": 1,
+      "id": 299,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Brapnor Road",
+      "environment": -1,
+      "exits": {
+        "south": 301,
+        "west": 302,
+        "east": 385,
+        "north": 299
+      },
+      "weight": 1,
+      "id": 300,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Frenchie's II",
+      "environment": -1,
+      "exits": {
+        "north": 300
+      },
+      "weight": 1,
+      "id": 301,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Brapnor Road",
+      "environment": -1,
+      "exits": {
+        "west": 303,
+        "east": 300,
+        "south": 392
+      },
+      "weight": 1,
+      "id": 302,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Middle of Brapnor Road",
+      "environment": -1,
+      "exits": {
+        "west": 304,
+        "east": 302,
+        "south": 329
+      },
+      "weight": 1,
+      "id": 303,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Brapnor Road",
+      "environment": -1,
+      "exits": {
+        "west": 305,
+        "east": 303,
+        "north": 330
+      },
+      "weight": 1,
+      "id": 304,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Brapnor Road",
+      "environment": -1,
+      "exits": {
+        "west": 306,
+        "east": 304,
+        "north": 393
+      },
+      "weight": 1,
+      "id": 305,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Brapnor Road",
+      "environment": -1,
+      "exits": {
+        "east": 305,
+        "west": 307
+      },
+      "weight": 1,
+      "id": 306,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "End of Brapnor Road",
+      "environment": -1,
+      "exits": {
+        "east": 306,
+        "northwest": 331,
+        "south": 308
+      },
+      "weight": 1,
+      "id": 307,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Beginning of Lilu Lane",
+      "environment": -1,
+      "exits": {
+        "south": 309,
+        "north": 307
+      },
+      "weight": 1,
+      "id": 308,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Lilu Lane",
+      "environment": -1,
+      "exits": {
+        "south": 310,
+        "north": 308
+      },
+      "weight": 1,
+      "id": 309,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Middle of Lilu Lane",
+      "environment": -1,
+      "exits": {
+        "west": 355,
+        "south": 311,
+        "north": 309
+      },
+      "weight": 1,
+      "id": 310,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Lilu Lane",
+      "environment": -1,
+      "exits": {
+        "south": 312,
+        "north": 310
+      },
+      "weight": 1,
+      "id": 311,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "End of Lilu Lane",
+      "environment": -1,
+      "exits": {
+        "west": 354,
+        "south": 313,
+        "north": 311
+      },
+      "weight": 1,
+      "id": 312,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Beginning of Embassy Row",
+      "environment": -1,
+      "exits": {
+        "east": 314,
+        "north": 312
+      },
+      "weight": 1,
+      "id": 313,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Embassy Row",
+      "environment": -1,
+      "exits": {
+        "west": 313,
+        "east": 315,
+        "south": 322
+      },
+      "weight": 1,
+      "id": 314,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Embassy Row",
+      "environment": -1,
+      "exits": {
+        "south": 320,
+        "west": 314,
+        "east": 316,
+        "north": 321
+      },
+      "weight": 1,
+      "id": 315,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Embassy Row",
+      "environment": -1,
+      "exits": {
+        "south": 318,
+        "west": 315,
+        "east": 317,
+        "north": 319
+      },
+      "weight": 1,
+      "id": 316,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Embassy Row",
+      "environment": -1,
+      "exits": {
+        "west": 316,
+        "east": 323,
+        "north": 333
+      },
+      "weight": 1,
+      "id": 317,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "A Dark Hole in the Ground",
+      "environment": -1,
+      "exits": {
+        "north": 316
+      },
+      "weight": 1,
+      "id": 318,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Guard Post for Gnome Embassy",
+      "environment": -1,
+      "exits": {
+        "south": 316,
+        "north": 926
+      },
+      "weight": 1,
+      "id": 319,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Before a round door",
+      "environment": -1,
+      "exits": {
+        "north": 315
+      },
+      "weight": 1,
+      "id": 320,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Junk yard",
+      "environment": -1,
+      "exits": {
+        "south": 315
+      },
+      "weight": 1,
+      "id": 321,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Elven Embassy checkpoint",
+      "environment": -1,
+      "exits": {
+        "north": 314
+      },
+      "weight": 1,
+      "id": 322,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "End of Embassy Row",
+      "environment": -1,
+      "exits": {
+        "west": 317,
+        "north": 324
+      },
+      "weight": 1,
+      "id": 323,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Southern end of alley",
+      "environment": -1,
+      "exits": {
+        "south": 323,
+        "north": 325
+      },
+      "weight": 1,
+      "id": 324,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Bend in an alley",
+      "environment": -1,
+      "exits": {
+        "west": 326,
+        "south": 324
+      },
+      "weight": 1,
+      "id": 325,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "A bend in the alley",
+      "environment": -1,
+      "exits": {
+        "east": 325,
+        "north": 327
+      },
+      "weight": 1,
+      "id": 326,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Dark and narrow alley",
+      "environment": -1,
+      "exits": {
+        "south": 326,
+        "north": 328
+      },
+      "weight": 1,
+      "id": 327,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Dark alley",
+      "environment": -1,
+      "exits": {
+        "south": 327,
+        "north": 329
+      },
+      "weight": 1,
+      "id": 328,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Alley entrance",
+      "environment": -1,
+      "exits": {
+        "south": 328,
+        "north": 303
+      },
+      "weight": 1,
+      "id": 329,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "The Excalibur, a closed guild",
+      "environment": -1,
+      "exits": {
+        "south": 304,
+        "north": 287
+      },
+      "weight": 1,
+      "id": 330,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Foyer of the Exedorian Inn",
+      "environment": -1,
+      "exits": {
+        "southeast": 307,
+        "west": 332
+      },
+      "weight": 1,
+      "id": 331,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Exedorian saloon",
+      "environment": -1,
+      "exits": {
+        "east": 331
+      },
+      "weight": 1,
+      "id": 332,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Before the Dwarven Embassy",
+      "environment": -1,
+      "exits": {
+        "south": 317,
+        "north": 920
+      },
+      "weight": 1,
+      "id": 333,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Keen Street West",
+      "environment": -1,
+      "exits": {
+        "east": 335
+      },
+      "weight": 1,
+      "id": 334,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Keen Street",
+      "environment": -1,
+      "exits": {
+        "east": 336,
+        "west": 334
+      },
+      "weight": 1,
+      "id": 335,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Keen Street",
+      "environment": -1,
+      "exits": {
+        "west": 335,
+        "east": 337,
+        "north": 602
+      },
+      "weight": 1,
+      "id": 336,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Keen Street",
+      "environment": -1,
+      "exits": {
+        "west": 336,
+        "east": 338,
+        "south": 603
+      },
+      "weight": 1,
+      "id": 337,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "East Keen Street Bridge",
+      "environment": -1,
+      "exits": {
+        "west": 337,
+        "east": 339,
+        "north": 604
+      },
+      "weight": 1,
+      "id": 338,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Keen Street Bridge",
+      "environment": -1,
+      "exits": {
+        "east": 340,
+        "west": 338
+      },
+      "weight": 1,
+      "id": 339,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Keen Street",
+      "environment": -1,
+      "exits": {
+        "west": 339,
+        "east": 341,
+        "south": 343
+      },
+      "weight": 1,
+      "id": 340,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Keen Street East",
+      "environment": -1,
+      "exits": {
+        "west": 340,
+        "north": 342
+      },
+      "weight": 1,
+      "id": 341,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Guard Post",
+      "environment": -1,
+      "exits": {
+        "south": 341,
+        "north": 350
+      },
+      "weight": 1,
+      "id": 342,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Statued lawn",
+      "environment": -1,
+      "exits": {
+        "south": 344,
+        "north": 340
+      },
+      "weight": 1,
+      "id": 343,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Statued lawn",
+      "environment": -1,
+      "exits": {
+        "south": 345,
+        "north": 343
+      },
+      "weight": 1,
+      "id": 344,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Manicured lawn",
+      "environment": -1,
+      "exits": {
+        "south": 346,
+        "north": 344
+      },
+      "weight": 1,
+      "id": 345,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Cavernous foyer",
+      "environment": -1,
+      "exits": {
+        "west": 348,
+        "east": 347,
+        "north": 345
+      },
+      "weight": 1,
+      "id": 346,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Icy room",
+      "environment": -1,
+      "exits": {
+        "west": 346
+      },
+      "weight": 1,
+      "id": 347,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Cold hallway",
+      "environment": -1,
+      "exits": {
+        "east": 346,
+        "south": 349
+      },
+      "weight": 1,
+      "id": 348,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Snowy cave",
+      "environment": -1,
+      "exits": {
+        "north": 348
+      },
+      "weight": 1,
+      "id": 349,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "With no gate guard present, you are able to enter the walled estate",
+      "environment": -1,
+      "exits": {
+        "south": 342,
+        "north": 351
+      },
+      "weight": 1,
+      "id": 350,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Foyer",
+      "environment": -1,
+      "exits": {
+        "east": 352,
+        "south": 350
+      },
+      "weight": 1,
+      "id": 351,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Wood-paneled Hallway",
+      "environment": -1,
+      "exits": {
+        "west": 351,
+        "north": 353
+      },
+      "weight": 1,
+      "id": 352,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Busy Kitchen",
+      "environment": -1,
+      "exits": {
+        "south": 352
+      },
+      "weight": 1,
+      "id": 353,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Mom's General Store",
+      "environment": -1,
+      "exits": {
+        "east": 312
+      },
+      "weight": 1,
+      "id": 354,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Drawbridge",
+      "environment": -1,
+      "exits": {
+        "east": 310,
+        "west": 356
+      },
+      "weight": 1,
+      "id": 355,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Library's entrance",
+      "environment": -1,
+      "exits": {
+        "south": 357,
+        "west": 361,
+        "east": 355,
+        "north": 362
+      },
+      "weight": 1,
+      "id": 356,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Cobblestoned hallway",
+      "environment": -1,
+      "exits": {
+        "south": 358,
+        "east": 360,
+        "north": 356
+      },
+      "weight": 1,
+      "id": 357,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "A bend in the hallway",
+      "environment": -1,
+      "exits": {
+        "west": 359,
+        "north": 357
+      },
+      "weight": 1,
+      "id": 358,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "A monk's cell",
+      "environment": -1,
+      "exits": {
+        "east": 358
+      },
+      "weight": 1,
+      "id": 359,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "A monk's cell",
+      "environment": -1,
+      "exits": {
+        "west": 357
+      },
+      "weight": 1,
+      "id": 360,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "With a grunt of effort, you manage to push open the heavy door, and enter",
+      "environment": -1,
+      "exits": {
+        "east": 356
+      },
+      "weight": 1,
+      "id": 361,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Cobblestoned hallway",
+      "environment": -1,
+      "exits": {
+        "south": 356,
+        "east": 363,
+        "north": 364
+      },
+      "weight": 1,
+      "id": 362,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "A monk's cell",
+      "environment": -1,
+      "exits": {
+        "west": 362
+      },
+      "weight": 1,
+      "id": 363,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "A bend in the hallway",
+      "environment": -1,
+      "exits": {
+        "west": 365,
+        "south": 362
+      },
+      "weight": 1,
+      "id": 364,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "A monk's cell",
+      "environment": -1,
+      "exits": {
+        "east": 364
+      },
+      "weight": 1,
+      "id": 365,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "The Cadaver Emporium",
+      "environment": -1,
+      "exits": {
+        "north": 289
+      },
+      "weight": 1,
+      "id": 366,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Velvet Unicorn",
+      "environment": -1,
+      "exits": {
+        "south": 288
+      },
+      "weight": 1,
+      "id": 367,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Eidolon Warlords",
+      "environment": -1,
+      "exits": {
+        "north": 288
+      },
+      "weight": 1,
+      "id": 368,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "You feel a STRONG urge to read the Sanctuary board... You are responsible",
+      "environment": -1,
+      "exits": {
+        "south": 290
+      },
+      "weight": 1,
+      "id": 369,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Beginning of park path",
+      "environment": -1,
+      "exits": {
+        "south": 291,
+        "north": 371
+      },
+      "weight": 1,
+      "id": 370,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Park path intersection",
+      "environment": -1,
+      "exits": {
+        "south": 370,
+        "west": 372,
+        "east": 378,
+        "north": 373
+      },
+      "weight": 1,
+      "id": 371,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Exedoria Pet Cemetary",
+      "environment": -1,
+      "exits": {
+        "east": 371
+      },
+      "weight": 1,
+      "id": 372,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Park path on the hill",
+      "environment": -1,
+      "exits": {
+        "south": 371,
+        "north": 374
+      },
+      "weight": 1,
+      "id": 373,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Elevated park path",
+      "environment": -1,
+      "exits": {
+        "south": 373,
+        "north": 375
+      },
+      "weight": 1,
+      "id": 374,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "End of park path",
+      "environment": -1,
+      "exits": {
+        "east": 376,
+        "south": 374
+      },
+      "weight": 1,
+      "id": 375,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Temple ruins",
+      "environment": -1,
+      "exits": {
+        "east": 377,
+        "west": 375
+      },
+      "weight": 1,
+      "id": 376,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Temple rotunda",
+      "environment": -1,
+      "exits": {
+        "west": 376
+      },
+      "weight": 1,
+      "id": 377,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Gravel path to the mansion",
+      "environment": -1,
+      "exits": {
+        "east": 379,
+        "west": 371
+      },
+      "weight": 1,
+      "id": 378,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Gravel path on the hill",
+      "environment": -1,
+      "exits": {
+        "east": 380,
+        "west": 378
+      },
+      "weight": 1,
+      "id": 379,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Intersection in the gravel path",
+      "environment": -1,
+      "exits": {
+        "west": 379,
+        "southeast": 382,
+        "north": 381
+      },
+      "weight": 1,
+      "id": 380,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Before a white mansion",
+      "environment": -1,
+      "exits": {
+        "south": 380
+      },
+      "weight": 1,
+      "id": 381,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Outside the cemetery gate",
+      "environment": -1,
+      "exits": {
+        "northwest": 380
+      },
+      "weight": 1,
+      "id": 382,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Guard Post",
+      "environment": -1,
+      "exits": {
+        "south": 384,
+        "north": 292
+      },
+      "weight": 1,
+      "id": 383,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Beginning of Brapnor Road",
+      "environment": -1,
+      "exits": {
+        "west": 385,
+        "southeast": 386,
+        "north": 383
+      },
+      "weight": 1,
+      "id": 384,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Brapnor Road",
+      "environment": -1,
+      "exits": {
+        "east": 384,
+        "west": 300
+      },
+      "weight": 1,
+      "id": 385,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Necrom's Gate",
+      "environment": -1,
+      "exits": {
+        "northwest": 384,
+        "southeast": 387
+      },
+      "weight": 1,
+      "id": 386,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Paved intersection",
+      "environment": -1,
+      "exits": {
+        "east": 388,
+        "northwest": 386,
+        "south": 527
+      },
+      "weight": 1,
+      "id": 387,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Eastern path through the University",
+      "environment": -1,
+      "exits": {
+        "east": 389,
+        "west": 387
+      },
+      "weight": 1,
+      "id": 388,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Eastern path through the University",
+      "environment": -1,
+      "exits": {
+        "east": 390,
+        "west": 388
+      },
+      "weight": 1,
+      "id": 389,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "In front of a temporary building",
+      "environment": -1,
+      "exits": {
+        "west": 389,
+        "east": 391,
+        "south": 904
+      },
+      "weight": 1,
+      "id": 390,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Construction site",
+      "environment": -1,
+      "exits": {
+        "west": 390
+      },
+      "weight": 1,
+      "id": 391,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Delilah's Deli",
+      "environment": -1,
+      "exits": {
+        "north": 302
+      },
+      "weight": 1,
+      "id": 392,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Guard Tower Entrance",
+      "environment": -1,
+      "exits": {
+        "south": 305
+      },
+      "weight": 1,
+      "id": 393,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Southern path through the University",
+      "environment": -1,
+      "exits": {
+        "south": 528,
+        "north": 387
+      },
+      "weight": 1,
+      "id": 527,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Southern path through the University",
+      "environment": -1,
+      "exits": {
+        "south": 896,
+        "east": 894,
+        "north": 527
+      },
+      "weight": 1,
+      "id": 528,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Railed entrance",
+      "environment": -1,
+      "exits": {
+        "south": 336
+      },
+      "weight": 1,
+      "id": 602,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Flagstoned entry",
+      "environment": -1,
+      "exits": {
+        "south": 915,
+        "north": 337
+      },
+      "weight": 1,
+      "id": 603,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "You rudely trespass on the private property.",
+      "environment": -1,
+      "exits": {
+        "northeast": 907,
+        "northwest": 910,
+        "south": 338
+      },
+      "weight": 1,
+      "id": 604,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Dormitory foyer",
+      "environment": -1,
+      "exits": {
+        "west": 528,
+        "south": 895,
+        "north": 903
+      },
+      "weight": 1,
+      "id": 894,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Dining commons",
+      "environment": -1,
+      "exits": {
+        "north": 894
+      },
+      "weight": 1,
+      "id": 895,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Southern path through the University",
+      "environment": -1,
+      "exits": {
+        "south": 897,
+        "north": 528
+      },
+      "weight": 1,
+      "id": 896,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Southern path through the University",
+      "environment": -1,
+      "exits": {
+        "south": 898,
+        "north": 896
+      },
+      "weight": 1,
+      "id": 897,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Southern path through the University",
+      "environment": -1,
+      "exits": {
+        "south": 899,
+        "north": 897
+      },
+      "weight": 1,
+      "id": 898,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Southern path through the University",
+      "environment": -1,
+      "exits": {
+        "south": 902,
+        "east": 900,
+        "north": 898
+      },
+      "weight": 1,
+      "id": 899,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "School of Business",
+      "environment": -1,
+      "exits": {
+        "west": 899,
+        "north": 901
+      },
+      "weight": 1,
+      "id": 900,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Dean's office",
+      "environment": -1,
+      "exits": {
+        "south": 900
+      },
+      "weight": 1,
+      "id": 901,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Construction site",
+      "environment": -1,
+      "exits": {
+        "north": 899
+      },
+      "weight": 1,
+      "id": 902,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Resident Advisor's office",
+      "environment": -1,
+      "exits": {
+        "south": 894
+      },
+      "weight": 1,
+      "id": 903,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Science building's entry",
+      "environment": -1,
+      "exits": {
+        "west": 905,
+        "east": 906,
+        "north": 390
+      },
+      "weight": 1,
+      "id": 904,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Science laboratory",
+      "environment": -1,
+      "exits": {
+        "east": 904
+      },
+      "weight": 1,
+      "id": 905,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Science lecture hall",
+      "environment": -1,
+      "exits": {
+        "west": 904
+      },
+      "weight": 1,
+      "id": 906,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Gravel Path",
+      "environment": -1,
+      "exits": {
+        "northwest": 908,
+        "southwest": 604
+      },
+      "weight": 1,
+      "id": 907,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Vine-covered Entry",
+      "environment": -1,
+      "exits": {
+        "southwest": 910,
+        "southeast": 907,
+        "north": 909
+      },
+      "weight": 1,
+      "id": 908,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Grand Foyer",
+      "environment": -1,
+      "exits": {
+        "up": 914,
+        "west": 911,
+        "east": 912,
+        "south": 908
+      },
+      "weight": 1,
+      "id": 909,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Gravel Path",
+      "environment": -1,
+      "exits": {
+        "southeast": 604,
+        "northeast": 908
+      },
+      "weight": 1,
+      "id": 910,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Child's Den",
+      "environment": -1,
+      "exits": {
+        "east": 909
+      },
+      "weight": 1,
+      "id": 911,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Wooded Hallway",
+      "environment": -1,
+      "exits": {
+        "east": 913,
+        "west": 909
+      },
+      "weight": 1,
+      "id": 912,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Brushing aside the hanging vines, you walk east into the servants' quarters.",
+      "environment": -1,
+      "exits": {
+        "west": 912
+      },
+      "weight": 1,
+      "id": 913,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Treetop Bedroom",
+      "environment": -1,
+      "exits": {
+        "down": 909
+      },
+      "weight": 1,
+      "id": 914,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Flagstoned path",
+      "environment": -1,
+      "exits": {
+        "south": 916,
+        "west": 919,
+        "east": 918,
+        "north": 603
+      },
+      "weight": 1,
+      "id": 915,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Gray foyer",
+      "environment": -1,
+      "exits": {
+        "south": 917,
+        "north": 915
+      },
+      "weight": 1,
+      "id": 916,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Trinian merchant's office",
+      "environment": -1,
+      "exits": {
+        "north": 916
+      },
+      "weight": 1,
+      "id": 917,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Carriage house",
+      "environment": -1,
+      "exits": {
+        "west": 915
+      },
+      "weight": 1,
+      "id": 918,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Slave quarters",
+      "environment": -1,
+      "exits": {
+        "east": 915
+      },
+      "weight": 1,
+      "id": 919,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Dwarven Embassy foyer",
+      "environment": -1,
+      "exits": {
+        "west": 923,
+        "up": 921,
+        "south": 333,
+        "east": 925,
+        "north": 924
+      },
+      "weight": 1,
+      "id": 920,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Dwarven watchtower",
+      "environment": -1,
+      "exits": {
+        "down": 920,
+        "north": 922
+      },
+      "weight": 1,
+      "id": 921,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Ambassadors Suite",
+      "environment": -1,
+      "exits": {
+        "south": 921
+      },
+      "weight": 1,
+      "id": 922,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Dwarven brewery",
+      "environment": -1,
+      "exits": {
+        "east": 920
+      },
+      "weight": 1,
+      "id": 923,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Dwarven Ambassador's office",
+      "environment": -1,
+      "exits": {
+        "south": 920
+      },
+      "weight": 1,
+      "id": 924,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Dwarven armoury",
+      "environment": -1,
+      "exits": {
+        "west": 920
+      },
+      "weight": 1,
+      "id": 925,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Ground Floor of the Windmill",
+      "environment": -1,
+      "exits": {
+        "up": 929,
+        "west": 927,
+        "east": 928,
+        "south": 319
+      },
+      "weight": 1,
+      "id": 926,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Garden of Machines",
+      "environment": -1,
+      "exits": {
+        "east": 926
+      },
+      "weight": 1,
+      "id": 927,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Cemetery",
+      "environment": -1,
+      "exits": {
+        "west": 926
+      },
+      "weight": 1,
+      "id": 928,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Gnome Laboratory",
+      "environment": -1,
+      "exits": {
+        "down": 926,
+        "up": 930
+      },
+      "weight": 1,
+      "id": 929,
+      "area": {
+        "id": 4
+      }
+    },
+    {
+      "name": "Machinery Room",
+      "environment": -1,
+      "exits": {
+        "down": 929
+      },
+      "weight": 1,
+      "id": 930,
+      "area": {
+        "id": 4
+      }
+    }
+  ],
+  "exportedAt": "2026-01-05T00:19:21Z"
+}

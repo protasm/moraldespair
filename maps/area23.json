@@ -1,1 +1,59 @@
-{"mudlet":{"version":"unknown"},"rooms":[{"name":"City Unemployment Office","environment":-1,"exits":{"south":1203,"west":417,"east":241,"north":418},"weight":1,"id":416,"area":{"id":23}},{"name":"City Unemployment Office","environment":-1,"exits":{"east":416},"weight":1,"id":417,"area":{"id":23}},{"name":"City Unemployment Office","environment":-1,"exits":{"south":416},"weight":1,"id":418,"area":{"id":23}},{"name":"City Unemployment Office","environment":-1,"exits":{"north":416},"weight":1,"id":1203,"area":{"id":23}}],"exportedAt":"2026-01-05T00:19:21Z"}
+{
+  "mudlet": {
+    "version": "unknown"
+  },
+  "rooms": [
+    {
+      "name": "City Unemployment Office",
+      "environment": -1,
+      "exits": {
+        "south": 1203,
+        "west": 417,
+        "east": 241,
+        "north": 418
+      },
+      "weight": 1,
+      "id": 416,
+      "area": {
+        "id": 23
+      }
+    },
+    {
+      "name": "City Unemployment Office",
+      "environment": -1,
+      "exits": {
+        "east": 416
+      },
+      "weight": 1,
+      "id": 417,
+      "area": {
+        "id": 23
+      }
+    },
+    {
+      "name": "City Unemployment Office",
+      "environment": -1,
+      "exits": {
+        "south": 416
+      },
+      "weight": 1,
+      "id": 418,
+      "area": {
+        "id": 23
+      }
+    },
+    {
+      "name": "City Unemployment Office",
+      "environment": -1,
+      "exits": {
+        "north": 416
+      },
+      "weight": 1,
+      "id": 1203,
+      "area": {
+        "id": 23
+      }
+    }
+  ],
+  "exportedAt": "2026-01-05T00:19:21Z"
+}
