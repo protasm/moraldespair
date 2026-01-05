@@ -10,7 +10,7 @@ void reset(int arg) {
     long_desc = "A peaceful park.\n";
     dest_dir = ({
         "domain/original/area/vesla/room117", "south",
-        "domain/original/area/vesla/peaceful_park1", "west",
+        "domain/original/area/vesla/room228", "west",
         "domain/original/area/vesla/room172", "east",
         "domain/original/area/vesla/room232", "north",
     });

@@ -150,6 +150,7 @@ int move(string str) {
 string short() {
     if (set_light(0))
         return short_desc + "\n" + exitsDescription(1);
+
     return "Dark room";
 }
 
