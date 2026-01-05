@@ -1,0 +1,4 @@
+players/lars/workroom.c line 1 before end of line: Cannot #include 'std.h'
+players/lars/workroom.c line 15 before ', "church"': syntax error
+players/lars/workroom.c line 1 before end of line: Cannot #include 'std.h'
+players/lars/workroom.c line 15 before ', "church"': syntax error

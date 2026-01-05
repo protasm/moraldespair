@@ -194,3 +194,376 @@ obj/spare_simul_efun.c line 327 before '),': syntax error
 obj/spare_simul_efun.c line 329 before ' ' u, (': Illegal character constant
 obj/spare_simul_efun.c line 330 before ' ' u, to_s': Illegal character constant
 obj/spare_simul_efun.c line 340 before ' {': Bad assignment: illegal lhs (target)
+domain/lp-245/room/quest_room.c line 1 before '#include "': Cannot #include 'room.h'
+domain/lp-245/room/quest_room.c line 5 before ', "south",': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/obj/leo.c line 1 before '/*': Cannot #include 'living.h'
+domain/lp-245/obj/leo.c line 21 before end of line: Variable name not declared
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/adv_inner.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/adv_inner.c line 9 before ', "north",': syntax error
+domain/lp-245/room/adv_inner2.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/adv_inner2.c line 9 before ', "north",': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/original/area/vesla/sanctuary.c line 1 before end of line: Cannot #include 'std.h'
+domain/lp-245/room/clearing.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/clearing.c line 3 before ', "east", ': syntax error
+domain/lp-245/room/crop.c line 1 before 'ONE_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/crop.c line 2 before ', "north",': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/deep_forest1.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/deep_forest1.c line 3 before ', "east", ': syntax error
+domain/lp-245/room/eastroad1.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/eastroad1.c line 2 before ', "north",': syntax error
+domain/lp-245/room/eastroad2.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/eastroad2.c line 2 before ', "north",': syntax error
+domain/lp-245/room/eastroad3.c line 1 before 'THREE_EXIT': Cannot #include 'room.h'
+domain/lp-245/room/eastroad3.c line 2 before ', "north",': syntax error
+domain/lp-245/room/eastroad4.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/eastroad4.c line 2 before ', "north",': syntax error
+domain/lp-245/room/eastroad5.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/eastroad5.c line 2 before ', "south",': syntax error
+domain/lp-245/room/forest1.c line 1 before '#undef EXT': Cannot #include 'room.h'
+domain/lp-245/room/forest1.c line 25 before ', "east", ': syntax error
+domain/lp-245/room/forest10.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest10.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/forest11.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest11.c line 3 before ', "east", ': syntax error
+domain/lp-245/room/forest12.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest12.c line 3 before ', "south",': syntax error
+domain/lp-245/room/forest2.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest2.c line 30 before ', "east", ': syntax error
+domain/lp-245/room/forest3.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest3.c line 3 before ', "north",': syntax error
+domain/lp-245/room/forest4.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest4.c line 3 before ', "north",': syntax error
+domain/lp-245/room/forest5.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest5.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/forest6.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest6.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/forest7.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest7.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/forest8.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest8.c line 3 before ', "south",': syntax error
+domain/lp-245/room/forest9.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest9.c line 3 before ', "north",': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/giant_conf.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/giant_conf.c line 72 before ', "east", ': syntax error
+domain/lp-245/room/giant_lair.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/giant_lair.c line 18 before ', "east", ': syntax error
+domain/lp-245/room/giant_path.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/giant_path.c line 3 before ', "east", ': syntax error
+domain/lp-245/room/hump.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/hump.c line 21 before ', "east", ': syntax error
+domain/lp-245/room/inn.c line 2 before '/* this co': Cannot #include 'room.h'
+domain/lp-245/room/inn.c line 21 before ', "east", ': syntax error
+domain/lp-245/room/jetty.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/jetty.c line 5 before ', "west", ': syntax error
+domain/lp-245/room/jetty2.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/jetty2.c line 11 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel10.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel10.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/mine/tunnel11.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel11.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/mine/tunnel12.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel12.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel13.c line 1 before 'ONE_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel13.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel14.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel14.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/mine/tunnel15.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel15.c line 2 before ', "east", ': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/mine/tunnel17.c line 1 before 'THREE_EXIT': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel17.c line 2 before ', "north",': syntax error
+domain/lp-245/room/mine/tunnel18.c line 1 before 'ONE_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel18.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/mine/tunnel19.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel19.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel2.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel2.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel20.c line 1 before 'ONE_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel20.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/mine/tunnel21.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel21.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel22.c line 1 before 'THREE_EXIT': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel22.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel23.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel23.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel24.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel24.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel25.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel25.c line 2 before ', "up", "d': syntax error
+domain/lp-245/room/mine/tunnel26.c line 1 before 'THREE_EXIT': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel26.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel27.c line 1 before 'ONE_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel27.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel28.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel28.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel29.c line 1 before '#undef EXT': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel29.c line 30 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel4.c line 1 before end of line: Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel4.c line 3 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel8.c line 1 before end of line: Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel8.c line 3 before ', "up", "d': syntax error
+domain/lp-245/room/mine/tunnel_room.c line 1 before end of line: Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel_room.c line 20 before ', "south",': syntax error
+domain/lp-245/room/mount_top.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/mount_top.c line 3 before ', "down", ': syntax error
+domain/lp-245/room/mount_top2.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/mount_top2.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/orc_treasure.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/orc_treasure.c line 50 before ', "south",': syntax error
+domain/lp-245/room/orc_vall.c line 1 before '#undef EXT': Cannot #include 'room.h'
+domain/lp-245/room/orc_vall.c line 76 before ', "east", ': syntax error
+domain/lp-245/room/plane1.c line 1 before 'object wol': Cannot #include 'room.h'
+domain/lp-245/room/plane1.c line 19 before ', "south",': syntax error
+domain/lp-245/room/plane10.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane10.c line 3 before ', "north",': syntax error
+domain/lp-245/room/plane11.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane11.c line 3 before ', "south",': syntax error
+domain/lp-245/room/plane12.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane12.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/plane13.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane13.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/plane2.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane2.c line 3 before ', "south",': syntax error
+domain/lp-245/room/plane3.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane3.c line 3 before ', "south",': syntax error
+domain/lp-245/room/plane4.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane4.c line 3 before ', "north",': syntax error
+domain/lp-245/room/plane5.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane5.c line 3 before ', "north",': syntax error
+domain/lp-245/room/plane6.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane6.c line 3 before ', "south",': syntax error
+domain/lp-245/room/plane7.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane7.c line 3 before ', "south",': syntax error
+domain/lp-245/room/plane8.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane8.c line 3 before ', "north",': syntax error
+domain/lp-245/room/plane9.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane9.c line 31 before ', "west", ': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/quest_room.c line 1 before '#include "': Cannot #include 'room.h'
+domain/lp-245/room/quest_room.c line 5 before ', "south",': syntax error
+domain/lp-245/room/ravine.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/ravine.c line 3 before ', "down", ': syntax error
+domain/lp-245/room/sea_bottom.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/sea_bottom.c line 34 before ', "up", "S': syntax error
+domain/lp-245/room/slope.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/slope.c line 3 before ', "west", ': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/station.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/station.c line 3 before ', "up", "C': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/sunalley1.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/sunalley1.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/sunalley2.c line 1 before 'ONE_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/sunalley2.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/vill_road1.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/vill_road1.c line 6 before ', "west", ': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/vill_shore.c line 1 before '#undef EXT': Cannot #include 'room.h'
+domain/lp-245/room/vill_shore.c line 4 before ', "west", ': syntax error
+domain/lp-245/room/vill_shore2.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/vill_shore2.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/vill_track.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/vill_track.c line 6 before ', "west", ': syntax error
+domain/lp-245/room/wild1.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/wild1.c line 6 before ', "east", ': syntax error
+domain/lp-245/obj/leo.c line 1 before '/*': Cannot #include 'living.h'
+domain/lp-245/obj/leo.c line 21 before end of line: Variable name not declared
+domain/lp-245/room/yard.c line 1 before 'object beg': Cannot #include 'room.h'
+domain/lp-245/room/yard.c line 13 before ' 1;': Variable no_castle_flag not declared
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/quest_room.c line 1 before '#include "': Cannot #include 'room.h'
+domain/lp-245/room/quest_room.c line 5 before ', "south",': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/obj/leo.c line 1 before '/*': Cannot #include 'living.h'
+domain/lp-245/obj/leo.c line 21 before end of line: Variable name not declared
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/adv_inner.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/adv_inner.c line 9 before ', "north",': syntax error
+domain/lp-245/room/adv_inner2.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/adv_inner2.c line 9 before ', "north",': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/original/area/vesla/sanctuary.c line 1 before end of line: Cannot #include 'std.h'
+domain/lp-245/room/clearing.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/clearing.c line 3 before ', "east", ': syntax error
+domain/lp-245/room/crop.c line 1 before 'ONE_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/crop.c line 2 before ', "north",': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/deep_forest1.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/deep_forest1.c line 3 before ', "east", ': syntax error
+domain/lp-245/room/eastroad1.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/eastroad1.c line 2 before ', "north",': syntax error
+domain/lp-245/room/eastroad2.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/eastroad2.c line 2 before ', "north",': syntax error
+domain/lp-245/room/eastroad3.c line 1 before 'THREE_EXIT': Cannot #include 'room.h'
+domain/lp-245/room/eastroad3.c line 2 before ', "north",': syntax error
+domain/lp-245/room/eastroad4.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/eastroad4.c line 2 before ', "north",': syntax error
+domain/lp-245/room/eastroad5.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/eastroad5.c line 2 before ', "south",': syntax error
+domain/lp-245/room/forest1.c line 1 before '#undef EXT': Cannot #include 'room.h'
+domain/lp-245/room/forest1.c line 25 before ', "east", ': syntax error
+domain/lp-245/room/forest10.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest10.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/forest11.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest11.c line 3 before ', "east", ': syntax error
+domain/lp-245/room/forest12.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest12.c line 3 before ', "south",': syntax error
+domain/lp-245/room/forest2.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest2.c line 30 before ', "east", ': syntax error
+domain/lp-245/room/forest3.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest3.c line 3 before ', "north",': syntax error
+domain/lp-245/room/forest4.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest4.c line 3 before ', "north",': syntax error
+domain/lp-245/room/forest5.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest5.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/forest6.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest6.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/forest7.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest7.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/forest8.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest8.c line 3 before ', "south",': syntax error
+domain/lp-245/room/forest9.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/forest9.c line 3 before ', "north",': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/giant_conf.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/giant_conf.c line 72 before ', "east", ': syntax error
+domain/lp-245/room/giant_lair.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/giant_lair.c line 18 before ', "east", ': syntax error
+domain/lp-245/room/giant_path.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/giant_path.c line 3 before ', "east", ': syntax error
+domain/lp-245/room/hump.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/hump.c line 21 before ', "east", ': syntax error
+domain/lp-245/room/inn.c line 2 before '/* this co': Cannot #include 'room.h'
+domain/lp-245/room/inn.c line 21 before ', "east", ': syntax error
+domain/lp-245/room/jetty.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/jetty.c line 5 before ', "west", ': syntax error
+domain/lp-245/room/jetty2.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/jetty2.c line 11 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel10.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel10.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/mine/tunnel11.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel11.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/mine/tunnel12.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel12.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel13.c line 1 before 'ONE_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel13.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel14.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel14.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/mine/tunnel15.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel15.c line 2 before ', "east", ': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/mine/tunnel17.c line 1 before 'THREE_EXIT': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel17.c line 2 before ', "north",': syntax error
+domain/lp-245/room/mine/tunnel18.c line 1 before 'ONE_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel18.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/mine/tunnel19.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel19.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel2.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel2.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel20.c line 1 before 'ONE_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel20.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/mine/tunnel21.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel21.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel22.c line 1 before 'THREE_EXIT': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel22.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel23.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel23.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel24.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel24.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel25.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel25.c line 2 before ', "up", "d': syntax error
+domain/lp-245/room/mine/tunnel26.c line 1 before 'THREE_EXIT': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel26.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel27.c line 1 before 'ONE_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel27.c line 2 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel28.c line 1 before 'TWO_EXIT("': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel28.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel29.c line 1 before '#undef EXT': Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel29.c line 30 before ', "west", ': syntax error
+domain/lp-245/room/mine/tunnel4.c line 1 before end of line: Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel4.c line 3 before ', "south",': syntax error
+domain/lp-245/room/mine/tunnel8.c line 1 before end of line: Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel8.c line 3 before ', "up", "d': syntax error
+domain/lp-245/room/mine/tunnel_room.c line 1 before end of line: Cannot #include '../room.h'
+domain/lp-245/room/mine/tunnel_room.c line 20 before ', "south",': syntax error
+domain/lp-245/room/mount_top.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/mount_top.c line 3 before ', "down", ': syntax error
+domain/lp-245/room/mount_top2.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/mount_top2.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/orc_treasure.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/orc_treasure.c line 50 before ', "south",': syntax error
+domain/lp-245/room/orc_vall.c line 1 before '#undef EXT': Cannot #include 'room.h'
+domain/lp-245/room/orc_vall.c line 76 before ', "east", ': syntax error
+domain/lp-245/room/plane1.c line 1 before 'object wol': Cannot #include 'room.h'
+domain/lp-245/room/plane1.c line 19 before ', "south",': syntax error
+domain/lp-245/room/plane10.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane10.c line 3 before ', "north",': syntax error
+domain/lp-245/room/plane11.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane11.c line 3 before ', "south",': syntax error
+domain/lp-245/room/plane12.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane12.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/plane13.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane13.c line 3 before ', "west", ': syntax error
+domain/lp-245/room/plane2.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane2.c line 3 before ', "south",': syntax error
+domain/lp-245/room/plane3.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane3.c line 3 before ', "south",': syntax error
+domain/lp-245/room/plane4.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane4.c line 3 before ', "north",': syntax error
+domain/lp-245/room/plane5.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane5.c line 3 before ', "north",': syntax error
+domain/lp-245/room/plane6.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane6.c line 3 before ', "south",': syntax error
+domain/lp-245/room/plane7.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane7.c line 3 before ', "south",': syntax error
+domain/lp-245/room/plane8.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane8.c line 3 before ', "north",': syntax error
+domain/lp-245/room/plane9.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/plane9.c line 31 before ', "west", ': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/quest_room.c line 1 before '#include "': Cannot #include 'room.h'
+domain/lp-245/room/quest_room.c line 5 before ', "south",': syntax error
+domain/lp-245/room/ravine.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/ravine.c line 3 before ', "down", ': syntax error
+domain/lp-245/room/sea_bottom.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/sea_bottom.c line 34 before ', "up", "S': syntax error
+domain/lp-245/room/slope.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/slope.c line 3 before ', "west", ': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/station.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/station.c line 3 before ', "up", "C': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/sunalley1.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/sunalley1.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/sunalley2.c line 1 before 'ONE_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/sunalley2.c line 2 before ', "east", ': syntax error
+domain/lp-245/room/vill_road1.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/vill_road1.c line 6 before ', "west", ': syntax error
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+domain/lp-245/room/vill_shore.c line 1 before '#undef EXT': Cannot #include 'room.h'
+domain/lp-245/room/vill_shore.c line 4 before ', "west", ': syntax error
+domain/lp-245/room/vill_shore2.c line 1 before 'TWO_EXIT("': Cannot #include 'room.h'
+domain/lp-245/room/vill_shore2.c line 2 before ', "west", ': syntax error
+domain/lp-245/room/vill_track.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/vill_track.c line 6 before ', "west", ': syntax error
+domain/lp-245/room/wild1.c line 1 before end of line: Cannot #include 'room.h'
+domain/lp-245/room/wild1.c line 6 before ', "east", ': syntax error
+domain/lp-245/obj/leo.c line 1 before '/*': Cannot #include 'living.h'
+domain/lp-245/obj/leo.c line 21 before end of line: Variable name not declared
+domain/lp-245/room/yard.c line 1 before 'object beg': Cannot #include 'room.h'
+domain/lp-245/room/yard.c line 13 before ' 1;': Variable no_castle_flag not declared
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
+obj/living.c line 1 before end of line: Cannot #include 'log.h'
