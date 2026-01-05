@@ -101,8 +101,9 @@ static string _include_dirs_hook (string include_name, string current_file)
 //   The full pathname of the include file.
 //   0 if no such file exists.
 //
-// If include_name can't be found as such, the function looks in /sys
-// and /room for /sys/<include_name> resp. /domain/lp-245/room/<include_name>.
+// If include_name can't be found as such, the function looks in /room,
+// /sys, and /obj (in that order) for /room/<include_name>,
+// /sys/<include_name>, and /obj/<include_name>.
 
 {
   string name, part;
@@ -110,10 +111,13 @@ static string _include_dirs_hook (string include_name, string current_file)
 
   if (file_size(ADD_SLASH(include_name)) >= 0)
     return include_name;
+  name = "room/"+include_name;
+  if (file_size(ADD_SLASH(name)) >= 0)
+    return name;
   name = "sys/"+include_name;
   if (file_size(ADD_SLASH(name)) >= 0)
     return name;
-  name = "domain/lp-245/room/"+include_name;
+  name = "obj/"+include_name;
   if (file_size(ADD_SLASH(name)) >= 0)
     return name;
   return 0;
