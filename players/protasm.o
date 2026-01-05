@@ -1,5 +1,5 @@
 #3:2
-time_to_heal 5
+time_to_heal 9
 money 0
 name "protasm"
 msgin "arrives"
@@ -14,8 +14,8 @@ experience 0
 mmsgout "disappears in a puff of smoke"
 mmsgin "arrives in a puff of smoke"
 ghost 0
-spell_points 12
-age 127
+spell_points 13
+age 134
 is_invis 0
 frog 0
 whimpy 0
