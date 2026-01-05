@@ -1,0 +1,16 @@
+inherit "room/room";
+
+void reset(int arg) {
+    if (arg)
+        return;
+
+    set_light(1);
+
+    short_desc = "West Wall Guard Station";
+    long_desc = "West Wall Guard Station.\n";
+    dest_dir = ({
+        "domain/original/area/candera/room1035", "north",
+        "domain/original/area/candera/room1034", "south",
+        "domain/original/area/candera/room43", "east",
+    });
+}
