@@ -4,51 +4,28 @@
   },
   "rooms": [
     {
-      "name": "You cross the sharply arching bridge.",
-      "exits": {
-        "south": 1861,
-        "north": 1864
-      },
-      "id": 1863
+      "id": 1863, "name": "You cross the sharply arching bridge.",
+      "exits": { "south": 1861, "north": 1864 }
     },
     {
-      "name": "You push on the massive golden doors and, perfectly balanced, they swing open",
-      "exits": {
-        "south": 1863,
-        "north": 1865
-      },
-      "id": 1864
+      "id": 1864, "name": "You push on the massive golden doors and, perfectly balanced, they swing open",
+      "exits": { "south": 1863, "north": 1865 }
     },
     {
-      "name": "You step down into the sandy courtyard.",
-      "exits": {
-        "south": 1864,
-        "north": 1866
-      },
-      "id": 1865
+      "id": 1865, "name": "You step down into the sandy courtyard.",
+      "exits": { "south": 1864, "north": 1866 }
     },
     {
-      "name": "Northwest Training Yard",
-      "exits": {
-        "south": 1865,
-        "north": 1867
-      },
-      "id": 1866
+      "id": 1866, "name": "Northwest Training Yard",
+      "exits": { "south": 1865, "north": 1867 }
     },
     {
-      "name": "You step up onto the boardwalk that rings the practice yard.",
-      "exits": {
-        "south": 1866,
-        "north": 1868
-      },
-      "id": 1867
+      "id": 1867, "name": "You step up onto the boardwalk that rings the practice yard.",
+      "exits": { "south": 1866, "north": 1868 }
     },
     {
-      "name": "You slide back the fusumi with a flick of your hand.",
-      "exits": {
-        "south": 1867
-      },
-      "id": 1868
+      "id": 1868, "name": "You slide back the fusumi with a flick of your hand.",
+      "exits": { "south": 1867 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

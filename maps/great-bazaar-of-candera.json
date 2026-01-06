@@ -4,155 +4,76 @@
   },
   "rooms": [
     {
-      "name": "Great Bazaar of Candera",
-      "exits": {
-        "south": 96,
-        "east": 428,
-        "north": 995
-      },
-      "id": 977
+      "id": 977, "name": "Great Bazaar of Candera",
+      "exits": { "south": 96, "east": 428, "north": 995 }
     },
     {
-      "name": "Nut Shop",
-      "exits": {
-        "south": 989
-      },
-      "id": 978
+      "id": 978, "name": "Nut Shop",
+      "exits": { "south": 989 }
     },
     {
-      "name": "Great Bazaar of Candera",
-      "exits": {
-        "south": 980,
-        "west": 984,
-        "east": 991,
-        "north": 989
-      },
-      "id": 979
+      "id": 979, "name": "Great Bazaar of Candera",
+      "exits": { "south": 980, "west": 984, "east": 991, "north": 989 }
     },
     {
-      "name": "Great Bazaar of Candera",
-      "exits": {
-        "south": 981,
-        "west": 983,
-        "east": 993,
-        "north": 979
-      },
-      "id": 980
+      "id": 980, "name": "Great Bazaar of Candera",
+      "exits": { "south": 981, "west": 983, "east": 993, "north": 979 }
     },
     {
-      "name": "Great Bazaar of Candera",
-      "exits": {
-        "west": 982,
-        "east": 995,
-        "north": 980
-      },
-      "id": 981
+      "id": 981, "name": "Great Bazaar of Candera",
+      "exits": { "west": 982, "east": 995, "north": 980 }
     },
     {
-      "name": "Shader's Scales",
-      "exits": {
-        "east": 981
-      },
-      "id": 982
+      "id": 982, "name": "Shader's Scales",
+      "exits": { "east": 981 }
     },
     {
-      "name": "Omars' Oil:",
-      "exits": {
-        "east": 980
-      },
-      "id": 983
+      "id": 983, "name": "Omars' Oil:",
+      "exits": { "east": 980 }
     },
     {
-      "name": "Smithy",
-      "exits": {
-        "east": 979
-      },
-      "id": 984
+      "id": 984, "name": "Smithy",
+      "exits": { "east": 979 }
     },
     {
-      "name": "Great Bazaar of Candera",
-      "exits": {
-        "south": 991,
-        "west": 989,
-        "east": 987,
-        "north": 988
-      },
-      "id": 985
+      "id": 985, "name": "Great Bazaar of Candera",
+      "exits": { "south": 991, "west": 989, "east": 987, "north": 988 }
     },
     {
-      "name": "Lord Candera's Lottery",
-      "exits": {
-        "west": 985
-      },
-      "id": 987
+      "id": 987, "name": "Lord Candera's Lottery",
+      "exits": { "west": 985 }
     },
     {
-      "name": "Empty Tent",
-      "exits": {
-        "south": 985
-      },
-      "id": 988
+      "id": 988, "name": "Empty Tent",
+      "exits": { "south": 985 }
     },
     {
-      "name": "Great Bazaar of Candera",
-      "exits": {
-        "south": 979,
-        "west": 966,
-        "east": 985,
-        "north": 978
-      },
-      "id": 989
+      "id": 989, "name": "Great Bazaar of Candera",
+      "exits": { "south": 979, "west": 966, "east": 985, "north": 978 }
     },
     {
-      "name": "Great Bazaar of Candera",
-      "exits": {
-        "south": 993,
-        "west": 979,
-        "east": 992,
-        "north": 985
-      },
-      "id": 991
+      "id": 991, "name": "Great Bazaar of Candera",
+      "exits": { "south": 993, "west": 979, "east": 992, "north": 985 }
     },
     {
-      "name": "Kamal's Camel Lot:",
-      "exits": {
-        "west": 991
-      },
-      "id": 992
+      "id": 992, "name": "Kamal's Camel Lot:",
+      "exits": { "west": 991 }
     },
     {
-      "name": "Great Bazaar of Candera",
-      "exits": {
-        "south": 995,
-        "west": 980,
-        "east": 994,
-        "north": 991
-      },
-      "id": 993
+      "id": 993, "name": "Great Bazaar of Candera",
+      "exits": { "south": 995, "west": 980, "east": 994, "north": 991 }
     },
     {
-      "name": "Perfume Tent:",
-      "exits": {
-        "west": 993
-      },
-      "id": 994
+      "id": 994, "name": "Perfume Tent:",
+      "exits": { "west": 993 }
     },
     {
-      "name": "Great Bazaar of Candera",
-      "exits": {
-        "south": 977,
-        "west": 981,
-        "east": 1739,
-        "north": 993
-      },
-      "id": 995
+      "id": 995, "name": "Great Bazaar of Candera",
+      "exits": { "south": 977, "west": 981, "east": 1739, "north": 993 }
     },
     {
-      "name": "Landak's Hut:",
-      "exits": {
-        "west": 995
-      },
-      "id": 1739
+      "id": 1739, "name": "Landak's Hut:",
+      "exits": { "west": 995 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

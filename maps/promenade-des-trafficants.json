@@ -4,131 +4,68 @@
   },
   "rooms": [
     {
-      "name": "Promenade des Trafficants",
-      "exits": {
-        "south": 1147,
-        "north": 1170
-      },
-      "id": 1169
+      "id": 1169, "name": "Promenade des Trafficants",
+      "exits": { "south": 1147, "north": 1170 }
     },
     {
-      "name": "The Promenade's gate",
-      "exits": {
-        "south": 1169,
-        "north": 1171
-      },
-      "id": 1170
+      "id": 1170, "name": "The Promenade's gate",
+      "exits": { "south": 1169, "north": 1171 }
     },
     {
-      "name": "You squeeze yourself through the bars in the gate and enter the Promenade.",
-      "exits": {
-        "south": 1170,
-        "east": 1184,
-        "north": 1172
-      },
-      "id": 1171
+      "id": 1171, "name": "You squeeze yourself through the bars in the gate and enter the Promenade.",
+      "exits": { "south": 1170, "east": 1184, "north": 1172 }
     },
     {
-      "name": "Moonlit Promenade",
-      "exits": {
-        "west": 1173,
-        "south": 1171,
-        "north": 1174
-      },
-      "id": 1172
+      "id": 1172, "name": "Moonlit Promenade",
+      "exits": { "west": 1173, "south": 1171, "north": 1174 }
     },
     {
-      "name": "Mekalar's Outdoor Gear",
-      "exits": {
-        "east": 1172
-      },
-      "id": 1173
+      "id": 1173, "name": "Mekalar's Outdoor Gear",
+      "exits": { "east": 1172 }
     },
     {
-      "name": "Moonlit Promenade",
-      "exits": {
-        "south": 1172,
-        "east": 1183,
-        "north": 1175
-      },
-      "id": 1174
+      "id": 1174, "name": "Moonlit Promenade",
+      "exits": { "south": 1172, "east": 1183, "north": 1175 }
     },
     {
-      "name": "Middle of the moonlit Promenade",
-      "exits": {
-        "south": 1174,
-        "north": 1176
-      },
-      "id": 1175
+      "id": 1175, "name": "Middle of the moonlit Promenade",
+      "exits": { "south": 1174, "north": 1176 }
     },
     {
-      "name": "Moonlit Promenade",
-      "exits": {
-        "south": 1175,
-        "north": 1177
-      },
-      "id": 1176
+      "id": 1176, "name": "Moonlit Promenade",
+      "exits": { "south": 1175, "north": 1177 }
     },
     {
-      "name": "Moonlit Promenade",
-      "exits": {
-        "west": 1182,
-        "south": 1176,
-        "north": 1178
-      },
-      "id": 1177
+      "id": 1177, "name": "Moonlit Promenade",
+      "exits": { "west": 1182, "south": 1176, "north": 1178 }
     },
     {
-      "name": "Moonlit Promenade",
-      "exits": {
-        "south": 1177,
-        "north": 1179
-      },
-      "id": 1178
+      "id": 1178, "name": "Moonlit Promenade",
+      "exits": { "south": 1177, "north": 1179 }
     },
     {
-      "name": "Northern end of the moonlit Promenade",
-      "exits": {
-        "west": 1181,
-        "south": 1178,
-        "north": 1180
-      },
-      "id": 1179
+      "id": 1179, "name": "Northern end of the moonlit Promenade",
+      "exits": { "west": 1181, "south": 1178, "north": 1180 }
     },
     {
-      "name": "Enchanter's Store",
-      "exits": {
-        "south": 1179
-      },
-      "id": 1180
+      "id": 1180, "name": "Enchanter's Store",
+      "exits": { "south": 1179 }
     },
     {
-      "name": "Gere's Petshop",
-      "exits": {
-        "east": 1179
-      },
-      "id": 1181
+      "id": 1181, "name": "Gere's Petshop",
+      "exits": { "east": 1179 }
     },
     {
-      "name": "Carpenter's shop",
-      "exits": {
-        "east": 1177
-      },
-      "id": 1182
+      "id": 1182, "name": "Carpenter's shop",
+      "exits": { "east": 1177 }
     },
     {
-      "name": "Roget's Furrier",
-      "exits": {
-        "west": 1174
-      },
-      "id": 1183
+      "id": 1183, "name": "Roget's Furrier",
+      "exits": { "west": 1174 }
     },
     {
-      "name": "Volshev's Advertising Agency",
-      "exits": {
-        "west": 1171
-      },
-      "id": 1184
+      "id": 1184, "name": "Volshev's Advertising Agency",
+      "exits": { "west": 1171 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

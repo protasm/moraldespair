@@ -4,609 +4,268 @@
   },
   "rooms": [
     {
-      "name": "Light forest",
-      "exits": {
-        "west": 1492,
-        "east": 1496,
-        "south": 1441
-      },
-      "id": 1440
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "south": 1442,
-        "west": 1493,
-        "east": 1495,
-        "north": 1440
-      },
-      "id": 1441
-    },
-    {
-      "name": "The Valley",
-      "exits": {
-        "south": 1475,
-        "west": 1494,
-        "east": 1443,
-        "north": 1441
-      },
-      "id": 1442
-    },
-    {
-      "name": "The Valley",
-      "exits": {
-        "south": 1476,
-        "west": 1442,
-        "east": 1444,
-        "north": 1495
-      },
-      "id": 1443
-    },
-    {
-      "name": "The Valley",
-      "exits": {
-        "south": 1477,
-        "west": 1443,
-        "east": 1445,
-        "north": 1498
-      },
-      "id": 1444
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "west": 1444,
-        "east": 1446,
-        "south": 1460
-      },
-      "id": 1445
-    },
-    {
-      "name": "Meadow",
-      "exits": {
-        "west": 1445,
-        "east": 1447,
-        "south": 1459
-      },
-      "id": 1446
-    },
-    {
-      "name": "Meadow",
-      "exits": {
-        "west": 1446,
-        "east": 1449,
-        "south": 1452
-      },
-      "id": 1447
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "east": 1450,
-        "west": 1447
-      },
-      "id": 1449
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "east": 1451,
-        "west": 1449
-      },
-      "id": 1450
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "west": 1450
-      },
-      "id": 1451
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "west": 1459,
-        "south": 1453,
-        "north": 1447
-      },
-      "id": 1452
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "west": 1458,
-        "south": 1454,
-        "north": 1452
-      },
-      "id": 1453
-    },
-    {
-      "name": "Dense forest",
-      "exits": {
-        "west": 1457,
-        "south": 1455,
-        "north": 1453
-      },
-      "id": 1454
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "west": 1456,
-        "north": 1454
-      },
-      "id": 1455
-    },
-    {
-      "name": "Dense forest",
-      "exits": {
-        "south": 1499,
-        "west": 1463,
-        "east": 1455,
-        "north": 1457
-      },
-      "id": 1456
-    },
-    {
-      "name": "Dense forest",
-      "exits": {
-        "south": 1456,
-        "west": 1462,
-        "east": 1454,
-        "north": 1458
-      },
-      "id": 1457
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "south": 1457,
-        "west": 1461,
-        "east": 1453,
-        "north": 1459
-      },
-      "id": 1458
-    },
-    {
-      "name": "Meadow",
-      "exits": {
-        "south": 1458,
-        "west": 1460,
-        "east": 1452,
-        "north": 1446
-      },
-      "id": 1459
-    },
-    {
-      "name": "Meadow",
-      "exits": {
-        "south": 1461,
-        "west": 1477,
-        "east": 1459,
-        "north": 1445
-      },
-      "id": 1460
-    },
-    {
-      "name": "Meadow",
-      "exits": {
-        "south": 1462,
-        "west": 1478,
-        "east": 1458,
-        "north": 1460
-      },
-      "id": 1461
-    },
-    {
-      "name": "Dense forest",
-      "exits": {
-        "south": 1463,
-        "west": 1479,
-        "east": 1457,
-        "north": 1461
-      },
-      "id": 1462
-    },
-    {
-      "name": "Dense forest",
-      "exits": {
-        "south": 1464,
-        "west": 1480,
-        "east": 1456,
-        "north": 1462
-      },
-      "id": 1463
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "west": 1465,
-        "east": 1499,
-        "north": 1463
-      },
-      "id": 1464
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "west": 1466,
-        "east": 1464,
-        "north": 1480
-      },
-      "id": 1465
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "west": 1467,
-        "east": 1465,
-        "north": 1481
-      },
-      "id": 1466
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "west": 1468,
-        "east": 1466,
-        "north": 1482
-      },
-      "id": 1467
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "east": 1467,
-        "west": 1469
-      },
-      "id": 1468
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "east": 1468,
-        "north": 1470
-      },
-      "id": 1469
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "south": 1469,
-        "north": 1471
-      },
-      "id": 1470
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "south": 1470,
-        "east": 1484,
-        "north": 1472
-      },
-      "id": 1471
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "south": 1471,
-        "east": 1485,
-        "north": 1473
-      },
-      "id": 1472
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "south": 1472,
-        "east": 1474,
-        "north": 1489
-      },
-      "id": 1473
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "south": 1485,
-        "west": 1473,
-        "east": 1475,
-        "north": 1494
-      },
-      "id": 1474
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "south": 1486,
-        "west": 1474,
-        "east": 1476,
-        "north": 1442
-      },
-      "id": 1475
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "south": 1487,
-        "west": 1475,
-        "east": 1477,
-        "north": 1443
-      },
-      "id": 1476
-    },
-    {
-      "name": "The Valley",
-      "exits": {
-        "south": 1478,
-        "west": 1476,
-        "east": 1460,
-        "north": 1444
-      },
-      "id": 1477
-    },
-    {
-      "name": "The Valley",
-      "exits": {
-        "south": 1479,
-        "west": 1487,
-        "east": 1461,
-        "north": 1477
-      },
-      "id": 1478
-    },
-    {
-      "name": "The Valley",
-      "exits": {
-        "south": 1480,
-        "west": 1488,
-        "east": 1462,
-        "north": 1478
-      },
-      "id": 1479
-    },
-    {
-      "name": "The Valley",
-      "exits": {
-        "south": 1465,
-        "west": 1481,
-        "east": 1463,
-        "north": 1479
-      },
-      "id": 1480
-    },
-    {
-      "name": "Dense forest",
-      "exits": {
-        "south": 1466,
-        "west": 1482,
-        "east": 1480,
-        "north": 1488
-      },
-      "id": 1481
-    },
-    {
-      "name": "Dense forest",
-      "exits": {
-        "south": 1467,
-        "east": 1481,
-        "north": 1483
-      },
-      "id": 1482
-    },
-    {
-      "name": "Dense forest",
-      "exits": {
-        "south": 1482,
-        "west": 1484,
-        "east": 1488,
-        "north": 1486
-      },
-      "id": 1483
-    },
-    {
-      "name": "Dense forest",
-      "exits": {
-        "west": 1471,
-        "east": 1483,
-        "north": 1485
-      },
-      "id": 1484
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "south": 1484,
-        "west": 1472,
-        "east": 1486,
-        "north": 1474
-      },
-      "id": 1485
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "south": 1483,
-        "west": 1485,
-        "east": 1487,
-        "north": 1475
-      },
-      "id": 1486
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "south": 1488,
-        "west": 1486,
-        "east": 1478,
-        "north": 1476
-      },
-      "id": 1487
-    },
-    {
-      "name": "Dense forest",
-      "exits": {
-        "south": 1481,
-        "west": 1483,
-        "east": 1479,
-        "north": 1487
-      },
-      "id": 1488
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "south": 1473,
-        "east": 1494,
-        "north": 1490
-      },
-      "id": 1489
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "south": 1489,
-        "east": 1493,
-        "north": 1491
-      },
-      "id": 1490
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "down": 1506,
-        "east": 1492,
-        "south": 1490
-      },
-      "id": 1491
-    },
-    {
-      "name": "The Valley",
-      "exits": {
-        "west": 1491,
-        "east": 1440,
-        "south": 1493
-      },
-      "id": 1492
-    },
-    {
-      "name": "The Valley",
-      "exits": {
-        "south": 1494,
-        "west": 1490,
-        "east": 1441,
-        "north": 1492
-      },
-      "id": 1493
-    },
-    {
-      "name": "The Valley",
-      "exits": {
-        "south": 1474,
-        "west": 1489,
-        "east": 1442,
-        "north": 1493
-      },
-      "id": 1494
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "south": 1443,
-        "west": 1441,
-        "east": 1498,
-        "north": 1496
-      },
-      "id": 1495
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "west": 1440,
-        "east": 1497,
-        "south": 1495
-      },
-      "id": 1496
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "west": 1496,
-        "south": 1498
-      },
-      "id": 1497
-    },
-    {
-      "name": "Light forest",
-      "exits": {
-        "west": 1495,
-        "south": 1444,
-        "north": 1497
-      },
-      "id": 1498
-    },
-    {
-      "name": "Meadow",
-      "exits": {
-        "west": 1464,
-        "south": 1505,
-        "north": 1456
-      },
-      "id": 1499
-    },
-    {
-      "name": "Path",
-      "exits": {
-        "south": 1501,
-        "west": 1503,
-        "east": 1473,
-        "north": 1504
-      },
-      "id": 1500
-    },
-    {
-      "name": "Forest",
-      "exits": {
-        "west": 1502,
-        "north": 1500
-      },
-      "id": 1501
-    },
-    {
-      "name": "Beach",
-      "exits": {
-        "east": 1501,
-        "north": 1503
-      },
-      "id": 1502
-    },
-    {
-      "name": "Beach",
-      "exits": {
-        "east": 1500,
-        "south": 1502
-      },
-      "id": 1503
-    },
-    {
-      "name": "Lighthouse Base",
-      "exits": {
-        "south": 1500
-      },
-      "id": 1504
-    },
-    {
-      "name": "Mountain Range",
-      "exits": {
-        "north": 1499
-      },
-      "id": 1505
-    },
-    {
-      "name": "Mine Entrance",
-      "exits": {
-        "up": 1491
-      },
-      "id": 1506
+      "id": 1440, "name": "Light forest",
+      "exits": { "west": 1492, "east": 1496, "south": 1441 }
+    },
+    {
+      "id": 1441, "name": "Light forest",
+      "exits": { "south": 1442, "west": 1493, "east": 1495, "north": 1440 }
+    },
+    {
+      "id": 1442, "name": "The Valley",
+      "exits": { "south": 1475, "west": 1494, "east": 1443, "north": 1441 }
+    },
+    {
+      "id": 1443, "name": "The Valley",
+      "exits": { "south": 1476, "west": 1442, "east": 1444, "north": 1495 }
+    },
+    {
+      "id": 1444, "name": "The Valley",
+      "exits": { "south": 1477, "west": 1443, "east": 1445, "north": 1498 }
+    },
+    {
+      "id": 1445, "name": "Light forest",
+      "exits": { "west": 1444, "east": 1446, "south": 1460 }
+    },
+    {
+      "id": 1446, "name": "Meadow",
+      "exits": { "west": 1445, "east": 1447, "south": 1459 }
+    },
+    {
+      "id": 1447, "name": "Meadow",
+      "exits": { "west": 1446, "east": 1449, "south": 1452 }
+    },
+    {
+      "id": 1449, "name": "Light forest",
+      "exits": { "east": 1450, "west": 1447 }
+    },
+    {
+      "id": 1450, "name": "Light forest",
+      "exits": { "east": 1451, "west": 1449 }
+    },
+    {
+      "id": 1451, "name": "Light forest",
+      "exits": { "west": 1450 }
+    },
+    {
+      "id": 1452, "name": "Light forest",
+      "exits": { "west": 1459, "south": 1453, "north": 1447 }
+    },
+    {
+      "id": 1453, "name": "Light forest",
+      "exits": { "west": 1458, "south": 1454, "north": 1452 }
+    },
+    {
+      "id": 1454, "name": "Dense forest",
+      "exits": { "west": 1457, "south": 1455, "north": 1453 }
+    },
+    {
+      "id": 1455, "name": "Light forest",
+      "exits": { "west": 1456, "north": 1454 }
+    },
+    {
+      "id": 1456, "name": "Dense forest",
+      "exits": { "south": 1499, "west": 1463, "east": 1455, "north": 1457 }
+    },
+    {
+      "id": 1457, "name": "Dense forest",
+      "exits": { "south": 1456, "west": 1462, "east": 1454, "north": 1458 }
+    },
+    {
+      "id": 1458, "name": "Light forest",
+      "exits": { "south": 1457, "west": 1461, "east": 1453, "north": 1459 }
+    },
+    {
+      "id": 1459, "name": "Meadow",
+      "exits": { "south": 1458, "west": 1460, "east": 1452, "north": 1446 }
+    },
+    {
+      "id": 1460, "name": "Meadow",
+      "exits": { "south": 1461, "west": 1477, "east": 1459, "north": 1445 }
+    },
+    {
+      "id": 1461, "name": "Meadow",
+      "exits": { "south": 1462, "west": 1478, "east": 1458, "north": 1460 }
+    },
+    {
+      "id": 1462, "name": "Dense forest",
+      "exits": { "south": 1463, "west": 1479, "east": 1457, "north": 1461 }
+    },
+    {
+      "id": 1463, "name": "Dense forest",
+      "exits": { "south": 1464, "west": 1480, "east": 1456, "north": 1462 }
+    },
+    {
+      "id": 1464, "name": "Mountain Range",
+      "exits": { "west": 1465, "east": 1499, "north": 1463 }
+    },
+    {
+      "id": 1465, "name": "Mountain Range",
+      "exits": { "west": 1466, "east": 1464, "north": 1480 }
+    },
+    {
+      "id": 1466, "name": "Mountain Range",
+      "exits": { "west": 1467, "east": 1465, "north": 1481 }
+    },
+    {
+      "id": 1467, "name": "Mountain Range",
+      "exits": { "west": 1468, "east": 1466, "north": 1482 }
+    },
+    {
+      "id": 1468, "name": "Mountain Range",
+      "exits": { "east": 1467, "west": 1469 }
+    },
+    {
+      "id": 1469, "name": "Mountain Range",
+      "exits": { "east": 1468, "north": 1470 }
+    },
+    {
+      "id": 1470, "name": "Mountain Range",
+      "exits": { "south": 1469, "north": 1471 }
+    },
+    {
+      "id": 1471, "name": "Mountain Range",
+      "exits": { "south": 1470, "east": 1484, "north": 1472 }
+    },
+    {
+      "id": 1472, "name": "Mountain Range",
+      "exits": { "south": 1471, "east": 1485, "north": 1473 }
+    },
+    {
+      "id": 1473, "name": "Mountain Range",
+      "exits": { "south": 1472, "east": 1474, "north": 1489 }
+    },
+    {
+      "id": 1474, "name": "Light forest",
+      "exits": { "south": 1485, "west": 1473, "east": 1475, "north": 1494 }
+    },
+    {
+      "id": 1475, "name": "Light forest",
+      "exits": { "south": 1486, "west": 1474, "east": 1476, "north": 1442 }
+    },
+    {
+      "id": 1476, "name": "Light forest",
+      "exits": { "south": 1487, "west": 1475, "east": 1477, "north": 1443 }
+    },
+    {
+      "id": 1477, "name": "The Valley",
+      "exits": { "south": 1478, "west": 1476, "east": 1460, "north": 1444 }
+    },
+    {
+      "id": 1478, "name": "The Valley",
+      "exits": { "south": 1479, "west": 1487, "east": 1461, "north": 1477 }
+    },
+    {
+      "id": 1479, "name": "The Valley",
+      "exits": { "south": 1480, "west": 1488, "east": 1462, "north": 1478 }
+    },
+    {
+      "id": 1480, "name": "The Valley",
+      "exits": { "south": 1465, "west": 1481, "east": 1463, "north": 1479 }
+    },
+    {
+      "id": 1481, "name": "Dense forest",
+      "exits": { "south": 1466, "west": 1482, "east": 1480, "north": 1488 }
+    },
+    {
+      "id": 1482, "name": "Dense forest",
+      "exits": { "south": 1467, "east": 1481, "north": 1483 }
+    },
+    {
+      "id": 1483, "name": "Dense forest",
+      "exits": { "south": 1482, "west": 1484, "east": 1488, "north": 1486 }
+    },
+    {
+      "id": 1484, "name": "Dense forest",
+      "exits": { "west": 1471, "east": 1483, "north": 1485 }
+    },
+    {
+      "id": 1485, "name": "Light forest",
+      "exits": { "south": 1484, "west": 1472, "east": 1486, "north": 1474 }
+    },
+    {
+      "id": 1486, "name": "Light forest",
+      "exits": { "south": 1483, "west": 1485, "east": 1487, "north": 1475 }
+    },
+    {
+      "id": 1487, "name": "Light forest",
+      "exits": { "south": 1488, "west": 1486, "east": 1478, "north": 1476 }
+    },
+    {
+      "id": 1488, "name": "Dense forest",
+      "exits": { "south": 1481, "west": 1483, "east": 1479, "north": 1487 }
+    },
+    {
+      "id": 1489, "name": "Mountain Range",
+      "exits": { "south": 1473, "east": 1494, "north": 1490 }
+    },
+    {
+      "id": 1490, "name": "Mountain Range",
+      "exits": { "south": 1489, "east": 1493, "north": 1491 }
+    },
+    {
+      "id": 1491, "name": "Mountain Range",
+      "exits": { "down": 1506, "east": 1492, "south": 1490 }
+    },
+    {
+      "id": 1492, "name": "The Valley",
+      "exits": { "west": 1491, "east": 1440, "south": 1493 }
+    },
+    {
+      "id": 1493, "name": "The Valley",
+      "exits": { "south": 1494, "west": 1490, "east": 1441, "north": 1492 }
+    },
+    {
+      "id": 1494, "name": "The Valley",
+      "exits": { "south": 1474, "west": 1489, "east": 1442, "north": 1493 }
+    },
+    {
+      "id": 1495, "name": "Light forest",
+      "exits": { "south": 1443, "west": 1441, "east": 1498, "north": 1496 }
+    },
+    {
+      "id": 1496, "name": "Light forest",
+      "exits": { "west": 1440, "east": 1497, "south": 1495 }
+    },
+    {
+      "id": 1497, "name": "Light forest",
+      "exits": { "west": 1496, "south": 1498 }
+    },
+    {
+      "id": 1498, "name": "Light forest",
+      "exits": { "west": 1495, "south": 1444, "north": 1497 }
+    },
+    {
+      "id": 1499, "name": "Meadow",
+      "exits": { "west": 1464, "south": 1505, "north": 1456 }
+    },
+    {
+      "id": 1500, "name": "Path",
+      "exits": { "south": 1501, "west": 1503, "east": 1473, "north": 1504 }
+    },
+    {
+      "id": 1501, "name": "Forest",
+      "exits": { "west": 1502, "north": 1500 }
+    },
+    {
+      "id": 1502, "name": "Beach",
+      "exits": { "east": 1501, "north": 1503 }
+    },
+    {
+      "id": 1503, "name": "Beach",
+      "exits": { "east": 1500, "south": 1502 }
+    },
+    {
+      "id": 1504, "name": "Lighthouse Base",
+      "exits": { "south": 1500 }
+    },
+    {
+      "id": 1505, "name": "Mountain Range",
+      "exits": { "north": 1499 }
+    },
+    {
+      "id": 1506, "name": "Mine Entrance",
+      "exits": { "up": 1491 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

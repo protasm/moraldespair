@@ -4,322 +4,160 @@
   },
   "rooms": [
     {
-      "name": "Guard Post",
-      "exits": {
-        "east": 1049,
-        "north": 1040
-      },
-      "id": 1039
+      "id": 1039, "name": "Guard Post",
+      "exits": { "east": 1049, "north": 1040 }
     },
     {
-      "name": "A bend in the hallway",
-      "exits": {
-        "east": 1041,
-        "south": 1039
-      },
-      "id": 1040
+      "id": 1040, "name": "A bend in the hallway",
+      "exits": { "east": 1041, "south": 1039 }
     },
     {
-      "name": "Cobwebs brush against the left side of your face as you walk through them.",
-      "exits": {
-        "east": 1042,
-        "west": 1040
-      },
-      "id": 1041
+      "id": 1041, "name": "Cobwebs brush against the left side of your face as you walk through them.",
+      "exits": { "east": 1042, "west": 1040 }
     },
     {
-      "name": "The Great Hall",
-      "exits": {
-        "east": 1043,
-        "west": 1041
-      },
-      "id": 1042
+      "id": 1042, "name": "The Great Hall",
+      "exits": { "east": 1043, "west": 1041 }
     },
     {
-      "name": "A bend in the hallway",
-      "exits": {
-        "west": 1042,
-        "south": 1044
-      },
-      "id": 1043
+      "id": 1043, "name": "A bend in the hallway",
+      "exits": { "west": 1042, "south": 1044 }
     },
     {
-      "name": "Barrack",
-      "exits": {
-        "west": 1045,
-        "south": 1046,
-        "north": 1043
-      },
-      "id": 1044
+      "id": 1044, "name": "Barrack",
+      "exits": { "west": 1045, "south": 1046, "north": 1043 }
     },
     {
-      "name": "First floor landing",
-      "exits": {
-        "east": 1044,
-        "up": 1050
-      },
-      "id": 1045
+      "id": 1045, "name": "First floor landing",
+      "exits": { "east": 1044, "up": 1050 }
     },
     {
-      "name": "Barrack",
-      "exits": {
-        "south": 1047,
-        "north": 1044
-      },
-      "id": 1046
+      "id": 1046, "name": "Barrack",
+      "exits": { "south": 1047, "north": 1044 }
     },
     {
-      "name": "Staging Room",
-      "exits": {
-        "west": 1048,
-        "north": 1046
-      },
-      "id": 1047
+      "id": 1047, "name": "Staging Room",
+      "exits": { "west": 1048, "north": 1046 }
     },
     {
-      "name": "Sally Port",
-      "exits": {
-        "east": 1047
-      },
-      "id": 1048
+      "id": 1048, "name": "Sally Port",
+      "exits": { "east": 1047 }
     },
     {
-      "name": "An office",
-      "exits": {
-        "west": 1039
-      },
-      "id": 1049
+      "id": 1049, "name": "An office",
+      "exits": { "west": 1039 }
     },
     {
-      "name": "Second floor landing",
-      "exits": {
-        "up": 1051,
-        "down": 1045,
-        "north": 1069
-      },
-      "id": 1050
+      "id": 1050, "name": "Second floor landing",
+      "exits": { "up": 1051, "down": 1045, "north": 1069 }
     },
     {
-      "name": "Third floor landing",
-      "exits": {
-        "down": 1050,
-        "up": 1052,
-        "east": 1065,
-        "north": 1064
-      },
-      "id": 1051
+      "id": 1051, "name": "Third floor landing",
+      "exits": { "down": 1050, "up": 1052, "east": 1065, "north": 1064 }
     },
     {
-      "name": "Stairwell",
-      "exits": {
-        "west": 1060,
-        "down": 1051,
-        "south": 1053,
-        "east": 1059,
-        "north": 1057
-      },
-      "id": 1052
+      "id": 1052, "name": "Stairwell",
+      "exits": { "west": 1060, "down": 1051, "south": 1053, "east": 1059, "north": 1057 }
     },
     {
-      "name": "Northeast Tower Roof",
-      "exits": {
-        "south": 1054,
-        "east": 1056,
-        "north": 1052
-      },
-      "id": 1053
+      "id": 1053, "name": "Northeast Tower Roof",
+      "exits": { "south": 1054, "east": 1056, "north": 1052 }
     },
     {
-      "name": "Northeast Tower Roof",
-      "exits": {
-        "east": 1055,
-        "north": 1053
-      },
-      "id": 1054
+      "id": 1054, "name": "Northeast Tower Roof",
+      "exits": { "east": 1055, "north": 1053 }
     },
     {
-      "name": "Southeast corner of roof",
-      "exits": {
-        "west": 1054,
-        "north": 1056
-      },
-      "id": 1055
+      "id": 1055, "name": "Southeast corner of roof",
+      "exits": { "west": 1054, "north": 1056 }
     },
     {
-      "name": "Northeast Tower Roof",
-      "exits": {
-        "west": 1053,
-        "south": 1055,
-        "north": 1059
-      },
-      "id": 1056
+      "id": 1056, "name": "Northeast Tower Roof",
+      "exits": { "west": 1053, "south": 1055, "north": 1059 }
     },
     {
-      "name": "Northeast Tower Roof",
-      "exits": {
-        "east": 1058,
-        "south": 1052
-      },
-      "id": 1057
+      "id": 1057, "name": "Northeast Tower Roof",
+      "exits": { "east": 1058, "south": 1052 }
     },
     {
-      "name": "Northeast corner of roof",
-      "exits": {
-        "west": 1057,
-        "south": 1059
-      },
-      "id": 1058
+      "id": 1058, "name": "Northeast corner of roof",
+      "exits": { "west": 1057, "south": 1059 }
     },
     {
-      "name": "Northeast Tower Roof",
-      "exits": {
-        "west": 1052,
-        "south": 1056,
-        "north": 1058
-      },
-      "id": 1059
+      "id": 1059, "name": "Northeast Tower Roof",
+      "exits": { "west": 1052, "south": 1056, "north": 1058 }
     },
     {
-      "name": "Northeast Tower Roof",
-      "exits": {
-        "west": 1063,
-        "east": 1052,
-        "north": 1061
-      },
-      "id": 1060
+      "id": 1060, "name": "Northeast Tower Roof",
+      "exits": { "west": 1063, "east": 1052, "north": 1061 }
     },
     {
-      "name": "Northeast Tower Roof",
-      "exits": {
-        "west": 1062,
-        "south": 1060
-      },
-      "id": 1061
+      "id": 1061, "name": "Northeast Tower Roof",
+      "exits": { "west": 1062, "south": 1060 }
     },
     {
-      "name": "Northwest corner of roof",
-      "exits": {
-        "east": 1061,
-        "south": 1063
-      },
-      "id": 1062
+      "id": 1062, "name": "Northwest corner of roof",
+      "exits": { "east": 1061, "south": 1063 }
     },
     {
-      "name": "Northeast Tower Roof",
-      "exits": {
-        "east": 1060,
-        "north": 1062
-      },
-      "id": 1063
+      "id": 1063, "name": "Northeast Tower Roof",
+      "exits": { "east": 1060, "north": 1062 }
     },
     {
-      "name": "Guard Post",
-      "exits": {
-        "south": 1051
-      },
-      "id": 1064
+      "id": 1064, "name": "Guard Post",
+      "exits": { "south": 1051 }
     },
     {
-      "name": "Hallway",
-      "exits": {
-        "west": 1051,
-        "south": 1066
-      },
-      "id": 1065
+      "id": 1065, "name": "Hallway",
+      "exits": { "west": 1051, "south": 1066 }
     },
     {
-      "name": "Hall",
-      "exits": {
-        "south": 1067,
-        "north": 1065
-      },
-      "id": 1066
+      "id": 1066, "name": "Hall",
+      "exits": { "south": 1067, "north": 1065 }
     },
     {
-      "name": "War Room",
-      "exits": {
-        "west": 1068,
-        "north": 1066
-      },
-      "id": 1067
+      "id": 1067, "name": "War Room",
+      "exits": { "west": 1068, "north": 1066 }
     },
     {
-      "name": "Portal Chamber",
-      "exits": {
-        "east": 1067
-      },
-      "id": 1068
+      "id": 1068, "name": "Portal Chamber",
+      "exits": { "east": 1067 }
     },
     {
-      "name": "Guard Post",
-      "exits": {
-        "west": 1070,
-        "east": 1072,
-        "south": 1050
-      },
-      "id": 1069
+      "id": 1069, "name": "Guard Post",
+      "exits": { "west": 1070, "east": 1072, "south": 1050 }
     },
     {
-      "name": "Prison Wing",
-      "exits": {
-        "west": 1071,
-        "east": 1069,
-        "south": 1077
-      },
-      "id": 1070
+      "id": 1070, "name": "Prison Wing",
+      "exits": { "west": 1071, "east": 1069, "south": 1077 }
     },
     {
-      "name": "Prison cell",
-      "exits": {
-        "east": 1070
-      },
-      "id": 1071
+      "id": 1071, "name": "Prison cell",
+      "exits": { "east": 1070 }
     },
     {
-      "name": "Hallway",
-      "exits": {
-        "west": 1069,
-        "south": 1073
-      },
-      "id": 1072
+      "id": 1072, "name": "Hallway",
+      "exits": { "west": 1069, "south": 1073 }
     },
     {
-      "name": "An alarm sounds as you pass the threshold of the magic barrier.",
-      "exits": {
-        "south": 1074,
-        "north": 1072
-      },
-      "id": 1073
+      "id": 1073, "name": "An alarm sounds as you pass the threshold of the magic barrier.",
+      "exits": { "south": 1074, "north": 1072 }
     },
     {
-      "name": "Witch's Workroom",
-      "exits": {
-        "west": 1075,
-        "south": 1076,
-        "north": 1073
-      },
-      "id": 1074
+      "id": 1074, "name": "Witch's Workroom",
+      "exits": { "west": 1075, "south": 1076, "north": 1073 }
     },
     {
-      "name": "Library",
-      "exits": {
-        "east": 1074
-      },
-      "id": 1075
+      "id": 1075, "name": "Library",
+      "exits": { "east": 1074 }
     },
     {
-      "name": "Morgue",
-      "exits": {
-        "north": 1074
-      },
-      "id": 1076
+      "id": 1076, "name": "Morgue",
+      "exits": { "north": 1074 }
     },
     {
-      "name": "Prison cell",
-      "exits": {
-        "north": 1070
-      },
-      "id": 1077
+      "id": 1077, "name": "Prison cell",
+      "exits": { "north": 1070 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

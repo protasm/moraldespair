@@ -4,1208 +4,604 @@
   },
   "rooms": [
     {
-      "name": "Entrance to Exedoria",
-      "exits": {
-        "east": 287
-      },
-      "id": 286
-    },
-    {
-      "name": "Main Street",
-      "exits": {
-        "west": 286,
-        "east": 288,
-        "south": 330
-      },
-      "id": 287
-    },
-    {
-      "name": "Main Street",
-      "exits": {
-        "south": 368,
-        "west": 287,
-        "east": 289,
-        "north": 367
-      },
-      "id": 288
-    },
-    {
-      "name": "Main Street",
-      "exits": {
-        "west": 288,
-        "east": 290,
-        "south": 366
-      },
-      "id": 289
-    },
-    {
-      "name": "Monument Circle, Main Street",
-      "exits": {
-        "south": 299,
-        "west": 289,
-        "east": 291,
-        "north": 369
-      },
-      "id": 290
-    },
-    {
-      "name": "Main Street",
-      "exits": {
-        "south": 298,
-        "west": 290,
-        "east": 292,
-        "north": 370
-      },
-      "id": 291
-    },
-    {
-      "name": "Main Street",
-      "exits": {
-        "west": 291,
-        "east": 293,
-        "south": 383
-      },
-      "id": 292
-    },
-    {
-      "name": "Main Street",
-      "exits": {
-        "east": 294,
-        "west": 292
-      },
-      "id": 293
-    },
-    {
-      "name": "Main Street",
-      "exits": {
-        "east": 295,
-        "west": 293
-      },
-      "id": 294
-    },
-    {
-      "name": "Main Street",
-      "exits": {
-        "east": 296,
-        "west": 294
-      },
-      "id": 295
-    },
-    {
-      "name": "Main Street",
-      "exits": {
-        "east": 297,
-        "west": 295
-      },
-      "id": 296
-    },
-    {
-      "name": "Corigan Court Intersection",
-      "exits": {
-        "west": 296
-      },
-      "id": 297
-    },
-    {
-      "name": "City Hall",
-      "exits": {
-        "north": 291
-      },
-      "id": 298
-    },
-    {
-      "name": "Eithel Sirion",
-      "exits": {
-        "south": 300,
-        "north": 290
-      },
-      "id": 299
-    },
-    {
-      "name": "Brapnor Road",
-      "exits": {
-        "south": 301,
-        "west": 302,
-        "east": 385,
-        "north": 299
-      },
-      "id": 300
-    },
-    {
-      "name": "Frenchie's II",
-      "exits": {
-        "north": 300
-      },
-      "id": 301
-    },
-    {
-      "name": "Brapnor Road",
-      "exits": {
-        "west": 303,
-        "east": 300,
-        "south": 392
-      },
-      "id": 302
-    },
-    {
-      "name": "Middle of Brapnor Road",
-      "exits": {
-        "west": 304,
-        "east": 302,
-        "south": 329
-      },
-      "id": 303
-    },
-    {
-      "name": "Brapnor Road",
-      "exits": {
-        "west": 305,
-        "east": 303,
-        "north": 330
-      },
-      "id": 304
-    },
-    {
-      "name": "Brapnor Road",
-      "exits": {
-        "west": 306,
-        "east": 304,
-        "north": 393
-      },
-      "id": 305
-    },
-    {
-      "name": "Brapnor Road",
-      "exits": {
-        "east": 305,
-        "west": 307
-      },
-      "id": 306
-    },
-    {
-      "name": "End of Brapnor Road",
-      "exits": {
-        "east": 306,
-        "northwest": 331,
-        "south": 308
-      },
-      "id": 307
-    },
-    {
-      "name": "Beginning of Lilu Lane",
-      "exits": {
-        "south": 309,
-        "north": 307
-      },
-      "id": 308
-    },
-    {
-      "name": "Lilu Lane",
-      "exits": {
-        "south": 310,
-        "north": 308
-      },
-      "id": 309
-    },
-    {
-      "name": "Middle of Lilu Lane",
-      "exits": {
-        "west": 355,
-        "south": 311,
-        "north": 309
-      },
-      "id": 310
-    },
-    {
-      "name": "Lilu Lane",
-      "exits": {
-        "south": 312,
-        "north": 310
-      },
-      "id": 311
-    },
-    {
-      "name": "End of Lilu Lane",
-      "exits": {
-        "west": 354,
-        "south": 313,
-        "north": 311
-      },
-      "id": 312
-    },
-    {
-      "name": "Beginning of Embassy Row",
-      "exits": {
-        "east": 314,
-        "north": 312
-      },
-      "id": 313
-    },
-    {
-      "name": "Embassy Row",
-      "exits": {
-        "west": 313,
-        "east": 315,
-        "south": 322
-      },
-      "id": 314
-    },
-    {
-      "name": "Embassy Row",
-      "exits": {
-        "south": 320,
-        "west": 314,
-        "east": 316,
-        "north": 321
-      },
-      "id": 315
-    },
-    {
-      "name": "Embassy Row",
-      "exits": {
-        "south": 318,
-        "west": 315,
-        "east": 317,
-        "north": 319
-      },
-      "id": 316
-    },
-    {
-      "name": "Embassy Row",
-      "exits": {
-        "west": 316,
-        "east": 323,
-        "north": 333
-      },
-      "id": 317
-    },
-    {
-      "name": "A Dark Hole in the Ground",
-      "exits": {
-        "north": 316
-      },
-      "id": 318
-    },
-    {
-      "name": "Guard Post for Gnome Embassy",
-      "exits": {
-        "south": 316,
-        "north": 926
-      },
-      "id": 319
-    },
-    {
-      "name": "Before a round door",
-      "exits": {
-        "north": 315
-      },
-      "id": 320
-    },
-    {
-      "name": "Junk yard",
-      "exits": {
-        "south": 315
-      },
-      "id": 321
-    },
-    {
-      "name": "Elven Embassy checkpoint",
-      "exits": {
-        "north": 314
-      },
-      "id": 322
-    },
-    {
-      "name": "End of Embassy Row",
-      "exits": {
-        "west": 317,
-        "north": 324
-      },
-      "id": 323
-    },
-    {
-      "name": "Southern end of alley",
-      "exits": {
-        "south": 323,
-        "north": 325
-      },
-      "id": 324
-    },
-    {
-      "name": "Bend in an alley",
-      "exits": {
-        "west": 326,
-        "south": 324
-      },
-      "id": 325
-    },
-    {
-      "name": "A bend in the alley",
-      "exits": {
-        "east": 325,
-        "north": 327
-      },
-      "id": 326
-    },
-    {
-      "name": "Dark and narrow alley",
-      "exits": {
-        "south": 326,
-        "north": 328
-      },
-      "id": 327
-    },
-    {
-      "name": "Dark alley",
-      "exits": {
-        "south": 327,
-        "north": 329
-      },
-      "id": 328
-    },
-    {
-      "name": "Alley entrance",
-      "exits": {
-        "south": 328,
-        "north": 303
-      },
-      "id": 329
-    },
-    {
-      "name": "The Excalibur, a closed guild",
-      "exits": {
-        "south": 304,
-        "north": 287
-      },
-      "id": 330
-    },
-    {
-      "name": "Foyer of the Exedorian Inn",
-      "exits": {
-        "southeast": 307,
-        "west": 332
-      },
-      "id": 331
-    },
-    {
-      "name": "Exedorian saloon",
-      "exits": {
-        "east": 331
-      },
-      "id": 332
-    },
-    {
-      "name": "Before the Dwarven Embassy",
-      "exits": {
-        "south": 317,
-        "north": 920
-      },
-      "id": 333
-    },
-    {
-      "name": "Keen Street West",
-      "exits": {
-        "east": 335
-      },
-      "id": 334
-    },
-    {
-      "name": "Keen Street",
-      "exits": {
-        "east": 336,
-        "west": 334
-      },
-      "id": 335
-    },
-    {
-      "name": "Keen Street",
-      "exits": {
-        "west": 335,
-        "east": 337,
-        "north": 602
-      },
-      "id": 336
-    },
-    {
-      "name": "Keen Street",
-      "exits": {
-        "west": 336,
-        "east": 338,
-        "south": 603
-      },
-      "id": 337
-    },
-    {
-      "name": "East Keen Street Bridge",
-      "exits": {
-        "west": 337,
-        "east": 339,
-        "north": 604
-      },
-      "id": 338
-    },
-    {
-      "name": "Keen Street Bridge",
-      "exits": {
-        "east": 340,
-        "west": 338
-      },
-      "id": 339
-    },
-    {
-      "name": "Keen Street",
-      "exits": {
-        "west": 339,
-        "east": 341,
-        "south": 343
-      },
-      "id": 340
-    },
-    {
-      "name": "Keen Street East",
-      "exits": {
-        "west": 340,
-        "north": 342
-      },
-      "id": 341
-    },
-    {
-      "name": "Guard Post",
-      "exits": {
-        "south": 341,
-        "north": 350
-      },
-      "id": 342
-    },
-    {
-      "name": "Statued lawn",
-      "exits": {
-        "south": 344,
-        "north": 340
-      },
-      "id": 343
-    },
-    {
-      "name": "Statued lawn",
-      "exits": {
-        "south": 345,
-        "north": 343
-      },
-      "id": 344
-    },
-    {
-      "name": "Manicured lawn",
-      "exits": {
-        "south": 346,
-        "north": 344
-      },
-      "id": 345
-    },
-    {
-      "name": "Cavernous foyer",
-      "exits": {
-        "west": 348,
-        "east": 347,
-        "north": 345
-      },
-      "id": 346
-    },
-    {
-      "name": "Icy room",
-      "exits": {
-        "west": 346
-      },
-      "id": 347
-    },
-    {
-      "name": "Cold hallway",
-      "exits": {
-        "east": 346,
-        "south": 349
-      },
-      "id": 348
-    },
-    {
-      "name": "Snowy cave",
-      "exits": {
-        "north": 348
-      },
-      "id": 349
-    },
-    {
-      "name": "With no gate guard present, you are able to enter the walled estate",
-      "exits": {
-        "south": 342,
-        "north": 351
-      },
-      "id": 350
-    },
-    {
-      "name": "Foyer",
-      "exits": {
-        "east": 352,
-        "south": 350
-      },
-      "id": 351
-    },
-    {
-      "name": "Wood-paneled Hallway",
-      "exits": {
-        "west": 351,
-        "north": 353
-      },
-      "id": 352
-    },
-    {
-      "name": "Busy Kitchen",
-      "exits": {
-        "south": 352
-      },
-      "id": 353
-    },
-    {
-      "name": "Mom's General Store",
-      "exits": {
-        "east": 312
-      },
-      "id": 354
-    },
-    {
-      "name": "Drawbridge",
-      "exits": {
-        "east": 310,
-        "west": 356
-      },
-      "id": 355
-    },
-    {
-      "name": "Library's entrance",
-      "exits": {
-        "south": 357,
-        "west": 361,
-        "east": 355,
-        "north": 362
-      },
-      "id": 356
+      "id": 286, "name": "Entrance to Exedoria",
+      "exits": { "east": 287 }
     },
     {
-      "name": "Cobblestoned hallway",
-      "exits": {
-        "south": 358,
-        "east": 360,
-        "north": 356
-      },
-      "id": 357
+      "id": 287, "name": "Main Street",
+      "exits": { "west": 286, "east": 288, "south": 330 }
     },
-    {
-      "name": "A bend in the hallway",
-      "exits": {
-        "west": 359,
-        "north": 357
-      },
-      "id": 358
+    {
+      "id": 288, "name": "Main Street",
+      "exits": { "south": 368, "west": 287, "east": 289, "north": 367 }
+    },
+    {
+      "id": 289, "name": "Main Street",
+      "exits": { "west": 288, "east": 290, "south": 366 }
+    },
+    {
+      "id": 290, "name": "Monument Circle, Main Street",
+      "exits": { "south": 299, "west": 289, "east": 291, "north": 369 }
+    },
+    {
+      "id": 291, "name": "Main Street",
+      "exits": { "south": 298, "west": 290, "east": 292, "north": 370 }
+    },
+    {
+      "id": 292, "name": "Main Street",
+      "exits": { "west": 291, "east": 293, "south": 383 }
+    },
+    {
+      "id": 293, "name": "Main Street",
+      "exits": { "east": 294, "west": 292 }
+    },
+    {
+      "id": 294, "name": "Main Street",
+      "exits": { "east": 295, "west": 293 }
+    },
+    {
+      "id": 295, "name": "Main Street",
+      "exits": { "east": 296, "west": 294 }
+    },
+    {
+      "id": 296, "name": "Main Street",
+      "exits": { "east": 297, "west": 295 }
+    },
+    {
+      "id": 297, "name": "Corigan Court Intersection",
+      "exits": { "west": 296 }
+    },
+    {
+      "id": 298, "name": "City Hall",
+      "exits": { "north": 291 }
+    },
+    {
+      "id": 299, "name": "Eithel Sirion",
+      "exits": { "south": 300, "north": 290 }
+    },
+    {
+      "id": 300, "name": "Brapnor Road",
+      "exits": { "south": 301, "west": 302, "east": 385, "north": 299 }
+    },
+    {
+      "id": 301, "name": "Frenchie's II",
+      "exits": { "north": 300 }
+    },
+    {
+      "id": 302, "name": "Brapnor Road",
+      "exits": { "west": 303, "east": 300, "south": 392 }
+    },
+    {
+      "id": 303, "name": "Middle of Brapnor Road",
+      "exits": { "west": 304, "east": 302, "south": 329 }
+    },
+    {
+      "id": 304, "name": "Brapnor Road",
+      "exits": { "west": 305, "east": 303, "north": 330 }
+    },
+    {
+      "id": 305, "name": "Brapnor Road",
+      "exits": { "west": 306, "east": 304, "north": 393 }
+    },
+    {
+      "id": 306, "name": "Brapnor Road",
+      "exits": { "east": 305, "west": 307 }
+    },
+    {
+      "id": 307, "name": "End of Brapnor Road",
+      "exits": { "east": 306, "northwest": 331, "south": 308 }
+    },
+    {
+      "id": 308, "name": "Beginning of Lilu Lane",
+      "exits": { "south": 309, "north": 307 }
+    },
+    {
+      "id": 309, "name": "Lilu Lane",
+      "exits": { "south": 310, "north": 308 }
+    },
+    {
+      "id": 310, "name": "Middle of Lilu Lane",
+      "exits": { "west": 355, "south": 311, "north": 309 }
+    },
+    {
+      "id": 311, "name": "Lilu Lane",
+      "exits": { "south": 312, "north": 310 }
+    },
+    {
+      "id": 312, "name": "End of Lilu Lane",
+      "exits": { "west": 354, "south": 313, "north": 311 }
+    },
+    {
+      "id": 313, "name": "Beginning of Embassy Row",
+      "exits": { "east": 314, "north": 312 }
+    },
+    {
+      "id": 314, "name": "Embassy Row",
+      "exits": { "west": 313, "east": 315, "south": 322 }
+    },
+    {
+      "id": 315, "name": "Embassy Row",
+      "exits": { "south": 320, "west": 314, "east": 316, "north": 321 }
+    },
+    {
+      "id": 316, "name": "Embassy Row",
+      "exits": { "south": 318, "west": 315, "east": 317, "north": 319 }
+    },
+    {
+      "id": 317, "name": "Embassy Row",
+      "exits": { "west": 316, "east": 323, "north": 333 }
+    },
+    {
+      "id": 318, "name": "A Dark Hole in the Ground",
+      "exits": { "north": 316 }
+    },
+    {
+      "id": 319, "name": "Guard Post for Gnome Embassy",
+      "exits": { "south": 316, "north": 926 }
+    },
+    {
+      "id": 320, "name": "Before a round door",
+      "exits": { "north": 315 }
+    },
+    {
+      "id": 321, "name": "Junk yard",
+      "exits": { "south": 315 }
+    },
+    {
+      "id": 322, "name": "Elven Embassy checkpoint",
+      "exits": { "north": 314 }
+    },
+    {
+      "id": 323, "name": "End of Embassy Row",
+      "exits": { "west": 317, "north": 324 }
+    },
+    {
+      "id": 324, "name": "Southern end of alley",
+      "exits": { "south": 323, "north": 325 }
+    },
+    {
+      "id": 325, "name": "Bend in an alley",
+      "exits": { "west": 326, "south": 324 }
+    },
+    {
+      "id": 326, "name": "A bend in the alley",
+      "exits": { "east": 325, "north": 327 }
+    },
+    {
+      "id": 327, "name": "Dark and narrow alley",
+      "exits": { "south": 326, "north": 328 }
+    },
+    {
+      "id": 328, "name": "Dark alley",
+      "exits": { "south": 327, "north": 329 }
+    },
+    {
+      "id": 329, "name": "Alley entrance",
+      "exits": { "south": 328, "north": 303 }
+    },
+    {
+      "id": 330, "name": "The Excalibur, a closed guild",
+      "exits": { "south": 304, "north": 287 }
+    },
+    {
+      "id": 331, "name": "Foyer of the Exedorian Inn",
+      "exits": { "southeast": 307, "west": 332 }
+    },
+    {
+      "id": 332, "name": "Exedorian saloon",
+      "exits": { "east": 331 }
+    },
+    {
+      "id": 333, "name": "Before the Dwarven Embassy",
+      "exits": { "south": 317, "north": 920 }
+    },
+    {
+      "id": 334, "name": "Keen Street West",
+      "exits": { "east": 335 }
+    },
+    {
+      "id": 335, "name": "Keen Street",
+      "exits": { "east": 336, "west": 334 }
+    },
+    {
+      "id": 336, "name": "Keen Street",
+      "exits": { "west": 335, "east": 337, "north": 602 }
+    },
+    {
+      "id": 337, "name": "Keen Street",
+      "exits": { "west": 336, "east": 338, "south": 603 }
+    },
+    {
+      "id": 338, "name": "East Keen Street Bridge",
+      "exits": { "west": 337, "east": 339, "north": 604 }
+    },
+    {
+      "id": 339, "name": "Keen Street Bridge",
+      "exits": { "east": 340, "west": 338 }
+    },
+    {
+      "id": 340, "name": "Keen Street",
+      "exits": { "west": 339, "east": 341, "south": 343 }
+    },
+    {
+      "id": 341, "name": "Keen Street East",
+      "exits": { "west": 340, "north": 342 }
+    },
+    {
+      "id": 342, "name": "Guard Post",
+      "exits": { "south": 341, "north": 350 }
+    },
+    {
+      "id": 343, "name": "Statued lawn",
+      "exits": { "south": 344, "north": 340 }
+    },
+    {
+      "id": 344, "name": "Statued lawn",
+      "exits": { "south": 345, "north": 343 }
+    },
+    {
+      "id": 345, "name": "Manicured lawn",
+      "exits": { "south": 346, "north": 344 }
+    },
+    {
+      "id": 346, "name": "Cavernous foyer",
+      "exits": { "west": 348, "east": 347, "north": 345 }
+    },
+    {
+      "id": 347, "name": "Icy room",
+      "exits": { "west": 346 }
+    },
+    {
+      "id": 348, "name": "Cold hallway",
+      "exits": { "east": 346, "south": 349 }
+    },
+    {
+      "id": 349, "name": "Snowy cave",
+      "exits": { "north": 348 }
+    },
+    {
+      "id": 350, "name": "With no gate guard present, you are able to enter the walled estate",
+      "exits": { "south": 342, "north": 351 }
+    },
+    {
+      "id": 351, "name": "Foyer",
+      "exits": { "east": 352, "south": 350 }
+    },
+    {
+      "id": 352, "name": "Wood-paneled Hallway",
+      "exits": { "west": 351, "north": 353 }
+    },
+    {
+      "id": 353, "name": "Busy Kitchen",
+      "exits": { "south": 352 }
+    },
+    {
+      "id": 354, "name": "Mom's General Store",
+      "exits": { "east": 312 }
+    },
+    {
+      "id": 355, "name": "Drawbridge",
+      "exits": { "east": 310, "west": 356 }
+    },
+    {
+      "id": 356, "name": "Library's entrance",
+      "exits": { "south": 357, "west": 361, "east": 355, "north": 362 }
+    },
+    {
+      "id": 357, "name": "Cobblestoned hallway",
+      "exits": { "south": 358, "east": 360, "north": 356 }
+    },
+    {
+      "id": 358, "name": "A bend in the hallway",
+      "exits": { "west": 359, "north": 357 }
+    },
+    {
+      "id": 359, "name": "A monk's cell",
+      "exits": { "east": 358 }
+    },
+    {
+      "id": 360, "name": "A monk's cell",
+      "exits": { "west": 357 }
+    },
+    {
+      "id": 361, "name": "With a grunt of effort, you manage to push open the heavy door, and enter",
+      "exits": { "east": 356 }
+    },
+    {
+      "id": 362, "name": "Cobblestoned hallway",
+      "exits": { "south": 356, "east": 363, "north": 364 }
+    },
+    {
+      "id": 363, "name": "A monk's cell",
+      "exits": { "west": 362 }
+    },
+    {
+      "id": 364, "name": "A bend in the hallway",
+      "exits": { "west": 365, "south": 362 }
     },
-    {
-      "name": "A monk's cell",
-      "exits": {
-        "east": 358
-      },
-      "id": 359
+    {
+      "id": 365, "name": "A monk's cell",
+      "exits": { "east": 364 }
+    },
+    {
+      "id": 366, "name": "The Cadaver Emporium",
+      "exits": { "north": 289 }
+    },
+    {
+      "id": 367, "name": "Velvet Unicorn",
+      "exits": { "south": 288 }
+    },
+    {
+      "id": 368, "name": "Eidolon Warlords",
+      "exits": { "north": 288 }
+    },
+    {
+      "id": 369, "name": "You feel a STRONG urge to read the Sanctuary board... You are responsible",
+      "exits": { "south": 290 }
+    },
+    {
+      "id": 370, "name": "Beginning of park path",
+      "exits": { "south": 291, "north": 371 }
+    },
+    {
+      "id": 371, "name": "Park path intersection",
+      "exits": { "south": 370, "west": 372, "east": 378, "north": 373 }
+    },
+    {
+      "id": 372, "name": "Exedoria Pet Cemetary",
+      "exits": { "east": 371 }
+    },
+    {
+      "id": 373, "name": "Park path on the hill",
+      "exits": { "south": 371, "north": 374 }
+    },
+    {
+      "id": 374, "name": "Elevated park path",
+      "exits": { "south": 373, "north": 375 }
+    },
+    {
+      "id": 375, "name": "End of park path",
+      "exits": { "east": 376, "south": 374 }
+    },
+    {
+      "id": 376, "name": "Temple ruins",
+      "exits": { "east": 377, "west": 375 }
+    },
+    {
+      "id": 377, "name": "Temple rotunda",
+      "exits": { "west": 376 }
+    },
+    {
+      "id": 378, "name": "Gravel path to the mansion",
+      "exits": { "east": 379, "west": 371 }
+    },
+    {
+      "id": 379, "name": "Gravel path on the hill",
+      "exits": { "east": 380, "west": 378 }
     },
     {
-      "name": "A monk's cell",
-      "exits": {
-        "west": 357
-      },
-      "id": 360
-    },
+      "id": 380, "name": "Intersection in the gravel path",
+      "exits": { "west": 379, "southeast": 382, "north": 381 }
+    },
+    {
+      "id": 381, "name": "Before a white mansion",
+      "exits": { "south": 380 }
+    },
     {
-      "name": "With a grunt of effort, you manage to push open the heavy door, and enter",
-      "exits": {
-        "east": 356
-      },
-      "id": 361
-    },
-    {
-      "name": "Cobblestoned hallway",
-      "exits": {
-        "south": 356,
-        "east": 363,
-        "north": 364
-      },
-      "id": 362
-    },
+      "id": 382, "name": "Outside the cemetery gate",
+      "exits": { "northwest": 380 }
+    },
     {
-      "name": "A monk's cell",
-      "exits": {
-        "west": 362
-      },
-      "id": 363
-    },
-    {
-      "name": "A bend in the hallway",
-      "exits": {
-        "west": 365,
-        "south": 362
-      },
-      "id": 364
-    },
+      "id": 383, "name": "Guard Post",
+      "exits": { "south": 384, "north": 292 }
+    },
     {
-      "name": "A monk's cell",
-      "exits": {
-        "east": 364
-      },
-      "id": 365
-    },
-    {
-      "name": "The Cadaver Emporium",
-      "exits": {
-        "north": 289
-      },
-      "id": 366
-    },
-    {
-      "name": "Velvet Unicorn",
-      "exits": {
-        "south": 288
-      },
-      "id": 367
-    },
-    {
-      "name": "Eidolon Warlords",
-      "exits": {
-        "north": 288
-      },
-      "id": 368
-    },
-    {
-      "name": "You feel a STRONG urge to read the Sanctuary board... You are responsible",
-      "exits": {
-        "south": 290
-      },
-      "id": 369
+      "id": 384, "name": "Beginning of Brapnor Road",
+      "exits": { "west": 385, "southeast": 386, "north": 383 }
     },
-    {
-      "name": "Beginning of park path",
-      "exits": {
-        "south": 291,
-        "north": 371
-      },
-      "id": 370
+    {
+      "id": 385, "name": "Brapnor Road",
+      "exits": { "east": 384, "west": 300 }
     },
-    {
-      "name": "Park path intersection",
-      "exits": {
-        "south": 370,
-        "west": 372,
-        "east": 378,
-        "north": 373
-      },
-      "id": 371
-    },
-    {
-      "name": "Exedoria Pet Cemetary",
-      "exits": {
-        "east": 371
-      },
-      "id": 372
-    },
-    {
-      "name": "Park path on the hill",
-      "exits": {
-        "south": 371,
-        "north": 374
-      },
-      "id": 373
-    },
-    {
-      "name": "Elevated park path",
-      "exits": {
-        "south": 373,
-        "north": 375
-      },
-      "id": 374
-    },
-    {
-      "name": "End of park path",
-      "exits": {
-        "east": 376,
-        "south": 374
-      },
-      "id": 375
-    },
-    {
-      "name": "Temple ruins",
-      "exits": {
-        "east": 377,
-        "west": 375
-      },
-      "id": 376
-    },
-    {
-      "name": "Temple rotunda",
-      "exits": {
-        "west": 376
-      },
-      "id": 377
+    {
+      "id": 386, "name": "Necrom's Gate",
+      "exits": { "northwest": 384, "southeast": 387 }
     },
-    {
-      "name": "Gravel path to the mansion",
-      "exits": {
-        "east": 379,
-        "west": 371
-      },
-      "id": 378
+    {
+      "id": 387, "name": "Paved intersection",
+      "exits": { "east": 388, "northwest": 386, "south": 527 }
     },
-    {
-      "name": "Gravel path on the hill",
-      "exits": {
-        "east": 380,
-        "west": 378
-      },
-      "id": 379
+    {
+      "id": 388, "name": "Eastern path through the University",
+      "exits": { "east": 389, "west": 387 }
     },
-    {
-      "name": "Intersection in the gravel path",
-      "exits": {
-        "west": 379,
-        "southeast": 382,
-        "north": 381
-      },
-      "id": 380
-    },
-    {
-      "name": "Before a white mansion",
-      "exits": {
-        "south": 380
-      },
-      "id": 381
+    {
+      "id": 389, "name": "Eastern path through the University",
+      "exits": { "east": 390, "west": 388 }
     },
-    {
-      "name": "Outside the cemetery gate",
-      "exits": {
-        "northwest": 380
-      },
-      "id": 382
+    {
+      "id": 390, "name": "In front of a temporary building",
+      "exits": { "west": 389, "east": 391, "south": 904 }
     },
     {
-      "name": "Guard Post",
-      "exits": {
-        "south": 384,
-        "north": 292
-      },
-      "id": 383
+      "id": 391, "name": "Construction site",
+      "exits": { "west": 390 }
     },
     {
-      "name": "Beginning of Brapnor Road",
-      "exits": {
-        "west": 385,
-        "southeast": 386,
-        "north": 383
-      },
-      "id": 384
+      "id": 392, "name": "Delilah's Deli",
+      "exits": { "north": 302 }
     },
-    {
-      "name": "Brapnor Road",
-      "exits": {
-        "east": 384,
-        "west": 300
-      },
-      "id": 385
+    {
+      "id": 393, "name": "Guard Tower Entrance",
+      "exits": { "south": 305 }
     },
-    {
-      "name": "Necrom's Gate",
-      "exits": {
-        "northwest": 384,
-        "southeast": 387
-      },
-      "id": 386
+    {
+      "id": 527, "name": "Southern path through the University",
+      "exits": { "south": 528, "north": 387 }
     },
-    {
-      "name": "Paved intersection",
-      "exits": {
-        "east": 388,
-        "northwest": 386,
-        "south": 527
-      },
-      "id": 387
-    },
-    {
-      "name": "Eastern path through the University",
-      "exits": {
-        "east": 389,
-        "west": 387
-      },
-      "id": 388
-    },
-    {
-      "name": "Eastern path through the University",
-      "exits": {
-        "east": 390,
-        "west": 388
-      },
-      "id": 389
-    },
-    {
-      "name": "In front of a temporary building",
-      "exits": {
-        "west": 389,
-        "east": 391,
-        "south": 904
-      },
-      "id": 390
-    },
-    {
-      "name": "Construction site",
-      "exits": {
-        "west": 390
-      },
-      "id": 391
-    },
-    {
-      "name": "Delilah's Deli",
-      "exits": {
-        "north": 302
-      },
-      "id": 392
+    {
+      "id": 528, "name": "Southern path through the University",
+      "exits": { "south": 896, "east": 894, "north": 527 }
     },
-    {
-      "name": "Guard Tower Entrance",
-      "exits": {
-        "south": 305
-      },
-      "id": 393
+    {
+      "id": 602, "name": "Railed entrance",
+      "exits": { "south": 336 }
     },
     {
-      "name": "Southern path through the University",
-      "exits": {
-        "south": 528,
-        "north": 387
-      },
-      "id": 527
+      "id": 603, "name": "Flagstoned entry",
+      "exits": { "south": 915, "north": 337 }
     },
     {
-      "name": "Southern path through the University",
-      "exits": {
-        "south": 896,
-        "east": 894,
-        "north": 527
-      },
-      "id": 528
+      "id": 604, "name": "You rudely trespass on the private property.",
+      "exits": { "northeast": 907, "northwest": 910, "south": 338 }
     },
-    {
-      "name": "Railed entrance",
-      "exits": {
-        "south": 336
-      },
-      "id": 602
+    {
+      "id": 894, "name": "Dormitory foyer",
+      "exits": { "west": 528, "south": 895, "north": 903 }
     },
     {
-      "name": "Flagstoned entry",
-      "exits": {
-        "south": 915,
-        "north": 337
-      },
-      "id": 603
+      "id": 895, "name": "Dining commons",
+      "exits": { "north": 894 }
     },
     {
-      "name": "You rudely trespass on the private property.",
-      "exits": {
-        "northeast": 907,
-        "northwest": 910,
-        "south": 338
-      },
-      "id": 604
+      "id": 896, "name": "Southern path through the University",
+      "exits": { "south": 897, "north": 528 }
     },
-    {
-      "name": "Dormitory foyer",
-      "exits": {
-        "west": 528,
-        "south": 895,
-        "north": 903
-      },
-      "id": 894
-    },
     {
-      "name": "Dining commons",
-      "exits": {
-        "north": 894
-      },
-      "id": 895
+      "id": 897, "name": "Southern path through the University",
+      "exits": { "south": 898, "north": 896 }
     },
-    {
-      "name": "Southern path through the University",
-      "exits": {
-        "south": 897,
-        "north": 528
-      },
-      "id": 896
+    {
+      "id": 898, "name": "Southern path through the University",
+      "exits": { "south": 899, "north": 897 }
     },
-    {
-      "name": "Southern path through the University",
-      "exits": {
-        "south": 898,
-        "north": 896
-      },
-      "id": 897
+    {
+      "id": 899, "name": "Southern path through the University",
+      "exits": { "south": 902, "east": 900, "north": 898 }
     },
-    {
-      "name": "Southern path through the University",
-      "exits": {
-        "south": 899,
-        "north": 897
-      },
-      "id": 898
+    {
+      "id": 900, "name": "School of Business",
+      "exits": { "west": 899, "north": 901 }
     },
-    {
-      "name": "Southern path through the University",
-      "exits": {
-        "south": 902,
-        "east": 900,
-        "north": 898
-      },
-      "id": 899
-    },
-    {
-      "name": "School of Business",
-      "exits": {
-        "west": 899,
-        "north": 901
-      },
-      "id": 900
-    },
-    {
-      "name": "Dean's office",
-      "exits": {
-        "south": 900
-      },
-      "id": 901
+    {
+      "id": 901, "name": "Dean's office",
+      "exits": { "south": 900 }
     },
-    {
-      "name": "Construction site",
-      "exits": {
-        "north": 899
-      },
-      "id": 902
+    {
+      "id": 902, "name": "Construction site",
+      "exits": { "north": 899 }
     },
     {
-      "name": "Resident Advisor's office",
-      "exits": {
-        "south": 894
-      },
-      "id": 903
+      "id": 903, "name": "Resident Advisor's office",
+      "exits": { "south": 894 }
     },
     {
-      "name": "Science building's entry",
-      "exits": {
-        "west": 905,
-        "east": 906,
-        "north": 390
-      },
-      "id": 904
+      "id": 904, "name": "Science building's entry",
+      "exits": { "west": 905, "east": 906, "north": 390 }
     },
     {
-      "name": "Science laboratory",
-      "exits": {
-        "east": 904
-      },
-      "id": 905
+      "id": 905, "name": "Science laboratory",
+      "exits": { "east": 904 }
     },
     {
-      "name": "Science lecture hall",
-      "exits": {
-        "west": 904
-      },
-      "id": 906
+      "id": 906, "name": "Science lecture hall",
+      "exits": { "west": 904 }
     },
     {
-      "name": "Gravel Path",
-      "exits": {
-        "northwest": 908,
-        "southwest": 604
-      },
-      "id": 907
+      "id": 907, "name": "Gravel Path",
+      "exits": { "northwest": 908, "southwest": 604 }
     },
     {
-      "name": "Vine-covered Entry",
-      "exits": {
-        "southwest": 910,
-        "southeast": 907,
-        "north": 909
-      },
-      "id": 908
+      "id": 908, "name": "Vine-covered Entry",
+      "exits": { "southwest": 910, "southeast": 907, "north": 909 }
     },
     {
-      "name": "Grand Foyer",
-      "exits": {
-        "up": 914,
-        "west": 911,
-        "east": 912,
-        "south": 908
-      },
-      "id": 909
+      "id": 909, "name": "Grand Foyer",
+      "exits": { "up": 914, "west": 911, "east": 912, "south": 908 }
     },
-    {
-      "name": "Gravel Path",
-      "exits": {
-        "southeast": 604,
-        "northeast": 908
-      },
-      "id": 910
+    {
+      "id": 910, "name": "Gravel Path",
+      "exits": { "southeast": 604, "northeast": 908 }
     },
-    {
-      "name": "Child's Den",
-      "exits": {
-        "east": 909
-      },
-      "id": 911
+    {
+      "id": 911, "name": "Child's Den",
+      "exits": { "east": 909 }
     },
     {
-      "name": "Wooded Hallway",
-      "exits": {
-        "east": 913,
-        "west": 909
-      },
-      "id": 912
+      "id": 912, "name": "Wooded Hallway",
+      "exits": { "east": 913, "west": 909 }
     },
     {
-      "name": "Brushing aside the hanging vines, you walk east into the servants' quarters.",
-      "exits": {
-        "west": 912
-      },
-      "id": 913
+      "id": 913, "name": "Brushing aside the hanging vines, you walk east into the servants' quarters.",
+      "exits": { "west": 912 }
     },
     {
-      "name": "Treetop Bedroom",
-      "exits": {
-        "down": 909
-      },
-      "id": 914
+      "id": 914, "name": "Treetop Bedroom",
+      "exits": { "down": 909 }
     },
     {
-      "name": "Flagstoned path",
-      "exits": {
-        "south": 916,
-        "west": 919,
-        "east": 918,
-        "north": 603
-      },
-      "id": 915
+      "id": 915, "name": "Flagstoned path",
+      "exits": { "south": 916, "west": 919, "east": 918, "north": 603 }
     },
     {
-      "name": "Gray foyer",
-      "exits": {
-        "south": 917,
-        "north": 915
-      },
-      "id": 916
+      "id": 916, "name": "Gray foyer",
+      "exits": { "south": 917, "north": 915 }
     },
     {
-      "name": "Trinian merchant's office",
-      "exits": {
-        "north": 916
-      },
-      "id": 917
+      "id": 917, "name": "Trinian merchant's office",
+      "exits": { "north": 916 }
     },
     {
-      "name": "Carriage house",
-      "exits": {
-        "west": 915
-      },
-      "id": 918
+      "id": 918, "name": "Carriage house",
+      "exits": { "west": 915 }
     },
     {
-      "name": "Slave quarters",
-      "exits": {
-        "east": 915
-      },
-      "id": 919
+      "id": 919, "name": "Slave quarters",
+      "exits": { "east": 915 }
     },
     {
-      "name": "Dwarven Embassy foyer",
-      "exits": {
-        "west": 923,
-        "up": 921,
-        "south": 333,
-        "east": 925,
-        "north": 924
-      },
-      "id": 920
+      "id": 920, "name": "Dwarven Embassy foyer",
+      "exits": { "west": 923, "up": 921, "south": 333, "east": 925, "north": 924 }
     },
     {
-      "name": "Dwarven watchtower",
-      "exits": {
-        "down": 920,
-        "north": 922
-      },
-      "id": 921
+      "id": 921, "name": "Dwarven watchtower",
+      "exits": { "down": 920, "north": 922 }
     },
     {
-      "name": "Ambassadors Suite",
-      "exits": {
-        "south": 921
-      },
-      "id": 922
+      "id": 922, "name": "Ambassadors Suite",
+      "exits": { "south": 921 }
     },
     {
-      "name": "Dwarven brewery",
-      "exits": {
-        "east": 920
-      },
-      "id": 923
+      "id": 923, "name": "Dwarven brewery",
+      "exits": { "east": 920 }
     },
     {
-      "name": "Dwarven Ambassador's office",
-      "exits": {
-        "south": 920
-      },
-      "id": 924
+      "id": 924, "name": "Dwarven Ambassador's office",
+      "exits": { "south": 920 }
     },
     {
-      "name": "Dwarven armoury",
-      "exits": {
-        "west": 920
-      },
-      "id": 925
+      "id": 925, "name": "Dwarven armoury",
+      "exits": { "west": 920 }
     },
     {
-      "name": "Ground Floor of the Windmill",
-      "exits": {
-        "up": 929,
-        "west": 927,
-        "east": 928,
-        "south": 319
-      },
-      "id": 926
+      "id": 926, "name": "Ground Floor of the Windmill",
+      "exits": { "up": 929, "west": 927, "east": 928, "south": 319 }
     },
     {
-      "name": "Garden of Machines",
-      "exits": {
-        "east": 926
-      },
-      "id": 927
+      "id": 927, "name": "Garden of Machines",
+      "exits": { "east": 926 }
     },
     {
-      "name": "Cemetery",
-      "exits": {
-        "west": 926
-      },
-      "id": 928
+      "id": 928, "name": "Cemetery",
+      "exits": { "west": 926 }
     },
     {
-      "name": "Gnome Laboratory",
-      "exits": {
-        "down": 926,
-        "up": 930
-      },
-      "id": 929
+      "id": 929, "name": "Gnome Laboratory",
+      "exits": { "down": 926, "up": 930 }
     },
     {
-      "name": "Machinery Room",
-      "exits": {
-        "down": 929
-      },
-      "id": 930
+      "id": 930, "name": "Machinery Room",
+      "exits": { "down": 929 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

@@ -4,82 +4,44 @@
   },
   "rooms": [
     {
-      "name": "You are just inside the entrace to a large cave",
-      "exits": {
-        "east": 1825
-      },
-      "id": 1824
+      "id": 1824, "name": "You are just inside the entrace to a large cave",
+      "exits": { "east": 1825 }
     },
     {
-      "name": "A wide tunnel",
-      "exits": {
-        "west": 1824,
-        "south": 1826,
-        "north": 1827
-      },
-      "id": 1825
+      "id": 1825, "name": "A wide tunnel",
+      "exits": { "west": 1824, "south": 1826, "north": 1827 }
     },
     {
-      "name": "A den",
-      "exits": {
-        "north": 1825
-      },
-      "id": 1826
+      "id": 1826, "name": "A den",
+      "exits": { "north": 1825 }
     },
     {
-      "name": "A tunnel",
-      "exits": {
-        "south": 1825,
-        "north": 1828
-      },
-      "id": 1827
+      "id": 1827, "name": "A tunnel",
+      "exits": { "south": 1825, "north": 1828 }
     },
     {
-      "name": "A bend in the tunnel",
-      "exits": {
-        "east": 1829,
-        "south": 1827
-      },
-      "id": 1828
+      "id": 1828, "name": "A bend in the tunnel",
+      "exits": { "east": 1829, "south": 1827 }
     },
     {
-      "name": "A tunnel",
-      "exits": {
-        "east": 1830,
-        "west": 1828
-      },
-      "id": 1829
+      "id": 1829, "name": "A tunnel",
+      "exits": { "east": 1830, "west": 1828 }
     },
     {
-      "name": "T-intersection",
-      "exits": {
-        "west": 1829,
-        "south": 1831,
-        "north": 1833
-      },
-      "id": 1830
+      "id": 1830, "name": "T-intersection",
+      "exits": { "west": 1829, "south": 1831, "north": 1833 }
     },
     {
-      "name": "The widening tunnel",
-      "exits": {
-        "east": 1832,
-        "north": 1830
-      },
-      "id": 1831
+      "id": 1831, "name": "The widening tunnel",
+      "exits": { "east": 1832, "north": 1830 }
     },
     {
-      "name": "A large chamber",
-      "exits": {
-        "west": 1831
-      },
-      "id": 1832
+      "id": 1832, "name": "A large chamber",
+      "exits": { "west": 1831 }
     },
     {
-      "name": "A small chamber",
-      "exits": {
-        "south": 1830
-      },
-      "id": 1833
+      "id": 1833, "name": "A small chamber",
+      "exits": { "south": 1830 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

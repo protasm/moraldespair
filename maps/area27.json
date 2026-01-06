@@ -4,43 +4,24 @@
   },
   "rooms": [
     {
-      "name": "Tiled Entryway",
-      "exits": {
-        "west": 1336,
-        "south": 1335
-      },
-      "id": 1334
+      "id": 1334, "name": "Tiled Entryway",
+      "exits": { "west": 1336, "south": 1335 }
     },
     {
-      "name": "Inside of Bracknar Gate",
-      "exits": {
-        "south": 261,
-        "north": 1334
-      },
-      "id": 1335
+      "id": 1335, "name": "Inside of Bracknar Gate",
+      "exits": { "south": 261, "north": 1334 }
     },
     {
-      "name": "Sitting Room",
-      "exits": {
-        "east": 1334,
-        "north": 1337
-      },
-      "id": 1336
+      "id": 1336, "name": "Sitting Room",
+      "exits": { "east": 1334, "north": 1337 }
     },
     {
-      "name": "Guarded hallway",
-      "exits": {
-        "south": 1336,
-        "north": 1361
-      },
-      "id": 1337
+      "id": 1337, "name": "Guarded hallway",
+      "exits": { "south": 1336, "north": 1361 }
     },
     {
-      "name": "Clan Lord's Private Chambers",
-      "exits": {
-        "south": 1337
-      },
-      "id": 1361
+      "id": 1361, "name": "Clan Lord's Private Chambers",
+      "exits": { "south": 1337 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

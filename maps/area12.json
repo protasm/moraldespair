@@ -4,99 +4,52 @@
   },
   "rooms": [
     {
-      "name": "Cemetery Lane.",
-      "exits": {
-        "south": 128,
-        "north": 882
-      },
-      "id": 881
+      "id": 881, "name": "Cemetery Lane.",
+      "exits": { "south": 128, "north": 882 }
     },
     {
-      "name": "Cemetery Lane.",
-      "exits": {
-        "south": 881,
-        "north": 883
-      },
-      "id": 882
+      "id": 882, "name": "Cemetery Lane.",
+      "exits": { "south": 881, "north": 883 }
     },
     {
-      "name": "A cemetery.",
-      "exits": {
-        "east": 884,
-        "south": 882
-      },
-      "id": 883
+      "id": 883, "name": "A cemetery.",
+      "exits": { "east": 884, "south": 882 }
     },
     {
-      "name": "A cemetery.",
-      "exits": {
-        "west": 883,
-        "north": 885
-      },
-      "id": 884
+      "id": 884, "name": "A cemetery.",
+      "exits": { "west": 883, "north": 885 }
     },
     {
-      "name": "A cemetery.",
-      "exits": {
-        "west": 886,
-        "south": 884
-      },
-      "id": 885
+      "id": 885, "name": "A cemetery.",
+      "exits": { "west": 886, "south": 884 }
     },
     {
-      "name": "A cemetery.",
-      "exits": {
-        "east": 885,
-        "north": 887
-      },
-      "id": 886
+      "id": 886, "name": "A cemetery.",
+      "exits": { "east": 885, "north": 887 }
     },
     {
-      "name": "A cemetery.",
-      "exits": {
-        "south": 886,
-        "west": 889,
-        "east": 892,
-        "north": 888
-      },
-      "id": 887
+      "id": 887, "name": "A cemetery.",
+      "exits": { "south": 886, "west": 889, "east": 892, "north": 888 }
     },
     {
-      "name": "A cemetery.",
-      "exits": {
-        "south": 887
-      },
-      "id": 888
+      "id": 888, "name": "A cemetery.",
+      "exits": { "south": 887 }
     },
     {
-      "name": "A cemetery.",
-      "exits": {
-        "east": 887,
-        "south": 890
-      },
-      "id": 889
+      "id": 889, "name": "A cemetery.",
+      "exits": { "east": 887, "south": 890 }
     },
     {
-      "name": "A cemetery.",
-      "exits": {
-        "south": 891,
-        "north": 889
-      },
-      "id": 890
+      "id": 890, "name": "A cemetery.",
+      "exits": { "south": 891, "north": 889 }
     },
     {
-      "name": "Thieves Guild",
-      "exits": {
-        "north": 890
-      },
-      "id": 891
+      "id": 891, "name": "Thieves Guild",
+      "exits": { "north": 890 }
     },
     {
-      "name": "A cemetery.",
-      "exits": {
-        "west": 887
-      },
-      "id": 892
+      "id": 892, "name": "A cemetery.",
+      "exits": { "west": 887 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

@@ -4,136 +4,72 @@
   },
   "rooms": [
     {
-      "name": "Moist cavern",
-      "exits": {
-        "down": 1809,
-        "up": 1808
-      },
-      "id": 1807
+      "id": 1807, "name": "Moist cavern",
+      "exits": { "down": 1809, "up": 1808 }
     },
     {
-      "name": "Crack in the mountainside",
-      "exits": {
-        "down": 1807
-      },
-      "id": 1808
+      "id": 1808, "name": "Crack in the mountainside",
+      "exits": { "down": 1807 }
     },
     {
-      "name": "Giant cavern",
-      "exits": {
-        "up": 1807,
-        "west": 1810
-      },
-      "id": 1809
+      "id": 1809, "name": "Giant cavern",
+      "exits": { "up": 1807, "west": 1810 }
     },
     {
-      "name": "Bright niche",
-      "exits": {
-        "east": 1809
-      },
-      "id": 1810
+      "id": 1810, "name": "Bright niche",
+      "exits": { "east": 1809 }
     },
     {
-      "name": "The ore lift",
-      "exits": {
-        "south": 1812
-      },
-      "id": 1811
+      "id": 1811, "name": "The ore lift",
+      "exits": { "south": 1812 }
     },
     {
-      "name": "The Crimsonaxe mine",
-      "exits": {
-        "west": 1813,
-        "south": 1815,
-        "north": 1811
-      },
-      "id": 1812
+      "id": 1812, "name": "The Crimsonaxe mine",
+      "exits": { "west": 1813, "south": 1815, "north": 1811 }
     },
     {
-      "name": "A guard point",
-      "exits": {
-        "south": 1814,
-        "east": 1812,
-        "north": 1823
-      },
-      "id": 1813
+      "id": 1813, "name": "A guard point",
+      "exits": { "south": 1814, "east": 1812, "north": 1823 }
     },
     {
-      "name": "The immense stone slab moves suprisingly easily.",
-      "exits": {
-        "north": 1813
-      },
-      "id": 1814
+      "id": 1814, "name": "The immense stone slab moves suprisingly easily.",
+      "exits": { "north": 1813 }
     },
     {
-      "name": "The Crimsonaxe mine",
-      "exits": {
-        "south": 1816,
-        "east": 1821,
-        "north": 1812
-      },
-      "id": 1815
+      "id": 1815, "name": "The Crimsonaxe mine",
+      "exits": { "south": 1816, "east": 1821, "north": 1812 }
     },
     {
-      "name": "A bend in the tunnel.",
-      "exits": {
-        "southeast": 1817,
-        "north": 1815
-      },
-      "id": 1816
+      "id": 1816, "name": "A bend in the tunnel.",
+      "exits": { "southeast": 1817, "north": 1815 }
     },
     {
-      "name": "A mine shaft.",
-      "exits": {
-        "northwest": 1816,
-        "east": 1818,
-        "up": 1820
-      },
-      "id": 1817
+      "id": 1817, "name": "A mine shaft.",
+      "exits": { "northwest": 1816, "east": 1818, "up": 1820 }
     },
     {
-      "name": "A guard house.",
-      "exits": {
-        "up": 1819,
-        "west": 1817
-      },
-      "id": 1818
+      "id": 1818, "name": "A guard house.",
+      "exits": { "up": 1819, "west": 1817 }
     },
     {
-      "name": "A sentry room",
-      "exits": {
-        "down": 1818
-      },
-      "id": 1819
+      "id": 1819, "name": "A sentry room",
+      "exits": { "down": 1818 }
     },
     {
-      "name": "A darkened entrance.",
-      "exits": {
-        "down": 1817
-      },
-      "id": 1820
+      "id": 1820, "name": "A darkened entrance.",
+      "exits": { "down": 1817 }
     },
     {
-      "name": "Mine catering",
-      "exits": {
-        "west": 1815,
-        "north": 1822
-      },
-      "id": 1821
+      "id": 1821, "name": "Mine catering",
+      "exits": { "west": 1815, "north": 1822 }
     },
     {
-      "name": "A smelly crevice.",
-      "exits": {
-        "south": 1821
-      },
-      "id": 1822
+      "id": 1822, "name": "A smelly crevice.",
+      "exits": { "south": 1821 }
     },
     {
-      "name": "The immense stone slab moves suprisingly easily.",
-      "exits": {
-        "south": 1813
-      },
-      "id": 1823
+      "id": 1823, "name": "The immense stone slab moves suprisingly easily.",
+      "exits": { "south": 1813 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

@@ -4,127 +4,52 @@
   },
   "rooms": [
     {
-      "name": "Road Through a Wheatfield",
-      "exits": {
-        "east": 1639,
-        "southeast": 1641,
-        "south": 1640
-      },
-      "id": 1638
+      "id": 1638, "name": "Road Through a Wheatfield",
+      "exits": { "east": 1639, "southeast": 1641, "south": 1640 }
     },
     {
-      "name": "Road Through a Wheatfield",
-      "exits": {
-        "southeast": 1648,
-        "south": 1641,
-        "southwest": 1640,
-        "east": 1649,
-        "west": 1638
-      },
-      "id": 1639
+      "id": 1639, "name": "Road Through a Wheatfield",
+      "exits": { "southeast": 1648, "south": 1641, "southwest": 1640, "east": 1649, "west": 1638 }
     },
     {
-      "name": "Wheatfield",
-      "exits": {
-        "west": 1645,
-        "southeast": 1642,
-        "south": 1643,
-        "southwest": 1644,
-        "northeast": 1639,
-        "east": 1641,
-        "north": 1638
-      },
-      "id": 1640
+      "id": 1640, "name": "Wheatfield",
+      "exits": { "west": 1645, "southeast": 1642, "south": 1643, "southwest": 1644, "northeast": 1639, "east": 1641, "north": 1638 }
     },
     {
-      "name": "Road Through A Wheatfield",
-      "exits": {
-        "west": 1640,
-        "northwest": 1638,
-        "south": 1642,
-        "southwest": 1643,
-        "northeast": 1649,
-        "east": 1648,
-        "north": 1639
-      },
-      "id": 1641
+      "id": 1641, "name": "Road Through A Wheatfield",
+      "exits": { "west": 1640, "northwest": 1638, "south": 1642, "southwest": 1643, "northeast": 1649, "east": 1648, "north": 1639 }
     },
     {
-      "name": "Wheatfield",
-      "exits": {
-        "northwest": 1640,
-        "west": 1643,
-        "northeast": 1648,
-        "east": 1646,
-        "north": 1641
-      },
-      "id": 1642
+      "id": 1642, "name": "Wheatfield",
+      "exits": { "northwest": 1640, "west": 1643, "northeast": 1648, "east": 1646, "north": 1641 }
     },
     {
-      "name": "Wheatfield",
-      "exits": {
-        "northwest": 1645,
-        "south": 1623,
-        "west": 1644,
-        "northeast": 1641,
-        "east": 1642,
-        "north": 1640
-      },
-      "id": 1643
+      "id": 1643, "name": "Wheatfield",
+      "exits": { "northwest": 1645, "south": 1623, "west": 1644, "northeast": 1641, "east": 1642, "north": 1640 }
     },
     {
-      "name": "Wheatfield",
-      "exits": {
-        "northeast": 1640,
-        "east": 1643,
-        "north": 1645
-      },
-      "id": 1644
+      "id": 1644, "name": "Wheatfield",
+      "exits": { "northeast": 1640, "east": 1643, "north": 1645 }
     },
     {
-      "name": "Wheatfield",
-      "exits": {
-        "east": 1640,
-        "southeast": 1643,
-        "south": 1644
-      },
-      "id": 1645
+      "id": 1645, "name": "Wheatfield",
+      "exits": { "east": 1640, "southeast": 1643, "south": 1644 }
     },
     {
-      "name": "Wheatfield",
-      "exits": {
-        "west": 1642,
-        "east": 1647,
-        "north": 1648
-      },
-      "id": 1646
+      "id": 1646, "name": "Wheatfield",
+      "exits": { "west": 1642, "east": 1647, "north": 1648 }
     },
     {
-      "name": "Wheatfield",
-      "exits": {
-        "west": 1646
-      },
-      "id": 1647
+      "id": 1647, "name": "Wheatfield",
+      "exits": { "west": 1646 }
     },
     {
-      "name": "Road Through a Wheatfield",
-      "exits": {
-        "northwest": 1639,
-        "south": 1646,
-        "southwest": 1642,
-        "west": 1641,
-        "north": 1649
-      },
-      "id": 1648
+      "id": 1648, "name": "Road Through a Wheatfield",
+      "exits": { "northwest": 1639, "south": 1646, "southwest": 1642, "west": 1641, "north": 1649 }
     },
     {
-      "name": "Wheatfield",
-      "exits": {
-        "southwest": 1641,
-        "west": 1639,
-        "south": 1648
-      },
-      "id": 1649
+      "id": 1649, "name": "Wheatfield",
+      "exits": { "southwest": 1641, "west": 1639, "south": 1648 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

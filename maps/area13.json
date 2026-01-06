@@ -4,129 +4,64 @@
   },
   "rooms": [
     {
-      "name": "Foyer",
-      "exits": {
-        "west": 98,
-        "up": 1011,
-        "south": 1010,
-        "east": 1001,
-        "north": 1009
-      },
-      "id": 1000
+      "id": 1000, "name": "Foyer",
+      "exits": { "west": 98, "up": 1011, "south": 1010, "east": 1001, "north": 1009 }
     },
     {
-      "name": "Hallway",
-      "exits": {
-        "northeast": 1008,
-        "east": 1002,
-        "west": 1000
-      },
-      "id": 1001
+      "id": 1001, "name": "Hallway",
+      "exits": { "northeast": 1008, "east": 1002, "west": 1000 }
     },
     {
-      "name": "Ballroom",
-      "exits": {
-        "south": 1007,
-        "west": 1001,
-        "east": 1003,
-        "north": 1014
-      },
-      "id": 1002
+      "id": 1002, "name": "Ballroom",
+      "exits": { "south": 1007, "west": 1001, "east": 1003, "north": 1014 }
     },
     {
-      "name": "Dance Floor",
-      "exits": {
-        "west": 1002,
-        "east": 1004,
-        "south": 1006
-      },
-      "id": 1003
+      "id": 1003, "name": "Dance Floor",
+      "exits": { "west": 1002, "east": 1004, "south": 1006 }
     },
     {
-      "name": "Gaston's table",
-      "exits": {
-        "west": 1003,
-        "south": 1005,
-        "north": 1013
-      },
-      "id": 1004
+      "id": 1004, "name": "Gaston's table",
+      "exits": { "west": 1003, "south": 1005, "north": 1013 }
     },
     {
-      "name": "Dance Floor",
-      "exits": {
-        "west": 1006,
-        "south": 1012,
-        "north": 1004
-      },
-      "id": 1005
+      "id": 1005, "name": "Dance Floor",
+      "exits": { "west": 1006, "south": 1012, "north": 1004 }
     },
     {
-      "name": "Dance Floor",
-      "exits": {
-        "west": 1007,
-        "east": 1005,
-        "north": 1003
-      },
-      "id": 1006
+      "id": 1006, "name": "Dance Floor",
+      "exits": { "west": 1007, "east": 1005, "north": 1003 }
     },
     {
-      "name": "Buffet table",
-      "exits": {
-        "east": 1006,
-        "north": 1002
-      },
-      "id": 1007
+      "id": 1007, "name": "Buffet table",
+      "exits": { "east": 1006, "north": 1002 }
     },
     {
-      "name": "Kitchen",
-      "exits": {
-        "southwest": 1001
-      },
-      "id": 1008
+      "id": 1008, "name": "Kitchen",
+      "exits": { "southwest": 1001 }
     },
     {
-      "name": "Library",
-      "exits": {
-        "south": 1000
-      },
-      "id": 1009
+      "id": 1009, "name": "Library",
+      "exits": { "south": 1000 }
     },
     {
-      "name": "Map Room",
-      "exits": {
-        "north": 1000
-      },
-      "id": 1010
+      "id": 1010, "name": "Map Room",
+      "exits": { "north": 1000 }
     },
     {
-      "name": "House of Clan Lord Gaston",
-      "exits": {
-        "down": 1000
-      },
-      "id": 1011
+      "id": 1011, "name": "House of Clan Lord Gaston",
+      "exits": { "down": 1000 }
     },
     {
-      "name": "Deck",
-      "exits": {
-        "north": 1005
-      },
-      "id": 1012
+      "id": 1012, "name": "Deck",
+      "exits": { "north": 1005 }
     },
     {
-      "name": "Bandstand",
-      "exits": {
-        "west": 1014,
-        "south": 1004
-      },
-      "id": 1013
+      "id": 1013, "name": "Bandstand",
+      "exits": { "west": 1014, "south": 1004 }
     },
     {
-      "name": "Dark corner",
-      "exits": {
-        "east": 1013,
-        "south": 1002
-      },
-      "id": 1014
+      "id": 1014, "name": "Dark corner",
+      "exits": { "east": 1013, "south": 1002 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"
