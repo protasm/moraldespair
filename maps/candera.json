@@ -10,10 +10,7 @@
         "east": 2,
         "south": 57
       },
-      "id": 1,
-      "area": {
-        "id": 1
-      }
+      "id": 1
     },
     {
       "name": "New Outer Wall",
@@ -21,10 +18,7 @@
         "east": 3,
         "west": 1
       },
-      "id": 2,
-      "area": {
-        "id": 1
-      }
+      "id": 2
     },
     {
       "name": "New Outer Wall",
@@ -32,10 +26,7 @@
         "east": 4,
         "west": 2
       },
-      "id": 3,
-      "area": {
-        "id": 1
-      }
+      "id": 3
     },
     {
       "name": "New Outer Wall",
@@ -43,10 +34,7 @@
         "east": 5,
         "west": 3
       },
-      "id": 4,
-      "area": {
-        "id": 1
-      }
+      "id": 4
     },
     {
       "name": "New Outer Wall",
@@ -54,10 +42,7 @@
         "east": 6,
         "west": 4
       },
-      "id": 5,
-      "area": {
-        "id": 1
-      }
+      "id": 5
     },
     {
       "name": "New Outer Wall",
@@ -65,10 +50,7 @@
         "east": 7,
         "west": 5
       },
-      "id": 6,
-      "area": {
-        "id": 1
-      }
+      "id": 6
     },
     {
       "name": "Entrance to the Northeast Tower",
@@ -76,10 +58,7 @@
         "east": 8,
         "west": 6
       },
-      "id": 7,
-      "area": {
-        "id": 1
-      }
+      "id": 7
     },
     {
       "name": "Northeast Corner",
@@ -87,10 +66,7 @@
         "west": 7,
         "south": 9
       },
-      "id": 8,
-      "area": {
-        "id": 1
-      }
+      "id": 8
     },
     {
       "name": "Entrance to the Northeast Tower",
@@ -98,10 +74,7 @@
         "south": 10,
         "north": 8
       },
-      "id": 9,
-      "area": {
-        "id": 1
-      }
+      "id": 9
     },
     {
       "name": "New Outer Wall",
@@ -109,10 +82,7 @@
         "south": 11,
         "north": 9
       },
-      "id": 10,
-      "area": {
-        "id": 1
-      }
+      "id": 10
     },
     {
       "name": "New Outer Wall",
@@ -120,10 +90,7 @@
         "south": 12,
         "north": 10
       },
-      "id": 11,
-      "area": {
-        "id": 1
-      }
+      "id": 11
     },
     {
       "name": "New Outer Wall",
@@ -131,10 +98,7 @@
         "south": 13,
         "north": 11
       },
-      "id": 12,
-      "area": {
-        "id": 1
-      }
+      "id": 12
     },
     {
       "name": "New Outer Wall",
@@ -142,10 +106,7 @@
         "south": 14,
         "north": 12
       },
-      "id": 13,
-      "area": {
-        "id": 1
-      }
+      "id": 13
     },
     {
       "name": "New Outer Wall",
@@ -153,10 +114,7 @@
         "south": 15,
         "north": 13
       },
-      "id": 14,
-      "area": {
-        "id": 1
-      }
+      "id": 14
     },
     {
       "name": "East Wall Guard Station",
@@ -165,10 +123,7 @@
         "east": 973,
         "north": 14
       },
-      "id": 15,
-      "area": {
-        "id": 1
-      }
+      "id": 15
     },
     {
       "name": "New Outer Wall",
@@ -176,10 +131,7 @@
         "south": 17,
         "north": 15
       },
-      "id": 16,
-      "area": {
-        "id": 1
-      }
+      "id": 16
     },
     {
       "name": "New Outer Wall",
@@ -187,10 +139,7 @@
         "south": 18,
         "north": 16
       },
-      "id": 17,
-      "area": {
-        "id": 1
-      }
+      "id": 17
     },
     {
       "name": "New Outer Wall",
@@ -198,10 +147,7 @@
         "south": 19,
         "north": 17
       },
-      "id": 18,
-      "area": {
-        "id": 1
-      }
+      "id": 18
     },
     {
       "name": "New Outer Wall",
@@ -209,10 +155,7 @@
         "south": 20,
         "north": 18
       },
-      "id": 19,
-      "area": {
-        "id": 1
-      }
+      "id": 19
     },
     {
       "name": "New Outer Wall",
@@ -220,10 +163,7 @@
         "south": 21,
         "north": 19
       },
-      "id": 20,
-      "area": {
-        "id": 1
-      }
+      "id": 20
     },
     {
       "name": "New Outer Wall",
@@ -231,10 +171,7 @@
         "south": 22,
         "north": 20
       },
-      "id": 21,
-      "area": {
-        "id": 1
-      }
+      "id": 21
     },
     {
       "name": "New Outer Wall",
@@ -242,10 +179,7 @@
         "west": 23,
         "north": 21
       },
-      "id": 22,
-      "area": {
-        "id": 1
-      }
+      "id": 22
     },
     {
       "name": "New Outer Wall",
@@ -253,10 +187,7 @@
         "east": 22,
         "west": 24
       },
-      "id": 23,
-      "area": {
-        "id": 1
-      }
+      "id": 23
     },
     {
       "name": "New Outer Wall",
@@ -264,10 +195,7 @@
         "east": 23,
         "west": 25
       },
-      "id": 24,
-      "area": {
-        "id": 1
-      }
+      "id": 24
     },
     {
       "name": "New Outer Wall",
@@ -275,10 +203,7 @@
         "east": 24,
         "west": 26
       },
-      "id": 25,
-      "area": {
-        "id": 1
-      }
+      "id": 25
     },
     {
       "name": "New Outer Wall",
@@ -286,10 +211,7 @@
         "east": 25,
         "west": 27
       },
-      "id": 26,
-      "area": {
-        "id": 1
-      }
+      "id": 26
     },
     {
       "name": "New Outer Wall",
@@ -297,10 +219,7 @@
         "east": 26,
         "west": 28
       },
-      "id": 27,
-      "area": {
-        "id": 1
-      }
+      "id": 27
     },
     {
       "name": "New Outer Wall",
@@ -308,10 +227,7 @@
         "east": 27,
         "west": 29
       },
-      "id": 28,
-      "area": {
-        "id": 1
-      }
+      "id": 28
     },
     {
       "name": "South Wall Guard Station",
@@ -320,10 +236,7 @@
         "east": 28,
         "south": 1030
       },
-      "id": 29,
-      "area": {
-        "id": 1
-      }
+      "id": 29
     },
     {
       "name": "New Outer Wall",
@@ -331,10 +244,7 @@
         "east": 29,
         "west": 31
       },
-      "id": 30,
-      "area": {
-        "id": 1
-      }
+      "id": 30
     },
     {
       "name": "New Outer Wall",
@@ -342,10 +252,7 @@
         "east": 30,
         "west": 32
       },
-      "id": 31,
-      "area": {
-        "id": 1
-      }
+      "id": 31
     },
     {
       "name": "New Outer Wall",
@@ -353,10 +260,7 @@
         "east": 31,
         "west": 33
       },
-      "id": 32,
-      "area": {
-        "id": 1
-      }
+      "id": 32
     },
     {
       "name": "New Outer Wall",
@@ -364,10 +268,7 @@
         "east": 32,
         "west": 34
       },
-      "id": 33,
-      "area": {
-        "id": 1
-      }
+      "id": 33
     },
     {
       "name": "New Outer Wall",
@@ -375,10 +276,7 @@
         "east": 33,
         "west": 35
       },
-      "id": 34,
-      "area": {
-        "id": 1
-      }
+      "id": 34
     },
     {
       "name": "New Outer Wall",
@@ -386,10 +284,7 @@
         "east": 34,
         "west": 36
       },
-      "id": 35,
-      "area": {
-        "id": 1
-      }
+      "id": 35
     },
     {
       "name": "Southwest Corner",
@@ -397,10 +292,7 @@
         "east": 35,
         "north": 37
       },
-      "id": 36,
-      "area": {
-        "id": 1
-      }
+      "id": 36
     },
     {
       "name": "New Outer Wall",
@@ -408,10 +300,7 @@
         "south": 36,
         "north": 38
       },
-      "id": 37,
-      "area": {
-        "id": 1
-      }
+      "id": 37
     },
     {
       "name": "New Outer Wall",
@@ -419,10 +308,7 @@
         "south": 37,
         "north": 39
       },
-      "id": 38,
-      "area": {
-        "id": 1
-      }
+      "id": 38
     },
     {
       "name": "New Outer Wall",
@@ -430,10 +316,7 @@
         "south": 38,
         "north": 40
       },
-      "id": 39,
-      "area": {
-        "id": 1
-      }
+      "id": 39
     },
     {
       "name": "New Outer Wall",
@@ -441,10 +324,7 @@
         "south": 39,
         "north": 41
       },
-      "id": 40,
-      "area": {
-        "id": 1
-      }
+      "id": 40
     },
     {
       "name": "New Outer Wall",
@@ -452,10 +332,7 @@
         "south": 40,
         "north": 42
       },
-      "id": 41,
-      "area": {
-        "id": 1
-      }
+      "id": 41
     },
     {
       "name": "New Outer Wall",
@@ -463,10 +340,7 @@
         "south": 41,
         "north": 43
       },
-      "id": 42,
-      "area": {
-        "id": 1
-      }
+      "id": 42
     },
     {
       "name": "West Wall Guard Station",
@@ -475,10 +349,7 @@
         "south": 42,
         "north": 44
       },
-      "id": 43,
-      "area": {
-        "id": 1
-      }
+      "id": 43
     },
     {
       "name": "New Outer Wall",
@@ -486,10 +357,7 @@
         "south": 43,
         "north": 45
       },
-      "id": 44,
-      "area": {
-        "id": 1
-      }
+      "id": 44
     },
     {
       "name": "New Outer Wall",
@@ -497,10 +365,7 @@
         "south": 44,
         "north": 46
       },
-      "id": 45,
-      "area": {
-        "id": 1
-      }
+      "id": 45
     },
     {
       "name": "New Outer Wall",
@@ -508,10 +373,7 @@
         "south": 45,
         "north": 47
       },
-      "id": 46,
-      "area": {
-        "id": 1
-      }
+      "id": 46
     },
     {
       "name": "New Outer Wall",
@@ -519,10 +381,7 @@
         "south": 46,
         "north": 48
       },
-      "id": 47,
-      "area": {
-        "id": 1
-      }
+      "id": 47
     },
     {
       "name": "New Outer Wall",
@@ -530,10 +389,7 @@
         "south": 47,
         "north": 49
       },
-      "id": 48,
-      "area": {
-        "id": 1
-      }
+      "id": 48
     },
     {
       "name": "Entrance to the Northwest Tower",
@@ -541,10 +397,7 @@
         "south": 48,
         "north": 50
       },
-      "id": 49,
-      "area": {
-        "id": 1
-      }
+      "id": 49
     },
     {
       "name": "Northwest Corner",
@@ -552,10 +405,7 @@
         "east": 51,
         "south": 49
       },
-      "id": 50,
-      "area": {
-        "id": 1
-      }
+      "id": 50
     },
     {
       "name": "Entrance to the Northwest Tower",
@@ -563,10 +413,7 @@
         "east": 52,
         "west": 50
       },
-      "id": 51,
-      "area": {
-        "id": 1
-      }
+      "id": 51
     },
     {
       "name": "New Outer Wall",
@@ -574,10 +421,7 @@
         "east": 53,
         "west": 51
       },
-      "id": 52,
-      "area": {
-        "id": 1
-      }
+      "id": 52
     },
     {
       "name": "New Outer Wall",
@@ -585,10 +429,7 @@
         "east": 54,
         "west": 52
       },
-      "id": 53,
-      "area": {
-        "id": 1
-      }
+      "id": 53
     },
     {
       "name": "New Outer Wall",
@@ -596,10 +437,7 @@
         "east": 55,
         "west": 53
       },
-      "id": 54,
-      "area": {
-        "id": 1
-      }
+      "id": 54
     },
     {
       "name": "New Outer Wall",
@@ -607,10 +445,7 @@
         "east": 56,
         "west": 54
       },
-      "id": 55,
-      "area": {
-        "id": 1
-      }
+      "id": 55
     },
     {
       "name": "New Outer Wall",
@@ -618,10 +453,7 @@
         "east": 1,
         "west": 55
       },
-      "id": 56,
-      "area": {
-        "id": 1
-      }
+      "id": 56
     },
     {
       "name": "Warrior's Walk",
@@ -631,10 +463,7 @@
         "east": 964,
         "north": 1
       },
-      "id": 57,
-      "area": {
-        "id": 1
-      }
+      "id": 57
     },
     {
       "name": "Warrior's Walk",
@@ -644,10 +473,7 @@
         "east": 966,
         "north": 57
       },
-      "id": 58,
-      "area": {
-        "id": 1
-      }
+      "id": 58
     },
     {
       "name": "Warrior's Walk",
@@ -656,10 +482,7 @@
         "south": 60,
         "north": 58
       },
-      "id": 59,
-      "area": {
-        "id": 1
-      }
+      "id": 59
     },
     {
       "name": "Warrior's Walk",
@@ -669,10 +492,7 @@
         "east": 969,
         "north": 59
       },
-      "id": 60,
-      "area": {
-        "id": 1
-      }
+      "id": 60
     },
     {
       "name": "Warrior's Walk",
@@ -681,10 +501,7 @@
         "south": 62,
         "north": 60
       },
-      "id": 61,
-      "area": {
-        "id": 1
-      }
+      "id": 61
     },
     {
       "name": "Warrior's Walk",
@@ -694,10 +511,7 @@
         "east": 972,
         "north": 61
       },
-      "id": 62,
-      "area": {
-        "id": 1
-      }
+      "id": 62
     },
     {
       "name": "Canderan Well",
@@ -707,10 +521,7 @@
         "east": 94,
         "north": 62
       },
-      "id": 63,
-      "area": {
-        "id": 1
-      }
+      "id": 63
     },
     {
       "name": "Warrior's Walk",
@@ -720,10 +531,7 @@
         "east": 427,
         "north": 63
       },
-      "id": 64,
-      "area": {
-        "id": 1
-      }
+      "id": 64
     },
     {
       "name": "Warrior's Walk",
@@ -733,10 +541,7 @@
         "east": 1015,
         "north": 64
       },
-      "id": 65,
-      "area": {
-        "id": 1
-      }
+      "id": 65
     },
     {
       "name": "Warrior's Walk",
@@ -744,10 +549,7 @@
         "south": 67,
         "north": 65
       },
-      "id": 66,
-      "area": {
-        "id": 1
-      }
+      "id": 66
     },
     {
       "name": "Warrior's Walk",
@@ -755,10 +557,7 @@
         "south": 68,
         "north": 66
       },
-      "id": 67,
-      "area": {
-        "id": 1
-      }
+      "id": 67
     },
     {
       "name": "Warrior's Walk",
@@ -767,10 +566,7 @@
         "east": 431,
         "north": 67
       },
-      "id": 68,
-      "area": {
-        "id": 1
-      }
+      "id": 68
     },
     {
       "name": "House of Lord Candera",
@@ -780,30 +576,21 @@
         "east": 71,
         "north": 68
       },
-      "id": 69,
-      "area": {
-        "id": 1
-      }
+      "id": 69
     },
     {
       "name": "House of Lord Candera",
       "exits": {
         "east": 69
       },
-      "id": 70,
-      "area": {
-        "id": 1
-      }
+      "id": 70
     },
     {
       "name": "House of Lord Candera",
       "exits": {
         "west": 69
       },
-      "id": 71,
-      "area": {
-        "id": 1
-      }
+      "id": 71
     },
     {
       "name": "Clansmen Way",
@@ -812,10 +599,7 @@
         "east": 63,
         "south": 429
       },
-      "id": 72,
-      "area": {
-        "id": 1
-      }
+      "id": 72
     },
     {
       "name": "Clansmen Way",
@@ -825,10 +609,7 @@
         "east": 72,
         "north": 1017
       },
-      "id": 73,
-      "area": {
-        "id": 1
-      }
+      "id": 73
     },
     {
       "name": "Clansmen Way",
@@ -838,10 +619,7 @@
         "east": 73,
         "north": 1018
       },
-      "id": 74,
-      "area": {
-        "id": 1
-      }
+      "id": 74
     },
     {
       "name": "Clansmen Way",
@@ -850,10 +628,7 @@
         "east": 74,
         "south": 1095
       },
-      "id": 75,
-      "area": {
-        "id": 1
-      }
+      "id": 75
     },
     {
       "name": "Clansmen Way",
@@ -863,10 +638,7 @@
         "east": 75,
         "north": 86
       },
-      "id": 76,
-      "area": {
-        "id": 1
-      }
+      "id": 76
     },
     {
       "name": "Zoman's Flat",
@@ -874,10 +646,7 @@
         "south": 79,
         "north": 76
       },
-      "id": 78,
-      "area": {
-        "id": 1
-      }
+      "id": 78
     },
     {
       "name": "Zoman's Flat",
@@ -886,10 +655,7 @@
         "east": 1096,
         "north": 78
       },
-      "id": 79,
-      "area": {
-        "id": 1
-      }
+      "id": 79
     },
     {
       "name": "Zoman's Flat",
@@ -897,10 +663,7 @@
         "south": 81,
         "north": 79
       },
-      "id": 80,
-      "area": {
-        "id": 1
-      }
+      "id": 80
     },
     {
       "name": "Zoman's Flat",
@@ -908,10 +671,7 @@
         "south": 82,
         "north": 80
       },
-      "id": 81,
-      "area": {
-        "id": 1
-      }
+      "id": 81
     },
     {
       "name": "Zoman's Flat",
@@ -921,10 +681,7 @@
         "east": 1098,
         "north": 81
       },
-      "id": 82,
-      "area": {
-        "id": 1
-      }
+      "id": 82
     },
     {
       "name": "Temple of Air",
@@ -933,10 +690,7 @@
         "east": 85,
         "north": 82
       },
-      "id": 83,
-      "area": {
-        "id": 1
-      }
+      "id": 83
     },
     {
       "name": "Temple of Air",
@@ -944,10 +698,7 @@
         "east": 83,
         "up": 1130
       },
-      "id": 84,
-      "area": {
-        "id": 1
-      }
+      "id": 84
     },
     {
       "name": "Temple of Air",
@@ -955,10 +706,7 @@
         "up": 1131,
         "west": 83
       },
-      "id": 85,
-      "area": {
-        "id": 1
-      }
+      "id": 85
     },
     {
       "name": "Suran's Flat",
@@ -966,10 +714,7 @@
         "south": 76,
         "north": 87
       },
-      "id": 86,
-      "area": {
-        "id": 1
-      }
+      "id": 86
     },
     {
       "name": "Suran's Flat",
@@ -978,10 +723,7 @@
         "south": 86,
         "north": 88
       },
-      "id": 87,
-      "area": {
-        "id": 1
-      }
+      "id": 87
     },
     {
       "name": "Suran's Flat",
@@ -989,10 +731,7 @@
         "south": 87,
         "north": 89
       },
-      "id": 88,
-      "area": {
-        "id": 1
-      }
+      "id": 88
     },
     {
       "name": "Suran's Flat",
@@ -1000,10 +739,7 @@
         "south": 88,
         "north": 90
       },
-      "id": 89,
-      "area": {
-        "id": 1
-      }
+      "id": 89
     },
     {
       "name": "Suran's Flat",
@@ -1013,10 +749,7 @@
         "east": 1094,
         "north": 91
       },
-      "id": 90,
-      "area": {
-        "id": 1
-      }
+      "id": 90
     },
     {
       "name": "Temple of Water",
@@ -1025,10 +758,7 @@
         "east": 93,
         "south": 90
       },
-      "id": 91,
-      "area": {
-        "id": 1
-      }
+      "id": 91
     },
     {
       "name": "Temple of Water",
@@ -1036,10 +766,7 @@
         "east": 91,
         "up": 1132
       },
-      "id": 92,
-      "area": {
-        "id": 1
-      }
+      "id": 92
     },
     {
       "name": "Temple of Water",
@@ -1047,10 +774,7 @@
         "up": 1133,
         "west": 91
       },
-      "id": 93,
-      "area": {
-        "id": 1
-      }
+      "id": 93
     },
     {
       "name": "Clansmen Way",
@@ -1060,10 +784,7 @@
         "east": 95,
         "north": 972
       },
-      "id": 94,
-      "area": {
-        "id": 1
-      }
+      "id": 94
     },
     {
       "name": "Clansmen Way",
@@ -1072,10 +793,7 @@
         "east": 96,
         "south": 975
       },
-      "id": 95,
-      "area": {
-        "id": 1
-      }
+      "id": 95
     },
     {
       "name": "Clansmen Way",
@@ -1085,10 +803,7 @@
         "east": 97,
         "north": 977
       },
-      "id": 96,
-      "area": {
-        "id": 1
-      }
+      "id": 96
     },
     {
       "name": "Clansmen Way",
@@ -1097,10 +812,7 @@
         "east": 98,
         "north": 428
       },
-      "id": 97,
-      "area": {
-        "id": 1
-      }
+      "id": 97
     },
     {
       "name": "Clansmen Way",
@@ -1110,10 +822,7 @@
         "east": 1000,
         "north": 107
       },
-      "id": 98,
-      "area": {
-        "id": 1
-      }
+      "id": 98
     },
     {
       "name": "Fallah's Flat:",
@@ -1121,10 +830,7 @@
         "south": 100,
         "north": 98
       },
-      "id": 99,
-      "area": {
-        "id": 1
-      }
+      "id": 99
     },
     {
       "name": "Fallah's Flat:",
@@ -1134,10 +840,7 @@
         "east": 997,
         "north": 99
       },
-      "id": 100,
-      "area": {
-        "id": 1
-      }
+      "id": 100
     },
     {
       "name": "Fallah's Flat",
@@ -1145,10 +848,7 @@
         "south": 102,
         "north": 100
       },
-      "id": 101,
-      "area": {
-        "id": 1
-      }
+      "id": 101
     },
     {
       "name": "Fallah's Flat",
@@ -1156,10 +856,7 @@
         "south": 103,
         "north": 101
       },
-      "id": 102,
-      "area": {
-        "id": 1
-      }
+      "id": 102
     },
     {
       "name": "Fallah's Flat:",
@@ -1169,10 +866,7 @@
         "east": 999,
         "north": 102
       },
-      "id": 103,
-      "area": {
-        "id": 1
-      }
+      "id": 103
     },
     {
       "name": "Temple of Earth",
@@ -1181,10 +875,7 @@
         "east": 106,
         "north": 103
       },
-      "id": 104,
-      "area": {
-        "id": 1
-      }
+      "id": 104
     },
     {
       "name": "Temple of Earth",
@@ -1192,10 +883,7 @@
         "east": 104,
         "up": 1127
       },
-      "id": 105,
-      "area": {
-        "id": 1
-      }
+      "id": 105
     },
     {
       "name": "Temple of Earth",
@@ -1203,10 +891,7 @@
         "up": 1126,
         "west": 104
       },
-      "id": 106,
-      "area": {
-        "id": 1
-      }
+      "id": 106
     },
     {
       "name": "Phaekads Flat:",
@@ -1214,10 +899,7 @@
         "south": 98,
         "north": 108
       },
-      "id": 107,
-      "area": {
-        "id": 1
-      }
+      "id": 107
     },
     {
       "name": "Phaekads Flat:",
@@ -1225,10 +907,7 @@
         "south": 107,
         "north": 109
       },
-      "id": 108,
-      "area": {
-        "id": 1
-      }
+      "id": 108
     },
     {
       "name": "Phaekads Flat",
@@ -1236,10 +915,7 @@
         "south": 108,
         "north": 110
       },
-      "id": 109,
-      "area": {
-        "id": 1
-      }
+      "id": 109
     },
     {
       "name": "Phaekads Flat",
@@ -1247,10 +923,7 @@
         "south": 109,
         "north": 111
       },
-      "id": 110,
-      "area": {
-        "id": 1
-      }
+      "id": 110
     },
     {
       "name": "Phaekads Flat:",
@@ -1259,10 +932,7 @@
         "east": 996,
         "north": 112
       },
-      "id": 111,
-      "area": {
-        "id": 1
-      }
+      "id": 111
     },
     {
       "name": "Temple of Fire",
@@ -1271,10 +941,7 @@
         "east": 114,
         "south": 111
       },
-      "id": 112,
-      "area": {
-        "id": 1
-      }
+      "id": 112
     },
     {
       "name": "Temple of Fire",
@@ -1282,10 +949,7 @@
         "east": 112,
         "up": 1129
       },
-      "id": 113,
-      "area": {
-        "id": 1
-      }
+      "id": 113
     },
     {
       "name": "Temple of Fire",
@@ -1293,10 +957,7 @@
         "up": 1128,
         "west": 112
       },
-      "id": 114,
-      "area": {
-        "id": 1
-      }
+      "id": 114
     },
     {
       "name": "The Rabbit's Hole",
@@ -1304,10 +965,7 @@
         "west": 64,
         "north": 94
       },
-      "id": 427,
-      "area": {
-        "id": 1
-      }
+      "id": 427
     },
     {
       "name": "6 Feet Under",
@@ -1315,10 +973,7 @@
         "west": 977,
         "south": 97
       },
-      "id": 428,
-      "area": {
-        "id": 1
-      }
+      "id": 428
     },
     {
       "name": "Morbid Curiosity",
@@ -1326,40 +981,28 @@
         "east": 64,
         "north": 72
       },
-      "id": 429,
-      "area": {
-        "id": 1
-      }
+      "id": 429
     },
     {
       "name": "Scribe",
       "exits": {
         "east": 65
       },
-      "id": 430,
-      "area": {
-        "id": 1
-      }
+      "id": 430
     },
     {
       "name": "Servants Quarters",
       "exits": {
         "west": 68
       },
-      "id": 431,
-      "area": {
-        "id": 1
-      }
+      "id": 431
     },
     {
       "name": "Slave Auction:",
       "exits": {
         "east": 100
       },
-      "id": 505,
-      "area": {
-        "id": 1
-      }
+      "id": 505
     },
     {
       "name": "Eastern Entrance",
@@ -1367,30 +1010,21 @@
         "east": 57,
         "west": 1027
       },
-      "id": 963,
-      "area": {
-        "id": 1
-      }
+      "id": 963
     },
     {
       "name": "Widow's House",
       "exits": {
         "west": 57
       },
-      "id": 964,
-      "area": {
-        "id": 1
-      }
+      "id": 964
     },
     {
       "name": "A Jeweler's Shop",
       "exits": {
         "east": 58
       },
-      "id": 965,
-      "area": {
-        "id": 1
-      }
+      "id": 965
     },
     {
       "name": "Farmer's Smith",
@@ -1398,10 +1032,7 @@
         "east": 989,
         "west": 58
       },
-      "id": 966,
-      "area": {
-        "id": 1
-      }
+      "id": 966
     },
     {
       "name": "Candera Information Bureau",
@@ -1409,50 +1040,35 @@
         "east": 59,
         "north": 1125
       },
-      "id": 967,
-      "area": {
-        "id": 1
-      }
+      "id": 967
     },
     {
       "name": "Lizard Skin Trader",
       "exits": {
         "east": 60
       },
-      "id": 968,
-      "area": {
-        "id": 1
-      }
+      "id": 968
     },
     {
       "name": "Shaman's Shack",
       "exits": {
         "west": 60
       },
-      "id": 969,
-      "area": {
-        "id": 1
-      }
+      "id": 969
     },
     {
       "name": "Silk Shop",
       "exits": {
         "east": 61
       },
-      "id": 970,
-      "area": {
-        "id": 1
-      }
+      "id": 970
     },
     {
       "name": "Barbarian's Guild",
       "exits": {
         "east": 62
       },
-      "id": 971,
-      "area": {
-        "id": 1
-      }
+      "id": 971
     },
     {
       "name": "Trader's Shack",
@@ -1460,10 +1076,7 @@
         "west": 62,
         "south": 94
       },
-      "id": 972,
-      "area": {
-        "id": 1
-      }
+      "id": 972
     },
     {
       "name": "East Wall Guard Station",
@@ -1472,110 +1085,77 @@
         "south": 974,
         "north": 986
       },
-      "id": 973,
-      "area": {
-        "id": 1
-      }
+      "id": 973
     },
     {
       "name": "Living Quarters",
       "exits": {
         "north": 973
       },
-      "id": 974,
-      "area": {
-        "id": 1
-      }
+      "id": 974
     },
     {
       "name": "Guild/Shop Space for rent",
       "exits": {
         "north": 95
       },
-      "id": 975,
-      "area": {
-        "id": 1
-      }
+      "id": 975
     },
     {
       "name": "Back Alley",
       "exits": {
         "north": 96
       },
-      "id": 976,
-      "area": {
-        "id": 1
-      }
+      "id": 976
     },
     {
       "name": "Sleeping Quarters",
       "exits": {
         "south": 973
       },
-      "id": 986,
-      "area": {
-        "id": 1
-      }
+      "id": 986
     },
     {
       "name": "Candera Priest's Hut",
       "exits": {
         "west": 111
       },
-      "id": 996,
-      "area": {
-        "id": 1
-      }
+      "id": 996
     },
     {
       "name": "Pillow Shop:",
       "exits": {
         "west": 100
       },
-      "id": 997,
-      "area": {
-        "id": 1
-      }
+      "id": 997
     },
     {
       "name": "Relic Shop:",
       "exits": {
         "east": 103
       },
-      "id": 998,
-      "area": {
-        "id": 1
-      }
+      "id": 998
     },
     {
       "name": "Butcher Shop:",
       "exits": {
         "west": 103
       },
-      "id": 999,
-      "area": {
-        "id": 1
-      }
+      "id": 999
     },
     {
       "name": "Snake Charmer",
       "exits": {
         "west": 65
       },
-      "id": 1015,
-      "area": {
-        "id": 1
-      }
+      "id": 1015
     },
     {
       "name": "Guild/Shop Space for rent",
       "exits": {
         "north": 73
       },
-      "id": 1016,
-      "area": {
-        "id": 1
-      }
+      "id": 1016
     },
     {
       "name": "Kaimuki Q's",
@@ -1583,20 +1163,14 @@
         "west": 1018,
         "south": 73
       },
-      "id": 1017,
-      "area": {
-        "id": 1
-      }
+      "id": 1017
     },
     {
       "name": "Guild/Shop Space for rent",
       "exits": {
         "north": 74
       },
-      "id": 1019,
-      "area": {
-        "id": 1
-      }
+      "id": 1019
     },
     {
       "name": "South Wall Guard Station",
@@ -1605,30 +1179,21 @@
         "east": 1032,
         "north": 29
       },
-      "id": 1030,
-      "area": {
-        "id": 1
-      }
+      "id": 1030
     },
     {
       "name": "Living Quarters",
       "exits": {
         "east": 1030
       },
-      "id": 1031,
-      "area": {
-        "id": 1
-      }
+      "id": 1031
     },
     {
       "name": "Sleeping Quarters",
       "exits": {
         "west": 1030
       },
-      "id": 1032,
-      "area": {
-        "id": 1
-      }
+      "id": 1032
     },
     {
       "name": "West Wall Guard Station",
@@ -1637,80 +1202,56 @@
         "east": 43,
         "north": 1035
       },
-      "id": 1033,
-      "area": {
-        "id": 1
-      }
+      "id": 1033
     },
     {
       "name": "Living Quarters",
       "exits": {
         "north": 1033
       },
-      "id": 1034,
-      "area": {
-        "id": 1
-      }
+      "id": 1034
     },
     {
       "name": "Sleeping Quarters",
       "exits": {
         "south": 1033
       },
-      "id": 1035,
-      "area": {
-        "id": 1
-      }
+      "id": 1035
     },
     {
       "name": "Goondala's Flowers",
       "exits": {
         "east": 90
       },
-      "id": 1093,
-      "area": {
-        "id": 1
-      }
+      "id": 1093
     },
     {
       "name": "Weapon Master's Shop",
       "exits": {
         "west": 90
       },
-      "id": 1094,
-      "area": {
-        "id": 1
-      }
+      "id": 1094
     },
     {
       "name": "Guild/Shop Space for rent",
       "exits": {
         "north": 75
       },
-      "id": 1095,
-      "area": {
-        "id": 1
-      }
+      "id": 1095
     },
     {
       "name": "Alchemist's Shop",
       "exits": {
         "west": 79
       },
-      "id": 1096,
-      "area": {
-        "id": 1
-      }
+      "id": 1096
     },
     {
       "name": "Canderan Guard House",
       "exits": {
         "east": 82
       },
-      "id": 1097,
-      "area": {
-        "id": 1
-      }
+      "id": 1097
     },
     {
       "name": "Crypt of the Honored Dead",
@@ -1718,110 +1259,77 @@
         "down": 1099,
         "west": 82
       },
-      "id": 1098,
-      "area": {
-        "id": 1
-      }
+      "id": 1098
     },
     {
       "name": "You feel a STRONG urge to read the Sanctuary board... You are responsible",
       "exits": {
         "south": 967
       },
-      "id": 1125,
-      "area": {
-        "id": 1
-      }
+      "id": 1125
     },
     {
       "name": "Temple of Earth",
       "exits": {
         "down": 106
       },
-      "id": 1126,
-      "area": {
-        "id": 1
-      }
+      "id": 1126
     },
     {
       "name": "Temple of Earth",
       "exits": {
         "down": 105
       },
-      "id": 1127,
-      "area": {
-        "id": 1
-      }
+      "id": 1127
     },
     {
       "name": "Temple of Fire",
       "exits": {
         "down": 114
       },
-      "id": 1128,
-      "area": {
-        "id": 1
-      }
+      "id": 1128
     },
     {
       "name": "Temple of Fire",
       "exits": {
         "down": 113
       },
-      "id": 1129,
-      "area": {
-        "id": 1
-      }
+      "id": 1129
     },
     {
       "name": "Temple of Air",
       "exits": {
         "down": 84
       },
-      "id": 1130,
-      "area": {
-        "id": 1
-      }
+      "id": 1130
     },
     {
       "name": "Temple of Air",
       "exits": {
         "down": 85
       },
-      "id": 1131,
-      "area": {
-        "id": 1
-      }
+      "id": 1131
     },
     {
       "name": "Temple of Water",
       "exits": {
         "down": 92
       },
-      "id": 1132,
-      "area": {
-        "id": 1
-      }
+      "id": 1132
     },
     {
       "name": "Temple of Water",
       "exits": {
         "down": 93
       },
-      "id": 1133,
-      "area": {
-        "id": 1
-      }
+      "id": 1133
     },
     {
       "name": "House of Lord Candera",
       "exits": {
         "down": 69
       },
-      "id": 1134,
-      "area": {
-        "id": 1
-      }
+      "id": 1134
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

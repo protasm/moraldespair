@@ -10,10 +10,7 @@
         "northwest": 1835,
         "north": 1856
       },
-      "id": 1834,
-      "area": {
-        "id": 37
-      }
+      "id": 1834
     },
     {
       "name": "Bamboo Forest",
@@ -23,10 +20,7 @@
         "southeast": 1834,
         "north": 1836
       },
-      "id": 1835,
-      "area": {
-        "id": 37
-      }
+      "id": 1835
     },
     {
       "name": "Bamboo Forest",
@@ -37,10 +31,7 @@
         "east": 1857,
         "north": 1855
       },
-      "id": 1836,
-      "area": {
-        "id": 37
-      }
+      "id": 1836
     },
     {
       "name": "Bamboo Forest",
@@ -50,10 +41,7 @@
         "southeast": 1836,
         "north": 1838
       },
-      "id": 1837,
-      "area": {
-        "id": 37
-      }
+      "id": 1837
     },
     {
       "name": "Calm Clearing in the Bamboo Forest",
@@ -64,10 +52,7 @@
         "east": 1851,
         "north": 1839
       },
-      "id": 1838,
-      "area": {
-        "id": 37
-      }
+      "id": 1838
     },
     {
       "name": "Bamboo Forest",
@@ -77,10 +62,7 @@
         "southeast": 1851,
         "south": 1838
       },
-      "id": 1839,
-      "area": {
-        "id": 37
-      }
+      "id": 1839
     },
     {
       "name": "Bamboo Forest, Near a Pond",
@@ -92,10 +74,7 @@
         "east": 1846,
         "north": 1841
       },
-      "id": 1840,
-      "area": {
-        "id": 37
-      }
+      "id": 1840
     },
     {
       "name": "Bamboo Forest",
@@ -104,10 +83,7 @@
         "southeast": 1846,
         "south": 1840
       },
-      "id": 1841,
-      "area": {
-        "id": 37
-      }
+      "id": 1841
     },
     {
       "name": "Chikurin Forest Path",
@@ -117,10 +93,7 @@
         "east": 1845,
         "north": 1843
       },
-      "id": 1842,
-      "area": {
-        "id": 37
-      }
+      "id": 1842
     },
     {
       "name": "Chikurin Path, south of Semai Pass",
@@ -128,20 +101,14 @@
         "south": 1842,
         "north": 1844
       },
-      "id": 1843,
-      "area": {
-        "id": 37
-      }
+      "id": 1843
     },
     {
       "name": "Heading north, you enter the narrow Semai Pass.",
       "exits": {
         "south": 1843
       },
-      "id": 1844,
-      "area": {
-        "id": 37
-      }
+      "id": 1844
     },
     {
       "name": "Bamboo Forest",
@@ -150,10 +117,7 @@
         "west": 1842,
         "south": 1848
       },
-      "id": 1845,
-      "area": {
-        "id": 37
-      }
+      "id": 1845
     },
     {
       "name": "Chikurin Forest Path",
@@ -167,10 +131,7 @@
         "east": 1848,
         "north": 1842
       },
-      "id": 1846,
-      "area": {
-        "id": 37
-      }
+      "id": 1846
     },
     {
       "name": "Bamboo Forest",
@@ -181,10 +142,7 @@
         "east": 1852,
         "north": 1848
       },
-      "id": 1847,
-      "area": {
-        "id": 37
-      }
+      "id": 1847
     },
     {
       "name": "Bamboo Forest",
@@ -196,10 +154,7 @@
         "southeast": 1852,
         "north": 1845
       },
-      "id": 1848,
-      "area": {
-        "id": 37
-      }
+      "id": 1848
     },
     {
       "name": "Chikurin Forest Path",
@@ -210,10 +165,7 @@
         "west": 1850,
         "north": 1846
       },
-      "id": 1849,
-      "area": {
-        "id": 37
-      }
+      "id": 1849
     },
     {
       "name": "Bamboo Forest",
@@ -225,10 +177,7 @@
         "east": 1849,
         "north": 1840
       },
-      "id": 1850,
-      "area": {
-        "id": 37
-      }
+      "id": 1850
     },
     {
       "name": "Bamboo Forest",
@@ -242,10 +191,7 @@
         "east": 1854,
         "north": 1850
       },
-      "id": 1851,
-      "area": {
-        "id": 37
-      }
+      "id": 1851
     },
     {
       "name": "Bamboo Forest, North of a Monastery",
@@ -253,10 +199,7 @@
         "northwest": 1848,
         "west": 1847
       },
-      "id": 1852,
-      "area": {
-        "id": 37
-      }
+      "id": 1852
     },
     {
       "name": "Bamboo Forest, West of a Monastery",
@@ -267,10 +210,7 @@
         "west": 1854,
         "north": 1847
       },
-      "id": 1853,
-      "area": {
-        "id": 37
-      }
+      "id": 1853
     },
     {
       "name": "Chikurin Forest Path",
@@ -281,10 +221,7 @@
         "east": 1853,
         "north": 1849
       },
-      "id": 1854,
-      "area": {
-        "id": 37
-      }
+      "id": 1854
     },
     {
       "name": "Bamboo Forest",
@@ -297,10 +234,7 @@
         "east": 1862,
         "north": 1851
       },
-      "id": 1855,
-      "area": {
-        "id": 37
-      }
+      "id": 1855
     },
     {
       "name": "Chikurin Forest Path",
@@ -310,20 +244,14 @@
         "east": 1858,
         "north": 1857
       },
-      "id": 1856,
-      "area": {
-        "id": 37
-      }
+      "id": 1856
     },
     {
       "name": "Chikurin Forest Path",
       "exits": {
         "north": 1862
       },
-      "id": 1857,
-      "area": {
-        "id": 37
-      }
+      "id": 1857
     },
     {
       "name": "Bamboo Forest",
@@ -333,10 +261,7 @@
         "northwest": 1857,
         "north": 1859
       },
-      "id": 1858,
-      "area": {
-        "id": 37
-      }
+      "id": 1858
     },
     {
       "name": "Bamboo Forest",
@@ -346,10 +271,7 @@
         "northwest": 1862,
         "north": 1860
       },
-      "id": 1859,
-      "area": {
-        "id": 37
-      }
+      "id": 1859
     },
     {
       "name": "Bamboo Forest",
@@ -360,10 +282,7 @@
         "east": 1861,
         "north": 1853
       },
-      "id": 1860,
-      "area": {
-        "id": 37
-      }
+      "id": 1860
     },
     {
       "name": "Bamboo Forest, South of a Monastery",
@@ -372,20 +291,14 @@
         "west": 1860,
         "north": 1863
       },
-      "id": 1861,
-      "area": {
-        "id": 37
-      }
+      "id": 1861
     },
     {
       "name": "Chikurin Forest Path",
       "exits": {
         "south": 1857
       },
-      "id": 1862,
-      "area": {
-        "id": 37
-      }
+      "id": 1862
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

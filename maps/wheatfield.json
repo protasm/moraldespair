@@ -10,10 +10,7 @@
         "southeast": 1641,
         "south": 1640
       },
-      "id": 1638,
-      "area": {
-        "id": 31
-      }
+      "id": 1638
     },
     {
       "name": "Road Through a Wheatfield",
@@ -24,10 +21,7 @@
         "east": 1649,
         "west": 1638
       },
-      "id": 1639,
-      "area": {
-        "id": 31
-      }
+      "id": 1639
     },
     {
       "name": "Wheatfield",
@@ -40,10 +34,7 @@
         "east": 1641,
         "north": 1638
       },
-      "id": 1640,
-      "area": {
-        "id": 31
-      }
+      "id": 1640
     },
     {
       "name": "Road Through A Wheatfield",
@@ -56,10 +47,7 @@
         "east": 1648,
         "north": 1639
       },
-      "id": 1641,
-      "area": {
-        "id": 31
-      }
+      "id": 1641
     },
     {
       "name": "Wheatfield",
@@ -70,10 +58,7 @@
         "east": 1646,
         "north": 1641
       },
-      "id": 1642,
-      "area": {
-        "id": 31
-      }
+      "id": 1642
     },
     {
       "name": "Wheatfield",
@@ -85,10 +70,7 @@
         "east": 1642,
         "north": 1640
       },
-      "id": 1643,
-      "area": {
-        "id": 31
-      }
+      "id": 1643
     },
     {
       "name": "Wheatfield",
@@ -97,10 +79,7 @@
         "east": 1643,
         "north": 1645
       },
-      "id": 1644,
-      "area": {
-        "id": 31
-      }
+      "id": 1644
     },
     {
       "name": "Wheatfield",
@@ -109,10 +88,7 @@
         "southeast": 1643,
         "south": 1644
       },
-      "id": 1645,
-      "area": {
-        "id": 31
-      }
+      "id": 1645
     },
     {
       "name": "Wheatfield",
@@ -121,20 +97,14 @@
         "east": 1647,
         "north": 1648
       },
-      "id": 1646,
-      "area": {
-        "id": 31
-      }
+      "id": 1646
     },
     {
       "name": "Wheatfield",
       "exits": {
         "west": 1646
       },
-      "id": 1647,
-      "area": {
-        "id": 31
-      }
+      "id": 1647
     },
     {
       "name": "Road Through a Wheatfield",
@@ -145,10 +115,7 @@
         "west": 1641,
         "north": 1649
       },
-      "id": 1648,
-      "area": {
-        "id": 31
-      }
+      "id": 1648
     },
     {
       "name": "Wheatfield",
@@ -157,10 +124,7 @@
         "west": 1639,
         "south": 1648
       },
-      "id": 1649,
-      "area": {
-        "id": 31
-      }
+      "id": 1649
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

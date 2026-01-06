@@ -10,10 +10,7 @@
         "east": 1496,
         "south": 1441
       },
-      "id": 1440,
-      "area": {
-        "id": 29
-      }
+      "id": 1440
     },
     {
       "name": "Light forest",
@@ -23,10 +20,7 @@
         "east": 1495,
         "north": 1440
       },
-      "id": 1441,
-      "area": {
-        "id": 29
-      }
+      "id": 1441
     },
     {
       "name": "The Valley",
@@ -36,10 +30,7 @@
         "east": 1443,
         "north": 1441
       },
-      "id": 1442,
-      "area": {
-        "id": 29
-      }
+      "id": 1442
     },
     {
       "name": "The Valley",
@@ -49,10 +40,7 @@
         "east": 1444,
         "north": 1495
       },
-      "id": 1443,
-      "area": {
-        "id": 29
-      }
+      "id": 1443
     },
     {
       "name": "The Valley",
@@ -62,10 +50,7 @@
         "east": 1445,
         "north": 1498
       },
-      "id": 1444,
-      "area": {
-        "id": 29
-      }
+      "id": 1444
     },
     {
       "name": "Light forest",
@@ -74,10 +59,7 @@
         "east": 1446,
         "south": 1460
       },
-      "id": 1445,
-      "area": {
-        "id": 29
-      }
+      "id": 1445
     },
     {
       "name": "Meadow",
@@ -86,10 +68,7 @@
         "east": 1447,
         "south": 1459
       },
-      "id": 1446,
-      "area": {
-        "id": 29
-      }
+      "id": 1446
     },
     {
       "name": "Meadow",
@@ -98,10 +77,7 @@
         "east": 1449,
         "south": 1452
       },
-      "id": 1447,
-      "area": {
-        "id": 29
-      }
+      "id": 1447
     },
     {
       "name": "Light forest",
@@ -109,10 +85,7 @@
         "east": 1450,
         "west": 1447
       },
-      "id": 1449,
-      "area": {
-        "id": 29
-      }
+      "id": 1449
     },
     {
       "name": "Light forest",
@@ -120,20 +93,14 @@
         "east": 1451,
         "west": 1449
       },
-      "id": 1450,
-      "area": {
-        "id": 29
-      }
+      "id": 1450
     },
     {
       "name": "Light forest",
       "exits": {
         "west": 1450
       },
-      "id": 1451,
-      "area": {
-        "id": 29
-      }
+      "id": 1451
     },
     {
       "name": "Light forest",
@@ -142,10 +109,7 @@
         "south": 1453,
         "north": 1447
       },
-      "id": 1452,
-      "area": {
-        "id": 29
-      }
+      "id": 1452
     },
     {
       "name": "Light forest",
@@ -154,10 +118,7 @@
         "south": 1454,
         "north": 1452
       },
-      "id": 1453,
-      "area": {
-        "id": 29
-      }
+      "id": 1453
     },
     {
       "name": "Dense forest",
@@ -166,10 +127,7 @@
         "south": 1455,
         "north": 1453
       },
-      "id": 1454,
-      "area": {
-        "id": 29
-      }
+      "id": 1454
     },
     {
       "name": "Light forest",
@@ -177,10 +135,7 @@
         "west": 1456,
         "north": 1454
       },
-      "id": 1455,
-      "area": {
-        "id": 29
-      }
+      "id": 1455
     },
     {
       "name": "Dense forest",
@@ -190,10 +145,7 @@
         "east": 1455,
         "north": 1457
       },
-      "id": 1456,
-      "area": {
-        "id": 29
-      }
+      "id": 1456
     },
     {
       "name": "Dense forest",
@@ -203,10 +155,7 @@
         "east": 1454,
         "north": 1458
       },
-      "id": 1457,
-      "area": {
-        "id": 29
-      }
+      "id": 1457
     },
     {
       "name": "Light forest",
@@ -216,10 +165,7 @@
         "east": 1453,
         "north": 1459
       },
-      "id": 1458,
-      "area": {
-        "id": 29
-      }
+      "id": 1458
     },
     {
       "name": "Meadow",
@@ -229,10 +175,7 @@
         "east": 1452,
         "north": 1446
       },
-      "id": 1459,
-      "area": {
-        "id": 29
-      }
+      "id": 1459
     },
     {
       "name": "Meadow",
@@ -242,10 +185,7 @@
         "east": 1459,
         "north": 1445
       },
-      "id": 1460,
-      "area": {
-        "id": 29
-      }
+      "id": 1460
     },
     {
       "name": "Meadow",
@@ -255,10 +195,7 @@
         "east": 1458,
         "north": 1460
       },
-      "id": 1461,
-      "area": {
-        "id": 29
-      }
+      "id": 1461
     },
     {
       "name": "Dense forest",
@@ -268,10 +205,7 @@
         "east": 1457,
         "north": 1461
       },
-      "id": 1462,
-      "area": {
-        "id": 29
-      }
+      "id": 1462
     },
     {
       "name": "Dense forest",
@@ -281,10 +215,7 @@
         "east": 1456,
         "north": 1462
       },
-      "id": 1463,
-      "area": {
-        "id": 29
-      }
+      "id": 1463
     },
     {
       "name": "Mountain Range",
@@ -293,10 +224,7 @@
         "east": 1499,
         "north": 1463
       },
-      "id": 1464,
-      "area": {
-        "id": 29
-      }
+      "id": 1464
     },
     {
       "name": "Mountain Range",
@@ -305,10 +233,7 @@
         "east": 1464,
         "north": 1480
       },
-      "id": 1465,
-      "area": {
-        "id": 29
-      }
+      "id": 1465
     },
     {
       "name": "Mountain Range",
@@ -317,10 +242,7 @@
         "east": 1465,
         "north": 1481
       },
-      "id": 1466,
-      "area": {
-        "id": 29
-      }
+      "id": 1466
     },
     {
       "name": "Mountain Range",
@@ -329,10 +251,7 @@
         "east": 1466,
         "north": 1482
       },
-      "id": 1467,
-      "area": {
-        "id": 29
-      }
+      "id": 1467
     },
     {
       "name": "Mountain Range",
@@ -340,10 +259,7 @@
         "east": 1467,
         "west": 1469
       },
-      "id": 1468,
-      "area": {
-        "id": 29
-      }
+      "id": 1468
     },
     {
       "name": "Mountain Range",
@@ -351,10 +267,7 @@
         "east": 1468,
         "north": 1470
       },
-      "id": 1469,
-      "area": {
-        "id": 29
-      }
+      "id": 1469
     },
     {
       "name": "Mountain Range",
@@ -362,10 +275,7 @@
         "south": 1469,
         "north": 1471
       },
-      "id": 1470,
-      "area": {
-        "id": 29
-      }
+      "id": 1470
     },
     {
       "name": "Mountain Range",
@@ -374,10 +284,7 @@
         "east": 1484,
         "north": 1472
       },
-      "id": 1471,
-      "area": {
-        "id": 29
-      }
+      "id": 1471
     },
     {
       "name": "Mountain Range",
@@ -386,10 +293,7 @@
         "east": 1485,
         "north": 1473
       },
-      "id": 1472,
-      "area": {
-        "id": 29
-      }
+      "id": 1472
     },
     {
       "name": "Mountain Range",
@@ -398,10 +302,7 @@
         "east": 1474,
         "north": 1489
       },
-      "id": 1473,
-      "area": {
-        "id": 29
-      }
+      "id": 1473
     },
     {
       "name": "Light forest",
@@ -411,10 +312,7 @@
         "east": 1475,
         "north": 1494
       },
-      "id": 1474,
-      "area": {
-        "id": 29
-      }
+      "id": 1474
     },
     {
       "name": "Light forest",
@@ -424,10 +322,7 @@
         "east": 1476,
         "north": 1442
       },
-      "id": 1475,
-      "area": {
-        "id": 29
-      }
+      "id": 1475
     },
     {
       "name": "Light forest",
@@ -437,10 +332,7 @@
         "east": 1477,
         "north": 1443
       },
-      "id": 1476,
-      "area": {
-        "id": 29
-      }
+      "id": 1476
     },
     {
       "name": "The Valley",
@@ -450,10 +342,7 @@
         "east": 1460,
         "north": 1444
       },
-      "id": 1477,
-      "area": {
-        "id": 29
-      }
+      "id": 1477
     },
     {
       "name": "The Valley",
@@ -463,10 +352,7 @@
         "east": 1461,
         "north": 1477
       },
-      "id": 1478,
-      "area": {
-        "id": 29
-      }
+      "id": 1478
     },
     {
       "name": "The Valley",
@@ -476,10 +362,7 @@
         "east": 1462,
         "north": 1478
       },
-      "id": 1479,
-      "area": {
-        "id": 29
-      }
+      "id": 1479
     },
     {
       "name": "The Valley",
@@ -489,10 +372,7 @@
         "east": 1463,
         "north": 1479
       },
-      "id": 1480,
-      "area": {
-        "id": 29
-      }
+      "id": 1480
     },
     {
       "name": "Dense forest",
@@ -502,10 +382,7 @@
         "east": 1480,
         "north": 1488
       },
-      "id": 1481,
-      "area": {
-        "id": 29
-      }
+      "id": 1481
     },
     {
       "name": "Dense forest",
@@ -514,10 +391,7 @@
         "east": 1481,
         "north": 1483
       },
-      "id": 1482,
-      "area": {
-        "id": 29
-      }
+      "id": 1482
     },
     {
       "name": "Dense forest",
@@ -527,10 +401,7 @@
         "east": 1488,
         "north": 1486
       },
-      "id": 1483,
-      "area": {
-        "id": 29
-      }
+      "id": 1483
     },
     {
       "name": "Dense forest",
@@ -539,10 +410,7 @@
         "east": 1483,
         "north": 1485
       },
-      "id": 1484,
-      "area": {
-        "id": 29
-      }
+      "id": 1484
     },
     {
       "name": "Light forest",
@@ -552,10 +420,7 @@
         "east": 1486,
         "north": 1474
       },
-      "id": 1485,
-      "area": {
-        "id": 29
-      }
+      "id": 1485
     },
     {
       "name": "Light forest",
@@ -565,10 +430,7 @@
         "east": 1487,
         "north": 1475
       },
-      "id": 1486,
-      "area": {
-        "id": 29
-      }
+      "id": 1486
     },
     {
       "name": "Light forest",
@@ -578,10 +440,7 @@
         "east": 1478,
         "north": 1476
       },
-      "id": 1487,
-      "area": {
-        "id": 29
-      }
+      "id": 1487
     },
     {
       "name": "Dense forest",
@@ -591,10 +450,7 @@
         "east": 1479,
         "north": 1487
       },
-      "id": 1488,
-      "area": {
-        "id": 29
-      }
+      "id": 1488
     },
     {
       "name": "Mountain Range",
@@ -603,10 +459,7 @@
         "east": 1494,
         "north": 1490
       },
-      "id": 1489,
-      "area": {
-        "id": 29
-      }
+      "id": 1489
     },
     {
       "name": "Mountain Range",
@@ -615,10 +468,7 @@
         "east": 1493,
         "north": 1491
       },
-      "id": 1490,
-      "area": {
-        "id": 29
-      }
+      "id": 1490
     },
     {
       "name": "Mountain Range",
@@ -627,10 +477,7 @@
         "east": 1492,
         "south": 1490
       },
-      "id": 1491,
-      "area": {
-        "id": 29
-      }
+      "id": 1491
     },
     {
       "name": "The Valley",
@@ -639,10 +486,7 @@
         "east": 1440,
         "south": 1493
       },
-      "id": 1492,
-      "area": {
-        "id": 29
-      }
+      "id": 1492
     },
     {
       "name": "The Valley",
@@ -652,10 +496,7 @@
         "east": 1441,
         "north": 1492
       },
-      "id": 1493,
-      "area": {
-        "id": 29
-      }
+      "id": 1493
     },
     {
       "name": "The Valley",
@@ -665,10 +506,7 @@
         "east": 1442,
         "north": 1493
       },
-      "id": 1494,
-      "area": {
-        "id": 29
-      }
+      "id": 1494
     },
     {
       "name": "Light forest",
@@ -678,10 +516,7 @@
         "east": 1498,
         "north": 1496
       },
-      "id": 1495,
-      "area": {
-        "id": 29
-      }
+      "id": 1495
     },
     {
       "name": "Light forest",
@@ -690,10 +525,7 @@
         "east": 1497,
         "south": 1495
       },
-      "id": 1496,
-      "area": {
-        "id": 29
-      }
+      "id": 1496
     },
     {
       "name": "Light forest",
@@ -701,10 +533,7 @@
         "west": 1496,
         "south": 1498
       },
-      "id": 1497,
-      "area": {
-        "id": 29
-      }
+      "id": 1497
     },
     {
       "name": "Light forest",
@@ -713,10 +542,7 @@
         "south": 1444,
         "north": 1497
       },
-      "id": 1498,
-      "area": {
-        "id": 29
-      }
+      "id": 1498
     },
     {
       "name": "Meadow",
@@ -725,10 +551,7 @@
         "south": 1505,
         "north": 1456
       },
-      "id": 1499,
-      "area": {
-        "id": 29
-      }
+      "id": 1499
     },
     {
       "name": "Path",
@@ -738,10 +561,7 @@
         "east": 1473,
         "north": 1504
       },
-      "id": 1500,
-      "area": {
-        "id": 29
-      }
+      "id": 1500
     },
     {
       "name": "Forest",
@@ -749,10 +569,7 @@
         "west": 1502,
         "north": 1500
       },
-      "id": 1501,
-      "area": {
-        "id": 29
-      }
+      "id": 1501
     },
     {
       "name": "Beach",
@@ -760,10 +577,7 @@
         "east": 1501,
         "north": 1503
       },
-      "id": 1502,
-      "area": {
-        "id": 29
-      }
+      "id": 1502
     },
     {
       "name": "Beach",
@@ -771,40 +585,28 @@
         "east": 1500,
         "south": 1502
       },
-      "id": 1503,
-      "area": {
-        "id": 29
-      }
+      "id": 1503
     },
     {
       "name": "Lighthouse Base",
       "exits": {
         "south": 1500
       },
-      "id": 1504,
-      "area": {
-        "id": 29
-      }
+      "id": 1504
     },
     {
       "name": "Mountain Range",
       "exits": {
         "north": 1499
       },
-      "id": 1505,
-      "area": {
-        "id": 29
-      }
+      "id": 1505
     },
     {
       "name": "Mine Entrance",
       "exits": {
         "up": 1491
       },
-      "id": 1506,
-      "area": {
-        "id": 29
-      }
+      "id": 1506
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

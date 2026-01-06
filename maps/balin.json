@@ -8,10 +8,7 @@
       "exits": {
         "north": 606
       },
-      "id": 605,
-      "area": {
-        "id": 9
-      }
+      "id": 605
     },
     {
       "name": "A sandy beachhead",
@@ -21,10 +18,7 @@
         "east": 626,
         "north": 607
       },
-      "id": 606,
-      "area": {
-        "id": 9
-      }
+      "id": 606
     },
     {
       "name": "A narrow path between the dunes",
@@ -33,10 +27,7 @@
         "east": 628,
         "north": 608
       },
-      "id": 607,
-      "area": {
-        "id": 9
-      }
+      "id": 607
     },
     {
       "name": "A Dune Path",
@@ -44,10 +35,7 @@
         "south": 607,
         "north": 609
       },
-      "id": 608,
-      "area": {
-        "id": 9
-      }
+      "id": 608
     },
     {
       "name": "The City Gate",
@@ -57,10 +45,7 @@
         "east": 634,
         "north": 610
       },
-      "id": 609,
-      "area": {
-        "id": 9
-      }
+      "id": 609
     },
     {
       "name": "Intersection of Silver Street and Balin Road",
@@ -70,10 +55,7 @@
         "east": 660,
         "north": 611
       },
-      "id": 610,
-      "area": {
-        "id": 9
-      }
+      "id": 610
     },
     {
       "name": "Silver Street",
@@ -82,10 +64,7 @@
         "east": 713,
         "north": 612
       },
-      "id": 611,
-      "area": {
-        "id": 9
-      }
+      "id": 611
     },
     {
       "name": "Silver Street",
@@ -94,10 +73,7 @@
         "east": 674,
         "north": 613
       },
-      "id": 612,
-      "area": {
-        "id": 9
-      }
+      "id": 612
     },
     {
       "name": "Silver Street",
@@ -107,10 +83,7 @@
         "east": 676,
         "north": 614
       },
-      "id": 613,
-      "area": {
-        "id": 9
-      }
+      "id": 613
     },
     {
       "name": "A Grand Plaza",
@@ -120,10 +93,7 @@
         "east": 677,
         "north": 615
       },
-      "id": 614,
-      "area": {
-        "id": 9
-      }
+      "id": 614
     },
     {
       "name": "Silver Street",
@@ -132,10 +102,7 @@
         "south": 614,
         "north": 616
       },
-      "id": 615,
-      "area": {
-        "id": 9
-      }
+      "id": 615
     },
     {
       "name": "Silver Street",
@@ -144,10 +111,7 @@
         "east": 689,
         "north": 617
       },
-      "id": 616,
-      "area": {
-        "id": 9
-      }
+      "id": 616
     },
     {
       "name": "Silver Street",
@@ -156,10 +120,7 @@
         "south": 616,
         "north": 618
       },
-      "id": 617,
-      "area": {
-        "id": 9
-      }
+      "id": 617
     },
     {
       "name": "Silver Street",
@@ -169,10 +130,7 @@
         "east": 691,
         "north": 619
       },
-      "id": 618,
-      "area": {
-        "id": 9
-      }
+      "id": 618
     },
     {
       "name": "End of Silver Street",
@@ -180,10 +138,7 @@
         "east": 620,
         "south": 618
       },
-      "id": 619,
-      "area": {
-        "id": 9
-      }
+      "id": 619
     },
     {
       "name": "Island smeltery",
@@ -191,27 +146,18 @@
         "east": 621,
         "west": 619
       },
-      "id": 620,
-      "area": {
-        "id": 9
-      }
+      "id": 620
     },
     {
       "name": "Repair Shop",
       "exits": {
         "west": 620
       },
-      "id": 621,
-      "area": {
-        "id": 9
-      }
+      "id": 621
     },
     {
       "name": "A Bloody Arena.",
-      "id": 622,
-      "area": {
-        "id": 9
-      }
+      "id": 622
     },
     {
       "name": "Western Part of Beach",
@@ -219,10 +165,7 @@
         "east": 606,
         "west": 624
       },
-      "id": 623,
-      "area": {
-        "id": 9
-      }
+      "id": 623
     },
     {
       "name": "East of the waterfall",
@@ -230,20 +173,14 @@
         "east": 623,
         "west": 625
       },
-      "id": 624,
-      "area": {
-        "id": 9
-      }
+      "id": 624
     },
     {
       "name": "The base of a waterfall",
       "exits": {
         "east": 624
       },
-      "id": 625,
-      "area": {
-        "id": 9
-      }
+      "id": 625
     },
     {
       "name": "Ruins",
@@ -251,20 +188,14 @@
         "east": 627,
         "west": 606
       },
-      "id": 626,
-      "area": {
-        "id": 9
-      }
+      "id": 626
     },
     {
       "name": "Eastern Beach",
       "exits": {
         "west": 626
       },
-      "id": 627,
-      "area": {
-        "id": 9
-      }
+      "id": 627
     },
     {
       "name": "A valley between two large dunes",
@@ -272,10 +203,7 @@
         "east": 629,
         "west": 607
       },
-      "id": 628,
-      "area": {
-        "id": 9
-      }
+      "id": 628
     },
     {
       "name": "A desert plain",
@@ -283,20 +211,14 @@
         "west": 628,
         "north": 630
       },
-      "id": 629,
-      "area": {
-        "id": 9
-      }
+      "id": 629
     },
     {
       "name": "A dead end",
       "exits": {
         "south": 629
       },
-      "id": 630,
-      "area": {
-        "id": 9
-      }
+      "id": 630
     },
     {
       "name": "Guard Room",
@@ -304,10 +226,7 @@
         "east": 609,
         "west": 632
       },
-      "id": 631,
-      "area": {
-        "id": 9
-      }
+      "id": 631
     },
     {
       "name": "Armoury",
@@ -315,30 +234,21 @@
         "east": 631,
         "west": 633
       },
-      "id": 632,
-      "area": {
-        "id": 9
-      }
+      "id": 632
     },
     {
       "name": "Elderoak's Quarters",
       "exits": {
         "east": 632
       },
-      "id": 633,
-      "area": {
-        "id": 9
-      }
+      "id": 633
     },
     {
       "name": "A guard house",
       "exits": {
         "west": 609
       },
-      "id": 634,
-      "area": {
-        "id": 9
-      }
+      "id": 634
     },
     {
       "name": "Balin Road",
@@ -349,10 +259,7 @@
         "east": 610,
         "west": 636
       },
-      "id": 635,
-      "area": {
-        "id": 9
-      }
+      "id": 635
     },
     {
       "name": "Balin Road",
@@ -362,10 +269,7 @@
         "southeast": 721,
         "west": 637
       },
-      "id": 636,
-      "area": {
-        "id": 9
-      }
+      "id": 636
     },
     {
       "name": "West End of Balin Road",
@@ -375,10 +279,7 @@
         "east": 636,
         "south": 723
       },
-      "id": 637,
-      "area": {
-        "id": 9
-      }
+      "id": 637
     },
     {
       "name": "Tunnel Under Canal",
@@ -386,10 +287,7 @@
         "east": 637,
         "west": 639
       },
-      "id": 638,
-      "area": {
-        "id": 9
-      }
+      "id": 638
     },
     {
       "name": "South End of Highland Avenue",
@@ -397,10 +295,7 @@
         "east": 638,
         "west": 640
       },
-      "id": 639,
-      "area": {
-        "id": 9
-      }
+      "id": 639
     },
     {
       "name": "Highland Avenue",
@@ -409,10 +304,7 @@
         "east": 639,
         "north": 641
       },
-      "id": 640,
-      "area": {
-        "id": 9
-      }
+      "id": 640
     },
     {
       "name": "Highland Avenue",
@@ -420,10 +312,7 @@
         "south": 640,
         "north": 642
       },
-      "id": 641,
-      "area": {
-        "id": 9
-      }
+      "id": 641
     },
     {
       "name": "Highland Avenue",
@@ -431,10 +320,7 @@
         "west": 643,
         "south": 641
       },
-      "id": 642,
-      "area": {
-        "id": 9
-      }
+      "id": 642
     },
     {
       "name": "Highland Avenue",
@@ -443,10 +329,7 @@
         "east": 642,
         "north": 644
       },
-      "id": 643,
-      "area": {
-        "id": 9
-      }
+      "id": 643
     },
     {
       "name": "Highland Avenue",
@@ -456,40 +339,28 @@
         "east": 648,
         "north": 645
       },
-      "id": 644,
-      "area": {
-        "id": 9
-      }
+      "id": 644
     },
     {
       "name": "Dwarven Hut",
       "exits": {
         "south": 644
       },
-      "id": 645,
-      "area": {
-        "id": 9
-      }
+      "id": 645
     },
     {
       "name": "You trundle past the facade and arrive on a beautiful street.",
       "exits": {
         "east": 644
       },
-      "id": 646,
-      "area": {
-        "id": 9
-      }
+      "id": 646
     },
     {
       "name": "Gnome Hut",
       "exits": {
         "north": 643
       },
-      "id": 647,
-      "area": {
-        "id": 9
-      }
+      "id": 647
     },
     {
       "name": "Highland Avenue",
@@ -499,20 +370,14 @@
         "east": 649,
         "north": 650
       },
-      "id": 648,
-      "area": {
-        "id": 9
-      }
+      "id": 648
     },
     {
       "name": "Dwarven Home",
       "exits": {
         "west": 648
       },
-      "id": 649,
-      "area": {
-        "id": 9
-      }
+      "id": 649
     },
     {
       "name": "Highland Avenue",
@@ -520,20 +385,14 @@
         "west": 652,
         "south": 648
       },
-      "id": 650,
-      "area": {
-        "id": 9
-      }
+      "id": 650
     },
     {
       "name": "Dwarven Shack",
       "exits": {
         "north": 648
       },
-      "id": 651,
-      "area": {
-        "id": 9
-      }
+      "id": 651
     },
     {
       "name": "Highland Avenue",
@@ -542,10 +401,7 @@
         "east": 650,
         "north": 654
       },
-      "id": 652,
-      "area": {
-        "id": 9
-      }
+      "id": 652
     },
     {
       "name": "Dwarven Home",
@@ -553,10 +409,7 @@
         "east": 652,
         "south": 656
       },
-      "id": 653,
-      "area": {
-        "id": 9
-      }
+      "id": 653
     },
     {
       "name": "Highland Avenue",
@@ -564,10 +417,7 @@
         "south": 652,
         "north": 655
       },
-      "id": 654,
-      "area": {
-        "id": 9
-      }
+      "id": 654
     },
     {
       "name": "House of Balin",
@@ -575,20 +425,14 @@
         "west": 712,
         "south": 654
       },
-      "id": 655,
-      "area": {
-        "id": 9
-      }
+      "id": 655
     },
     {
       "name": "Dwarven Home",
       "exits": {
         "north": 653
       },
-      "id": 656,
-      "area": {
-        "id": 9
-      }
+      "id": 656
     },
     {
       "name": "Keep Of Alcibiades",
@@ -597,30 +441,21 @@
         "east": 658,
         "north": 640
       },
-      "id": 657,
-      "area": {
-        "id": 9
-      }
+      "id": 657
     },
     {
       "name": "Study",
       "exits": {
         "west": 657
       },
-      "id": 658,
-      "area": {
-        "id": 9
-      }
+      "id": 658
     },
     {
       "name": "Bedroom:",
       "exits": {
         "east": 657
       },
-      "id": 659,
-      "area": {
-        "id": 9
-      }
+      "id": 659
     },
     {
       "name": "Balin Road",
@@ -628,10 +463,7 @@
         "east": 661,
         "west": 610
       },
-      "id": 660,
-      "area": {
-        "id": 9
-      }
+      "id": 660
     },
     {
       "name": "Balin Road",
@@ -640,10 +472,7 @@
         "east": 662,
         "south": 673
       },
-      "id": 661,
-      "area": {
-        "id": 9
-      }
+      "id": 661
     },
     {
       "name": "Balin Road",
@@ -652,10 +481,7 @@
         "east": 663,
         "north": 672
       },
-      "id": 662,
-      "area": {
-        "id": 9
-      }
+      "id": 662
     },
     {
       "name": "Balin Road",
@@ -665,10 +491,7 @@
         "east": 664,
         "north": 671
       },
-      "id": 663,
-      "area": {
-        "id": 9
-      }
+      "id": 663
     },
     {
       "name": "Balin Road",
@@ -678,10 +501,7 @@
         "east": 665,
         "north": 668
       },
-      "id": 664,
-      "area": {
-        "id": 9
-      }
+      "id": 664
     },
     {
       "name": "East End of Balin Road",
@@ -689,30 +509,21 @@
         "west": 664,
         "south": 666
       },
-      "id": 665,
-      "area": {
-        "id": 9
-      }
+      "id": 665
     },
     {
       "name": "Arched Gates",
       "exits": {
         "north": 665
       },
-      "id": 666,
-      "area": {
-        "id": 9
-      }
+      "id": 666
     },
     {
       "name": "Guild/Shop Space for rent",
       "exits": {
         "north": 664
       },
-      "id": 667,
-      "area": {
-        "id": 9
-      }
+      "id": 667
     },
     {
       "name": "Island Historical Society",
@@ -720,30 +531,21 @@
         "south": 664,
         "north": 669
       },
-      "id": 668,
-      "area": {
-        "id": 9
-      }
+      "id": 668
     },
     {
       "name": "Office",
       "exits": {
         "south": 668
       },
-      "id": 669,
-      "area": {
-        "id": 9
-      }
+      "id": 669
     },
     {
       "name": "Elven Mercantile",
       "exits": {
         "north": 663
       },
-      "id": 670,
-      "area": {
-        "id": 9
-      }
+      "id": 670
     },
     {
       "name": "Temple Shop",
@@ -751,10 +553,7 @@
         "west": 672,
         "south": 663
       },
-      "id": 671,
-      "area": {
-        "id": 9
-      }
+      "id": 671
     },
     {
       "name": "Temple Plaza",
@@ -763,40 +562,28 @@
         "east": 671,
         "south": 662
       },
-      "id": 672,
-      "area": {
-        "id": 9
-      }
+      "id": 672
     },
     {
       "name": "Seed Shop",
       "exits": {
         "north": 661
       },
-      "id": 673,
-      "area": {
-        "id": 9
-      }
+      "id": 673
     },
     {
       "name": "City Pastry Shop",
       "exits": {
         "west": 612
       },
-      "id": 674,
-      "area": {
-        "id": 9
-      }
+      "id": 674
     },
     {
       "name": "Soylent Green",
       "exits": {
         "east": 613
       },
-      "id": 675,
-      "area": {
-        "id": 9
-      }
+      "id": 675
     },
     {
       "name": "Mariner's Revenge",
@@ -804,10 +591,7 @@
         "west": 613,
         "north": 677
       },
-      "id": 676,
-      "area": {
-        "id": 9
-      }
+      "id": 676
     },
     {
       "name": "Gate House",
@@ -817,10 +601,7 @@
         "east": 693,
         "north": 686
       },
-      "id": 677,
-      "area": {
-        "id": 9
-      }
+      "id": 677
     },
     {
       "name": "Gate House",
@@ -828,10 +609,7 @@
         "east": 614,
         "west": 679
       },
-      "id": 678,
-      "area": {
-        "id": 9
-      }
+      "id": 678
     },
     {
       "name": "Foyer",
@@ -840,10 +618,7 @@
         "east": 678,
         "north": 680
       },
-      "id": 679,
-      "area": {
-        "id": 9
-      }
+      "id": 679
     },
     {
       "name": "Hallway",
@@ -851,10 +626,7 @@
         "south": 679,
         "north": 681
       },
-      "id": 680,
-      "area": {
-        "id": 9
-      }
+      "id": 680
     },
     {
       "name": "Audience Hall",
@@ -862,10 +634,7 @@
         "west": 682,
         "south": 680
       },
-      "id": 681,
-      "area": {
-        "id": 9
-      }
+      "id": 681
     },
     {
       "name": "Council Chamber",
@@ -873,20 +642,14 @@
         "east": 681,
         "west": 683
       },
-      "id": 682,
-      "area": {
-        "id": 9
-      }
+      "id": 682
     },
     {
       "name": "Trophy Room",
       "exits": {
         "east": 682
       },
-      "id": 683,
-      "area": {
-        "id": 9
-      }
+      "id": 683
     },
     {
       "name": "Hallway",
@@ -894,20 +657,14 @@
         "south": 685,
         "north": 679
       },
-      "id": 684,
-      "area": {
-        "id": 9
-      }
+      "id": 684
     },
     {
       "name": "Lady Roland's Bedroom",
       "exits": {
         "north": 684
       },
-      "id": 685,
-      "area": {
-        "id": 9
-      }
+      "id": 685
     },
     {
       "name": "RIIS",
@@ -915,50 +672,35 @@
         "down": 687,
         "south": 677
       },
-      "id": 686,
-      "area": {
-        "id": 9
-      }
+      "id": 686
     },
     {
       "name": "Crack of Doom",
       "exits": {
         "up": 686
       },
-      "id": 687,
-      "area": {
-        "id": 9
-      }
+      "id": 687
     },
     {
       "name": "Rhian's Potion Shop",
       "exits": {
         "east": 615
       },
-      "id": 688,
-      "area": {
-        "id": 9
-      }
+      "id": 688
     },
     {
       "name": "Alchemist Shop",
       "exits": {
         "west": 616
       },
-      "id": 689,
-      "area": {
-        "id": 9
-      }
+      "id": 689
     },
     {
       "name": "Entrance to the Hall of Records",
       "exits": {
         "east": 617
       },
-      "id": 690,
-      "area": {
-        "id": 9
-      }
+      "id": 690
     },
     {
       "name": "Power System Generator",
@@ -966,20 +708,14 @@
         "east": 692,
         "west": 618
       },
-      "id": 691,
-      "area": {
-        "id": 9
-      }
+      "id": 691
     },
     {
       "name": "Power System Internals",
       "exits": {
         "west": 691
       },
-      "id": 692,
-      "area": {
-        "id": 9
-      }
+      "id": 692
     },
     {
       "name": "Entryway",
@@ -988,10 +724,7 @@
         "south": 694,
         "north": 696
       },
-      "id": 693,
-      "area": {
-        "id": 9
-      }
+      "id": 693
     },
     {
       "name": "South Corridor",
@@ -999,20 +732,14 @@
         "south": 695,
         "north": 693
       },
-      "id": 694,
-      "area": {
-        "id": 9
-      }
+      "id": 694
     },
     {
       "name": "Guard Post",
       "exits": {
         "north": 694
       },
-      "id": 695,
-      "area": {
-        "id": 9
-      }
+      "id": 695
     },
     {
       "name": "North Corridor",
@@ -1020,10 +747,7 @@
         "south": 693,
         "north": 697
       },
-      "id": 696,
-      "area": {
-        "id": 9
-      }
+      "id": 696
     },
     {
       "name": "Guard Room",
@@ -1031,10 +755,7 @@
         "east": 698,
         "south": 696
       },
-      "id": 697,
-      "area": {
-        "id": 9
-      }
+      "id": 697
     },
     {
       "name": "West Harem",
@@ -1042,10 +763,7 @@
         "east": 699,
         "west": 697
       },
-      "id": 698,
-      "area": {
-        "id": 9
-      }
+      "id": 698
     },
     {
       "name": "East Harem",
@@ -1053,10 +771,7 @@
         "east": 700,
         "west": 698
       },
-      "id": 699,
-      "area": {
-        "id": 9
-      }
+      "id": 699
     },
     {
       "name": "Bedchamber",
@@ -1064,10 +779,7 @@
         "east": 701,
         "west": 699
       },
-      "id": 700,
-      "area": {
-        "id": 9
-      }
+      "id": 700
     },
     {
       "name": "Entryway",
@@ -1075,10 +787,7 @@
         "west": 700,
         "south": 702
       },
-      "id": 701,
-      "area": {
-        "id": 9
-      }
+      "id": 701
     },
     {
       "name": "Turkish Bath",
@@ -1087,10 +796,7 @@
         "east": 708,
         "north": 701
       },
-      "id": 702,
-      "area": {
-        "id": 9
-      }
+      "id": 702
     },
     {
       "name": "Turkish Bath",
@@ -1099,10 +805,7 @@
         "east": 707,
         "north": 702
       },
-      "id": 703,
-      "area": {
-        "id": 9
-      }
+      "id": 703
     },
     {
       "name": "Turkish Bath",
@@ -1111,20 +814,14 @@
         "east": 706,
         "north": 703
       },
-      "id": 704,
-      "area": {
-        "id": 9
-      }
+      "id": 704
     },
     {
       "name": "South Entryway",
       "exits": {
         "north": 704
       },
-      "id": 705,
-      "area": {
-        "id": 9
-      }
+      "id": 705
     },
     {
       "name": "Turkish Bath",
@@ -1133,10 +830,7 @@
         "south": 710,
         "north": 707
       },
-      "id": 706,
-      "area": {
-        "id": 9
-      }
+      "id": 706
     },
     {
       "name": "Turkish Bath",
@@ -1145,10 +839,7 @@
         "south": 706,
         "north": 708
       },
-      "id": 707,
-      "area": {
-        "id": 9
-      }
+      "id": 707
     },
     {
       "name": "Turkish Bath",
@@ -1157,47 +848,32 @@
         "south": 707,
         "north": 709
       },
-      "id": 708,
-      "area": {
-        "id": 9
-      }
+      "id": 708
     },
     {
       "name": "Turkish Bath",
       "exits": {
         "south": 708
       },
-      "id": 709,
-      "area": {
-        "id": 9
-      }
+      "id": 709
     },
     {
       "name": "Turkish Bath",
       "exits": {
         "north": 706
       },
-      "id": 710,
-      "area": {
-        "id": 9
-      }
+      "id": 710
     },
     {
       "name": "The hermit says: Is there anything you would like to talk about?",
-      "id": 711,
-      "area": {
-        "id": 9
-      }
+      "id": 711
     },
     {
       "name": "Hermit's Chamber",
       "exits": {
         "east": 655
       },
-      "id": 712,
-      "area": {
-        "id": 9
-      }
+      "id": 712
     },
     {
       "name": "Temple",
@@ -1206,10 +882,7 @@
         "east": 714,
         "north": 716
       },
-      "id": 713,
-      "area": {
-        "id": 9
-      }
+      "id": 713
     },
     {
       "name": "Central Chamber",
@@ -1217,10 +890,7 @@
         "east": 715,
         "west": 713
       },
-      "id": 714,
-      "area": {
-        "id": 9
-      }
+      "id": 714
     },
     {
       "name": "Eastern Chamber",
@@ -1228,80 +898,56 @@
         "east": 672,
         "west": 714
       },
-      "id": 715,
-      "area": {
-        "id": 9
-      }
+      "id": 715
     },
     {
       "name": "You feel a STRONG urge to read the Sanctuary board... You are responsible",
       "exits": {
         "south": 713
       },
-      "id": 716,
-      "area": {
-        "id": 9
-      }
+      "id": 716
     },
     {
       "name": "Poison Shop",
       "exits": {
         "north": 635
       },
-      "id": 717,
-      "area": {
-        "id": 9
-      }
+      "id": 717
     },
     {
       "name": "Taxidermist",
       "exits": {
         "southwest": 635
       },
-      "id": 718,
-      "area": {
-        "id": 9
-      }
+      "id": 718
     },
     {
       "name": "Weaver's",
       "exits": {
         "southeast": 635
       },
-      "id": 719,
-      "area": {
-        "id": 9
-      }
+      "id": 719
     },
     {
       "name": "Foyer of House of Ill Repute",
       "exits": {
         "southwest": 637
       },
-      "id": 720,
-      "area": {
-        "id": 9
-      }
+      "id": 720
     },
     {
       "name": "Balin Road Pub",
       "exits": {
         "northwest": 636
       },
-      "id": 721,
-      "area": {
-        "id": 9
-      }
+      "id": 721
     },
     {
       "name": "Wheelwright",
       "exits": {
         "northeast": 636
       },
-      "id": 722,
-      "area": {
-        "id": 9
-      }
+      "id": 722
     },
     {
       "name": "Crowded Thoroughfare",
@@ -1309,10 +955,7 @@
         "south": 724,
         "north": 637
       },
-      "id": 723,
-      "area": {
-        "id": 9
-      }
+      "id": 723
     },
     {
       "name": "Archway of Servitude",
@@ -1320,10 +963,7 @@
         "south": 725,
         "north": 723
       },
-      "id": 724,
-      "area": {
-        "id": 9
-      }
+      "id": 724
     },
     {
       "name": "Bazaar Crossroad",
@@ -1332,10 +972,7 @@
         "east": 729,
         "north": 724
       },
-      "id": 725,
-      "area": {
-        "id": 9
-      }
+      "id": 725
     },
     {
       "name": "Western District",
@@ -1343,10 +980,7 @@
         "east": 725,
         "south": 727
       },
-      "id": 726,
-      "area": {
-        "id": 9
-      }
+      "id": 726
     },
     {
       "name": "Western District",
@@ -1354,10 +988,7 @@
         "south": 728,
         "north": 726
       },
-      "id": 727,
-      "area": {
-        "id": 9
-      }
+      "id": 727
     },
     {
       "name": "Western slave bazaar",
@@ -1365,10 +996,7 @@
         "east": 732,
         "north": 727
       },
-      "id": 728,
-      "area": {
-        "id": 9
-      }
+      "id": 728
     },
     {
       "name": "Eastern District",
@@ -1376,10 +1004,7 @@
         "west": 725,
         "south": 730
       },
-      "id": 729,
-      "area": {
-        "id": 9
-      }
+      "id": 729
     },
     {
       "name": "Eastern District",
@@ -1387,10 +1012,7 @@
         "south": 731,
         "north": 729
       },
-      "id": 730,
-      "area": {
-        "id": 9
-      }
+      "id": 730
     },
     {
       "name": "Eastern slave bazaar",
@@ -1398,10 +1020,7 @@
         "west": 732,
         "north": 730
       },
-      "id": 731,
-      "area": {
-        "id": 9
-      }
+      "id": 731
     },
     {
       "name": "Central slave bazaar",
@@ -1410,20 +1029,14 @@
         "east": 731,
         "south": 733
       },
-      "id": 732,
-      "area": {
-        "id": 9
-      }
+      "id": 732
     },
     {
       "name": "Administrative hallway",
       "exits": {
         "north": 732
       },
-      "id": 733,
-      "area": {
-        "id": 9
-      }
+      "id": 733
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

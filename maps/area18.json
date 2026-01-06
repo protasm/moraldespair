@@ -12,50 +12,35 @@
         "east": 76,
         "north": 1078
       },
-      "id": 77,
-      "area": {
-        "id": 18
-      }
+      "id": 77
     },
     {
       "name": "Lord's Stable",
       "exits": {
         "south": 77
       },
-      "id": 1078,
-      "area": {
-        "id": 18
-      }
+      "id": 1078
     },
     {
       "name": "Kitchen",
       "exits": {
         "north": 77
       },
-      "id": 1079,
-      "area": {
-        "id": 18
-      }
+      "id": 1079
     },
     {
       "name": "Bracknar's Garden",
       "exits": {
         "east": 77
       },
-      "id": 1080,
-      "area": {
-        "id": 18
-      }
+      "id": 1080
     },
     {
       "name": "House of Clan Lord Bracknar",
       "exits": {
         "down": 77
       },
-      "id": 1081,
-      "area": {
-        "id": 18
-      }
+      "id": 1081
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

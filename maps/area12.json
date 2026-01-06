@@ -9,10 +9,7 @@
         "south": 128,
         "north": 882
       },
-      "id": 881,
-      "area": {
-        "id": 12
-      }
+      "id": 881
     },
     {
       "name": "Cemetery Lane.",
@@ -20,10 +17,7 @@
         "south": 881,
         "north": 883
       },
-      "id": 882,
-      "area": {
-        "id": 12
-      }
+      "id": 882
     },
     {
       "name": "A cemetery.",
@@ -31,10 +25,7 @@
         "east": 884,
         "south": 882
       },
-      "id": 883,
-      "area": {
-        "id": 12
-      }
+      "id": 883
     },
     {
       "name": "A cemetery.",
@@ -42,10 +33,7 @@
         "west": 883,
         "north": 885
       },
-      "id": 884,
-      "area": {
-        "id": 12
-      }
+      "id": 884
     },
     {
       "name": "A cemetery.",
@@ -53,10 +41,7 @@
         "west": 886,
         "south": 884
       },
-      "id": 885,
-      "area": {
-        "id": 12
-      }
+      "id": 885
     },
     {
       "name": "A cemetery.",
@@ -64,10 +49,7 @@
         "east": 885,
         "north": 887
       },
-      "id": 886,
-      "area": {
-        "id": 12
-      }
+      "id": 886
     },
     {
       "name": "A cemetery.",
@@ -77,20 +59,14 @@
         "east": 892,
         "north": 888
       },
-      "id": 887,
-      "area": {
-        "id": 12
-      }
+      "id": 887
     },
     {
       "name": "A cemetery.",
       "exits": {
         "south": 887
       },
-      "id": 888,
-      "area": {
-        "id": 12
-      }
+      "id": 888
     },
     {
       "name": "A cemetery.",
@@ -98,10 +74,7 @@
         "east": 887,
         "south": 890
       },
-      "id": 889,
-      "area": {
-        "id": 12
-      }
+      "id": 889
     },
     {
       "name": "A cemetery.",
@@ -109,30 +82,21 @@
         "south": 891,
         "north": 889
       },
-      "id": 890,
-      "area": {
-        "id": 12
-      }
+      "id": 890
     },
     {
       "name": "Thieves Guild",
       "exits": {
         "north": 890
       },
-      "id": 891,
-      "area": {
-        "id": 12
-      }
+      "id": 891
     },
     {
       "name": "A cemetery.",
       "exits": {
         "west": 887
       },
-      "id": 892,
-      "area": {
-        "id": 12
-      }
+      "id": 892
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

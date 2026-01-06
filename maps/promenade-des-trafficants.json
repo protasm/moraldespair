@@ -9,10 +9,7 @@
         "south": 1147,
         "north": 1170
       },
-      "id": 1169,
-      "area": {
-        "id": 22
-      }
+      "id": 1169
     },
     {
       "name": "The Promenade's gate",
@@ -20,10 +17,7 @@
         "south": 1169,
         "north": 1171
       },
-      "id": 1170,
-      "area": {
-        "id": 22
-      }
+      "id": 1170
     },
     {
       "name": "You squeeze yourself through the bars in the gate and enter the Promenade.",
@@ -32,10 +26,7 @@
         "east": 1184,
         "north": 1172
       },
-      "id": 1171,
-      "area": {
-        "id": 22
-      }
+      "id": 1171
     },
     {
       "name": "Moonlit Promenade",
@@ -44,20 +35,14 @@
         "south": 1171,
         "north": 1174
       },
-      "id": 1172,
-      "area": {
-        "id": 22
-      }
+      "id": 1172
     },
     {
       "name": "Mekalar's Outdoor Gear",
       "exits": {
         "east": 1172
       },
-      "id": 1173,
-      "area": {
-        "id": 22
-      }
+      "id": 1173
     },
     {
       "name": "Moonlit Promenade",
@@ -66,10 +51,7 @@
         "east": 1183,
         "north": 1175
       },
-      "id": 1174,
-      "area": {
-        "id": 22
-      }
+      "id": 1174
     },
     {
       "name": "Middle of the moonlit Promenade",
@@ -77,10 +59,7 @@
         "south": 1174,
         "north": 1176
       },
-      "id": 1175,
-      "area": {
-        "id": 22
-      }
+      "id": 1175
     },
     {
       "name": "Moonlit Promenade",
@@ -88,10 +67,7 @@
         "south": 1175,
         "north": 1177
       },
-      "id": 1176,
-      "area": {
-        "id": 22
-      }
+      "id": 1176
     },
     {
       "name": "Moonlit Promenade",
@@ -100,10 +76,7 @@
         "south": 1176,
         "north": 1178
       },
-      "id": 1177,
-      "area": {
-        "id": 22
-      }
+      "id": 1177
     },
     {
       "name": "Moonlit Promenade",
@@ -111,10 +84,7 @@
         "south": 1177,
         "north": 1179
       },
-      "id": 1178,
-      "area": {
-        "id": 22
-      }
+      "id": 1178
     },
     {
       "name": "Northern end of the moonlit Promenade",
@@ -123,60 +93,42 @@
         "south": 1178,
         "north": 1180
       },
-      "id": 1179,
-      "area": {
-        "id": 22
-      }
+      "id": 1179
     },
     {
       "name": "Enchanter's Store",
       "exits": {
         "south": 1179
       },
-      "id": 1180,
-      "area": {
-        "id": 22
-      }
+      "id": 1180
     },
     {
       "name": "Gere's Petshop",
       "exits": {
         "east": 1179
       },
-      "id": 1181,
-      "area": {
-        "id": 22
-      }
+      "id": 1181
     },
     {
       "name": "Carpenter's shop",
       "exits": {
         "east": 1177
       },
-      "id": 1182,
-      "area": {
-        "id": 22
-      }
+      "id": 1182
     },
     {
       "name": "Roget's Furrier",
       "exits": {
         "west": 1174
       },
-      "id": 1183,
-      "area": {
-        "id": 22
-      }
+      "id": 1183
     },
     {
       "name": "Volshev's Advertising Agency",
       "exits": {
         "west": 1171
       },
-      "id": 1184,
-      "area": {
-        "id": 22
-      }
+      "id": 1184
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

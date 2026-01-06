@@ -8,10 +8,7 @@
       "exits": {
         "north": 507
       },
-      "id": 506,
-      "area": {
-        "id": 6
-      }
+      "id": 506
     },
     {
       "name": "Narrow Gorge",
@@ -19,20 +16,14 @@
         "west": 508,
         "south": 506
       },
-      "id": 507,
-      "area": {
-        "id": 6
-      }
+      "id": 507
     },
     {
       "name": "Old Guard Room",
       "exits": {
         "east": 507
       },
-      "id": 508,
-      "area": {
-        "id": 6
-      }
+      "id": 508
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

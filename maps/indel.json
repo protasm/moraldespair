@@ -10,10 +10,7 @@
         "east": 1636,
         "south": 1402
       },
-      "id": 1401,
-      "area": {
-        "id": 28
-      }
+      "id": 1401
     },
     {
       "name": "Castle Road",
@@ -23,10 +20,7 @@
         "east": 1633,
         "north": 1401
       },
-      "id": 1402,
-      "area": {
-        "id": 28
-      }
+      "id": 1402
     },
     {
       "name": "Castle Road",
@@ -36,10 +30,7 @@
         "east": 1630,
         "north": 1402
       },
-      "id": 1403,
-      "area": {
-        "id": 28
-      }
+      "id": 1403
     },
     {
       "name": "Castle Road Courtyard",
@@ -49,10 +40,7 @@
         "east": 1627,
         "north": 1403
       },
-      "id": 1404,
-      "area": {
-        "id": 28
-      }
+      "id": 1404
     },
     {
       "name": "Castle Road",
@@ -61,10 +49,7 @@
         "south": 1406,
         "north": 1404
       },
-      "id": 1405,
-      "area": {
-        "id": 28
-      }
+      "id": 1405
     },
     {
       "name": "Intersection of Castle Road and Merchant's Row",
@@ -74,10 +59,7 @@
         "east": 1508,
         "north": 1405
       },
-      "id": 1406,
-      "area": {
-        "id": 28
-      }
+      "id": 1406
     },
     {
       "name": "West Merchant's Row",
@@ -85,10 +67,7 @@
         "east": 1406,
         "west": 1408
       },
-      "id": 1407,
-      "area": {
-        "id": 28
-      }
+      "id": 1407
     },
     {
       "name": "West Merchant's Row, north of the Silver Griffin",
@@ -97,10 +76,7 @@
         "east": 1407,
         "south": 1589
       },
-      "id": 1408,
-      "area": {
-        "id": 28
-      }
+      "id": 1408
     },
     {
       "name": "West Merchant's Row, south of Big Bob's Sign Shop",
@@ -109,10 +85,7 @@
         "east": 1408,
         "south": 1590
       },
-      "id": 1409,
-      "area": {
-        "id": 28
-      }
+      "id": 1409
     },
     {
       "name": "West Merchant's Row",
@@ -120,10 +93,7 @@
         "east": 1409,
         "west": 1411
       },
-      "id": 1410,
-      "area": {
-        "id": 28
-      }
+      "id": 1410
     },
     {
       "name": "West Merchant's Row",
@@ -131,10 +101,7 @@
         "east": 1410,
         "west": 1412
       },
-      "id": 1411,
-      "area": {
-        "id": 28
-      }
+      "id": 1411
     },
     {
       "name": "West Merchant's Row",
@@ -142,10 +109,7 @@
         "east": 1411,
         "west": 1413
       },
-      "id": 1412,
-      "area": {
-        "id": 28
-      }
+      "id": 1412
     },
     {
       "name": "West Merchant's Row, south of Knights of Solamnia",
@@ -153,10 +117,7 @@
         "east": 1412,
         "west": 1414
       },
-      "id": 1413,
-      "area": {
-        "id": 28
-      }
+      "id": 1413
     },
     {
       "name": "West Merchant's Row",
@@ -164,10 +125,7 @@
         "east": 1413,
         "west": 1415
       },
-      "id": 1414,
-      "area": {
-        "id": 28
-      }
+      "id": 1414
     },
     {
       "name": "West Merchant's Row, south of the Cobbler's Shop",
@@ -175,10 +133,7 @@
         "east": 1414,
         "west": 1416
       },
-      "id": 1415,
-      "area": {
-        "id": 28
-      }
+      "id": 1415
     },
     {
       "name": "West Merchant's Row, south of Laird's Forge",
@@ -186,10 +141,7 @@
         "east": 1415,
         "west": 1417
       },
-      "id": 1416,
-      "area": {
-        "id": 28
-      }
+      "id": 1416
     },
     {
       "name": "West Merchant's Row",
@@ -197,10 +149,7 @@
         "east": 1416,
         "west": 1418
       },
-      "id": 1417,
-      "area": {
-        "id": 28
-      }
+      "id": 1417
     },
     {
       "name": "Pier Street and Merchant's Row",
@@ -209,10 +158,7 @@
         "east": 1417,
         "north": 1448
       },
-      "id": 1418,
-      "area": {
-        "id": 28
-      }
+      "id": 1418
     },
     {
       "name": "Pier Street",
@@ -220,10 +166,7 @@
         "south": 1420,
         "north": 1418
       },
-      "id": 1419,
-      "area": {
-        "id": 28
-      }
+      "id": 1419
     },
     {
       "name": "Pier Street",
@@ -231,10 +174,7 @@
         "south": 1421,
         "north": 1419
       },
-      "id": 1420,
-      "area": {
-        "id": 28
-      }
+      "id": 1420
     },
     {
       "name": "Pier Street",
@@ -242,10 +182,7 @@
         "south": 1422,
         "north": 1420
       },
-      "id": 1421,
-      "area": {
-        "id": 28
-      }
+      "id": 1421
     },
     {
       "name": "Pier Street west of the Waterfront Gate",
@@ -253,10 +190,7 @@
         "south": 1423,
         "north": 1421
       },
-      "id": 1422,
-      "area": {
-        "id": 28
-      }
+      "id": 1422
     },
     {
       "name": "Pier Street",
@@ -264,10 +198,7 @@
         "south": 1424,
         "north": 1422
       },
-      "id": 1423,
-      "area": {
-        "id": 28
-      }
+      "id": 1423
     },
     {
       "name": "Pier Street",
@@ -275,10 +206,7 @@
         "south": 1425,
         "north": 1423
       },
-      "id": 1424,
-      "area": {
-        "id": 28
-      }
+      "id": 1424
     },
     {
       "name": "Pier Street",
@@ -286,10 +214,7 @@
         "south": 1426,
         "north": 1424
       },
-      "id": 1425,
-      "area": {
-        "id": 28
-      }
+      "id": 1425
     },
     {
       "name": "Pier Street",
@@ -297,10 +222,7 @@
         "south": 1427,
         "north": 1425
       },
-      "id": 1426,
-      "area": {
-        "id": 28
-      }
+      "id": 1426
     },
     {
       "name": "Pier Street",
@@ -308,10 +230,7 @@
         "south": 1428,
         "north": 1426
       },
-      "id": 1427,
-      "area": {
-        "id": 28
-      }
+      "id": 1427
     },
     {
       "name": "Pier Street",
@@ -319,10 +238,7 @@
         "south": 1429,
         "north": 1427
       },
-      "id": 1428,
-      "area": {
-        "id": 28
-      }
+      "id": 1428
     },
     {
       "name": "South Pier Street",
@@ -330,10 +246,7 @@
         "south": 1430,
         "north": 1428
       },
-      "id": 1429,
-      "area": {
-        "id": 28
-      }
+      "id": 1429
     },
     {
       "name": "South Pier Street",
@@ -341,10 +254,7 @@
         "south": 1431,
         "north": 1429
       },
-      "id": 1430,
-      "area": {
-        "id": 28
-      }
+      "id": 1430
     },
     {
       "name": "South Pier Street",
@@ -352,10 +262,7 @@
         "south": 1432,
         "north": 1430
       },
-      "id": 1431,
-      "area": {
-        "id": 28
-      }
+      "id": 1431
     },
     {
       "name": "South Pier Street",
@@ -363,10 +270,7 @@
         "south": 1433,
         "north": 1431
       },
-      "id": 1432,
-      "area": {
-        "id": 28
-      }
+      "id": 1432
     },
     {
       "name": "South Pier Street",
@@ -374,10 +278,7 @@
         "south": 1434,
         "north": 1432
       },
-      "id": 1433,
-      "area": {
-        "id": 28
-      }
+      "id": 1433
     },
     {
       "name": "South Pier Street",
@@ -386,10 +287,7 @@
         "east": 1545,
         "north": 1433
       },
-      "id": 1434,
-      "area": {
-        "id": 28
-      }
+      "id": 1434
     },
     {
       "name": "South Pier Street",
@@ -397,10 +295,7 @@
         "south": 1436,
         "north": 1434
       },
-      "id": 1435,
-      "area": {
-        "id": 28
-      }
+      "id": 1435
     },
     {
       "name": "South Pier Street",
@@ -408,10 +303,7 @@
         "south": 1437,
         "north": 1435
       },
-      "id": 1436,
-      "area": {
-        "id": 28
-      }
+      "id": 1436
     },
     {
       "name": "South Pier Street",
@@ -419,10 +311,7 @@
         "south": 1438,
         "north": 1436
       },
-      "id": 1437,
-      "area": {
-        "id": 28
-      }
+      "id": 1437
     },
     {
       "name": "South Pier Street",
@@ -430,20 +319,14 @@
         "south": 1439,
         "north": 1437
       },
-      "id": 1438,
-      "area": {
-        "id": 28
-      }
+      "id": 1438
     },
     {
       "name": "Forester's Gate",
       "exits": {
         "north": 1438
       },
-      "id": 1439,
-      "area": {
-        "id": 28
-      }
+      "id": 1439
     },
     {
       "name": "North Pier Street",
@@ -451,20 +334,14 @@
         "south": 1418,
         "north": 1507
       },
-      "id": 1448,
-      "area": {
-        "id": 28
-      }
+      "id": 1448
     },
     {
       "name": "Cobblestone courtyard",
       "exits": {
         "south": 1448
       },
-      "id": 1507,
-      "area": {
-        "id": 28
-      }
+      "id": 1507
     },
     {
       "name": "East Merchant's Row",
@@ -472,10 +349,7 @@
         "east": 1509,
         "west": 1406
       },
-      "id": 1508,
-      "area": {
-        "id": 28
-      }
+      "id": 1508
     },
     {
       "name": "East Merchant's Row, south of Saul's Formal Wear",
@@ -484,10 +358,7 @@
         "east": 1510,
         "north": 1624
       },
-      "id": 1509,
-      "area": {
-        "id": 28
-      }
+      "id": 1509
     },
     {
       "name": "East Merchant's Row, south of a livestock lot",
@@ -496,10 +367,7 @@
         "east": 1511,
         "north": 1623
       },
-      "id": 1510,
-      "area": {
-        "id": 28
-      }
+      "id": 1510
     },
     {
       "name": "East Merchant's Row, south of Mother Whitman's",
@@ -508,10 +376,7 @@
         "east": 1512,
         "north": 1622
       },
-      "id": 1511,
-      "area": {
-        "id": 28
-      }
+      "id": 1511
     },
     {
       "name": "East Merchant's Row",
@@ -519,10 +384,7 @@
         "east": 1513,
         "west": 1511
       },
-      "id": 1512,
-      "area": {
-        "id": 28
-      }
+      "id": 1512
     },
     {
       "name": "East Merchant's Row",
@@ -530,10 +392,7 @@
         "east": 1514,
         "west": 1512
       },
-      "id": 1513,
-      "area": {
-        "id": 28
-      }
+      "id": 1513
     },
     {
       "name": "East Merchant's Row, south of Sithicus",
@@ -542,10 +401,7 @@
         "east": 1515,
         "north": 1621
       },
-      "id": 1514,
-      "area": {
-        "id": 28
-      }
+      "id": 1514
     },
     {
       "name": "East Merchant's Row",
@@ -553,10 +409,7 @@
         "east": 1516,
         "west": 1514
       },
-      "id": 1515,
-      "area": {
-        "id": 28
-      }
+      "id": 1515
     },
     {
       "name": "Merchant's Row and Pensji Lane",
@@ -565,10 +418,7 @@
         "east": 1517,
         "south": 1520
       },
-      "id": 1516,
-      "area": {
-        "id": 28
-      }
+      "id": 1516
     },
     {
       "name": "East Merchant's Row",
@@ -576,10 +426,7 @@
         "east": 1518,
         "west": 1516
       },
-      "id": 1517,
-      "area": {
-        "id": 28
-      }
+      "id": 1517
     },
     {
       "name": "East Merchant's Row",
@@ -587,20 +434,14 @@
         "east": 1519,
         "west": 1517
       },
-      "id": 1518,
-      "area": {
-        "id": 28
-      }
+      "id": 1518
     },
     {
       "name": "End of Merchant's Row",
       "exits": {
         "west": 1518
       },
-      "id": 1519,
-      "area": {
-        "id": 28
-      }
+      "id": 1519
     },
     {
       "name": "Pensji Lane",
@@ -608,10 +449,7 @@
         "south": 1521,
         "north": 1516
       },
-      "id": 1520,
-      "area": {
-        "id": 28
-      }
+      "id": 1520
     },
     {
       "name": "Pensji Lane",
@@ -619,10 +457,7 @@
         "south": 1522,
         "north": 1520
       },
-      "id": 1521,
-      "area": {
-        "id": 28
-      }
+      "id": 1521
     },
     {
       "name": "Pensji Lane",
@@ -630,10 +465,7 @@
         "south": 1523,
         "north": 1521
       },
-      "id": 1522,
-      "area": {
-        "id": 28
-      }
+      "id": 1522
     },
     {
       "name": "Pensji Lane",
@@ -641,10 +473,7 @@
         "south": 1524,
         "north": 1522
       },
-      "id": 1523,
-      "area": {
-        "id": 28
-      }
+      "id": 1523
     },
     {
       "name": "Pensji Lane",
@@ -652,10 +481,7 @@
         "south": 1525,
         "north": 1523
       },
-      "id": 1524,
-      "area": {
-        "id": 28
-      }
+      "id": 1524
     },
     {
       "name": "Pensji Lane",
@@ -664,10 +490,7 @@
         "east": 1606,
         "north": 1524
       },
-      "id": 1525,
-      "area": {
-        "id": 28
-      }
+      "id": 1525
     },
     {
       "name": "Pensji Lane",
@@ -675,10 +498,7 @@
         "south": 1527,
         "north": 1525
       },
-      "id": 1526,
-      "area": {
-        "id": 28
-      }
+      "id": 1526
     },
     {
       "name": "Pensji Lane",
@@ -686,10 +506,7 @@
         "south": 1528,
         "north": 1526
       },
-      "id": 1527,
-      "area": {
-        "id": 28
-      }
+      "id": 1527
     },
     {
       "name": "Pensji Lane",
@@ -697,10 +514,7 @@
         "south": 1529,
         "north": 1527
       },
-      "id": 1528,
-      "area": {
-        "id": 28
-      }
+      "id": 1528
     },
     {
       "name": "Pensji Lane",
@@ -708,10 +522,7 @@
         "south": 1530,
         "north": 1528
       },
-      "id": 1529,
-      "area": {
-        "id": 28
-      }
+      "id": 1529
     },
     {
       "name": "Pensji Lane",
@@ -719,10 +530,7 @@
         "south": 1531,
         "north": 1529
       },
-      "id": 1530,
-      "area": {
-        "id": 28
-      }
+      "id": 1530
     },
     {
       "name": "Pensji Lane",
@@ -730,10 +538,7 @@
         "south": 1532,
         "north": 1530
       },
-      "id": 1531,
-      "area": {
-        "id": 28
-      }
+      "id": 1531
     },
     {
       "name": "Pensji Lane",
@@ -741,10 +546,7 @@
         "south": 1533,
         "north": 1531
       },
-      "id": 1532,
-      "area": {
-        "id": 28
-      }
+      "id": 1532
     },
     {
       "name": "Pensji Lane",
@@ -753,10 +555,7 @@
         "east": 1597,
         "north": 1532
       },
-      "id": 1533,
-      "area": {
-        "id": 28
-      }
+      "id": 1533
     },
     {
       "name": "Pensji Lane",
@@ -764,10 +563,7 @@
         "south": 1542,
         "north": 1533
       },
-      "id": 1534,
-      "area": {
-        "id": 28
-      }
+      "id": 1534
     },
     {
       "name": "Embassy Row",
@@ -775,10 +571,7 @@
         "east": 1536,
         "west": 1557
       },
-      "id": 1535,
-      "area": {
-        "id": 28
-      }
+      "id": 1535
     },
     {
       "name": "Embassy Row",
@@ -786,10 +579,7 @@
         "east": 1537,
         "west": 1535
       },
-      "id": 1536,
-      "area": {
-        "id": 28
-      }
+      "id": 1536
     },
     {
       "name": "Embassy Row",
@@ -797,10 +587,7 @@
         "east": 1538,
         "west": 1536
       },
-      "id": 1537,
-      "area": {
-        "id": 28
-      }
+      "id": 1537
     },
     {
       "name": "City Barracks Gate",
@@ -808,10 +595,7 @@
         "east": 1539,
         "west": 1537
       },
-      "id": 1538,
-      "area": {
-        "id": 28
-      }
+      "id": 1538
     },
     {
       "name": "West Martial Row",
@@ -819,10 +603,7 @@
         "east": 1540,
         "west": 1538
       },
-      "id": 1539,
-      "area": {
-        "id": 28
-      }
+      "id": 1539
     },
     {
       "name": "West Martial Row",
@@ -830,10 +611,7 @@
         "east": 1541,
         "west": 1539
       },
-      "id": 1540,
-      "area": {
-        "id": 28
-      }
+      "id": 1540
     },
     {
       "name": "West Martial Row",
@@ -841,10 +619,7 @@
         "east": 1542,
         "west": 1540
       },
-      "id": 1541,
-      "area": {
-        "id": 28
-      }
+      "id": 1541
     },
     {
       "name": "Intersection of Martial Row and Pensji Lane",
@@ -853,10 +628,7 @@
         "east": 1591,
         "north": 1534
       },
-      "id": 1542,
-      "area": {
-        "id": 28
-      }
+      "id": 1542
     },
     {
       "name": "West Church Road",
@@ -864,10 +636,7 @@
         "south": 1546,
         "north": 1544
       },
-      "id": 1543,
-      "area": {
-        "id": 28
-      }
+      "id": 1543
     },
     {
       "name": "West Church Road",
@@ -875,10 +644,7 @@
         "south": 1543,
         "north": 1558
       },
-      "id": 1544,
-      "area": {
-        "id": 28
-      }
+      "id": 1544
     },
     {
       "name": "Ambassador Gate",
@@ -886,10 +652,7 @@
         "east": 1546,
         "west": 1434
       },
-      "id": 1545,
-      "area": {
-        "id": 28
-      }
+      "id": 1545
     },
     {
       "name": "Intersection of Church Road and Embassy Row",
@@ -898,10 +661,7 @@
         "east": 1547,
         "north": 1543
       },
-      "id": 1546,
-      "area": {
-        "id": 28
-      }
+      "id": 1546
     },
     {
       "name": "Embassy Row",
@@ -909,10 +669,7 @@
         "east": 1548,
         "west": 1546
       },
-      "id": 1547,
-      "area": {
-        "id": 28
-      }
+      "id": 1547
     },
     {
       "name": "Embassy Row",
@@ -920,10 +677,7 @@
         "east": 1549,
         "west": 1547
       },
-      "id": 1548,
-      "area": {
-        "id": 28
-      }
+      "id": 1548
     },
     {
       "name": "Embassy Row",
@@ -931,10 +685,7 @@
         "east": 1550,
         "west": 1548
       },
-      "id": 1549,
-      "area": {
-        "id": 28
-      }
+      "id": 1549
     },
     {
       "name": "Embassy Row",
@@ -942,10 +693,7 @@
         "east": 1551,
         "west": 1549
       },
-      "id": 1550,
-      "area": {
-        "id": 28
-      }
+      "id": 1550
     },
     {
       "name": "Embassy Row",
@@ -953,10 +701,7 @@
         "east": 1552,
         "west": 1550
       },
-      "id": 1551,
-      "area": {
-        "id": 28
-      }
+      "id": 1551
     },
     {
       "name": "Embassy Row",
@@ -964,10 +709,7 @@
         "east": 1553,
         "west": 1551
       },
-      "id": 1552,
-      "area": {
-        "id": 28
-      }
+      "id": 1552
     },
     {
       "name": "Embassy Row",
@@ -975,10 +717,7 @@
         "east": 1554,
         "west": 1552
       },
-      "id": 1553,
-      "area": {
-        "id": 28
-      }
+      "id": 1553
     },
     {
       "name": "Embassy Row",
@@ -986,10 +725,7 @@
         "east": 1555,
         "west": 1553
       },
-      "id": 1554,
-      "area": {
-        "id": 28
-      }
+      "id": 1554
     },
     {
       "name": "Embassy Row",
@@ -997,10 +733,7 @@
         "east": 1556,
         "west": 1554
       },
-      "id": 1555,
-      "area": {
-        "id": 28
-      }
+      "id": 1555
     },
     {
       "name": "Embassy Row",
@@ -1008,10 +741,7 @@
         "east": 1557,
         "west": 1555
       },
-      "id": 1556,
-      "area": {
-        "id": 28
-      }
+      "id": 1556
     },
     {
       "name": "Embassy Row",
@@ -1019,10 +749,7 @@
         "east": 1535,
         "west": 1556
       },
-      "id": 1557,
-      "area": {
-        "id": 28
-      }
+      "id": 1557
     },
     {
       "name": "West Church Road",
@@ -1030,10 +757,7 @@
         "south": 1544,
         "north": 1559
       },
-      "id": 1558,
-      "area": {
-        "id": 28
-      }
+      "id": 1558
     },
     {
       "name": "West Church Road",
@@ -1041,10 +765,7 @@
         "south": 1558,
         "north": 1560
       },
-      "id": 1559,
-      "area": {
-        "id": 28
-      }
+      "id": 1559
     },
     {
       "name": "West Church Road",
@@ -1052,10 +773,7 @@
         "south": 1559,
         "north": 1561
       },
-      "id": 1560,
-      "area": {
-        "id": 28
-      }
+      "id": 1560
     },
     {
       "name": "West Church Road",
@@ -1063,10 +781,7 @@
         "south": 1560,
         "north": 1562
       },
-      "id": 1561,
-      "area": {
-        "id": 28
-      }
+      "id": 1561
     },
     {
       "name": "West Church Road",
@@ -1074,10 +789,7 @@
         "south": 1561,
         "north": 1563
       },
-      "id": 1562,
-      "area": {
-        "id": 28
-      }
+      "id": 1562
     },
     {
       "name": "West Church Road",
@@ -1085,10 +797,7 @@
         "south": 1562,
         "north": 1564
       },
-      "id": 1563,
-      "area": {
-        "id": 28
-      }
+      "id": 1563
     },
     {
       "name": "West Church Road",
@@ -1096,10 +805,7 @@
         "south": 1563,
         "north": 1565
       },
-      "id": 1564,
-      "area": {
-        "id": 28
-      }
+      "id": 1564
     },
     {
       "name": "West Church Road",
@@ -1107,10 +813,7 @@
         "south": 1564,
         "north": 1566
       },
-      "id": 1565,
-      "area": {
-        "id": 28
-      }
+      "id": 1565
     },
     {
       "name": "West Church Road",
@@ -1118,10 +821,7 @@
         "south": 1565,
         "north": 1567
       },
-      "id": 1566,
-      "area": {
-        "id": 28
-      }
+      "id": 1566
     },
     {
       "name": "West Church Road",
@@ -1129,10 +829,7 @@
         "south": 1566,
         "north": 1568
       },
-      "id": 1567,
-      "area": {
-        "id": 28
-      }
+      "id": 1567
     },
     {
       "name": "West Church Road",
@@ -1140,10 +837,7 @@
         "south": 1567,
         "north": 1569
       },
-      "id": 1568,
-      "area": {
-        "id": 28
-      }
+      "id": 1568
     },
     {
       "name": "Church Road Bend",
@@ -1151,10 +845,7 @@
         "east": 1570,
         "south": 1568
       },
-      "id": 1569,
-      "area": {
-        "id": 28
-      }
+      "id": 1569
     },
     {
       "name": "North Church Road",
@@ -1162,10 +853,7 @@
         "east": 1571,
         "west": 1569
       },
-      "id": 1570,
-      "area": {
-        "id": 28
-      }
+      "id": 1570
     },
     {
       "name": "North Church Road",
@@ -1173,10 +861,7 @@
         "east": 1572,
         "west": 1570
       },
-      "id": 1571,
-      "area": {
-        "id": 28
-      }
+      "id": 1571
     },
     {
       "name": "North Church Road",
@@ -1184,10 +869,7 @@
         "east": 1573,
         "west": 1571
       },
-      "id": 1572,
-      "area": {
-        "id": 28
-      }
+      "id": 1572
     },
     {
       "name": "North Church Road",
@@ -1195,10 +877,7 @@
         "east": 1574,
         "west": 1572
       },
-      "id": 1573,
-      "area": {
-        "id": 28
-      }
+      "id": 1573
     },
     {
       "name": "North Church Road",
@@ -1206,10 +885,7 @@
         "east": 1575,
         "west": 1573
       },
-      "id": 1574,
-      "area": {
-        "id": 28
-      }
+      "id": 1574
     },
     {
       "name": "North Church Road",
@@ -1217,10 +893,7 @@
         "east": 1576,
         "west": 1574
       },
-      "id": 1575,
-      "area": {
-        "id": 28
-      }
+      "id": 1575
     },
     {
       "name": "North Church Road",
@@ -1228,10 +901,7 @@
         "east": 1577,
         "west": 1575
       },
-      "id": 1576,
-      "area": {
-        "id": 28
-      }
+      "id": 1576
     },
     {
       "name": "North Church Road",
@@ -1239,10 +909,7 @@
         "east": 1578,
         "west": 1576
       },
-      "id": 1577,
-      "area": {
-        "id": 28
-      }
+      "id": 1577
     },
     {
       "name": "North Church Road",
@@ -1250,10 +917,7 @@
         "east": 1579,
         "west": 1577
       },
-      "id": 1578,
-      "area": {
-        "id": 28
-      }
+      "id": 1578
     },
     {
       "name": "Intersection of Castle Road and Church Road",
@@ -1263,10 +927,7 @@
         "east": 1580,
         "north": 1584
       },
-      "id": 1579,
-      "area": {
-        "id": 28
-      }
+      "id": 1579
     },
     {
       "name": "North Church Road",
@@ -1274,10 +935,7 @@
         "east": 1581,
         "west": 1579
       },
-      "id": 1580,
-      "area": {
-        "id": 28
-      }
+      "id": 1580
     },
     {
       "name": "North Church Road",
@@ -1285,10 +943,7 @@
         "east": 1582,
         "west": 1580
       },
-      "id": 1581,
-      "area": {
-        "id": 28
-      }
+      "id": 1581
     },
     {
       "name": "North Church Road",
@@ -1296,10 +951,7 @@
         "east": 1583,
         "west": 1581
       },
-      "id": 1582,
-      "area": {
-        "id": 28
-      }
+      "id": 1582
     },
     {
       "name": "North Church Road",
@@ -1307,10 +959,7 @@
         "down": 1653,
         "west": 1582
       },
-      "id": 1583,
-      "area": {
-        "id": 28
-      }
+      "id": 1583
     },
     {
       "name": "Olde City Gate",
@@ -1320,10 +969,7 @@
         "east": 1587,
         "north": 1406
       },
-      "id": 1584,
-      "area": {
-        "id": 28
-      }
+      "id": 1584
     },
     {
       "name": "Castle Drawbridge",
@@ -1331,30 +977,21 @@
         "south": 1586,
         "north": 1579
       },
-      "id": 1585,
-      "area": {
-        "id": 28
-      }
+      "id": 1585
     },
     {
       "name": "Castle Gatehouse",
       "exits": {
         "north": 1585
       },
-      "id": 1586,
-      "area": {
-        "id": 28
-      }
+      "id": 1586
     },
     {
       "name": "Krakenwater",
       "exits": {
         "west": 1584
       },
-      "id": 1587,
-      "area": {
-        "id": 28
-      }
+      "id": 1587
     },
     {
       "name": "Deep Sea Thunder",
@@ -1362,10 +999,7 @@
         "east": 1584,
         "west": 1589
       },
-      "id": 1588,
-      "area": {
-        "id": 28
-      }
+      "id": 1588
     },
     {
       "name": "The Silver Griffin",
@@ -1374,10 +1008,7 @@
         "east": 1588,
         "north": 1408
       },
-      "id": 1589,
-      "area": {
-        "id": 28
-      }
+      "id": 1589
     },
     {
       "name": "Horrors of the Deep",
@@ -1385,10 +1016,7 @@
         "east": 1589,
         "north": 1409
       },
-      "id": 1590,
-      "area": {
-        "id": 28
-      }
+      "id": 1590
     },
     {
       "name": "East Martial Row",
@@ -1396,10 +1024,7 @@
         "east": 1592,
         "west": 1542
       },
-      "id": 1591,
-      "area": {
-        "id": 28
-      }
+      "id": 1591
     },
     {
       "name": "East Martial Row",
@@ -1407,10 +1032,7 @@
         "east": 1593,
         "west": 1591
       },
-      "id": 1592,
-      "area": {
-        "id": 28
-      }
+      "id": 1592
     },
     {
       "name": "East Martial Row",
@@ -1418,10 +1040,7 @@
         "west": 1592,
         "north": 1594
       },
-      "id": 1593,
-      "area": {
-        "id": 28
-      }
+      "id": 1593
     },
     {
       "name": "Army Encampment Gate",
@@ -1429,10 +1048,7 @@
         "west": 1595,
         "south": 1593
       },
-      "id": 1594,
-      "area": {
-        "id": 28
-      }
+      "id": 1594
     },
     {
       "name": "Punishment Grounds",
@@ -1440,10 +1056,7 @@
         "east": 1594,
         "west": 1596
       },
-      "id": 1595,
-      "area": {
-        "id": 28
-      }
+      "id": 1595
     },
     {
       "name": "Parade Grounds",
@@ -1451,10 +1064,7 @@
         "east": 1595,
         "north": 1597
       },
-      "id": 1596,
-      "area": {
-        "id": 28
-      }
+      "id": 1596
     },
     {
       "name": "Cavalry Gate",
@@ -1463,10 +1073,7 @@
         "south": 1596,
         "north": 1598
       },
-      "id": 1597,
-      "area": {
-        "id": 28
-      }
+      "id": 1597
     },
     {
       "name": "Training Grounds",
@@ -1475,20 +1082,14 @@
         "east": 1600,
         "north": 1599
       },
-      "id": 1598,
-      "area": {
-        "id": 28
-      }
+      "id": 1598
     },
     {
       "name": "Combat Training",
       "exits": {
         "south": 1598
       },
-      "id": 1599,
-      "area": {
-        "id": 28
-      }
+      "id": 1599
     },
     {
       "name": "Post Exchange",
@@ -1498,20 +1099,14 @@
         "east": 1601,
         "north": 1603
       },
-      "id": 1600,
-      "area": {
-        "id": 28
-      }
+      "id": 1600
     },
     {
       "name": "Stockade",
       "exits": {
         "west": 1600
       },
-      "id": 1601,
-      "area": {
-        "id": 28
-      }
+      "id": 1601
     },
     {
       "name": "Infirmary",
@@ -1519,10 +1114,7 @@
         "east": 1605,
         "north": 1600
       },
-      "id": 1602,
-      "area": {
-        "id": 28
-      }
+      "id": 1602
     },
     {
       "name": "Soldiers' Tent",
@@ -1530,50 +1122,35 @@
         "east": 1604,
         "south": 1600
       },
-      "id": 1603,
-      "area": {
-        "id": 28
-      }
+      "id": 1603
     },
     {
       "name": "Soldiers' Tent",
       "exits": {
         "west": 1603
       },
-      "id": 1604,
-      "area": {
-        "id": 28
-      }
+      "id": 1604
     },
     {
       "name": "You move the partition to the side and walk into the back of the tent.",
       "exits": {
         "west": 1602
       },
-      "id": 1605,
-      "area": {
-        "id": 28
-      }
+      "id": 1605
     },
     {
       "name": "Sithicus",
       "exits": {
         "south": 1514
       },
-      "id": 1621,
-      "area": {
-        "id": 28
-      }
+      "id": 1621
     },
     {
       "name": "Mother Whitman's Confections Shop",
       "exits": {
         "south": 1511
       },
-      "id": 1622,
-      "area": {
-        "id": 28
-      }
+      "id": 1622
     },
     {
       "name": "Livestock Lot",
@@ -1581,40 +1158,28 @@
         "south": 1510,
         "north": 1643
       },
-      "id": 1623,
-      "area": {
-        "id": 28
-      }
+      "id": 1623
     },
     {
       "name": "Saul's formal wear",
       "exits": {
         "south": 1509
       },
-      "id": 1624,
-      "area": {
-        "id": 28
-      }
+      "id": 1624
     },
     {
       "name": "Quicksilver Delivery Service",
       "exits": {
         "east": 1405
       },
-      "id": 1625,
-      "area": {
-        "id": 28
-      }
+      "id": 1625
     },
     {
       "name": "Jusonah's Pawn and Polearms",
       "exits": {
         "east": 1404
       },
-      "id": 1626,
-      "area": {
-        "id": 28
-      }
+      "id": 1626
     },
     {
       "name": "You feel a STRONG urge to read the Sanctuary board... You are responsible for",
@@ -1622,10 +1187,7 @@
         "west": 1404,
         "south": 1637
       },
-      "id": 1627,
-      "area": {
-        "id": 28
-      }
+      "id": 1627
     },
     {
       "name": "Zomar's Dry Goods",
@@ -1633,30 +1195,21 @@
         "east": 1403,
         "down": 1629
       },
-      "id": 1628,
-      "area": {
-        "id": 28
-      }
+      "id": 1628
     },
     {
       "name": "The Art of Darkness",
       "exits": {
         "up": 1628
       },
-      "id": 1629,
-      "area": {
-        "id": 28
-      }
+      "id": 1629
     },
     {
       "name": "Burrow's Map Shop",
       "exits": {
         "west": 1403
       },
-      "id": 1630,
-      "area": {
-        "id": 28
-      }
+      "id": 1630
     },
     {
       "name": "Muddy Lane",
@@ -1664,20 +1217,14 @@
         "east": 1402,
         "west": 1632
       },
-      "id": 1631,
-      "area": {
-        "id": 28
-      }
+      "id": 1631
     },
     {
       "name": "Muddy Lane",
       "exits": {
         "east": 1631
       },
-      "id": 1632,
-      "area": {
-        "id": 28
-      }
+      "id": 1632
     },
     {
       "name": "Muddy Lane",
@@ -1685,60 +1232,42 @@
         "east": 1634,
         "west": 1402
       },
-      "id": 1633,
-      "area": {
-        "id": 28
-      }
+      "id": 1633
     },
     {
       "name": "Farm Road",
       "exits": {
         "west": 1633
       },
-      "id": 1634,
-      "area": {
-        "id": 28
-      }
+      "id": 1634
     },
     {
       "name": "West Ready Room",
       "exits": {
         "east": 1401
       },
-      "id": 1635,
-      "area": {
-        "id": 28
-      }
+      "id": 1635
     },
     {
       "name": "East Ready Room",
       "exits": {
         "west": 1401
       },
-      "id": 1636,
-      "area": {
-        "id": 28
-      }
+      "id": 1636
     },
     {
       "name": "Player Appreciation Week Discussions",
       "exits": {
         "north": 1627
       },
-      "id": 1637,
-      "area": {
-        "id": 28
-      }
+      "id": 1637
     },
     {
       "name": "Mudball Arena Entrance",
       "exits": {
         "up": 1583
       },
-      "id": 1653,
-      "area": {
-        "id": 28
-      }
+      "id": 1653
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"
