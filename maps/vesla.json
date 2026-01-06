@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 115, "name": "The Gate to the Wilderness",
@@ -1131,6 +1128,5 @@
       "id": 962, "name": "Abandoned Store",
       "exits": { "west": 199 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1834, "name": "Chikurin Forest Path",
@@ -119,6 +116,5 @@
       "id": 1862, "name": "Chikurin Forest Path",
       "exits": { "south": 1857 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

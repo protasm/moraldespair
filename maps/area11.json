@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 858, "name": "Entrance of a village",
@@ -95,6 +92,5 @@
       "id": 960, "name": "Above the shed",
       "exits": { "down": 959 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

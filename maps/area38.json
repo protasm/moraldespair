@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1863, "name": "You cross the sharply arching bridge.",
@@ -27,6 +24,5 @@
       "id": 1868, "name": "You slide back the fusumi with a flick of your hand.",
       "exits": { "south": 1867 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

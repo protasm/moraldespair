@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 931, "name": "Entryway",
@@ -91,6 +88,5 @@
       "id": 952, "name": "Storage",
       "exits": { "west": 948 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

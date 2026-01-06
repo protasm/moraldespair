@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1, "name": "North Gate",
@@ -13093,6 +13090,5 @@
       "weight": 1,
       "area": {"id": 19}
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1082, "name": "Gatehouse",
@@ -55,6 +52,5 @@
       "id": 1871, "name": "Stables",
       "exits": { "north": 1086 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

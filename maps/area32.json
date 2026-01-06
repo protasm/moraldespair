@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1650, "name": "North Moat",
@@ -147,6 +144,5 @@
       "id": 1686, "name": "West Moat",
       "exits": { "south": 1672, "north": 1685 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

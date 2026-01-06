@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 77, "name": "House of Clan Lord Bracknar",
@@ -23,6 +20,5 @@
       "id": 1081, "name": "House of Clan Lord Bracknar",
       "exits": { "down": 77 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

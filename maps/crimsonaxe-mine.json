@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1807, "name": "Moist cavern",
@@ -71,6 +68,5 @@
       "id": 1823, "name": "The immense stone slab moves suprisingly easily.",
       "exits": { "south": 1813 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

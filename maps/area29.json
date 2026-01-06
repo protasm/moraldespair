@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1440, "name": "Light forest",
@@ -267,6 +264,5 @@
       "id": 1506, "name": "Mine Entrance",
       "exits": { "up": 1491 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

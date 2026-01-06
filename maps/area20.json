@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1099, "name": "Crypt of the Honored Dead",
@@ -107,6 +104,5 @@
       "id": 1124, "name": "Battle of Maiden's Kiss",
       "exits": { "south": 1116 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

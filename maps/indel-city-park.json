@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1606, "name": "Indel City Park",
@@ -63,6 +60,5 @@
       "id": 1620, "name": "Indel City Park",
       "exits": { "west": 1618, "south": 1617 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

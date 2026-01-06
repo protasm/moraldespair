@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 235, "name": "Before the Anshelm Gatehouse",
@@ -447,6 +444,5 @@
       "id": 1333, "name": "Northern statuary",
       "exits": { "south": 1330 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

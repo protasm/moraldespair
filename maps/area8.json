@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 529, "name": "The start of a forest path",
@@ -295,6 +292,5 @@
       "id": 601, "name": "Large home",
       "exits": { "east": 567 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

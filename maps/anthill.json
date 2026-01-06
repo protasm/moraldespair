@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1723, "name": "Inside the Anthill",
@@ -274,6 +271,5 @@
     {
       "id": 1806, "name": "At the top of the anthill."
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

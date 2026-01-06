@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1000, "name": "Foyer",
@@ -63,6 +60,5 @@
       "id": 1014, "name": "Dark corner",
       "exits": { "east": 1013, "south": 1002 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }
