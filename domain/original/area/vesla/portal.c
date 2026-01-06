@@ -11,5 +11,6 @@ void reset(int arg) {
     dest_dir = ({
         "domain/original/area/vesla/sanctuary", "up",
         "domain/original/area/balin/room605", "island",
+        "domain/original/area/preserve/room432", "preserve",
     });
 }
