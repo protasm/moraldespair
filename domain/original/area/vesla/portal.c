@@ -13,5 +13,6 @@ void reset(int arg) {
         "domain/original/area/balin/room605", "island",
         "domain/original/area/preserve/room432", "preserve",
         "domain/original/area/forest/room529", "forest",
+        "domain/original/area/pylus/room1205", "pylus",
     });
 }
