@@ -1,0 +1,15 @@
+inherit "room/room";
+
+void reset(int arg) {
+    if (arg)
+        return;
+
+    set_light(1);
+
+    short_desc = "RIIS";
+    long_desc = "RIIS.\n";
+    dest_dir = ({
+        "domain/original/area/balin/room687", "down",
+        "domain/original/area/balin/room677", "south",
+    });
+}
