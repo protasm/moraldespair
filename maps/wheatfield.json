@@ -5,13 +5,11 @@
   "rooms": [
     {
       "name": "Road Through a Wheatfield",
-      "environment": -1,
       "exits": {
         "east": 1639,
         "southeast": 1641,
         "south": 1640
       },
-      "weight": 1,
       "id": 1638,
       "area": {
         "id": 31
@@ -19,7 +17,6 @@
     },
     {
       "name": "Road Through a Wheatfield",
-      "environment": -1,
       "exits": {
         "southeast": 1648,
         "south": 1641,
@@ -27,7 +24,6 @@
         "east": 1649,
         "west": 1638
       },
-      "weight": 1,
       "id": 1639,
       "area": {
         "id": 31
@@ -35,7 +31,6 @@
     },
     {
       "name": "Wheatfield",
-      "environment": -1,
       "exits": {
         "west": 1645,
         "southeast": 1642,
@@ -45,7 +40,6 @@
         "east": 1641,
         "north": 1638
       },
-      "weight": 1,
       "id": 1640,
       "area": {
         "id": 31
@@ -53,7 +47,6 @@
     },
     {
       "name": "Road Through A Wheatfield",
-      "environment": -1,
       "exits": {
         "west": 1640,
         "northwest": 1638,
@@ -63,7 +56,6 @@
         "east": 1648,
         "north": 1639
       },
-      "weight": 1,
       "id": 1641,
       "area": {
         "id": 31
@@ -71,7 +63,6 @@
     },
     {
       "name": "Wheatfield",
-      "environment": -1,
       "exits": {
         "northwest": 1640,
         "west": 1643,
@@ -79,7 +70,6 @@
         "east": 1646,
         "north": 1641
       },
-      "weight": 1,
       "id": 1642,
       "area": {
         "id": 31
@@ -87,7 +77,6 @@
     },
     {
       "name": "Wheatfield",
-      "environment": -1,
       "exits": {
         "northwest": 1645,
         "south": 1623,
@@ -96,7 +85,6 @@
         "east": 1642,
         "north": 1640
       },
-      "weight": 1,
       "id": 1643,
       "area": {
         "id": 31
@@ -104,13 +92,11 @@
     },
     {
       "name": "Wheatfield",
-      "environment": -1,
       "exits": {
         "northeast": 1640,
         "east": 1643,
         "north": 1645
       },
-      "weight": 1,
       "id": 1644,
       "area": {
         "id": 31
@@ -118,13 +104,11 @@
     },
     {
       "name": "Wheatfield",
-      "environment": -1,
       "exits": {
         "east": 1640,
         "southeast": 1643,
         "south": 1644
       },
-      "weight": 1,
       "id": 1645,
       "area": {
         "id": 31
@@ -132,13 +116,11 @@
     },
     {
       "name": "Wheatfield",
-      "environment": -1,
       "exits": {
         "west": 1642,
         "east": 1647,
         "north": 1648
       },
-      "weight": 1,
       "id": 1646,
       "area": {
         "id": 31
@@ -146,11 +128,9 @@
     },
     {
       "name": "Wheatfield",
-      "environment": -1,
       "exits": {
         "west": 1646
       },
-      "weight": 1,
       "id": 1647,
       "area": {
         "id": 31
@@ -158,7 +138,6 @@
     },
     {
       "name": "Road Through a Wheatfield",
-      "environment": -1,
       "exits": {
         "northwest": 1639,
         "south": 1646,
@@ -166,7 +145,6 @@
         "west": 1641,
         "north": 1649
       },
-      "weight": 1,
       "id": 1648,
       "area": {
         "id": 31
@@ -174,13 +152,11 @@
     },
     {
       "name": "Wheatfield",
-      "environment": -1,
       "exits": {
         "southwest": 1641,
         "west": 1639,
         "south": 1648
       },
-      "weight": 1,
       "id": 1649,
       "area": {
         "id": 31

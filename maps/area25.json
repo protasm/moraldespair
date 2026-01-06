@@ -5,11 +5,9 @@
   "rooms": [
     {
       "name": "A short entryway",
-      "environment": -1,
       "exits": {
         "north": 1263
       },
-      "weight": 1,
       "id": 1223,
       "area": {
         "id": 25
@@ -17,14 +15,12 @@
     },
     {
       "name": "Hallway",
-      "environment": -1,
       "exits": {
         "south": 1223,
         "west": 1276,
         "east": 1278,
         "north": 1264
       },
-      "weight": 1,
       "id": 1263,
       "area": {
         "id": 25
@@ -32,12 +28,10 @@
     },
     {
       "name": "Hallway",
-      "environment": -1,
       "exits": {
         "south": 1263,
         "north": 1265
       },
-      "weight": 1,
       "id": 1264,
       "area": {
         "id": 25
@@ -45,13 +39,11 @@
     },
     {
       "name": "Hallway",
-      "environment": -1,
       "exits": {
         "south": 1264,
         "east": 1275,
         "north": 1266
       },
-      "weight": 1,
       "id": 1265,
       "area": {
         "id": 25
@@ -59,14 +51,12 @@
     },
     {
       "name": "Hallway",
-      "environment": -1,
       "exits": {
         "south": 1265,
         "west": 1271,
         "east": 1273,
         "north": 1267
       },
-      "weight": 1,
       "id": 1266,
       "area": {
         "id": 25
@@ -74,13 +64,11 @@
     },
     {
       "name": "End of Hallway",
-      "environment": -1,
       "exits": {
         "west": 1268,
         "east": 1269,
         "south": 1266
       },
-      "weight": 1,
       "id": 1267,
       "area": {
         "id": 25
@@ -88,11 +76,9 @@
     },
     {
       "name": "Munchkin Romper Room",
-      "environment": -1,
       "exits": {
         "east": 1267
       },
-      "weight": 1,
       "id": 1268,
       "area": {
         "id": 25
@@ -100,12 +86,10 @@
     },
     {
       "name": "Mages' Barracks",
-      "environment": -1,
       "exits": {
         "east": 1270,
         "west": 1267
       },
-      "weight": 1,
       "id": 1269,
       "area": {
         "id": 25
@@ -113,11 +97,9 @@
     },
     {
       "name": "Munchkin Library",
-      "environment": -1,
       "exits": {
         "west": 1269
       },
-      "weight": 1,
       "id": 1270,
       "area": {
         "id": 25
@@ -125,12 +107,10 @@
     },
     {
       "name": "Munchkin Mess Hall",
-      "environment": -1,
       "exits": {
         "east": 1266,
         "west": 1272
       },
-      "weight": 1,
       "id": 1271,
       "area": {
         "id": 25
@@ -138,11 +118,9 @@
     },
     {
       "name": "Kitchen",
-      "environment": -1,
       "exits": {
         "east": 1271
       },
-      "weight": 1,
       "id": 1272,
       "area": {
         "id": 25
@@ -150,12 +128,10 @@
     },
     {
       "name": "Fighters' Barracks",
-      "environment": -1,
       "exits": {
         "east": 1274,
         "west": 1266
       },
-      "weight": 1,
       "id": 1273,
       "area": {
         "id": 25
@@ -163,12 +139,10 @@
     },
     {
       "name": "Fighters' Barracks",
-      "environment": -1,
       "exits": {
         "west": 1273,
         "south": 1288
       },
-      "weight": 1,
       "id": 1274,
       "area": {
         "id": 25
@@ -176,11 +150,9 @@
     },
     {
       "name": "Munchkin Smithy",
-      "environment": -1,
       "exits": {
         "west": 1265
       },
-      "weight": 1,
       "id": 1275,
       "area": {
         "id": 25
@@ -188,12 +160,10 @@
     },
     {
       "name": "Hallway",
-      "environment": -1,
       "exits": {
         "east": 1263,
         "west": 1277
       },
-      "weight": 1,
       "id": 1276,
       "area": {
         "id": 25
@@ -201,13 +171,11 @@
     },
     {
       "name": "Hallway",
-      "environment": -1,
       "exits": {
         "west": 1281,
         "east": 1276,
         "south": 1280
       },
-      "weight": 1,
       "id": 1277,
       "area": {
         "id": 25
@@ -215,13 +183,11 @@
     },
     {
       "name": "Narrow Hallway",
-      "environment": -1,
       "exits": {
         "west": 1263,
         "east": 1279,
         "north": 1286
       },
-      "weight": 1,
       "id": 1278,
       "area": {
         "id": 25
@@ -229,12 +195,10 @@
     },
     {
       "name": "End of Narrow Hallway",
-      "environment": -1,
       "exits": {
         "west": 1278,
         "north": 1287
       },
-      "weight": 1,
       "id": 1279,
       "area": {
         "id": 25
@@ -242,12 +206,10 @@
     },
     {
       "name": "A Dark Tunnel",
-      "environment": -1,
       "exits": {
         "south": 1284,
         "north": 1277
       },
-      "weight": 1,
       "id": 1280,
       "area": {
         "id": 25
@@ -255,13 +217,11 @@
     },
     {
       "name": "End of Hallway",
-      "environment": -1,
       "exits": {
         "south": 1282,
         "east": 1277,
         "north": 1283
       },
-      "weight": 1,
       "id": 1281,
       "area": {
         "id": 25
@@ -269,11 +229,9 @@
     },
     {
       "name": "Munchkin Leader's Quarters",
-      "environment": -1,
       "exits": {
         "north": 1281
       },
-      "weight": 1,
       "id": 1282,
       "area": {
         "id": 25
@@ -281,11 +239,9 @@
     },
     {
       "name": "Munchkin Leader's Harem",
-      "environment": -1,
       "exits": {
         "south": 1281
       },
-      "weight": 1,
       "id": 1283,
       "area": {
         "id": 25
@@ -293,12 +249,10 @@
     },
     {
       "name": "A Dark Tunnel",
-      "environment": -1,
       "exits": {
         "northeast": 1285,
         "north": 1280
       },
-      "weight": 1,
       "id": 1284,
       "area": {
         "id": 25
@@ -306,11 +260,9 @@
     },
     {
       "name": "A Dark Tunnel",
-      "environment": -1,
       "exits": {
         "southwest": 1284
       },
-      "weight": 1,
       "id": 1285,
       "area": {
         "id": 25
@@ -318,11 +270,9 @@
     },
     {
       "name": "Dank Cell",
-      "environment": -1,
       "exits": {
         "south": 1278
       },
-      "weight": 1,
       "id": 1286,
       "area": {
         "id": 25
@@ -330,11 +280,9 @@
     },
     {
       "name": "Dank Cell",
-      "environment": -1,
       "exits": {
         "south": 1279
       },
-      "weight": 1,
       "id": 1287,
       "area": {
         "id": 25
@@ -342,11 +290,9 @@
     },
     {
       "name": "The Lollipop Guild",
-      "environment": -1,
       "exits": {
         "north": 1274
       },
-      "weight": 1,
       "id": 1288,
       "area": {
         "id": 25

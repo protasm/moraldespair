@@ -5,13 +5,11 @@
   "rooms": [
     {
       "name": "Crypt of the Honored Dead",
-      "environment": -1,
       "exits": {
         "up": 1098,
         "east": 1100,
         "south": 1101
       },
-      "weight": 1,
       "id": 1099,
       "area": {
         "id": 20
@@ -19,13 +17,11 @@
     },
     {
       "name": "Crypt of the Honored Dead",
-      "environment": -1,
       "exits": {
         "northeast": 1103,
         "southeast": 1102,
         "west": 1099
       },
-      "weight": 1,
       "id": 1100,
       "area": {
         "id": 20
@@ -33,11 +29,9 @@
     },
     {
       "name": "Crypt of the Honored Dead.",
-      "environment": -1,
       "exits": {
         "north": 1099
       },
-      "weight": 1,
       "id": 1101,
       "area": {
         "id": 20
@@ -45,12 +39,10 @@
     },
     {
       "name": "Crypt of the Honored Dead",
-      "environment": -1,
       "exits": {
         "northwest": 1100,
         "southeast": 1115
       },
-      "weight": 1,
       "id": 1102,
       "area": {
         "id": 20
@@ -58,12 +50,10 @@
     },
     {
       "name": "Crypt of the Honored Dead",
-      "environment": -1,
       "exits": {
         "southwest": 1100,
         "northeast": 1104
       },
-      "weight": 1,
       "id": 1103,
       "area": {
         "id": 20
@@ -71,12 +61,10 @@
     },
     {
       "name": "Crypt of the Honored Dead",
-      "environment": -1,
       "exits": {
         "southwest": 1103,
         "east": 1105
       },
-      "weight": 1,
       "id": 1104,
       "area": {
         "id": 20
@@ -84,14 +72,12 @@
     },
     {
       "name": "Battle of the Sand Gargoyles",
-      "environment": -1,
       "exits": {
         "south": 1108,
         "west": 1104,
         "east": 1106,
         "north": 1107
       },
-      "weight": 1,
       "id": 1105,
       "area": {
         "id": 20
@@ -99,14 +85,12 @@
     },
     {
       "name": "Battle of the Sand Gargoyles",
-      "environment": -1,
       "exits": {
         "south": 1111,
         "west": 1105,
         "east": 1110,
         "north": 1109
       },
-      "weight": 1,
       "id": 1106,
       "area": {
         "id": 20
@@ -114,11 +98,9 @@
     },
     {
       "name": "Battle of the Sand Gargoyles",
-      "environment": -1,
       "exits": {
         "south": 1105
       },
-      "weight": 1,
       "id": 1107,
       "area": {
         "id": 20
@@ -126,11 +108,9 @@
     },
     {
       "name": "Battle of the Sand Gargoyles",
-      "environment": -1,
       "exits": {
         "north": 1105
       },
-      "weight": 1,
       "id": 1108,
       "area": {
         "id": 20
@@ -138,11 +118,9 @@
     },
     {
       "name": "Battle of the Sand Gargoyles",
-      "environment": -1,
       "exits": {
         "south": 1106
       },
-      "weight": 1,
       "id": 1109,
       "area": {
         "id": 20
@@ -150,14 +128,12 @@
     },
     {
       "name": "Battle of the Sand Gargoyles",
-      "environment": -1,
       "exits": {
         "south": 1113,
         "west": 1106,
         "east": 1114,
         "north": 1112
       },
-      "weight": 1,
       "id": 1110,
       "area": {
         "id": 20
@@ -165,11 +141,9 @@
     },
     {
       "name": "Battle of the Sand Gargoyles",
-      "environment": -1,
       "exits": {
         "north": 1106
       },
-      "weight": 1,
       "id": 1111,
       "area": {
         "id": 20
@@ -177,11 +151,9 @@
     },
     {
       "name": "Battle of the Sand Gargoyles",
-      "environment": -1,
       "exits": {
         "south": 1110
       },
-      "weight": 1,
       "id": 1112,
       "area": {
         "id": 20
@@ -189,11 +161,9 @@
     },
     {
       "name": "Battle of the Sand Gargoyles",
-      "environment": -1,
       "exits": {
         "north": 1110
       },
-      "weight": 1,
       "id": 1113,
       "area": {
         "id": 20
@@ -201,11 +171,9 @@
     },
     {
       "name": "Battle of the Sand Gargoyles",
-      "environment": -1,
       "exits": {
         "west": 1110
       },
-      "weight": 1,
       "id": 1114,
       "area": {
         "id": 20
@@ -213,12 +181,10 @@
     },
     {
       "name": "Crypt of the Honored Dead",
-      "environment": -1,
       "exits": {
         "northwest": 1102,
         "east": 1116
       },
-      "weight": 1,
       "id": 1115,
       "area": {
         "id": 20
@@ -226,14 +192,12 @@
     },
     {
       "name": "Battle of Maiden's Kiss",
-      "environment": -1,
       "exits": {
         "south": 1123,
         "west": 1115,
         "east": 1117,
         "north": 1124
       },
-      "weight": 1,
       "id": 1116,
       "area": {
         "id": 20
@@ -241,14 +205,12 @@
     },
     {
       "name": "Battle of Maiden's Kiss",
-      "environment": -1,
       "exits": {
         "south": 1121,
         "west": 1116,
         "east": 1118,
         "north": 1122
       },
-      "weight": 1,
       "id": 1117,
       "area": {
         "id": 20
@@ -256,13 +218,11 @@
     },
     {
       "name": "Battle of Maiden's Kiss",
-      "environment": -1,
       "exits": {
         "west": 1117,
         "south": 1119,
         "north": 1120
       },
-      "weight": 1,
       "id": 1118,
       "area": {
         "id": 20
@@ -270,11 +230,9 @@
     },
     {
       "name": "Battle of Maiden's Kiss",
-      "environment": -1,
       "exits": {
         "north": 1118
       },
-      "weight": 1,
       "id": 1119,
       "area": {
         "id": 20
@@ -282,11 +240,9 @@
     },
     {
       "name": "Battle of Maiden's Kiss",
-      "environment": -1,
       "exits": {
         "south": 1118
       },
-      "weight": 1,
       "id": 1120,
       "area": {
         "id": 20
@@ -294,11 +250,9 @@
     },
     {
       "name": "Battle of Maiden's Kiss",
-      "environment": -1,
       "exits": {
         "north": 1117
       },
-      "weight": 1,
       "id": 1121,
       "area": {
         "id": 20
@@ -306,11 +260,9 @@
     },
     {
       "name": "Battle of Maiden's Kiss",
-      "environment": -1,
       "exits": {
         "south": 1117
       },
-      "weight": 1,
       "id": 1122,
       "area": {
         "id": 20
@@ -318,11 +270,9 @@
     },
     {
       "name": "Battle of Maiden's Kiss",
-      "environment": -1,
       "exits": {
         "north": 1116
       },
-      "weight": 1,
       "id": 1123,
       "area": {
         "id": 20
@@ -330,11 +280,9 @@
     },
     {
       "name": "Battle of Maiden's Kiss",
-      "environment": -1,
       "exits": {
         "south": 1116
       },
-      "weight": 1,
       "id": 1124,
       "area": {
         "id": 20

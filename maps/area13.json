@@ -5,7 +5,6 @@
   "rooms": [
     {
       "name": "Foyer",
-      "environment": -1,
       "exits": {
         "west": 98,
         "up": 1011,
@@ -13,7 +12,6 @@
         "east": 1001,
         "north": 1009
       },
-      "weight": 1,
       "id": 1000,
       "area": {
         "id": 13
@@ -21,13 +19,11 @@
     },
     {
       "name": "Hallway",
-      "environment": -1,
       "exits": {
         "northeast": 1008,
         "east": 1002,
         "west": 1000
       },
-      "weight": 1,
       "id": 1001,
       "area": {
         "id": 13
@@ -35,14 +31,12 @@
     },
     {
       "name": "Ballroom",
-      "environment": -1,
       "exits": {
         "south": 1007,
         "west": 1001,
         "east": 1003,
         "north": 1014
       },
-      "weight": 1,
       "id": 1002,
       "area": {
         "id": 13
@@ -50,13 +44,11 @@
     },
     {
       "name": "Dance Floor",
-      "environment": -1,
       "exits": {
         "west": 1002,
         "east": 1004,
         "south": 1006
       },
-      "weight": 1,
       "id": 1003,
       "area": {
         "id": 13
@@ -64,13 +56,11 @@
     },
     {
       "name": "Gaston's table",
-      "environment": -1,
       "exits": {
         "west": 1003,
         "south": 1005,
         "north": 1013
       },
-      "weight": 1,
       "id": 1004,
       "area": {
         "id": 13
@@ -78,13 +68,11 @@
     },
     {
       "name": "Dance Floor",
-      "environment": -1,
       "exits": {
         "west": 1006,
         "south": 1012,
         "north": 1004
       },
-      "weight": 1,
       "id": 1005,
       "area": {
         "id": 13
@@ -92,13 +80,11 @@
     },
     {
       "name": "Dance Floor",
-      "environment": -1,
       "exits": {
         "west": 1007,
         "east": 1005,
         "north": 1003
       },
-      "weight": 1,
       "id": 1006,
       "area": {
         "id": 13
@@ -106,12 +92,10 @@
     },
     {
       "name": "Buffet table",
-      "environment": -1,
       "exits": {
         "east": 1006,
         "north": 1002
       },
-      "weight": 1,
       "id": 1007,
       "area": {
         "id": 13
@@ -119,11 +103,9 @@
     },
     {
       "name": "Kitchen",
-      "environment": -1,
       "exits": {
         "southwest": 1001
       },
-      "weight": 1,
       "id": 1008,
       "area": {
         "id": 13
@@ -131,11 +113,9 @@
     },
     {
       "name": "Library",
-      "environment": -1,
       "exits": {
         "south": 1000
       },
-      "weight": 1,
       "id": 1009,
       "area": {
         "id": 13
@@ -143,11 +123,9 @@
     },
     {
       "name": "Map Room",
-      "environment": -1,
       "exits": {
         "north": 1000
       },
-      "weight": 1,
       "id": 1010,
       "area": {
         "id": 13
@@ -155,11 +133,9 @@
     },
     {
       "name": "House of Clan Lord Gaston",
-      "environment": -1,
       "exits": {
         "down": 1000
       },
-      "weight": 1,
       "id": 1011,
       "area": {
         "id": 13
@@ -167,11 +143,9 @@
     },
     {
       "name": "Deck",
-      "environment": -1,
       "exits": {
         "north": 1005
       },
-      "weight": 1,
       "id": 1012,
       "area": {
         "id": 13
@@ -179,12 +153,10 @@
     },
     {
       "name": "Bandstand",
-      "environment": -1,
       "exits": {
         "west": 1014,
         "south": 1004
       },
-      "weight": 1,
       "id": 1013,
       "area": {
         "id": 13
@@ -192,12 +164,10 @@
     },
     {
       "name": "Dark corner",
-      "environment": -1,
       "exits": {
         "east": 1013,
         "south": 1002
       },
-      "weight": 1,
       "id": 1014,
       "area": {
         "id": 13

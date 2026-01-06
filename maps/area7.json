@@ -5,20 +5,16 @@
   "rooms": [
     {
       "name": "",
-      "environment": -1,
       "id": 509,
-      "weight": 1,
       "area": {
         "id": 7
       }
     },
     {
       "name": "Barbarian Clearing",
-      "environment": -1,
       "exits": {
         "north": 511
       },
-      "weight": 1,
       "id": 510,
       "area": {
         "id": 7
@@ -26,13 +22,11 @@
     },
     {
       "name": "Underground Pond",
-      "environment": -1,
       "exits": {
         "southwest": 512,
         "west": 518,
         "south": 510
       },
-      "weight": 1,
       "id": 511,
       "area": {
         "id": 7
@@ -40,12 +34,10 @@
     },
     {
       "name": "Cave Passage",
-      "environment": -1,
       "exits": {
         "south": 513,
         "northeast": 511
       },
-      "weight": 1,
       "id": 512,
       "area": {
         "id": 7
@@ -53,12 +45,10 @@
     },
     {
       "name": "Cave Passage",
-      "environment": -1,
       "exits": {
         "south": 515,
         "north": 512
       },
-      "weight": 1,
       "id": 513,
       "area": {
         "id": 7
@@ -66,21 +56,17 @@
     },
     {
       "name": "You begin to climb into the pit, and the descent seems simple enough.",
-      "environment": -1,
       "id": 514,
-      "weight": 1,
       "area": {
         "id": 7
       }
     },
     {
       "name": "Bottom of a Deep Dark Pit",
-      "environment": -1,
       "exits": {
         "east": 516,
         "north": 513
       },
-      "weight": 1,
       "id": 515,
       "area": {
         "id": 7
@@ -88,12 +74,10 @@
     },
     {
       "name": "Dark Barricade",
-      "environment": -1,
       "exits": {
         "east": 517,
         "west": 515
       },
-      "weight": 1,
       "id": 516,
       "area": {
         "id": 7
@@ -101,12 +85,10 @@
     },
     {
       "name": "Corridor",
-      "environment": -1,
       "exits": {
         "east": 519,
         "west": 516
       },
-      "weight": 1,
       "id": 517,
       "area": {
         "id": 7
@@ -114,12 +96,10 @@
     },
     {
       "name": "Cave Passage",
-      "environment": -1,
       "exits": {
         "southwest": 1292,
         "east": 511
       },
-      "weight": 1,
       "id": 518,
       "area": {
         "id": 7
@@ -127,14 +107,12 @@
     },
     {
       "name": "Passage Way",
-      "environment": -1,
       "exits": {
         "south": 520,
         "west": 517,
         "east": 523,
         "north": 521
       },
-      "weight": 1,
       "id": 519,
       "area": {
         "id": 7
@@ -142,11 +120,9 @@
     },
     {
       "name": "Barracks",
-      "environment": -1,
       "exits": {
         "north": 519
       },
-      "weight": 1,
       "id": 520,
       "area": {
         "id": 7
@@ -154,12 +130,10 @@
     },
     {
       "name": "Mess Hall",
-      "environment": -1,
       "exits": {
         "south": 519,
         "north": 522
       },
-      "weight": 1,
       "id": 521,
       "area": {
         "id": 7
@@ -167,11 +141,9 @@
     },
     {
       "name": "Kitchen",
-      "environment": -1,
       "exits": {
         "south": 521
       },
-      "weight": 1,
       "id": 522,
       "area": {
         "id": 7
@@ -179,14 +151,12 @@
     },
     {
       "name": "Passage Way",
-      "environment": -1,
       "exits": {
         "south": 524,
         "west": 519,
         "east": 1295,
         "north": 1294
       },
-      "weight": 1,
       "id": 523,
       "area": {
         "id": 7
@@ -194,12 +164,10 @@
     },
     {
       "name": "Passage Way",
-      "environment": -1,
       "exits": {
         "south": 525,
         "north": 523
       },
-      "weight": 1,
       "id": 524,
       "area": {
         "id": 7
@@ -207,13 +175,11 @@
     },
     {
       "name": "Passage Way",
-      "environment": -1,
       "exits": {
         "west": 1293,
         "south": 526,
         "north": 524
       },
-      "weight": 1,
       "id": 525,
       "area": {
         "id": 7
@@ -221,11 +187,9 @@
     },
     {
       "name": "Circular room",
-      "environment": -1,
       "exits": {
         "north": 525
       },
-      "weight": 1,
       "id": 526,
       "area": {
         "id": 7
@@ -233,11 +197,9 @@
     },
     {
       "name": "Cave Waterfall",
-      "environment": -1,
       "exits": {
         "northeast": 518
       },
-      "weight": 1,
       "id": 1292,
       "area": {
         "id": 7
@@ -245,11 +207,9 @@
     },
     {
       "name": "Throne Room",
-      "environment": -1,
       "exits": {
         "east": 525
       },
-      "weight": 1,
       "id": 1293,
       "area": {
         "id": 7
@@ -257,11 +217,9 @@
     },
     {
       "name": "Mess Hall",
-      "environment": -1,
       "exits": {
         "south": 523
       },
-      "weight": 1,
       "id": 1294,
       "area": {
         "id": 7
@@ -269,12 +227,10 @@
     },
     {
       "name": "New Tunnel",
-      "environment": -1,
       "exits": {
         "east": 1296,
         "west": 523
       },
-      "weight": 1,
       "id": 1295,
       "area": {
         "id": 7
@@ -282,11 +238,9 @@
     },
     {
       "name": "New Tunnel",
-      "environment": -1,
       "exits": {
         "west": 1295
       },
-      "weight": 1,
       "id": 1296,
       "area": {
         "id": 7
@@ -294,14 +248,12 @@
     },
     {
       "name": "New Tunnel",
-      "environment": -1,
       "exits": {
         "south": 1299,
         "west": 1298,
         "east": 1301,
         "north": 1300
       },
-      "weight": 1,
       "id": 1297,
       "area": {
         "id": 7
@@ -309,11 +261,9 @@
     },
     {
       "name": "You pass through the door and it closes and locks behind you.",
-      "environment": -1,
       "exits": {
         "east": 1297
       },
-      "weight": 1,
       "id": 1298,
       "area": {
         "id": 7
@@ -321,11 +271,9 @@
     },
     {
       "name": "Nursery",
-      "environment": -1,
       "exits": {
         "north": 1297
       },
-      "weight": 1,
       "id": 1299,
       "area": {
         "id": 7
@@ -333,11 +281,9 @@
     },
     {
       "name": "Barracks",
-      "environment": -1,
       "exits": {
         "south": 1297
       },
-      "weight": 1,
       "id": 1300,
       "area": {
         "id": 7
@@ -345,12 +291,10 @@
     },
     {
       "name": "New Tunnel: Checkpoint",
-      "environment": -1,
       "exits": {
         "east": 1302,
         "west": 1297
       },
-      "weight": 1,
       "id": 1301,
       "area": {
         "id": 7
@@ -358,12 +302,10 @@
     },
     {
       "name": "Top of the mine shaft",
-      "environment": -1,
       "exits": {
         "down": 1303,
         "west": 1301
       },
-      "weight": 1,
       "id": 1302,
       "area": {
         "id": 7
@@ -371,12 +313,10 @@
     },
     {
       "name": "You let up on the ropes, and the counterweight slowly glides you down the",
-      "environment": -1,
       "exits": {
         "down": 1304,
         "up": 1302
       },
-      "weight": 1,
       "id": 1303,
       "area": {
         "id": 7
@@ -384,14 +324,12 @@
     },
     {
       "name": "You let up on the ropes, and the counterweight slowly glides you down the",
-      "environment": -1,
       "exits": {
         "southwest": 1305,
         "up": 1303,
         "east": 1320,
         "north": 1311
       },
-      "weight": 1,
       "id": 1304,
       "area": {
         "id": 7
@@ -399,13 +337,11 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "southwest": 1306,
         "northeast": 1304,
         "southeast": 1309
       },
-      "weight": 1,
       "id": 1305,
       "area": {
         "id": 7
@@ -413,13 +349,11 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "northeast": 1305,
         "northwest": 1308,
         "southeast": 1307
       },
-      "weight": 1,
       "id": 1306,
       "area": {
         "id": 7
@@ -427,11 +361,9 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "northwest": 1306
       },
-      "weight": 1,
       "id": 1307,
       "area": {
         "id": 7
@@ -439,11 +371,9 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "southeast": 1306
       },
-      "weight": 1,
       "id": 1308,
       "area": {
         "id": 7
@@ -451,12 +381,10 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "northwest": 1305,
         "northeast": 1310
       },
-      "weight": 1,
       "id": 1309,
       "area": {
         "id": 7
@@ -464,11 +392,9 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "southwest": 1309
       },
-      "weight": 1,
       "id": 1310,
       "area": {
         "id": 7
@@ -476,12 +402,10 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "south": 1304,
         "northeast": 1312
       },
-      "weight": 1,
       "id": 1311,
       "area": {
         "id": 7
@@ -489,12 +413,10 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "southwest": 1311,
         "north": 1313
       },
-      "weight": 1,
       "id": 1312,
       "area": {
         "id": 7
@@ -502,13 +424,11 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "east": 1314,
         "northwest": 1316,
         "south": 1312
       },
-      "weight": 1,
       "id": 1313,
       "area": {
         "id": 7
@@ -516,12 +436,10 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "southeast": 1315,
         "west": 1313
       },
-      "weight": 1,
       "id": 1314,
       "area": {
         "id": 7
@@ -529,11 +447,9 @@
     },
     {
       "name": "Your left arm is now in full health.",
-      "environment": -1,
       "exits": {
         "northwest": 1314
       },
-      "weight": 1,
       "id": 1315,
       "area": {
         "id": 7
@@ -541,13 +457,11 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "northeast": 1319,
         "southeast": 1313,
         "north": 1317
       },
-      "weight": 1,
       "id": 1316,
       "area": {
         "id": 7
@@ -555,12 +469,10 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "northwest": 1318,
         "south": 1316
       },
-      "weight": 1,
       "id": 1317,
       "area": {
         "id": 7
@@ -568,11 +480,9 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "southeast": 1317
       },
-      "weight": 1,
       "id": 1318,
       "area": {
         "id": 7
@@ -580,11 +490,9 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "southwest": 1316
       },
-      "weight": 1,
       "id": 1319,
       "area": {
         "id": 7
@@ -592,12 +500,10 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "west": 1304,
         "northeast": 1321
       },
-      "weight": 1,
       "id": 1320,
       "area": {
         "id": 7
@@ -605,14 +511,12 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "southwest": 1320,
         "west": 1325,
         "southeast": 1322,
         "north": 1324
       },
-      "weight": 1,
       "id": 1321,
       "area": {
         "id": 7
@@ -620,12 +524,10 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "northwest": 1321,
         "east": 1323
       },
-      "weight": 1,
       "id": 1322,
       "area": {
         "id": 7
@@ -633,11 +535,9 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "west": 1322
       },
-      "weight": 1,
       "id": 1323,
       "area": {
         "id": 7
@@ -645,11 +545,9 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "south": 1321
       },
-      "weight": 1,
       "id": 1324,
       "area": {
         "id": 7
@@ -657,11 +555,9 @@
     },
     {
       "name": "Twisting Tunnel",
-      "environment": -1,
       "exits": {
         "east": 1321
       },
-      "weight": 1,
       "id": 1325,
       "area": {
         "id": 7

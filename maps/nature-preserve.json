@@ -5,11 +5,9 @@
   "rooms": [
     {
       "name": "Bridge",
-      "environment": -1,
       "exits": {
         "west": 433
       },
-      "weight": 1,
       "id": 432,
       "area": {
         "id": 5
@@ -17,11 +15,9 @@
     },
     {
       "name": "Waterfall",
-      "environment": -1,
       "exits": {
         "east": 432
       },
-      "weight": 1,
       "id": 433,
       "area": {
         "id": 5
@@ -29,11 +25,9 @@
     },
     {
       "name": "",
-      "environment": -1,
       "exits": {
         "north": 435
       },
-      "weight": 1,
       "id": 434,
       "area": {
         "id": 5
@@ -41,12 +35,10 @@
     },
     {
       "name": "Canopy Trail",
-      "environment": -1,
       "exits": {
         "west": 436,
         "south": 434
       },
-      "weight": 1,
       "id": 435,
       "area": {
         "id": 5
@@ -54,12 +46,10 @@
     },
     {
       "name": "Canopy Trail",
-      "environment": -1,
       "exits": {
         "east": 435,
         "west": 437
       },
-      "weight": 1,
       "id": 436,
       "area": {
         "id": 5
@@ -67,12 +57,10 @@
     },
     {
       "name": "Canopy Trail",
-      "environment": -1,
       "exits": {
         "east": 436,
         "west": 438
       },
-      "weight": 1,
       "id": 437,
       "area": {
         "id": 5
@@ -80,13 +68,11 @@
     },
     {
       "name": "Canopy Trail",
-      "environment": -1,
       "exits": {
         "west": 439,
         "east": 437,
         "south": 440
       },
-      "weight": 1,
       "id": 438,
       "area": {
         "id": 5
@@ -94,12 +80,10 @@
     },
     {
       "name": "Canopy Trail",
-      "environment": -1,
       "exits": {
         "east": 438,
         "west": 445
       },
-      "weight": 1,
       "id": 439,
       "area": {
         "id": 5
@@ -107,12 +91,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "south": 441,
         "north": 438
       },
-      "weight": 1,
       "id": 440,
       "area": {
         "id": 5
@@ -120,12 +102,10 @@
     },
     {
       "name": "Tropical Forest",
-      "environment": -1,
       "exits": {
         "south": 442,
         "north": 440
       },
-      "weight": 1,
       "id": 441,
       "area": {
         "id": 5
@@ -133,13 +113,11 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 443,
         "east": 444,
         "north": 441
       },
-      "weight": 1,
       "id": 442,
       "area": {
         "id": 5
@@ -147,11 +125,9 @@
     },
     {
       "name": "Bird Sanctuary",
-      "environment": -1,
       "exits": {
         "east": 442
       },
-      "weight": 1,
       "id": 443,
       "area": {
         "id": 5
@@ -159,11 +135,9 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 442
       },
-      "weight": 1,
       "id": 444,
       "area": {
         "id": 5
@@ -171,13 +145,11 @@
     },
     {
       "name": "Canopy Trail",
-      "environment": -1,
       "exits": {
         "west": 496,
         "east": 439,
         "north": 446
       },
-      "weight": 1,
       "id": 445,
       "area": {
         "id": 5
@@ -185,12 +157,10 @@
     },
     {
       "name": "Entrance to Queen's Meadow",
-      "environment": -1,
       "exits": {
         "south": 445,
         "north": 447
       },
-      "weight": 1,
       "id": 446,
       "area": {
         "id": 5
@@ -198,12 +168,10 @@
     },
     {
       "name": "Queen's Meadow",
-      "environment": -1,
       "exits": {
         "south": 446,
         "north": 448
       },
-      "weight": 1,
       "id": 447,
       "area": {
         "id": 5
@@ -211,12 +179,10 @@
     },
     {
       "name": "Queen's Meadow",
-      "environment": -1,
       "exits": {
         "south": 447,
         "north": 449
       },
-      "weight": 1,
       "id": 448,
       "area": {
         "id": 5
@@ -224,13 +190,11 @@
     },
     {
       "name": "Queen's Meadow",
-      "environment": -1,
       "exits": {
         "west": 450,
         "south": 448,
         "north": 494
       },
-      "weight": 1,
       "id": 449,
       "area": {
         "id": 5
@@ -238,12 +202,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 449,
         "west": 451
       },
-      "weight": 1,
       "id": 450,
       "area": {
         "id": 5
@@ -251,12 +213,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 450,
         "west": 452
       },
-      "weight": 1,
       "id": 451,
       "area": {
         "id": 5
@@ -264,12 +224,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 451,
         "west": 453
       },
-      "weight": 1,
       "id": 452,
       "area": {
         "id": 5
@@ -277,13 +235,11 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "south": 455,
         "east": 452,
         "north": 454
       },
-      "weight": 1,
       "id": 453,
       "area": {
         "id": 5
@@ -291,11 +247,9 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "south": 453
       },
-      "weight": 1,
       "id": 454,
       "area": {
         "id": 5
@@ -303,12 +257,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "south": 456,
         "north": 453
       },
-      "weight": 1,
       "id": 455,
       "area": {
         "id": 5
@@ -316,12 +268,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 457,
         "north": 455
       },
-      "weight": 1,
       "id": 456,
       "area": {
         "id": 5
@@ -329,12 +279,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 456,
         "west": 458
       },
-      "weight": 1,
       "id": 457,
       "area": {
         "id": 5
@@ -342,12 +290,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 457,
         "north": 459
       },
-      "weight": 1,
       "id": 458,
       "area": {
         "id": 5
@@ -355,12 +301,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "south": 458,
         "north": 460
       },
-      "weight": 1,
       "id": 459,
       "area": {
         "id": 5
@@ -368,13 +312,11 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 495,
         "south": 459,
         "north": 461
       },
-      "weight": 1,
       "id": 460,
       "area": {
         "id": 5
@@ -382,13 +324,11 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 463,
         "east": 462,
         "south": 460
       },
-      "weight": 1,
       "id": 461,
       "area": {
         "id": 5
@@ -396,12 +336,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 461,
         "north": 464
       },
-      "weight": 1,
       "id": 462,
       "area": {
         "id": 5
@@ -409,11 +347,9 @@
     },
     {
       "name": "Sink Hole",
-      "environment": -1,
       "exits": {
         "east": 461
       },
-      "weight": 1,
       "id": 463,
       "area": {
         "id": 5
@@ -421,13 +357,11 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 486,
         "east": 465,
         "south": 462
       },
-      "weight": 1,
       "id": 464,
       "area": {
         "id": 5
@@ -435,12 +369,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 464,
         "north": 466
       },
-      "weight": 1,
       "id": 465,
       "area": {
         "id": 5
@@ -448,12 +380,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 467,
         "south": 465
       },
-      "weight": 1,
       "id": 466,
       "area": {
         "id": 5
@@ -461,12 +391,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 468,
         "west": 466
       },
-      "weight": 1,
       "id": 467,
       "area": {
         "id": 5
@@ -474,12 +402,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 469,
         "west": 467
       },
-      "weight": 1,
       "id": 468,
       "area": {
         "id": 5
@@ -487,12 +413,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 470,
         "west": 468
       },
-      "weight": 1,
       "id": 469,
       "area": {
         "id": 5
@@ -500,13 +424,11 @@
     },
     {
       "name": "Queen's Meadow",
-      "environment": -1,
       "exits": {
         "west": 469,
         "south": 493,
         "north": 471
       },
-      "weight": 1,
       "id": 470,
       "area": {
         "id": 5
@@ -514,12 +436,10 @@
     },
     {
       "name": "Tropical Landscape",
-      "environment": -1,
       "exits": {
         "south": 470,
         "north": 472
       },
-      "weight": 1,
       "id": 471,
       "area": {
         "id": 5
@@ -527,12 +447,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "south": 471,
         "north": 473
       },
-      "weight": 1,
       "id": 472,
       "area": {
         "id": 5
@@ -540,13 +458,11 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 476,
         "east": 474,
         "south": 472
       },
-      "weight": 1,
       "id": 473,
       "area": {
         "id": 5
@@ -554,12 +470,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 475,
         "west": 473
       },
-      "weight": 1,
       "id": 474,
       "area": {
         "id": 5
@@ -567,11 +481,9 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 474
       },
-      "weight": 1,
       "id": 475,
       "area": {
         "id": 5
@@ -579,12 +491,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "northwest": 477,
         "east": 473
       },
-      "weight": 1,
       "id": 476,
       "area": {
         "id": 5
@@ -592,13 +502,11 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "southwest": 478,
         "southeast": 476,
         "north": 490
       },
-      "weight": 1,
       "id": 477,
       "area": {
         "id": 5
@@ -606,12 +514,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 479,
         "northeast": 477
       },
-      "weight": 1,
       "id": 478,
       "area": {
         "id": 5
@@ -619,13 +525,11 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 480,
         "east": 478,
         "south": 487
       },
-      "weight": 1,
       "id": 479,
       "area": {
         "id": 5
@@ -633,12 +537,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 479,
         "west": 481
       },
-      "weight": 1,
       "id": 480,
       "area": {
         "id": 5
@@ -646,12 +548,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 480,
         "south": 482
       },
-      "weight": 1,
       "id": 481,
       "area": {
         "id": 5
@@ -659,13 +559,11 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 483,
         "south": 484,
         "north": 481
       },
-      "weight": 1,
       "id": 482,
       "area": {
         "id": 5
@@ -673,11 +571,9 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 482
       },
-      "weight": 1,
       "id": 483,
       "area": {
         "id": 5
@@ -685,12 +581,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "south": 485,
         "north": 482
       },
-      "weight": 1,
       "id": 484,
       "area": {
         "id": 5
@@ -698,12 +592,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "south": 486,
         "north": 484
       },
-      "weight": 1,
       "id": 485,
       "area": {
         "id": 5
@@ -711,12 +603,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 464,
         "north": 485
       },
-      "weight": 1,
       "id": 486,
       "area": {
         "id": 5
@@ -724,12 +614,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "south": 488,
         "north": 479
       },
-      "weight": 1,
       "id": 487,
       "area": {
         "id": 5
@@ -737,12 +625,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 489,
         "north": 487
       },
-      "weight": 1,
       "id": 488,
       "area": {
         "id": 5
@@ -750,11 +636,9 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 488
       },
-      "weight": 1,
       "id": 489,
       "area": {
         "id": 5
@@ -762,12 +646,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "south": 477,
         "north": 491
       },
-      "weight": 1,
       "id": 490,
       "area": {
         "id": 5
@@ -775,12 +657,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 492,
         "south": 490
       },
-      "weight": 1,
       "id": 491,
       "area": {
         "id": 5
@@ -788,11 +668,9 @@
     },
     {
       "name": "A Hollowed Tree",
-      "environment": -1,
       "exits": {
         "west": 491
       },
-      "weight": 1,
       "id": 492,
       "area": {
         "id": 5
@@ -800,12 +678,10 @@
     },
     {
       "name": "Queen's Meadow",
-      "environment": -1,
       "exits": {
         "south": 494,
         "north": 470
       },
-      "weight": 1,
       "id": 493,
       "area": {
         "id": 5
@@ -813,12 +689,10 @@
     },
     {
       "name": "Queen's Meadow",
-      "environment": -1,
       "exits": {
         "south": 449,
         "north": 493
       },
-      "weight": 1,
       "id": 494,
       "area": {
         "id": 5
@@ -826,11 +700,9 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 460
       },
-      "weight": 1,
       "id": 495,
       "area": {
         "id": 5
@@ -838,12 +710,10 @@
     },
     {
       "name": "Canopy Trail",
-      "environment": -1,
       "exits": {
         "east": 445,
         "west": 497
       },
-      "weight": 1,
       "id": 496,
       "area": {
         "id": 5
@@ -851,13 +721,11 @@
     },
     {
       "name": "Canopy Trail",
-      "environment": -1,
       "exits": {
         "west": 498,
         "east": 496,
         "south": 501
       },
-      "weight": 1,
       "id": 497,
       "area": {
         "id": 5
@@ -865,12 +733,10 @@
     },
     {
       "name": "Canopy Trail",
-      "environment": -1,
       "exits": {
         "east": 497,
         "north": 499
       },
-      "weight": 1,
       "id": 498,
       "area": {
         "id": 5
@@ -878,12 +744,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 500,
         "south": 498
       },
-      "weight": 1,
       "id": 499,
       "area": {
         "id": 5
@@ -891,11 +755,9 @@
     },
     {
       "name": "Dragon's Den",
-      "environment": -1,
       "exits": {
         "west": 499
       },
-      "weight": 1,
       "id": 500,
       "area": {
         "id": 5
@@ -903,12 +765,10 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "south": 502,
         "north": 497
       },
-      "weight": 1,
       "id": 501,
       "area": {
         "id": 5
@@ -916,13 +776,11 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 504,
         "east": 503,
         "north": 501
       },
-      "weight": 1,
       "id": 502,
       "area": {
         "id": 5
@@ -930,11 +788,9 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "west": 502
       },
-      "weight": 1,
       "id": 503,
       "area": {
         "id": 5
@@ -942,11 +798,9 @@
     },
     {
       "name": "Nature Preserve",
-      "environment": -1,
       "exits": {
         "east": 502
       },
-      "weight": 1,
       "id": 504,
       "area": {
         "id": 5

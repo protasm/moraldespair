@@ -5,13 +5,11 @@
   "rooms": [
     {
       "name": "Entrance of a village",
-      "environment": -1,
       "exits": {
         "west": 859,
         "east": 877,
         "south": 131
       },
-      "weight": 1,
       "id": 858,
       "area": {
         "id": 11
@@ -19,13 +17,11 @@
     },
     {
       "name": "On a dusty path",
-      "environment": -1,
       "exits": {
         "east": 858,
         "northwest": 860,
         "north": 864
       },
-      "weight": 1,
       "id": 859,
       "area": {
         "id": 11
@@ -33,13 +29,11 @@
     },
     {
       "name": "A living room made of glass",
-      "environment": -1,
       "exits": {
         "southwest": 863,
         "northwest": 861,
         "southeast": 859
       },
-      "weight": 1,
       "id": 860,
       "area": {
         "id": 11
@@ -47,12 +41,10 @@
     },
     {
       "name": "A kitchen made of glass",
-      "environment": -1,
       "exits": {
         "southwest": 862,
         "southeast": 860
       },
-      "weight": 1,
       "id": 861,
       "area": {
         "id": 11
@@ -60,12 +52,10 @@
     },
     {
       "name": "Sylvia's workroom",
-      "environment": -1,
       "exits": {
         "southeast": 863,
         "northeast": 861
       },
-      "weight": 1,
       "id": 862,
       "area": {
         "id": 11
@@ -73,12 +63,10 @@
     },
     {
       "name": "A bedroom made of glass",
-      "environment": -1,
       "exits": {
         "northwest": 862,
         "northeast": 860
       },
-      "weight": 1,
       "id": 863,
       "area": {
         "id": 11
@@ -86,12 +74,10 @@
     },
     {
       "name": "On a dusty path",
-      "environment": -1,
       "exits": {
         "south": 859,
         "north": 865
       },
-      "weight": 1,
       "id": 864,
       "area": {
         "id": 11
@@ -99,13 +85,11 @@
     },
     {
       "name": "On a dusty path",
-      "environment": -1,
       "exits": {
         "east": 868,
         "northwest": 866,
         "south": 864
       },
-      "weight": 1,
       "id": 865,
       "area": {
         "id": 11
@@ -113,12 +97,10 @@
     },
     {
       "name": "Inside a small home",
-      "environment": -1,
       "exits": {
         "southeast": 865,
         "west": 867
       },
-      "weight": 1,
       "id": 866,
       "area": {
         "id": 11
@@ -126,11 +108,9 @@
     },
     {
       "name": "A large kitchen",
-      "environment": -1,
       "exits": {
         "east": 866
       },
-      "weight": 1,
       "id": 867,
       "area": {
         "id": 11
@@ -138,13 +118,11 @@
     },
     {
       "name": "On a dusty path",
-      "environment": -1,
       "exits": {
         "west": 865,
         "east": 875,
         "north": 869
       },
-      "weight": 1,
       "id": 868,
       "area": {
         "id": 11
@@ -152,12 +130,10 @@
     },
     {
       "name": "Bottom floor of the silo",
-      "environment": -1,
       "exits": {
         "up": 870,
         "south": 868
       },
-      "weight": 1,
       "id": 869,
       "area": {
         "id": 11
@@ -165,12 +141,10 @@
     },
     {
       "name": "On a dusty path",
-      "environment": -1,
       "exits": {
         "west": 868,
         "south": 876
       },
-      "weight": 1,
       "id": 875,
       "area": {
         "id": 11
@@ -178,13 +152,11 @@
     },
     {
       "name": "On a dusty path",
-      "environment": -1,
       "exits": {
         "south": 877,
         "east": 953,
         "north": 875
       },
-      "weight": 1,
       "id": 876,
       "area": {
         "id": 11
@@ -192,12 +164,10 @@
     },
     {
       "name": "On a dusty path",
-      "environment": -1,
       "exits": {
         "west": 858,
         "north": 876
       },
-      "weight": 1,
       "id": 877,
       "area": {
         "id": 11
@@ -205,12 +175,10 @@
     },
     {
       "name": "On the porch",
-      "environment": -1,
       "exits": {
         "east": 954,
         "west": 876
       },
-      "weight": 1,
       "id": 953,
       "area": {
         "id": 11
@@ -218,13 +186,11 @@
     },
     {
       "name": "In the sitting room",
-      "environment": -1,
       "exits": {
         "west": 953,
         "east": 955,
         "south": 958
       },
-      "weight": 1,
       "id": 954,
       "area": {
         "id": 11
@@ -232,12 +198,10 @@
     },
     {
       "name": "In the kitchen",
-      "environment": -1,
       "exits": {
         "west": 954,
         "south": 956
       },
-      "weight": 1,
       "id": 955,
       "area": {
         "id": 11
@@ -245,13 +209,11 @@
     },
     {
       "name": "In the dining room",
-      "environment": -1,
       "exits": {
         "west": 958,
         "east": 957,
         "north": 955
       },
-      "weight": 1,
       "id": 956,
       "area": {
         "id": 11
@@ -259,12 +221,10 @@
     },
     {
       "name": "You leave the farmhouse and enter the backyard.",
-      "environment": -1,
       "exits": {
         "east": 959,
         "west": 956
       },
-      "weight": 1,
       "id": 957,
       "area": {
         "id": 11
@@ -272,12 +232,10 @@
     },
     {
       "name": "In the study",
-      "environment": -1,
       "exits": {
         "east": 956,
         "north": 954
       },
-      "weight": 1,
       "id": 958,
       "area": {
         "id": 11
@@ -285,12 +243,10 @@
     },
     {
       "name": "In a shed",
-      "environment": -1,
       "exits": {
         "up": 960,
         "west": 957
       },
-      "weight": 1,
       "id": 959,
       "area": {
         "id": 11
@@ -298,11 +254,9 @@
     },
     {
       "name": "Above the shed",
-      "environment": -1,
       "exits": {
         "down": 959
       },
-      "weight": 1,
       "id": 960,
       "area": {
         "id": 11

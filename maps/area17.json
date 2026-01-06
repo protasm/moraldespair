@@ -5,12 +5,10 @@
   "rooms": [
     {
       "name": "Guard Post",
-      "environment": -1,
       "exits": {
         "east": 1049,
         "north": 1040
       },
-      "weight": 1,
       "id": 1039,
       "area": {
         "id": 17
@@ -18,12 +16,10 @@
     },
     {
       "name": "A bend in the hallway",
-      "environment": -1,
       "exits": {
         "east": 1041,
         "south": 1039
       },
-      "weight": 1,
       "id": 1040,
       "area": {
         "id": 17
@@ -31,12 +27,10 @@
     },
     {
       "name": "Cobwebs brush against the left side of your face as you walk through them.",
-      "environment": -1,
       "exits": {
         "east": 1042,
         "west": 1040
       },
-      "weight": 1,
       "id": 1041,
       "area": {
         "id": 17
@@ -44,12 +38,10 @@
     },
     {
       "name": "The Great Hall",
-      "environment": -1,
       "exits": {
         "east": 1043,
         "west": 1041
       },
-      "weight": 1,
       "id": 1042,
       "area": {
         "id": 17
@@ -57,12 +49,10 @@
     },
     {
       "name": "A bend in the hallway",
-      "environment": -1,
       "exits": {
         "west": 1042,
         "south": 1044
       },
-      "weight": 1,
       "id": 1043,
       "area": {
         "id": 17
@@ -70,13 +60,11 @@
     },
     {
       "name": "Barrack",
-      "environment": -1,
       "exits": {
         "west": 1045,
         "south": 1046,
         "north": 1043
       },
-      "weight": 1,
       "id": 1044,
       "area": {
         "id": 17
@@ -84,12 +72,10 @@
     },
     {
       "name": "First floor landing",
-      "environment": -1,
       "exits": {
         "east": 1044,
         "up": 1050
       },
-      "weight": 1,
       "id": 1045,
       "area": {
         "id": 17
@@ -97,12 +83,10 @@
     },
     {
       "name": "Barrack",
-      "environment": -1,
       "exits": {
         "south": 1047,
         "north": 1044
       },
-      "weight": 1,
       "id": 1046,
       "area": {
         "id": 17
@@ -110,12 +94,10 @@
     },
     {
       "name": "Staging Room",
-      "environment": -1,
       "exits": {
         "west": 1048,
         "north": 1046
       },
-      "weight": 1,
       "id": 1047,
       "area": {
         "id": 17
@@ -123,11 +105,9 @@
     },
     {
       "name": "Sally Port",
-      "environment": -1,
       "exits": {
         "east": 1047
       },
-      "weight": 1,
       "id": 1048,
       "area": {
         "id": 17
@@ -135,11 +115,9 @@
     },
     {
       "name": "An office",
-      "environment": -1,
       "exits": {
         "west": 1039
       },
-      "weight": 1,
       "id": 1049,
       "area": {
         "id": 17
@@ -147,13 +125,11 @@
     },
     {
       "name": "Second floor landing",
-      "environment": -1,
       "exits": {
         "up": 1051,
         "down": 1045,
         "north": 1069
       },
-      "weight": 1,
       "id": 1050,
       "area": {
         "id": 17
@@ -161,14 +137,12 @@
     },
     {
       "name": "Third floor landing",
-      "environment": -1,
       "exits": {
         "down": 1050,
         "up": 1052,
         "east": 1065,
         "north": 1064
       },
-      "weight": 1,
       "id": 1051,
       "area": {
         "id": 17
@@ -176,7 +150,6 @@
     },
     {
       "name": "Stairwell",
-      "environment": -1,
       "exits": {
         "west": 1060,
         "down": 1051,
@@ -184,7 +157,6 @@
         "east": 1059,
         "north": 1057
       },
-      "weight": 1,
       "id": 1052,
       "area": {
         "id": 17
@@ -192,13 +164,11 @@
     },
     {
       "name": "Northeast Tower Roof",
-      "environment": -1,
       "exits": {
         "south": 1054,
         "east": 1056,
         "north": 1052
       },
-      "weight": 1,
       "id": 1053,
       "area": {
         "id": 17
@@ -206,12 +176,10 @@
     },
     {
       "name": "Northeast Tower Roof",
-      "environment": -1,
       "exits": {
         "east": 1055,
         "north": 1053
       },
-      "weight": 1,
       "id": 1054,
       "area": {
         "id": 17
@@ -219,12 +187,10 @@
     },
     {
       "name": "Southeast corner of roof",
-      "environment": -1,
       "exits": {
         "west": 1054,
         "north": 1056
       },
-      "weight": 1,
       "id": 1055,
       "area": {
         "id": 17
@@ -232,13 +198,11 @@
     },
     {
       "name": "Northeast Tower Roof",
-      "environment": -1,
       "exits": {
         "west": 1053,
         "south": 1055,
         "north": 1059
       },
-      "weight": 1,
       "id": 1056,
       "area": {
         "id": 17
@@ -246,12 +210,10 @@
     },
     {
       "name": "Northeast Tower Roof",
-      "environment": -1,
       "exits": {
         "east": 1058,
         "south": 1052
       },
-      "weight": 1,
       "id": 1057,
       "area": {
         "id": 17
@@ -259,12 +221,10 @@
     },
     {
       "name": "Northeast corner of roof",
-      "environment": -1,
       "exits": {
         "west": 1057,
         "south": 1059
       },
-      "weight": 1,
       "id": 1058,
       "area": {
         "id": 17
@@ -272,13 +232,11 @@
     },
     {
       "name": "Northeast Tower Roof",
-      "environment": -1,
       "exits": {
         "west": 1052,
         "south": 1056,
         "north": 1058
       },
-      "weight": 1,
       "id": 1059,
       "area": {
         "id": 17
@@ -286,13 +244,11 @@
     },
     {
       "name": "Northeast Tower Roof",
-      "environment": -1,
       "exits": {
         "west": 1063,
         "east": 1052,
         "north": 1061
       },
-      "weight": 1,
       "id": 1060,
       "area": {
         "id": 17
@@ -300,12 +256,10 @@
     },
     {
       "name": "Northeast Tower Roof",
-      "environment": -1,
       "exits": {
         "west": 1062,
         "south": 1060
       },
-      "weight": 1,
       "id": 1061,
       "area": {
         "id": 17
@@ -313,12 +267,10 @@
     },
     {
       "name": "Northwest corner of roof",
-      "environment": -1,
       "exits": {
         "east": 1061,
         "south": 1063
       },
-      "weight": 1,
       "id": 1062,
       "area": {
         "id": 17
@@ -326,12 +278,10 @@
     },
     {
       "name": "Northeast Tower Roof",
-      "environment": -1,
       "exits": {
         "east": 1060,
         "north": 1062
       },
-      "weight": 1,
       "id": 1063,
       "area": {
         "id": 17
@@ -339,11 +289,9 @@
     },
     {
       "name": "Guard Post",
-      "environment": -1,
       "exits": {
         "south": 1051
       },
-      "weight": 1,
       "id": 1064,
       "area": {
         "id": 17
@@ -351,12 +299,10 @@
     },
     {
       "name": "Hallway",
-      "environment": -1,
       "exits": {
         "west": 1051,
         "south": 1066
       },
-      "weight": 1,
       "id": 1065,
       "area": {
         "id": 17
@@ -364,12 +310,10 @@
     },
     {
       "name": "Hall",
-      "environment": -1,
       "exits": {
         "south": 1067,
         "north": 1065
       },
-      "weight": 1,
       "id": 1066,
       "area": {
         "id": 17
@@ -377,12 +321,10 @@
     },
     {
       "name": "War Room",
-      "environment": -1,
       "exits": {
         "west": 1068,
         "north": 1066
       },
-      "weight": 1,
       "id": 1067,
       "area": {
         "id": 17
@@ -390,11 +332,9 @@
     },
     {
       "name": "Portal Chamber",
-      "environment": -1,
       "exits": {
         "east": 1067
       },
-      "weight": 1,
       "id": 1068,
       "area": {
         "id": 17
@@ -402,13 +342,11 @@
     },
     {
       "name": "Guard Post",
-      "environment": -1,
       "exits": {
         "west": 1070,
         "east": 1072,
         "south": 1050
       },
-      "weight": 1,
       "id": 1069,
       "area": {
         "id": 17
@@ -416,13 +354,11 @@
     },
     {
       "name": "Prison Wing",
-      "environment": -1,
       "exits": {
         "west": 1071,
         "east": 1069,
         "south": 1077
       },
-      "weight": 1,
       "id": 1070,
       "area": {
         "id": 17
@@ -430,11 +366,9 @@
     },
     {
       "name": "Prison cell",
-      "environment": -1,
       "exits": {
         "east": 1070
       },
-      "weight": 1,
       "id": 1071,
       "area": {
         "id": 17
@@ -442,12 +376,10 @@
     },
     {
       "name": "Hallway",
-      "environment": -1,
       "exits": {
         "west": 1069,
         "south": 1073
       },
-      "weight": 1,
       "id": 1072,
       "area": {
         "id": 17
@@ -455,12 +387,10 @@
     },
     {
       "name": "An alarm sounds as you pass the threshold of the magic barrier.",
-      "environment": -1,
       "exits": {
         "south": 1074,
         "north": 1072
       },
-      "weight": 1,
       "id": 1073,
       "area": {
         "id": 17
@@ -468,13 +398,11 @@
     },
     {
       "name": "Witch's Workroom",
-      "environment": -1,
       "exits": {
         "west": 1075,
         "south": 1076,
         "north": 1073
       },
-      "weight": 1,
       "id": 1074,
       "area": {
         "id": 17
@@ -482,11 +410,9 @@
     },
     {
       "name": "Library",
-      "environment": -1,
       "exits": {
         "east": 1074
       },
-      "weight": 1,
       "id": 1075,
       "area": {
         "id": 17
@@ -494,11 +420,9 @@
     },
     {
       "name": "Morgue",
-      "environment": -1,
       "exits": {
         "north": 1074
       },
-      "weight": 1,
       "id": 1076,
       "area": {
         "id": 17
@@ -506,11 +430,9 @@
     },
     {
       "name": "Prison cell",
-      "environment": -1,
       "exits": {
         "north": 1070
       },
-      "weight": 1,
       "id": 1077,
       "area": {
         "id": 17

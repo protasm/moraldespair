@@ -5,29 +5,23 @@
   "rooms": [
     {
       "name": "Southwest Tower",
-      "environment": -1,
       "id": 1036,
-      "weight": 1,
       "area": {
         "id": 16
       }
     },
     {
       "name": "Empty Closet",
-      "environment": -1,
       "id": 1037,
-      "weight": 1,
       "area": {
         "id": 16
       }
     },
     {
       "name": "Thief Hideout Entrance",
-      "environment": -1,
       "exits": {
         "up": 1037
       },
-      "weight": 1,
       "id": 1038,
       "area": {
         "id": 16
