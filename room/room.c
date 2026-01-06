@@ -59,12 +59,15 @@ string exitsDescription(int brief) {
         i = 1;
         desc = "(Exits:";
         while (i < sizeof(dest_dir)) {
-            desc +=
-                " " + (["north":"n",
-                              "south":"s", "east":"e", "west":"w", "up":"u",
+            string short_dir;
+
+            short_dir = (["north":"n",
+                               "south":"s", "east":"e", "west":"w", "up":"u",
                                "down":"d", "northeast":"ne", "northwest":"nw",
-                          "southeast":"se", "southwest":"sw", ])[dest_dir[i]] ||
-                dest_dir[i];
+                               "southeast":"se", "southwest":"sw", ])[dest_dir[i]];
+            if (!short_dir)
+                short_dir = dest_dir[i];
+            desc += " " + short_dir;
             i += 2;
         }
         return desc + ")";
