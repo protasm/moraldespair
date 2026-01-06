@@ -11,40 +11,28 @@
         "east": 241,
         "north": 418
       },
-      "id": 416,
-      "area": {
-        "id": 23
-      }
+      "id": 416
     },
     {
       "name": "City Unemployment Office",
       "exits": {
         "east": 416
       },
-      "id": 417,
-      "area": {
-        "id": 23
-      }
+      "id": 417
     },
     {
       "name": "City Unemployment Office",
       "exits": {
         "south": 416
       },
-      "id": 418,
-      "area": {
-        "id": 23
-      }
+      "id": 418
     },
     {
       "name": "City Unemployment Office",
       "exits": {
         "north": 416
       },
-      "id": 1203,
-      "area": {
-        "id": 23
-      }
+      "id": 1203
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

@@ -9,10 +9,7 @@
         "south": 201,
         "north": 932
       },
-      "id": 931,
-      "area": {
-        "id": 10
-      }
+      "id": 931
     },
     {
       "name": "Hallway",
@@ -22,10 +19,7 @@
         "east": 934,
         "north": 937
       },
-      "id": 932,
-      "area": {
-        "id": 10
-      }
+      "id": 932
     },
     {
       "name": "Corner",
@@ -33,10 +27,7 @@
         "east": 932,
         "north": 939
       },
-      "id": 933,
-      "area": {
-        "id": 10
-      }
+      "id": 933
     },
     {
       "name": "Corner",
@@ -44,10 +35,7 @@
         "west": 932,
         "north": 935
       },
-      "id": 934,
-      "area": {
-        "id": 10
-      }
+      "id": 934
     },
     {
       "name": "Hallway",
@@ -56,10 +44,7 @@
         "east": 945,
         "north": 936
       },
-      "id": 935,
-      "area": {
-        "id": 10
-      }
+      "id": 935
     },
     {
       "name": "Hallway",
@@ -68,10 +53,7 @@
         "east": 946,
         "north": 947
       },
-      "id": 936,
-      "area": {
-        "id": 10
-      }
+      "id": 936
     },
     {
       "name": "Courtyard",
@@ -79,10 +61,7 @@
         "south": 932,
         "north": 938
       },
-      "id": 937,
-      "area": {
-        "id": 10
-      }
+      "id": 937
     },
     {
       "name": "Courtyard",
@@ -90,10 +69,7 @@
         "south": 937,
         "north": 941
       },
-      "id": 938,
-      "area": {
-        "id": 10
-      }
+      "id": 938
     },
     {
       "name": "Hallway",
@@ -102,10 +78,7 @@
         "south": 933,
         "north": 940
       },
-      "id": 939,
-      "area": {
-        "id": 10
-      }
+      "id": 939
     },
     {
       "name": "Hallway",
@@ -114,10 +87,7 @@
         "south": 939,
         "north": 944
       },
-      "id": 940,
-      "area": {
-        "id": 10
-      }
+      "id": 940
     },
     {
       "name": "Archway",
@@ -127,30 +97,21 @@
         "east": 947,
         "north": 948
       },
-      "id": 941,
-      "area": {
-        "id": 10
-      }
+      "id": 941
     },
     {
       "name": "Quarters",
       "exits": {
         "east": 939
       },
-      "id": 942,
-      "area": {
-        "id": 10
-      }
+      "id": 942
     },
     {
       "name": "Quarters",
       "exits": {
         "east": 940
       },
-      "id": 943,
-      "area": {
-        "id": 10
-      }
+      "id": 943
     },
     {
       "name": "Corner",
@@ -158,30 +119,21 @@
         "east": 941,
         "south": 940
       },
-      "id": 944,
-      "area": {
-        "id": 10
-      }
+      "id": 944
     },
     {
       "name": "Quarters",
       "exits": {
         "west": 935
       },
-      "id": 945,
-      "area": {
-        "id": 10
-      }
+      "id": 945
     },
     {
       "name": "Quarters",
       "exits": {
         "west": 936
       },
-      "id": 946,
-      "area": {
-        "id": 10
-      }
+      "id": 946
     },
     {
       "name": "Corner",
@@ -189,10 +141,7 @@
         "west": 941,
         "south": 936
       },
-      "id": 947,
-      "area": {
-        "id": 10
-      }
+      "id": 947
     },
     {
       "name": "Temple Chamber",
@@ -202,10 +151,7 @@
         "east": 952,
         "north": 949
       },
-      "id": 948,
-      "area": {
-        "id": 10
-      }
+      "id": 948
     },
     {
       "name": "Hallway",
@@ -213,40 +159,28 @@
         "south": 948,
         "north": 950
       },
-      "id": 949,
-      "area": {
-        "id": 10
-      }
+      "id": 949
     },
     {
       "name": "Library",
       "exits": {
         "south": 949
       },
-      "id": 950,
-      "area": {
-        "id": 10
-      }
+      "id": 950
     },
     {
       "name": "Kitchen",
       "exits": {
         "east": 948
       },
-      "id": 951,
-      "area": {
-        "id": 10
-      }
+      "id": 951
     },
     {
       "name": "Storage",
       "exits": {
         "west": 948
       },
-      "id": 952,
-      "area": {
-        "id": 10
-      }
+      "id": 952
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

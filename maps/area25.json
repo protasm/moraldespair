@@ -8,10 +8,7 @@
       "exits": {
         "north": 1263
       },
-      "id": 1223,
-      "area": {
-        "id": 25
-      }
+      "id": 1223
     },
     {
       "name": "Hallway",
@@ -21,10 +18,7 @@
         "east": 1278,
         "north": 1264
       },
-      "id": 1263,
-      "area": {
-        "id": 25
-      }
+      "id": 1263
     },
     {
       "name": "Hallway",
@@ -32,10 +26,7 @@
         "south": 1263,
         "north": 1265
       },
-      "id": 1264,
-      "area": {
-        "id": 25
-      }
+      "id": 1264
     },
     {
       "name": "Hallway",
@@ -44,10 +35,7 @@
         "east": 1275,
         "north": 1266
       },
-      "id": 1265,
-      "area": {
-        "id": 25
-      }
+      "id": 1265
     },
     {
       "name": "Hallway",
@@ -57,10 +45,7 @@
         "east": 1273,
         "north": 1267
       },
-      "id": 1266,
-      "area": {
-        "id": 25
-      }
+      "id": 1266
     },
     {
       "name": "End of Hallway",
@@ -69,20 +54,14 @@
         "east": 1269,
         "south": 1266
       },
-      "id": 1267,
-      "area": {
-        "id": 25
-      }
+      "id": 1267
     },
     {
       "name": "Munchkin Romper Room",
       "exits": {
         "east": 1267
       },
-      "id": 1268,
-      "area": {
-        "id": 25
-      }
+      "id": 1268
     },
     {
       "name": "Mages' Barracks",
@@ -90,20 +69,14 @@
         "east": 1270,
         "west": 1267
       },
-      "id": 1269,
-      "area": {
-        "id": 25
-      }
+      "id": 1269
     },
     {
       "name": "Munchkin Library",
       "exits": {
         "west": 1269
       },
-      "id": 1270,
-      "area": {
-        "id": 25
-      }
+      "id": 1270
     },
     {
       "name": "Munchkin Mess Hall",
@@ -111,20 +84,14 @@
         "east": 1266,
         "west": 1272
       },
-      "id": 1271,
-      "area": {
-        "id": 25
-      }
+      "id": 1271
     },
     {
       "name": "Kitchen",
       "exits": {
         "east": 1271
       },
-      "id": 1272,
-      "area": {
-        "id": 25
-      }
+      "id": 1272
     },
     {
       "name": "Fighters' Barracks",
@@ -132,10 +99,7 @@
         "east": 1274,
         "west": 1266
       },
-      "id": 1273,
-      "area": {
-        "id": 25
-      }
+      "id": 1273
     },
     {
       "name": "Fighters' Barracks",
@@ -143,20 +107,14 @@
         "west": 1273,
         "south": 1288
       },
-      "id": 1274,
-      "area": {
-        "id": 25
-      }
+      "id": 1274
     },
     {
       "name": "Munchkin Smithy",
       "exits": {
         "west": 1265
       },
-      "id": 1275,
-      "area": {
-        "id": 25
-      }
+      "id": 1275
     },
     {
       "name": "Hallway",
@@ -164,10 +122,7 @@
         "east": 1263,
         "west": 1277
       },
-      "id": 1276,
-      "area": {
-        "id": 25
-      }
+      "id": 1276
     },
     {
       "name": "Hallway",
@@ -176,10 +131,7 @@
         "east": 1276,
         "south": 1280
       },
-      "id": 1277,
-      "area": {
-        "id": 25
-      }
+      "id": 1277
     },
     {
       "name": "Narrow Hallway",
@@ -188,10 +140,7 @@
         "east": 1279,
         "north": 1286
       },
-      "id": 1278,
-      "area": {
-        "id": 25
-      }
+      "id": 1278
     },
     {
       "name": "End of Narrow Hallway",
@@ -199,10 +148,7 @@
         "west": 1278,
         "north": 1287
       },
-      "id": 1279,
-      "area": {
-        "id": 25
-      }
+      "id": 1279
     },
     {
       "name": "A Dark Tunnel",
@@ -210,10 +156,7 @@
         "south": 1284,
         "north": 1277
       },
-      "id": 1280,
-      "area": {
-        "id": 25
-      }
+      "id": 1280
     },
     {
       "name": "End of Hallway",
@@ -222,30 +165,21 @@
         "east": 1277,
         "north": 1283
       },
-      "id": 1281,
-      "area": {
-        "id": 25
-      }
+      "id": 1281
     },
     {
       "name": "Munchkin Leader's Quarters",
       "exits": {
         "north": 1281
       },
-      "id": 1282,
-      "area": {
-        "id": 25
-      }
+      "id": 1282
     },
     {
       "name": "Munchkin Leader's Harem",
       "exits": {
         "south": 1281
       },
-      "id": 1283,
-      "area": {
-        "id": 25
-      }
+      "id": 1283
     },
     {
       "name": "A Dark Tunnel",
@@ -253,50 +187,35 @@
         "northeast": 1285,
         "north": 1280
       },
-      "id": 1284,
-      "area": {
-        "id": 25
-      }
+      "id": 1284
     },
     {
       "name": "A Dark Tunnel",
       "exits": {
         "southwest": 1284
       },
-      "id": 1285,
-      "area": {
-        "id": 25
-      }
+      "id": 1285
     },
     {
       "name": "Dank Cell",
       "exits": {
         "south": 1278
       },
-      "id": 1286,
-      "area": {
-        "id": 25
-      }
+      "id": 1286
     },
     {
       "name": "Dank Cell",
       "exits": {
         "south": 1279
       },
-      "id": 1287,
-      "area": {
-        "id": 25
-      }
+      "id": 1287
     },
     {
       "name": "The Lollipop Guild",
       "exits": {
         "north": 1274
       },
-      "id": 1288,
-      "area": {
-        "id": 25
-      }
+      "id": 1288
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

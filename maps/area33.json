@@ -10,10 +10,7 @@
         "northeast": 1726,
         "southeast": 1724
       },
-      "id": 990,
-      "area": {
-        "id": 33
-      }
+      "id": 990
     },
     {
       "name": "Gate to the Village Green",
@@ -21,10 +18,7 @@
         "east": 1693,
         "south": 1688
       },
-      "id": 1687,
-      "area": {
-        "id": 33
-      }
+      "id": 1687
     },
     {
       "name": "Northwest Green",
@@ -33,10 +27,7 @@
         "east": 1694,
         "north": 1687
       },
-      "id": 1688,
-      "area": {
-        "id": 33
-      }
+      "id": 1688
     },
     {
       "name": "Northwest Green",
@@ -45,10 +36,7 @@
         "east": 1690,
         "north": 1688
       },
-      "id": 1689,
-      "area": {
-        "id": 33
-      }
+      "id": 1689
     },
     {
       "name": "Northwest Green",
@@ -58,10 +46,7 @@
         "east": 1691,
         "north": 1694
       },
-      "id": 1690,
-      "area": {
-        "id": 33
-      }
+      "id": 1690
     },
     {
       "name": "Northwest Green",
@@ -71,10 +56,7 @@
         "east": 1692,
         "north": 1704
       },
-      "id": 1691,
-      "area": {
-        "id": 33
-      }
+      "id": 1691
     },
     {
       "name": "Northeast Green",
@@ -84,10 +66,7 @@
         "east": 1706,
         "north": 1703
       },
-      "id": 1692,
-      "area": {
-        "id": 33
-      }
+      "id": 1692
     },
     {
       "name": "Northwestern Green",
@@ -96,10 +75,7 @@
         "east": 1695,
         "south": 1694
       },
-      "id": 1693,
-      "area": {
-        "id": 33
-      }
+      "id": 1693
     },
     {
       "name": "Northwest Green",
@@ -109,10 +85,7 @@
         "east": 1704,
         "north": 1693
       },
-      "id": 1694,
-      "area": {
-        "id": 33
-      }
+      "id": 1694
     },
     {
       "name": "Northwestern Green",
@@ -121,10 +94,7 @@
         "east": 1696,
         "south": 1704
       },
-      "id": 1695,
-      "area": {
-        "id": 33
-      }
+      "id": 1695
     },
     {
       "name": "Northeastern Green",
@@ -133,10 +103,7 @@
         "east": 1697,
         "south": 1703
       },
-      "id": 1696,
-      "area": {
-        "id": 33
-      }
+      "id": 1696
     },
     {
       "name": "Northeast Green",
@@ -145,10 +112,7 @@
         "east": 1698,
         "south": 1705
       },
-      "id": 1697,
-      "area": {
-        "id": 33
-      }
+      "id": 1697
     },
     {
       "name": "Northeast Green",
@@ -156,10 +120,7 @@
         "west": 1697,
         "south": 1710
       },
-      "id": 1698,
-      "area": {
-        "id": 33
-      }
+      "id": 1698
     },
     {
       "name": "Southwest Green",
@@ -168,10 +129,7 @@
         "east": 1700,
         "north": 1689
       },
-      "id": 1699,
-      "area": {
-        "id": 33
-      }
+      "id": 1699
     },
     {
       "name": "Southwest Green",
@@ -181,10 +139,7 @@
         "east": 1701,
         "north": 1690
       },
-      "id": 1700,
-      "area": {
-        "id": 33
-      }
+      "id": 1700
     },
     {
       "name": "Southwest Green",
@@ -194,10 +149,7 @@
         "east": 1702,
         "north": 1691
       },
-      "id": 1701,
-      "area": {
-        "id": 33
-      }
+      "id": 1701
     },
     {
       "name": "Southeast Green",
@@ -207,10 +159,7 @@
         "east": 1707,
         "north": 1692
       },
-      "id": 1702,
-      "area": {
-        "id": 33
-      }
+      "id": 1702
     },
     {
       "name": "Northeast Green",
@@ -220,10 +169,7 @@
         "east": 1705,
         "north": 1696
       },
-      "id": 1703,
-      "area": {
-        "id": 33
-      }
+      "id": 1703
     },
     {
       "name": "Northwest Green",
@@ -233,10 +179,7 @@
         "east": 1703,
         "north": 1695
       },
-      "id": 1704,
-      "area": {
-        "id": 33
-      }
+      "id": 1704
     },
     {
       "name": "Northeast Green",
@@ -246,10 +189,7 @@
         "east": 1710,
         "north": 1697
       },
-      "id": 1705,
-      "area": {
-        "id": 33
-      }
+      "id": 1705
     },
     {
       "name": "Northeast Green",
@@ -259,10 +199,7 @@
         "east": 1709,
         "north": 1705
       },
-      "id": 1706,
-      "area": {
-        "id": 33
-      }
+      "id": 1706
     },
     {
       "name": "Ruins in the Southeast Green",
@@ -272,10 +209,7 @@
         "east": 1708,
         "north": 1706
       },
-      "id": 1707,
-      "area": {
-        "id": 33
-      }
+      "id": 1707
     },
     {
       "name": "Ruins in the Southeast Green",
@@ -284,10 +218,7 @@
         "south": 1716,
         "north": 1709
       },
-      "id": 1708,
-      "area": {
-        "id": 33
-      }
+      "id": 1708
     },
     {
       "name": "Northeastern Green",
@@ -296,10 +227,7 @@
         "south": 1708,
         "north": 1710
       },
-      "id": 1709,
-      "area": {
-        "id": 33
-      }
+      "id": 1709
     },
     {
       "name": "Northeast Green",
@@ -309,10 +237,7 @@
         "east": 1722,
         "north": 1698
       },
-      "id": 1710,
-      "area": {
-        "id": 33
-      }
+      "id": 1710
     },
     {
       "name": "Southwest Green",
@@ -322,10 +247,7 @@
         "east": 1714,
         "north": 1701
       },
-      "id": 1711,
-      "area": {
-        "id": 33
-      }
+      "id": 1711
     },
     {
       "name": "Southwest Green",
@@ -335,10 +257,7 @@
         "east": 1711,
         "north": 1700
       },
-      "id": 1712,
-      "area": {
-        "id": 33
-      }
+      "id": 1712
     },
     {
       "name": "Southwest Green",
@@ -347,10 +266,7 @@
         "east": 1712,
         "north": 1699
       },
-      "id": 1713,
-      "area": {
-        "id": 33
-      }
+      "id": 1713
     },
     {
       "name": "Southeast Green",
@@ -359,10 +275,7 @@
         "east": 1715,
         "north": 1702
       },
-      "id": 1714,
-      "area": {
-        "id": 33
-      }
+      "id": 1714
     },
     {
       "name": "Southeast Green",
@@ -371,10 +284,7 @@
         "east": 1716,
         "north": 1707
       },
-      "id": 1715,
-      "area": {
-        "id": 33
-      }
+      "id": 1715
     },
     {
       "name": "Southeast Green",
@@ -382,10 +292,7 @@
         "west": 1715,
         "north": 1708
       },
-      "id": 1716,
-      "area": {
-        "id": 33
-      }
+      "id": 1716
     },
     {
       "name": "Southwest Green",
@@ -393,10 +300,7 @@
         "west": 1718,
         "north": 1711
       },
-      "id": 1717,
-      "area": {
-        "id": 33
-      }
+      "id": 1717
     },
     {
       "name": "Dark Southwest Green",
@@ -406,10 +310,7 @@
         "east": 1717,
         "north": 1712
       },
-      "id": 1718,
-      "area": {
-        "id": 33
-      }
+      "id": 1718
     },
     {
       "name": "Dark Southwest Green",
@@ -418,10 +319,7 @@
         "east": 1718,
         "north": 1713
       },
-      "id": 1719,
-      "area": {
-        "id": 33
-      }
+      "id": 1719
     },
     {
       "name": "Dark Southwest Green",
@@ -429,10 +327,7 @@
         "east": 1721,
         "north": 1719
       },
-      "id": 1720,
-      "area": {
-        "id": 33
-      }
+      "id": 1720
     },
     {
       "name": "Dark Southwest Green",
@@ -440,20 +335,14 @@
         "west": 1720,
         "north": 1718
       },
-      "id": 1721,
-      "area": {
-        "id": 33
-      }
+      "id": 1721
     },
     {
       "name": "The Herb Exchange",
       "exits": {
         "west": 1710
       },
-      "id": 1722,
-      "area": {
-        "id": 33
-      }
+      "id": 1722
     },
     {
       "name": "Oak Treehouse Rope Bridge",
@@ -461,10 +350,7 @@
         "northwest": 990,
         "southeast": 1729
       },
-      "id": 1724,
-      "area": {
-        "id": 33
-      }
+      "id": 1724
     },
     {
       "name": "Oak Treehouse Rope Bridge",
@@ -472,10 +358,7 @@
         "southwest": 1728,
         "northeast": 990
       },
-      "id": 1725,
-      "area": {
-        "id": 33
-      }
+      "id": 1725
     },
     {
       "name": "Oak Treehouse Rope Bridge",
@@ -483,30 +366,21 @@
         "southwest": 990,
         "northeast": 1727
       },
-      "id": 1726,
-      "area": {
-        "id": 33
-      }
+      "id": 1726
     },
     {
       "name": "Living Quarters in the Oak",
       "exits": {
         "southwest": 1726
       },
-      "id": 1727,
-      "area": {
-        "id": 33
-      }
+      "id": 1727
     },
     {
       "name": "Living Quarters in the Oak",
       "exits": {
         "northeast": 1725
       },
-      "id": 1728,
-      "area": {
-        "id": 33
-      }
+      "id": 1728
     },
     {
       "name": "Oak Treehouse Gazebo",
@@ -514,10 +388,7 @@
         "northwest": 1724,
         "east": 1730
       },
-      "id": 1729,
-      "area": {
-        "id": 33
-      }
+      "id": 1729
     },
     {
       "name": "Long Rope Bridge",
@@ -525,10 +396,7 @@
         "east": 1731,
         "west": 1729
       },
-      "id": 1730,
-      "area": {
-        "id": 33
-      }
+      "id": 1730
     },
     {
       "name": "The rope bridge sways underfoot, but you maintain your balance.",
@@ -538,30 +406,21 @@
         "east": 1733,
         "south": 1734
       },
-      "id": 1731,
-      "area": {
-        "id": 33
-      }
+      "id": 1731
     },
     {
       "name": "You push open the door and proceed northeast into the large room.",
       "exits": {
         "southwest": 1731
       },
-      "id": 1732,
-      "area": {
-        "id": 33
-      }
+      "id": 1732
     },
     {
       "name": "You push open the door to the private quarters.",
       "exits": {
         "west": 1731
       },
-      "id": 1733,
-      "area": {
-        "id": 33
-      }
+      "id": 1733
     },
     {
       "name": "Gingerly, you step out onto the taunt rope bridge.",
@@ -569,10 +428,7 @@
         "south": 1735,
         "north": 1731
       },
-      "id": 1734,
-      "area": {
-        "id": 33
-      }
+      "id": 1734
     },
     {
       "name": "You scurry across the swinging rope bridge.",
@@ -580,10 +436,7 @@
         "southeast": 1736,
         "north": 1734
       },
-      "id": 1735,
-      "area": {
-        "id": 33
-      }
+      "id": 1735
     },
     {
       "name": "Tel'Quesir Throne Room",
@@ -592,10 +445,7 @@
         "northwest": 1735,
         "southeast": 1737
       },
-      "id": 1736,
-      "area": {
-        "id": 33
-      }
+      "id": 1736
     },
     {
       "name": "White Chapel",
@@ -603,10 +453,7 @@
         "northwest": 1736,
         "north": 1738
       },
-      "id": 1737,
-      "area": {
-        "id": 33
-      }
+      "id": 1737
     },
     {
       "name": "Hall of Ministers",
@@ -614,10 +461,7 @@
         "southwest": 1736,
         "south": 1737
       },
-      "id": 1738,
-      "area": {
-        "id": 33
-      }
+      "id": 1738
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

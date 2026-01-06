@@ -9,10 +9,7 @@
         "west": 1336,
         "south": 1335
       },
-      "id": 1334,
-      "area": {
-        "id": 27
-      }
+      "id": 1334
     },
     {
       "name": "Inside of Bracknar Gate",
@@ -20,10 +17,7 @@
         "south": 261,
         "north": 1334
       },
-      "id": 1335,
-      "area": {
-        "id": 27
-      }
+      "id": 1335
     },
     {
       "name": "Sitting Room",
@@ -31,10 +25,7 @@
         "east": 1334,
         "north": 1337
       },
-      "id": 1336,
-      "area": {
-        "id": 27
-      }
+      "id": 1336
     },
     {
       "name": "Guarded hallway",
@@ -42,20 +33,14 @@
         "south": 1336,
         "north": 1361
       },
-      "id": 1337,
-      "area": {
-        "id": 27
-      }
+      "id": 1337
     },
     {
       "name": "Clan Lord's Private Chambers",
       "exits": {
         "south": 1337
       },
-      "id": 1361,
-      "area": {
-        "id": 27
-      }
+      "id": 1361
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

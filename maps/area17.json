@@ -9,10 +9,7 @@
         "east": 1049,
         "north": 1040
       },
-      "id": 1039,
-      "area": {
-        "id": 17
-      }
+      "id": 1039
     },
     {
       "name": "A bend in the hallway",
@@ -20,10 +17,7 @@
         "east": 1041,
         "south": 1039
       },
-      "id": 1040,
-      "area": {
-        "id": 17
-      }
+      "id": 1040
     },
     {
       "name": "Cobwebs brush against the left side of your face as you walk through them.",
@@ -31,10 +25,7 @@
         "east": 1042,
         "west": 1040
       },
-      "id": 1041,
-      "area": {
-        "id": 17
-      }
+      "id": 1041
     },
     {
       "name": "The Great Hall",
@@ -42,10 +33,7 @@
         "east": 1043,
         "west": 1041
       },
-      "id": 1042,
-      "area": {
-        "id": 17
-      }
+      "id": 1042
     },
     {
       "name": "A bend in the hallway",
@@ -53,10 +41,7 @@
         "west": 1042,
         "south": 1044
       },
-      "id": 1043,
-      "area": {
-        "id": 17
-      }
+      "id": 1043
     },
     {
       "name": "Barrack",
@@ -65,10 +50,7 @@
         "south": 1046,
         "north": 1043
       },
-      "id": 1044,
-      "area": {
-        "id": 17
-      }
+      "id": 1044
     },
     {
       "name": "First floor landing",
@@ -76,10 +58,7 @@
         "east": 1044,
         "up": 1050
       },
-      "id": 1045,
-      "area": {
-        "id": 17
-      }
+      "id": 1045
     },
     {
       "name": "Barrack",
@@ -87,10 +66,7 @@
         "south": 1047,
         "north": 1044
       },
-      "id": 1046,
-      "area": {
-        "id": 17
-      }
+      "id": 1046
     },
     {
       "name": "Staging Room",
@@ -98,30 +74,21 @@
         "west": 1048,
         "north": 1046
       },
-      "id": 1047,
-      "area": {
-        "id": 17
-      }
+      "id": 1047
     },
     {
       "name": "Sally Port",
       "exits": {
         "east": 1047
       },
-      "id": 1048,
-      "area": {
-        "id": 17
-      }
+      "id": 1048
     },
     {
       "name": "An office",
       "exits": {
         "west": 1039
       },
-      "id": 1049,
-      "area": {
-        "id": 17
-      }
+      "id": 1049
     },
     {
       "name": "Second floor landing",
@@ -130,10 +97,7 @@
         "down": 1045,
         "north": 1069
       },
-      "id": 1050,
-      "area": {
-        "id": 17
-      }
+      "id": 1050
     },
     {
       "name": "Third floor landing",
@@ -143,10 +107,7 @@
         "east": 1065,
         "north": 1064
       },
-      "id": 1051,
-      "area": {
-        "id": 17
-      }
+      "id": 1051
     },
     {
       "name": "Stairwell",
@@ -157,10 +118,7 @@
         "east": 1059,
         "north": 1057
       },
-      "id": 1052,
-      "area": {
-        "id": 17
-      }
+      "id": 1052
     },
     {
       "name": "Northeast Tower Roof",
@@ -169,10 +127,7 @@
         "east": 1056,
         "north": 1052
       },
-      "id": 1053,
-      "area": {
-        "id": 17
-      }
+      "id": 1053
     },
     {
       "name": "Northeast Tower Roof",
@@ -180,10 +135,7 @@
         "east": 1055,
         "north": 1053
       },
-      "id": 1054,
-      "area": {
-        "id": 17
-      }
+      "id": 1054
     },
     {
       "name": "Southeast corner of roof",
@@ -191,10 +143,7 @@
         "west": 1054,
         "north": 1056
       },
-      "id": 1055,
-      "area": {
-        "id": 17
-      }
+      "id": 1055
     },
     {
       "name": "Northeast Tower Roof",
@@ -203,10 +152,7 @@
         "south": 1055,
         "north": 1059
       },
-      "id": 1056,
-      "area": {
-        "id": 17
-      }
+      "id": 1056
     },
     {
       "name": "Northeast Tower Roof",
@@ -214,10 +160,7 @@
         "east": 1058,
         "south": 1052
       },
-      "id": 1057,
-      "area": {
-        "id": 17
-      }
+      "id": 1057
     },
     {
       "name": "Northeast corner of roof",
@@ -225,10 +168,7 @@
         "west": 1057,
         "south": 1059
       },
-      "id": 1058,
-      "area": {
-        "id": 17
-      }
+      "id": 1058
     },
     {
       "name": "Northeast Tower Roof",
@@ -237,10 +177,7 @@
         "south": 1056,
         "north": 1058
       },
-      "id": 1059,
-      "area": {
-        "id": 17
-      }
+      "id": 1059
     },
     {
       "name": "Northeast Tower Roof",
@@ -249,10 +186,7 @@
         "east": 1052,
         "north": 1061
       },
-      "id": 1060,
-      "area": {
-        "id": 17
-      }
+      "id": 1060
     },
     {
       "name": "Northeast Tower Roof",
@@ -260,10 +194,7 @@
         "west": 1062,
         "south": 1060
       },
-      "id": 1061,
-      "area": {
-        "id": 17
-      }
+      "id": 1061
     },
     {
       "name": "Northwest corner of roof",
@@ -271,10 +202,7 @@
         "east": 1061,
         "south": 1063
       },
-      "id": 1062,
-      "area": {
-        "id": 17
-      }
+      "id": 1062
     },
     {
       "name": "Northeast Tower Roof",
@@ -282,20 +210,14 @@
         "east": 1060,
         "north": 1062
       },
-      "id": 1063,
-      "area": {
-        "id": 17
-      }
+      "id": 1063
     },
     {
       "name": "Guard Post",
       "exits": {
         "south": 1051
       },
-      "id": 1064,
-      "area": {
-        "id": 17
-      }
+      "id": 1064
     },
     {
       "name": "Hallway",
@@ -303,10 +225,7 @@
         "west": 1051,
         "south": 1066
       },
-      "id": 1065,
-      "area": {
-        "id": 17
-      }
+      "id": 1065
     },
     {
       "name": "Hall",
@@ -314,10 +233,7 @@
         "south": 1067,
         "north": 1065
       },
-      "id": 1066,
-      "area": {
-        "id": 17
-      }
+      "id": 1066
     },
     {
       "name": "War Room",
@@ -325,20 +241,14 @@
         "west": 1068,
         "north": 1066
       },
-      "id": 1067,
-      "area": {
-        "id": 17
-      }
+      "id": 1067
     },
     {
       "name": "Portal Chamber",
       "exits": {
         "east": 1067
       },
-      "id": 1068,
-      "area": {
-        "id": 17
-      }
+      "id": 1068
     },
     {
       "name": "Guard Post",
@@ -347,10 +257,7 @@
         "east": 1072,
         "south": 1050
       },
-      "id": 1069,
-      "area": {
-        "id": 17
-      }
+      "id": 1069
     },
     {
       "name": "Prison Wing",
@@ -359,20 +266,14 @@
         "east": 1069,
         "south": 1077
       },
-      "id": 1070,
-      "area": {
-        "id": 17
-      }
+      "id": 1070
     },
     {
       "name": "Prison cell",
       "exits": {
         "east": 1070
       },
-      "id": 1071,
-      "area": {
-        "id": 17
-      }
+      "id": 1071
     },
     {
       "name": "Hallway",
@@ -380,10 +281,7 @@
         "west": 1069,
         "south": 1073
       },
-      "id": 1072,
-      "area": {
-        "id": 17
-      }
+      "id": 1072
     },
     {
       "name": "An alarm sounds as you pass the threshold of the magic barrier.",
@@ -391,10 +289,7 @@
         "south": 1074,
         "north": 1072
       },
-      "id": 1073,
-      "area": {
-        "id": 17
-      }
+      "id": 1073
     },
     {
       "name": "Witch's Workroom",
@@ -403,40 +298,28 @@
         "south": 1076,
         "north": 1073
       },
-      "id": 1074,
-      "area": {
-        "id": 17
-      }
+      "id": 1074
     },
     {
       "name": "Library",
       "exits": {
         "east": 1074
       },
-      "id": 1075,
-      "area": {
-        "id": 17
-      }
+      "id": 1075
     },
     {
       "name": "Morgue",
       "exits": {
         "north": 1074
       },
-      "id": 1076,
-      "area": {
-        "id": 17
-      }
+      "id": 1076
     },
     {
       "name": "Prison cell",
       "exits": {
         "north": 1070
       },
-      "id": 1077,
-      "area": {
-        "id": 17
-      }
+      "id": 1077
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"
