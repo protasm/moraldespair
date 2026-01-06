@@ -5,11 +5,9 @@
   "rooms": [
     {
       "name": "End of Pylus road",
-      "environment": -1,
       "exits": {
         "south": 1206
       },
-      "weight": 1,
       "id": 1205,
       "area": {
         "id": 24
@@ -17,12 +15,10 @@
     },
     {
       "name": "Pylus road",
-      "environment": -1,
       "exits": {
         "south": 1207,
         "north": 1205
       },
-      "weight": 1,
       "id": 1206,
       "area": {
         "id": 24
@@ -30,13 +26,11 @@
     },
     {
       "name": "Pylus road",
-      "environment": -1,
       "exits": {
         "south": 1208,
         "east": 1212,
         "north": 1206
       },
-      "weight": 1,
       "id": 1207,
       "area": {
         "id": 24
@@ -44,13 +38,11 @@
     },
     {
       "name": "Pylus road",
-      "environment": -1,
       "exits": {
         "west": 1209,
         "south": 1213,
         "north": 1207
       },
-      "weight": 1,
       "id": 1208,
       "area": {
         "id": 24
@@ -58,13 +50,11 @@
     },
     {
       "name": "Freemason's",
-      "environment": -1,
       "exits": {
         "south": 1210,
         "east": 1208,
         "north": 1211
       },
-      "weight": 1,
       "id": 1209,
       "area": {
         "id": 24
@@ -72,11 +62,9 @@
     },
     {
       "name": "Apprentice's",
-      "environment": -1,
       "exits": {
         "north": 1209
       },
-      "weight": 1,
       "id": 1210,
       "area": {
         "id": 24
@@ -84,11 +72,9 @@
     },
     {
       "name": "Master stonemason's",
-      "environment": -1,
       "exits": {
         "south": 1209
       },
-      "weight": 1,
       "id": 1211,
       "area": {
         "id": 24
@@ -96,11 +82,9 @@
     },
     {
       "name": "Mausoleum entrance",
-      "environment": -1,
       "exits": {
         "west": 1207
       },
-      "weight": 1,
       "id": 1212,
       "area": {
         "id": 24
@@ -108,12 +92,10 @@
     },
     {
       "name": "Pylus road",
-      "environment": -1,
       "exits": {
         "south": 1214,
         "north": 1208
       },
-      "weight": 1,
       "id": 1213,
       "area": {
         "id": 24
@@ -121,14 +103,12 @@
     },
     {
       "name": "Pylus road",
-      "environment": -1,
       "exits": {
         "south": 1215,
         "west": 1218,
         "east": 1219,
         "north": 1213
       },
-      "weight": 1,
       "id": 1214,
       "area": {
         "id": 24
@@ -136,14 +116,12 @@
     },
     {
       "name": "Pylus road",
-      "environment": -1,
       "exits": {
         "southwest": 1216,
         "east": 1222,
         "southeast": 1217,
         "north": 1214
       },
-      "weight": 1,
       "id": 1215,
       "area": {
         "id": 24
@@ -151,11 +129,9 @@
     },
     {
       "name": "Porch",
-      "environment": -1,
       "exits": {
         "northeast": 1215
       },
-      "weight": 1,
       "id": 1216,
       "area": {
         "id": 24
@@ -163,11 +139,9 @@
     },
     {
       "name": "Sanity's Requiem",
-      "environment": -1,
       "exits": {
         "northwest": 1215
       },
-      "weight": 1,
       "id": 1217,
       "area": {
         "id": 24
@@ -175,11 +149,9 @@
     },
     {
       "name": "Hall of Bacchus",
-      "environment": -1,
       "exits": {
         "east": 1214
       },
-      "weight": 1,
       "id": 1218,
       "area": {
         "id": 24
@@ -187,12 +159,10 @@
     },
     {
       "name": "Triage",
-      "environment": -1,
       "exits": {
         "west": 1214,
         "north": 1220
       },
-      "weight": 1,
       "id": 1219,
       "area": {
         "id": 24
@@ -200,12 +170,10 @@
     },
     {
       "name": "Waiting room",
-      "environment": -1,
       "exits": {
         "east": 1221,
         "south": 1219
       },
-      "weight": 1,
       "id": 1220,
       "area": {
         "id": 24
@@ -213,11 +181,9 @@
     },
     {
       "name": "Operating room",
-      "environment": -1,
       "exits": {
         "west": 1220
       },
-      "weight": 1,
       "id": 1221,
       "area": {
         "id": 24
@@ -225,12 +191,10 @@
     },
     {
       "name": "Pylus road checkpoint",
-      "environment": -1,
       "exits": {
         "east": 1289,
         "west": 1215
       },
-      "weight": 1,
       "id": 1222,
       "area": {
         "id": 24
@@ -238,13 +202,11 @@
     },
     {
       "name": "Iola square",
-      "environment": -1,
       "exits": {
         "west": 1289,
         "south": 1227,
         "north": 1225
       },
-      "weight": 1,
       "id": 1224,
       "area": {
         "id": 24
@@ -252,13 +214,11 @@
     },
     {
       "name": "Iola way",
-      "environment": -1,
       "exits": {
         "west": 1363,
         "south": 1224,
         "north": 1226
       },
-      "weight": 1,
       "id": 1225,
       "area": {
         "id": 24
@@ -266,12 +226,10 @@
     },
     {
       "name": "Iola way",
-      "environment": -1,
       "exits": {
         "south": 1225,
         "north": 1248
       },
-      "weight": 1,
       "id": 1226,
       "area": {
         "id": 24
@@ -279,14 +237,12 @@
     },
     {
       "name": "Iola way",
-      "environment": -1,
       "exits": {
         "south": 1228,
         "west": 1247,
         "east": 1246,
         "north": 1224
       },
-      "weight": 1,
       "id": 1227,
       "area": {
         "id": 24
@@ -294,14 +250,12 @@
     },
     {
       "name": "Iola way",
-      "environment": -1,
       "exits": {
         "south": 1229,
         "west": 1244,
         "east": 1243,
         "north": 1227
       },
-      "weight": 1,
       "id": 1228,
       "area": {
         "id": 24
@@ -309,13 +263,11 @@
     },
     {
       "name": "Iola bridge",
-      "environment": -1,
       "exits": {
         "southwest": 1230,
         "east": 1231,
         "north": 1228
       },
-      "weight": 1,
       "id": 1229,
       "area": {
         "id": 24
@@ -323,12 +275,10 @@
     },
     {
       "name": "Large field",
-      "environment": -1,
       "exits": {
         "west": 1239,
         "northeast": 1229
       },
-      "weight": 1,
       "id": 1230,
       "area": {
         "id": 24
@@ -336,13 +286,11 @@
     },
     {
       "name": "Polema street",
-      "environment": -1,
       "exits": {
         "west": 1229,
         "east": 1233,
         "south": 1232
       },
-      "weight": 1,
       "id": 1231,
       "area": {
         "id": 24
@@ -350,11 +298,9 @@
     },
     {
       "name": "Gay house",
-      "environment": -1,
       "exits": {
         "north": 1231
       },
-      "weight": 1,
       "id": 1232,
       "area": {
         "id": 24
@@ -362,14 +308,12 @@
     },
     {
       "name": "Polema street",
-      "environment": -1,
       "exits": {
         "south": 1234,
         "west": 1231,
         "east": 1235,
         "north": 1238
       },
-      "weight": 1,
       "id": 1233,
       "area": {
         "id": 24
@@ -377,11 +321,9 @@
     },
     {
       "name": "Short house",
-      "environment": -1,
       "exits": {
         "north": 1233
       },
-      "weight": 1,
       "id": 1234,
       "area": {
         "id": 24
@@ -389,13 +331,11 @@
     },
     {
       "name": "Polema street",
-      "environment": -1,
       "exits": {
         "west": 1233,
         "east": 1237,
         "north": 1236
       },
-      "weight": 1,
       "id": 1235,
       "area": {
         "id": 24
@@ -403,11 +343,9 @@
     },
     {
       "name": "Bright house",
-      "environment": -1,
       "exits": {
         "south": 1235
       },
-      "weight": 1,
       "id": 1236,
       "area": {
         "id": 24
@@ -415,11 +353,9 @@
     },
     {
       "name": "Foyer",
-      "environment": -1,
       "exits": {
         "west": 1235
       },
-      "weight": 1,
       "id": 1237,
       "area": {
         "id": 24
@@ -427,11 +363,9 @@
     },
     {
       "name": "Tall house",
-      "environment": -1,
       "exits": {
         "south": 1233
       },
-      "weight": 1,
       "id": 1238,
       "area": {
         "id": 24
@@ -439,13 +373,11 @@
     },
     {
       "name": "Gymnasium foyer",
-      "environment": -1,
       "exits": {
         "west": 1240,
         "east": 1230,
         "south": 1241
       },
-      "weight": 1,
       "id": 1239,
       "area": {
         "id": 24
@@ -453,11 +385,9 @@
     },
     {
       "name": "Changing room",
-      "environment": -1,
       "exits": {
         "east": 1239
       },
-      "weight": 1,
       "id": 1240,
       "area": {
         "id": 24
@@ -465,12 +395,10 @@
     },
     {
       "name": "Gymnasium hallway",
-      "environment": -1,
       "exits": {
         "south": 1242,
         "north": 1239
       },
-      "weight": 1,
       "id": 1241,
       "area": {
         "id": 24
@@ -478,11 +406,9 @@
     },
     {
       "name": "Natatorium",
-      "environment": -1,
       "exits": {
         "north": 1241
       },
-      "weight": 1,
       "id": 1242,
       "area": {
         "id": 24
@@ -490,11 +416,9 @@
     },
     {
       "name": "Vegetable seller's",
-      "environment": -1,
       "exits": {
         "west": 1228
       },
-      "weight": 1,
       "id": 1243,
       "area": {
         "id": 24
@@ -502,12 +426,10 @@
     },
     {
       "name": "Herbarium",
-      "environment": -1,
       "exits": {
         "east": 1228,
         "south": 1245
       },
-      "weight": 1,
       "id": 1244,
       "area": {
         "id": 24
@@ -515,11 +437,9 @@
     },
     {
       "name": "Herb garden",
-      "environment": -1,
       "exits": {
         "north": 1244
       },
-      "weight": 1,
       "id": 1245,
       "area": {
         "id": 24
@@ -527,11 +447,9 @@
     },
     {
       "name": "Butcher shop",
-      "environment": -1,
       "exits": {
         "west": 1227
       },
-      "weight": 1,
       "id": 1246,
       "area": {
         "id": 24
@@ -539,11 +457,9 @@
     },
     {
       "name": "Guild/Shop Space for rent",
-      "environment": -1,
       "exits": {
         "east": 1227
       },
-      "weight": 1,
       "id": 1247,
       "area": {
         "id": 24
@@ -551,13 +467,11 @@
     },
     {
       "name": "Iola way",
-      "environment": -1,
       "exits": {
         "west": 1249,
         "east": 1252,
         "south": 1226
       },
-      "weight": 1,
       "id": 1248,
       "area": {
         "id": 24
@@ -565,12 +479,10 @@
     },
     {
       "name": "Garden entry",
-      "environment": -1,
       "exits": {
         "east": 1248,
         "north": 1250
       },
-      "weight": 1,
       "id": 1249,
       "area": {
         "id": 24
@@ -578,12 +490,10 @@
     },
     {
       "name": "Garden clearing",
-      "environment": -1,
       "exits": {
         "west": 1251,
         "south": 1249
       },
-      "weight": 1,
       "id": 1250,
       "area": {
         "id": 24
@@ -591,12 +501,10 @@
     },
     {
       "name": "Entry to akademos",
-      "environment": -1,
       "exits": {
         "east": 1250,
         "west": 1374
       },
-      "weight": 1,
       "id": 1251,
       "area": {
         "id": 24
@@ -604,12 +512,10 @@
     },
     {
       "name": "Ithsma street",
-      "environment": -1,
       "exits": {
         "east": 1253,
         "west": 1248
       },
-      "weight": 1,
       "id": 1252,
       "area": {
         "id": 24
@@ -617,13 +523,11 @@
     },
     {
       "name": "Ithsma street",
-      "environment": -1,
       "exits": {
         "west": 1252,
         "east": 1255,
         "south": 1254
       },
-      "weight": 1,
       "id": 1253,
       "area": {
         "id": 24
@@ -631,12 +535,10 @@
     },
     {
       "name": "Short path",
-      "environment": -1,
       "exits": {
         "south": 1375,
         "north": 1253
       },
-      "weight": 1,
       "id": 1254,
       "area": {
         "id": 24
@@ -644,13 +546,11 @@
     },
     {
       "name": "Ithsma street",
-      "environment": -1,
       "exits": {
         "west": 1253,
         "east": 1389,
         "north": 1256
       },
-      "weight": 1,
       "id": 1255,
       "area": {
         "id": 24
@@ -658,12 +558,10 @@
     },
     {
       "name": "Before the Palace",
-      "environment": -1,
       "exits": {
         "south": 1255,
         "north": 1257
       },
-      "weight": 1,
       "id": 1256,
       "area": {
         "id": 24
@@ -671,12 +569,10 @@
     },
     {
       "name": "Threshold to the Grand Rotunda",
-      "environment": -1,
       "exits": {
         "south": 1256,
         "north": 1258
       },
-      "weight": 1,
       "id": 1257,
       "area": {
         "id": 24
@@ -684,13 +580,11 @@
     },
     {
       "name": "Grand Rotunda",
-      "environment": -1,
       "exits": {
         "west": 1259,
         "east": 1362,
         "south": 1257
       },
-      "weight": 1,
       "id": 1258,
       "area": {
         "id": 24
@@ -698,13 +592,11 @@
     },
     {
       "name": "Administrative hallway",
-      "environment": -1,
       "exits": {
         "west": 1261,
         "east": 1258,
         "north": 1260
       },
-      "weight": 1,
       "id": 1259,
       "area": {
         "id": 24
@@ -712,11 +604,9 @@
     },
     {
       "name": "Office of the Magistrate",
-      "environment": -1,
       "exits": {
         "south": 1259
       },
-      "weight": 1,
       "id": 1260,
       "area": {
         "id": 24
@@ -724,13 +614,11 @@
     },
     {
       "name": "Administrative hallway",
-      "environment": -1,
       "exits": {
         "west": 1262,
         "east": 1259,
         "south": 1391
       },
-      "weight": 1,
       "id": 1261,
       "area": {
         "id": 24
@@ -738,11 +626,9 @@
     },
     {
       "name": "Royal Throne Room",
-      "environment": -1,
       "exits": {
         "east": 1261
       },
-      "weight": 1,
       "id": 1262,
       "area": {
         "id": 24
@@ -750,14 +636,12 @@
     },
     {
       "name": "Gate of Triumph",
-      "environment": -1,
       "exits": {
         "south": 1290,
         "west": 1222,
         "east": 1224,
         "north": 1291
       },
-      "weight": 1,
       "id": 1289,
       "area": {
         "id": 24
@@ -765,11 +649,9 @@
     },
     {
       "name": "Southern niche",
-      "environment": -1,
       "exits": {
         "north": 1289
       },
-      "weight": 1,
       "id": 1290,
       "area": {
         "id": 24
@@ -777,11 +659,9 @@
     },
     {
       "name": "Northern niche",
-      "environment": -1,
       "exits": {
         "south": 1289
       },
-      "weight": 1,
       "id": 1291,
       "area": {
         "id": 24
@@ -789,13 +669,11 @@
     },
     {
       "name": "Guard Post",
-      "environment": -1,
       "exits": {
         "west": 1258,
         "east": 1392,
         "north": 1395
       },
-      "weight": 1,
       "id": 1362,
       "area": {
         "id": 24
@@ -803,12 +681,10 @@
     },
     {
       "name": "Doorway",
-      "environment": -1,
       "exits": {
         "east": 1225,
         "west": 1364
       },
-      "weight": 1,
       "id": 1363,
       "area": {
         "id": 24
@@ -816,12 +692,10 @@
     },
     {
       "name": "Statued hallway",
-      "environment": -1,
       "exits": {
         "east": 1363,
         "west": 1365
       },
-      "weight": 1,
       "id": 1364,
       "area": {
         "id": 24
@@ -829,13 +703,11 @@
     },
     {
       "name": "Hallway",
-      "environment": -1,
       "exits": {
         "west": 1366,
         "east": 1364,
         "north": 1367
       },
-      "weight": 1,
       "id": 1365,
       "area": {
         "id": 24
@@ -843,11 +715,9 @@
     },
     {
       "name": "Captain's office",
-      "environment": -1,
       "exits": {
         "east": 1365
       },
-      "weight": 1,
       "id": 1366,
       "area": {
         "id": 24
@@ -855,12 +725,10 @@
     },
     {
       "name": "Courtyard",
-      "environment": -1,
       "exits": {
         "south": 1365,
         "north": 1368
       },
-      "weight": 1,
       "id": 1367,
       "area": {
         "id": 24
@@ -868,12 +736,10 @@
     },
     {
       "name": "Courtyard",
-      "environment": -1,
       "exits": {
         "south": 1367,
         "north": 1369
       },
-      "weight": 1,
       "id": 1368,
       "area": {
         "id": 24
@@ -881,14 +747,12 @@
     },
     {
       "name": "Hallway",
-      "environment": -1,
       "exits": {
         "up": 1373,
         "west": 1370,
         "east": 1371,
         "south": 1368
       },
-      "weight": 1,
       "id": 1369,
       "area": {
         "id": 24
@@ -896,11 +760,9 @@
     },
     {
       "name": "West wing",
-      "environment": -1,
       "exits": {
         "east": 1369
       },
-      "weight": 1,
       "id": 1370,
       "area": {
         "id": 24
@@ -908,12 +770,10 @@
     },
     {
       "name": "East wing",
-      "environment": -1,
       "exits": {
         "west": 1369,
         "south": 1372
       },
-      "weight": 1,
       "id": 1371,
       "area": {
         "id": 24
@@ -921,11 +781,9 @@
     },
     {
       "name": "East wing hallway",
-      "environment": -1,
       "exits": {
         "north": 1371
       },
-      "weight": 1,
       "id": 1372,
       "area": {
         "id": 24
@@ -933,11 +791,9 @@
     },
     {
       "name": "Climbing the tight stairwell, you open the trapdoor and climb to the roof.",
-      "environment": -1,
       "exits": {
         "down": 1369
       },
-      "weight": 1,
       "id": 1373,
       "area": {
         "id": 24
@@ -945,11 +801,9 @@
     },
     {
       "name": "Akademos",
-      "environment": -1,
       "exits": {
         "east": 1251
       },
-      "weight": 1,
       "id": 1374,
       "area": {
         "id": 24
@@ -957,12 +811,10 @@
     },
     {
       "name": "Temple entry",
-      "environment": -1,
       "exits": {
         "south": 1376,
         "north": 1254
       },
-      "weight": 1,
       "id": 1375,
       "area": {
         "id": 24
@@ -970,14 +822,12 @@
     },
     {
       "name": "Temple rotunda",
-      "environment": -1,
       "exits": {
         "south": 1377,
         "west": 1381,
         "east": 1384,
         "north": 1375
       },
-      "weight": 1,
       "id": 1376,
       "area": {
         "id": 24
@@ -985,12 +835,10 @@
     },
     {
       "name": "Temple hallway",
-      "environment": -1,
       "exits": {
         "south": 1378,
         "north": 1376
       },
-      "weight": 1,
       "id": 1377,
       "area": {
         "id": 24
@@ -998,13 +846,11 @@
     },
     {
       "name": "End of temple hallway",
-      "environment": -1,
       "exits": {
         "west": 1380,
         "east": 1379,
         "north": 1377
       },
-      "weight": 1,
       "id": 1378,
       "area": {
         "id": 24
@@ -1012,11 +858,9 @@
     },
     {
       "name": "Folio depository",
-      "environment": -1,
       "exits": {
         "west": 1378
       },
-      "weight": 1,
       "id": 1379,
       "area": {
         "id": 24
@@ -1024,11 +868,9 @@
     },
     {
       "name": "Reliquary",
-      "environment": -1,
       "exits": {
         "east": 1378
       },
-      "weight": 1,
       "id": 1380,
       "area": {
         "id": 24
@@ -1036,12 +878,10 @@
     },
     {
       "name": "Hall of Peace",
-      "environment": -1,
       "exits": {
         "east": 1376,
         "west": 1382
       },
-      "weight": 1,
       "id": 1381,
       "area": {
         "id": 24
@@ -1049,13 +889,11 @@
     },
     {
       "name": "Hall of Peace",
-      "environment": -1,
       "exits": {
         "west": 1383,
         "east": 1381,
         "south": 1387
       },
-      "weight": 1,
       "id": 1382,
       "area": {
         "id": 24
@@ -1063,11 +901,9 @@
     },
     {
       "name": "Rotunda of Peace",
-      "environment": -1,
       "exits": {
         "east": 1382
       },
-      "weight": 1,
       "id": 1383,
       "area": {
         "id": 24
@@ -1075,13 +911,11 @@
     },
     {
       "name": "Hall of War",
-      "environment": -1,
       "exits": {
         "west": 1376,
         "east": 1385,
         "south": 1388
       },
-      "weight": 1,
       "id": 1384,
       "area": {
         "id": 24
@@ -1089,12 +923,10 @@
     },
     {
       "name": "Hall of War",
-      "environment": -1,
       "exits": {
         "east": 1386,
         "west": 1384
       },
-      "weight": 1,
       "id": 1385,
       "area": {
         "id": 24
@@ -1102,11 +934,9 @@
     },
     {
       "name": "Rotunda of War",
-      "environment": -1,
       "exits": {
         "west": 1385
       },
-      "weight": 1,
       "id": 1386,
       "area": {
         "id": 24
@@ -1114,11 +944,9 @@
     },
     {
       "name": "Chapel of Peace",
-      "environment": -1,
       "exits": {
         "north": 1382
       },
-      "weight": 1,
       "id": 1387,
       "area": {
         "id": 24
@@ -1126,11 +954,9 @@
     },
     {
       "name": "Chapel of War",
-      "environment": -1,
       "exits": {
         "north": 1384
       },
-      "weight": 1,
       "id": 1388,
       "area": {
         "id": 24
@@ -1138,12 +964,10 @@
     },
     {
       "name": "Ithsma street",
-      "environment": -1,
       "exits": {
         "east": 1390,
         "west": 1255
       },
-      "weight": 1,
       "id": 1389,
       "area": {
         "id": 24
@@ -1151,11 +975,9 @@
     },
     {
       "name": "End of Ithsma street",
-      "environment": -1,
       "exits": {
         "west": 1389
       },
-      "weight": 1,
       "id": 1390,
       "area": {
         "id": 24
@@ -1163,11 +985,9 @@
     },
     {
       "name": "Office of the Secretary",
-      "environment": -1,
       "exits": {
         "north": 1261
       },
-      "weight": 1,
       "id": 1391,
       "area": {
         "id": 24
@@ -1175,13 +995,11 @@
     },
     {
       "name": "Formal gardens",
-      "environment": -1,
       "exits": {
         "west": 1362,
         "east": 1393,
         "south": 1394
       },
-      "weight": 1,
       "id": 1392,
       "area": {
         "id": 24
@@ -1189,11 +1007,9 @@
     },
     {
       "name": "A private corner in the garden",
-      "environment": -1,
       "exits": {
         "west": 1392
       },
-      "weight": 1,
       "id": 1393,
       "area": {
         "id": 24
@@ -1201,11 +1017,9 @@
     },
     {
       "name": "A private corner in the garden",
-      "environment": -1,
       "exits": {
         "north": 1392
       },
-      "weight": 1,
       "id": 1394,
       "area": {
         "id": 24
@@ -1213,12 +1027,10 @@
     },
     {
       "name": "Residential hallway",
-      "environment": -1,
       "exits": {
         "east": 1396,
         "south": 1362
       },
-      "weight": 1,
       "id": 1395,
       "area": {
         "id": 24
@@ -1226,13 +1038,11 @@
     },
     {
       "name": "Residential hallway",
-      "environment": -1,
       "exits": {
         "west": 1395,
         "east": 1397,
         "north": 1398
       },
-      "weight": 1,
       "id": 1396,
       "area": {
         "id": 24
@@ -1240,12 +1050,10 @@
     },
     {
       "name": "The harem",
-      "environment": -1,
       "exits": {
         "west": 1396,
         "north": 1400
       },
-      "weight": 1,
       "id": 1397,
       "area": {
         "id": 24
@@ -1253,12 +1061,10 @@
     },
     {
       "name": "The Royal Chambers",
-      "environment": -1,
       "exits": {
         "west": 1399,
         "south": 1396
       },
-      "weight": 1,
       "id": 1398,
       "area": {
         "id": 24
@@ -1266,11 +1072,9 @@
     },
     {
       "name": "The royal dressing room",
-      "environment": -1,
       "exits": {
         "east": 1398
       },
-      "weight": 1,
       "id": 1399,
       "area": {
         "id": 24
@@ -1278,11 +1082,9 @@
     },
     {
       "name": "The Consort's chambers",
-      "environment": -1,
       "exits": {
         "south": 1397
       },
-      "weight": 1,
       "id": 1400,
       "area": {
         "id": 24

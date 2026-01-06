@@ -5,11 +5,9 @@
   "rooms": [
     {
       "name": "Ice Dragon's Den",
-      "environment": -1,
       "exits": {
         "down": 1339
       },
-      "weight": 1,
       "id": 1338,
       "area": {
         "id": 26
@@ -17,12 +15,10 @@
     },
     {
       "name": "Near a Frozen Waterfall",
-      "environment": -1,
       "exits": {
         "northwest": 1340,
         "east": 1342
       },
-      "weight": 1,
       "id": 1339,
       "area": {
         "id": 26
@@ -30,12 +26,10 @@
     },
     {
       "name": "By an Icy Gate",
-      "environment": -1,
       "exits": {
         "southeast": 1339,
         "east": 1341
       },
-      "weight": 1,
       "id": 1340,
       "area": {
         "id": 26
@@ -43,11 +37,9 @@
     },
     {
       "name": "Edge of an Icy Cliff",
-      "environment": -1,
       "exits": {
         "west": 1340
       },
-      "weight": 1,
       "id": 1341,
       "area": {
         "id": 26
@@ -55,12 +47,10 @@
     },
     {
       "name": "On Top of a Frozen River",
-      "environment": -1,
       "exits": {
         "west": 1339,
         "north": 1343
       },
-      "weight": 1,
       "id": 1342,
       "area": {
         "id": 26
@@ -68,12 +58,10 @@
     },
     {
       "name": "On Top of a Frozen River",
-      "environment": -1,
       "exits": {
         "south": 1342,
         "north": 1344
       },
-      "weight": 1,
       "id": 1343,
       "area": {
         "id": 26
@@ -81,12 +69,10 @@
     },
     {
       "name": "Under a Snowy Overhang",
-      "environment": -1,
       "exits": {
         "northwest": 1345,
         "south": 1343
       },
-      "weight": 1,
       "id": 1344,
       "area": {
         "id": 26
@@ -94,12 +80,10 @@
     },
     {
       "name": "On Top of an Icy Stream",
-      "environment": -1,
       "exits": {
         "southeast": 1344,
         "west": 1346
       },
-      "weight": 1,
       "id": 1345,
       "area": {
         "id": 26
@@ -107,14 +91,12 @@
     },
     {
       "name": "On Top of an Icy Lake",
-      "environment": -1,
       "exits": {
         "east": 1345,
         "northwest": 1347,
         "southeast": 1360,
         "west": 1358
       },
-      "weight": 1,
       "id": 1346,
       "area": {
         "id": 26
@@ -122,14 +104,12 @@
     },
     {
       "name": "On Top of an Icy Lake",
-      "environment": -1,
       "exits": {
         "west": 1351,
         "northeast": 1348,
         "southeast": 1346,
         "south": 1358
       },
-      "weight": 1,
       "id": 1347,
       "area": {
         "id": 26
@@ -137,12 +117,10 @@
     },
     {
       "name": "Entrance to a Frozen Cavern",
-      "environment": -1,
       "exits": {
         "southwest": 1347,
         "southeast": 1349
       },
-      "weight": 1,
       "id": 1348,
       "area": {
         "id": 26
@@ -150,12 +128,10 @@
     },
     {
       "name": "Frozen Cavern",
-      "environment": -1,
       "exits": {
         "northwest": 1348,
         "east": 1350
       },
-      "weight": 1,
       "id": 1349,
       "area": {
         "id": 26
@@ -163,11 +139,9 @@
     },
     {
       "name": "End of a Frozen Cavern",
-      "environment": -1,
       "exits": {
         "west": 1349
       },
-      "weight": 1,
       "id": 1350,
       "area": {
         "id": 26
@@ -175,13 +149,11 @@
     },
     {
       "name": "On Top of an Icy Lake",
-      "environment": -1,
       "exits": {
         "west": 1352,
         "east": 1347,
         "south": 1356
       },
-      "weight": 1,
       "id": 1351,
       "area": {
         "id": 26
@@ -189,13 +161,11 @@
     },
     {
       "name": "On Top of an Icy Lake",
-      "environment": -1,
       "exits": {
         "east": 1351,
         "northwest": 1359,
         "south": 1353
       },
-      "weight": 1,
       "id": 1352,
       "area": {
         "id": 26
@@ -203,13 +173,11 @@
     },
     {
       "name": "On Top of an Icy Lake",
-      "environment": -1,
       "exits": {
         "southwest": 1354,
         "east": 1356,
         "north": 1352
       },
-      "weight": 1,
       "id": 1353,
       "area": {
         "id": 26
@@ -217,12 +185,10 @@
     },
     {
       "name": "Ice Cave Entrance",
-      "environment": -1,
       "exits": {
         "east": 1355,
         "northeast": 1353
       },
-      "weight": 1,
       "id": 1354,
       "area": {
         "id": 26
@@ -230,11 +196,9 @@
     },
     {
       "name": "Inside an Ice Cave",
-      "environment": -1,
       "exits": {
         "west": 1354
       },
-      "weight": 1,
       "id": 1355,
       "area": {
         "id": 26
@@ -242,14 +206,12 @@
     },
     {
       "name": "On Top of an Icy Lake",
-      "environment": -1,
       "exits": {
         "south": 1357,
         "west": 1353,
         "east": 1358,
         "north": 1351
       },
-      "weight": 1,
       "id": 1356,
       "area": {
         "id": 26
@@ -257,11 +219,9 @@
     },
     {
       "name": "Isolated Icy Area",
-      "environment": -1,
       "exits": {
         "north": 1356
       },
-      "weight": 1,
       "id": 1357,
       "area": {
         "id": 26
@@ -269,13 +229,11 @@
     },
     {
       "name": "On Top of an Icy Lake",
-      "environment": -1,
       "exits": {
         "west": 1356,
         "east": 1346,
         "north": 1347
       },
-      "weight": 1,
       "id": 1358,
       "area": {
         "id": 26
@@ -283,11 +241,9 @@
     },
     {
       "name": "Northern Shore of an Icy Lake",
-      "environment": -1,
       "exits": {
         "southeast": 1352
       },
-      "weight": 1,
       "id": 1359,
       "area": {
         "id": 26
@@ -295,11 +251,9 @@
     },
     {
       "name": "Snowy Overhang",
-      "environment": -1,
       "exits": {
         "northwest": 1346
       },
-      "weight": 1,
       "id": 1360,
       "area": {
         "id": 26
@@ -307,11 +261,9 @@
     },
     {
       "name": "down the waterfall.",
-      "environment": -1,
       "exits": {
         "down": 1339
       },
-      "weight": 1,
       "id": 1869,
       "area": {
         "id": 26

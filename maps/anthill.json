@@ -5,13 +5,11 @@
   "rooms": [
     {
       "name": "Inside the Anthill",
-      "environment": -1,
       "exits": {
         "up": 1806,
         "down": 1744,
         "north": 1740
       },
-      "weight": 1,
       "id": 1723,
       "area": {
         "id": 34
@@ -19,13 +17,11 @@
     },
     {
       "name": "Inside the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1741,
         "southeast": 1743,
         "south": 1723
       },
-      "weight": 1,
       "id": 1740,
       "area": {
         "id": 34
@@ -33,12 +29,10 @@
     },
     {
       "name": "Inside the Anthill",
-      "environment": -1,
       "exits": {
         "southeast": 1742,
         "northeast": 1740
       },
-      "weight": 1,
       "id": 1741,
       "area": {
         "id": 34
@@ -46,12 +40,10 @@
     },
     {
       "name": "Inside the Anthill",
-      "environment": -1,
       "exits": {
         "northwest": 1741,
         "northeast": 1743
       },
-      "weight": 1,
       "id": 1742,
       "area": {
         "id": 34
@@ -59,12 +51,10 @@
     },
     {
       "name": "Inside the Anthill",
-      "environment": -1,
       "exits": {
         "northwest": 1740,
         "southwest": 1742
       },
-      "weight": 1,
       "id": 1743,
       "area": {
         "id": 34
@@ -72,7 +62,6 @@
     },
     {
       "name": "In the Heart of the Anthill",
-      "environment": -1,
       "exits": {
         "southeast": 1751,
         "up": 1723,
@@ -81,7 +70,6 @@
         "down": 1754,
         "northwest": 1747
       },
-      "weight": 1,
       "id": 1744,
       "area": {
         "id": 34
@@ -89,12 +77,10 @@
     },
     {
       "name": "In the Heart of the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1744,
         "south": 1746
       },
-      "weight": 1,
       "id": 1745,
       "area": {
         "id": 34
@@ -102,11 +88,9 @@
     },
     {
       "name": "In the Heart of the Anthill",
-      "environment": -1,
       "exits": {
         "north": 1745
       },
-      "weight": 1,
       "id": 1746,
       "area": {
         "id": 34
@@ -114,13 +98,11 @@
     },
     {
       "name": "In the Heart of the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1749,
         "northeast": 1748,
         "southeast": 1744
       },
-      "weight": 1,
       "id": 1747,
       "area": {
         "id": 34
@@ -128,11 +110,9 @@
     },
     {
       "name": "In the Heart of the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1747
       },
-      "weight": 1,
       "id": 1748,
       "area": {
         "id": 34
@@ -140,11 +120,9 @@
     },
     {
       "name": "In the Heart of the Anthill",
-      "environment": -1,
       "exits": {
         "northeast": 1747
       },
-      "weight": 1,
       "id": 1749,
       "area": {
         "id": 34
@@ -152,11 +130,9 @@
     },
     {
       "name": "In the Heart of the Anthill",
-      "environment": -1,
       "exits": {
         "northeast": 1744
       },
-      "weight": 1,
       "id": 1750,
       "area": {
         "id": 34
@@ -164,13 +140,11 @@
     },
     {
       "name": "In the Heart of the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1753,
         "northeast": 1752,
         "northwest": 1744
       },
-      "weight": 1,
       "id": 1751,
       "area": {
         "id": 34
@@ -178,11 +152,9 @@
     },
     {
       "name": "In the Heart of the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1751
       },
-      "weight": 1,
       "id": 1752,
       "area": {
         "id": 34
@@ -190,11 +162,9 @@
     },
     {
       "name": "In the Heart of the Anthill",
-      "environment": -1,
       "exits": {
         "northeast": 1751
       },
-      "weight": 1,
       "id": 1753,
       "area": {
         "id": 34
@@ -202,13 +172,11 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "up": 1744,
         "east": 1758,
         "south": 1755
       },
-      "weight": 1,
       "id": 1754,
       "area": {
         "id": 34
@@ -216,12 +184,10 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "southeast": 1756,
         "north": 1754
       },
-      "weight": 1,
       "id": 1755,
       "area": {
         "id": 34
@@ -229,12 +195,10 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "northwest": 1755,
         "southwest": 1757
       },
-      "weight": 1,
       "id": 1756,
       "area": {
         "id": 34
@@ -242,11 +206,9 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "northeast": 1756
       },
-      "weight": 1,
       "id": 1757,
       "area": {
         "id": 34
@@ -254,14 +216,12 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "southeast": 1763,
         "northeast": 1759,
         "northwest": 1762,
         "west": 1754
       },
-      "weight": 1,
       "id": 1758,
       "area": {
         "id": 34
@@ -269,12 +229,10 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "northwest": 1760,
         "southwest": 1758
       },
-      "weight": 1,
       "id": 1759,
       "area": {
         "id": 34
@@ -282,13 +240,11 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1762,
         "northwest": 1761,
         "southeast": 1759
       },
-      "weight": 1,
       "id": 1760,
       "area": {
         "id": 34
@@ -296,11 +252,9 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "southeast": 1760
       },
-      "weight": 1,
       "id": 1761,
       "area": {
         "id": 34
@@ -308,13 +262,11 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1765,
         "northeast": 1760,
         "southeast": 1758
       },
-      "weight": 1,
       "id": 1762,
       "area": {
         "id": 34
@@ -322,12 +274,10 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "northwest": 1758,
         "northeast": 1764
       },
-      "weight": 1,
       "id": 1763,
       "area": {
         "id": 34
@@ -335,11 +285,9 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1763
       },
-      "weight": 1,
       "id": 1764,
       "area": {
         "id": 34
@@ -347,12 +295,10 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "northwest": 1766,
         "northeast": 1762
       },
-      "weight": 1,
       "id": 1765,
       "area": {
         "id": 34
@@ -360,13 +306,11 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1767,
         "northeast": 1770,
         "southeast": 1765
       },
-      "weight": 1,
       "id": 1766,
       "area": {
         "id": 34
@@ -374,12 +318,10 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "southeast": 1768,
         "northeast": 1766
       },
-      "weight": 1,
       "id": 1767,
       "area": {
         "id": 34
@@ -387,12 +329,10 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "northwest": 1767,
         "southeast": 1769
       },
-      "weight": 1,
       "id": 1768,
       "area": {
         "id": 34
@@ -400,11 +340,9 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "northwest": 1768
       },
-      "weight": 1,
       "id": 1769,
       "area": {
         "id": 34
@@ -412,11 +350,9 @@
     },
     {
       "name": "At the Base of the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1766
       },
-      "weight": 1,
       "id": 1770,
       "area": {
         "id": 34
@@ -424,14 +360,12 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "south": 1798,
         "west": 1772,
         "east": 1782,
         "north": 1797
       },
-      "weight": 1,
       "id": 1771,
       "area": {
         "id": 34
@@ -439,12 +373,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "northwest": 1773,
         "east": 1771
       },
-      "weight": 1,
       "id": 1772,
       "area": {
         "id": 34
@@ -452,13 +384,11 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "east": 1774,
         "southeast": 1772,
         "south": 1791
       },
-      "weight": 1,
       "id": 1773,
       "area": {
         "id": 34
@@ -466,13 +396,11 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "northeast": 1775,
         "west": 1773,
         "north": 1783
       },
-      "weight": 1,
       "id": 1774,
       "area": {
         "id": 34
@@ -480,12 +408,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1774,
         "east": 1776
       },
-      "weight": 1,
       "id": 1775,
       "area": {
         "id": 34
@@ -493,12 +419,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "west": 1775,
         "south": 1777
       },
-      "weight": 1,
       "id": 1776,
       "area": {
         "id": 34
@@ -506,7 +430,6 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "south": 1782,
         "west": 1797,
@@ -514,7 +437,6 @@
         "east": 1799,
         "north": 1776
       },
-      "weight": 1,
       "id": 1777,
       "area": {
         "id": 34
@@ -522,12 +444,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1777,
         "east": 1779
       },
-      "weight": 1,
       "id": 1778,
       "area": {
         "id": 34
@@ -535,12 +455,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "west": 1778,
         "south": 1780
       },
-      "weight": 1,
       "id": 1779,
       "area": {
         "id": 34
@@ -548,13 +466,11 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1781,
         "south": 1803,
         "north": 1779
       },
-      "weight": 1,
       "id": 1780,
       "area": {
         "id": 34
@@ -562,13 +478,11 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "northeast": 1780,
         "west": 1782,
         "south": 1800
       },
-      "weight": 1,
       "id": 1781,
       "area": {
         "id": 34
@@ -576,13 +490,11 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "west": 1771,
         "east": 1781,
         "north": 1777
       },
-      "weight": 1,
       "id": 1782,
       "area": {
         "id": 34
@@ -590,12 +502,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "west": 1784,
         "south": 1774
       },
-      "weight": 1,
       "id": 1783,
       "area": {
         "id": 34
@@ -603,12 +513,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1785,
         "east": 1783
       },
-      "weight": 1,
       "id": 1784,
       "area": {
         "id": 34
@@ -616,12 +524,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "west": 1786,
         "northeast": 1784
       },
-      "weight": 1,
       "id": 1785,
       "area": {
         "id": 34
@@ -629,12 +535,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "east": 1785,
         "south": 1787
       },
-      "weight": 1,
       "id": 1786,
       "area": {
         "id": 34
@@ -642,12 +546,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1788,
         "north": 1786
       },
-      "weight": 1,
       "id": 1787,
       "area": {
         "id": 34
@@ -655,12 +557,10 @@
     },
     {
       "name": "Near the Queen's Lair",
-      "environment": -1,
       "exits": {
         "northeast": 1787,
         "north": 1789
       },
-      "weight": 1,
       "id": 1788,
       "area": {
         "id": 34
@@ -668,12 +568,10 @@
     },
     {
       "name": "Near the Queen's Lair",
-      "environment": -1,
       "exits": {
         "south": 1788,
         "north": 1790
       },
-      "weight": 1,
       "id": 1789,
       "area": {
         "id": 34
@@ -681,11 +579,9 @@
     },
     {
       "name": "The Ant Lair",
-      "environment": -1,
       "exits": {
         "south": 1789
       },
-      "weight": 1,
       "id": 1790,
       "area": {
         "id": 34
@@ -693,13 +589,11 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "south": 1792,
         "southeast": 1796,
         "north": 1773
       },
-      "weight": 1,
       "id": 1791,
       "area": {
         "id": 34
@@ -707,13 +601,11 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "west": 1793,
         "east": 1796,
         "north": 1791
       },
-      "weight": 1,
       "id": 1792,
       "area": {
         "id": 34
@@ -721,12 +613,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "east": 1792,
         "north": 1794
       },
-      "weight": 1,
       "id": 1793,
       "area": {
         "id": 34
@@ -734,12 +624,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "southwest": 1795,
         "south": 1793
       },
-      "weight": 1,
       "id": 1794,
       "area": {
         "id": 34
@@ -747,11 +635,9 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "northeast": 1794
       },
-      "weight": 1,
       "id": 1795,
       "area": {
         "id": 34
@@ -759,12 +645,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "northwest": 1791,
         "west": 1792
       },
-      "weight": 1,
       "id": 1796,
       "area": {
         "id": 34
@@ -772,12 +656,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "east": 1777,
         "south": 1771
       },
-      "weight": 1,
       "id": 1797,
       "area": {
         "id": 34
@@ -785,11 +667,9 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "north": 1771
       },
-      "weight": 1,
       "id": 1798,
       "area": {
         "id": 34
@@ -797,11 +677,9 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "west": 1777
       },
-      "weight": 1,
       "id": 1799,
       "area": {
         "id": 34
@@ -809,13 +687,11 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "west": 1801,
         "east": 1802,
         "north": 1781
       },
-      "weight": 1,
       "id": 1800,
       "area": {
         "id": 34
@@ -823,11 +699,9 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "east": 1800
       },
-      "weight": 1,
       "id": 1801,
       "area": {
         "id": 34
@@ -835,12 +709,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "west": 1800,
         "north": 1803
       },
-      "weight": 1,
       "id": 1802,
       "area": {
         "id": 34
@@ -848,13 +720,11 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "south": 1802,
         "east": 1804,
         "north": 1780
       },
-      "weight": 1,
       "id": 1803,
       "area": {
         "id": 34
@@ -862,12 +732,10 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "west": 1803,
         "north": 1805
       },
-      "weight": 1,
       "id": 1804,
       "area": {
         "id": 34
@@ -875,11 +743,9 @@
     },
     {
       "name": "Beneath the Anthill",
-      "environment": -1,
       "exits": {
         "south": 1804
       },
-      "weight": 1,
       "id": 1805,
       "area": {
         "id": 34
@@ -887,9 +753,7 @@
     },
     {
       "name": "At the top of the anthill.",
-      "environment": -1,
       "id": 1806,
-      "weight": 1,
       "area": {
         "id": 34
       }

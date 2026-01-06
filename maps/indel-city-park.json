@@ -5,13 +5,11 @@
   "rooms": [
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "west": 1525,
         "east": 1607,
         "north": 1608
       },
-      "weight": 1,
       "id": 1606,
       "area": {
         "id": 30
@@ -19,13 +17,11 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "west": 1606,
         "east": 1613,
         "north": 1609
       },
-      "weight": 1,
       "id": 1607,
       "area": {
         "id": 30
@@ -33,13 +29,11 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "south": 1606,
         "east": 1609,
         "north": 1611
       },
-      "weight": 1,
       "id": 1608,
       "area": {
         "id": 30
@@ -47,14 +41,12 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "south": 1607,
         "west": 1608,
         "east": 1610,
         "north": 1612
       },
-      "weight": 1,
       "id": 1609,
       "area": {
         "id": 30
@@ -62,13 +54,11 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "west": 1609,
         "south": 1613,
         "north": 1614
       },
-      "weight": 1,
       "id": 1610,
       "area": {
         "id": 30
@@ -76,13 +66,11 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "south": 1608,
         "east": 1612,
         "north": 1615
       },
-      "weight": 1,
       "id": 1611,
       "area": {
         "id": 30
@@ -90,14 +78,12 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "south": 1609,
         "west": 1611,
         "east": 1614,
         "north": 1616
       },
-      "weight": 1,
       "id": 1612,
       "area": {
         "id": 30
@@ -105,12 +91,10 @@
     },
     {
       "name": "Gazebo in the Park",
-      "environment": -1,
       "exits": {
         "west": 1607,
         "north": 1610
       },
-      "weight": 1,
       "id": 1613,
       "area": {
         "id": 30
@@ -118,13 +102,11 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "west": 1612,
         "south": 1610,
         "north": 1617
       },
-      "weight": 1,
       "id": 1614,
       "area": {
         "id": 30
@@ -132,13 +114,11 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "south": 1611,
         "east": 1616,
         "north": 1619
       },
-      "weight": 1,
       "id": 1615,
       "area": {
         "id": 30
@@ -146,14 +126,12 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "south": 1612,
         "west": 1615,
         "east": 1617,
         "north": 1618
       },
-      "weight": 1,
       "id": 1616,
       "area": {
         "id": 30
@@ -161,13 +139,11 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "west": 1616,
         "south": 1614,
         "north": 1620
       },
-      "weight": 1,
       "id": 1617,
       "area": {
         "id": 30
@@ -175,13 +151,11 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "west": 1619,
         "east": 1620,
         "south": 1616
       },
-      "weight": 1,
       "id": 1618,
       "area": {
         "id": 30
@@ -189,12 +163,10 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "east": 1618,
         "south": 1615
       },
-      "weight": 1,
       "id": 1619,
       "area": {
         "id": 30
@@ -202,12 +174,10 @@
     },
     {
       "name": "Indel City Park",
-      "environment": -1,
       "exits": {
         "west": 1618,
         "south": 1617
       },
-      "weight": 1,
       "id": 1620,
       "area": {
         "id": 30

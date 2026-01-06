@@ -5,7 +5,6 @@
   "rooms": [
     {
       "name": "House of Clan Lord Bracknar",
-      "environment": -1,
       "exits": {
         "west": 1080,
         "up": 1081,
@@ -13,7 +12,6 @@
         "east": 76,
         "north": 1078
       },
-      "weight": 1,
       "id": 77,
       "area": {
         "id": 18
@@ -21,11 +19,9 @@
     },
     {
       "name": "Lord's Stable",
-      "environment": -1,
       "exits": {
         "south": 77
       },
-      "weight": 1,
       "id": 1078,
       "area": {
         "id": 18
@@ -33,11 +29,9 @@
     },
     {
       "name": "Kitchen",
-      "environment": -1,
       "exits": {
         "north": 77
       },
-      "weight": 1,
       "id": 1079,
       "area": {
         "id": 18
@@ -45,11 +39,9 @@
     },
     {
       "name": "Bracknar's Garden",
-      "environment": -1,
       "exits": {
         "east": 77
       },
-      "weight": 1,
       "id": 1080,
       "area": {
         "id": 18
@@ -57,11 +49,9 @@
     },
     {
       "name": "House of Clan Lord Bracknar",
-      "environment": -1,
       "exits": {
         "down": 77
       },
-      "weight": 1,
       "id": 1081,
       "area": {
         "id": 18

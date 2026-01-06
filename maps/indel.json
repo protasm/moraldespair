@@ -5,13 +5,11 @@
   "rooms": [
     {
       "name": "City of Indel, Wilderness Gate",
-      "environment": -1,
       "exits": {
         "west": 1635,
         "east": 1636,
         "south": 1402
       },
-      "weight": 1,
       "id": 1401,
       "area": {
         "id": 28
@@ -19,14 +17,12 @@
     },
     {
       "name": "Castle Road",
-      "environment": -1,
       "exits": {
         "south": 1403,
         "west": 1631,
         "east": 1633,
         "north": 1401
       },
-      "weight": 1,
       "id": 1402,
       "area": {
         "id": 28
@@ -34,14 +30,12 @@
     },
     {
       "name": "Castle Road",
-      "environment": -1,
       "exits": {
         "south": 1404,
         "west": 1628,
         "east": 1630,
         "north": 1402
       },
-      "weight": 1,
       "id": 1403,
       "area": {
         "id": 28
@@ -49,14 +43,12 @@
     },
     {
       "name": "Castle Road Courtyard",
-      "environment": -1,
       "exits": {
         "south": 1405,
         "west": 1626,
         "east": 1627,
         "north": 1403
       },
-      "weight": 1,
       "id": 1404,
       "area": {
         "id": 28
@@ -64,13 +56,11 @@
     },
     {
       "name": "Castle Road",
-      "environment": -1,
       "exits": {
         "west": 1625,
         "south": 1406,
         "north": 1404
       },
-      "weight": 1,
       "id": 1405,
       "area": {
         "id": 28
@@ -78,14 +68,12 @@
     },
     {
       "name": "Intersection of Castle Road and Merchant's Row",
-      "environment": -1,
       "exits": {
         "south": 1584,
         "west": 1407,
         "east": 1508,
         "north": 1405
       },
-      "weight": 1,
       "id": 1406,
       "area": {
         "id": 28
@@ -93,12 +81,10 @@
     },
     {
       "name": "West Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1406,
         "west": 1408
       },
-      "weight": 1,
       "id": 1407,
       "area": {
         "id": 28
@@ -106,13 +92,11 @@
     },
     {
       "name": "West Merchant's Row, north of the Silver Griffin",
-      "environment": -1,
       "exits": {
         "west": 1409,
         "east": 1407,
         "south": 1589
       },
-      "weight": 1,
       "id": 1408,
       "area": {
         "id": 28
@@ -120,13 +104,11 @@
     },
     {
       "name": "West Merchant's Row, south of Big Bob's Sign Shop",
-      "environment": -1,
       "exits": {
         "west": 1410,
         "east": 1408,
         "south": 1590
       },
-      "weight": 1,
       "id": 1409,
       "area": {
         "id": 28
@@ -134,12 +116,10 @@
     },
     {
       "name": "West Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1409,
         "west": 1411
       },
-      "weight": 1,
       "id": 1410,
       "area": {
         "id": 28
@@ -147,12 +127,10 @@
     },
     {
       "name": "West Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1410,
         "west": 1412
       },
-      "weight": 1,
       "id": 1411,
       "area": {
         "id": 28
@@ -160,12 +138,10 @@
     },
     {
       "name": "West Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1411,
         "west": 1413
       },
-      "weight": 1,
       "id": 1412,
       "area": {
         "id": 28
@@ -173,12 +149,10 @@
     },
     {
       "name": "West Merchant's Row, south of Knights of Solamnia",
-      "environment": -1,
       "exits": {
         "east": 1412,
         "west": 1414
       },
-      "weight": 1,
       "id": 1413,
       "area": {
         "id": 28
@@ -186,12 +160,10 @@
     },
     {
       "name": "West Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1413,
         "west": 1415
       },
-      "weight": 1,
       "id": 1414,
       "area": {
         "id": 28
@@ -199,12 +171,10 @@
     },
     {
       "name": "West Merchant's Row, south of the Cobbler's Shop",
-      "environment": -1,
       "exits": {
         "east": 1414,
         "west": 1416
       },
-      "weight": 1,
       "id": 1415,
       "area": {
         "id": 28
@@ -212,12 +182,10 @@
     },
     {
       "name": "West Merchant's Row, south of Laird's Forge",
-      "environment": -1,
       "exits": {
         "east": 1415,
         "west": 1417
       },
-      "weight": 1,
       "id": 1416,
       "area": {
         "id": 28
@@ -225,12 +193,10 @@
     },
     {
       "name": "West Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1416,
         "west": 1418
       },
-      "weight": 1,
       "id": 1417,
       "area": {
         "id": 28
@@ -238,13 +204,11 @@
     },
     {
       "name": "Pier Street and Merchant's Row",
-      "environment": -1,
       "exits": {
         "south": 1419,
         "east": 1417,
         "north": 1448
       },
-      "weight": 1,
       "id": 1418,
       "area": {
         "id": 28
@@ -252,12 +216,10 @@
     },
     {
       "name": "Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1420,
         "north": 1418
       },
-      "weight": 1,
       "id": 1419,
       "area": {
         "id": 28
@@ -265,12 +227,10 @@
     },
     {
       "name": "Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1421,
         "north": 1419
       },
-      "weight": 1,
       "id": 1420,
       "area": {
         "id": 28
@@ -278,12 +238,10 @@
     },
     {
       "name": "Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1422,
         "north": 1420
       },
-      "weight": 1,
       "id": 1421,
       "area": {
         "id": 28
@@ -291,12 +249,10 @@
     },
     {
       "name": "Pier Street west of the Waterfront Gate",
-      "environment": -1,
       "exits": {
         "south": 1423,
         "north": 1421
       },
-      "weight": 1,
       "id": 1422,
       "area": {
         "id": 28
@@ -304,12 +260,10 @@
     },
     {
       "name": "Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1424,
         "north": 1422
       },
-      "weight": 1,
       "id": 1423,
       "area": {
         "id": 28
@@ -317,12 +271,10 @@
     },
     {
       "name": "Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1425,
         "north": 1423
       },
-      "weight": 1,
       "id": 1424,
       "area": {
         "id": 28
@@ -330,12 +282,10 @@
     },
     {
       "name": "Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1426,
         "north": 1424
       },
-      "weight": 1,
       "id": 1425,
       "area": {
         "id": 28
@@ -343,12 +293,10 @@
     },
     {
       "name": "Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1427,
         "north": 1425
       },
-      "weight": 1,
       "id": 1426,
       "area": {
         "id": 28
@@ -356,12 +304,10 @@
     },
     {
       "name": "Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1428,
         "north": 1426
       },
-      "weight": 1,
       "id": 1427,
       "area": {
         "id": 28
@@ -369,12 +315,10 @@
     },
     {
       "name": "Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1429,
         "north": 1427
       },
-      "weight": 1,
       "id": 1428,
       "area": {
         "id": 28
@@ -382,12 +326,10 @@
     },
     {
       "name": "South Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1430,
         "north": 1428
       },
-      "weight": 1,
       "id": 1429,
       "area": {
         "id": 28
@@ -395,12 +337,10 @@
     },
     {
       "name": "South Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1431,
         "north": 1429
       },
-      "weight": 1,
       "id": 1430,
       "area": {
         "id": 28
@@ -408,12 +348,10 @@
     },
     {
       "name": "South Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1432,
         "north": 1430
       },
-      "weight": 1,
       "id": 1431,
       "area": {
         "id": 28
@@ -421,12 +359,10 @@
     },
     {
       "name": "South Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1433,
         "north": 1431
       },
-      "weight": 1,
       "id": 1432,
       "area": {
         "id": 28
@@ -434,12 +370,10 @@
     },
     {
       "name": "South Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1434,
         "north": 1432
       },
-      "weight": 1,
       "id": 1433,
       "area": {
         "id": 28
@@ -447,13 +381,11 @@
     },
     {
       "name": "South Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1435,
         "east": 1545,
         "north": 1433
       },
-      "weight": 1,
       "id": 1434,
       "area": {
         "id": 28
@@ -461,12 +393,10 @@
     },
     {
       "name": "South Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1436,
         "north": 1434
       },
-      "weight": 1,
       "id": 1435,
       "area": {
         "id": 28
@@ -474,12 +404,10 @@
     },
     {
       "name": "South Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1437,
         "north": 1435
       },
-      "weight": 1,
       "id": 1436,
       "area": {
         "id": 28
@@ -487,12 +415,10 @@
     },
     {
       "name": "South Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1438,
         "north": 1436
       },
-      "weight": 1,
       "id": 1437,
       "area": {
         "id": 28
@@ -500,12 +426,10 @@
     },
     {
       "name": "South Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1439,
         "north": 1437
       },
-      "weight": 1,
       "id": 1438,
       "area": {
         "id": 28
@@ -513,11 +437,9 @@
     },
     {
       "name": "Forester's Gate",
-      "environment": -1,
       "exits": {
         "north": 1438
       },
-      "weight": 1,
       "id": 1439,
       "area": {
         "id": 28
@@ -525,12 +447,10 @@
     },
     {
       "name": "North Pier Street",
-      "environment": -1,
       "exits": {
         "south": 1418,
         "north": 1507
       },
-      "weight": 1,
       "id": 1448,
       "area": {
         "id": 28
@@ -538,11 +458,9 @@
     },
     {
       "name": "Cobblestone courtyard",
-      "environment": -1,
       "exits": {
         "south": 1448
       },
-      "weight": 1,
       "id": 1507,
       "area": {
         "id": 28
@@ -550,12 +468,10 @@
     },
     {
       "name": "East Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1509,
         "west": 1406
       },
-      "weight": 1,
       "id": 1508,
       "area": {
         "id": 28
@@ -563,13 +479,11 @@
     },
     {
       "name": "East Merchant's Row, south of Saul's Formal Wear",
-      "environment": -1,
       "exits": {
         "west": 1508,
         "east": 1510,
         "north": 1624
       },
-      "weight": 1,
       "id": 1509,
       "area": {
         "id": 28
@@ -577,13 +491,11 @@
     },
     {
       "name": "East Merchant's Row, south of a livestock lot",
-      "environment": -1,
       "exits": {
         "west": 1509,
         "east": 1511,
         "north": 1623
       },
-      "weight": 1,
       "id": 1510,
       "area": {
         "id": 28
@@ -591,13 +503,11 @@
     },
     {
       "name": "East Merchant's Row, south of Mother Whitman's",
-      "environment": -1,
       "exits": {
         "west": 1510,
         "east": 1512,
         "north": 1622
       },
-      "weight": 1,
       "id": 1511,
       "area": {
         "id": 28
@@ -605,12 +515,10 @@
     },
     {
       "name": "East Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1513,
         "west": 1511
       },
-      "weight": 1,
       "id": 1512,
       "area": {
         "id": 28
@@ -618,12 +526,10 @@
     },
     {
       "name": "East Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1514,
         "west": 1512
       },
-      "weight": 1,
       "id": 1513,
       "area": {
         "id": 28
@@ -631,13 +537,11 @@
     },
     {
       "name": "East Merchant's Row, south of Sithicus",
-      "environment": -1,
       "exits": {
         "west": 1513,
         "east": 1515,
         "north": 1621
       },
-      "weight": 1,
       "id": 1514,
       "area": {
         "id": 28
@@ -645,12 +549,10 @@
     },
     {
       "name": "East Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1516,
         "west": 1514
       },
-      "weight": 1,
       "id": 1515,
       "area": {
         "id": 28
@@ -658,13 +560,11 @@
     },
     {
       "name": "Merchant's Row and Pensji Lane",
-      "environment": -1,
       "exits": {
         "west": 1515,
         "east": 1517,
         "south": 1520
       },
-      "weight": 1,
       "id": 1516,
       "area": {
         "id": 28
@@ -672,12 +572,10 @@
     },
     {
       "name": "East Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1518,
         "west": 1516
       },
-      "weight": 1,
       "id": 1517,
       "area": {
         "id": 28
@@ -685,12 +583,10 @@
     },
     {
       "name": "East Merchant's Row",
-      "environment": -1,
       "exits": {
         "east": 1519,
         "west": 1517
       },
-      "weight": 1,
       "id": 1518,
       "area": {
         "id": 28
@@ -698,11 +594,9 @@
     },
     {
       "name": "End of Merchant's Row",
-      "environment": -1,
       "exits": {
         "west": 1518
       },
-      "weight": 1,
       "id": 1519,
       "area": {
         "id": 28
@@ -710,12 +604,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1521,
         "north": 1516
       },
-      "weight": 1,
       "id": 1520,
       "area": {
         "id": 28
@@ -723,12 +615,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1522,
         "north": 1520
       },
-      "weight": 1,
       "id": 1521,
       "area": {
         "id": 28
@@ -736,12 +626,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1523,
         "north": 1521
       },
-      "weight": 1,
       "id": 1522,
       "area": {
         "id": 28
@@ -749,12 +637,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1524,
         "north": 1522
       },
-      "weight": 1,
       "id": 1523,
       "area": {
         "id": 28
@@ -762,12 +648,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1525,
         "north": 1523
       },
-      "weight": 1,
       "id": 1524,
       "area": {
         "id": 28
@@ -775,13 +659,11 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1526,
         "east": 1606,
         "north": 1524
       },
-      "weight": 1,
       "id": 1525,
       "area": {
         "id": 28
@@ -789,12 +671,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1527,
         "north": 1525
       },
-      "weight": 1,
       "id": 1526,
       "area": {
         "id": 28
@@ -802,12 +682,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1528,
         "north": 1526
       },
-      "weight": 1,
       "id": 1527,
       "area": {
         "id": 28
@@ -815,12 +693,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1529,
         "north": 1527
       },
-      "weight": 1,
       "id": 1528,
       "area": {
         "id": 28
@@ -828,12 +704,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1530,
         "north": 1528
       },
-      "weight": 1,
       "id": 1529,
       "area": {
         "id": 28
@@ -841,12 +715,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1531,
         "north": 1529
       },
-      "weight": 1,
       "id": 1530,
       "area": {
         "id": 28
@@ -854,12 +726,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1532,
         "north": 1530
       },
-      "weight": 1,
       "id": 1531,
       "area": {
         "id": 28
@@ -867,12 +737,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1533,
         "north": 1531
       },
-      "weight": 1,
       "id": 1532,
       "area": {
         "id": 28
@@ -880,13 +748,11 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1534,
         "east": 1597,
         "north": 1532
       },
-      "weight": 1,
       "id": 1533,
       "area": {
         "id": 28
@@ -894,12 +760,10 @@
     },
     {
       "name": "Pensji Lane",
-      "environment": -1,
       "exits": {
         "south": 1542,
         "north": 1533
       },
-      "weight": 1,
       "id": 1534,
       "area": {
         "id": 28
@@ -907,12 +771,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1536,
         "west": 1557
       },
-      "weight": 1,
       "id": 1535,
       "area": {
         "id": 28
@@ -920,12 +782,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1537,
         "west": 1535
       },
-      "weight": 1,
       "id": 1536,
       "area": {
         "id": 28
@@ -933,12 +793,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1538,
         "west": 1536
       },
-      "weight": 1,
       "id": 1537,
       "area": {
         "id": 28
@@ -946,12 +804,10 @@
     },
     {
       "name": "City Barracks Gate",
-      "environment": -1,
       "exits": {
         "east": 1539,
         "west": 1537
       },
-      "weight": 1,
       "id": 1538,
       "area": {
         "id": 28
@@ -959,12 +815,10 @@
     },
     {
       "name": "West Martial Row",
-      "environment": -1,
       "exits": {
         "east": 1540,
         "west": 1538
       },
-      "weight": 1,
       "id": 1539,
       "area": {
         "id": 28
@@ -972,12 +826,10 @@
     },
     {
       "name": "West Martial Row",
-      "environment": -1,
       "exits": {
         "east": 1541,
         "west": 1539
       },
-      "weight": 1,
       "id": 1540,
       "area": {
         "id": 28
@@ -985,12 +837,10 @@
     },
     {
       "name": "West Martial Row",
-      "environment": -1,
       "exits": {
         "east": 1542,
         "west": 1540
       },
-      "weight": 1,
       "id": 1541,
       "area": {
         "id": 28
@@ -998,13 +848,11 @@
     },
     {
       "name": "Intersection of Martial Row and Pensji Lane",
-      "environment": -1,
       "exits": {
         "west": 1541,
         "east": 1591,
         "north": 1534
       },
-      "weight": 1,
       "id": 1542,
       "area": {
         "id": 28
@@ -1012,12 +860,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1546,
         "north": 1544
       },
-      "weight": 1,
       "id": 1543,
       "area": {
         "id": 28
@@ -1025,12 +871,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1543,
         "north": 1558
       },
-      "weight": 1,
       "id": 1544,
       "area": {
         "id": 28
@@ -1038,12 +882,10 @@
     },
     {
       "name": "Ambassador Gate",
-      "environment": -1,
       "exits": {
         "east": 1546,
         "west": 1434
       },
-      "weight": 1,
       "id": 1545,
       "area": {
         "id": 28
@@ -1051,13 +893,11 @@
     },
     {
       "name": "Intersection of Church Road and Embassy Row",
-      "environment": -1,
       "exits": {
         "west": 1545,
         "east": 1547,
         "north": 1543
       },
-      "weight": 1,
       "id": 1546,
       "area": {
         "id": 28
@@ -1065,12 +905,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1548,
         "west": 1546
       },
-      "weight": 1,
       "id": 1547,
       "area": {
         "id": 28
@@ -1078,12 +916,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1549,
         "west": 1547
       },
-      "weight": 1,
       "id": 1548,
       "area": {
         "id": 28
@@ -1091,12 +927,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1550,
         "west": 1548
       },
-      "weight": 1,
       "id": 1549,
       "area": {
         "id": 28
@@ -1104,12 +938,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1551,
         "west": 1549
       },
-      "weight": 1,
       "id": 1550,
       "area": {
         "id": 28
@@ -1117,12 +949,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1552,
         "west": 1550
       },
-      "weight": 1,
       "id": 1551,
       "area": {
         "id": 28
@@ -1130,12 +960,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1553,
         "west": 1551
       },
-      "weight": 1,
       "id": 1552,
       "area": {
         "id": 28
@@ -1143,12 +971,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1554,
         "west": 1552
       },
-      "weight": 1,
       "id": 1553,
       "area": {
         "id": 28
@@ -1156,12 +982,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1555,
         "west": 1553
       },
-      "weight": 1,
       "id": 1554,
       "area": {
         "id": 28
@@ -1169,12 +993,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1556,
         "west": 1554
       },
-      "weight": 1,
       "id": 1555,
       "area": {
         "id": 28
@@ -1182,12 +1004,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1557,
         "west": 1555
       },
-      "weight": 1,
       "id": 1556,
       "area": {
         "id": 28
@@ -1195,12 +1015,10 @@
     },
     {
       "name": "Embassy Row",
-      "environment": -1,
       "exits": {
         "east": 1535,
         "west": 1556
       },
-      "weight": 1,
       "id": 1557,
       "area": {
         "id": 28
@@ -1208,12 +1026,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1544,
         "north": 1559
       },
-      "weight": 1,
       "id": 1558,
       "area": {
         "id": 28
@@ -1221,12 +1037,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1558,
         "north": 1560
       },
-      "weight": 1,
       "id": 1559,
       "area": {
         "id": 28
@@ -1234,12 +1048,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1559,
         "north": 1561
       },
-      "weight": 1,
       "id": 1560,
       "area": {
         "id": 28
@@ -1247,12 +1059,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1560,
         "north": 1562
       },
-      "weight": 1,
       "id": 1561,
       "area": {
         "id": 28
@@ -1260,12 +1070,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1561,
         "north": 1563
       },
-      "weight": 1,
       "id": 1562,
       "area": {
         "id": 28
@@ -1273,12 +1081,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1562,
         "north": 1564
       },
-      "weight": 1,
       "id": 1563,
       "area": {
         "id": 28
@@ -1286,12 +1092,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1563,
         "north": 1565
       },
-      "weight": 1,
       "id": 1564,
       "area": {
         "id": 28
@@ -1299,12 +1103,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1564,
         "north": 1566
       },
-      "weight": 1,
       "id": 1565,
       "area": {
         "id": 28
@@ -1312,12 +1114,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1565,
         "north": 1567
       },
-      "weight": 1,
       "id": 1566,
       "area": {
         "id": 28
@@ -1325,12 +1125,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1566,
         "north": 1568
       },
-      "weight": 1,
       "id": 1567,
       "area": {
         "id": 28
@@ -1338,12 +1136,10 @@
     },
     {
       "name": "West Church Road",
-      "environment": -1,
       "exits": {
         "south": 1567,
         "north": 1569
       },
-      "weight": 1,
       "id": 1568,
       "area": {
         "id": 28
@@ -1351,12 +1147,10 @@
     },
     {
       "name": "Church Road Bend",
-      "environment": -1,
       "exits": {
         "east": 1570,
         "south": 1568
       },
-      "weight": 1,
       "id": 1569,
       "area": {
         "id": 28
@@ -1364,12 +1158,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1571,
         "west": 1569
       },
-      "weight": 1,
       "id": 1570,
       "area": {
         "id": 28
@@ -1377,12 +1169,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1572,
         "west": 1570
       },
-      "weight": 1,
       "id": 1571,
       "area": {
         "id": 28
@@ -1390,12 +1180,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1573,
         "west": 1571
       },
-      "weight": 1,
       "id": 1572,
       "area": {
         "id": 28
@@ -1403,12 +1191,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1574,
         "west": 1572
       },
-      "weight": 1,
       "id": 1573,
       "area": {
         "id": 28
@@ -1416,12 +1202,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1575,
         "west": 1573
       },
-      "weight": 1,
       "id": 1574,
       "area": {
         "id": 28
@@ -1429,12 +1213,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1576,
         "west": 1574
       },
-      "weight": 1,
       "id": 1575,
       "area": {
         "id": 28
@@ -1442,12 +1224,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1577,
         "west": 1575
       },
-      "weight": 1,
       "id": 1576,
       "area": {
         "id": 28
@@ -1455,12 +1235,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1578,
         "west": 1576
       },
-      "weight": 1,
       "id": 1577,
       "area": {
         "id": 28
@@ -1468,12 +1246,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1579,
         "west": 1577
       },
-      "weight": 1,
       "id": 1578,
       "area": {
         "id": 28
@@ -1481,14 +1257,12 @@
     },
     {
       "name": "Intersection of Castle Road and Church Road",
-      "environment": -1,
       "exits": {
         "south": 1585,
         "west": 1578,
         "east": 1580,
         "north": 1584
       },
-      "weight": 1,
       "id": 1579,
       "area": {
         "id": 28
@@ -1496,12 +1270,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1581,
         "west": 1579
       },
-      "weight": 1,
       "id": 1580,
       "area": {
         "id": 28
@@ -1509,12 +1281,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1582,
         "west": 1580
       },
-      "weight": 1,
       "id": 1581,
       "area": {
         "id": 28
@@ -1522,12 +1292,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "east": 1583,
         "west": 1581
       },
-      "weight": 1,
       "id": 1582,
       "area": {
         "id": 28
@@ -1535,12 +1303,10 @@
     },
     {
       "name": "North Church Road",
-      "environment": -1,
       "exits": {
         "down": 1653,
         "west": 1582
       },
-      "weight": 1,
       "id": 1583,
       "area": {
         "id": 28
@@ -1548,14 +1314,12 @@
     },
     {
       "name": "Olde City Gate",
-      "environment": -1,
       "exits": {
         "south": 1579,
         "west": 1588,
         "east": 1587,
         "north": 1406
       },
-      "weight": 1,
       "id": 1584,
       "area": {
         "id": 28
@@ -1563,12 +1327,10 @@
     },
     {
       "name": "Castle Drawbridge",
-      "environment": -1,
       "exits": {
         "south": 1586,
         "north": 1579
       },
-      "weight": 1,
       "id": 1585,
       "area": {
         "id": 28
@@ -1576,11 +1338,9 @@
     },
     {
       "name": "Castle Gatehouse",
-      "environment": -1,
       "exits": {
         "north": 1585
       },
-      "weight": 1,
       "id": 1586,
       "area": {
         "id": 28
@@ -1588,11 +1348,9 @@
     },
     {
       "name": "Krakenwater",
-      "environment": -1,
       "exits": {
         "west": 1584
       },
-      "weight": 1,
       "id": 1587,
       "area": {
         "id": 28
@@ -1600,12 +1358,10 @@
     },
     {
       "name": "Deep Sea Thunder",
-      "environment": -1,
       "exits": {
         "east": 1584,
         "west": 1589
       },
-      "weight": 1,
       "id": 1588,
       "area": {
         "id": 28
@@ -1613,13 +1369,11 @@
     },
     {
       "name": "The Silver Griffin",
-      "environment": -1,
       "exits": {
         "west": 1590,
         "east": 1588,
         "north": 1408
       },
-      "weight": 1,
       "id": 1589,
       "area": {
         "id": 28
@@ -1627,12 +1381,10 @@
     },
     {
       "name": "Horrors of the Deep",
-      "environment": -1,
       "exits": {
         "east": 1589,
         "north": 1409
       },
-      "weight": 1,
       "id": 1590,
       "area": {
         "id": 28
@@ -1640,12 +1392,10 @@
     },
     {
       "name": "East Martial Row",
-      "environment": -1,
       "exits": {
         "east": 1592,
         "west": 1542
       },
-      "weight": 1,
       "id": 1591,
       "area": {
         "id": 28
@@ -1653,12 +1403,10 @@
     },
     {
       "name": "East Martial Row",
-      "environment": -1,
       "exits": {
         "east": 1593,
         "west": 1591
       },
-      "weight": 1,
       "id": 1592,
       "area": {
         "id": 28
@@ -1666,12 +1414,10 @@
     },
     {
       "name": "East Martial Row",
-      "environment": -1,
       "exits": {
         "west": 1592,
         "north": 1594
       },
-      "weight": 1,
       "id": 1593,
       "area": {
         "id": 28
@@ -1679,12 +1425,10 @@
     },
     {
       "name": "Army Encampment Gate",
-      "environment": -1,
       "exits": {
         "west": 1595,
         "south": 1593
       },
-      "weight": 1,
       "id": 1594,
       "area": {
         "id": 28
@@ -1692,12 +1436,10 @@
     },
     {
       "name": "Punishment Grounds",
-      "environment": -1,
       "exits": {
         "east": 1594,
         "west": 1596
       },
-      "weight": 1,
       "id": 1595,
       "area": {
         "id": 28
@@ -1705,12 +1447,10 @@
     },
     {
       "name": "Parade Grounds",
-      "environment": -1,
       "exits": {
         "east": 1595,
         "north": 1597
       },
-      "weight": 1,
       "id": 1596,
       "area": {
         "id": 28
@@ -1718,13 +1458,11 @@
     },
     {
       "name": "Cavalry Gate",
-      "environment": -1,
       "exits": {
         "west": 1533,
         "south": 1596,
         "north": 1598
       },
-      "weight": 1,
       "id": 1597,
       "area": {
         "id": 28
@@ -1732,13 +1470,11 @@
     },
     {
       "name": "Training Grounds",
-      "environment": -1,
       "exits": {
         "south": 1597,
         "east": 1600,
         "north": 1599
       },
-      "weight": 1,
       "id": 1598,
       "area": {
         "id": 28
@@ -1746,11 +1482,9 @@
     },
     {
       "name": "Combat Training",
-      "environment": -1,
       "exits": {
         "south": 1598
       },
-      "weight": 1,
       "id": 1599,
       "area": {
         "id": 28
@@ -1758,14 +1492,12 @@
     },
     {
       "name": "Post Exchange",
-      "environment": -1,
       "exits": {
         "south": 1602,
         "west": 1598,
         "east": 1601,
         "north": 1603
       },
-      "weight": 1,
       "id": 1600,
       "area": {
         "id": 28
@@ -1773,11 +1505,9 @@
     },
     {
       "name": "Stockade",
-      "environment": -1,
       "exits": {
         "west": 1600
       },
-      "weight": 1,
       "id": 1601,
       "area": {
         "id": 28
@@ -1785,12 +1515,10 @@
     },
     {
       "name": "Infirmary",
-      "environment": -1,
       "exits": {
         "east": 1605,
         "north": 1600
       },
-      "weight": 1,
       "id": 1602,
       "area": {
         "id": 28
@@ -1798,12 +1526,10 @@
     },
     {
       "name": "Soldiers' Tent",
-      "environment": -1,
       "exits": {
         "east": 1604,
         "south": 1600
       },
-      "weight": 1,
       "id": 1603,
       "area": {
         "id": 28
@@ -1811,11 +1537,9 @@
     },
     {
       "name": "Soldiers' Tent",
-      "environment": -1,
       "exits": {
         "west": 1603
       },
-      "weight": 1,
       "id": 1604,
       "area": {
         "id": 28
@@ -1823,11 +1547,9 @@
     },
     {
       "name": "You move the partition to the side and walk into the back of the tent.",
-      "environment": -1,
       "exits": {
         "west": 1602
       },
-      "weight": 1,
       "id": 1605,
       "area": {
         "id": 28
@@ -1835,11 +1557,9 @@
     },
     {
       "name": "Sithicus",
-      "environment": -1,
       "exits": {
         "south": 1514
       },
-      "weight": 1,
       "id": 1621,
       "area": {
         "id": 28
@@ -1847,11 +1567,9 @@
     },
     {
       "name": "Mother Whitman's Confections Shop",
-      "environment": -1,
       "exits": {
         "south": 1511
       },
-      "weight": 1,
       "id": 1622,
       "area": {
         "id": 28
@@ -1859,12 +1577,10 @@
     },
     {
       "name": "Livestock Lot",
-      "environment": -1,
       "exits": {
         "south": 1510,
         "north": 1643
       },
-      "weight": 1,
       "id": 1623,
       "area": {
         "id": 28
@@ -1872,11 +1588,9 @@
     },
     {
       "name": "Saul's formal wear",
-      "environment": -1,
       "exits": {
         "south": 1509
       },
-      "weight": 1,
       "id": 1624,
       "area": {
         "id": 28
@@ -1884,11 +1598,9 @@
     },
     {
       "name": "Quicksilver Delivery Service",
-      "environment": -1,
       "exits": {
         "east": 1405
       },
-      "weight": 1,
       "id": 1625,
       "area": {
         "id": 28
@@ -1896,11 +1608,9 @@
     },
     {
       "name": "Jusonah's Pawn and Polearms",
-      "environment": -1,
       "exits": {
         "east": 1404
       },
-      "weight": 1,
       "id": 1626,
       "area": {
         "id": 28
@@ -1908,12 +1618,10 @@
     },
     {
       "name": "You feel a STRONG urge to read the Sanctuary board... You are responsible for",
-      "environment": -1,
       "exits": {
         "west": 1404,
         "south": 1637
       },
-      "weight": 1,
       "id": 1627,
       "area": {
         "id": 28
@@ -1921,12 +1629,10 @@
     },
     {
       "name": "Zomar's Dry Goods",
-      "environment": -1,
       "exits": {
         "east": 1403,
         "down": 1629
       },
-      "weight": 1,
       "id": 1628,
       "area": {
         "id": 28
@@ -1934,11 +1640,9 @@
     },
     {
       "name": "The Art of Darkness",
-      "environment": -1,
       "exits": {
         "up": 1628
       },
-      "weight": 1,
       "id": 1629,
       "area": {
         "id": 28
@@ -1946,11 +1650,9 @@
     },
     {
       "name": "Burrow's Map Shop",
-      "environment": -1,
       "exits": {
         "west": 1403
       },
-      "weight": 1,
       "id": 1630,
       "area": {
         "id": 28
@@ -1958,12 +1660,10 @@
     },
     {
       "name": "Muddy Lane",
-      "environment": -1,
       "exits": {
         "east": 1402,
         "west": 1632
       },
-      "weight": 1,
       "id": 1631,
       "area": {
         "id": 28
@@ -1971,11 +1671,9 @@
     },
     {
       "name": "Muddy Lane",
-      "environment": -1,
       "exits": {
         "east": 1631
       },
-      "weight": 1,
       "id": 1632,
       "area": {
         "id": 28
@@ -1983,12 +1681,10 @@
     },
     {
       "name": "Muddy Lane",
-      "environment": -1,
       "exits": {
         "east": 1634,
         "west": 1402
       },
-      "weight": 1,
       "id": 1633,
       "area": {
         "id": 28
@@ -1996,11 +1692,9 @@
     },
     {
       "name": "Farm Road",
-      "environment": -1,
       "exits": {
         "west": 1633
       },
-      "weight": 1,
       "id": 1634,
       "area": {
         "id": 28
@@ -2008,11 +1702,9 @@
     },
     {
       "name": "West Ready Room",
-      "environment": -1,
       "exits": {
         "east": 1401
       },
-      "weight": 1,
       "id": 1635,
       "area": {
         "id": 28
@@ -2020,11 +1712,9 @@
     },
     {
       "name": "East Ready Room",
-      "environment": -1,
       "exits": {
         "west": 1401
       },
-      "weight": 1,
       "id": 1636,
       "area": {
         "id": 28
@@ -2032,11 +1722,9 @@
     },
     {
       "name": "Player Appreciation Week Discussions",
-      "environment": -1,
       "exits": {
         "north": 1627
       },
-      "weight": 1,
       "id": 1637,
       "area": {
         "id": 28
@@ -2044,11 +1732,9 @@
     },
     {
       "name": "Mudball Arena Entrance",
-      "environment": -1,
       "exits": {
         "up": 1583
       },
-      "weight": 1,
       "id": 1653,
       "area": {
         "id": 28

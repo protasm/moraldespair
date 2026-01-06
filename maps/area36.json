@@ -5,11 +5,9 @@
   "rooms": [
     {
       "name": "You are just inside the entrace to a large cave",
-      "environment": -1,
       "exits": {
         "east": 1825
       },
-      "weight": 1,
       "id": 1824,
       "area": {
         "id": 36
@@ -17,13 +15,11 @@
     },
     {
       "name": "A wide tunnel",
-      "environment": -1,
       "exits": {
         "west": 1824,
         "south": 1826,
         "north": 1827
       },
-      "weight": 1,
       "id": 1825,
       "area": {
         "id": 36
@@ -31,11 +27,9 @@
     },
     {
       "name": "A den",
-      "environment": -1,
       "exits": {
         "north": 1825
       },
-      "weight": 1,
       "id": 1826,
       "area": {
         "id": 36
@@ -43,12 +37,10 @@
     },
     {
       "name": "A tunnel",
-      "environment": -1,
       "exits": {
         "south": 1825,
         "north": 1828
       },
-      "weight": 1,
       "id": 1827,
       "area": {
         "id": 36
@@ -56,12 +48,10 @@
     },
     {
       "name": "A bend in the tunnel",
-      "environment": -1,
       "exits": {
         "east": 1829,
         "south": 1827
       },
-      "weight": 1,
       "id": 1828,
       "area": {
         "id": 36
@@ -69,12 +59,10 @@
     },
     {
       "name": "A tunnel",
-      "environment": -1,
       "exits": {
         "east": 1830,
         "west": 1828
       },
-      "weight": 1,
       "id": 1829,
       "area": {
         "id": 36
@@ -82,13 +70,11 @@
     },
     {
       "name": "T-intersection",
-      "environment": -1,
       "exits": {
         "west": 1829,
         "south": 1831,
         "north": 1833
       },
-      "weight": 1,
       "id": 1830,
       "area": {
         "id": 36
@@ -96,12 +82,10 @@
     },
     {
       "name": "The widening tunnel",
-      "environment": -1,
       "exits": {
         "east": 1832,
         "north": 1830
       },
-      "weight": 1,
       "id": 1831,
       "area": {
         "id": 36
@@ -109,11 +93,9 @@
     },
     {
       "name": "A large chamber",
-      "environment": -1,
       "exits": {
         "west": 1831
       },
-      "weight": 1,
       "id": 1832,
       "area": {
         "id": 36
@@ -121,11 +103,9 @@
     },
     {
       "name": "A small chamber",
-      "environment": -1,
       "exits": {
         "south": 1830
       },
-      "weight": 1,
       "id": 1833,
       "area": {
         "id": 36

@@ -5,12 +5,10 @@
   "rooms": [
     {
       "name": "Tiled Entryway",
-      "environment": -1,
       "exits": {
         "west": 1336,
         "south": 1335
       },
-      "weight": 1,
       "id": 1334,
       "area": {
         "id": 27
@@ -18,12 +16,10 @@
     },
     {
       "name": "Inside of Bracknar Gate",
-      "environment": -1,
       "exits": {
         "south": 261,
         "north": 1334
       },
-      "weight": 1,
       "id": 1335,
       "area": {
         "id": 27
@@ -31,12 +27,10 @@
     },
     {
       "name": "Sitting Room",
-      "environment": -1,
       "exits": {
         "east": 1334,
         "north": 1337
       },
-      "weight": 1,
       "id": 1336,
       "area": {
         "id": 27
@@ -44,12 +38,10 @@
     },
     {
       "name": "Guarded hallway",
-      "environment": -1,
       "exits": {
         "south": 1336,
         "north": 1361
       },
-      "weight": 1,
       "id": 1337,
       "area": {
         "id": 27
@@ -57,11 +49,9 @@
     },
     {
       "name": "Clan Lord's Private Chambers",
-      "environment": -1,
       "exits": {
         "south": 1337
       },
-      "weight": 1,
       "id": 1361,
       "area": {
         "id": 27

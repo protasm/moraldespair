@@ -5,11 +5,9 @@
   "rooms": [
     {
       "name": "Entrance to Gorge",
-      "environment": -1,
       "exits": {
         "north": 507
       },
-      "weight": 1,
       "id": 506,
       "area": {
         "id": 6
@@ -17,12 +15,10 @@
     },
     {
       "name": "Narrow Gorge",
-      "environment": -1,
       "exits": {
         "west": 508,
         "south": 506
       },
-      "weight": 1,
       "id": 507,
       "area": {
         "id": 6
@@ -30,11 +26,9 @@
     },
     {
       "name": "Old Guard Room",
-      "environment": -1,
       "exits": {
         "east": 507
       },
-      "weight": 1,
       "id": 508,
       "area": {
         "id": 6
