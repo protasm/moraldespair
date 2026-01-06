@@ -2725,10 +2725,10 @@ static int set_email(string str) {
 void add_standard_commands() {
     add_action("set_email", "email");
     add_action("give_object", "give");
-    add_action("score", "score");
-    add_action("save_character", "save");
+    //add_action("score", "score");
+    //add_action("save_character", "save");
     add_action("quit", "quit");
-    add_action("kill", "kill");
+    //add_action("kill", "kill");
     add_action("communicate", "say");
     add_action("communicate", "'", 1);
     add_action("shout_to_all", "shout");
@@ -2749,12 +2749,12 @@ void add_standard_commands() {
     add_action("bug", "bug");
     add_action("converse", "converse");
     add_action("toggle_brief", "brief");
-    add_action("toggle_whimpy", "wimpy");
-    add_action("stop_hunting_mode", "stop");
-    add_action("spell_missile", "missile");
-    add_action("spell_shock", "shock");
-    add_action("spell_fire_ball", "fireball");
-    add_action("pose", "pose");
+    //add_action("toggle_whimpy", "wimpy");
+    //add_action("stop_hunting_mode", "stop");
+    //add_action("spell_missile", "missile");
+    //add_action("spell_shock", "shock");
+    //add_action("spell_fire_ball", "fireball");
+    //add_action("pose", "pose");
     add_action("who", "who");
 #if defined(__TLS__)
     add_action("tls", "tls");

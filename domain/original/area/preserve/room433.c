@@ -10,5 +10,6 @@ void reset(int arg) {
     long_desc = "Waterfall.\n";
     dest_dir = ({
         "domain/original/area/preserve/room432", "east",
+        "domain/original/area/preserve/room434", "enter",
     });
 }

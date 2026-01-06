@@ -10,5 +10,6 @@ void reset(int arg) {
     long_desc = "Nature Preserve.\n";
     dest_dir = ({
         "domain/original/area/preserve/room435", "north",
+	"domain/original/area/preserve/room433", "exit",
     });
 }
