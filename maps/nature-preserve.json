@@ -4,588 +4,296 @@
   },
   "rooms": [
     {
-      "name": "Bridge",
-      "exits": {
-        "west": 433
-      },
-      "id": 432
-    },
-    {
-      "name": "Waterfall",
-      "exits": {
-        "east": 432
-      },
-      "id": 433
+      "id": 432, "name": "Bridge",
+      "exits": { "west": 433 }
     },
-    {
-      "name": "",
-      "exits": {
-        "north": 435
-      },
-      "id": 434
+    {
+      "id": 433, "name": "Waterfall",
+      "exits": { "east": 432 }
+    },
+    {
+      "id": 434, "name": "",
+      "exits": { "north": 435 }
+    },
+    {
+      "id": 435, "name": "Canopy Trail",
+      "exits": { "west": 436, "south": 434 }
+    },
+    {
+      "id": 436, "name": "Canopy Trail",
+      "exits": { "east": 435, "west": 437 }
+    },
+    {
+      "id": 437, "name": "Canopy Trail",
+      "exits": { "east": 436, "west": 438 }
+    },
+    {
+      "id": 438, "name": "Canopy Trail",
+      "exits": { "west": 439, "east": 437, "south": 440 }
+    },
+    {
+      "id": 439, "name": "Canopy Trail",
+      "exits": { "east": 438, "west": 445 }
+    },
+    {
+      "id": 440, "name": "Nature Preserve",
+      "exits": { "south": 441, "north": 438 }
+    },
+    {
+      "id": 441, "name": "Tropical Forest",
+      "exits": { "south": 442, "north": 440 }
+    },
+    {
+      "id": 442, "name": "Nature Preserve",
+      "exits": { "west": 443, "east": 444, "north": 441 }
+    },
+    {
+      "id": 443, "name": "Bird Sanctuary",
+      "exits": { "east": 442 }
+    },
+    {
+      "id": 444, "name": "Nature Preserve",
+      "exits": { "west": 442 }
+    },
+    {
+      "id": 445, "name": "Canopy Trail",
+      "exits": { "west": 496, "east": 439, "north": 446 }
+    },
+    {
+      "id": 446, "name": "Entrance to Queen's Meadow",
+      "exits": { "south": 445, "north": 447 }
+    },
+    {
+      "id": 447, "name": "Queen's Meadow",
+      "exits": { "south": 446, "north": 448 }
+    },
+    {
+      "id": 448, "name": "Queen's Meadow",
+      "exits": { "south": 447, "north": 449 }
+    },
+    {
+      "id": 449, "name": "Queen's Meadow",
+      "exits": { "west": 450, "south": 448, "north": 494 }
+    },
+    {
+      "id": 450, "name": "Nature Preserve",
+      "exits": { "east": 449, "west": 451 }
+    },
+    {
+      "id": 451, "name": "Nature Preserve",
+      "exits": { "east": 450, "west": 452 }
+    },
+    {
+      "id": 452, "name": "Nature Preserve",
+      "exits": { "east": 451, "west": 453 }
+    },
+    {
+      "id": 453, "name": "Nature Preserve",
+      "exits": { "south": 455, "east": 452, "north": 454 }
+    },
+    {
+      "id": 454, "name": "Nature Preserve",
+      "exits": { "south": 453 }
+    },
+    {
+      "id": 455, "name": "Nature Preserve",
+      "exits": { "south": 456, "north": 453 }
+    },
+    {
+      "id": 456, "name": "Nature Preserve",
+      "exits": { "west": 457, "north": 455 }
+    },
+    {
+      "id": 457, "name": "Nature Preserve",
+      "exits": { "east": 456, "west": 458 }
+    },
+    {
+      "id": 458, "name": "Nature Preserve",
+      "exits": { "east": 457, "north": 459 }
+    },
+    {
+      "id": 459, "name": "Nature Preserve",
+      "exits": { "south": 458, "north": 460 }
+    },
+    {
+      "id": 460, "name": "Nature Preserve",
+      "exits": { "west": 495, "south": 459, "north": 461 }
+    },
+    {
+      "id": 461, "name": "Nature Preserve",
+      "exits": { "west": 463, "east": 462, "south": 460 }
+    },
+    {
+      "id": 462, "name": "Nature Preserve",
+      "exits": { "west": 461, "north": 464 }
+    },
+    {
+      "id": 463, "name": "Sink Hole",
+      "exits": { "east": 461 }
+    },
+    {
+      "id": 464, "name": "Nature Preserve",
+      "exits": { "west": 486, "east": 465, "south": 462 }
+    },
+    {
+      "id": 465, "name": "Nature Preserve",
+      "exits": { "west": 464, "north": 466 }
+    },
+    {
+      "id": 466, "name": "Nature Preserve",
+      "exits": { "east": 467, "south": 465 }
+    },
+    {
+      "id": 467, "name": "Nature Preserve",
+      "exits": { "east": 468, "west": 466 }
+    },
+    {
+      "id": 468, "name": "Nature Preserve",
+      "exits": { "east": 469, "west": 467 }
+    },
+    {
+      "id": 469, "name": "Nature Preserve",
+      "exits": { "east": 470, "west": 468 }
+    },
+    {
+      "id": 470, "name": "Queen's Meadow",
+      "exits": { "west": 469, "south": 493, "north": 471 }
+    },
+    {
+      "id": 471, "name": "Tropical Landscape",
+      "exits": { "south": 470, "north": 472 }
+    },
+    {
+      "id": 472, "name": "Nature Preserve",
+      "exits": { "south": 471, "north": 473 }
+    },
+    {
+      "id": 473, "name": "Nature Preserve",
+      "exits": { "west": 476, "east": 474, "south": 472 }
+    },
+    {
+      "id": 474, "name": "Nature Preserve",
+      "exits": { "east": 475, "west": 473 }
+    },
+    {
+      "id": 475, "name": "Nature Preserve",
+      "exits": { "west": 474 }
+    },
+    {
+      "id": 476, "name": "Nature Preserve",
+      "exits": { "northwest": 477, "east": 473 }
+    },
+    {
+      "id": 477, "name": "Nature Preserve",
+      "exits": { "southwest": 478, "southeast": 476, "north": 490 }
+    },
+    {
+      "id": 478, "name": "Nature Preserve",
+      "exits": { "west": 479, "northeast": 477 }
+    },
+    {
+      "id": 479, "name": "Nature Preserve",
+      "exits": { "west": 480, "east": 478, "south": 487 }
     },
     {
-      "name": "Canopy Trail",
-      "exits": {
-        "west": 436,
-        "south": 434
-      },
-      "id": 435
+      "id": 480, "name": "Nature Preserve",
+      "exits": { "east": 479, "west": 481 }
     },
     {
-      "name": "Canopy Trail",
-      "exits": {
-        "east": 435,
-        "west": 437
-      },
-      "id": 436
+      "id": 481, "name": "Nature Preserve",
+      "exits": { "east": 480, "south": 482 }
     },
     {
-      "name": "Canopy Trail",
-      "exits": {
-        "east": 436,
-        "west": 438
-      },
-      "id": 437
+      "id": 482, "name": "Nature Preserve",
+      "exits": { "west": 483, "south": 484, "north": 481 }
     },
     {
-      "name": "Canopy Trail",
-      "exits": {
-        "west": 439,
-        "east": 437,
-        "south": 440
-      },
-      "id": 438
+      "id": 483, "name": "Nature Preserve",
+      "exits": { "east": 482 }
     },
-    {
-      "name": "Canopy Trail",
-      "exits": {
-        "east": 438,
-        "west": 445
-      },
-      "id": 439
+    {
+      "id": 484, "name": "Nature Preserve",
+      "exits": { "south": 485, "north": 482 }
+    },
+    {
+      "id": 485, "name": "Nature Preserve",
+      "exits": { "south": 486, "north": 484 }
+    },
+    {
+      "id": 486, "name": "Nature Preserve",
+      "exits": { "east": 464, "north": 485 }
+    },
+    {
+      "id": 487, "name": "Nature Preserve",
+      "exits": { "south": 488, "north": 479 }
+    },
+    {
+      "id": 488, "name": "Nature Preserve",
+      "exits": { "east": 489, "north": 487 }
+    },
+    {
+      "id": 489, "name": "Nature Preserve",
+      "exits": { "west": 488 }
+    },
+    {
+      "id": 490, "name": "Nature Preserve",
+      "exits": { "south": 477, "north": 491 }
+    },
+    {
+      "id": 491, "name": "Nature Preserve",
+      "exits": { "east": 492, "south": 490 }
     },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "south": 441,
-        "north": 438
-      },
-      "id": 440
+    {
+      "id": 492, "name": "A Hollowed Tree",
+      "exits": { "west": 491 }
+    },
+    {
+      "id": 493, "name": "Queen's Meadow",
+      "exits": { "south": 494, "north": 470 }
+    },
+    {
+      "id": 494, "name": "Queen's Meadow",
+      "exits": { "south": 449, "north": 493 }
+    },
+    {
+      "id": 495, "name": "Nature Preserve",
+      "exits": { "east": 460 }
+    },
+    {
+      "id": 496, "name": "Canopy Trail",
+      "exits": { "east": 445, "west": 497 }
     },
-    {
-      "name": "Tropical Forest",
-      "exits": {
-        "south": 442,
-        "north": 440
-      },
-      "id": 441
+    {
+      "id": 497, "name": "Canopy Trail",
+      "exits": { "west": 498, "east": 496, "south": 501 }
     },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 443,
-        "east": 444,
-        "north": 441
-      },
-      "id": 442
-    },
-    {
-      "name": "Bird Sanctuary",
-      "exits": {
-        "east": 442
-      },
-      "id": 443
+    {
+      "id": 498, "name": "Canopy Trail",
+      "exits": { "east": 497, "north": 499 }
     },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 442
-      },
-      "id": 444
+    {
+      "id": 499, "name": "Nature Preserve",
+      "exits": { "east": 500, "south": 498 }
     },
     {
-      "name": "Canopy Trail",
-      "exits": {
-        "west": 496,
-        "east": 439,
-        "north": 446
-      },
-      "id": 445
+      "id": 500, "name": "Dragon's Den",
+      "exits": { "west": 499 }
     },
-    {
-      "name": "Entrance to Queen's Meadow",
-      "exits": {
-        "south": 445,
-        "north": 447
-      },
-      "id": 446
+    {
+      "id": 501, "name": "Nature Preserve",
+      "exits": { "south": 502, "north": 497 }
     },
-    {
-      "name": "Queen's Meadow",
-      "exits": {
-        "south": 446,
-        "north": 448
-      },
-      "id": 447
+    {
+      "id": 502, "name": "Nature Preserve",
+      "exits": { "west": 504, "east": 503, "north": 501 }
     },
-    {
-      "name": "Queen's Meadow",
-      "exits": {
-        "south": 447,
-        "north": 449
-      },
-      "id": 448
+    {
+      "id": 503, "name": "Nature Preserve",
+      "exits": { "west": 502 }
     },
-    {
-      "name": "Queen's Meadow",
-      "exits": {
-        "west": 450,
-        "south": 448,
-        "north": 494
-      },
-      "id": 449
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 449,
-        "west": 451
-      },
-      "id": 450
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 450,
-        "west": 452
-      },
-      "id": 451
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 451,
-        "west": 453
-      },
-      "id": 452
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "south": 455,
-        "east": 452,
-        "north": 454
-      },
-      "id": 453
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "south": 453
-      },
-      "id": 454
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "south": 456,
-        "north": 453
-      },
-      "id": 455
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 457,
-        "north": 455
-      },
-      "id": 456
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 456,
-        "west": 458
-      },
-      "id": 457
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 457,
-        "north": 459
-      },
-      "id": 458
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "south": 458,
-        "north": 460
-      },
-      "id": 459
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 495,
-        "south": 459,
-        "north": 461
-      },
-      "id": 460
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 463,
-        "east": 462,
-        "south": 460
-      },
-      "id": 461
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 461,
-        "north": 464
-      },
-      "id": 462
-    },
-    {
-      "name": "Sink Hole",
-      "exits": {
-        "east": 461
-      },
-      "id": 463
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 486,
-        "east": 465,
-        "south": 462
-      },
-      "id": 464
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 464,
-        "north": 466
-      },
-      "id": 465
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 467,
-        "south": 465
-      },
-      "id": 466
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 468,
-        "west": 466
-      },
-      "id": 467
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 469,
-        "west": 467
-      },
-      "id": 468
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 470,
-        "west": 468
-      },
-      "id": 469
-    },
-    {
-      "name": "Queen's Meadow",
-      "exits": {
-        "west": 469,
-        "south": 493,
-        "north": 471
-      },
-      "id": 470
-    },
-    {
-      "name": "Tropical Landscape",
-      "exits": {
-        "south": 470,
-        "north": 472
-      },
-      "id": 471
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "south": 471,
-        "north": 473
-      },
-      "id": 472
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 476,
-        "east": 474,
-        "south": 472
-      },
-      "id": 473
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 475,
-        "west": 473
-      },
-      "id": 474
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 474
-      },
-      "id": 475
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "northwest": 477,
-        "east": 473
-      },
-      "id": 476
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "southwest": 478,
-        "southeast": 476,
-        "north": 490
-      },
-      "id": 477
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 479,
-        "northeast": 477
-      },
-      "id": 478
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 480,
-        "east": 478,
-        "south": 487
-      },
-      "id": 479
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 479,
-        "west": 481
-      },
-      "id": 480
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 480,
-        "south": 482
-      },
-      "id": 481
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 483,
-        "south": 484,
-        "north": 481
-      },
-      "id": 482
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 482
-      },
-      "id": 483
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "south": 485,
-        "north": 482
-      },
-      "id": 484
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "south": 486,
-        "north": 484
-      },
-      "id": 485
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 464,
-        "north": 485
-      },
-      "id": 486
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "south": 488,
-        "north": 479
-      },
-      "id": 487
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 489,
-        "north": 487
-      },
-      "id": 488
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 488
-      },
-      "id": 489
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "south": 477,
-        "north": 491
-      },
-      "id": 490
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 492,
-        "south": 490
-      },
-      "id": 491
-    },
-    {
-      "name": "A Hollowed Tree",
-      "exits": {
-        "west": 491
-      },
-      "id": 492
-    },
-    {
-      "name": "Queen's Meadow",
-      "exits": {
-        "south": 494,
-        "north": 470
-      },
-      "id": 493
-    },
-    {
-      "name": "Queen's Meadow",
-      "exits": {
-        "south": 449,
-        "north": 493
-      },
-      "id": 494
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 460
-      },
-      "id": 495
-    },
-    {
-      "name": "Canopy Trail",
-      "exits": {
-        "east": 445,
-        "west": 497
-      },
-      "id": 496
-    },
-    {
-      "name": "Canopy Trail",
-      "exits": {
-        "west": 498,
-        "east": 496,
-        "south": 501
-      },
-      "id": 497
-    },
-    {
-      "name": "Canopy Trail",
-      "exits": {
-        "east": 497,
-        "north": 499
-      },
-      "id": 498
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 500,
-        "south": 498
-      },
-      "id": 499
-    },
-    {
-      "name": "Dragon's Den",
-      "exits": {
-        "west": 499
-      },
-      "id": 500
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "south": 502,
-        "north": 497
-      },
-      "id": 501
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 504,
-        "east": 503,
-        "north": 501
-      },
-      "id": 502
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "west": 502
-      },
-      "id": 503
-    },
-    {
-      "name": "Nature Preserve",
-      "exits": {
-        "east": 502
-      },
-      "id": 504
+    {
+      "id": 504, "name": "Nature Preserve",
+      "exits": { "east": 502 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

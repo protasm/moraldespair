@@ -4,107 +4,56 @@
   },
   "rooms": [
     {
-      "name": "Gatehouse",
-      "exits": {
-        "up": 1083,
-        "east": 87,
-        "west": 1084
-      },
-      "id": 1082
+      "id": 1082, "name": "Gatehouse",
+      "exits": { "up": 1083, "east": 87, "west": 1084 }
     },
     {
-      "name": "Blockhouse",
-      "exits": {
-        "down": 1082
-      },
-      "id": 1083
+      "id": 1083, "name": "Blockhouse",
+      "exits": { "down": 1082 }
     },
     {
-      "name": "You cautiously enter the mansion, knowing danger lurks hidden throughout.",
-      "exits": {
-        "south": 1087,
-        "west": 1085,
-        "east": 1082,
-        "north": 1092
-      },
-      "id": 1084
+      "id": 1084, "name": "You cautiously enter the mansion, knowing danger lurks hidden throughout.",
+      "exits": { "south": 1087, "west": 1085, "east": 1082, "north": 1092 }
     },
     {
-      "name": "Eastern bailey",
-      "exits": {
-        "east": 1084,
-        "west": 1086
-      },
-      "id": 1085
+      "id": 1085, "name": "Eastern bailey",
+      "exits": { "east": 1084, "west": 1086 }
     },
     {
-      "name": "Western bailey",
-      "exits": {
-        "south": 1871,
-        "east": 1085,
-        "north": 1870
-      },
-      "id": 1086
+      "id": 1086, "name": "Western bailey",
+      "exits": { "south": 1871, "east": 1085, "north": 1870 }
     },
     {
-      "name": "Long hallway",
-      "exits": {
-        "west": 1089,
-        "south": 1088,
-        "north": 1084
-      },
-      "id": 1087
+      "id": 1087, "name": "Long hallway",
+      "exits": { "west": 1089, "south": 1088, "north": 1084 }
     },
     {
-      "name": "Passage",
-      "exits": {
-        "up": 1090,
-        "north": 1087
-      },
-      "id": 1088
+      "id": 1088, "name": "Passage",
+      "exits": { "up": 1090, "north": 1087 }
     },
     {
-      "name": "Sun Court",
-      "exits": {
-        "east": 1087
-      },
-      "id": 1089
+      "id": 1089, "name": "Sun Court",
+      "exits": { "east": 1087 }
     },
     {
-      "name": "Stairwell",
-      "exits": {
-        "down": 1088,
-        "up": 1091
-      },
-      "id": 1090
+      "id": 1090, "name": "Stairwell",
+      "exits": { "down": 1088, "up": 1091 }
     },
     {
-      "name": "Southeast Watchtower",
-      "exits": {
-        "down": 1090
-      },
-      "id": 1091
+      "id": 1091, "name": "Southeast Watchtower",
+      "exits": { "down": 1090 }
     },
     {
-      "name": "Long hallway",
-      "exits": {
-        "south": 1084
-      },
-      "id": 1092
+      "id": 1092, "name": "Long hallway",
+      "exits": { "south": 1084 }
     },
     {
-      "name": "Armoury",
-      "exits": {
-        "south": 1086
-      },
-      "id": 1870
+      "id": 1870, "name": "Armoury",
+      "exits": { "south": 1086 }
     },
     {
-      "name": "Stables",
-      "exits": {
-        "north": 1086
-      },
-      "id": 1871
+      "id": 1871, "name": "Stables",
+      "exits": { "north": 1086 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

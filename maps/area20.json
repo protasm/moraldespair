@@ -4,211 +4,108 @@
   },
   "rooms": [
     {
-      "name": "Crypt of the Honored Dead",
-      "exits": {
-        "up": 1098,
-        "east": 1100,
-        "south": 1101
-      },
-      "id": 1099
+      "id": 1099, "name": "Crypt of the Honored Dead",
+      "exits": { "up": 1098, "east": 1100, "south": 1101 }
     },
     {
-      "name": "Crypt of the Honored Dead",
-      "exits": {
-        "northeast": 1103,
-        "southeast": 1102,
-        "west": 1099
-      },
-      "id": 1100
+      "id": 1100, "name": "Crypt of the Honored Dead",
+      "exits": { "northeast": 1103, "southeast": 1102, "west": 1099 }
     },
     {
-      "name": "Crypt of the Honored Dead.",
-      "exits": {
-        "north": 1099
-      },
-      "id": 1101
+      "id": 1101, "name": "Crypt of the Honored Dead.",
+      "exits": { "north": 1099 }
     },
     {
-      "name": "Crypt of the Honored Dead",
-      "exits": {
-        "northwest": 1100,
-        "southeast": 1115
-      },
-      "id": 1102
+      "id": 1102, "name": "Crypt of the Honored Dead",
+      "exits": { "northwest": 1100, "southeast": 1115 }
     },
     {
-      "name": "Crypt of the Honored Dead",
-      "exits": {
-        "southwest": 1100,
-        "northeast": 1104
-      },
-      "id": 1103
+      "id": 1103, "name": "Crypt of the Honored Dead",
+      "exits": { "southwest": 1100, "northeast": 1104 }
     },
     {
-      "name": "Crypt of the Honored Dead",
-      "exits": {
-        "southwest": 1103,
-        "east": 1105
-      },
-      "id": 1104
+      "id": 1104, "name": "Crypt of the Honored Dead",
+      "exits": { "southwest": 1103, "east": 1105 }
     },
     {
-      "name": "Battle of the Sand Gargoyles",
-      "exits": {
-        "south": 1108,
-        "west": 1104,
-        "east": 1106,
-        "north": 1107
-      },
-      "id": 1105
+      "id": 1105, "name": "Battle of the Sand Gargoyles",
+      "exits": { "south": 1108, "west": 1104, "east": 1106, "north": 1107 }
     },
     {
-      "name": "Battle of the Sand Gargoyles",
-      "exits": {
-        "south": 1111,
-        "west": 1105,
-        "east": 1110,
-        "north": 1109
-      },
-      "id": 1106
+      "id": 1106, "name": "Battle of the Sand Gargoyles",
+      "exits": { "south": 1111, "west": 1105, "east": 1110, "north": 1109 }
     },
     {
-      "name": "Battle of the Sand Gargoyles",
-      "exits": {
-        "south": 1105
-      },
-      "id": 1107
+      "id": 1107, "name": "Battle of the Sand Gargoyles",
+      "exits": { "south": 1105 }
     },
     {
-      "name": "Battle of the Sand Gargoyles",
-      "exits": {
-        "north": 1105
-      },
-      "id": 1108
+      "id": 1108, "name": "Battle of the Sand Gargoyles",
+      "exits": { "north": 1105 }
     },
     {
-      "name": "Battle of the Sand Gargoyles",
-      "exits": {
-        "south": 1106
-      },
-      "id": 1109
+      "id": 1109, "name": "Battle of the Sand Gargoyles",
+      "exits": { "south": 1106 }
     },
     {
-      "name": "Battle of the Sand Gargoyles",
-      "exits": {
-        "south": 1113,
-        "west": 1106,
-        "east": 1114,
-        "north": 1112
-      },
-      "id": 1110
+      "id": 1110, "name": "Battle of the Sand Gargoyles",
+      "exits": { "south": 1113, "west": 1106, "east": 1114, "north": 1112 }
     },
     {
-      "name": "Battle of the Sand Gargoyles",
-      "exits": {
-        "north": 1106
-      },
-      "id": 1111
+      "id": 1111, "name": "Battle of the Sand Gargoyles",
+      "exits": { "north": 1106 }
     },
     {
-      "name": "Battle of the Sand Gargoyles",
-      "exits": {
-        "south": 1110
-      },
-      "id": 1112
+      "id": 1112, "name": "Battle of the Sand Gargoyles",
+      "exits": { "south": 1110 }
     },
     {
-      "name": "Battle of the Sand Gargoyles",
-      "exits": {
-        "north": 1110
-      },
-      "id": 1113
+      "id": 1113, "name": "Battle of the Sand Gargoyles",
+      "exits": { "north": 1110 }
     },
     {
-      "name": "Battle of the Sand Gargoyles",
-      "exits": {
-        "west": 1110
-      },
-      "id": 1114
+      "id": 1114, "name": "Battle of the Sand Gargoyles",
+      "exits": { "west": 1110 }
     },
     {
-      "name": "Crypt of the Honored Dead",
-      "exits": {
-        "northwest": 1102,
-        "east": 1116
-      },
-      "id": 1115
+      "id": 1115, "name": "Crypt of the Honored Dead",
+      "exits": { "northwest": 1102, "east": 1116 }
     },
     {
-      "name": "Battle of Maiden's Kiss",
-      "exits": {
-        "south": 1123,
-        "west": 1115,
-        "east": 1117,
-        "north": 1124
-      },
-      "id": 1116
+      "id": 1116, "name": "Battle of Maiden's Kiss",
+      "exits": { "south": 1123, "west": 1115, "east": 1117, "north": 1124 }
     },
     {
-      "name": "Battle of Maiden's Kiss",
-      "exits": {
-        "south": 1121,
-        "west": 1116,
-        "east": 1118,
-        "north": 1122
-      },
-      "id": 1117
+      "id": 1117, "name": "Battle of Maiden's Kiss",
+      "exits": { "south": 1121, "west": 1116, "east": 1118, "north": 1122 }
     },
     {
-      "name": "Battle of Maiden's Kiss",
-      "exits": {
-        "west": 1117,
-        "south": 1119,
-        "north": 1120
-      },
-      "id": 1118
+      "id": 1118, "name": "Battle of Maiden's Kiss",
+      "exits": { "west": 1117, "south": 1119, "north": 1120 }
     },
     {
-      "name": "Battle of Maiden's Kiss",
-      "exits": {
-        "north": 1118
-      },
-      "id": 1119
+      "id": 1119, "name": "Battle of Maiden's Kiss",
+      "exits": { "north": 1118 }
     },
     {
-      "name": "Battle of Maiden's Kiss",
-      "exits": {
-        "south": 1118
-      },
-      "id": 1120
+      "id": 1120, "name": "Battle of Maiden's Kiss",
+      "exits": { "south": 1118 }
     },
     {
-      "name": "Battle of Maiden's Kiss",
-      "exits": {
-        "north": 1117
-      },
-      "id": 1121
+      "id": 1121, "name": "Battle of Maiden's Kiss",
+      "exits": { "north": 1117 }
     },
     {
-      "name": "Battle of Maiden's Kiss",
-      "exits": {
-        "south": 1117
-      },
-      "id": 1122
+      "id": 1122, "name": "Battle of Maiden's Kiss",
+      "exits": { "south": 1117 }
     },
     {
-      "name": "Battle of Maiden's Kiss",
-      "exits": {
-        "north": 1116
-      },
-      "id": 1123
+      "id": 1123, "name": "Battle of Maiden's Kiss",
+      "exits": { "north": 1116 }
     },
     {
-      "name": "Battle of Maiden's Kiss",
-      "exits": {
-        "south": 1116
-      },
-      "id": 1124
+      "id": 1124, "name": "Battle of Maiden's Kiss",
+      "exits": { "south": 1116 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

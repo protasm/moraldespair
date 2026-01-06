@@ -4,555 +4,275 @@
   },
   "rooms": [
     {
-      "name": "Inside the Anthill",
-      "exits": {
-        "up": 1806,
-        "down": 1744,
-        "north": 1740
-      },
-      "id": 1723
-    },
-    {
-      "name": "Inside the Anthill",
-      "exits": {
-        "southwest": 1741,
-        "southeast": 1743,
-        "south": 1723
-      },
-      "id": 1740
-    },
-    {
-      "name": "Inside the Anthill",
-      "exits": {
-        "southeast": 1742,
-        "northeast": 1740
-      },
-      "id": 1741
-    },
-    {
-      "name": "Inside the Anthill",
-      "exits": {
-        "northwest": 1741,
-        "northeast": 1743
-      },
-      "id": 1742
-    },
-    {
-      "name": "Inside the Anthill",
-      "exits": {
-        "northwest": 1740,
-        "southwest": 1742
-      },
-      "id": 1743
-    },
-    {
-      "name": "In the Heart of the Anthill",
-      "exits": {
-        "southeast": 1751,
-        "up": 1723,
-        "southwest": 1750,
-        "northeast": 1745,
-        "down": 1754,
-        "northwest": 1747
-      },
-      "id": 1744
-    },
-    {
-      "name": "In the Heart of the Anthill",
-      "exits": {
-        "southwest": 1744,
-        "south": 1746
-      },
-      "id": 1745
-    },
-    {
-      "name": "In the Heart of the Anthill",
-      "exits": {
-        "north": 1745
-      },
-      "id": 1746
-    },
-    {
-      "name": "In the Heart of the Anthill",
-      "exits": {
-        "southwest": 1749,
-        "northeast": 1748,
-        "southeast": 1744
-      },
-      "id": 1747
-    },
-    {
-      "name": "In the Heart of the Anthill",
-      "exits": {
-        "southwest": 1747
-      },
-      "id": 1748
-    },
-    {
-      "name": "In the Heart of the Anthill",
-      "exits": {
-        "northeast": 1747
-      },
-      "id": 1749
-    },
-    {
-      "name": "In the Heart of the Anthill",
-      "exits": {
-        "northeast": 1744
-      },
-      "id": 1750
-    },
-    {
-      "name": "In the Heart of the Anthill",
-      "exits": {
-        "southwest": 1753,
-        "northeast": 1752,
-        "northwest": 1744
-      },
-      "id": 1751
-    },
-    {
-      "name": "In the Heart of the Anthill",
-      "exits": {
-        "southwest": 1751
-      },
-      "id": 1752
-    },
-    {
-      "name": "In the Heart of the Anthill",
-      "exits": {
-        "northeast": 1751
-      },
-      "id": 1753
+      "id": 1723, "name": "Inside the Anthill",
+      "exits": { "up": 1806, "down": 1744, "north": 1740 }
     },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "up": 1744,
-        "east": 1758,
-        "south": 1755
-      },
-      "id": 1754
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "southeast": 1756,
-        "north": 1754
-      },
-      "id": 1755
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "northwest": 1755,
-        "southwest": 1757
-      },
-      "id": 1756
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "northeast": 1756
-      },
-      "id": 1757
+    {
+      "id": 1740, "name": "Inside the Anthill",
+      "exits": { "southwest": 1741, "southeast": 1743, "south": 1723 }
+    },
+    {
+      "id": 1741, "name": "Inside the Anthill",
+      "exits": { "southeast": 1742, "northeast": 1740 }
+    },
+    {
+      "id": 1742, "name": "Inside the Anthill",
+      "exits": { "northwest": 1741, "northeast": 1743 }
+    },
+    {
+      "id": 1743, "name": "Inside the Anthill",
+      "exits": { "northwest": 1740, "southwest": 1742 }
+    },
+    {
+      "id": 1744, "name": "In the Heart of the Anthill",
+      "exits": { "southeast": 1751, "up": 1723, "southwest": 1750, "northeast": 1745, "down": 1754, "northwest": 1747 }
+    },
+    {
+      "id": 1745, "name": "In the Heart of the Anthill",
+      "exits": { "southwest": 1744, "south": 1746 }
+    },
+    {
+      "id": 1746, "name": "In the Heart of the Anthill",
+      "exits": { "north": 1745 }
+    },
+    {
+      "id": 1747, "name": "In the Heart of the Anthill",
+      "exits": { "southwest": 1749, "northeast": 1748, "southeast": 1744 }
+    },
+    {
+      "id": 1748, "name": "In the Heart of the Anthill",
+      "exits": { "southwest": 1747 }
+    },
+    {
+      "id": 1749, "name": "In the Heart of the Anthill",
+      "exits": { "northeast": 1747 }
+    },
+    {
+      "id": 1750, "name": "In the Heart of the Anthill",
+      "exits": { "northeast": 1744 }
+    },
+    {
+      "id": 1751, "name": "In the Heart of the Anthill",
+      "exits": { "southwest": 1753, "northeast": 1752, "northwest": 1744 }
+    },
+    {
+      "id": 1752, "name": "In the Heart of the Anthill",
+      "exits": { "southwest": 1751 }
+    },
+    {
+      "id": 1753, "name": "In the Heart of the Anthill",
+      "exits": { "northeast": 1751 }
+    },
+    {
+      "id": 1754, "name": "At the Base of the Anthill",
+      "exits": { "up": 1744, "east": 1758, "south": 1755 }
+    },
+    {
+      "id": 1755, "name": "At the Base of the Anthill",
+      "exits": { "southeast": 1756, "north": 1754 }
+    },
+    {
+      "id": 1756, "name": "At the Base of the Anthill",
+      "exits": { "northwest": 1755, "southwest": 1757 }
+    },
+    {
+      "id": 1757, "name": "At the Base of the Anthill",
+      "exits": { "northeast": 1756 }
+    },
+    {
+      "id": 1758, "name": "At the Base of the Anthill",
+      "exits": { "southeast": 1763, "northeast": 1759, "northwest": 1762, "west": 1754 }
+    },
+    {
+      "id": 1759, "name": "At the Base of the Anthill",
+      "exits": { "northwest": 1760, "southwest": 1758 }
+    },
+    {
+      "id": 1760, "name": "At the Base of the Anthill",
+      "exits": { "southwest": 1762, "northwest": 1761, "southeast": 1759 }
+    },
+    {
+      "id": 1761, "name": "At the Base of the Anthill",
+      "exits": { "southeast": 1760 }
+    },
+    {
+      "id": 1762, "name": "At the Base of the Anthill",
+      "exits": { "southwest": 1765, "northeast": 1760, "southeast": 1758 }
+    },
+    {
+      "id": 1763, "name": "At the Base of the Anthill",
+      "exits": { "northwest": 1758, "northeast": 1764 }
+    },
+    {
+      "id": 1764, "name": "At the Base of the Anthill",
+      "exits": { "southwest": 1763 }
+    },
+    {
+      "id": 1765, "name": "At the Base of the Anthill",
+      "exits": { "northwest": 1766, "northeast": 1762 }
+    },
+    {
+      "id": 1766, "name": "At the Base of the Anthill",
+      "exits": { "southwest": 1767, "northeast": 1770, "southeast": 1765 }
+    },
+    {
+      "id": 1767, "name": "At the Base of the Anthill",
+      "exits": { "southeast": 1768, "northeast": 1766 }
+    },
+    {
+      "id": 1768, "name": "At the Base of the Anthill",
+      "exits": { "northwest": 1767, "southeast": 1769 }
+    },
+    {
+      "id": 1769, "name": "At the Base of the Anthill",
+      "exits": { "northwest": 1768 }
+    },
+    {
+      "id": 1770, "name": "At the Base of the Anthill",
+      "exits": { "southwest": 1766 }
+    },
+    {
+      "id": 1771, "name": "Beneath the Anthill",
+      "exits": { "south": 1798, "west": 1772, "east": 1782, "north": 1797 }
+    },
+    {
+      "id": 1772, "name": "Beneath the Anthill",
+      "exits": { "northwest": 1773, "east": 1771 }
+    },
+    {
+      "id": 1773, "name": "Beneath the Anthill",
+      "exits": { "east": 1774, "southeast": 1772, "south": 1791 }
+    },
+    {
+      "id": 1774, "name": "Beneath the Anthill",
+      "exits": { "northeast": 1775, "west": 1773, "north": 1783 }
+    },
+    {
+      "id": 1775, "name": "Beneath the Anthill",
+      "exits": { "southwest": 1774, "east": 1776 }
+    },
+    {
+      "id": 1776, "name": "Beneath the Anthill",
+      "exits": { "west": 1775, "south": 1777 }
+    },
+    {
+      "id": 1777, "name": "Beneath the Anthill",
+      "exits": { "south": 1782, "west": 1797, "northeast": 1778, "east": 1799, "north": 1776 }
+    },
+    {
+      "id": 1778, "name": "Beneath the Anthill",
+      "exits": { "southwest": 1777, "east": 1779 }
+    },
+    {
+      "id": 1779, "name": "Beneath the Anthill",
+      "exits": { "west": 1778, "south": 1780 }
+    },
+    {
+      "id": 1780, "name": "Beneath the Anthill",
+      "exits": { "southwest": 1781, "south": 1803, "north": 1779 }
+    },
+    {
+      "id": 1781, "name": "Beneath the Anthill",
+      "exits": { "northeast": 1780, "west": 1782, "south": 1800 }
+    },
+    {
+      "id": 1782, "name": "Beneath the Anthill",
+      "exits": { "west": 1771, "east": 1781, "north": 1777 }
+    },
+    {
+      "id": 1783, "name": "Beneath the Anthill",
+      "exits": { "west": 1784, "south": 1774 }
+    },
+    {
+      "id": 1784, "name": "Beneath the Anthill",
+      "exits": { "southwest": 1785, "east": 1783 }
+    },
+    {
+      "id": 1785, "name": "Beneath the Anthill",
+      "exits": { "west": 1786, "northeast": 1784 }
+    },
+    {
+      "id": 1786, "name": "Beneath the Anthill",
+      "exits": { "east": 1785, "south": 1787 }
+    },
+    {
+      "id": 1787, "name": "Beneath the Anthill",
+      "exits": { "southwest": 1788, "north": 1786 }
+    },
+    {
+      "id": 1788, "name": "Near the Queen's Lair",
+      "exits": { "northeast": 1787, "north": 1789 }
+    },
+    {
+      "id": 1789, "name": "Near the Queen's Lair",
+      "exits": { "south": 1788, "north": 1790 }
     },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "southeast": 1763,
-        "northeast": 1759,
-        "northwest": 1762,
-        "west": 1754
-      },
-      "id": 1758
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "northwest": 1760,
-        "southwest": 1758
-      },
-      "id": 1759
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "southwest": 1762,
-        "northwest": 1761,
-        "southeast": 1759
-      },
-      "id": 1760
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "southeast": 1760
-      },
-      "id": 1761
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "southwest": 1765,
-        "northeast": 1760,
-        "southeast": 1758
-      },
-      "id": 1762
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "northwest": 1758,
-        "northeast": 1764
-      },
-      "id": 1763
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "southwest": 1763
-      },
-      "id": 1764
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "northwest": 1766,
-        "northeast": 1762
-      },
-      "id": 1765
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "southwest": 1767,
-        "northeast": 1770,
-        "southeast": 1765
-      },
-      "id": 1766
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "southeast": 1768,
-        "northeast": 1766
-      },
-      "id": 1767
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "northwest": 1767,
-        "southeast": 1769
-      },
-      "id": 1768
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "northwest": 1768
-      },
-      "id": 1769
-    },
-    {
-      "name": "At the Base of the Anthill",
-      "exits": {
-        "southwest": 1766
-      },
-      "id": 1770
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "south": 1798,
-        "west": 1772,
-        "east": 1782,
-        "north": 1797
-      },
-      "id": 1771
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "northwest": 1773,
-        "east": 1771
-      },
-      "id": 1772
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "east": 1774,
-        "southeast": 1772,
-        "south": 1791
-      },
-      "id": 1773
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "northeast": 1775,
-        "west": 1773,
-        "north": 1783
-      },
-      "id": 1774
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "southwest": 1774,
-        "east": 1776
-      },
-      "id": 1775
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "west": 1775,
-        "south": 1777
-      },
-      "id": 1776
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "south": 1782,
-        "west": 1797,
-        "northeast": 1778,
-        "east": 1799,
-        "north": 1776
-      },
-      "id": 1777
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "southwest": 1777,
-        "east": 1779
-      },
-      "id": 1778
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "west": 1778,
-        "south": 1780
-      },
-      "id": 1779
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "southwest": 1781,
-        "south": 1803,
-        "north": 1779
-      },
-      "id": 1780
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "northeast": 1780,
-        "west": 1782,
-        "south": 1800
-      },
-      "id": 1781
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "west": 1771,
-        "east": 1781,
-        "north": 1777
-      },
-      "id": 1782
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "west": 1784,
-        "south": 1774
-      },
-      "id": 1783
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "southwest": 1785,
-        "east": 1783
-      },
-      "id": 1784
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "west": 1786,
-        "northeast": 1784
-      },
-      "id": 1785
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "east": 1785,
-        "south": 1787
-      },
-      "id": 1786
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "southwest": 1788,
-        "north": 1786
-      },
-      "id": 1787
-    },
-    {
-      "name": "Near the Queen's Lair",
-      "exits": {
-        "northeast": 1787,
-        "north": 1789
-      },
-      "id": 1788
-    },
-    {
-      "name": "Near the Queen's Lair",
-      "exits": {
-        "south": 1788,
-        "north": 1790
-      },
-      "id": 1789
-    },
-    {
-      "name": "The Ant Lair",
-      "exits": {
-        "south": 1789
-      },
-      "id": 1790
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "south": 1792,
-        "southeast": 1796,
-        "north": 1773
-      },
-      "id": 1791
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "west": 1793,
-        "east": 1796,
-        "north": 1791
-      },
-      "id": 1792
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "east": 1792,
-        "north": 1794
-      },
-      "id": 1793
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "southwest": 1795,
-        "south": 1793
-      },
-      "id": 1794
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "northeast": 1794
-      },
-      "id": 1795
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "northwest": 1791,
-        "west": 1792
-      },
-      "id": 1796
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "east": 1777,
-        "south": 1771
-      },
-      "id": 1797
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "north": 1771
-      },
-      "id": 1798
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "west": 1777
-      },
-      "id": 1799
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "west": 1801,
-        "east": 1802,
-        "north": 1781
-      },
-      "id": 1800
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "east": 1800
-      },
-      "id": 1801
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "west": 1800,
-        "north": 1803
-      },
-      "id": 1802
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "south": 1802,
-        "east": 1804,
-        "north": 1780
-      },
-      "id": 1803
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "west": 1803,
-        "north": 1805
-      },
-      "id": 1804
-    },
-    {
-      "name": "Beneath the Anthill",
-      "exits": {
-        "south": 1804
-      },
-      "id": 1805
-    },
-    {
-      "name": "At the top of the anthill.",
-      "id": 1806
+    {
+      "id": 1790, "name": "The Ant Lair",
+      "exits": { "south": 1789 }
+    },
+    {
+      "id": 1791, "name": "Beneath the Anthill",
+      "exits": { "south": 1792, "southeast": 1796, "north": 1773 }
+    },
+    {
+      "id": 1792, "name": "Beneath the Anthill",
+      "exits": { "west": 1793, "east": 1796, "north": 1791 }
+    },
+    {
+      "id": 1793, "name": "Beneath the Anthill",
+      "exits": { "east": 1792, "north": 1794 }
+    },
+    {
+      "id": 1794, "name": "Beneath the Anthill",
+      "exits": { "southwest": 1795, "south": 1793 }
+    },
+    {
+      "id": 1795, "name": "Beneath the Anthill",
+      "exits": { "northeast": 1794 }
+    },
+    {
+      "id": 1796, "name": "Beneath the Anthill",
+      "exits": { "northwest": 1791, "west": 1792 }
+    },
+    {
+      "id": 1797, "name": "Beneath the Anthill",
+      "exits": { "east": 1777, "south": 1771 }
+    },
+    {
+      "id": 1798, "name": "Beneath the Anthill",
+      "exits": { "north": 1771 }
+    },
+    {
+      "id": 1799, "name": "Beneath the Anthill",
+      "exits": { "west": 1777 }
+    },
+    {
+      "id": 1800, "name": "Beneath the Anthill",
+      "exits": { "west": 1801, "east": 1802, "north": 1781 }
+    },
+    {
+      "id": 1801, "name": "Beneath the Anthill",
+      "exits": { "east": 1800 }
+    },
+    {
+      "id": 1802, "name": "Beneath the Anthill",
+      "exits": { "west": 1800, "north": 1803 }
+    },
+    {
+      "id": 1803, "name": "Beneath the Anthill",
+      "exits": { "south": 1802, "east": 1804, "north": 1780 }
+    },
+    {
+      "id": 1804, "name": "Beneath the Anthill",
+      "exits": { "west": 1803, "north": 1805 }
+    },
+    {
+      "id": 1805, "name": "Beneath the Anthill",
+      "exits": { "south": 1804 }
+    },
+    {
+      "id": 1806, "name": "At the top of the anthill."
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

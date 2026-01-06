@@ -4,194 +4,96 @@
   },
   "rooms": [
     {
-      "name": "Entrance of a village",
-      "exits": {
-        "west": 859,
-        "east": 877,
-        "south": 131
-      },
-      "id": 858
+      "id": 858, "name": "Entrance of a village",
+      "exits": { "west": 859, "east": 877, "south": 131 }
     },
     {
-      "name": "On a dusty path",
-      "exits": {
-        "east": 858,
-        "northwest": 860,
-        "north": 864
-      },
-      "id": 859
+      "id": 859, "name": "On a dusty path",
+      "exits": { "east": 858, "northwest": 860, "north": 864 }
     },
     {
-      "name": "A living room made of glass",
-      "exits": {
-        "southwest": 863,
-        "northwest": 861,
-        "southeast": 859
-      },
-      "id": 860
+      "id": 860, "name": "A living room made of glass",
+      "exits": { "southwest": 863, "northwest": 861, "southeast": 859 }
     },
     {
-      "name": "A kitchen made of glass",
-      "exits": {
-        "southwest": 862,
-        "southeast": 860
-      },
-      "id": 861
+      "id": 861, "name": "A kitchen made of glass",
+      "exits": { "southwest": 862, "southeast": 860 }
     },
     {
-      "name": "Sylvia's workroom",
-      "exits": {
-        "southeast": 863,
-        "northeast": 861
-      },
-      "id": 862
+      "id": 862, "name": "Sylvia's workroom",
+      "exits": { "southeast": 863, "northeast": 861 }
     },
     {
-      "name": "A bedroom made of glass",
-      "exits": {
-        "northwest": 862,
-        "northeast": 860
-      },
-      "id": 863
+      "id": 863, "name": "A bedroom made of glass",
+      "exits": { "northwest": 862, "northeast": 860 }
     },
     {
-      "name": "On a dusty path",
-      "exits": {
-        "south": 859,
-        "north": 865
-      },
-      "id": 864
+      "id": 864, "name": "On a dusty path",
+      "exits": { "south": 859, "north": 865 }
     },
     {
-      "name": "On a dusty path",
-      "exits": {
-        "east": 868,
-        "northwest": 866,
-        "south": 864
-      },
-      "id": 865
+      "id": 865, "name": "On a dusty path",
+      "exits": { "east": 868, "northwest": 866, "south": 864 }
     },
     {
-      "name": "Inside a small home",
-      "exits": {
-        "southeast": 865,
-        "west": 867
-      },
-      "id": 866
+      "id": 866, "name": "Inside a small home",
+      "exits": { "southeast": 865, "west": 867 }
     },
     {
-      "name": "A large kitchen",
-      "exits": {
-        "east": 866
-      },
-      "id": 867
+      "id": 867, "name": "A large kitchen",
+      "exits": { "east": 866 }
     },
     {
-      "name": "On a dusty path",
-      "exits": {
-        "west": 865,
-        "east": 875,
-        "north": 869
-      },
-      "id": 868
+      "id": 868, "name": "On a dusty path",
+      "exits": { "west": 865, "east": 875, "north": 869 }
     },
     {
-      "name": "Bottom floor of the silo",
-      "exits": {
-        "up": 870,
-        "south": 868
-      },
-      "id": 869
+      "id": 869, "name": "Bottom floor of the silo",
+      "exits": { "up": 870, "south": 868 }
     },
     {
-      "name": "On a dusty path",
-      "exits": {
-        "west": 868,
-        "south": 876
-      },
-      "id": 875
+      "id": 875, "name": "On a dusty path",
+      "exits": { "west": 868, "south": 876 }
     },
     {
-      "name": "On a dusty path",
-      "exits": {
-        "south": 877,
-        "east": 953,
-        "north": 875
-      },
-      "id": 876
+      "id": 876, "name": "On a dusty path",
+      "exits": { "south": 877, "east": 953, "north": 875 }
     },
     {
-      "name": "On a dusty path",
-      "exits": {
-        "west": 858,
-        "north": 876
-      },
-      "id": 877
+      "id": 877, "name": "On a dusty path",
+      "exits": { "west": 858, "north": 876 }
     },
     {
-      "name": "On the porch",
-      "exits": {
-        "east": 954,
-        "west": 876
-      },
-      "id": 953
+      "id": 953, "name": "On the porch",
+      "exits": { "east": 954, "west": 876 }
     },
     {
-      "name": "In the sitting room",
-      "exits": {
-        "west": 953,
-        "east": 955,
-        "south": 958
-      },
-      "id": 954
+      "id": 954, "name": "In the sitting room",
+      "exits": { "west": 953, "east": 955, "south": 958 }
     },
     {
-      "name": "In the kitchen",
-      "exits": {
-        "west": 954,
-        "south": 956
-      },
-      "id": 955
+      "id": 955, "name": "In the kitchen",
+      "exits": { "west": 954, "south": 956 }
     },
     {
-      "name": "In the dining room",
-      "exits": {
-        "west": 958,
-        "east": 957,
-        "north": 955
-      },
-      "id": 956
+      "id": 956, "name": "In the dining room",
+      "exits": { "west": 958, "east": 957, "north": 955 }
     },
     {
-      "name": "You leave the farmhouse and enter the backyard.",
-      "exits": {
-        "east": 959,
-        "west": 956
-      },
-      "id": 957
+      "id": 957, "name": "You leave the farmhouse and enter the backyard.",
+      "exits": { "east": 959, "west": 956 }
     },
     {
-      "name": "In the study",
-      "exits": {
-        "east": 956,
-        "north": 954
-      },
-      "id": 958
+      "id": 958, "name": "In the study",
+      "exits": { "east": 956, "north": 954 }
     },
     {
-      "name": "In a shed",
-      "exits": {
-        "up": 960,
-        "west": 957
-      },
-      "id": 959
+      "id": 959, "name": "In a shed",
+      "exits": { "up": 960, "west": 957 }
     },
     {
-      "name": "Above the shed",
-      "exits": {
-        "down": 959
-      },
-      "id": 960
+      "id": 960, "name": "Above the shed",
+      "exits": { "down": 959 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

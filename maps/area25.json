@@ -4,218 +4,112 @@
   },
   "rooms": [
     {
-      "name": "A short entryway",
-      "exits": {
-        "north": 1263
-      },
-      "id": 1223
+      "id": 1223, "name": "A short entryway",
+      "exits": { "north": 1263 }
     },
     {
-      "name": "Hallway",
-      "exits": {
-        "south": 1223,
-        "west": 1276,
-        "east": 1278,
-        "north": 1264
-      },
-      "id": 1263
+      "id": 1263, "name": "Hallway",
+      "exits": { "south": 1223, "west": 1276, "east": 1278, "north": 1264 }
     },
     {
-      "name": "Hallway",
-      "exits": {
-        "south": 1263,
-        "north": 1265
-      },
-      "id": 1264
+      "id": 1264, "name": "Hallway",
+      "exits": { "south": 1263, "north": 1265 }
     },
     {
-      "name": "Hallway",
-      "exits": {
-        "south": 1264,
-        "east": 1275,
-        "north": 1266
-      },
-      "id": 1265
+      "id": 1265, "name": "Hallway",
+      "exits": { "south": 1264, "east": 1275, "north": 1266 }
     },
     {
-      "name": "Hallway",
-      "exits": {
-        "south": 1265,
-        "west": 1271,
-        "east": 1273,
-        "north": 1267
-      },
-      "id": 1266
+      "id": 1266, "name": "Hallway",
+      "exits": { "south": 1265, "west": 1271, "east": 1273, "north": 1267 }
     },
     {
-      "name": "End of Hallway",
-      "exits": {
-        "west": 1268,
-        "east": 1269,
-        "south": 1266
-      },
-      "id": 1267
+      "id": 1267, "name": "End of Hallway",
+      "exits": { "west": 1268, "east": 1269, "south": 1266 }
     },
     {
-      "name": "Munchkin Romper Room",
-      "exits": {
-        "east": 1267
-      },
-      "id": 1268
+      "id": 1268, "name": "Munchkin Romper Room",
+      "exits": { "east": 1267 }
     },
     {
-      "name": "Mages' Barracks",
-      "exits": {
-        "east": 1270,
-        "west": 1267
-      },
-      "id": 1269
+      "id": 1269, "name": "Mages' Barracks",
+      "exits": { "east": 1270, "west": 1267 }
     },
     {
-      "name": "Munchkin Library",
-      "exits": {
-        "west": 1269
-      },
-      "id": 1270
+      "id": 1270, "name": "Munchkin Library",
+      "exits": { "west": 1269 }
     },
     {
-      "name": "Munchkin Mess Hall",
-      "exits": {
-        "east": 1266,
-        "west": 1272
-      },
-      "id": 1271
+      "id": 1271, "name": "Munchkin Mess Hall",
+      "exits": { "east": 1266, "west": 1272 }
     },
     {
-      "name": "Kitchen",
-      "exits": {
-        "east": 1271
-      },
-      "id": 1272
+      "id": 1272, "name": "Kitchen",
+      "exits": { "east": 1271 }
     },
     {
-      "name": "Fighters' Barracks",
-      "exits": {
-        "east": 1274,
-        "west": 1266
-      },
-      "id": 1273
+      "id": 1273, "name": "Fighters' Barracks",
+      "exits": { "east": 1274, "west": 1266 }
     },
     {
-      "name": "Fighters' Barracks",
-      "exits": {
-        "west": 1273,
-        "south": 1288
-      },
-      "id": 1274
+      "id": 1274, "name": "Fighters' Barracks",
+      "exits": { "west": 1273, "south": 1288 }
     },
     {
-      "name": "Munchkin Smithy",
-      "exits": {
-        "west": 1265
-      },
-      "id": 1275
+      "id": 1275, "name": "Munchkin Smithy",
+      "exits": { "west": 1265 }
     },
     {
-      "name": "Hallway",
-      "exits": {
-        "east": 1263,
-        "west": 1277
-      },
-      "id": 1276
+      "id": 1276, "name": "Hallway",
+      "exits": { "east": 1263, "west": 1277 }
     },
     {
-      "name": "Hallway",
-      "exits": {
-        "west": 1281,
-        "east": 1276,
-        "south": 1280
-      },
-      "id": 1277
+      "id": 1277, "name": "Hallway",
+      "exits": { "west": 1281, "east": 1276, "south": 1280 }
     },
     {
-      "name": "Narrow Hallway",
-      "exits": {
-        "west": 1263,
-        "east": 1279,
-        "north": 1286
-      },
-      "id": 1278
+      "id": 1278, "name": "Narrow Hallway",
+      "exits": { "west": 1263, "east": 1279, "north": 1286 }
     },
     {
-      "name": "End of Narrow Hallway",
-      "exits": {
-        "west": 1278,
-        "north": 1287
-      },
-      "id": 1279
+      "id": 1279, "name": "End of Narrow Hallway",
+      "exits": { "west": 1278, "north": 1287 }
     },
     {
-      "name": "A Dark Tunnel",
-      "exits": {
-        "south": 1284,
-        "north": 1277
-      },
-      "id": 1280
+      "id": 1280, "name": "A Dark Tunnel",
+      "exits": { "south": 1284, "north": 1277 }
     },
     {
-      "name": "End of Hallway",
-      "exits": {
-        "south": 1282,
-        "east": 1277,
-        "north": 1283
-      },
-      "id": 1281
+      "id": 1281, "name": "End of Hallway",
+      "exits": { "south": 1282, "east": 1277, "north": 1283 }
     },
     {
-      "name": "Munchkin Leader's Quarters",
-      "exits": {
-        "north": 1281
-      },
-      "id": 1282
+      "id": 1282, "name": "Munchkin Leader's Quarters",
+      "exits": { "north": 1281 }
     },
     {
-      "name": "Munchkin Leader's Harem",
-      "exits": {
-        "south": 1281
-      },
-      "id": 1283
+      "id": 1283, "name": "Munchkin Leader's Harem",
+      "exits": { "south": 1281 }
     },
     {
-      "name": "A Dark Tunnel",
-      "exits": {
-        "northeast": 1285,
-        "north": 1280
-      },
-      "id": 1284
+      "id": 1284, "name": "A Dark Tunnel",
+      "exits": { "northeast": 1285, "north": 1280 }
     },
     {
-      "name": "A Dark Tunnel",
-      "exits": {
-        "southwest": 1284
-      },
-      "id": 1285
+      "id": 1285, "name": "A Dark Tunnel",
+      "exits": { "southwest": 1284 }
     },
     {
-      "name": "Dank Cell",
-      "exits": {
-        "south": 1278
-      },
-      "id": 1286
+      "id": 1286, "name": "Dank Cell",
+      "exits": { "south": 1278 }
     },
     {
-      "name": "Dank Cell",
-      "exits": {
-        "south": 1279
-      },
-      "id": 1287
+      "id": 1287, "name": "Dank Cell",
+      "exits": { "south": 1279 }
     },
     {
-      "name": "The Lollipop Guild",
-      "exits": {
-        "north": 1274
-      },
-      "id": 1288
+      "id": 1288, "name": "The Lollipop Guild",
+      "exits": { "north": 1274 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

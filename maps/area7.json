@@ -4,408 +4,210 @@
   },
   "rooms": [
     {
-      "name": "",
-      "id": 509
+      "id": 509, "name": ""
     },
     {
-      "name": "Barbarian Clearing",
-      "exits": {
-        "north": 511
-      },
-      "id": 510
+      "id": 510, "name": "Barbarian Clearing",
+      "exits": { "north": 511 }
     },
     {
-      "name": "Underground Pond",
-      "exits": {
-        "southwest": 512,
-        "west": 518,
-        "south": 510
-      },
-      "id": 511
+      "id": 511, "name": "Underground Pond",
+      "exits": { "southwest": 512, "west": 518, "south": 510 }
     },
     {
-      "name": "Cave Passage",
-      "exits": {
-        "south": 513,
-        "northeast": 511
-      },
-      "id": 512
+      "id": 512, "name": "Cave Passage",
+      "exits": { "south": 513, "northeast": 511 }
     },
     {
-      "name": "Cave Passage",
-      "exits": {
-        "south": 515,
-        "north": 512
-      },
-      "id": 513
+      "id": 513, "name": "Cave Passage",
+      "exits": { "south": 515, "north": 512 }
     },
     {
-      "name": "You begin to climb into the pit, and the descent seems simple enough.",
-      "id": 514
+      "id": 514, "name": "You begin to climb into the pit, and the descent seems simple enough."
     },
     {
-      "name": "Bottom of a Deep Dark Pit",
-      "exits": {
-        "east": 516,
-        "north": 513
-      },
-      "id": 515
+      "id": 515, "name": "Bottom of a Deep Dark Pit",
+      "exits": { "east": 516, "north": 513 }
     },
     {
-      "name": "Dark Barricade",
-      "exits": {
-        "east": 517,
-        "west": 515
-      },
-      "id": 516
+      "id": 516, "name": "Dark Barricade",
+      "exits": { "east": 517, "west": 515 }
     },
     {
-      "name": "Corridor",
-      "exits": {
-        "east": 519,
-        "west": 516
-      },
-      "id": 517
+      "id": 517, "name": "Corridor",
+      "exits": { "east": 519, "west": 516 }
     },
     {
-      "name": "Cave Passage",
-      "exits": {
-        "southwest": 1292,
-        "east": 511
-      },
-      "id": 518
+      "id": 518, "name": "Cave Passage",
+      "exits": { "southwest": 1292, "east": 511 }
     },
     {
-      "name": "Passage Way",
-      "exits": {
-        "south": 520,
-        "west": 517,
-        "east": 523,
-        "north": 521
-      },
-      "id": 519
+      "id": 519, "name": "Passage Way",
+      "exits": { "south": 520, "west": 517, "east": 523, "north": 521 }
     },
     {
-      "name": "Barracks",
-      "exits": {
-        "north": 519
-      },
-      "id": 520
+      "id": 520, "name": "Barracks",
+      "exits": { "north": 519 }
     },
     {
-      "name": "Mess Hall",
-      "exits": {
-        "south": 519,
-        "north": 522
-      },
-      "id": 521
+      "id": 521, "name": "Mess Hall",
+      "exits": { "south": 519, "north": 522 }
     },
     {
-      "name": "Kitchen",
-      "exits": {
-        "south": 521
-      },
-      "id": 522
+      "id": 522, "name": "Kitchen",
+      "exits": { "south": 521 }
     },
     {
-      "name": "Passage Way",
-      "exits": {
-        "south": 524,
-        "west": 519,
-        "east": 1295,
-        "north": 1294
-      },
-      "id": 523
+      "id": 523, "name": "Passage Way",
+      "exits": { "south": 524, "west": 519, "east": 1295, "north": 1294 }
     },
     {
-      "name": "Passage Way",
-      "exits": {
-        "south": 525,
-        "north": 523
-      },
-      "id": 524
+      "id": 524, "name": "Passage Way",
+      "exits": { "south": 525, "north": 523 }
     },
     {
-      "name": "Passage Way",
-      "exits": {
-        "west": 1293,
-        "south": 526,
-        "north": 524
-      },
-      "id": 525
+      "id": 525, "name": "Passage Way",
+      "exits": { "west": 1293, "south": 526, "north": 524 }
     },
     {
-      "name": "Circular room",
-      "exits": {
-        "north": 525
-      },
-      "id": 526
+      "id": 526, "name": "Circular room",
+      "exits": { "north": 525 }
     },
     {
-      "name": "Cave Waterfall",
-      "exits": {
-        "northeast": 518
-      },
-      "id": 1292
+      "id": 1292, "name": "Cave Waterfall",
+      "exits": { "northeast": 518 }
     },
     {
-      "name": "Throne Room",
-      "exits": {
-        "east": 525
-      },
-      "id": 1293
+      "id": 1293, "name": "Throne Room",
+      "exits": { "east": 525 }
     },
     {
-      "name": "Mess Hall",
-      "exits": {
-        "south": 523
-      },
-      "id": 1294
+      "id": 1294, "name": "Mess Hall",
+      "exits": { "south": 523 }
     },
     {
-      "name": "New Tunnel",
-      "exits": {
-        "east": 1296,
-        "west": 523
-      },
-      "id": 1295
+      "id": 1295, "name": "New Tunnel",
+      "exits": { "east": 1296, "west": 523 }
     },
     {
-      "name": "New Tunnel",
-      "exits": {
-        "west": 1295
-      },
-      "id": 1296
+      "id": 1296, "name": "New Tunnel",
+      "exits": { "west": 1295 }
     },
     {
-      "name": "New Tunnel",
-      "exits": {
-        "south": 1299,
-        "west": 1298,
-        "east": 1301,
-        "north": 1300
-      },
-      "id": 1297
+      "id": 1297, "name": "New Tunnel",
+      "exits": { "south": 1299, "west": 1298, "east": 1301, "north": 1300 }
     },
     {
-      "name": "You pass through the door and it closes and locks behind you.",
-      "exits": {
-        "east": 1297
-      },
-      "id": 1298
+      "id": 1298, "name": "You pass through the door and it closes and locks behind you.",
+      "exits": { "east": 1297 }
     },
     {
-      "name": "Nursery",
-      "exits": {
-        "north": 1297
-      },
-      "id": 1299
+      "id": 1299, "name": "Nursery",
+      "exits": { "north": 1297 }
     },
     {
-      "name": "Barracks",
-      "exits": {
-        "south": 1297
-      },
-      "id": 1300
+      "id": 1300, "name": "Barracks",
+      "exits": { "south": 1297 }
     },
     {
-      "name": "New Tunnel: Checkpoint",
-      "exits": {
-        "east": 1302,
-        "west": 1297
-      },
-      "id": 1301
+      "id": 1301, "name": "New Tunnel: Checkpoint",
+      "exits": { "east": 1302, "west": 1297 }
     },
     {
-      "name": "Top of the mine shaft",
-      "exits": {
-        "down": 1303,
-        "west": 1301
-      },
-      "id": 1302
+      "id": 1302, "name": "Top of the mine shaft",
+      "exits": { "down": 1303, "west": 1301 }
     },
     {
-      "name": "You let up on the ropes, and the counterweight slowly glides you down the",
-      "exits": {
-        "down": 1304,
-        "up": 1302
-      },
-      "id": 1303
+      "id": 1303, "name": "You let up on the ropes, and the counterweight slowly glides you down the",
+      "exits": { "down": 1304, "up": 1302 }
     },
     {
-      "name": "You let up on the ropes, and the counterweight slowly glides you down the",
-      "exits": {
-        "southwest": 1305,
-        "up": 1303,
-        "east": 1320,
-        "north": 1311
-      },
-      "id": 1304
+      "id": 1304, "name": "You let up on the ropes, and the counterweight slowly glides you down the",
+      "exits": { "southwest": 1305, "up": 1303, "east": 1320, "north": 1311 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "southwest": 1306,
-        "northeast": 1304,
-        "southeast": 1309
-      },
-      "id": 1305
+      "id": 1305, "name": "Twisting Tunnel",
+      "exits": { "southwest": 1306, "northeast": 1304, "southeast": 1309 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "northeast": 1305,
-        "northwest": 1308,
-        "southeast": 1307
-      },
-      "id": 1306
+      "id": 1306, "name": "Twisting Tunnel",
+      "exits": { "northeast": 1305, "northwest": 1308, "southeast": 1307 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "northwest": 1306
-      },
-      "id": 1307
+      "id": 1307, "name": "Twisting Tunnel",
+      "exits": { "northwest": 1306 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "southeast": 1306
-      },
-      "id": 1308
+      "id": 1308, "name": "Twisting Tunnel",
+      "exits": { "southeast": 1306 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "northwest": 1305,
-        "northeast": 1310
-      },
-      "id": 1309
+      "id": 1309, "name": "Twisting Tunnel",
+      "exits": { "northwest": 1305, "northeast": 1310 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "southwest": 1309
-      },
-      "id": 1310
+      "id": 1310, "name": "Twisting Tunnel",
+      "exits": { "southwest": 1309 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "south": 1304,
-        "northeast": 1312
-      },
-      "id": 1311
+      "id": 1311, "name": "Twisting Tunnel",
+      "exits": { "south": 1304, "northeast": 1312 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "southwest": 1311,
-        "north": 1313
-      },
-      "id": 1312
+      "id": 1312, "name": "Twisting Tunnel",
+      "exits": { "southwest": 1311, "north": 1313 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "east": 1314,
-        "northwest": 1316,
-        "south": 1312
-      },
-      "id": 1313
+      "id": 1313, "name": "Twisting Tunnel",
+      "exits": { "east": 1314, "northwest": 1316, "south": 1312 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "southeast": 1315,
-        "west": 1313
-      },
-      "id": 1314
+      "id": 1314, "name": "Twisting Tunnel",
+      "exits": { "southeast": 1315, "west": 1313 }
     },
     {
-      "name": "Your left arm is now in full health.",
-      "exits": {
-        "northwest": 1314
-      },
-      "id": 1315
+      "id": 1315, "name": "Your left arm is now in full health.",
+      "exits": { "northwest": 1314 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "northeast": 1319,
-        "southeast": 1313,
-        "north": 1317
-      },
-      "id": 1316
+      "id": 1316, "name": "Twisting Tunnel",
+      "exits": { "northeast": 1319, "southeast": 1313, "north": 1317 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "northwest": 1318,
-        "south": 1316
-      },
-      "id": 1317
+      "id": 1317, "name": "Twisting Tunnel",
+      "exits": { "northwest": 1318, "south": 1316 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "southeast": 1317
-      },
-      "id": 1318
+      "id": 1318, "name": "Twisting Tunnel",
+      "exits": { "southeast": 1317 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "southwest": 1316
-      },
-      "id": 1319
+      "id": 1319, "name": "Twisting Tunnel",
+      "exits": { "southwest": 1316 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "west": 1304,
-        "northeast": 1321
-      },
-      "id": 1320
+      "id": 1320, "name": "Twisting Tunnel",
+      "exits": { "west": 1304, "northeast": 1321 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "southwest": 1320,
-        "west": 1325,
-        "southeast": 1322,
-        "north": 1324
-      },
-      "id": 1321
+      "id": 1321, "name": "Twisting Tunnel",
+      "exits": { "southwest": 1320, "west": 1325, "southeast": 1322, "north": 1324 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "northwest": 1321,
-        "east": 1323
-      },
-      "id": 1322
+      "id": 1322, "name": "Twisting Tunnel",
+      "exits": { "northwest": 1321, "east": 1323 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "west": 1322
-      },
-      "id": 1323
+      "id": 1323, "name": "Twisting Tunnel",
+      "exits": { "west": 1322 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "south": 1321
-      },
-      "id": 1324
+      "id": 1324, "name": "Twisting Tunnel",
+      "exits": { "south": 1321 }
     },
     {
-      "name": "Twisting Tunnel",
-      "exits": {
-        "east": 1321
-      },
-      "id": 1325
+      "id": 1325, "name": "Twisting Tunnel",
+      "exits": { "east": 1321 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

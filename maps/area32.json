@@ -4,292 +4,148 @@
   },
   "rooms": [
     {
-      "name": "North Moat",
-      "exits": {
-        "east": 1651,
-        "west": 1673
-      },
-      "id": 1650
+      "id": 1650, "name": "North Moat",
+      "exits": { "east": 1651, "west": 1673 }
     },
     {
-      "name": "North Moat",
-      "exits": {
-        "east": 1652,
-        "west": 1650
-      },
-      "id": 1651
+      "id": 1651, "name": "North Moat",
+      "exits": { "east": 1652, "west": 1650 }
     },
     {
-      "name": "North Moat",
-      "exits": {
-        "east": 1654,
-        "west": 1651
-      },
-      "id": 1652
+      "id": 1652, "name": "North Moat",
+      "exits": { "east": 1654, "west": 1651 }
     },
     {
-      "name": "North Moat",
-      "exits": {
-        "west": 1652,
-        "south": 1655
-      },
-      "id": 1654
+      "id": 1654, "name": "North Moat",
+      "exits": { "west": 1652, "south": 1655 }
     },
     {
-      "name": "East Moat",
-      "exits": {
-        "south": 1656,
-        "north": 1654
-      },
-      "id": 1655
+      "id": 1655, "name": "East Moat",
+      "exits": { "south": 1656, "north": 1654 }
     },
     {
-      "name": "East Moat",
-      "exits": {
-        "south": 1657,
-        "north": 1655
-      },
-      "id": 1656
+      "id": 1656, "name": "East Moat",
+      "exits": { "south": 1657, "north": 1655 }
     },
     {
-      "name": "East Moat",
-      "exits": {
-        "south": 1658,
-        "north": 1656
-      },
-      "id": 1657
+      "id": 1657, "name": "East Moat",
+      "exits": { "south": 1658, "north": 1656 }
     },
     {
-      "name": "East Moat",
-      "exits": {
-        "south": 1659,
-        "north": 1657
-      },
-      "id": 1658
+      "id": 1658, "name": "East Moat",
+      "exits": { "south": 1659, "north": 1657 }
     },
     {
-      "name": "East Moat",
-      "exits": {
-        "south": 1660,
-        "north": 1658
-      },
-      "id": 1659
+      "id": 1659, "name": "East Moat",
+      "exits": { "south": 1660, "north": 1658 }
     },
     {
-      "name": "East Moat",
-      "exits": {
-        "south": 1661,
-        "north": 1659
-      },
-      "id": 1660
+      "id": 1660, "name": "East Moat",
+      "exits": { "south": 1661, "north": 1659 }
     },
     {
-      "name": "East Moat",
-      "exits": {
-        "south": 1662,
-        "north": 1660
-      },
-      "id": 1661
+      "id": 1661, "name": "East Moat",
+      "exits": { "south": 1662, "north": 1660 }
     },
     {
-      "name": "East Moat",
-      "exits": {
-        "south": 1663,
-        "north": 1661
-      },
-      "id": 1662
+      "id": 1662, "name": "East Moat",
+      "exits": { "south": 1663, "north": 1661 }
     },
     {
-      "name": "East Moat",
-      "exits": {
-        "south": 1664,
-        "north": 1662
-      },
-      "id": 1663
+      "id": 1663, "name": "East Moat",
+      "exits": { "south": 1664, "north": 1662 }
     },
     {
-      "name": "South Moat",
-      "exits": {
-        "west": 1665,
-        "north": 1663
-      },
-      "id": 1664
+      "id": 1664, "name": "South Moat",
+      "exits": { "west": 1665, "north": 1663 }
     },
     {
-      "name": "South Moat",
-      "exits": {
-        "east": 1664,
-        "west": 1666
-      },
-      "id": 1665
+      "id": 1665, "name": "South Moat",
+      "exits": { "east": 1664, "west": 1666 }
     },
     {
-      "name": "South Moat",
-      "exits": {
-        "east": 1665,
-        "west": 1667
-      },
-      "id": 1666
+      "id": 1666, "name": "South Moat",
+      "exits": { "east": 1665, "west": 1667 }
     },
     {
-      "name": "South Moat",
-      "exits": {
-        "east": 1666,
-        "west": 1668
-      },
-      "id": 1667
+      "id": 1667, "name": "South Moat",
+      "exits": { "east": 1666, "west": 1668 }
     },
     {
-      "name": "South Moat",
-      "exits": {
-        "east": 1667,
-        "west": 1669
-      },
-      "id": 1668
+      "id": 1668, "name": "South Moat",
+      "exits": { "east": 1667, "west": 1669 }
     },
     {
-      "name": "South Moat",
-      "exits": {
-        "east": 1668,
-        "west": 1670
-      },
-      "id": 1669
+      "id": 1669, "name": "South Moat",
+      "exits": { "east": 1668, "west": 1670 }
     },
     {
-      "name": "South Moat",
-      "exits": {
-        "east": 1669,
-        "west": 1671
-      },
-      "id": 1670
+      "id": 1670, "name": "South Moat",
+      "exits": { "east": 1669, "west": 1671 }
     },
     {
-      "name": "South Moat",
-      "exits": {
-        "east": 1670,
-        "west": 1672
-      },
-      "id": 1671
+      "id": 1671, "name": "South Moat",
+      "exits": { "east": 1670, "west": 1672 }
     },
     {
-      "name": "South Moat",
-      "exits": {
-        "east": 1671,
-        "north": 1686
-      },
-      "id": 1672
+      "id": 1672, "name": "South Moat",
+      "exits": { "east": 1671, "north": 1686 }
     },
     {
-      "name": "North Moat - Under Draw Bridge",
-      "exits": {
-        "east": 1650,
-        "west": 1674
-      },
-      "id": 1673
+      "id": 1673, "name": "North Moat - Under Draw Bridge",
+      "exits": { "east": 1650, "west": 1674 }
     },
     {
-      "name": "North Moat",
-      "exits": {
-        "east": 1673,
-        "west": 1675
-      },
-      "id": 1674
+      "id": 1674, "name": "North Moat",
+      "exits": { "east": 1673, "west": 1675 }
     },
     {
-      "name": "North Moat",
-      "exits": {
-        "east": 1674,
-        "west": 1676
-      },
-      "id": 1675
+      "id": 1675, "name": "North Moat",
+      "exits": { "east": 1674, "west": 1676 }
     },
     {
-      "name": "North Moat",
-      "exits": {
-        "east": 1675,
-        "west": 1677
-      },
-      "id": 1676
+      "id": 1676, "name": "North Moat",
+      "exits": { "east": 1675, "west": 1677 }
     },
     {
-      "name": "North Moat",
-      "exits": {
-        "east": 1676,
-        "south": 1678
-      },
-      "id": 1677
+      "id": 1677, "name": "North Moat",
+      "exits": { "east": 1676, "south": 1678 }
     },
     {
-      "name": "West Moat",
-      "exits": {
-        "south": 1679,
-        "north": 1677
-      },
-      "id": 1678
+      "id": 1678, "name": "West Moat",
+      "exits": { "south": 1679, "north": 1677 }
     },
     {
-      "name": "West Moat",
-      "exits": {
-        "south": 1680,
-        "north": 1678
-      },
-      "id": 1679
+      "id": 1679, "name": "West Moat",
+      "exits": { "south": 1680, "north": 1678 }
     },
     {
-      "name": "West Moat",
-      "exits": {
-        "south": 1681,
-        "north": 1679
-      },
-      "id": 1680
+      "id": 1680, "name": "West Moat",
+      "exits": { "south": 1681, "north": 1679 }
     },
     {
-      "name": "West Moat",
-      "exits": {
-        "south": 1682,
-        "north": 1680
-      },
-      "id": 1681
+      "id": 1681, "name": "West Moat",
+      "exits": { "south": 1682, "north": 1680 }
     },
     {
-      "name": "West Moat",
-      "exits": {
-        "south": 1683,
-        "north": 1681
-      },
-      "id": 1682
+      "id": 1682, "name": "West Moat",
+      "exits": { "south": 1683, "north": 1681 }
     },
     {
-      "name": "West Moat",
-      "exits": {
-        "south": 1684,
-        "north": 1682
-      },
-      "id": 1683
+      "id": 1683, "name": "West Moat",
+      "exits": { "south": 1684, "north": 1682 }
     },
     {
-      "name": "West Moat",
-      "exits": {
-        "south": 1685,
-        "north": 1683
-      },
-      "id": 1684
+      "id": 1684, "name": "West Moat",
+      "exits": { "south": 1685, "north": 1683 }
     },
     {
-      "name": "West Moat",
-      "exits": {
-        "south": 1686,
-        "north": 1684
-      },
-      "id": 1685
+      "id": 1685, "name": "West Moat",
+      "exits": { "south": 1686, "north": 1684 }
     },
     {
-      "name": "West Moat",
-      "exits": {
-        "south": 1672,
-        "north": 1685
-      },
-      "id": 1686
+      "id": 1686, "name": "West Moat",
+      "exits": { "south": 1672, "north": 1685 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"

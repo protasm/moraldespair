@@ -4,794 +4,400 @@
   },
   "rooms": [
     {
-      "name": "End of Pylus road",
-      "exits": {
-        "south": 1206
-      },
-      "id": 1205
-    },
-    {
-      "name": "Pylus road",
-      "exits": {
-        "south": 1207,
-        "north": 1205
-      },
-      "id": 1206
-    },
-    {
-      "name": "Pylus road",
-      "exits": {
-        "south": 1208,
-        "east": 1212,
-        "north": 1206
-      },
-      "id": 1207
-    },
-    {
-      "name": "Pylus road",
-      "exits": {
-        "west": 1209,
-        "south": 1213,
-        "north": 1207
-      },
-      "id": 1208
-    },
-    {
-      "name": "Freemason's",
-      "exits": {
-        "south": 1210,
-        "east": 1208,
-        "north": 1211
-      },
-      "id": 1209
-    },
-    {
-      "name": "Apprentice's",
-      "exits": {
-        "north": 1209
-      },
-      "id": 1210
-    },
-    {
-      "name": "Master stonemason's",
-      "exits": {
-        "south": 1209
-      },
-      "id": 1211
-    },
-    {
-      "name": "Mausoleum entrance",
-      "exits": {
-        "west": 1207
-      },
-      "id": 1212
-    },
-    {
-      "name": "Pylus road",
-      "exits": {
-        "south": 1214,
-        "north": 1208
-      },
-      "id": 1213
-    },
-    {
-      "name": "Pylus road",
-      "exits": {
-        "south": 1215,
-        "west": 1218,
-        "east": 1219,
-        "north": 1213
-      },
-      "id": 1214
-    },
-    {
-      "name": "Pylus road",
-      "exits": {
-        "southwest": 1216,
-        "east": 1222,
-        "southeast": 1217,
-        "north": 1214
-      },
-      "id": 1215
-    },
-    {
-      "name": "Porch",
-      "exits": {
-        "northeast": 1215
-      },
-      "id": 1216
-    },
-    {
-      "name": "Sanity's Requiem",
-      "exits": {
-        "northwest": 1215
-      },
-      "id": 1217
-    },
-    {
-      "name": "Hall of Bacchus",
-      "exits": {
-        "east": 1214
-      },
-      "id": 1218
-    },
-    {
-      "name": "Triage",
-      "exits": {
-        "west": 1214,
-        "north": 1220
-      },
-      "id": 1219
-    },
-    {
-      "name": "Waiting room",
-      "exits": {
-        "east": 1221,
-        "south": 1219
-      },
-      "id": 1220
-    },
-    {
-      "name": "Operating room",
-      "exits": {
-        "west": 1220
-      },
-      "id": 1221
-    },
-    {
-      "name": "Pylus road checkpoint",
-      "exits": {
-        "east": 1289,
-        "west": 1215
-      },
-      "id": 1222
-    },
-    {
-      "name": "Iola square",
-      "exits": {
-        "west": 1289,
-        "south": 1227,
-        "north": 1225
-      },
-      "id": 1224
-    },
-    {
-      "name": "Iola way",
-      "exits": {
-        "west": 1363,
-        "south": 1224,
-        "north": 1226
-      },
-      "id": 1225
-    },
-    {
-      "name": "Iola way",
-      "exits": {
-        "south": 1225,
-        "north": 1248
-      },
-      "id": 1226
-    },
-    {
-      "name": "Iola way",
-      "exits": {
-        "south": 1228,
-        "west": 1247,
-        "east": 1246,
-        "north": 1224
-      },
-      "id": 1227
-    },
-    {
-      "name": "Iola way",
-      "exits": {
-        "south": 1229,
-        "west": 1244,
-        "east": 1243,
-        "north": 1227
-      },
-      "id": 1228
-    },
-    {
-      "name": "Iola bridge",
-      "exits": {
-        "southwest": 1230,
-        "east": 1231,
-        "north": 1228
-      },
-      "id": 1229
-    },
-    {
-      "name": "Large field",
-      "exits": {
-        "west": 1239,
-        "northeast": 1229
-      },
-      "id": 1230
-    },
-    {
-      "name": "Polema street",
-      "exits": {
-        "west": 1229,
-        "east": 1233,
-        "south": 1232
-      },
-      "id": 1231
-    },
-    {
-      "name": "Gay house",
-      "exits": {
-        "north": 1231
-      },
-      "id": 1232
-    },
-    {
-      "name": "Polema street",
-      "exits": {
-        "south": 1234,
-        "west": 1231,
-        "east": 1235,
-        "north": 1238
-      },
-      "id": 1233
+      "id": 1205, "name": "End of Pylus road",
+      "exits": { "south": 1206 }
     },
     {
-      "name": "Short house",
-      "exits": {
-        "north": 1233
-      },
-      "id": 1234
+      "id": 1206, "name": "Pylus road",
+      "exits": { "south": 1207, "north": 1205 }
     },
     {
-      "name": "Polema street",
-      "exits": {
-        "west": 1233,
-        "east": 1237,
-        "north": 1236
-      },
-      "id": 1235
+      "id": 1207, "name": "Pylus road",
+      "exits": { "south": 1208, "east": 1212, "north": 1206 }
     },
     {
-      "name": "Bright house",
-      "exits": {
-        "south": 1235
-      },
-      "id": 1236
+      "id": 1208, "name": "Pylus road",
+      "exits": { "west": 1209, "south": 1213, "north": 1207 }
     },
     {
-      "name": "Foyer",
-      "exits": {
-        "west": 1235
-      },
-      "id": 1237
+      "id": 1209, "name": "Freemason's",
+      "exits": { "south": 1210, "east": 1208, "north": 1211 }
     },
     {
-      "name": "Tall house",
-      "exits": {
-        "south": 1233
-      },
-      "id": 1238
-    },
+      "id": 1210, "name": "Apprentice's",
+      "exits": { "north": 1209 }
+    },
+    {
+      "id": 1211, "name": "Master stonemason's",
+      "exits": { "south": 1209 }
+    },
+    {
+      "id": 1212, "name": "Mausoleum entrance",
+      "exits": { "west": 1207 }
+    },
+    {
+      "id": 1213, "name": "Pylus road",
+      "exits": { "south": 1214, "north": 1208 }
+    },
+    {
+      "id": 1214, "name": "Pylus road",
+      "exits": { "south": 1215, "west": 1218, "east": 1219, "north": 1213 }
+    },
+    {
+      "id": 1215, "name": "Pylus road",
+      "exits": { "southwest": 1216, "east": 1222, "southeast": 1217, "north": 1214 }
+    },
+    {
+      "id": 1216, "name": "Porch",
+      "exits": { "northeast": 1215 }
+    },
+    {
+      "id": 1217, "name": "Sanity's Requiem",
+      "exits": { "northwest": 1215 }
+    },
+    {
+      "id": 1218, "name": "Hall of Bacchus",
+      "exits": { "east": 1214 }
+    },
+    {
+      "id": 1219, "name": "Triage",
+      "exits": { "west": 1214, "north": 1220 }
+    },
+    {
+      "id": 1220, "name": "Waiting room",
+      "exits": { "east": 1221, "south": 1219 }
+    },
+    {
+      "id": 1221, "name": "Operating room",
+      "exits": { "west": 1220 }
+    },
+    {
+      "id": 1222, "name": "Pylus road checkpoint",
+      "exits": { "east": 1289, "west": 1215 }
+    },
+    {
+      "id": 1224, "name": "Iola square",
+      "exits": { "west": 1289, "south": 1227, "north": 1225 }
+    },
+    {
+      "id": 1225, "name": "Iola way",
+      "exits": { "west": 1363, "south": 1224, "north": 1226 }
+    },
+    {
+      "id": 1226, "name": "Iola way",
+      "exits": { "south": 1225, "north": 1248 }
+    },
+    {
+      "id": 1227, "name": "Iola way",
+      "exits": { "south": 1228, "west": 1247, "east": 1246, "north": 1224 }
+    },
+    {
+      "id": 1228, "name": "Iola way",
+      "exits": { "south": 1229, "west": 1244, "east": 1243, "north": 1227 }
+    },
+    {
+      "id": 1229, "name": "Iola bridge",
+      "exits": { "southwest": 1230, "east": 1231, "north": 1228 }
+    },
+    {
+      "id": 1230, "name": "Large field",
+      "exits": { "west": 1239, "northeast": 1229 }
+    },
+    {
+      "id": 1231, "name": "Polema street",
+      "exits": { "west": 1229, "east": 1233, "south": 1232 }
+    },
+    {
+      "id": 1232, "name": "Gay house",
+      "exits": { "north": 1231 }
+    },
+    {
+      "id": 1233, "name": "Polema street",
+      "exits": { "south": 1234, "west": 1231, "east": 1235, "north": 1238 }
+    },
+    {
+      "id": 1234, "name": "Short house",
+      "exits": { "north": 1233 }
+    },
+    {
+      "id": 1235, "name": "Polema street",
+      "exits": { "west": 1233, "east": 1237, "north": 1236 }
+    },
+    {
+      "id": 1236, "name": "Bright house",
+      "exits": { "south": 1235 }
+    },
+    {
+      "id": 1237, "name": "Foyer",
+      "exits": { "west": 1235 }
+    },
+    {
+      "id": 1238, "name": "Tall house",
+      "exits": { "south": 1233 }
+    },
+    {
+      "id": 1239, "name": "Gymnasium foyer",
+      "exits": { "west": 1240, "east": 1230, "south": 1241 }
+    },
+    {
+      "id": 1240, "name": "Changing room",
+      "exits": { "east": 1239 }
+    },
+    {
+      "id": 1241, "name": "Gymnasium hallway",
+      "exits": { "south": 1242, "north": 1239 }
+    },
+    {
+      "id": 1242, "name": "Natatorium",
+      "exits": { "north": 1241 }
+    },
+    {
+      "id": 1243, "name": "Vegetable seller's",
+      "exits": { "west": 1228 }
+    },
+    {
+      "id": 1244, "name": "Herbarium",
+      "exits": { "east": 1228, "south": 1245 }
+    },
+    {
+      "id": 1245, "name": "Herb garden",
+      "exits": { "north": 1244 }
+    },
+    {
+      "id": 1246, "name": "Butcher shop",
+      "exits": { "west": 1227 }
+    },
+    {
+      "id": 1247, "name": "Guild/Shop Space for rent",
+      "exits": { "east": 1227 }
+    },
+    {
+      "id": 1248, "name": "Iola way",
+      "exits": { "west": 1249, "east": 1252, "south": 1226 }
+    },
+    {
+      "id": 1249, "name": "Garden entry",
+      "exits": { "east": 1248, "north": 1250 }
+    },
+    {
+      "id": 1250, "name": "Garden clearing",
+      "exits": { "west": 1251, "south": 1249 }
+    },
+    {
+      "id": 1251, "name": "Entry to akademos",
+      "exits": { "east": 1250, "west": 1374 }
+    },
+    {
+      "id": 1252, "name": "Ithsma street",
+      "exits": { "east": 1253, "west": 1248 }
+    },
+    {
+      "id": 1253, "name": "Ithsma street",
+      "exits": { "west": 1252, "east": 1255, "south": 1254 }
+    },
+    {
+      "id": 1254, "name": "Short path",
+      "exits": { "south": 1375, "north": 1253 }
+    },
+    {
+      "id": 1255, "name": "Ithsma street",
+      "exits": { "west": 1253, "east": 1389, "north": 1256 }
+    },
+    {
+      "id": 1256, "name": "Before the Palace",
+      "exits": { "south": 1255, "north": 1257 }
+    },
+    {
+      "id": 1257, "name": "Threshold to the Grand Rotunda",
+      "exits": { "south": 1256, "north": 1258 }
+    },
+    {
+      "id": 1258, "name": "Grand Rotunda",
+      "exits": { "west": 1259, "east": 1362, "south": 1257 }
+    },
+    {
+      "id": 1259, "name": "Administrative hallway",
+      "exits": { "west": 1261, "east": 1258, "north": 1260 }
+    },
+    {
+      "id": 1260, "name": "Office of the Magistrate",
+      "exits": { "south": 1259 }
+    },
+    {
+      "id": 1261, "name": "Administrative hallway",
+      "exits": { "west": 1262, "east": 1259, "south": 1391 }
+    },
+    {
+      "id": 1262, "name": "Royal Throne Room",
+      "exits": { "east": 1261 }
+    },
+    {
+      "id": 1289, "name": "Gate of Triumph",
+      "exits": { "south": 1290, "west": 1222, "east": 1224, "north": 1291 }
+    },
+    {
+      "id": 1290, "name": "Southern niche",
+      "exits": { "north": 1289 }
+    },
+    {
+      "id": 1291, "name": "Northern niche",
+      "exits": { "south": 1289 }
+    },
+    {
+      "id": 1362, "name": "Guard Post",
+      "exits": { "west": 1258, "east": 1392, "north": 1395 }
+    },
+    {
+      "id": 1363, "name": "Doorway",
+      "exits": { "east": 1225, "west": 1364 }
+    },
+    {
+      "id": 1364, "name": "Statued hallway",
+      "exits": { "east": 1363, "west": 1365 }
+    },
+    {
+      "id": 1365, "name": "Hallway",
+      "exits": { "west": 1366, "east": 1364, "north": 1367 }
+    },
+    {
+      "id": 1366, "name": "Captain's office",
+      "exits": { "east": 1365 }
+    },
     {
-      "name": "Gymnasium foyer",
-      "exits": {
-        "west": 1240,
-        "east": 1230,
-        "south": 1241
-      },
-      "id": 1239
+      "id": 1367, "name": "Courtyard",
+      "exits": { "south": 1365, "north": 1368 }
     },
     {
-      "name": "Changing room",
-      "exits": {
-        "east": 1239
-      },
-      "id": 1240
-    },
-    {
-      "name": "Gymnasium hallway",
-      "exits": {
-        "south": 1242,
-        "north": 1239
-      },
-      "id": 1241
-    },
-    {
-      "name": "Natatorium",
-      "exits": {
-        "north": 1241
-      },
-      "id": 1242
-    },
-    {
-      "name": "Vegetable seller's",
-      "exits": {
-        "west": 1228
-      },
-      "id": 1243
-    },
-    {
-      "name": "Herbarium",
-      "exits": {
-        "east": 1228,
-        "south": 1245
-      },
-      "id": 1244
-    },
-    {
-      "name": "Herb garden",
-      "exits": {
-        "north": 1244
-      },
-      "id": 1245
+      "id": 1368, "name": "Courtyard",
+      "exits": { "south": 1367, "north": 1369 }
     },
-    {
-      "name": "Butcher shop",
-      "exits": {
-        "west": 1227
-      },
-      "id": 1246
-    },
     {
-      "name": "Guild/Shop Space for rent",
-      "exits": {
-        "east": 1227
-      },
-      "id": 1247
-    },
-    {
-      "name": "Iola way",
-      "exits": {
-        "west": 1249,
-        "east": 1252,
-        "south": 1226
-      },
-      "id": 1248
-    },
+      "id": 1369, "name": "Hallway",
+      "exits": { "up": 1373, "west": 1370, "east": 1371, "south": 1368 }
+    },
+    {
+      "id": 1370, "name": "West wing",
+      "exits": { "east": 1369 }
+    },
+    {
+      "id": 1371, "name": "East wing",
+      "exits": { "west": 1369, "south": 1372 }
+    },
+    {
+      "id": 1372, "name": "East wing hallway",
+      "exits": { "north": 1371 }
+    },
+    {
+      "id": 1373, "name": "Climbing the tight stairwell, you open the trapdoor and climb to the roof.",
+      "exits": { "down": 1369 }
+    },
+    {
+      "id": 1374, "name": "Akademos",
+      "exits": { "east": 1251 }
+    },
+    {
+      "id": 1375, "name": "Temple entry",
+      "exits": { "south": 1376, "north": 1254 }
+    },
     {
-      "name": "Garden entry",
-      "exits": {
-        "east": 1248,
-        "north": 1250
-      },
-      "id": 1249
-    },
-    {
-      "name": "Garden clearing",
-      "exits": {
-        "west": 1251,
-        "south": 1249
-      },
-      "id": 1250
-    },
+      "id": 1376, "name": "Temple rotunda",
+      "exits": { "south": 1377, "west": 1381, "east": 1384, "north": 1375 }
+    },
     {
-      "name": "Entry to akademos",
-      "exits": {
-        "east": 1250,
-        "west": 1374
-      },
-      "id": 1251
-    },
-    {
-      "name": "Ithsma street",
-      "exits": {
-        "east": 1253,
-        "west": 1248
-      },
-      "id": 1252
-    },
-    {
-      "name": "Ithsma street",
-      "exits": {
-        "west": 1252,
-        "east": 1255,
-        "south": 1254
-      },
-      "id": 1253
+      "id": 1377, "name": "Temple hallway",
+      "exits": { "south": 1378, "north": 1376 }
     },
-    {
-      "name": "Short path",
-      "exits": {
-        "south": 1375,
-        "north": 1253
-      },
-      "id": 1254
-    },
-    {
-      "name": "Ithsma street",
-      "exits": {
-        "west": 1253,
-        "east": 1389,
-        "north": 1256
-      },
-      "id": 1255
-    },
-    {
-      "name": "Before the Palace",
-      "exits": {
-        "south": 1255,
-        "north": 1257
-      },
-      "id": 1256
-    },
-    {
-      "name": "Threshold to the Grand Rotunda",
-      "exits": {
-        "south": 1256,
-        "north": 1258
-      },
-      "id": 1257
-    },
-    {
-      "name": "Grand Rotunda",
-      "exits": {
-        "west": 1259,
-        "east": 1362,
-        "south": 1257
-      },
-      "id": 1258
-    },
-    {
-      "name": "Administrative hallway",
-      "exits": {
-        "west": 1261,
-        "east": 1258,
-        "north": 1260
-      },
-      "id": 1259
-    },
-    {
-      "name": "Office of the Magistrate",
-      "exits": {
-        "south": 1259
-      },
-      "id": 1260
-    },
-    {
-      "name": "Administrative hallway",
-      "exits": {
-        "west": 1262,
-        "east": 1259,
-        "south": 1391
-      },
-      "id": 1261
-    },
-    {
-      "name": "Royal Throne Room",
-      "exits": {
-        "east": 1261
-      },
-      "id": 1262
-    },
-    {
-      "name": "Gate of Triumph",
-      "exits": {
-        "south": 1290,
-        "west": 1222,
-        "east": 1224,
-        "north": 1291
-      },
-      "id": 1289
-    },
-    {
-      "name": "Southern niche",
-      "exits": {
-        "north": 1289
-      },
-      "id": 1290
-    },
-    {
-      "name": "Northern niche",
-      "exits": {
-        "south": 1289
-      },
-      "id": 1291
-    },
-    {
-      "name": "Guard Post",
-      "exits": {
-        "west": 1258,
-        "east": 1392,
-        "north": 1395
-      },
-      "id": 1362
-    },
-    {
-      "name": "Doorway",
-      "exits": {
-        "east": 1225,
-        "west": 1364
-      },
-      "id": 1363
-    },
-    {
-      "name": "Statued hallway",
-      "exits": {
-        "east": 1363,
-        "west": 1365
-      },
-      "id": 1364
-    },
-    {
-      "name": "Hallway",
-      "exits": {
-        "west": 1366,
-        "east": 1364,
-        "north": 1367
-      },
-      "id": 1365
-    },
-    {
-      "name": "Captain's office",
-      "exits": {
-        "east": 1365
-      },
-      "id": 1366
-    },
-    {
-      "name": "Courtyard",
-      "exits": {
-        "south": 1365,
-        "north": 1368
-      },
-      "id": 1367
-    },
-    {
-      "name": "Courtyard",
-      "exits": {
-        "south": 1367,
-        "north": 1369
-      },
-      "id": 1368
-    },
-    {
-      "name": "Hallway",
-      "exits": {
-        "up": 1373,
-        "west": 1370,
-        "east": 1371,
-        "south": 1368
-      },
-      "id": 1369
-    },
-    {
-      "name": "West wing",
-      "exits": {
-        "east": 1369
-      },
-      "id": 1370
-    },
-    {
-      "name": "East wing",
-      "exits": {
-        "west": 1369,
-        "south": 1372
-      },
-      "id": 1371
-    },
-    {
-      "name": "East wing hallway",
-      "exits": {
-        "north": 1371
-      },
-      "id": 1372
-    },
-    {
-      "name": "Climbing the tight stairwell, you open the trapdoor and climb to the roof.",
-      "exits": {
-        "down": 1369
-      },
-      "id": 1373
-    },
-    {
-      "name": "Akademos",
-      "exits": {
-        "east": 1251
-      },
-      "id": 1374
-    },
-    {
-      "name": "Temple entry",
-      "exits": {
-        "south": 1376,
-        "north": 1254
-      },
-      "id": 1375
-    },
-    {
-      "name": "Temple rotunda",
-      "exits": {
-        "south": 1377,
-        "west": 1381,
-        "east": 1384,
-        "north": 1375
-      },
-      "id": 1376
-    },
-    {
-      "name": "Temple hallway",
-      "exits": {
-        "south": 1378,
-        "north": 1376
-      },
-      "id": 1377
-    },
     {
-      "name": "End of temple hallway",
-      "exits": {
-        "west": 1380,
-        "east": 1379,
-        "north": 1377
-      },
-      "id": 1378
+      "id": 1378, "name": "End of temple hallway",
+      "exits": { "west": 1380, "east": 1379, "north": 1377 }
     },
     {
-      "name": "Folio depository",
-      "exits": {
-        "west": 1378
-      },
-      "id": 1379
-    },
+      "id": 1379, "name": "Folio depository",
+      "exits": { "west": 1378 }
+    },
     {
-      "name": "Reliquary",
-      "exits": {
-        "east": 1378
-      },
-      "id": 1380
-    },
+      "id": 1380, "name": "Reliquary",
+      "exits": { "east": 1378 }
+    },
     {
-      "name": "Hall of Peace",
-      "exits": {
-        "east": 1376,
-        "west": 1382
-      },
-      "id": 1381
+      "id": 1381, "name": "Hall of Peace",
+      "exits": { "east": 1376, "west": 1382 }
     },
     {
-      "name": "Hall of Peace",
-      "exits": {
-        "west": 1383,
-        "east": 1381,
-        "south": 1387
-      },
-      "id": 1382
+      "id": 1382, "name": "Hall of Peace",
+      "exits": { "west": 1383, "east": 1381, "south": 1387 }
     },
     {
-      "name": "Rotunda of Peace",
-      "exits": {
-        "east": 1382
-      },
-      "id": 1383
-    },
+      "id": 1383, "name": "Rotunda of Peace",
+      "exits": { "east": 1382 }
+    },
     {
-      "name": "Hall of War",
-      "exits": {
-        "west": 1376,
-        "east": 1385,
-        "south": 1388
-      },
-      "id": 1384
+      "id": 1384, "name": "Hall of War",
+      "exits": { "west": 1376, "east": 1385, "south": 1388 }
     },
     {
-      "name": "Hall of War",
-      "exits": {
-        "east": 1386,
-        "west": 1384
-      },
-      "id": 1385
+      "id": 1385, "name": "Hall of War",
+      "exits": { "east": 1386, "west": 1384 }
     },
     {
-      "name": "Rotunda of War",
-      "exits": {
-        "west": 1385
-      },
-      "id": 1386
+      "id": 1386, "name": "Rotunda of War",
+      "exits": { "west": 1385 }
     },
     {
-      "name": "Chapel of Peace",
-      "exits": {
-        "north": 1382
-      },
-      "id": 1387
+      "id": 1387, "name": "Chapel of Peace",
+      "exits": { "north": 1382 }
     },
     {
-      "name": "Chapel of War",
-      "exits": {
-        "north": 1384
-      },
-      "id": 1388
+      "id": 1388, "name": "Chapel of War",
+      "exits": { "north": 1384 }
     },
     {
-      "name": "Ithsma street",
-      "exits": {
-        "east": 1390,
-        "west": 1255
-      },
-      "id": 1389
+      "id": 1389, "name": "Ithsma street",
+      "exits": { "east": 1390, "west": 1255 }
     },
     {
-      "name": "End of Ithsma street",
-      "exits": {
-        "west": 1389
-      },
-      "id": 1390
+      "id": 1390, "name": "End of Ithsma street",
+      "exits": { "west": 1389 }
     },
     {
-      "name": "Office of the Secretary",
-      "exits": {
-        "north": 1261
-      },
-      "id": 1391
+      "id": 1391, "name": "Office of the Secretary",
+      "exits": { "north": 1261 }
     },
     {
-      "name": "Formal gardens",
-      "exits": {
-        "west": 1362,
-        "east": 1393,
-        "south": 1394
-      },
-      "id": 1392
+      "id": 1392, "name": "Formal gardens",
+      "exits": { "west": 1362, "east": 1393, "south": 1394 }
     },
     {
-      "name": "A private corner in the garden",
-      "exits": {
-        "west": 1392
-      },
-      "id": 1393
+      "id": 1393, "name": "A private corner in the garden",
+      "exits": { "west": 1392 }
     },
     {
-      "name": "A private corner in the garden",
-      "exits": {
-        "north": 1392
-      },
-      "id": 1394
+      "id": 1394, "name": "A private corner in the garden",
+      "exits": { "north": 1392 }
     },
     {
-      "name": "Residential hallway",
-      "exits": {
-        "east": 1396,
-        "south": 1362
-      },
-      "id": 1395
+      "id": 1395, "name": "Residential hallway",
+      "exits": { "east": 1396, "south": 1362 }
     },
     {
-      "name": "Residential hallway",
-      "exits": {
-        "west": 1395,
-        "east": 1397,
-        "north": 1398
-      },
-      "id": 1396
+      "id": 1396, "name": "Residential hallway",
+      "exits": { "west": 1395, "east": 1397, "north": 1398 }
     },
     {
-      "name": "The harem",
-      "exits": {
-        "west": 1396,
-        "north": 1400
-      },
-      "id": 1397
+      "id": 1397, "name": "The harem",
+      "exits": { "west": 1396, "north": 1400 }
     },
     {
-      "name": "The Royal Chambers",
-      "exits": {
-        "west": 1399,
-        "south": 1396
-      },
-      "id": 1398
+      "id": 1398, "name": "The Royal Chambers",
+      "exits": { "west": 1399, "south": 1396 }
     },
     {
-      "name": "The royal dressing room",
-      "exits": {
-        "east": 1398
-      },
-      "id": 1399
+      "id": 1399, "name": "The royal dressing room",
+      "exits": { "east": 1398 }
     },
     {
-      "name": "The Consort's chambers",
-      "exits": {
-        "south": 1397
-      },
-      "id": 1400
+      "id": 1400, "name": "The Consort's chambers",
+      "exits": { "south": 1397 }
     }
   ],
   "exportedAt": "2026-01-05T00:19:21Z"
