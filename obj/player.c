@@ -628,7 +628,7 @@ int teleport(string dest) {
         if (!is_invis)
             say(cap_name + " " + mmsgin + ".\n");
         if (brief)
-            write(ob->short() + ".\n");
+            write(ob->short() + "\n");
         else
             ob->long();
         ob = first_inventory(ob);

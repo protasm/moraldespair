@@ -197,7 +197,7 @@ void move_player(string dir_dest, object optional_dest_ob) {
     }
     ob = environment(this_object());
     if (brief)
-        write(ob->short() + ".\n");
+        write(ob->short() + "\n");
     else
         ob->long();
     for (i = 0, ob = first_inventory(ob); ob; ob = next_inventory(ob)) {
