@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 416, "name": "City Unemployment Office",
@@ -19,6 +16,5 @@
       "id": 1203, "name": "City Unemployment Office",
       "exits": { "north": 416 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

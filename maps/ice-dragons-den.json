@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1338, "name": "Ice Dragon's Den",
@@ -99,6 +96,5 @@
       "id": 1869, "name": "down the waterfall.",
       "exits": { "down": 1339 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

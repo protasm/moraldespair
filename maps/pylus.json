@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1205, "name": "End of Pylus road",
@@ -399,6 +396,5 @@
       "id": 1400, "name": "The Consort's chambers",
       "exits": { "south": 1397 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

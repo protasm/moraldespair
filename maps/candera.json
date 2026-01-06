@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1, "name": "North Gate",
@@ -659,6 +656,5 @@
       "id": 1134, "name": "House of Lord Candera",
       "exits": { "down": 69 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

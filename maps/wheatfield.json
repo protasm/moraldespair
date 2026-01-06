@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1638, "name": "Road Through a Wheatfield",
@@ -51,6 +48,5 @@
       "id": 1649, "name": "Wheatfield",
       "exits": { "southwest": 1641, "west": 1639, "south": 1648 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

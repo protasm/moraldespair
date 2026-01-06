@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1018, "name": "Headquarter Entrance",
@@ -47,6 +44,5 @@
       "id": 1029, "name": "Strategist's Room",
       "exits": { "west": 1024 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

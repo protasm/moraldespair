@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 286, "name": "Entrance to Exedoria",
@@ -603,6 +600,5 @@
       "id": 930, "name": "Machinery Room",
       "exits": { "down": 929 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

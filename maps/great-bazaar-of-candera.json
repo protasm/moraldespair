@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 977, "name": "Great Bazaar of Candera",
@@ -75,6 +72,5 @@
       "id": 1739, "name": "Landak's Hut:",
       "exits": { "west": 995 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

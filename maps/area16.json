@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1036, "name": "Southwest Tower"
@@ -13,6 +10,5 @@
       "id": 1038, "name": "Thief Hideout Entrance",
       "exits": { "up": 1037 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

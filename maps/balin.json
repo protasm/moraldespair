@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 605, "name": "Ocean before Beachhead",
@@ -517,6 +514,5 @@
       "id": 733, "name": "Administrative hallway",
       "exits": { "north": 732 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

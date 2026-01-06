@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1164, "name": "Living room",
@@ -19,6 +16,5 @@
       "id": 1167, "name": "You brush aside the blanket and duck to pass through the small door.",
       "exits": { "southwest": 1164 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

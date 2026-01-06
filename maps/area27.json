@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1334, "name": "Tiled Entryway",
@@ -23,6 +20,5 @@
       "id": 1361, "name": "Clan Lord's Private Chambers",
       "exits": { "south": 1337 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

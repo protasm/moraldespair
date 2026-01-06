@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 506, "name": "Entrance to Gorge",
@@ -15,6 +12,5 @@
       "id": 508, "name": "Old Guard Room",
       "exits": { "east": 507 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

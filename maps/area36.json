@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1824, "name": "You are just inside the entrace to a large cave",
@@ -43,6 +40,5 @@
       "id": 1833, "name": "A small chamber",
       "exits": { "south": 1830 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

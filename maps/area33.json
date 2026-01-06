@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 990, "name": "Oak Treehouse landing",
@@ -211,6 +208,5 @@
       "id": 1738, "name": "Hall of Ministers",
       "exits": { "southwest": 1736, "south": 1737 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

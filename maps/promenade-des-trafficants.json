@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1169, "name": "Promenade des Trafficants",
@@ -67,6 +64,5 @@
       "id": 1184, "name": "Volshev's Advertising Agency",
       "exits": { "west": 1171 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

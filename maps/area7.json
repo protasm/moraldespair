@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 509, "name": ""
@@ -209,6 +206,5 @@
       "id": 1325, "name": "Twisting Tunnel",
       "exits": { "east": 1321 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

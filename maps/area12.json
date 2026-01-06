@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 881, "name": "Cemetery Lane.",
@@ -51,6 +48,5 @@
       "id": 892, "name": "A cemetery.",
       "exits": { "west": 887 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

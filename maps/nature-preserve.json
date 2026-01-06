@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 432, "name": "Bridge",
@@ -295,6 +292,5 @@
       "id": 504, "name": "Nature Preserve",
       "exits": { "east": 502 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1401, "name": "City of Indel, Wilderness Gate",
@@ -631,6 +628,5 @@
       "id": 1653, "name": "Mudball Arena Entrance",
       "exits": { "up": 1583 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

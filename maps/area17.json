@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1039, "name": "Guard Post",
@@ -159,6 +156,5 @@
       "id": 1077, "name": "Prison cell",
       "exits": { "north": 1070 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }

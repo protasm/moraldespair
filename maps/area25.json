@@ -1,7 +1,4 @@
 {
-  "mudlet": {
-    "version": "unknown"
-  },
   "rooms": [
     {
       "id": 1223, "name": "A short entryway",
@@ -111,6 +108,5 @@
       "id": 1288, "name": "The Lollipop Guild",
       "exits": { "north": 1274 }
     }
-  ],
-  "exportedAt": "2026-01-05T00:19:21Z"
+  ]
 }
