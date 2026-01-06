@@ -211,8 +211,7 @@
     {
       "id": 484, "name": "Nature Preserve",
       "exits": { "south": 485, "north": 482 }
-    },
-    {
+    },{
       "id": 485, "name": "Nature Preserve",
       "exits": { "south": 486, "north": 484 }
     },

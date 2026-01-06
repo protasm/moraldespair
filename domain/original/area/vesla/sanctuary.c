@@ -20,6 +20,7 @@ void reset(int arg) {
     dest_dir = ({
         "domain/original/area/vesla/room228", "south",
 	"domain/original/area/vesla/room893", "up",
+	"domain/original/area/vesla/portal", "down",
     });
 }
 
@@ -84,7 +85,7 @@ void long(string str) {
 
     write("Sanctuary\n");
     write("There is a clock here.\n");
-    write("There is an exit to the south.\n");
+    write("There are exits up, down, and south.\n");
 
     return;
 }
