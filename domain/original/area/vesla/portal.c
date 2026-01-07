@@ -15,5 +15,6 @@ void reset(int arg) {
         "domain/original/area/forest/room529", "forest",
         "domain/original/area/pylus/room1205", "pylus",
         "domain/original/area/village-green/room1687", "green",
+        "domain/original/area/barb-caves/room515", "caves",
     });
 }
