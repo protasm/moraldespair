@@ -18,10 +18,10 @@ void reset(int arg) {
 
 void init() {
     ::init();
-    add_action("block_structure", "west");
+    add_action("block_exit", "west");
 }
 
-int block_structure() {
+int block_exit() {
     write("The passage is choked with debris; you cannot pass.\n");
     return 1;
 }

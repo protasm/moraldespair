@@ -17,10 +17,10 @@ void reset(int arg) {
 
 void init() {
     ::init();
-    add_action("block_structure", "south");
+    add_action("block_exit", "south");
 }
 
-int block_structure() {
+int block_exit() {
     write("Only rubble remains there; the way is impassable.\n");
     return 1;
 }

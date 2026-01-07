@@ -18,11 +18,11 @@ void reset(int arg) {
 
 void init() {
     ::init();
-    add_action("block_structure", "south");
-    add_action("block_structure", "north");
+    add_action("block_exit", "south");
+    add_action("block_exit", "north");
 }
 
-int block_structure() {
+int block_exit() {
     write("Only rubble remains there; the structure collapsed long ago.\n");
     return 1;
 }

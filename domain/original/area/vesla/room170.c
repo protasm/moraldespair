@@ -16,10 +16,10 @@ void reset(int arg) {
 
 void init() {
     ::init();
-    add_action("block_structure", "east");
+    add_action("block_exit", "east");
 }
 
-int block_structure() {
+int block_exit() {
     write("Nothing but fallen masonry lies there; it's impassable.\n");
     return 1;
 }
