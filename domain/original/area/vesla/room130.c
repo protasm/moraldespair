@@ -6,11 +6,20 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Westroad";
-    long_desc = "Westroad.\n";
+    short_desc = "Broken Westroad";
+    long_desc = "Westroad is split by deep cracks and littered with shattered stone. The abandoned street bears the scars of dragonfire.\n";
     dest_dir = ({
         "domain/original/area/vesla/room131", "west",
         "domain/original/area/vesla/room129", "east",
         "domain/original/area/vesla/room420", "south",
     });
+}
+
+void init() {
+    add_action("block_structure", "south");
+}
+
+int block_structure() {
+    write("Only rubble remains there; the structure collapsed long ago.\n");
+    return 1;
 }

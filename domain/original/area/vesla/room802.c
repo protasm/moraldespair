@@ -6,12 +6,22 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Stink Alley Way";
-    long_desc = "Stink Alley Way.\n";
+    short_desc = "Reeking Ruin Alley";
+    long_desc = "Stagnant filth and ash cling to the broken stones, and a sour reek hangs in the air. The alleyway is collapsed and deserted.\n";
     dest_dir = ({
         "domain/original/area/vesla/room805", "south",
         "domain/original/area/vesla/room803", "west",
         "domain/original/area/vesla/room799", "east",
         "domain/original/area/vesla/room807", "north",
     });
+}
+
+void init() {
+    add_action("block_structure", "south");
+    add_action("block_structure", "north");
+}
+
+int block_structure() {
+    write("Only rubble remains there; the structure collapsed long ago.\n");
+    return 1;
 }

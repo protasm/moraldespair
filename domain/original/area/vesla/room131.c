@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Westroad";
-    long_desc = "Westroad.\n";
+    short_desc = "Broken Westroad";
+    long_desc = "Westroad is split by deep cracks and littered with shattered stone. The abandoned street bears the scars of dragonfire.\n";
     dest_dir = ({
         "domain/original/area/vesla/room132", "west",
         "domain/original/area/vesla/room130", "east",

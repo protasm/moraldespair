@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Via Sacra";
-    long_desc = "Via Sacra.\n";
+    short_desc = "Desecrated Via Sacra";
+    long_desc = "Charred pillars and shattered altars line the once-holy way. The stones are cracked and cold, abandoned for two centuries.\n";
     dest_dir = ({
         "domain/original/area/vesla/room408", "west",
         "domain/original/area/vesla/room216", "south",

@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "The corner of Westroad and Basalt Avenue";
-    long_desc = "The corner of Westroad and Basalt Avenue.\n";
+    short_desc = "Broken Corner of Westroad and Basalt Avenue";
+    long_desc = "Two ruined streets meet among rubble and scorched debris. The corner is choked with broken stone and ash.\n";
     dest_dir = ({
         "domain/original/area/vesla/room134", "west",
         "domain/original/area/vesla/room132", "east",

@@ -6,11 +6,20 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Northern Main street";
-    long_desc = "Northern Main street.\n";
+    short_desc = "Shattered North Main Street";
+    long_desc = "North Main is cracked and heaved, with chunks of masonry strewn across it. Long ago the dragons laid it waste, and it has never recovered.\n";
     dest_dir = ({
         "domain/original/area/vesla/room161", "south",
         "domain/original/area/vesla/room810", "east",
         "domain/original/area/vesla/room163", "north",
     });
+}
+
+void init() {
+    add_action("block_structure", "east");
+}
+
+int block_structure() {
+    write("Only rubble remains there; the structure collapsed long ago.\n");
+    return 1;
 }
