@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Street of the Bells";
-    long_desc = "Street of the Bells.\n";
+    short_desc = "Silent Street of the Bells";
+    long_desc = "Bell towers have fallen and their stones lie strewn across the street. The way is silent, its paving cracked and blackened.\n";
     dest_dir = ({
         "domain/original/area/vesla/room203", "west",
         "domain/original/area/vesla/room201", "east",

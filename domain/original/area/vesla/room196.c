@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Rapier Way";
-    long_desc = "Rapier Way.\n";
+    short_desc = "Splintered Rapier Way";
+    long_desc = "The paving is slashed and splintered, as if a blade had carved through stone. The dragons' assault left this way broken and lifeless.\n";
     dest_dir = ({
         "domain/original/area/vesla/room197", "east",
         "domain/original/area/vesla/room195", "west",

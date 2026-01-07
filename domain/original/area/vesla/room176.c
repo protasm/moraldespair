@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Caravan Road";
-    long_desc = "Caravan Road.\n";
+    short_desc = "Rutted Caravan Road";
+    long_desc = "Deep ruts and gouges cut through the roadway, as if something massive scraped along it. Ash and shattered stone choke the old caravan path.\n";
     dest_dir = ({
         "domain/original/area/vesla/room175", "south",
         "domain/original/area/vesla/room177", "north",
