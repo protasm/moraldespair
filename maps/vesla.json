@@ -425,19 +425,19 @@
       "exits": { "south": 219, "west": 221, "east": 233, "north": 117 }
     },
     {
-      "id": 221, "name": "General Store",
+      "id": 221, "name": "Collapsed Structure",
       "exits": { "west": 222, "east": 220, "north": 118 }
     },
     {
-      "id": 222, "name": "Comfortably Numb",
+      "id": 222, "name": "Rubble-Choked Shell",
       "exits": { "west": 223, "east": 221, "north": 119 }
     },
     {
-      "id": 223, "name": "Medieval Mounts",
+      "id": 223, "name": "Crumbling Wreck",
       "exits": { "west": 224, "east": 222, "north": 120 }
     },
     {
-      "id": 224, "name": "Big Hole Banking",
+      "id": 224, "name": "Shattered Remains",
       "exits": { "west": 225, "east": 223, "north": 121 }
     },
     {
@@ -473,7 +473,7 @@
       "exits": { "south": 226, "west": 228, "east": 173, "north": 234 }
     },
     {
-      "id": 233, "name": "The Shadowed Anvil",
+      "id": 233, "name": "Broken Edifice",
       "exits": { "west": 220, "north": 116 }
     },
     {
@@ -537,7 +537,7 @@
       "exits": { "north": 405 }
     },
     {
-      "id": 408, "name": "MD Banking",
+      "id": 408, "name": "Sundered Hall",
       "exits": { "east": 217 }
     },
     {
@@ -613,7 +613,7 @@
       "exits": { "north": 189 }
     },
     {
-      "id": 740, "name": "Stationery Store",
+      "id": 740, "name": "Fallen Annex",
       "exits": { "north": 190 }
     },
     {
@@ -637,7 +637,7 @@
       "exits": { "east": 746, "south": 741 }
     },
     {
-      "id": 746, "name": "Store Room",
+      "id": 746, "name": "Dusty Ruins",
       "exits": { "west": 745 }
     },
     {
@@ -897,7 +897,7 @@
       "exits": { "west": 162 }
     },
     {
-      "id": 811, "name": "Hardware Store",
+      "id": 811, "name": "Splintered Shell",
       "exits": { "west": 163 }
     },
     {
@@ -1125,7 +1125,7 @@
       "exits": { "south": 796 }
     },
     {
-      "id": 962, "name": "Abandoned Store",
+      "id": 962, "name": "Buried Wreckage",
       "exits": { "west": 199 }
     }
   ]

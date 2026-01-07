@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Hardware Store";
-    long_desc = "Hardware Store.\n";
+    short_desc = "Splintered Shell";
+    long_desc = "Splintered Shell.\n";
     dest_dir = ({
         "domain/original/area/vesla/room163", "west",
     });

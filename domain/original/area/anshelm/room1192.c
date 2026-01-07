@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Second Bank of Anshelm";
-    long_desc = "Second Bank of Anshelm.\n";
+    short_desc = "Collapsed Chamber";
+    long_desc = "Collapsed Chamber.\n";
     dest_dir = ({
         "domain/original/area/anshelm/room240", "west",
     });
