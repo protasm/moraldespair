@@ -6,7 +6,7 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Scorched Basalt Avenue";
+    short_desc = "Scorched Stone Avenue";
     long_desc = "Basalt blocks are cracked and glassy, fused by searing heat. The avenue runs like a blackened scar through the ruins.\n";
     dest_dir = ({
         "domain/original/area/vesla/room136", "south",

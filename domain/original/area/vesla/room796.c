@@ -17,6 +17,7 @@ void reset(int arg) {
 }
 
 void init() {
+    ::init();
     add_action("block_structure", "south");
     add_action("block_structure", "north");
 }

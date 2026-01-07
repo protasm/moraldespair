@@ -6,7 +6,7 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Desecrated Via Sacra";
+    short_desc = "Desecrated Ruined Avenue";
     long_desc = "Charred pillars and shattered altars line the once-holy way. The stones are cracked and cold, abandoned for two centuries.\n";
     dest_dir = ({
         "domain/original/area/vesla/room215", "south",
@@ -17,6 +17,7 @@ void reset(int arg) {
 }
 
 void init() {
+    ::init();
     add_action("block_structure", "west");
 }
 

@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Shattered North Main Street";
-    long_desc = "North Main is cracked and heaved, with chunks of masonry strewn across it. Heat-blistered stone and deep gouges linger like the passage of something vast. Grease-dark stains and splintered bones collect in sheltered corners.\n";
+    short_desc = "Shattered Northern Main Road";
+    long_desc = "The northern main road is cracked and heaved, with chunks of masonry strewn across it. Heat-blistered stone and deep gouges linger like the passage of something vast. Grease-dark stains and splintered bones collect in sheltered corners.\n";
     dest_dir = ({
         "domain/original/area/vesla/room162", "south",
         "domain/original/area/vesla/room811", "east",
@@ -16,6 +16,7 @@ void reset(int arg) {
 }
 
 void init() {
+    ::init();
     add_action("block_structure", "east");
 }
 
