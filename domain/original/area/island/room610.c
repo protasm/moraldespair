@@ -9,9 +9,9 @@ void reset(int arg) {
     short_desc = "Intersection of Silver Street and Balin Road";
     long_desc = "Intersection of Silver Street and Balin Road.\n";
     dest_dir = ({
-        "domain/original/area/balin/room609", "south",
-        "domain/original/area/balin/room635", "west",
-        "domain/original/area/balin/room660", "east",
-        "domain/original/area/balin/room611", "north",
+        "domain/original/area/island/room609", "south",
+        "domain/original/area/island/room635", "west",
+        "domain/original/area/island/room660", "east",
+        "domain/original/area/island/room611", "north",
     });
 }

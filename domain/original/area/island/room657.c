@@ -9,8 +9,8 @@ void reset(int arg) {
     short_desc = "Keep Of Alcibiades";
     long_desc = "Keep Of Alcibiades.\n";
     dest_dir = ({
-        "domain/original/area/balin/room659", "west",
-        "domain/original/area/balin/room658", "east",
-        "domain/original/area/balin/room640", "north",
+        "domain/original/area/island/room659", "west",
+        "domain/original/area/island/room658", "east",
+        "domain/original/area/island/room640", "north",
     });
 }

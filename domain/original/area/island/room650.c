@@ -9,7 +9,7 @@ void reset(int arg) {
     short_desc = "Highland Avenue";
     long_desc = "Highland Avenue.\n";
     dest_dir = ({
-        "domain/original/area/balin/room652", "west",
-        "domain/original/area/balin/room648", "south",
+        "domain/original/area/island/room652", "west",
+        "domain/original/area/island/room648", "south",
     });
 }

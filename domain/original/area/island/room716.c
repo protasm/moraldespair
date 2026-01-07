@@ -9,6 +9,6 @@ void reset(int arg) {
     short_desc = "You feel a STRONG urge to read the Sanctuary board... You are responsible";
     long_desc = "You feel a STRONG urge to read the Sanctuary board... You are responsible.\n";
     dest_dir = ({
-        "domain/original/area/balin/room713", "south",
+        "domain/original/area/island/room713", "south",
     });
 }

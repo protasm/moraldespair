@@ -9,6 +9,6 @@ void reset(int arg) {
     short_desc = "Crack of Doom";
     long_desc = "Crack of Doom.\n";
     dest_dir = ({
-        "domain/original/area/balin/room686", "up",
+        "domain/original/area/island/room686", "up",
     });
 }

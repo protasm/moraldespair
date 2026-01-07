@@ -9,7 +9,7 @@ void reset(int arg) {
     short_desc = "Archway of Servitude";
     long_desc = "Archway of Servitude.\n";
     dest_dir = ({
-        "domain/original/area/balin/room725", "south",
-        "domain/original/area/balin/room723", "north",
+        "domain/original/area/island/room725", "south",
+        "domain/original/area/island/room723", "north",
     });
 }
