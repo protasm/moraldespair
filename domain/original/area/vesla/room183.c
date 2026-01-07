@@ -13,3 +13,12 @@ void reset(int arg) {
         "domain/original/area/vesla/room184", "west",
     });
 }
+
+void init() {
+    add_action("block_structure", "west");
+}
+
+int block_structure() {
+    write("Only rubble remains there; the way is impassable.\n");
+    return 1;
+}

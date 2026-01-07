@@ -627,10 +627,20 @@ int teleport(string dest) {
         move_object(myself, ob);
         if (!is_invis)
             say(cap_name + " " + mmsgin + ".\n");
-        if (brief)
+        if (brief) {
             write(ob->short() + "\n");
-        else
+        } else {
+            string room_short;
+            string *room_lines;
+
+            room_short = ob->short();
+            if (room_short) {
+                room_lines = explode(room_short, "\n");
+                if (sizeof(room_lines))
+                    write(room_lines[0] + "\n");
+            }
             ob->long();
+        }
         ob = first_inventory(ob);
         while (ob) {
             if (ob != this_object()) {

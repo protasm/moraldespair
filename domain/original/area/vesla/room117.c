@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Cindered Crossing of Park Street and Via Sacra";
-    long_desc = "Charred trunks and broken stones frame the junction of Park Street and the Via Sacra. Only ash and rubble remain where the dragons swept through.\n";
+    long_desc = "Charred trunks and broken stones frame the junction of Park Street and the Via Sacra. Ash and rubble lie in wind-swept drifts, and the stone bears long talon-like scars.\n";
     dest_dir = ({
         "domain/original/area/vesla/room220", "south",
         "domain/original/area/vesla/room118", "west",

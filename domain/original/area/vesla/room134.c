@@ -13,3 +13,12 @@ void reset(int arg) {
         "domain/original/area/roadway/room29", "exit",
     });
 }
+
+void init() {
+    add_action("block_wilderness", "exit");
+}
+
+int block_wilderness() {
+    write("The ruined gate is choked with stone; the wilderness beyond is impassable.\n");
+    return 1;
+}

@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Cindered End of Park Street";
-    long_desc = "Park Street ends in a jumble of shattered stones and charred stumps. The dragons' passage left the road broken and dead.\n";
+    long_desc = "Park Street ends in a jumble of shattered stones and charred stumps. The road lies broken and dead, gouged by something enormous.\n";
     dest_dir = ({
         "domain/original/area/vesla/room880", "south",
         "domain/original/area/vesla/room127", "west",

@@ -196,10 +196,20 @@ void move_player(string dir_dest, object optional_dest_ob) {
         return;
     }
     ob = environment(this_object());
-    if (brief)
+    if (brief) {
         write(ob->short() + "\n");
-    else
+    } else {
+        string room_short;
+        string *room_lines;
+
+        room_short = ob->short();
+        if (room_short) {
+            room_lines = explode(room_short, "\n");
+            if (sizeof(room_lines))
+                write(room_lines[0] + "\n");
+        }
         ob->long();
+    }
     for (i = 0, ob = first_inventory(ob); ob; ob = next_inventory(ob)) {
         if (ob != this_object()) {
             string short_str;

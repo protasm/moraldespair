@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Rubble-Choked River Street and Broken South Main";
-    long_desc = "Two ruined streets meet in a heap of collapsed stone and shattered timbers. The crossing is quiet, the scars of dragonfire still visible.\n";
+    long_desc = "Two ruined streets meet in a heap of collapsed stone and shattered timbers. The crossing is quiet, the stones glazed by ancient heat.\n";
     dest_dir = ({
         "domain/original/area/vesla/room816", "south",
         "domain/original/area/vesla/room150", "west",
