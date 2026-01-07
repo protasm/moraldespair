@@ -16,10 +16,10 @@ void reset(int arg) {
 
 void init() {
     ::init();
-    add_action("block_structure", "south");
+    add_action("block_exit", "south");
 }
 
-int block_structure() {
+int block_exit() {
     write("Just ruins and broken stone remain; the structure gave out long ago.\n");
     return 1;
 }

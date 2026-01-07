@@ -17,10 +17,10 @@ void reset(int arg) {
 
 void init() {
     ::init();
-    add_action("block_structure", "north");
+    add_action("block_exit", "north");
 }
 
-int block_structure() {
+int block_exit() {
     write("A long-collapsed structure leaves only rubble there.\n");
     return 1;
 }

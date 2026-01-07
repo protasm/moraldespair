@@ -16,10 +16,10 @@ void reset(int arg) {
 
 void init() {
     ::init();
-    add_action("block_structure", "west");
+    add_action("block_exit", "west");
 }
 
-int block_structure() {
+int block_exit() {
     write("The exit is buried under debris and can't be used.\n");
     return 1;
 }
