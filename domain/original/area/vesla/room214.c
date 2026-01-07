@@ -23,6 +23,6 @@ void init() {
 }
 
 int block_structure() {
-    write("Only rubble remains there; the way is impassable.\n");
+    write("A heap of collapsed stone blocks the way.\n");
     return 1;
 }

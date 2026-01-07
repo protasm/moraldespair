@@ -21,6 +21,6 @@ void init() {
 }
 
 int block_structure() {
-    write("Only rubble remains there; the way is impassable.\n");
+    write("Crumbling ruins bar that direction completely.\n");
     return 1;
 }
