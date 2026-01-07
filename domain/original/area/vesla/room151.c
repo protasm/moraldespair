@@ -6,7 +6,7 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Rubble-Choked River Street and Broken South Main";
+    short_desc = "Rubble-Choked Riverside Street and Broken Main Road";
     long_desc = "Two ruined streets meet in a heap of collapsed stone and shattered timbers. The crossing is quiet, the stones glazed by ancient heat.\n";
     dest_dir = ({
         "domain/original/area/vesla/room816", "south",
@@ -17,6 +17,7 @@ void reset(int arg) {
 }
 
 void init() {
+    ::init();
     add_action("block_structure", "south");
 }
 

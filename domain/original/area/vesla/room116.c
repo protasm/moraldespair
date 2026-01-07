@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Cindered Crossing of Park Street and Caravan Road";
-    long_desc = "Burned trees and shattered paving meet here where Park Street once touched Caravan Road. The air is stale with old smoke and drifting ash.\n";
+    short_desc = "Cindered Crossing of Two Ruined Roads";
+    long_desc = "Burned trees and shattered paving meet here where two ruined roads converge. The air is stale with old smoke and drifting ash.\n";
     dest_dir = ({
         "domain/original/area/vesla/room233", "south",
         "domain/original/area/vesla/room117", "west",
