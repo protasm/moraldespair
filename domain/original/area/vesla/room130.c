@@ -21,6 +21,6 @@ void init() {
 }
 
 int block_structure() {
-    write("Only rubble remains there; the structure collapsed long ago.\n");
+    write("Only shattered remains mark the spot; the building caved in long ago.\n");
     return 1;
 }
