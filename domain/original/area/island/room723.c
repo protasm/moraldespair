@@ -9,7 +9,7 @@ void reset(int arg) {
     short_desc = "Crowded Thoroughfare";
     long_desc = "Crowded Thoroughfare.\n";
     dest_dir = ({
-        "domain/original/area/balin/room724", "south",
-        "domain/original/area/balin/room637", "north",
+        "domain/original/area/island/room724", "south",
+        "domain/original/area/island/room637", "north",
     });
 }

@@ -9,6 +9,6 @@ void reset(int arg) {
     short_desc = "Foyer of House of Ill Repute";
     long_desc = "Foyer of House of Ill Repute.\n";
     dest_dir = ({
-        "domain/original/area/balin/room637", "southwest",
+        "domain/original/area/island/room637", "southwest",
     });
 }

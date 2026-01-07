@@ -9,7 +9,7 @@ void reset(int arg) {
     short_desc = "Tunnel Under Canal";
     long_desc = "Tunnel Under Canal.\n";
     dest_dir = ({
-        "domain/original/area/balin/room637", "east",
-        "domain/original/area/balin/room639", "west",
+        "domain/original/area/island/room637", "east",
+        "domain/original/area/island/room639", "west",
     });
 }

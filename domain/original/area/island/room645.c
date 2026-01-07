@@ -9,6 +9,6 @@ void reset(int arg) {
     short_desc = "Dwarven Hut";
     long_desc = "Dwarven Hut.\n";
     dest_dir = ({
-        "domain/original/area/balin/room644", "south",
+        "domain/original/area/island/room644", "south",
     });
 }

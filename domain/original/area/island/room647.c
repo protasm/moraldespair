@@ -9,6 +9,6 @@ void reset(int arg) {
     short_desc = "Gnome Hut";
     long_desc = "Gnome Hut.\n";
     dest_dir = ({
-        "domain/original/area/balin/room643", "north",
+        "domain/original/area/island/room643", "north",
     });
 }
