@@ -15,12 +15,3 @@ void reset(int arg) {
     });
 }
 
-void init() {
-    ::init();
-    add_action("block_exit", "south");
-}
-
-int block_exit() {
-    write("Only rubble remains there; the structure collapsed long ago.\n");
-    return 1;
-}

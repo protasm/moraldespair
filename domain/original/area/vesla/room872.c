@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "In Vella's bedroom";
-    long_desc = "In Vella's bedroom.\n";
+    short_desc = "Collapsed Vault";
+    long_desc = "A cold hush hangs over the wreckage. Scorched beams and soot-blackened stone suggest flames that once raged here.\n";
     dest_dir = ({
         "domain/original/area/vesla/room871", "down",
     });

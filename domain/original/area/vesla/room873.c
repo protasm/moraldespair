@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "<> Aladrin escapes reality and falls into Moral Decay. <>";
-    long_desc = "<> Aladrin escapes reality and falls into Moral Decay. <>.\n";
+    short_desc = "Cinder-Laden Court";
+    long_desc = "The ceiling has partially collapsed, leaving jagged stone and ash. The destruction feels deliberate, as if wrought by enormous, fire-breathing beasts.\n";
     dest_dir = ({
         "domain/original/area/vesla/room874", "down",
         "domain/original/area/vesla/room871", "up",

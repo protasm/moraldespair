@@ -15,12 +15,3 @@ void reset(int arg) {
     });
 }
 
-void init() {
-    ::init();
-    add_action("block_exit", "south");
-}
-
-int block_exit() {
-    write("There is only debris; the structure collapsed years ago.\n");
-    return 1;
-}
