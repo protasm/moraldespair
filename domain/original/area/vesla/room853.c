@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Abandoned Building";
-    long_desc = "Abandoned Building.\n";
+    short_desc = "Rubble-Strewn Ground";
+    long_desc = "Charred fragments litter the ground, and the walls are blistered by heat. Long gouges and melted slag mark the passing of something huge.\n";
     dest_dir = ({
         "domain/original/area/vesla/room139", "east",
     });

@@ -15,12 +15,3 @@ void reset(int arg) {
     });
 }
 
-void init() {
-    ::init();
-    add_action("block_exit", "north");
-}
-
-int block_exit() {
-    write("Rubble fills the exit, leaving no route forward.\n");
-    return 1;
-}

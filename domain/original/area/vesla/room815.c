@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "The Back Room";
-    long_desc = "The Back Room.\n";
+    short_desc = "Blistered Stonework";
+    long_desc = "Cracked flagstones and soot-smeared walls frame a hollow ruin. Signs of tremendous heat and raking talons remain.\n";
     dest_dir = ({
         "domain/original/area/vesla/room230", "east",
         "domain/original/area/vesla/room814", "north",

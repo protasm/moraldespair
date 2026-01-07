@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Rubble-Choked Alley";
-    long_desc = "The alley is little more than a trench of shattered stone and collapsed timbers. Ash and rubble fill the cramped passage.\n";
+    short_desc = "Blackened Passage";
+    long_desc = "Broken masonry and cinders blanket the floor. Melted fixtures cling to the walls, and clawed furrows cut through the rubble.\n";
     dest_dir = ({
         "domain/original/area/vesla/room188", "south",
     });

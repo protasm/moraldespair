@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Chamber of Commerce";
-    long_desc = "Chamber of Commerce.\n";
+    short_desc = "Blackened Passage";
+    long_desc = "Broken masonry and cinders blanket the floor. Melted fixtures cling to the walls, and clawed furrows cut through the rubble.\n";
     dest_dir = ({
         "domain/original/area/vesla/room187", "south",
     });

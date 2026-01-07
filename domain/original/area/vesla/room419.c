@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Lightless Ruined Alleyway";
-    long_desc = "No light reaches this narrow cut between ruins, only soot and broken masonry. The place feels abandoned even by whatever once nested here.\n";
+    short_desc = "Ashen Ruins";
+    long_desc = "Ash lies thick over cracked stone and splintered timbers. The air smells of old smoke, and deep gouges show where something massive tore through.\n";
     dest_dir = ({
         "domain/original/area/vesla/room129", "north",
     });

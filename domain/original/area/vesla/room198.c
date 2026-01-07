@@ -15,12 +15,3 @@ void reset(int arg) {
     });
 }
 
-void init() {
-    ::init();
-    add_action("block_exit", "east");
-}
-
-int block_exit() {
-    write("Rubble blocks the way; the structure has long since fallen.\n");
-    return 1;
-}
