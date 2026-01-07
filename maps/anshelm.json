@@ -365,11 +365,11 @@
       "exits": { "east": 1190, "south": 1185 }
     },
     {
-      "id": 1192, "name": "Second Bank of Anshelm",
+      "id": 1192, "name": "Collapsed Chamber",
       "exits": { "west": 240 }
     },
     {
-      "id": 1193, "name": "The Anshelmish General Store",
+      "id": 1193, "name": "Ruined Passage",
       "exits": { "west": 251 }
     },
     {
