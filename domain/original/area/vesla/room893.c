@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Blistered Stonework";
-    long_desc = "Cracked flagstones and soot-smeared walls frame a hollow ruin. Signs of tremendous heat and raking talons remain.\n";
+    short_desc = "Players' Lounge";
+    long_desc = "This is the players' lounge.\n";
     dest_dir = ({
         "domain/original/area/vesla/sanctuary", "down",
     });
