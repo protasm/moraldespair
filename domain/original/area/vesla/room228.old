@@ -1,0 +1,30 @@
+inherit "room/room";
+
+void reset(int arg) {
+    if (arg)
+        return;
+
+    set_light(1);
+
+    short_desc = "A peaceful park";
+    long_desc = "A peaceful park.\n";
+    dest_dir = ({
+        "domain/original/area/vesla/sanctuary", "north",
+        "domain/original/area/vesla/room227", "south",
+#'close_portal_room, "up",
+        "domain/original/area/vesla/room232", "east",
+        "domain/original/area/vesla/room231", "west",
+    });
+}
+
+void init() {
+    ::init();
+
+    add_action("south", "close_portal_room");
+}
+
+int close_portal_room(string arg) {
+    write("The portal room is closed.\n");
+
+    return 1;
+}

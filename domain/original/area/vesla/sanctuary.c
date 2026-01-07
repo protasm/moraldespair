@@ -24,6 +24,19 @@ void reset(int arg) {
     });
 }
 
+void init() {
+    ::init();
+
+    add_action("close_portal_room", "down");
+}
+
+int close_portal_room(string arg) {
+    write("The portal room is closed.\n");
+
+    return 1;   /* block movement */
+}
+
+
 void show_clock() {
     int i, j;
 
