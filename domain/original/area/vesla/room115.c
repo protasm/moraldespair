@@ -16,12 +16,16 @@ void reset(int arg) {
     });
 }
 
+/*
 void init() {
     ::init();
+
     add_action("block_exit", "exit");
 }
 
 int block_exit() {
     write("The ruined gate has collapsed; the way to the wilderness is impassable.\n");
+
     return 1;
 }
+*/
