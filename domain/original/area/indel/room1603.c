@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "Soldiers' Tent";
-    long_desc = "Soldiers' Tent.\n";
+    short_desc = "Bleached Broken Bend";
+    long_desc = "Loose stones shift underfoot, buried in silt and powdered mortar. Fragments of arches and lintels hang at odd angles, cut and burned through. The passage angles hard here, squeezed between leaning stone. Thin lichen mats the shaded edges, and the air tastes of wet dust.\n";
     dest_dir = ({
         "domain/original/area/indel/room1600", "south",
         "domain/original/area/indel/room1604", "east",

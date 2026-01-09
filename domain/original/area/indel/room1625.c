@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "Quicksilver Delivery Service";
-    long_desc = "Quicksilver Delivery Service.\n";
+    short_desc = "Silted Choked End";
+    long_desc = "The floor is a churn of fractured stone and rubble, pressed flat by time. The remains of pillars stand jagged, split and fused by old force. A collapsed heap chokes the line, forcing a retreat. Thin lichen mats the shaded edges, and the air tastes of wet dust.\n";
     dest_dir = ({
         "domain/original/area/indel/room1405", "east",
     });

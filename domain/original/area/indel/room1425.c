@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "Pier Street";
-    long_desc = "Pier Street.\n";
+    short_desc = "Silted Bleached Narrow Way";
+    long_desc = "Rubble and crushed mortar blanket the surface, slick in places with old damp. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.\n";
     dest_dir = ({
         "domain/original/area/indel/room1424", "north",
         "domain/original/area/indel/room1426", "south",

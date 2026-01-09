@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "Muddy Lane";
-    long_desc = "Muddy Lane.\n";
+    short_desc = "Silted Narrow Way";
+    long_desc = "Grit and broken tiles lie in drifts, the ground uneven and tired. The remains of pillars stand jagged, split and fused by old force. The way runs on in a narrow line, hemmed by broken walls. Thin lichen mats the shaded edges, and the air tastes of wet dust.\n";
     dest_dir = ({
         "domain/original/area/indel/room1402", "east",
         "domain/original/area/indel/room1632", "west",

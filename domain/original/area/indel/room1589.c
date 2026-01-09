@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "The Silver Griffin";
-    long_desc = "The Silver Griffin.\n";
+    short_desc = "Cold Split Way";
+    long_desc = "Broken paving lies in uneven ridges, with fine dust caked between. Blackened streaks and gouges run along the masonry, breaking any clean line. The path splits around a heap of fallen blocks, offering multiple ruined lines. Thin lichen mats the shaded edges, and the air tastes of wet dust.\n";
     dest_dir = ({
         "domain/original/area/indel/room1408", "north",
         "domain/original/area/indel/room1588", "east",

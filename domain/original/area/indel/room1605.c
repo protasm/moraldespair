@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "You move the partition to the side and walk into the back of the tent.";
-    long_desc = "You move the partition to the side and walk into the back of the tent..\n";
+    short_desc = "Smeared Cold Choked End";
+    long_desc = "Pitted stone stretches ahead, littered with chips and fragments. Fragments of arches and lintels hang at odd angles, cut and burned through. A collapsed heap chokes the line, forcing a retreat. Thin lichen mats the shaded edges, and the air tastes of wet dust.\n";
     dest_dir = ({
         "domain/original/area/indel/room1602", "west",
     });

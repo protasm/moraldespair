@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "Intersection of Martial Row and Pensji Lane";
-    long_desc = "Intersection of Martial Row and Pensji Lane.\n";
+    short_desc = "Scorched Sunk Split Way";
+    long_desc = "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Chunks of wall have been scooped away, leaving raw ribs of stone.\n\nThe path splits around a heap of fallen blocks, offering multiple ruined lines. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.\n";
     dest_dir = ({
         "domain/original/area/indel/room1534", "north",
         "domain/original/area/indel/room1591", "east",
