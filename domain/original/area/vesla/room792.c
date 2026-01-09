@@ -7,7 +7,8 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Rubble-Choked Alleyway";
-    long_desc = "Broken walls lean inward over a narrow way packed with debris. The alley is quiet, the stones scorched by long-ago flames.\n";
+    long_desc = "Broken walls lean inward over a narrow way packed with debris."
+        + " The alley is quiet, the stones scorched by long-ago flames.\n";
     dest_dir = ({
         "domain/original/area/vesla/room410", "south",
         "domain/original/area/vesla/room795", "east",

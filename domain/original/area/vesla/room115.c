@@ -7,7 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Ruined Gate to the Wilderness";
-    long_desc = "The once-tall gatehouse is split and blackened, its stones scattered across the approach. Ash and rubble mark the way into the dead city.\n";
+    long_desc = "The once-tall gatehouse is split and blackened, its stones "
+        + "scattered across the approach. Ash and rubble mark the way "
+        + "into the dead city.\n";
     dest_dir = ({
         "domain/original/area/vesla/room116", "west",
 	"domain/original/area/roadway/room14", "exit",

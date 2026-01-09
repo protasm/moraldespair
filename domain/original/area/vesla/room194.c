@@ -7,7 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Splintered Narrow Way";
-    long_desc = "The paving is slashed and splintered, as if a blade had carved through stone. Scorched ruts and scattered bones leave the way broken and lifeless.\n";
+    long_desc = "The paving is slashed and splintered, as if a blade had carved"
+        + " through stone. Scorched ruts and scattered bones leave the "
+        + "way broken and lifeless.\n";
     dest_dir = ({
         "domain/original/area/vesla/room195", "east",
         "domain/original/area/vesla/room193", "west",

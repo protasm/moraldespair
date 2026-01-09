@@ -7,7 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Cindered Junction by a Dead Park";
-    long_desc = "Broken flagstones and scorched roots mark a junction that once bustled with traffic. Only rubble and silence connect the dead streets.\n";
+    long_desc = "Broken flagstones and scorched roots mark a junction that once"
+        + " bustled with traffic. Only rubble and silence connect the "
+        + "dead streets.\n";
     dest_dir = ({
         "domain/original/area/vesla/room159", "south",
         "domain/original/area/vesla/room126", "west",
