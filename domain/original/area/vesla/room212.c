@@ -7,7 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Desecrated Crossing of Two Ruined Streets";
-    long_desc = "The sacred road meets the river street in a churn of broken stone and ash. The junction is desecrated and silent, marked by talon-scores and old bone piles.\n";
+    long_desc = "The sacred road meets the river street in a churn of broken "
+        + "stone and ash. The junction is desecrated and silent, marked "
+        + "by talon-scores and old bone piles.\n";
     dest_dir = ({
         "domain/original/area/vesla/room211", "west",
         "domain/original/area/vesla/room213", "north",

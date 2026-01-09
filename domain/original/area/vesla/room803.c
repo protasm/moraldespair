@@ -7,7 +7,8 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Reeking Ruin Alley";
-    long_desc = "Stagnant filth and ash cling to the broken stones, and a sour reek hangs in the air. The alleyway is collapsed and deserted.\n";
+    long_desc = "Stagnant filth and ash cling to the broken stones, and a sour "
+        + "reek hangs in the air. The alleyway is collapsed and deserted.\n";
     dest_dir = ({
         "domain/original/area/vesla/room802", "east",
         "domain/original/area/vesla/room804", "south",

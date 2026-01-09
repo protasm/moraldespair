@@ -7,7 +7,8 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Scorched Crossing of a Stone Avenue and a Narrow Way";
-    long_desc = "Melted basalt and splintered cobbles meet where the avenues cross. The junction is a smear of slag and rubble.\n";
+    long_desc = "Melted basalt and splintered cobbles meet where the avenues "
+        + "cross. The junction is a smear of slag and rubble.\n";
     dest_dir = ({
         "domain/original/area/vesla/room138", "south",
         "domain/original/area/vesla/room193", "east",
