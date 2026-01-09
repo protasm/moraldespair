@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "East Wall Guard Station";
-    long_desc = "East Wall Guard Station.\n";
+    short_desc = "shattered cut";
+    long_desc = "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.\n";
     dest_dir = ({
         "domain/original/area/candera/room986", "north",
         "domain/original/area/candera/room974", "south",

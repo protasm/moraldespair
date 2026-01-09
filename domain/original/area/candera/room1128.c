@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Temple of Fire";
-    long_desc = "Temple of Fire.\n";
+    short_desc = "eroded rise";
+    long_desc = "A jagged seam in the paving marks the line of a sunken run. Ash and grit collect in corners, damped by occasional trickles.\n";
     dest_dir = ({
         "domain/original/area/candera/room114", "down",
     });

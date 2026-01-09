@@ -6,11 +6,21 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Suran's Flat";
-    long_desc = "Suran's Flat.\n";
+    short_desc = "bleached bend";
+    long_desc = "Broken steps climb to a terrace of shattered stone, then fall away. Char marks stripe the walls, and fine ash mixes with grit underfoot.\n";
     dest_dir = ({
         "domain/original/area/candera/room88", "north",
         "domain/original/area/candera/room86", "south",
         "domain/original/area/candera/room1082", "west",
     });
+}
+
+void init() {
+    ::init();
+    add_action("block_exit", "west");
+}
+
+int block_exit() {
+    write("The way is blocked by a wall of broken stone.\n");
+    return 1;
 }

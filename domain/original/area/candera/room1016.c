@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Guild/Shop Space for rent";
-    long_desc = "Guild/Shop Space for rent.\n";
+    short_desc = "wind-scoured reach";
+    long_desc = "The way pinches tight, then opens again into scattered foundations. Ash and grit collect in corners, damped by occasional trickles.\n";
     dest_dir = ({
         "domain/original/area/candera/room73", "north",
     });

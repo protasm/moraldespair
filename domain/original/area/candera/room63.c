@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Canderan Well";
-    long_desc = "Canderan Well.\n";
+    short_desc = "rubble-strewn walk";
+    long_desc = "An open stretch of hard-packed grit marks a crossing of several lines. Splintered tiles crunch underfoot, mixed with crushed brick.\n";
     dest_dir = ({
         "domain/original/area/candera/room62", "north",
         "domain/original/area/candera/room64", "south",

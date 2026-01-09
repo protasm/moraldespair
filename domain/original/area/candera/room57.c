@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Warrior's Walk";
-    long_desc = "Warrior's Walk.\n";
+    short_desc = "drifted platform";
+    long_desc = "Scattered piers suggest a once-long span, now broken into bays. Wind has piled sand against one side, leaving the other scoured bare.\n";
     dest_dir = ({
         "domain/original/area/candera/room1", "north",
         "domain/original/area/candera/room58", "south",

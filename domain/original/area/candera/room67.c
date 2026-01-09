@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Warrior's Walk";
-    long_desc = "Warrior's Walk.\n";
+    short_desc = "sunken span";
+    long_desc = "A gap between toppled arches forms a narrow throat in the route. Soot stains cling to the stone, and the air tastes of old smoke.\n";
     dest_dir = ({
         "domain/original/area/candera/room66", "north",
         "domain/original/area/candera/room68", "south",

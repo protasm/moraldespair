@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Living Quarters";
-    long_desc = "Living Quarters.\n";
+    short_desc = "bleached bend";
+    long_desc = "Broken steps climb to a terrace of shattered stone, then fall away. Char marks stripe the walls, and fine ash mixes with grit underfoot.\n";
     dest_dir = ({
         "domain/original/area/candera/room1030", "east",
     });

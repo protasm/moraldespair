@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Scribe";
-    long_desc = "Scribe.\n";
+    short_desc = "cracked drop";
+    long_desc = "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.\n";
     dest_dir = ({
         "domain/original/area/candera/room65", "east",
     });
