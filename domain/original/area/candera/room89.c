@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "shattered cut";
-    long_desc = "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.\n";
+    short_desc = "Shattered Cut";
+    long_desc = "The ground levels out into a broad, empty spread of fractured flagstone. Small\npits and cracks show where repeated blows split the surface.\n";
     dest_dir = ({
         "domain/original/area/candera/room90", "north",
         "domain/original/area/candera/room88", "south",
