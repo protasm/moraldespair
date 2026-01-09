@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "ash-streaked crossing";
-    long_desc = "A narrow lane bends between broken walls, the ground uneven and gritty. Char marks stripe the walls, and fine ash mixes with grit underfoot.\n";
+    short_desc = "Ash-Streaked Crossing";
+    long_desc = "A narrow lane bends between broken walls, the ground uneven and gritty. Char\nmarks stripe the walls, and fine ash mixes with grit underfoot.\n";
     dest_dir = ({
         "domain/original/area/candera/room977", "north",
         "domain/original/area/candera/room976", "south",

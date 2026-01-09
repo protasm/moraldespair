@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "leaning way";
-    long_desc = "Two aligned walls hint at a corridor now filled with drifted sand. Loose stones shift with each step, exposing darker layers below.\n";
+    short_desc = "Leaning Way";
+    long_desc = "Two aligned walls hint at a corridor now filled with drifted sand. Loose stones\nshift with each step, exposing darker layers below.\n";
     dest_dir = ({
         "domain/original/area/candera/room1033", "north",
     });

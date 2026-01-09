@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "eroded rise";
-    long_desc = "A jagged seam in the paving marks the line of a sunken run. Ash and grit collect in corners, damped by occasional trickles.\n";
+    short_desc = "Eroded Rise";
+    long_desc = "A jagged seam in the paving marks the line of a sunken run. Ash and grit collect\nin corners, damped by occasional trickles.\n";
     dest_dir = ({
         "domain/original/area/candera/room54", "east",
         "domain/original/area/candera/room52", "west",
