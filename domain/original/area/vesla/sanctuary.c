@@ -27,10 +27,10 @@ void reset(int arg) {
 void init() {
     ::init();
 
-    add_action("close_portal_room", "down");
+    add_action("block_portal_room", "down");
 }
 
-int close_portal_room(string arg) {
+int block_portal_room(string arg) {
     write("The portal room is closed.\n");
 
     return 1;   /* block movement */
@@ -96,7 +96,7 @@ void long(string str) {
         return;
     }
 
-    write("Sanctuary\n");
+    write(long_desc + "\n");
     write("There is a clock here.\n");
     write("There are exits up, down, and south.\n");
 
