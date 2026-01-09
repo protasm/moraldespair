@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Temple of Fire";
-    long_desc = "Temple of Fire.\n";
+    short_desc = "collapsed approach";
+    long_desc = "A straight corridor of paving is split by collapsed slabs and sinkholes. Small pits and cracks show where repeated blows split the surface.\n";
     dest_dir = ({
         "domain/original/area/candera/room112", "west",
         "domain/original/area/candera/room1128", "up",

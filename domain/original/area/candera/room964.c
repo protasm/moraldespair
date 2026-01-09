@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Widow's House";
-    long_desc = "Widow's House.\n";
+    short_desc = "collapsed approach";
+    long_desc = "A straight corridor of paving is split by collapsed slabs and sinkholes. Small pits and cracks show where repeated blows split the surface.\n";
     dest_dir = ({
         "domain/original/area/candera/room57", "west",
     });

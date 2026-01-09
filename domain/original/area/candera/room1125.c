@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "You feel a STRONG urge to read the Sanctuary board... You are responsible";
-    long_desc = "You feel a STRONG urge to read the Sanctuary board... You are responsible.\n";
+    short_desc = "tumbled slope";
+    long_desc = "A short rise of uneven paving leads to a wind-carved platform. Rust-red streaks mark where metal once lay, now long gone.\n\nThe ground bears the weight of repeated collapse.\n";
     dest_dir = ({
         "domain/original/area/candera/room967", "south",
     });

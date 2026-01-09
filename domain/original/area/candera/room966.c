@@ -6,10 +6,20 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Farmer's Smith";
-    long_desc = "Farmer's Smith.\n";
+    short_desc = "wind-scoured reach";
+    long_desc = "The way pinches tight, then opens again into scattered foundations. Ash and grit collect in corners, damped by occasional trickles.\n";
     dest_dir = ({
         "domain/original/area/candera/room989", "east",
         "domain/original/area/candera/room58", "west",
     });
+}
+
+void init() {
+    ::init();
+    add_action("block_exit", "east");
+}
+
+int block_exit() {
+    write("The way is blocked by a wall of broken stone.\n");
+    return 1;
 }

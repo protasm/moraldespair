@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "New Outer Wall";
-    long_desc = "New Outer Wall.\n";
+    short_desc = "drifted platform";
+    long_desc = "Scattered piers suggest a once-long span, now broken into bays. Wind has piled sand against one side, leaving the other scoured bare.\n";
     dest_dir = ({
         "domain/original/area/candera/room25", "east",
         "domain/original/area/candera/room27", "west",

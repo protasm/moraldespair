@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Zoman's Flat";
-    long_desc = "Zoman's Flat.\n";
+    short_desc = "cracked drop";
+    long_desc = "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.\n";
     dest_dir = ({
         "domain/original/area/candera/room78", "north",
         "domain/original/area/candera/room80", "south",

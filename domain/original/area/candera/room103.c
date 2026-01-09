@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Fallah's Flat:";
-    long_desc = "Fallah's Flat:.\n";
+    short_desc = "pitted turn";
+    long_desc = "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.\n";
     dest_dir = ({
         "domain/original/area/candera/room102", "north",
         "domain/original/area/candera/room104", "south",

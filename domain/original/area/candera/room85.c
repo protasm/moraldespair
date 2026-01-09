@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Temple of Air";
-    long_desc = "Temple of Air.\n";
+    short_desc = "pitted turn";
+    long_desc = "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.\n";
     dest_dir = ({
         "domain/original/area/candera/room83", "west",
         "domain/original/area/candera/room1131", "up",

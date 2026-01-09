@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Temple of Water";
-    long_desc = "Temple of Water.\n";
+    short_desc = "hollow gap";
+    long_desc = "A stub of wall creates a blind corner before the way slips onward. Splintered tiles crunch underfoot, mixed with crushed brick.\n\nThe silence presses close between the broken walls.\n";
     dest_dir = ({
         "domain/original/area/candera/room90", "south",
         "domain/original/area/candera/room93", "east",
