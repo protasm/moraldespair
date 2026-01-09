@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "City of Indel, Wilderness Gate";
-    long_desc = "City of Indel, Wilderness Gate.\n";
+    short_desc = "Broken Bleached Crossing";
+    long_desc = "Stone underfoot is split into plates, with grit and ash packed into the seams. Walls to either side are chewed by blasts and blade scars, their faces peeled away.\n\nThe way opens into a broad break where several lines of ruin meet. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.\n";
     dest_dir = ({
         "domain/original/area/indel/room1402", "south",
         "domain/original/area/indel/room1636", "east",

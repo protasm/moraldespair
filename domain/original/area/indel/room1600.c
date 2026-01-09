@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "Post Exchange";
-    long_desc = "Post Exchange.\n";
+    short_desc = "Spalled Crossing";
+    long_desc = "The floor is a churn of fractured stone and rubble, pressed flat by time. Fragments of arches and lintels hang at odd angles, cut and burned through. The way opens into a broad break where several lines of ruin meet. Thin lichen mats the shaded edges, and the air tastes of wet dust.\n";
     dest_dir = ({
         "domain/original/area/indel/room1603", "north",
         "domain/original/area/indel/room1602", "south",

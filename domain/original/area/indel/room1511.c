@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "East Merchant's Row, south of Mother Whitman's";
-    long_desc = "East Merchant's Row, south of Mother Whitman's.\n";
+    short_desc = "Faded Split Way";
+    long_desc = "Rubble and crushed mortar blanket the surface, slick in places with old damp. The remains of pillars stand jagged, split and fused by old force. The path splits around a heap of fallen blocks, offering multiple ruined lines. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.\n";
     dest_dir = ({
         "domain/original/area/indel/room1622", "north",
         "domain/original/area/indel/room1512", "east",

@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "Castle Road";
-    long_desc = "Castle Road.\n";
+    short_desc = "Bleached Crossing";
+    long_desc = "Broken paving lies in uneven ridges, with fine dust caked between. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way opens into a broad break where several lines of ruin meet. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.\n";
     dest_dir = ({
         "domain/original/area/indel/room1402", "north",
         "domain/original/area/indel/room1404", "south",

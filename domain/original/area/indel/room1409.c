@@ -5,9 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "West Merchant's Row, south of Big Bob's Sign Shop";
-    long_desc = "West Merchant's Row, south of Big Bob's Sign Shop.\n";
+    short_desc = "Bleached Split Way";
+    long_desc = "Pitted stone stretches ahead, littered with chips and fragments. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The path splits around a heap of fallen blocks, offering multiple ruined lines. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.\n";
     dest_dir = ({
         "domain/original/area/indel/room1590", "south",
         "domain/original/area/indel/room1408", "east",
