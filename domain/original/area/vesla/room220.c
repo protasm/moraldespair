@@ -5,7 +5,7 @@ void reset(int arg) {
         return;
 
     set_light(1);
-    short_desc = "Northern Sacra End";
+    short_desc = "Northern End";
     long_desc = "The way ends beneath a sagging lintel, the stones split\n"
                 + "and bowed.\n"
                 + "A scatter of fallen blocks marks the threshold into the\n"
