@@ -5,9 +5,10 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "Northern Main street";
-    long_desc = "Northern Main street\n";
+    short_desc = "North Main Road";
+    long_desc = "The stones are cracked into a ragged mosaic, some sunk\n"
+                + "low.\n"
+                + "A rusted hinge hangs from a doorframe, unmoving.\n";
     dest_dir = ({
         "domain/original/area/vesla/room161", "south",
         "domain/original/area/vesla/room810", "east",

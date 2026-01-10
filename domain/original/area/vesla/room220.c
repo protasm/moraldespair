@@ -5,9 +5,11 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "Northern End of Via Sacra";
-    long_desc = "Northern End of Via Sacra\n";
+    short_desc = "Northern Sacra End";
+    long_desc = "The way ends beneath a sagging lintel, the stones split\n"
+                + "and bowed.\n"
+                + "A scatter of fallen blocks marks the threshold into the\n"
+                + "north.\n";
     dest_dir = ({
         "domain/original/area/vesla/room219", "south",
         "domain/original/area/vesla/room221", "west",

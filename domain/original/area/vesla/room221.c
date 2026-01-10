@@ -6,11 +6,11 @@ void reset(int arg) {
   }
 
   set_light(1);
-
-  short_desc = "Forgotten Counter";
-  long_desc = "A long counter lies warped and split, its surface powdered\n"
-              + "with dust. Fallen shelves clutter the walls, and the air\n"
-              + "hangs stale and undisturbed.\n";
+  short_desc = "Hollow Counter";
+  long_desc = "A long counter sags under its own weight, split and\n"
+              + "furred with dust.\n"
+              + "Behind it, shelves lie in heaps, and the air is stale\n"
+              + "and still.\n";
   dest_dir = ({
     "domain/original/area/vesla/room222", "west",
     "domain/original/area/vesla/room220", "east",

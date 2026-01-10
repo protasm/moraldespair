@@ -5,9 +5,10 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "Via Sacra";
-    long_desc = "Via Sacra\n";
+    short_desc = "Sacra Way";
+    long_desc = "The sacra way runs quiet between squat walls, its stones\n"
+                + "dulled and uneven.\n"
+                + "Old carvings are worn to nubs, nearly erased by weather.\n";
     dest_dir = ({
         "domain/original/area/vesla/room214", "south",
         "domain/original/area/vesla/room216", "north",

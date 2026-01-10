@@ -5,9 +5,11 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "A peaceful park";
-    long_desc = "A peaceful park\n";
+    short_desc = "Hollow Park";
+    long_desc = "The ground dips where a pond once spread, now a dish of\n"
+                + "silt and weeds.\n"
+                + "Scattered paving stones and toppled posts mark the\n"
+                + "forgotten walkway.\n";
     dest_dir = ({
         "domain/original/area/vesla/room226", "south",
         "domain/original/area/vesla/room227", "west",
