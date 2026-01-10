@@ -6,9 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Blackened Passage";
-    long_desc = "Broken masonry and cinders blanket the floor. Melted fixtures "
-        + "cling to the walls, and clawed furrows cut through the rubble.\n";
+    short_desc = "The well";
+    long_desc = "The well";
     dest_dir = ({
         "domain/original/area/vesla/room765", "southwest",
         "domain/original/area/vesla/room771", "east",

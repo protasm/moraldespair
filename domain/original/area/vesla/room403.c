@@ -6,9 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Collapsed Vault";
-    long_desc = "A cold hush hangs over the wreckage. Scorched beams and "
-        + "soot-blackened stone suggest flames that once raged here.\n";
+    short_desc = "Entrance to a temple";
+    long_desc = "Entrance to a temple";
     dest_dir = ({
         "domain/original/area/vesla/room404", "east",
         "domain/original/area/vesla/room216", "west",

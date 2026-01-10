@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Players' Lounge";
-    long_desc = "This is the players' lounge.\n";
+    short_desc = "The Players' lounge";
+    long_desc = "The Players' lounge";
     dest_dir = ({
         "domain/original/area/vesla/sanctuary", "down",
     });

@@ -6,9 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Shattered Walk";
-    long_desc = "A brittle silence fills this ruined space. Burnt stone and "
-        + "warped metal gleam faintly, scarred by intense flames.\n";
+    short_desc = "Mage's Apprentice House";
+    long_desc = "Mage's Apprentice House";
     dest_dir = ({
         "domain/original/area/vesla/room397", "west",
     });

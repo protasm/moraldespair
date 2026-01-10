@@ -6,10 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Rubble-Choked Riverside Street and Broken Main Road";
-    long_desc = "Two ruined streets meet in a heap of collapsed stone and "
-        + "shattered timbers. The crossing is quiet, the stones glazed by"
-        + " ancient heat.\n";
+    short_desc = "River Street and South Main";
+    long_desc = "River Street and South Main";
     dest_dir = ({
         "domain/original/area/vesla/room816", "south",
         "domain/original/area/vesla/room150", "west",

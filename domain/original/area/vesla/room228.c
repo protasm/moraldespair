@@ -6,9 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Shattered Walk";
-    long_desc = "A brittle silence fills this ruined space. Burnt stone and "
-        + "warped metal gleam faintly, scarred by intense flames.\n";
+    short_desc = "A peaceful park";
+    long_desc = "A peaceful park";
 
     dest_dir = ({
         "domain/original/area/vesla/sanctuary", "north",
