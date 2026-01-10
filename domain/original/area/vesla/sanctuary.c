@@ -28,7 +28,7 @@ void reset(int arg) {
 void init() {
     ::init();
 
-    add_action("block_exit", "south");
+    //add_action("block_exit", "south");
 }
 
 int block_exit() {
