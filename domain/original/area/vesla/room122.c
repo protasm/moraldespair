@@ -1,17 +1,20 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "A shaded walk";
-    long_desc = "A shaded walk\n";
-    dest_dir = ({
-        "domain/original/area/vesla/room225", "south",
-        "domain/original/area/vesla/room123", "west",
-        "domain/original/area/vesla/room121", "east",
-        "domain/original/area/vesla/room410", "north",
-    });
+  short_desc = "Withered Walk";
+  long_desc = "The path narrows beneath the remains of a withered canopy.\n"
+              + "Splintered slats litter the ground, and the walls are dark\n"
+              + "with rain stains and age.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room225", "south",
+    "domain/original/area/vesla/room123", "west",
+    "domain/original/area/vesla/room121", "east",
+    "domain/original/area/vesla/room410", "north",
+  });
 }

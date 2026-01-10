@@ -1,17 +1,20 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Intersection of Park Street and Caravan Road";
-    long_desc = "Intersection of Park Street and Caravan Road\n";
-    dest_dir = ({
-        "domain/original/area/vesla/room233", "south",
-        "domain/original/area/vesla/room117", "west",
-        "domain/original/area/vesla/room115", "east",
-        "domain/original/area/vesla/room172", "north",
-    });
+  short_desc = "Park Crossroads";
+  long_desc = "The crossing is choked with gravel and dead leaves where a\n"
+              + "broad street meets a narrower lane. Fallen posts and a\n"
+              + "tilted sign hold a silence settled over long neglect.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room233", "south",
+    "domain/original/area/vesla/room117", "west",
+    "domain/original/area/vesla/room115", "east",
+    "domain/original/area/vesla/room172", "north",
+  });
 }
