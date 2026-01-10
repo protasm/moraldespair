@@ -115,16 +115,15 @@ void tls_logon(int handshake_result) {
 }
 #endif
 
-/* logon() is called when the players logges on. */
+/* logon() is called when the players log on. */
 
 static int logon() {
     time_to_save = 500;
     /* enable_commands(); */
-    write("Lars says: Let's get a body for your character ...\n");
     cat("/WELCOME");
-    write("Version: " + version() + "\n");
-    write("What is your name: ");
-    input_to("logon2", INPUT_PROMPT, "What is your name: ");
+    //write("Version: " + version() + "\n");
+    write("What is your name? ");
+    input_to("logon2", INPUT_PROMPT, "");
     call_out("time_out", 120);
     return 1;
 }
@@ -1406,8 +1405,10 @@ static void move_player_to_start3(mixed where) {
     if (level >= 21)
         cat("/WIZNEWS");
     "domain/lp-245/room/post"->query_mail();
-    if (query_ip_number() != called_from_ip && called_from_ip)
-        write("Your last login was from " + called_from_ip + "\n");
+    if (query_ip_number() != called_from_ip && called_from_ip) {
+        //write("Your last login was from " + called_from_ip + "\n");
+    }
+
     called_from_ip = query_ip_number();
     ob = first_inventory(environment());
     while (ob) {

@@ -723,7 +723,6 @@ object connect ()
     object ob = clone_object("obj/player");
     if (!ob)
     {
-        write("Lars says: Couldn't get your body ready ...\n");
         return 0;
     }
 

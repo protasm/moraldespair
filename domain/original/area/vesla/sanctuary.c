@@ -16,22 +16,23 @@ void reset(int arg) {
 
     reboot_time = time();
     short_desc = "Sanctuary";
-    long_desc = "A refuge from what lies beyond.\n";
+    long_desc = "A refuge from what lies beyond.\n" +
+                "You feel a STRONG urge to... you can't recall?\n";
     dest_dir = ({
         "domain/original/area/vesla/room228", "south",
-	"domain/original/area/vesla/room893", "up",
-	"domain/original/area/vesla/portal", "down",
+        "domain/original/area/vesla/room893", "up",
+        "domain/original/area/vesla/portal", "down",
     });
 }
 
 void init() {
     ::init();
 
-    add_action("block_portal_room", "down");
+    add_action("block_exit", "south");
 }
 
-int block_portal_room(string arg) {
-    write("The portal room is closed.\n");
+int block_exit() {
+    write("The way is shut, until the time comes.\n");
 
     return 1;   /* block movement */
 }
