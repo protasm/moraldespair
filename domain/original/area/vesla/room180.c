@@ -6,10 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Rutted Crossing of the Trade Road and the Wall Road";
-    long_desc = "A rutted trade road meets the shattered wall here, the stones "
-        + "broken into a mound of debris. Ash and rubble choke the "
-        + "crossing.\n";
+    short_desc = "Intersection of Caravan Road and Wall Street";
+    long_desc = "Intersection of Caravan Road and Wall Street";
     dest_dir = ({
         "domain/original/area/vesla/room181", "west",
         "domain/original/area/vesla/room179", "south",

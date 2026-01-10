@@ -6,9 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Collapsed Vault";
-    long_desc = "A cold hush hangs over the wreckage. Scorched beams and "
-        + "soot-blackened stone suggest flames that once raged here.\n";
+    short_desc = "Guild/Shop Space for rent";
+    long_desc = "Guild/Shop Space for rent";
     dest_dir = ({
         "domain/original/area/vesla/room152", "east",
     });

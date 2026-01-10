@@ -6,10 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Ashen Ruins";
-    long_desc = "Ash lies thick over cracked stone and splintered timbers. The "
-        + "air smells of old smoke, and deep gouges show where something "
-        + "massive tore through.\n";
+    short_desc = "A peaceful park";
+    long_desc = "A peaceful park";
     dest_dir = ({
         "domain/original/area/vesla/room230", "south",
         "domain/original/area/vesla/room796", "west",

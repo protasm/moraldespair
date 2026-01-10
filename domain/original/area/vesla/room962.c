@@ -6,10 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Scorched Chamber";
-    long_desc = "Char marks crawl across the walls, and fused debris crunches "
-        + "underfoot. Heat-scarred stone and warped metal hint at a "
-        + "terrible blaze.\n";
+    short_desc = "Buried Wreckage";
+    long_desc = "Buried Wreckage";
     dest_dir = ({
         "domain/original/area/vesla/room199", "west",
     });

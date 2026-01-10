@@ -6,9 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Ash-Choked Crossing of Two Ruined Boulevards";
-    long_desc = "Ash drifts over the crossing, softening the edges of shattered"
-        + " cobbles. The ruined streets meet in a haze of gray dust.\n";
+    short_desc = "Intersection of Rapier Way and Zand Boulevard";
+    long_desc = "Intersection of Rapier Way and Zand Boulevard";
     dest_dir = ({
         "domain/original/area/vesla/room196", "west",
         "domain/original/area/vesla/room198", "south",

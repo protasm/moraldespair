@@ -6,10 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Cinder-Laden Court";
-    long_desc = "The ceiling has partially collapsed, leaving jagged stone and "
-        + "ash. The destruction feels deliberate, as if wrought by "
-        + "enormous, fire-breathing beasts.\n";
+    short_desc = "Burned Area";
+    long_desc = "Burned Area";
     dest_dir = ({
         "domain/original/area/vesla/room147", "south",
         "domain/original/area/vesla/room842", "west",
