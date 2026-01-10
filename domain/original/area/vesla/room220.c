@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Northern End of Via Sacra";
-    long_desc = "Northern End of Via Sacra";
+    long_desc = "Northern End of Via Sacra\n";
     dest_dir = ({
         "domain/original/area/vesla/room219", "south",
         "domain/original/area/vesla/room221", "west",

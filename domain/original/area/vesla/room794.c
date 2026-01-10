@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "A small building.";
-    long_desc = "A small building.";
+    long_desc = "A small building.\n";
     dest_dir = ({
         "domain/original/area/vesla/room792", "south",
     });

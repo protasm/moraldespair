@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Intersection of North Main and Wall Street";
-    long_desc = "Intersection of North Main and Wall Street";
+    long_desc = "Intersection of North Main and Wall Street\n";
     dest_dir = ({
         "domain/original/area/vesla/room167", "south",
         "domain/original/area/vesla/room793", "west",

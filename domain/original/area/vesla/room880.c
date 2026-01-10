@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Old Adventurer's Guild";
-    long_desc = "Old Adventurer's Guild";
+    long_desc = "Old Adventurer's Guild\n";
     dest_dir = ({
         "domain/original/area/vesla/room126", "north",
     });
