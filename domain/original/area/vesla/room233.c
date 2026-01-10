@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Broken Edifice";
-    long_desc = "Broken Edifice";
+    short_desc = "The Shadowed Anvil";
+    long_desc = "The Shadowed Anvil";
     dest_dir = ({
         "domain/original/area/vesla/room220", "west",
         "domain/original/area/vesla/room116", "north",

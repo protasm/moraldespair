@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Rubble-Choked Shell";
-    long_desc = "Rubble-Choked Shell";
+    short_desc = "Comfortably Numb";
+    long_desc = "Comfortably Numb";
     dest_dir = ({
         "domain/original/area/vesla/room223", "west",
         "domain/original/area/vesla/room221", "east",
