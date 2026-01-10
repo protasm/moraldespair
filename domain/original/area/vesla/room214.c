@@ -5,7 +5,7 @@ void reset(int arg) {
         return;
 
     set_light(1);
-    short_desc = "Southern Sacra Way";
+    short_desc = "Southern Cracked Way";
     long_desc = "Wide paving slabs lie buckled and parted by grass.\n"
                 + "A line of soot-streaked stone posts leans in slow\n"
                 + "collapse.\n";

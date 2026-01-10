@@ -5,7 +5,7 @@ void reset(int arg) {
         return;
 
     set_light(1);
-    short_desc = "Sacra Way";
+    short_desc = "Cracked Way";
     long_desc = "The street opens slightly, revealing pale stone flecked\n"
                 + "with lichen.\n"
                 + "A shallow depression holds rain-dark stains.\n";

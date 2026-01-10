@@ -5,7 +5,7 @@ void reset(int arg) {
         return;
 
     set_light(1);
-    short_desc = "Sacra Way";
+    short_desc = "Cracked Way";
     long_desc = "The paving here is split by roots, forming a jagged\n"
                 + "seam.\n"
                 + "A toppled arch stone blocks part of the way.\n";
