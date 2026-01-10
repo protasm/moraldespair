@@ -62,6 +62,42 @@ This repo is intentionally structured to support **iterative expansion** rather 
 
 The world is silent. Whatever conflicts once existed are long over.
 
+### Setting and Material World
+
+- Moral Despair is set in a medieval sword-and-sorcery world. Technology, aesthetics, and assumptions should reflect a pre-industrial society shaped by magic, craft, and slow human labor.
+- The physical world is grounded in a small set of foundational materials:
+-- Water
+-- Earth and soil
+-- Vegetation
+-- Wood
+-- Stone
+-- Metal, including:
+-- Bronze
+-- Copper
+-- Iron
+-- Steel
+-- Future, game-specific ores introduced deliberately in later phases
+- These materials define the baseline reality of the world. Architecture, tools, ruins, landscapes, and environmental descriptions should be rooted in them.
+- Agents and contributors should avoid introducing anachronistic materials, technologies, or concepts unless explicitly designed as rare, magical, or phase-gated exceptions. The world should feel heavy, physical, and shaped by erosion, decay, and time rather than precision or modern manufacture.
+- Magic may exist, but it does not replace the material world. Stone is still stone. Wood still rots. Metal still rusts.
+- This grounding is intentional and should inform prose, systems, and future mechanics alike.
+
+###Non-Goals and Anachronisms to Avoid
+
+- Unless explicitly instructed otherwise, agents and contributors should not introduce:
+-- Firearms, gunpowder, or explosives
+-- Clockwork, steam power, electricity, or industrial machinery
+-- Modern materials (plastics, concrete, composites, glass beyond simple forms)
+-- Precision manufacturing or mass-produced uniformity
+-- Modern scientific language or conceptual framing
+-- Contemporary social, political, or economic abstractions
+-- Advanced or unusual materials, technologies, or effects must be:
+--- Rare
+--- Contextually justified
+--- Introduced deliberately as part of later game phases or explicit design work
+
+- When in doubt, assume the world advances through craft, weather, violence, neglect, and time—not innovation for its own sake.
+
 ### Gameplay Constraints
 
 During Phase 1:
