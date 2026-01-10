@@ -5,9 +5,9 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "Intersection of North Main and Scholar's Way";
-    long_desc = "Intersection of North Main and Scholar's Way\n";
+    short_desc = "Main Scholar Crossing";
+    long_desc = "Two streets cross in a square of uneven stone.\n"
+                + "The corners are piled with broken masonry and grit.\n";
     dest_dir = ({
         "domain/original/area/vesla/room165", "south",
         "domain/original/area/vesla/room192", "east",

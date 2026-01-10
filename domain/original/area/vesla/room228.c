@@ -5,9 +5,11 @@ void reset(int arg) {
         return;
 
     set_light(1);
-
-    short_desc = "A peaceful park";
-    long_desc = "A peaceful park\n";
+    short_desc = "Quiet Park";
+    long_desc = "A wide clearing lies mute, its stones scattered and\n"
+                + "moss-dark.\n"
+                + "Birdless branches arch over the space, their shadows\n"
+                + "unmoving.\n";
 
     dest_dir = ({
         "domain/original/area/vesla/sanctuary", "north",
