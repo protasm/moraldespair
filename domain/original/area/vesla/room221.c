@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Collapsed Structure";
-    long_desc = "Collapsed Structure";
+    short_desc = "General Store";
+    long_desc = "General Store";
     dest_dir = ({
         "domain/original/area/vesla/room222", "west",
         "domain/original/area/vesla/room220", "east",
