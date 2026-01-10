@@ -137,6 +137,7 @@ When working on this repository:
 - Do not introduce NPCs, items, combat systems, or economies prematurely
 - Prefer simple, explicit LPC patterns over abstraction
 - Treat world files (rooms, areas) as first‑class content
+- Never change any of the .json files in /maps unless specifically instructed to do so.
 
 Future phases will deliberately relax these constraints.
 
