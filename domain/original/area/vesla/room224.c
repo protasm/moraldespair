@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Big Hole Banking";
-    long_desc = "Big Hole Banking";
+    long_desc = "Big Hole Banking\n";
     dest_dir = ({
         "domain/original/area/vesla/room225", "west",
         "domain/original/area/vesla/room223", "east",

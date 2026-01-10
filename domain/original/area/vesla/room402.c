@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Do-it-Yourself Distiller";
-    long_desc = "Do-it-Yourself Distiller";
+    long_desc = "Do-it-Yourself Distiller\n";
     dest_dir = ({
         "domain/original/area/vesla/room216", "east",
     });
