@@ -5,7 +5,7 @@ void reset(int arg) {
         return;
 
     set_light(1);
-    short_desc = "West River Road";
+    short_desc = "West River Track";
     long_desc = "Flat stones lie loose underfoot, some tipped into a\n"
                 + "shallow rut.\n"
                 + "A broken lintel rests against a wall, half buried in\n"
