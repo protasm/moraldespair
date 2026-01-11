@@ -8,9 +8,8 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Curtained Room";
-  long_desc = "A ragged curtain droops from a rusted rod, its hem greened with mildew.\n"
-              + "The bedstead is bare and cracked, and dust has drifted into the corners like\n"
-              + "ash.\n";
+  long_desc = "A ragged curtain droops from a rusted rod, its hem greened with mildew. The\n"
+              + "bedstead is bare and cracked, and dust has drifted into the corners like ash.\n";
   dest_dir = ({
     "domain/original/area/vesla/room825", "north",
   });

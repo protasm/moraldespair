@@ -8,9 +8,8 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Sigil Hall";
-  long_desc = "Dust lies thick over a ring of cracked tiles, and the\n"
-              + "air tastes of damp stone. Chipped shelves and a\n"
-              + "tarnished inlay hint at study and rite, now abandoned.\n";
+  long_desc = "Dust lies thick over a ring of cracked tiles, and the air tastes of damp stone.\n"
+              + "Chipped shelves and a tarnished inlay hint at study and rite, now abandoned.\n";
   dest_dir = ({
     "domain/original/area/vesla/room132", "north",
   });
