@@ -12,6 +12,5 @@ void reset(int arg) {
         "domain/original/area/vesla/room843", "south",
         "domain/original/area/vesla/room202", "west",
         "domain/original/area/vesla/room200", "east",
-        "domain/original/area/vesla/room931", "north",
     });
 }

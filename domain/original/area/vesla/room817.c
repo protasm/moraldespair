@@ -9,8 +9,8 @@ void reset(int arg) {
 
   short_desc = "Faded Manor";
   long_desc = "Carved pillars and a broad stair rise into shadow, their edges softened by rot.\n"
-              + "Mildewed drapes hang in tatters, and the air is heavy with dust.\n"
-              + "A broken crest above the hearth hints at a once-proud household.\n";
+              + "Mildewed drapes hang in tatters, and the air is heavy with dust. A broken crest\n"
+              + "above the hearth hints at a once-proud household.\n";
   dest_dir = ({
     "domain/original/area/vesla/room818", "up",
     "domain/original/area/vesla/room152", "west",
