@@ -15,3 +15,5 @@ void reset(int arg) {
         "domain/original/area/vesla/room230", "west",
     });
 }
+
+

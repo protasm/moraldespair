@@ -491,51 +491,56 @@ static string escape_lpc_string(string str) {
 
 static int set_room_short(string str) {
   object room;
-  string room_name;
-  string file_path;
-  string content;
+  string room_name, file_path, content;
   string *lines;
-  string escaped;
-  string new_content;
-  string indent;
-  int i;
-  int j;
-  int found;
+  string escaped, new_content, indent;
+  int i, j, found;
 
   if (!str) {
-    write("Sd what?\n");
+    write("sd what?\n");
+
     return 1;
   }
 
   room = environment(this_player());
+
   if (!room) {
     write("You are nowhere.\n");
+
     return 1;
   }
 
   if (!function_exists("set_short", room)) {
     write("This room cannot be updated.\n");
+
     return 1;
   }
 
   room_name = object_name(room);
+
   if (sscanf(room_name, "%s#%*s", file_path) == 1)
     room_name = file_path;
+
   file_path = "/" + room_name + ".c";
   file_path = valid_write(file_path);
+
   if (!file_path) {
     write("You can only update rooms you can write.\n");
+
     return 1;
   }
 
   if (file_size("/" + file_path) <= 0) {
     write("Room source file not found.\n");
+
     return 1;
   }
 
   content = read_file("/" + file_path);
+
   if (!content) {
     write("Unable to read room source file.\n");
+
     return 1;
   }
 
@@ -543,38 +548,50 @@ static int set_room_short(string str) {
   escaped = escape_lpc_string(str);
   i = 0;
   found = 0;
+
   while (i < sizeof(lines)) {
-    if (strsrch(lines[i], "short_desc =") != -1) {
+    if (strstr(lines[i], "short_desc =") != -1) {
       indent = "";
       j = 0;
+
       while (j < sizeof(lines[i]) && lines[i][j] == ' ') {
         indent += " ";
         j += 1;
       }
+
       lines[i] = indent + "short_desc = \"" + escaped + "\";";
       found = 1;
+
       break;
     }
+
     i += 1;
   }
 
   if (!found) {
     write("No short_desc assignment found.\n");
+
     return 1;
   }
 
   new_content = implode(lines, "\n") + "\n";
+write("Attempting to rm " + file_path + "...\n");
   if (!rm("/" + file_path)) {
     write("Unable to update room file.\n");
+
     return 1;
   }
+
   if (!write_file("/" + file_path, new_content)) {
     write("Unable to write updated room file.\n");
+
     return 1;
   }
 
   room->set_short(str);
+
   write("Room short description updated.\n");
+
   return 1;
 }
 
@@ -2489,39 +2506,54 @@ static int home() {
 
 mixed valid_write(string str) {
     string who, file, owner;
+    string domain, area;
 
     owner = name;
-    if (previous_object() && previous_object() != this_object()) {
+
+    if (previous_object() && previous_object() != this_object())
         if (sscanf(object_name(previous_object()), "players/%s/", who) == 1)
             owner = who;
-    }
+
     if (str[0] != '/') {
         /* Prepend the name of the wizard that created the object (if any) */
         if (previous_object() && previous_object() != this_object()) {
             str = "players/" + owner + "/" + str;
-            return str;
+
+	    return str;
         }
-        if (current_path != "")
+
+	if (current_path != "")
             str = "/" + current_path + "/" + str;
         else
             str = "/" + str;
     }
+
+    if (sscanf(str, "/domain/%s/area/%s/%s", domain, area, file) == 3)
+        return str;
+
     if (sscanf(str, "/players/%s/%s", who, file) == 2) {
         if (who == owner || level > 23)
             return "players/" + who + "/" + file;
-        return check_access_list("players/", who, file);
+
+	return check_access_list("players/", who, file);
     }
+
     if (sscanf(str, "/log/%s", who) == 1) {
         if (level < 24 && who[0] >= 'A' && who[0] <= 'Z')
             return 0;
-        return "log/" + who;
+
+	return "log/" + who;
     }
+
     if (sscanf(str, "/open/%s", file) == 1)
         return "open/" + file;
+
     if (sscanf(str, "/ftp/%s", file) == 1)
         return "ftp/" + file;
+
     if (sscanf(str, "/domain/lp-245/room/%s/%s", who, file) == 2)
         return check_access_list("domain/lp-245/room/", who, file);
+
     return 0;
 }
 
