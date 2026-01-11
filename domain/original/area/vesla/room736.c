@@ -1,15 +1,16 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg)
+    return;
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Guild/Shop Space for rent";
-    long_desc = "PHASE0: vacant player-owned mercantile guild lot";
-    dest_dir = ({
-        "domain/original/area/vesla/room173", "west",
-    });
+  short_desc = "Market Lot";
+  long_desc = "Low foundations ring a vacant patch, silent beneath dust, mildew, and rot. A\n"
+        + "broken sign frame hints at trade, the lot dilapidated and in disrepair.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room173", "west",
+  });
 }
 

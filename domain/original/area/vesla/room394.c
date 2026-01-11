@@ -1,15 +1,17 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg)
+    return;
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Smoke House";
-    long_desc = "PHASE0: NPC workers labored here";
-    dest_dir = ({
-        "domain/original/area/vesla/room210", "south",
-    });
+  short_desc = "Cold Smoke";
+  long_desc = "Soot clings to the stone, and rusted hooks hang in a silence of dust and\n"
+        + "mildew. Rotting tubs and ash-stained gutters hint at preserved fare in\n"
+        + "dilapidated disrepair.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room210", "south",
+  });
 }
 

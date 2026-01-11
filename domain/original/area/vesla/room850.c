@@ -1,17 +1,19 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg)
+    return;
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Howling Wolf Inn";
-    long_desc = "PHASE0: inn";
-    dest_dir = ({
-        "domain/original/area/vesla/room142", "west",
-        "domain/original/area/vesla/room852", "east",
-        "domain/original/area/vesla/room851", "north",
-    });
+  short_desc = "Silent Hearth";
+  long_desc = "A wide, cold hearth sits beneath a soot-dark mantle, the room silent and\n"
+        + "dilapidated. Rotted tables lean in dust and mildew, and the common space is\n"
+        + "left in disrepair.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room142", "west",
+    "domain/original/area/vesla/room852", "east",
+    "domain/original/area/vesla/room851", "north",
+  });
 }
 
