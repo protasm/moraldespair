@@ -472,6 +472,112 @@ int set_title(string t) {
     return 1;
 }
 
+static string escape_lpc_string(string str) {
+  string escaped;
+  int i;
+
+  escaped = "";
+  i = 0;
+  while (i < sizeof(str)) {
+    if (str[i] == '\\' || str[i] == '"') {
+      escaped += "\\";
+    }
+    escaped += str[i..i];
+    i += 1;
+  }
+
+  return escaped;
+}
+
+static int set_room_short(string str) {
+  object room;
+  string room_name;
+  string file_path;
+  string content;
+  string *lines;
+  string escaped;
+  string new_content;
+  string indent;
+  int i;
+  int j;
+  int found;
+
+  if (!str) {
+    write("Sd what?\n");
+    return 1;
+  }
+
+  room = environment(this_player());
+  if (!room) {
+    write("You are nowhere.\n");
+    return 1;
+  }
+
+  if (!function_exists("set_short", room)) {
+    write("This room cannot be updated.\n");
+    return 1;
+  }
+
+  room_name = object_name(room);
+  if (sscanf(room_name, "%s#%*s", file_path) == 1)
+    room_name = file_path;
+  file_path = "/" + room_name + ".c";
+  file_path = valid_write(file_path);
+  if (!file_path) {
+    write("You can only update rooms you can write.\n");
+    return 1;
+  }
+
+  if (file_size("/" + file_path) <= 0) {
+    write("Room source file not found.\n");
+    return 1;
+  }
+
+  content = read_file("/" + file_path);
+  if (!content) {
+    write("Unable to read room source file.\n");
+    return 1;
+  }
+
+  lines = explode(content, "\n");
+  escaped = escape_lpc_string(str);
+  i = 0;
+  found = 0;
+  while (i < sizeof(lines)) {
+    if (strsrch(lines[i], "short_desc =") != -1) {
+      indent = "";
+      j = 0;
+      while (j < sizeof(lines[i]) && lines[i][j] == ' ') {
+        indent += " ";
+        j += 1;
+      }
+      lines[i] = indent + "short_desc = \"" + escaped + "\";";
+      found = 1;
+      break;
+    }
+    i += 1;
+  }
+
+  if (!found) {
+    write("No short_desc assignment found.\n");
+    return 1;
+  }
+
+  new_content = implode(lines, "\n") + "\n";
+  if (!rm("/" + file_path)) {
+    write("Unable to update room file.\n");
+    return 1;
+  }
+  if (!write_file("/" + file_path, new_content)) {
+    write("Unable to write updated room file.\n");
+    return 1;
+  }
+
+  room->set_short(str);
+  write("Room short description updated.\n");
+  return 1;
+}
+
 static void wiz_commands2() {
     if (this_object() != this_player())
         return;
@@ -506,6 +612,7 @@ static void wiz_commands() {
     add_action("heal", "heal");
     add_action("update_object", "update");
     add_action("set_title", "title");
+    add_action("set_room_short", "sd");
     add_action("teleport", "goto");
     add_action("in_room", "in");
     add_action("emote", "emote");

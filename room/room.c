@@ -158,6 +158,11 @@ string short() {
     return "Dark room";
 }
 
+void set_short(string str) {
+  short_desc = str;
+  return;
+}
+
 string *query_dest_dir() {
     return dest_dir;
 }
