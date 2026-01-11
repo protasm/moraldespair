@@ -9,9 +9,8 @@ void reset(int arg) {
   short_desc = "Scented Stall";
   long_desc = "Rusted tins and cracked jars sit on sagging shelves, silent beneath dust and\n"
         + "mildew. A faint, stale sweetness clings to the rot, hinting at spice trade in\n"
-        + "dilapidated disrepair.\n";
+        + "quiet neglect.\n";
   dest_dir = ({
     "domain/original/area/vesla/room139", "west",
   });
 }
-

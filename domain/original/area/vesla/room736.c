@@ -8,9 +8,8 @@ void reset(int arg) {
 
   short_desc = "Market Lot";
   long_desc = "Low foundations ring a vacant patch, silent beneath dust, mildew, and rot. A\n"
-        + "broken sign frame hints at trade, the lot dilapidated and in disrepair.\n";
+        + "broken sign frame hints at trade, the lot left to crumble.\n";
   dest_dir = ({
     "domain/original/area/vesla/room173", "west",
   });
 }
-
