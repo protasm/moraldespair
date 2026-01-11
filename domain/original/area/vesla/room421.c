@@ -1,15 +1,17 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Mage's Guild";
-    long_desc = "PHASE0: Mage class guild";
-    dest_dir = ({
-        "domain/original/area/vesla/room132", "north",
-    });
+  short_desc = "Sigil Hall";
+  long_desc = "Dust lies thick over a ring of cracked tiles, and the\n"
+              + "air tastes of damp stone. Chipped shelves and a\n"
+              + "tarnished inlay hint at study and rite, now abandoned.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room132", "north",
+  });
 }
-
