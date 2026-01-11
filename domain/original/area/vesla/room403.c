@@ -1,16 +1,18 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Entrance to a temple";
-    long_desc = "PHASE0: a temple of worship";
-    dest_dir = ({
-        "domain/original/area/vesla/room404", "east",
-        "domain/original/area/vesla/room216", "west",
-    });
+  short_desc = "Broken Threshold";
+  long_desc = "A wide threshold of cracked stone leads into a cavernous hall, its pillars\n"
+              + "pocked and green with mildew. Shattered bowls lie at the base of a raised dais,\n"
+              + "and ash-dark banners hang in ragged silence.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room404", "east",
+    "domain/original/area/vesla/room216", "west",
+  });
 }
-

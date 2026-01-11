@@ -1,15 +1,16 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Guild/Shop Space for rent";
-    long_desc = "PHASE0: a vacant commercial lot";
-    dest_dir = ({
-        "domain/original/area/vesla/room152", "east",
-    });
+  short_desc = "Empty Plot";
+  long_desc = "Low foundations break through the weeds, and a warped signpost lies in the dust.\n"
+              + "Rain has pooled in shallow pits, leaving rot and mildew along the stone.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room152", "east",
+  });
 }
-
