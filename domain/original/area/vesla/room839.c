@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Reconciliation Chapel";
-    long_desc = "Reconciliation Chapel\n";
+    long_desc = "PHASE0: a chapel";
     dest_dir = ({
         "domain/original/area/vesla/room820", "east",
     });
 }
+

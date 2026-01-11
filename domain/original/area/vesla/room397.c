@@ -7,9 +7,10 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Mage's House";
-    long_desc = "Mage's House\n";
+    long_desc = "PHASE0: a wizard's home";
     dest_dir = ({
         "domain/original/area/vesla/room398", "east",
         "domain/original/area/vesla/room206", "south",
     });
 }
+

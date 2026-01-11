@@ -164,7 +164,8 @@ void set_short(string str) {
 }
 
 void set_long(string str) {
-  long_desc = str;
+  long_desc = str + "\n";
+
   return;
 }
 

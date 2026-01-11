@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Chamber of Commerce";
-    long_desc = "Chamber of Commerce\n";
+    long_desc = "PHASE0: a government building";
     dest_dir = ({
         "domain/original/area/vesla/room831", "east",
     });
 }
+

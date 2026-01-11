@@ -7,7 +7,7 @@ void reset(int arg) {
 
   set_light(1);
   short_desc = "Stilled Hall";
-  long_desc = "A low hall stretches empty, its floor cold and bare. Plaster peels from the\n"
+  long_desc = "PHASE0: a tavern";
               + "walls in thin curls, and silence gathers in corners.\n";
   dest_dir = ({
     "domain/original/area/vesla/room223", "west",
@@ -15,3 +15,4 @@ void reset(int arg) {
     "domain/original/area/vesla/room119", "north",
   });
 }
+
