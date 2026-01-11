@@ -1,19 +1,21 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Second floor of whore house.";
-    long_desc = "PHASE0: a brothel";
-    dest_dir = ({
-        "domain/original/area/vesla/room828", "south",
-        "domain/original/area/vesla/room826", "west",
-        "domain/original/area/vesla/room829", "up",
-        "domain/original/area/vesla/room824", "down",
-        "domain/original/area/vesla/room827", "north",
-    });
+  short_desc = "Quiet Landing";
+  long_desc = "The upper landing is choked with dust, its rail warped and soft with rot.\n"
+              + "Closed doors lean inward, and a cracked mirror keeps a dim memory of bright\n"
+              + "rooms now gone to mildew.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room828", "south",
+    "domain/original/area/vesla/room826", "west",
+    "domain/original/area/vesla/room829", "up",
+    "domain/original/area/vesla/room824", "down",
+    "domain/original/area/vesla/room827", "north",
+  });
 }
-

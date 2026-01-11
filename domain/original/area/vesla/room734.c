@@ -1,15 +1,17 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Weapon Master's Bedroom";
-    long_desc = "PHASE0: a humble home";
-    dest_dir = ({
-        "domain/original/area/vesla/room399", "down",
-    });
+  short_desc = "Bare Chamber";
+  long_desc = "A narrow bedframe sags against the wall, its straw long moldered into dust.\n"
+              + "A cracked chest sits open, and a single practice rail leans nearby, dulled by\n"
+              + "mildew and time.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room399", "down",
+  });
 }
-
