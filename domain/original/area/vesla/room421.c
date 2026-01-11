@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Mage's Guild";
-    long_desc = "Mage's Guild\n";
+    long_desc = "PHASE0: Mage class guild";
     dest_dir = ({
         "domain/original/area/vesla/room132", "north",
     });
 }
+

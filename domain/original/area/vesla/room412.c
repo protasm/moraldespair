@@ -7,9 +7,10 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Smithy";
-    long_desc = "Smithy\n";
+    long_desc = "PHASE0: NPC-owned smithy";
     dest_dir = ({
         "domain/original/area/vesla/room160", "west",
         "domain/original/area/vesla/room124", "south",
     });
 }
+
