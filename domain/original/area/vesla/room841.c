@@ -1,18 +1,20 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg)
+    return;
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Burned Area";
-    long_desc = "PHASE0: this area suffered a fire before the city was abandoned";
-    dest_dir = ({
-        "domain/original/area/vesla/room147", "south",
-        "domain/original/area/vesla/room842", "west",
-        "domain/original/area/vesla/room840", "east",
-        "domain/original/area/vesla/room843", "north",
-    });
+  short_desc = "Sooted Row";
+  long_desc = "Soot stains the surviving walls, and the lane sits in a hush of rot and dust.\n"
+        + "Warped shutters and mildewed frames lean inward, the fire-scarred row left in\n"
+        + "dilapidated disrepair.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room147", "south",
+    "domain/original/area/vesla/room842", "west",
+    "domain/original/area/vesla/room840", "east",
+    "domain/original/area/vesla/room843", "north",
+  });
 }
 

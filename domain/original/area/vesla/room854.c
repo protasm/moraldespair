@@ -1,15 +1,17 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg)
+    return;
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Spice Merchant";
-    long_desc = "PHASE0: NPC-owned business";
-    dest_dir = ({
-        "domain/original/area/vesla/room139", "west",
-    });
+  short_desc = "Scented Stall";
+  long_desc = "Rusted tins and cracked jars sit on sagging shelves, silent beneath dust and\n"
+        + "mildew. A faint, stale sweetness clings to the rot, hinting at spice trade in\n"
+        + "dilapidated disrepair.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room139", "west",
+  });
 }
 
