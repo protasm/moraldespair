@@ -14,13 +14,3 @@ void reset(int arg) {
         "domain/original/area/vesla/room218", "north",
     });
 }
-
-void init() {
-    ::init();
-    add_action("block_exit", "west");
-}
-
-int block_exit() {
-    write("The way is blocked by a wall of broken stone.\n");
-    return 1;
-}
