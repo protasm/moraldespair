@@ -1,15 +1,17 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Basalt Avenue";
-    long_desc = "Basalt Avenue\n";
-    dest_dir = ({
-        "domain/original/area/vesla/room136", "south",
-        "domain/original/area/vesla/room133", "north",
-    });
+  short_desc = "Basalt Avenue";
+  long_desc = "Basalt paving runs between dark stone walls, the joints split by weeds and grit.\n"
+              + "A low drift of broken tile lies where slow runoff has carved shallow channels.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room136", "south",
+    "domain/original/area/vesla/room133", "north",
+  });
 }
