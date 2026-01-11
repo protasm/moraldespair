@@ -182,7 +182,7 @@ return;
 
 ## Line Length
 
-- Where text is presented to the player, insert gramatically correct line breaks wherever necessary to ensure that no line exceeds 80 characters.
+- Where text is presented to the player, insert gramatically correct line breaks wherever necessary to ensure that each line of text is as close as possible to 80 characters without going over.
 
 ---
 
