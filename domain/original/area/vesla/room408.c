@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "MD Banking";
-    long_desc = "MD Banking\n";
+    long_desc = "PHSAE0: player owned bank guild";
     dest_dir = ({
         "domain/original/area/vesla/room217", "east",
     });
 }
+
