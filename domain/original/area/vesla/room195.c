@@ -1,15 +1,17 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Rapier Way";
-    long_desc = "Rapier Way\n";
-    dest_dir = ({
-        "domain/original/area/vesla/room196", "east",
-        "domain/original/area/vesla/room194", "west",
-    });
+  short_desc = "Rapier Way";
+  long_desc = "Wind funnels along the empty way, lifting grit across pale weathered basalt.\n"
+              + "Collapsed beams rest against a wall, leaving the road half blocked in places.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room196", "east",
+    "domain/original/area/vesla/room194", "west",
+  });
 }
