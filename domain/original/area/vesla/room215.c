@@ -6,7 +6,7 @@ void reset(int arg) {
 
     set_light(1);
     short_desc = "Cracked Way";
-    long_desc = "The sacra way runs quiet between squat walls, its stones\n"
+    long_desc = "The way runs quiet between squat walls, its stones\n"
                 + "dulled and uneven.\n"
                 + "Old carvings are worn to nubs, nearly erased by weather.\n";
     dest_dir = ({
