@@ -8,9 +8,8 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Sunken Walk";
-  long_desc = "The walkway dips into a shallow trough where stones have\n"
-              + "settled unevenly. A thin film of moss trails along the\n"
-              + "seams, and the air sits heavy with damp.\n";
+  long_desc = "The walkway dips into a shallow trough where stones have settled unevenly. A\n"
+              + "thin film of moss trails along the seams, and the air sits heavy with damp.\n";
   dest_dir = ({
     "domain/original/area/vesla/room224", "south",
     "domain/original/area/vesla/room122", "west",

@@ -8,9 +8,8 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Western Gate";
-  long_desc = "The western gate has collapsed into a heap of stone and\n"
-              + "splintered wood. Rusted fittings lie half buried, and the\n"
-              + "blocked passage holds a deep, unmoving quiet.\n";
+  long_desc = "The western gate has collapsed into a heap of stone and splintered wood. Rusted\n"
+              + "fittings lie half buried, and the blocked passage holds a deep, unmoving quiet.\n";
   dest_dir = ({
     "domain/original/area/vesla/room133", "east",
     "domain/original/area/roadway/room29", "exit",
