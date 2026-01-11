@@ -8,9 +8,9 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Park Crossroads";
-  long_desc = "The crossing is choked with gravel and dead leaves where a\n"
-              + "broad street meets a narrower lane. Fallen posts and a\n"
-              + "tilted sign hold a silence settled over long neglect.\n";
+  long_desc = "The crossing is choked with gravel and dead leaves where a broad street meets a\n"
+              + "narrower lane. Fallen posts and a tilted sign hold a silence settled over long\n"
+              + "neglect.\n";
   dest_dir = ({
     "domain/original/area/vesla/room233", "south",
     "domain/original/area/vesla/room117", "west",

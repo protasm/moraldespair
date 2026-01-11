@@ -6,9 +6,8 @@ void reset(int arg) {
 
     set_light(1);
     short_desc = "Cracked Way";
-    long_desc = "A shallow channel cuts along the path, filled with grit\n"
-                + "and broken tile.\n"
-                + "The air is cool and still between the close walls.\n";
+    long_desc = "A shallow channel cuts along the path, filled with grit and broken tile. The air\n"
+                + "is cool and still between the close walls.\n";
     dest_dir = ({
         "domain/original/area/vesla/room215", "south",
         "domain/original/area/vesla/room402", "west",

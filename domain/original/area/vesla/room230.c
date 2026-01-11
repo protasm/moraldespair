@@ -6,9 +6,8 @@ void reset(int arg) {
 
     set_light(1);
     short_desc = "Abandoned Park";
-    long_desc = "A once-open lawn is now a tangle of thorn and nettle.\n"
-                + "Broken edging stones ring the growth like a half-lost\n"
-                + "border.\n";
+    long_desc = "A once-open lawn is now a tangle of thorn and nettle. Broken edging stones ring\n"
+                + "the growth like a half-lost border.\n";
     dest_dir = ({
         "domain/original/area/vesla/room119", "south",
         "domain/original/area/vesla/room815", "west",

@@ -6,9 +6,8 @@ void reset(int arg) {
 
     set_light(1);
     short_desc = "Southern Cracked Way";
-    long_desc = "Wide paving slabs lie buckled and parted by grass.\n"
-                + "A line of soot-streaked stone posts leans in slow\n"
-                + "collapse.\n";
+    long_desc = "Wide paving slabs lie buckled and parted by grass. A line of soot-streaked stone\n"
+                + "posts leans in slow collapse.\n";
     dest_dir = ({
         "domain/original/area/vesla/room213", "south",
         "domain/original/area/vesla/room400", "west",

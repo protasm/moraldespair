@@ -8,9 +8,9 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Grit-Streaked Crossing";
-  long_desc = "Weathered stones mark the meeting of two old streets, their\n"
-              + "lines softened by drifted grit. A broken post leans over\n"
-              + "the junction, and no track has passed in generations.\n";
+  long_desc = "Weathered stones mark the meeting of two old streets, their lines softened by\n"
+              + "drifted grit. A broken post leans over the junction, and no track has passed in\n"
+              + "generations.\n";
   dest_dir = ({
     "domain/original/area/vesla/room220", "south",
     "domain/original/area/vesla/room118", "west",
