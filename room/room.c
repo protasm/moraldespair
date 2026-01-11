@@ -163,6 +163,11 @@ void set_short(string str) {
   return;
 }
 
+void set_long(string str) {
+  long_desc = str;
+  return;
+}
+
 string *query_dest_dir() {
     return dest_dir;
 }
