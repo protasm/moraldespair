@@ -5,7 +5,7 @@ void reset(int arg) {
         return;
 
     set_light(1);
-    short_desc = "Sacra River Crossing";
+    short_desc = "River Crossing";
     long_desc = "The crossing is a scatter of worn stones, their edges\n"
                 + "smoothed by time.\n"
                 + "The two ways meet in silence, framed by damp, crumbling\n"

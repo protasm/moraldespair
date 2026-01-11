@@ -5,8 +5,8 @@ void reset(int arg) {
         return;
 
     set_light(1);
-    short_desc = "Southern Sacra End";
-    long_desc = "The sacra way thins into broken stones, the once-\n"
+    short_desc = "Southern End";
+    long_desc = "The way thins into broken stones, the once-\n"
                 + "straight line sagging.\n"
                 + "Fallen trim and damp rubble gather at the end of the\n"
                 + "road.\n";
