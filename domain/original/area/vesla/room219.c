@@ -14,13 +14,3 @@ void reset(int arg) {
         "domain/original/area/vesla/room220", "north",
     });
 }
-
-void init() {
-    ::init();
-    add_action("block_exit", "west");
-}
-
-int block_exit() {
-    write("Crumbling ruins bar that direction completely.\n");
-    return 1;
-}

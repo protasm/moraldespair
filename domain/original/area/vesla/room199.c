@@ -14,13 +14,3 @@ void reset(int arg) {
         "domain/original/area/vesla/room198", "north",
     });
 }
-
-void init() {
-    ::init();
-    add_action("block_exit", "east");
-}
-
-int block_exit() {
-    write("Only rubble remains there; the structure collapsed long ago.\n");
-    return 1;
-}

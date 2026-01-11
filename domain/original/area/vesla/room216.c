@@ -15,13 +15,3 @@ void reset(int arg) {
         "domain/original/area/vesla/room217", "north",
     });
 }
-
-void init() {
-    ::init();
-    add_action("block_exit", "west");
-}
-
-int block_exit() {
-    write("The passage is choked with debris; you cannot pass.\n");
-    return 1;
-}

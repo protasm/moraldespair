@@ -15,14 +15,3 @@ void reset(int arg) {
         "domain/original/area/vesla/room215", "north",
     });
 }
-
-void init() {
-    ::init();
-    add_action("block_exit", "west");
-    add_action("block_exit", "east");
-}
-
-int block_exit() {
-    write("A heap of collapsed stone blocks the way.\n");
-    return 1;
-}

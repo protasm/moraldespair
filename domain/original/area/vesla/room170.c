@@ -13,13 +13,3 @@ void reset(int arg) {
         "domain/original/area/vesla/room168", "west",
     });
 }
-
-void init() {
-    ::init();
-    add_action("block_exit", "east");
-}
-
-int block_exit() {
-    write("Nothing but fallen masonry lies there; it's impassable.\n");
-    return 1;
-}
