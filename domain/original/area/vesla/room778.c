@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Small paddock";
-    long_desc = "Small paddock\n";
+    long_desc = "PHASE0: stables (hay, wood, horse-tending tools, etc.)";
     dest_dir = ({
         "domain/original/area/vesla/room783", "southwest",
         "domain/original/area/vesla/room777", "west",
@@ -15,3 +15,4 @@ void reset(int arg) {
         "domain/original/area/vesla/room779", "south",
     });
 }
+

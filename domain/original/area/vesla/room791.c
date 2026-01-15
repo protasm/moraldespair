@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "You swing open the wooden door and enter the stall.";
-    long_desc = "You swing open the wooden door and enter the stall.\n";
+    long_desc = "PHASE0: stables (hay, wood, horse-tending tools, etc.)";
     dest_dir = ({
         "domain/original/area/vesla/room770", "south",
     });
 }
+

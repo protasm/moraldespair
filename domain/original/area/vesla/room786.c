@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Tack room";
-    long_desc = "Tack room\n";
+    long_desc = "PHASE0: stables (hay, wood, horse-tending tools, etc.)";
     dest_dir = ({
         "domain/original/area/vesla/room774", "south",
     });
 }
+

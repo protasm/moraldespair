@@ -118,3 +118,10 @@ int prevent_look_at_inv(string str) {
 int query_drop_castle() {
     return 1;
 }
+
+
+
+
+
+
+

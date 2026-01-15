@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Dormitory Administrator's Room";
-    long_desc = "Dormitory Administrator's Room\n";
+    long_desc = "PHASE0: dormitory where NPC students and athletes lived";
     dest_dir = ({
         "domain/original/area/vesla/room741", "west",
     });
 }
+

@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "An empty lot.";
-    long_desc = "An empty lot.\n";
+    long_desc = "PHASE0: empty lot";
     dest_dir = ({
         "domain/original/area/vesla/room192", "north",
     });
 }
+

@@ -35,6 +35,10 @@ Before performing **any task**, agents **must read and internalize** the documen
    Prose is treated as a **first-class system** in this project. Agents must not generate descriptive text that violates these constraints.
 
 ---
+3. **PHASE1.md**  
+   This document defines:
+   - Guidance as how to transform rooms and descriptions to appear "aged" and "abandoned".
+
 
 ## Summary for Agents
 

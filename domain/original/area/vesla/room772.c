@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "The storage room";
-    long_desc = "The storage room\n";
+    long_desc = "PHASE0: a storage room for the blacksmith to the west";
     dest_dir = ({
         "domain/original/area/vesla/room771", "west",
     });
 }
+
