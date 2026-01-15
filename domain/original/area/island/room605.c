@@ -7,7 +7,10 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Ocean before Beachhead";
-    long_desc = "Ocean before Beachhead.\n";
+    long_desc = "White foam churns over a fractured shoreline where the ocean meets the\n" +
+      "land. To the north, a desolate beachhead stretches toward the interior of\n" +
+      "a silent island. A small, waterlogged boat drifts aimlessly in the surf,\n" +
+      "its wood bleached white by years of salt and sun.\n";
     dest_dir = ({
         "domain/original/area/island/room606", "north",
 	"domain/original/area/vesla/portal", "vesla",

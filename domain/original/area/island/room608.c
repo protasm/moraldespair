@@ -7,7 +7,10 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "A Dune Path";
-    long_desc = "A Dune Path.\n";
+    long_desc = "Sand gives way to jagged stone as the path climbs toward the city's\n" +
+      "outer perimeter. To the north, the monolithic gate towers cast long,\n" +
+      "immobile shadows over the shifting ground. The air is thinner here,\n" +
+      "carrying only the scent of dry dust and ancient, sun-baked rock.\n";
     dest_dir = ({
         "domain/original/area/island/room607", "south",
         "domain/original/area/island/room609", "north",
