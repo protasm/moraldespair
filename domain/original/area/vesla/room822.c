@@ -9,8 +9,8 @@ void reset(int arg) {
 
   short_desc = "Civic Hall";
   long_desc = "Broad steps lead to a hall of cracked stone, where dust lies in deep drifts. A\n"
-              + "splintered dais and toppled benches suggest old gatherings, now muted by rot and\n"
-              + "mildew.\n";
+              + "splintered dais and toppled benches suggest old gatherings, now muted by rot\n"
+              + "and mildew.\n";
   dest_dir = ({
     "domain/original/area/vesla/room156", "east",
     "domain/original/area/vesla/room831", "up",

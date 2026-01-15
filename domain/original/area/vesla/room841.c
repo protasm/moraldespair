@@ -8,8 +8,8 @@ void reset(int arg) {
 
   short_desc = "Sooted Row";
   long_desc = "Soot stains the surviving walls, and the lane sits in a hush of rot and dust.\n"
-        + "Warped shutters and mildewed frames lean inward, the fire-scarred row left in\n"
-        + "collapse and silence.\n";
+              + "Warped shutters and mildewed frames lean inward, the fire-scarred row left in\n"
+              + "collapse and silence.\n";
   dest_dir = ({
     "domain/original/area/vesla/room147", "south",
     "domain/original/area/vesla/room842", "west",

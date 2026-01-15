@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
     short_desc = "West River Track";
     long_desc = "Here the stones are stained dark, as if by old floods that never returned. A\n"
-                + "toppled iron post lies in the gutter, rusted through.\n";
+              + "toppled iron post lies in the gutter, rusted through.\n";
     dest_dir = ({
         "domain/original/area/vesla/room151", "east",
         "domain/original/area/vesla/room149", "west",

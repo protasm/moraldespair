@@ -8,8 +8,8 @@ void reset(int arg) {
 
     short_desc = "Worn Annex";
     long_desc = "A narrow side room lies under a crust of dust, its shelves bowed and the air\n"
-        + "stale with mildew. A dry ink smell clings to cracked boxes and a toppled\n"
-        + "writing stand, the place long empty.\n";
+              + "stale with mildew. A dry ink smell clings to cracked boxes and a toppled\n"
+              + "writing stand, the place long empty.\n";
     dest_dir = ({
         "domain/original/area/vesla/room847", "west",
     });
