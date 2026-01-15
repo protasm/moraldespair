@@ -6,8 +6,10 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Wall Street";
-    long_desc = "PHASE0: a cobble-stone street below and interior to the exterior city wall";
+    short_desc = "Cobbled Run";
+    long_desc = "Cobbles press against the wall here, split by frost and buckling in\n"
+                + "the soil. Weeds and dark lichen gather where the stonework weeps,\n"
+                + "muting any echo.\n";
     dest_dir = ({
         "domain/original/area/vesla/room182", "east",
         "domain/original/area/vesla/room184", "west",

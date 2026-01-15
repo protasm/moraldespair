@@ -6,8 +6,10 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Store Room";
-    long_desc = "PHASE0: dormitory where NPC students and athletes lived";
+    short_desc = "Quiet Racks";
+    long_desc = "Narrow sleeping frames stand in two lines, stripped to bare wood and\n"
+                + "cobweb. A boarded alcove gapes at the far end, and the boards sag with\n"
+                + "damp.\n";
     dest_dir = ({
         "domain/original/area/vesla/room745", "west",
     });

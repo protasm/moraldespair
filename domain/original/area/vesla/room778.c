@@ -6,8 +6,9 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Small paddock";
-    long_desc = "PHASE0: stables (hay, wood, horse-tending tools, etc.)";
+    short_desc = "Hay Loft";
+    long_desc = "A collapsed loft hangs above, its beams broken and draped in cobwebs.\n"
+                + "Dry chaff dust coats the ground, now darkened by years of damp.\n";
     dest_dir = ({
         "domain/original/area/vesla/room783", "southwest",
         "domain/original/area/vesla/room777", "west",

@@ -6,8 +6,9 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "You swing open the wooden door and enter the stall.";
-    long_desc = "PHASE0: stables (hay, wood, horse-tending tools, etc.)";
+    short_desc = "Moldy Loft";
+    long_desc = "A low loft space is sunk and split, its ladder gone. Mold spreads across\n"
+                + "the rafters, and a dull dampness fills the room.\n";
     dest_dir = ({
         "domain/original/area/vesla/room776", "north",
     });

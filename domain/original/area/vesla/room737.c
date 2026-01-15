@@ -6,8 +6,10 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Chamber of Commerce";
-    long_desc = "PHASE0: this was a municipal building of some sort";
+    short_desc = "Quiet Office";
+    long_desc = "A low hall of stone desks and alcoves sits gutted and still. Mildew\n"
+                + "darkens the plaster, and empty niches line the walls where records once\n"
+                + "rested.\n";
     dest_dir = ({
         "domain/original/area/vesla/room187", "south",
     });

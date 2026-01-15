@@ -6,8 +6,9 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Dormer";
-    long_desc = "PHASE0: dormitory where NPC students and athletes lived";
+    short_desc = "Faded Quarters";
+    long_desc = "A cramped chamber shows the shadow of old sleeping rows in the dust.\n"
+                + "Plaster has fallen in sheets, and the boards are dark with mildew.\n";
     dest_dir = ({
         "domain/original/area/vesla/room748", "west",
     });
