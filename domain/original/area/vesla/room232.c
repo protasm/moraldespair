@@ -10,7 +10,7 @@ void reset(int arg) {
               + "Scattered paving stones and toppled posts mark the forgotten walkway.\n";
     dest_dir = ({
         "domain/original/area/vesla/room226", "south",
-        "domain/original/area/vesla/room227", "west",
+        "domain/original/area/vesla/room228", "west",
         "domain/original/area/vesla/room173", "east",
         "domain/original/area/vesla/room234", "north",
     });

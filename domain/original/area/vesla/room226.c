@@ -10,7 +10,7 @@ void reset(int arg) {
               + "fountain bowl sits cracked and empty under leaning trees.\n";
     dest_dir = ({
         "domain/original/area/vesla/room117", "south",
-        "domain/original/area/vesla/room228", "west",
+        "domain/original/area/vesla/room227", "west",
         "domain/original/area/vesla/room172", "east",
         "domain/original/area/vesla/room232", "north",
     });

@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Guild/Shop Space for rent";
-    long_desc = "Guild/Shop Space for rent\n";
+    long_desc = "PHASE0: an empty lot for a player-owned business";
     dest_dir = ({
         "domain/original/area/vesla/room172", "west",
     });
 }
+
