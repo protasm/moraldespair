@@ -16,7 +16,8 @@ void reset(int arg) {
 
     reboot_time = time();
     short_desc = "Sanctuary";
-    long_desc = "A refuge from what lies beyond. You feel a STRONG urge to... you can't recall?\n";
+    long_desc = "A refuge from what lies beyond.\n" +
+	        "You feel a STRONG urge to... you can't recall?\n";
     dest_dir = ({
         "domain/original/area/vesla/room228", "south",
         "domain/original/area/vesla/room893", "up",
