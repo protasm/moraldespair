@@ -6,8 +6,10 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Omar's Oils II";
-    long_desc = "PHASE0: This was an NPC-owned torch and lamp merchant";
+    short_desc = "Sooted Shop";
+    long_desc = "Soot smears the walls above a narrow counter, and empty hooks line the\n"
+                + "back. A crust of old oil darkens the floorboards, now gritty with dust\n"
+                + "and ash.\n";
     dest_dir = ({
         "domain/original/area/vesla/room121", "south",
     });

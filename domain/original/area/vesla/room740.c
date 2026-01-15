@@ -6,8 +6,10 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Stationery Store";
-    long_desc = "PHASE0: NPC owned business";
+    short_desc = "Dusty Stall";
+    long_desc = "A small room with a low counter sits abandoned, its shelves stripped\n"
+                + "clean. The air is stale with rot, and broken pegs show where trade once\n"
+                + "hung.\n";
     dest_dir = ({
         "domain/original/area/vesla/room190", "north",
     });

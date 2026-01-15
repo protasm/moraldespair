@@ -6,8 +6,10 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Magoo's Bookstore";
-    long_desc = "PHASE0: NPC-owned business";
+    short_desc = "Shuttered Front";
+    long_desc = "A narrow storefront opens to a room of bare shelves and a sagging\n"
+                + "counter. Dust heaps in the corners, and a faded sign fragment clings to\n"
+                + "the lintel.\n";
     dest_dir = ({
         "domain/original/area/vesla/room191", "north",
     });

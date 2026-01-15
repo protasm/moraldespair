@@ -6,8 +6,9 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Castle stables";
-    long_desc = "PHASE0: stables (hay, wood, horse-tending tools, etc.)";
+    short_desc = "Tack Hooks";
+    long_desc = "Crooked hooks line the wall, empty but scarred by long use. The boards\n"
+                + "are warped and blackened with damp, and the air is still and rank.\n";
     dest_dir = ({
         "domain/original/area/vesla/room787", "south",
         "domain/original/area/vesla/room773", "west",

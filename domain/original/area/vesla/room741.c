@@ -6,8 +6,10 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Dormitory Hallway";
-    long_desc = "PHASE0: dormitory where NPC students and athletes lived";
+    short_desc = "Silent Bunks";
+    long_desc = "Rows of low frames line the walls, their slats warped and gray with\n"
+                + "dust. Mildew softens the plaster, and the floor is worn smooth by\n"
+                + "vanished footsteps.\n";
     dest_dir = ({
         "domain/original/area/vesla/room748", "up",
         "domain/original/area/vesla/room190", "south",

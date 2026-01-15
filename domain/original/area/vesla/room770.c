@@ -6,8 +6,10 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Castle stables";
-    long_desc = "PHASE0: stables (hay, wood, horse-tending tools, etc.)";
+    short_desc = "Broken Stalls";
+    long_desc = "Splintered stall walls lean inward, their rails slick with mildew. A\n"
+                + "cracked feeding trough sits dry, and dust lies thick where hooves once\n"
+                + "churned.\n";
     dest_dir = ({
         "domain/original/area/vesla/room790", "south",
         "domain/original/area/vesla/room765", "west",

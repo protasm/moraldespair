@@ -6,8 +6,10 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "The School of Guild Skills";
-    long_desc = "PHASE0: this room allowed players to train and level up their skills related to player-owned businesses (taverns, distillers, armorers, weapons makers, banks, stables, smelters, corpse embalmers)";
+    short_desc = "Practice Hall";
+    long_desc = "Scuffed boards and long tables fill a wide room, now gray with dust.\n"
+                + "Faded tally marks and peg holes linger on the walls, hinting at lessons\n"
+                + "once kept here.\n";
     dest_dir = ({
         "domain/original/area/vesla/room189", "north",
     });
