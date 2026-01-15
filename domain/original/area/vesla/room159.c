@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
     short_desc = "South Main Road";
     long_desc = "The paving stones here are splintered and slick with lichen. Dust lies thick\n"
-                + "against the bases of the walls.\n";
+              + "against the bases of the walls.\n";
     dest_dir = ({
         "domain/original/area/vesla/room158", "south",
         "domain/original/area/vesla/room125", "north",

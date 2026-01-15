@@ -8,8 +8,8 @@ void reset(int arg) {
 
   short_desc = "Ashen Way";
   long_desc = "Charred stone and blackened beams mark this stretch, now silent and ruined.\n"
-        + "Ash lies under drifted dust, and mildewed rubble clogs the broken curb where\n"
-        + "small fronts once opened in ash and rot.\n";
+              + "Ash lies under drifted dust, and mildewed rubble clogs the broken curb where\n"
+              + "small fronts once opened in ash and rot.\n";
   dest_dir = ({
     "domain/original/area/vesla/room841", "west",
     "domain/original/area/vesla/room148", "south",

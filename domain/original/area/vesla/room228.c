@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
     short_desc = "Quiet Park";
-    long_desc = "A wide clearing lies mute, its stones scattered and moss-dark. Birdless branches\n"
-                + "arch over the space, their shadows unmoving.\n";
+    long_desc = "A wide clearing lies mute, its stones scattered and moss-dark. Birdless\n"
+              + "branches arch over the space, their shadows unmoving.\n";
 
     dest_dir = ({
         "domain/original/area/vesla/sanctuary", "north",

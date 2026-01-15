@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
     short_desc = "Hollow Park";
     long_desc = "The ground dips where a pond once spread, now a dish of silt and weeds.\n"
-                + "Scattered paving stones and toppled posts mark the forgotten walkway.\n";
+              + "Scattered paving stones and toppled posts mark the forgotten walkway.\n";
     dest_dir = ({
         "domain/original/area/vesla/room226", "south",
         "domain/original/area/vesla/room227", "west",

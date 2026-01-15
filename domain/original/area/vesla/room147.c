@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
     short_desc = "West River Track";
     long_desc = "The river road bends past a slumped doorway, its threshold choked with debris.\n"
-                + "Pale lichen maps the stone, and no tracks disturb the dust.\n";
+              + "Pale lichen maps the stone, and no tracks disturb the dust.\n";
     dest_dir = ({
         "domain/original/area/vesla/room846", "south",
         "domain/original/area/vesla/room146", "west",

@@ -8,7 +8,7 @@ void reset(int arg) {
 
     short_desc = "Portal Room";
     long_desc = "This is the portal room. As development continues, these areas will be removed\n"
-                + "from the portal room and linked to the full world.\n";
+              + "from the portal room and linked to the full world.\n";
     dest_dir = ({
         "domain/original/area/vesla/sanctuary", "up",
         "domain/original/area/island/room605", "island",
