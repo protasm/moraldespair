@@ -7,7 +7,12 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Island smeltery";
-    long_desc = "Island smeltery.\n";
+    long_desc = "A heavy chill hangs in the air of this cavernous smeltery, where the\n" +
+      "great furnaces once roared. To the west, the street's gray light spills\n" +
+      "across a layer of fine ash covering the service counter. A small, soot-\n" +
+      "stained sign remains fixed to the stone wall, its lettering faded into\n" +
+      "obscurity. To the east, a doorway leads into the shadows of a silent\n" +
+      "backroom, stripped of the rhythmic hammers that once defined this space.\n";
     dest_dir = ({
         "domain/original/area/island/room621", "east",
         "domain/original/area/island/room619", "west",
