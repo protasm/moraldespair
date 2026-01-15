@@ -6,8 +6,10 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Scholar's Way";
-    long_desc = "Scholar's Way\n";
+    short_desc = "Fallen Way";
+    long_desc = "Fragments of carved stone lie half-buried along the edges of the\n"
+              + "lane, their markings softened by time. A faint ridge of sand has\n"
+              + "collected against the eastern curb.\n";
     dest_dir = ({
         "domain/original/area/vesla/room189", "west",
         "domain/original/area/vesla/room187", "east",
