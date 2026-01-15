@@ -6,7 +6,7 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Fallen Way";
+    short_desc = "Silent Way";
     long_desc = "A long row of broken pillars lines the north side of the way,\n"
               + "each stump dark with weathering. The ground is littered with\n"
               + "slate chips and fine dust.\n";
@@ -17,3 +17,5 @@ void reset(int arg) {
         "domain/original/area/vesla/room743", "north",
     });
 }
+
+

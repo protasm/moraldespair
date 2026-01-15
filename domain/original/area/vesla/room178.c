@@ -6,7 +6,7 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Broken Crossing";
+    short_desc = "Darkened Crossing";
     long_desc = "Two streets meet in a spread of fractured stone, their lines still\n"
               + "clear beneath the dust. A collapsed corner wall exposes a dark\n"
               + "room open to the weather.\n";
@@ -16,3 +16,4 @@ void reset(int arg) {
         "domain/original/area/vesla/room179", "north",
     });
 }
+

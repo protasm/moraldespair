@@ -5,7 +5,7 @@ void reset(int arg) {
         return;
 
     set_light(1);
-    short_desc = "South Main Road";
+    short_desc = "South Road";
     long_desc = "Broken cobbles gather near a collapsed stoop. The main road is silent, its\n"
               + "centerline marked by a shallow rut.\n";
     dest_dir = ({
@@ -15,4 +15,5 @@ void reset(int arg) {
         "domain/original/area/vesla/room157", "north",
     });
 }
+
 
