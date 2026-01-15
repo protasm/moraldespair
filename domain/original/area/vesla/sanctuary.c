@@ -20,23 +20,10 @@ void reset(int arg) {
 	        "You feel a STRONG urge to... you can't recall?\n";
     dest_dir = ({
         "domain/original/area/vesla/room228", "south",
-        "domain/original/area/vesla/room893", "up",
+        "domain/original/area/vesla/lounge", "up",
         "domain/original/area/vesla/portal", "down",
     });
 }
-
-void init() {
-    ::init();
-
-    //add_action("block_exit", "south");
-}
-
-int block_exit() {
-    write("The way is shut, until the time comes.\n");
-
-    return 1;   /* block movement */
-}
-
 
 void show_clock() {
     int i, j;
