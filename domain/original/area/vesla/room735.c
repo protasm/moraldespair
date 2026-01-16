@@ -6,13 +6,12 @@ void reset(int arg) {
 
   set_light(1);
 
-  short_desc = "Scoured Plot";
-  long_desc = "PHASE0: an empty lot for a player-owned business";
-              "weed and grit, with dark dampness sinking into the edges.\n"
-              "Rotted post stubs and a bent iron bracket mark where a sign once\n"
-              "hung, while broken boards sink into the mud.\n";
+  short_desc = "Faded Plot";
+  long_desc = "A sunken patch of earth lies between low foundations, its surface matted\n"
+              "with weed, dust, and black mildew. Rotted post stubs and a bent iron\n"
+              "bracket linger at the edge, with scattered planks and a worn stone lip\n"
+              "hinting at some former frontage.\n";
   dest_dir = ({
     "domain/original/area/vesla/room172", "west",
   });
 }
-
