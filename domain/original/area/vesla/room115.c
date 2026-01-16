@@ -15,6 +15,8 @@ void reset(int arg) {
     "domain/original/area/vesla/room116", "west",
     "domain/original/area/roadway/room14", "exit",
   });
+
+  add_exit_alias("x", "exit");
 }
 
 void init() {

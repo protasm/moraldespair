@@ -43,7 +43,7 @@ void init() {
 
   if (!exit_aliases)
     return;
-  aliases = keys(exit_aliases);
+  aliases = m_indices(exit_aliases);
   i = 0;
   while (i < sizeof(aliases)) {
     add_action("move_alias", aliases[i]);
