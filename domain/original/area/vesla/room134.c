@@ -13,13 +13,14 @@ void reset(int arg) {
               + "unmoving quiet.\n";
   dest_dir = ({
     "domain/original/area/vesla/room133", "east",
-    "domain/original/area/roadway/room29", "exit",
+    "domain/original/area/roadway/room12", "exit",
   });
 }
 
 void init() {
   ::init();
-  add_action("block_exit", "exit");
+
+  //add_action("block_exit", "exit");
 }
 
 int block_exit() {

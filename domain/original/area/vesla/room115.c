@@ -17,11 +17,10 @@ void reset(int arg) {
   });
 }
 
-/*
 void init() {
   ::init();
 
-  add_action("block_exit", "exit");
+  //add_action("block_exit", "exit");
 }
 
 int block_exit() {
@@ -30,4 +29,3 @@ int block_exit() {
 
   return 1;
 }
-*/
