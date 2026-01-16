@@ -20,10 +20,9 @@ void reset(int arg) {
                 "centuries ago, this hall was a beacon of hope for die-hard\n" +
                 "adventurers, but now the air is cold and tastes of stagnant incense.\n" +
                 "The glory that once beckoned is long forgotten, replaced by a\n" +
-                "hollow silence that whispers of the great abyss: MORAL DESPAIR!\n\n" +
+                "hollow silence that whispers of a great abyss.\n\n" +
                 "You feel a STRONG urge to... you can't recall?\n\n" +
-                "A weathered sign clings to the damp stone wall.\n" +
-                "A massive clock hangs above, its pendulum frozen in time.\n";
+                "A massive clock hangs above, its pendulum swinging lazily.\n";
     dest_dir = ({
         "domain/original/area/vesla/room228", "south",
         "domain/original/area/vesla/lounge", "up",
