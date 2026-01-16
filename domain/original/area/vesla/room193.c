@@ -7,14 +7,13 @@ void reset(int arg) {
 
   set_light(1);
 
-  short_desc = "Worn Way";
-  long_desc = "PHASE0: Worn Way";
-              + "The stones are chipped and uneven, and dark dust has gathered deep in the\n"
-              + "seams.\n";
+  short_desc = "Weathered Path";
+  long_desc =
+    "The way is reduced to uneven slabs, their edges rounded and split by long\n"
+    "neglect. Silt and mildew pool in the seams, and the path fades into quiet\n"
+    "stonework to either side.\n";
   dest_dir = ({
     "domain/original/area/vesla/room194", "east",
     "domain/original/area/vesla/room137", "west",
   });
 }
-
-
