@@ -7,8 +7,8 @@ void reset(int arg) {
 
   set_light(1);
 
-  short_desc = "Rapier Way";
-  long_desc = "Rapier Way begins between tight stone walls, its paving set in narrow strips.\n"
+  short_desc = "Worn Way";
+  long_desc = "PHASE0: Worn Way";
               + "The stones are chipped and uneven, and dark dust has gathered deep in the\n"
               + "seams.\n";
   dest_dir = ({
@@ -16,3 +16,5 @@ void reset(int arg) {
     "domain/original/area/vesla/room137", "west",
   });
 }
+
+

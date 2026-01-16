@@ -7,7 +7,7 @@ void reset(int arg) {
 
   set_light(1);
 
-  short_desc = "Intersection of Basalt Avenue and Rapier Way";
+  short_desc = "Worn Crossing";
   long_desc = "Two worn streets cross on uneven basalt, their corners softened by age and\n"
               + "grit. The stones are cracked and slumped, leaving shallow puddles and\n"
               + "windblown grit.\n";
@@ -17,3 +17,4 @@ void reset(int arg) {
     "domain/original/area/vesla/room136", "north",
   });
 }
+

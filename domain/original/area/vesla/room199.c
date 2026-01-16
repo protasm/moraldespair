@@ -7,10 +7,11 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Zand Boulevard";
-    long_desc = "Zand Boulevard\n";
+    long_desc = "PHASE0: Hidden Boulevard";
     dest_dir = ({
         "domain/original/area/vesla/room200", "south",
         "domain/original/area/vesla/room962", "east",
         "domain/original/area/vesla/room198", "north",
     });
 }
+

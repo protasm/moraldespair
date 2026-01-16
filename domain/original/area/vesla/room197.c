@@ -7,7 +7,7 @@ void reset(int arg) {
 
   set_light(1);
 
-  short_desc = "Intersection of Rapier Way and Zand Boulevard";
+  short_desc = "Abandoned Corner";
   long_desc = "Rapier Way meets a broader boulevard on a patch of sunken stone and grit here.\n"
               + "The junction is scarred by ruts and hollows, with grit swept into the corners.\n";
   dest_dir = ({
@@ -15,3 +15,4 @@ void reset(int arg) {
     "domain/original/area/vesla/room198", "south",
   });
 }
+

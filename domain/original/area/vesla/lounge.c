@@ -6,7 +6,7 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "The Players' lounge";
+    short_desc = "Players' Lounge";
     long_desc = "You stand in the hollowed remains of the lounge, a room that once buzzed with\n" +
 	        "the gossip and fevered arguments of long-dead legends. Now, the only sound is\n" +
 		"the whistling of wind through the cracked, soot-stained windows that line the\n" +
@@ -18,4 +18,6 @@ void reset(int arg) {
         "domain/original/area/vesla/sanctuary", "down",
     });
 }
+
+
 

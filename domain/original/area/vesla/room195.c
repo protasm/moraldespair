@@ -7,7 +7,7 @@ void reset(int arg) {
 
   set_light(1);
 
-  short_desc = "Rapier Way";
+  short_desc = "Worn Way";
   long_desc = "Wind funnels along the empty way, lifting grit across pale weathered basalt.\n"
               + "Collapsed beams rest against a wall, leaving the road half blocked in places.\n";
   dest_dir = ({
@@ -15,3 +15,4 @@ void reset(int arg) {
     "domain/original/area/vesla/room194", "west",
   });
 }
+

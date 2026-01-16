@@ -90,7 +90,6 @@ void long(string str) {
     }
 
     write(long_desc + "\n");
-    write("There is a clock here.\n");
     write("There are exits up, down, and south.\n");
 
     return;

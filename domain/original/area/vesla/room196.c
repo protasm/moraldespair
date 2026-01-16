@@ -7,7 +7,7 @@ void reset(int arg) {
 
   set_light(1);
 
-  short_desc = "Rapier Way";
+  short_desc = "Worn Way";
   long_desc = "The paving breaks into small islands, the gaps filled with dark soil and rot.\n"
               + "The street narrows toward a wider crossing ahead, where the stones dip\n"
               + "slightly.\n";
@@ -16,3 +16,4 @@ void reset(int arg) {
     "domain/original/area/vesla/room195", "west",
   });
 }
+
