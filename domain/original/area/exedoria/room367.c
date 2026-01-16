@@ -1,14 +1,15 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Velvet Unicorn";
-    long_desc = "Velvet Unicorn.\n";
-    dest_dir = ({
-        "domain/original/area/exedoria/room288", "south",
-    });
+  short_desc = "Faded Tavern";
+  long_desc = "A once-lively tavern sits dim behind broken windows. A sagging stage and\nsplintered stools fill the corners.\n";
+  dest_dir = ({
+    "domain/original/area/exedoria/room288", "south",
+  });
 }

@@ -1,14 +1,15 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Corigan Court Intersection";
-    long_desc = "Corigan Court Intersection.\n";
-    dest_dir = ({
-        "domain/original/area/exedoria/room296", "west",
-    });
+  short_desc = "Stone Cross";
+  long_desc = "Two worn streets cross in a patch of sunken stone. The corners are choked with\nrubble from nearby walls.\n";
+  dest_dir = ({
+    "domain/original/area/exedoria/room296", "west",
+  });
 }
