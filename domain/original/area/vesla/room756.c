@@ -7,9 +7,10 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "The inner ward";
-    long_desc = "The inner ward\n";
+    long_desc = "PHASE0: The Inner Ward";
     dest_dir = ({
         "domain/original/area/vesla/room755", "south",
         "domain/original/area/vesla/room757", "north",
     });
 }
+

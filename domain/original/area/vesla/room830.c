@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Baker's Shop";
-    long_desc = "Baker's Shop\n";
+    long_desc = "PHASE0: an NPC-owned business";
     dest_dir = ({
         "domain/original/area/vesla/room157", "west",
     });
 }
+

@@ -7,9 +7,10 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Wash area";
-    long_desc = "Wash area\n";
+    long_desc = "PHASE0: stable wash area";
     dest_dir = ({
         "domain/original/area/vesla/room778", "southeast",
         "domain/original/area/vesla/room777", "south",
     });
 }
+

@@ -7,8 +7,9 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Eastern tower observatory";
-    long_desc = "Eastern tower observatory\n";
+    long_desc = "PHASE0: Eastern Tower Observatory";
     dest_dir = ({
         "domain/original/area/vesla/room763", "northeast",
     });
 }
+
