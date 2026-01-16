@@ -1,17 +1,20 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "A dingy alleyway";
-    long_desc = "PHASE0: A Dingy Alleyway";
-    dest_dir = ({
-        "domain/original/area/vesla/room411", "west",
-        "domain/original/area/vesla/room122", "south",
-        "domain/original/area/vesla/room792", "north",
-    });
+  short_desc = "Narrow Cut";
+  long_desc =
+    "A tight passage runs between leaning walls, choked with damp rot and black\n"
+    "mildew. Broken drains and sagging lintels suggest a service way once kept\n"
+    "clear, now sealed in silence.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room411", "west",
+    "domain/original/area/vesla/room122", "south",
+    "domain/original/area/vesla/room792", "north",
+  });
 }
-

@@ -1,16 +1,19 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Intersection of Street of the Bells and Zand Boulevard";
-    long_desc = "PHASE0: Junction of Ruined Street and Hidden Boulevard";
-    dest_dir = ({
-        "domain/original/area/vesla/room201", "west",
-        "domain/original/area/vesla/room199", "north",
-    });
+  short_desc = "Cracked Crossing";
+  long_desc =
+    "Two worn ways meet in a sagging cross, their seams packed with damp grit\n"
+    "and tiny weeds. The center stones are polished hollow by long-forgotten\n"
+    "traffic, with rust flakes gathered in the low joints.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room201", "west",
+    "domain/original/area/vesla/room199", "north",
+  });
 }
-
