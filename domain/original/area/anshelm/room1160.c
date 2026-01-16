@@ -1,15 +1,18 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Tiran bows to you.";
-    long_desc = "Tiran bows to you.\n";
-    dest_dir = ({
-        "domain/original/area/anshelm/room1159", "east",
-        "domain/original/area/anshelm/room1161", "west",
-    });
+  short_desc = "Small Chamber";
+  long_desc =
+    "A small chamber opens off the stair, bare and silent. A broken latch hangs\n"
+    "from the doorframe.\n";
+  dest_dir = ({
+    "domain/original/area/anshelm/room1159", "east",
+    "domain/original/area/anshelm/room1161", "west",
+  });
 }

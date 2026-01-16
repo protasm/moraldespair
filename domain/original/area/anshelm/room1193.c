@@ -1,14 +1,17 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Ruined Passage";
-    long_desc = "Ruined Passage.\n";
-    dest_dir = ({
-        "domain/original/area/anshelm/room251", "west",
-    });
+  short_desc = "Ruin Passage";
+  long_desc =
+    "A narrow passage runs through broken walls, half open to the air. Rubble\n"
+    "mounds force the path to one side.\n";
+  dest_dir = ({
+    "domain/original/area/anshelm/room251", "west",
+  });
 }
