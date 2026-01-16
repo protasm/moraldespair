@@ -8,6 +8,9 @@
 /* An array with destinations and directions: "room/church", "north" ... */
 string *dest_dir;
 
+/* Exit aliases: "c":"city" */
+mapping exit_aliases;
+
 /* Short description of the room */
 string short_desc;
 
@@ -27,14 +30,25 @@ string convert_number(int n);
 string *query_numbers();
 
 void init() {
-    int i;
-    if (!dest_dir)
-        return;
-    i = 1;
-    while (i < sizeof(dest_dir)) {
-        add_action("move", dest_dir[i]);
-        i += 2;
-    }
+  int i;
+  string *aliases;
+
+  if (!dest_dir)
+    return;
+  i = 1;
+  while (i < sizeof(dest_dir)) {
+    add_action("move", dest_dir[i]);
+    i += 2;
+  }
+
+  if (!exit_aliases)
+    return;
+  aliases = keys(exit_aliases);
+  i = 0;
+  while (i < sizeof(aliases)) {
+    add_action("move_alias", aliases[i]);
+    i += 1;
+  }
 }
 
 int id(string str) {
@@ -151,6 +165,26 @@ int move(string str) {
     return 1;
 }
 
+int move_alias(string str) {
+  int i;
+  string canonical;
+
+  if (!exit_aliases)
+    return 0;
+  canonical = exit_aliases[query_verb()];
+  if (!canonical)
+    return 0;
+  i = 1;
+  while (i < sizeof(dest_dir)) {
+    if (dest_dir[i] == canonical) {
+      this_player()->move_player(dest_dir[i] + "#" + dest_dir[i - 1]);
+      return 1;
+    }
+    i += 2;
+  }
+  return 1;
+}
+
 string short() {
     if (set_light(0))
         return short_desc + "\n" + exitsDescription(1);
@@ -165,6 +199,14 @@ void set_short(string str) {
 
 void set_long(string str) {
   long_desc = str + "\n";
+
+  return;
+}
+
+void add_exit_alias(string alias, string canonical) {
+  if (!exit_aliases)
+    exit_aliases = ([]);
+  exit_aliases[alias] = canonical;
 
   return;
 }
