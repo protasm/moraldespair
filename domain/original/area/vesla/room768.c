@@ -1,18 +1,19 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg)
+    return;
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "The inner ward";
-    long_desc = "PHASE0: The Inner Ward";
-    dest_dir = ({
-        "domain/original/area/vesla/room766", "southwest",
-        "domain/original/area/vesla/room767", "west",
-        "domain/original/area/vesla/room769", "east",
-        "domain/original/area/vesla/room765", "south",
-    });
+  short_desc = "Gray Court";
+  long_desc = "Gray dust coats the paving, and fragments of plaster lie in soft\n"
+    "ridges. A broad, straight run of stones implies an old processional\n"
+    "path through the ward.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room766", "southwest",
+    "domain/original/area/vesla/room767", "west",
+    "domain/original/area/vesla/room769", "east",
+    "domain/original/area/vesla/room765", "south",
+  });
 }
-
