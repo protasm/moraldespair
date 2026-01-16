@@ -12,4 +12,6 @@ void reset(int arg) {
         "domain/original/area/roadway/room54", "north",
         "domain/original/area/indel/room1401", "city",
     });
+
+  add_exit_alias("c", "city");
 }
