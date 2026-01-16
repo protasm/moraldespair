@@ -1,14 +1,15 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Eidolon Warlords";
-    long_desc = "Eidolon Warlords.\n";
-    dest_dir = ({
-        "domain/original/area/exedoria/room288", "north",
-    });
+  short_desc = "Empty Hall";
+  long_desc = "A grand hall stands stripped to bare stone, banners long gone. Ash marks a\nhearth that has not burned in years.\n";
+  dest_dir = ({
+    "domain/original/area/exedoria/room288", "north",
+  });
 }

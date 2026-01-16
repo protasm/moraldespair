@@ -1,15 +1,16 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "A bend in the hallway";
-    long_desc = "A bend in the hallway.\n";
-    dest_dir = ({
-        "domain/original/area/exedoria/room359", "west",
-        "domain/original/area/exedoria/room357", "north",
-    });
+  short_desc = "Hall Bend";
+  long_desc = "The hallway bends around a thick pillar, hiding what lies beyond. Dust gathers\nin the corner where the light fades.\n";
+  dest_dir = ({
+    "domain/original/area/exedoria/room359", "west",
+    "domain/original/area/exedoria/room357", "north",
+  });
 }

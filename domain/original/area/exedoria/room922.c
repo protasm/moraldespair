@@ -1,14 +1,15 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Ambassadors Suite";
-    long_desc = "Ambassadors Suite.\n";
-    dest_dir = ({
-        "domain/original/area/exedoria/room921", "south",
-    });
+  short_desc = "Quiet Suite";
+  long_desc = "A suite of rooms lies empty beyond a carved doorway. Dust lies in drifts where\nrugs once lay.\n";
+  dest_dir = ({
+    "domain/original/area/exedoria/room921", "south",
+  });
 }

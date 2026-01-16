@@ -1,14 +1,15 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Machinery Room";
-    long_desc = "Machinery Room.\n";
-    dest_dir = ({
-        "domain/original/area/exedoria/room929", "down",
-    });
+  short_desc = "Workshop";
+  long_desc = "A heavy room holds idle mechanisms, their belts long rotted away. Oil stains\nand rust mark the floor.\n";
+  dest_dir = ({
+    "domain/original/area/exedoria/room929", "down",
+  });
 }

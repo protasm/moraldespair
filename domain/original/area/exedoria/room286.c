@@ -1,17 +1,18 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Entrance to Exedoria";
-    long_desc = "Entrance to Exedoria.\n";
-    dest_dir = ({
-        "domain/original/area/exedoria/room287", "east",
-        "domain/original/area/roadway/room28", "exit",
-    });
+  short_desc = "Broken Gate";
+  long_desc = "A fractured gatehouse leans over the road, its doors long gone. Wind moves\nthrough the empty arch where iron once hung.\n";
+  dest_dir = ({
+    "domain/original/area/exedoria/room287", "east",
+    "domain/original/area/roadway/room28", "exit",
+  });
 
   add_exit_alias("x", "exit");
 }
