@@ -1,8 +1,7 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+    if (arg) return;
 
     set_light(1);
 
@@ -12,4 +11,6 @@ void reset(int arg) {
         "domain/original/area/roadway/room2", "east",
 	"domain/original/area/candera/room1", "city",
     });
+
+    add_exit_alias("c", "city");
 }
