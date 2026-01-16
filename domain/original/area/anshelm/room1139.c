@@ -1,15 +1,18 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Western Spire Stairwell";
-    long_desc = "Western Spire Stairwell.\n";
-    dest_dir = ({
-        "domain/original/area/anshelm/room1138", "down",
-        "domain/original/area/anshelm/room1140", "up",
-    });
+  short_desc = "West Stair";
+  long_desc =
+    "A steep stair climbs the western spire, the inner wall scarred by old tool\n"
+    "marks. Loose rubble gathers in the corners.\n";
+  dest_dir = ({
+    "domain/original/area/anshelm/room1138", "down",
+    "domain/original/area/anshelm/room1140", "up",
+  });
 }

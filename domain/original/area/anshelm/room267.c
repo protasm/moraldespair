@@ -1,17 +1,20 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Intersection of Rue du Nord and Kasernegade";
-    long_desc = "Intersection of Rue du Nord and Kasernegade.\n";
-    dest_dir = ({
-        "domain/original/area/anshelm/room266", "south",
-        "domain/original/area/anshelm/room268", "west",
-        "domain/original/area/anshelm/room276", "east",
-        "domain/original/area/anshelm/room273", "north",
-    });
+  short_desc = "Barrack Crossing";
+  long_desc =
+    "Two roads meet before a line of long, low buildings. Their doorways gape, dark\n"
+    "and silent.\n";
+  dest_dir = ({
+    "domain/original/area/anshelm/room266", "south",
+    "domain/original/area/anshelm/room268", "west",
+    "domain/original/area/anshelm/room276", "east",
+    "domain/original/area/anshelm/room273", "north",
+  });
 }

@@ -1,15 +1,18 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Western end of Kirsch Lane";
-    long_desc = "Western end of Kirsch Lane.\n";
-    dest_dir = ({
-        "domain/original/area/anshelm/room246", "east",
-        "domain/original/area/anshelm/room248", "south",
-    });
+  short_desc = "Lane End";
+  long_desc =
+    "The lane narrows to a bend where the stones are nearly buried. A collapsed\n"
+    "stoop leaves a shallow pit of rubble.\n";
+  dest_dir = ({
+    "domain/original/area/anshelm/room246", "east",
+    "domain/original/area/anshelm/room248", "south",
+  });
 }

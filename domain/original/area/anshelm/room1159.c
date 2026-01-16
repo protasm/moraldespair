@@ -1,15 +1,18 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Olotia bows to you.";
-    long_desc = "Olotia bows to you.\n";
-    dest_dir = ({
-        "domain/original/area/anshelm/room1158", "down",
-        "domain/original/area/anshelm/room1160", "west",
-    });
+  short_desc = "Upper Cell";
+  long_desc =
+    "This cramped room has a narrow slit for light and a floor of cracked stone.\n"
+    "Water stains run down the corners.\n";
+  dest_dir = ({
+    "domain/original/area/anshelm/room1158", "down",
+    "domain/original/area/anshelm/room1160", "west",
+  });
 }
