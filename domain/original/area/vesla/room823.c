@@ -1,15 +1,16 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg)
+    return;
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Tea Shop";
-    long_desc = "PHASE0: an NPC-owned business";
-    dest_dir = ({
-        "domain/original/area/vesla/room157", "east",
-    });
+  short_desc = "Bitter Parlor";
+  long_desc = "A small parlor sits empty, its counters broken and its shelves\n"
+    "collapsed into dusty piles. A darkened hearth and stained ledges\n"
+    "suggest warm cups and quiet trade now gone cold.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room157", "east",
+  });
 }
-

@@ -1,16 +1,17 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg)
+    return;
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Between the towers";
-    long_desc = "PHASE0: Between two towers";
-    dest_dir = ({
-        "domain/original/area/vesla/room753", "south",
-        "domain/original/area/vesla/room755", "north",
-    });
+  short_desc = "Twin Shadows";
+  long_desc = "Two battered towers hem in this passage, their upper floors cracked\n"
+    "and open to the sky. Loose stones and damp rubble gather where a\n"
+    "wooden span once steadied the gap.\n";
+  dest_dir = ({
+    "domain/original/area/vesla/room753", "south",
+    "domain/original/area/vesla/room755", "north",
+  });
 }
-
