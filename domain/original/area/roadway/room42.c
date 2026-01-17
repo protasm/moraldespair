@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Entrance to Anshelm";
-    long_desc = "Entrance to Anshelm.\n";
+    short_desc = "Defiled City";
+    long_desc = "The defiled remains of a final refuge.";
     dest_dir = ({
         "domain/original/area/roadway/room41", "south",
         "domain/original/area/anshelm/room235", "city",
@@ -15,3 +15,6 @@ void reset(int arg) {
 
   add_exit_alias("c", "city");
 }
+
+
+

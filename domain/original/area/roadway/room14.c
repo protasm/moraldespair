@@ -7,8 +7,8 @@ void reset(int arg) {
 
   set_light(1);
 
-  short_desc = "Near Vesla City";
-  long_desc = "Near Vesla City.\n";
+  short_desc = "Ruined City";
+  long_desc = "The ruins of a large city.";
   dest_dir = ({
     "domain/original/area/roadway/room30", "north",
     "domain/original/area/roadway/room43", "south",
@@ -20,3 +20,8 @@ void reset(int arg) {
 
   add_exit_alias("c", "city");
 }
+
+
+
+
+

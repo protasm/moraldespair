@@ -6,8 +6,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Entrance to Exedoria";
-    long_desc = "Entrance to Exedoria.\n";
+    short_desc = "City Graveyard";
+    long_desc = "A graveyard where a city once thrived.";
     dest_dir = ({
         "domain/original/area/roadway/room27", "west",
         "domain/original/area/exedoria/room286", "city",
@@ -15,3 +15,6 @@ void reset(int arg) {
 
   add_exit_alias("c", "city");
 }
+
+
+
