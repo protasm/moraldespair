@@ -39,7 +39,7 @@ void load_wilderness() {
   }
 
   data = json_parse(contents);
-  if (!mapp(data)) {
+  if (!mappingp(data)) {
     loaded = 1;
     return;
   }
@@ -54,7 +54,7 @@ void load_wilderness() {
   i = 0;
   while (i < sizeof(rooms)) {
     room = rooms[i];
-    if (mapp(room)) {
+    if (mappingp(room)) {
       room_id = room["id"];
       if (stringp(room_id)) {
         rooms_by_id[room_id] = room;
@@ -76,7 +76,7 @@ mapping query_room(string room_id) {
   }
 
   room = rooms_by_id[room_id];
-  if (!mapp(room)) {
+  if (!mappingp(room)) {
     return 0;
   }
 
@@ -93,7 +93,7 @@ mapping query_exits(string room_id) {
   }
 
   exits = room["exits"];
-  if (!mapp(exits)) {
+  if (!mappingp(exits)) {
     return ([]);
   }
 
@@ -122,7 +122,7 @@ int room_exists(string room_id) {
     return 0;
   }
 
-  if (mapp(rooms_by_id[room_id])) {
+  if (mappingp(rooms_by_id[room_id])) {
     return 1;
   }
 
