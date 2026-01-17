@@ -107,27 +107,31 @@ string exitsDescription(int brief) {
 }
 
 void long(string str) {
-    int i;
-    if (set_light(0) == 0) {
-        write("It is dark.\n");
-        return;
-    }
-    if (!str) {
-        write(long_desc);
+  int i;
+  string ruler;
 
-        write(exitsDescription(0));
-        return;
+  if (set_light(0) == 0) {
+    write("It is dark.\n");
+    return;
+  }
+  if (!str) {
+    ruler = "123456789=123456789=123456789=123456789=123456789=123456789=123456789=123456789=";
+    write(ruler + "\n");
+    write(long_desc);
+
+    write(exitsDescription(0));
+    return;
+  }
+  if (!items)
+    return;
+  i = 0;
+  while (i < sizeof(items)) {
+    if (items[i] == str) {
+      write(items[i + 1] + ".\n");
+      return;
     }
-    if (!items)
-        return;
-    i = 0;
-    while (i < sizeof(items)) {
-        if (items[i] == str) {
-            write(items[i + 1] + ".\n");
-            return;
-        }
-        i += 2;
-    }
+    i += 2;
+  }
 }
 
 /*
