@@ -798,37 +798,46 @@ object query_snoop(object ob)
 varargs int cat(string file, int start, int num)
 {
   int more;
+  int result;
+  object original_object;
   string txt;
 
   if (extern_call()) {
+    original_object = this_object();
     set_this_object(previous_object());
   }
 
   if (num < 0 || !this_player()) {
-    return 0;
+    result = 0;
+  } else {
+    if (!start) {
+      start = 1;
+    }
+
+    if (!num || num > CAT_MAX_LINES) {
+      num = CAT_MAX_LINES;
+      more = sizeof(read_file(file, start + num, 1));
+    }
+
+    txt = read_file(file, start, num);
+    if (!txt) {
+      result = 0;
+    } else {
+      tell_object(this_player(), txt);
+
+      if (more) {
+        tell_object(this_player(), "*****TRUNCATED****\n");
+      }
+
+      result = sizeof(txt & "\n");
+    }
   }
 
-  if (!start) {
-    start = 1;
+  if (original_object) {
+    set_this_object(original_object);
   }
 
-  if (!num || num > CAT_MAX_LINES) {
-    num = CAT_MAX_LINES;
-    more = sizeof(read_file(file, start + num, 1));
-  }
-
-  txt = read_file(file, start, num);
-  if (!txt) {
-    return 0;
-  }
-
-  tell_object(this_player(), txt);
-
-  if (more) {
-    tell_object(this_player(), "*****TRUNCATED****\n");
-  }
-
-  return sizeof(txt & "\n");
+  return result;
 }
 #endif
 
