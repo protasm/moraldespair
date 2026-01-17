@@ -6,7 +6,10 @@ void reset(int arg) {
 
     set_light(1);
     short_desc = "Blasted Narrow Way";
-    long_desc = "Loose stones shift underfoot, buried in silt and powdered mortar. The remains of pillars stand jagged, split and fused by old force. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.\n";
+    long_desc = "Loose stones shift underfoot, buried in silt and powdered mortar. The remains of\n"
+                "pillars stand jagged, split and fused by old force. The way runs on in a narrow\n"
+                "line, hemmed by broken walls left to weather. Moss and pale mold cling to the\n"
+                "damp pockets, and nothing moves except drifting grit.\n";
     dest_dir = ({
         "domain/original/area/indel/room1514", "east",
         "domain/original/area/indel/room1512", "west",
