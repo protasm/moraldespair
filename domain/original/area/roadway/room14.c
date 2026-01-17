@@ -14,7 +14,7 @@ void reset(int arg) {
     "domain/original/area/roadway/room43", "south",
     "domain/original/area/roadway/room13", "west",
     "domain/original/area/roadway/room16", "east",
-    "domain/original/area/wilderness/room_26_24", "northwest",
+    "room/wilderness_room#X27", "northwest",
     "domain/original/area/vesla/room115", "city",
   });
 

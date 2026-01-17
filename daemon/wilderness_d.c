@@ -1,3 +1,5 @@
+#include "/daemon/wilderness_d.h"
+
 /*
  * Wilderness data is JSON-backed but normalized into a room-id mapping.
  * This keeps virtual room lookups fast and predictable as the map grows
@@ -8,7 +10,7 @@ mapping rooms_by_id;
 int loaded;
 
 void create() {
-  map_file = "/maps/moraldecay.json";
+  map_file = "/domain/original/wilderness.json";
   rooms_by_id = ([]);
   loaded = 0;
 
