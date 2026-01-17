@@ -1,0 +1,3 @@
+#!/bin/bash
+
+telnet mud.moraldespair.net 3003
