@@ -9,7 +9,7 @@ void reset(int arg) {
     long_desc = "Once a city, now swallowed by the desert.";
     dest_dir = ({
         "domain/original/area/roadway/room2", "east",
-	"domain/original/area/candera/room1", "city",
+        "domain/original/area/candera/room1", "city",
     });
 
     add_exit_alias("c", "city");
