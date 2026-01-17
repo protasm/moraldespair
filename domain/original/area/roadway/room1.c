@@ -5,8 +5,8 @@ void reset(int arg) {
 
     set_light(1);
 
-    short_desc = "Entrance to Candera";
-    long_desc = "Entrance to Candera.\n";
+    short_desc = "Sunken City";
+    long_desc = "Once a city, now swallowed by the desert.";
     dest_dir = ({
         "domain/original/area/roadway/room2", "east",
 	"domain/original/area/candera/room1", "city",
@@ -14,3 +14,7 @@ void reset(int arg) {
 
     add_exit_alias("c", "city");
 }
+
+
+
+
