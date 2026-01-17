@@ -135,7 +135,7 @@ void long(string str) {
     ruler = "---------+---------+---------+---------+---------+---------+---------+---------+";
 
     write(ruler + "\n");
-    write(long_desc);
+    write(long_desc + "\n");
     write(exitsDescription(0));
 
     return;
