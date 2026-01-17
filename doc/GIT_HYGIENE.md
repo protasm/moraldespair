@@ -1,8 +1,16 @@
 # Git Hygiene for *Moral Despair*
 
-*A friendly, low‑stress guide to working together without stepping on each other’s toes.*
+## TL;DR (the 60‑second version)
 
-This project mixes code, lore, maps, and memories. The goal of this workflow isn’t control — it’s **safety, clarity, and kindness to Future Us**. If something here feels unclear or heavy, let’s talk about it.
+- **Never push to `main`.** One maintainer merges `dev → main`.
+- **Everyone works in `dev`**, either directly or via short‑lived feature branches.
+- **Create feature branches from `dev`, not `main`.**
+- **You may merge your own feature branch back into `dev`** when it’s ready.
+- **No force‑pushes to shared branches. Ever.**
+- **If your merge breaks `dev`, you help fix it.** No blame.
+- When unsure, **open a PR or ask** — that’s collaboration, not friction.
+
+If you remember nothing else: *`main` is sacred, `dev` is shared, feature branches are sandboxes.*
 
 ---
 
