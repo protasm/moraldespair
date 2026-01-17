@@ -16,12 +16,9 @@ void reset(int arg) {
 
     reboot_time = time();
     short_desc = "Sanctuary";
-    long_desc = "You stand within the high, vaulted shadows of the Sanctuary. Two centuries ago,\n" +
-                "this hall was a beacon of hope for die-hard adventurers. Now, the air is cold\n" +
-                "and tastes of stagnant incense. The glory that once beckoned is long forgotten,\n" +
-                "replaced by a hollow silence that whispers of a great decay.\n\n" +
-                "You feel a STRONG urge to... you can't recall?\n\n" +
-                "A massive clock hangs above, its pendulum swinging lazily.\n";
+    long_desc = "You stand within the high, vaulted shadows of the Sanctuary. Two centuries ago, this hall was a beacon of hope for die-hard adventurers. Now, the air is cold and tastes of stagnant incense. The glory that once beckoned is long forgotten, replaced by a hollow silence that whispers of a great decay." +
+                "\nYou feel a STRONG urge to... you can't recall?" +
+                "\nA massive clock hangs above, its pendulum swinging lazily.";
     dest_dir = ({
         "domain/original/area/vesla/room228", "south",
         "domain/original/area/vesla/lounge", "up",
