@@ -46,100 +46,6 @@ void start_simul_efun()
 }
 
 //---------------------------------------------------------------------------
-string wrap_text_line(string line, int width)
-{
-  string *words;
-  string output;
-  string current;
-  string word;
-  int i;
-
-  if (sizeof(line) <= width) {
-    return line;
-  }
-
-  words = explode(line, " ");
-  if (!sizeof(words)) {
-    return line;
-  }
-
-  output = "";
-  current = "";
-
-  for (i = 0; i < sizeof(words); i++) {
-    word = words[i];
-
-    if (sizeof(word) > width) {
-      if (sizeof(current)) {
-        output += current + "\n";
-        current = "";
-      }
-      while (sizeof(word) > width) {
-        output += word[0..width - 1] + "\n";
-        word = word[width..];
-      }
-    }
-
-    if (!sizeof(word)) {
-      continue;
-    }
-
-    if (!sizeof(current)) {
-      current = word;
-      continue;
-    }
-
-    if (sizeof(current) + 1 + sizeof(word) <= width) {
-      current += " " + word;
-      continue;
-    }
-
-    output += current + "\n";
-    current = word;
-  }
-
-  if (sizeof(current)) {
-    output += current;
-  }
-
-  return output;
-}
-
-//---------------------------------------------------------------------------
-string wrap_text(string text, int width)
-{
-  string *lines;
-  string result;
-  string wrapped;
-  int i;
-
-  lines = explode(text, "\n");
-  result = "";
-
-  for (i = 0; i < sizeof(lines); i++) {
-    wrapped = wrap_text_line(lines[i], width);
-    result += wrapped;
-    if (i < sizeof(lines) - 1) {
-      result += "\n";
-    }
-  }
-
-  return result;
-}
-
-//---------------------------------------------------------------------------
-void write_wrapped(string text)
-{
-  write(wrap_text(text, 80));
-}
-
-//---------------------------------------------------------------------------
-void tell_object_wrapped(object target, string text)
-{
-  tell_object(target, wrap_text(text, 80));
-}
-
-//---------------------------------------------------------------------------
 void ls (string path)
 
 /* Print the directory listing of <path>, like the unix command.
@@ -154,7 +60,7 @@ void ls (string path)
     if (path != "/")
 	path += "/";
     if (!dir) {
-        write_wrapped("No such directory.\n");
+        write("No such directory.\n");
         return;
     }
     if (sizeof(dir) > 999)
@@ -190,7 +96,7 @@ void ls (string path)
         }
     }
     write("\n");
-    if (trunc_flag) write_wrapped("***TRUNCATED***\n");
+    if (trunc_flag) write("***TRUNCATED***\n");
 }
 
 //---------------------------------------------------------------------------
@@ -215,7 +121,7 @@ void log_file(string file,string str)
 #ifdef COMPAT_FLAG
     if (sizeof(regexp(({file}), "/")) || file[0] == '.' || sizeof(file) > 30 )
     {
-        write_wrapped("Illegal file name to log_file("+file+")\n");
+        write("Illegal file name to log_file("+file+")\n");
         return;
     }
 #endif
@@ -230,19 +136,13 @@ void log_file(string file,string str)
 void localcmd()
 {
     string *verbs;
-    string output;
     int i,j;
 
     verbs = query_actions(this_player());
-    output = "";
     for (i=0, j = sizeof(verbs); --j >= 0; i++) {
-	output += verbs[i];
-        if (j > 0) {
-          output += " ";
-        }
+	write(verbs[i]+" ");
     }
-    output += "\n";
-    write_wrapped(output);
+    write("\n");
 }
 
 //---------------------------------------------------------------------------
@@ -284,20 +184,20 @@ varargs mixed snoop(mixed snoopee)
     int result;
 
     if (snoopee && interactive(snoopee) && interactive_info(snoopee, II_SNOOP_NEXT)) {
-        write_wrapped("Busy.\n");
+        write("Busy.\n");
         return 0;
     }
     result = snoopee ? efun::snoop(this_player(), snoopee)
                      : efun::snoop(this_player());
     switch (result) {
 	case -1:
-	    write_wrapped("Busy.\n");
+	    write("Busy.\n");
 	    break;
 	case  0:
-	    write_wrapped("Failed.\n");
+	    write("Failed.\n");
 	    break;
 	case  1:
-	    write_wrapped("Ok.\n");
+	    write("Ok.\n");
 	    break;
     }
     if (result > 0) return snoopee;
@@ -306,17 +206,16 @@ varargs mixed snoop(mixed snoopee)
 //---------------------------------------------------------------------------
 void notify_fail(mixed message)
 {
-    string processed;
-
     if ( !(stringp(message) && strstr(message, "@@") < 0) ) {
 	efun::notify_fail(message);
 	return;
     }
-    processed = funcall(
-      bind_lambda(#'lambda, previous_object()),
-      0, ({#'process_string, message})
+    efun::notify_fail(
+      funcall(
+        bind_lambda(#'lambda, previous_object()),
+        0, ({#'process_string, message})
+      )
     );
-    efun::notify_fail(wrap_text(processed, 80));
 }
 
 //---------------------------------------------------------------------------
@@ -369,7 +268,7 @@ varargs void wizlist(string name)
         name = this_player()->query_real_name();
         if (!name)
         {
-            write_wrapped("Need to provide a name or 'ALL' to the wizlist function.\n");
+            write("Need to provide a name or 'ALL' to the wizlist function.\n");
             return;
         }
     }
@@ -385,7 +284,7 @@ varargs void wizlist(string name)
 
     if ((pos = member(a[WL_NAME], name)) < 0 && name != "ALL")
     {
-        write_wrapped("No wizlist info for '"+name+"' found.\n");
+        write("No wizlist info for '"+name+"' found.\n");
         return;
     }
     b = allocate(sizeof(cmds));
@@ -403,50 +302,38 @@ varargs void wizlist(string name)
             a = a[<15..];
         }
     }
-    write_wrapped("\nWizard top score list\n\n");
+    write("\nWizard top score list\n\n");
     if (total_cmd == 0)
         total_cmd = 1;
     for (i = sizeof(a); i; ) {
         b = a[<i--];
-        if (b[WL_GIGACOST] > 1000) {
-            write_wrapped(sprintf("%-15s %5d %2d%% (%d)\t[%d%4dk,%5d] %6d %d\n",
+        if (b[WL_GIGACOST] > 1000)
+            printf("%-15s %5d %2d%% (%d)\t[%d%4dk,%5d] %6d %d\n",
               b[WL_NAME], b[WL_COMMANDS],
               b[WL_COMMANDS] * 100 / total_cmd, b[<1],
               b[WL_GIGACOST] / 1000,
               b[WL_COST] / 1000 + (b[WL_GIGACOST] % 1000) * 1000000000,
               b[WL_HEART_BEATS], b[WL_EXTRA], b[WL_ARRAY_TOTAL]
-            ));
-        } else {
-            write_wrapped(sprintf("%-15s %5d %2d%% (%d)\t[%4dk,%5d] %6d %d\n",
+            );
+        else
+            printf("%-15s %5d %2d%% (%d)\t[%4dk,%5d] %6d %d\n",
               b[WL_NAME], b[WL_COMMANDS],
               b[WL_COMMANDS] * 100 / total_cmd, b[<1],
               b[WL_COST] / 1000 + (b[WL_GIGACOST] % 1000) * 1000000000,
               b[WL_HEART_BEATS], b[WL_EXTRA], b[WL_ARRAY_TOTAL]
-            ));
-        }
+            );
     }
-    write_wrapped(sprintf("\nTotal         %7d     (%d)\n\n", total_cmd, sizeof(cmds)));
+    printf("\nTotal         %7d     (%d)\n\n", total_cmd, sizeof(cmds));
 }
 
 //---------------------------------------------------------------------------
 void shout(string s)
 {
-    object *people;
-    string msg;
-    int i;
-
-    msg = wrap_text(to_string(s), 80);
-    people = users();
-
-    for (i = 0; i < sizeof(people); i++) {
-      if (!environment(people[i])) {
-        continue;
-      }
-      if (people[i] == this_player()) {
-        continue;
-      }
-      tell_object(people[i], msg);
-    }
+    filter(users(), lambda(({'u}),({#'&&,
+      ({#'environment, 'u}),
+      ({#'!=, 'u, ({#'this_player})}),
+      ({#'tell_object, 'u, to_string(s)})
+    })));
 }
 
 //---------------------------------------------------------------------------
@@ -926,10 +813,10 @@ varargs int cat(string file, int start, int num)
     if (!txt)
         return 0;
 
-    tell_object_wrapped(this_player(), txt);
+    tell_object(this_player(), txt);
 
     if (more)
-        tell_object_wrapped(this_player(), "*****TRUNCATED****\n");
+        tell_object(this_player(), "*****TRUNCATED****\n");
 
     return sizeof(txt & "\n");
 }
@@ -958,7 +845,7 @@ varargs int tail(string file)
             txt = "";
     }
 
-    tell_object_wrapped(this_player(), txt);
+    tell_object(this_player(), txt);
 
     return 1;
 }
