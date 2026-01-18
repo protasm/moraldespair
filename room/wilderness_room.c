@@ -1,7 +1,5 @@
 #define WILDERNESS_D "/daemon/wilderness_d"
 
-#include <debug_message.h>
-
 inherit "room/room";
 
 /*
@@ -19,15 +17,11 @@ void set_descriptions();
 int sort_dirs(string a, string b);
 
 void reset(int arg) {
-  if (arg) {
-    return;
-  }
+  if (arg) return;
 
   set_light(1);
 
-  if (room_id) {
-    set_descriptions();
-  }
+  if (room_id) set_descriptions();
 }
 
 void set_room_id(string id) {
@@ -47,39 +41,33 @@ string query_terrain() {
 }
 
 void set_descriptions() {
-  if (!room_id) {
-    return;
-  }
+  if (!room_id) return;
 
   terrain = WILDERNESS_D->query_terrain(room_id);
 
   if (terrain == "p") {
     short_desc = "Open Plain";
-    long_desc = "A flat plain stretches out in every direction. "
-      + "Wind presses through short grass.";
+    long_desc = "A flat plain stretches out in every direction. Wind presses through short grass.";
 
     return;
   }
 
   if (terrain == "f") {
     short_desc = "Thin Forest";
-    long_desc = "Sparse trees stand in uneven clusters. "
-      + "The ground is shaded and quiet.";
+    long_desc = "Sparse trees stand in uneven clusters. The ground is shaded and quiet.";
 
     return;
   }
 
   if (terrain == "h") {
     short_desc = "Low Hills";
-    long_desc = "Low hills roll in soft, broken lines. "
-      + "Stone shows through thin soil.";
+    long_desc = "Low hills roll in soft, broken lines. Stone shows through thin soil.";
 
     return;
   }
 
   short_desc = "Wilderness";
-  long_desc = "The land here is quiet and open. "
-    + "No clear path remains.";
+  long_desc = "The land here is quiet and open. No clear paths remain.";
 
   return;
 }

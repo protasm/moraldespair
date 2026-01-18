@@ -1,4 +1,3 @@
-#include <debug_message.h>
 #include "/daemon/wilderness_d.h"
 
 /*
@@ -52,19 +51,16 @@ void reset(int arg) {
 }
 
 void reload_wilderness() {
-debug_message("Reloading wilderness...");
   rooms_by_id = ([]);
   loaded = 0;
   room_count = 0;
 
   load_wilderness();
-debug_message("reloading wilderness complete\n.");
 
   return;
 }
 
 void load_wilderness() {
-debug_message("Loading wilderness...");
   mixed data, rooms;
   mapping room;
   string contents, room_id;
@@ -73,16 +69,10 @@ debug_message("Loading wilderness...");
   if (!mappingp(rooms_by_id))
     rooms_by_id = ([]);
 
-  if (loaded) {
-debug_message("already loaded!\n");
-
-    return;
-  }
+  if (loaded) return;
 
   if (!stringp(map_json)) {
     loaded = 1;
-
-debug_message("!stringp(map_json)!\n");
 
     return;
   }
@@ -92,18 +82,13 @@ debug_message("!stringp(map_json)!\n");
   if (size <= 0) {
     loaded = 1;
 
-debug_message("size <= 0!\n");
-
     return;
   }
 
-debug_message("reading: " + map_json);
   contents = read_wilderness_file(map_json);
 
   if (!contents) {
     loaded = 1;
-
-debug_message("!contents!\n");
 
     return;
   }
@@ -113,8 +98,6 @@ debug_message("!contents!\n");
   if (!mappingp(data)) {
     loaded = 1;
 
-debug_message("!mappingp(data)!\n");
-
     return;
   }
 
@@ -122,8 +105,6 @@ debug_message("!mappingp(data)!\n");
 
   if (!pointerp(rooms)) {
     loaded = 1;
-
-debug_message("!pointerp(rooms)!\n");
 
     return;
   }
@@ -147,9 +128,6 @@ debug_message("!pointerp(rooms)!\n");
   }
 
   loaded = 1;
-
-  debug_message("loading Wilderness complete.\n");
-  debug_message("Loaded " + room_count + " rooms.\n");
 
   return;
 }
