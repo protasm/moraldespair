@@ -466,3 +466,15 @@ obj/simul_efun.c line 155 before ';': Unknown efun: message
 obj/spare_simul_efun.c line 155 before ';': Unknown efun: message
 obj/spare_simul_efun.c line 236 before end of line: Casting a value to mixed has no effect
 obj/spare_simul_efun.c line 331 before end of line: Missing 'return <value>' statement
+obj/simul_efun.c line 155 before ';': Unknown efun: message
+obj/spare_simul_efun.c line 155 before ';': Unknown efun: message
+obj/spare_simul_efun.c line 236 before end of line: Casting a value to mixed has no effect
+obj/spare_simul_efun.c line 331 before end of line: Missing 'return <value>' statement
+obj/simul_efun.c line 155 before ';': Unknown efun: message
+obj/spare_simul_efun.c line 155 before ';': Unknown efun: message
+obj/spare_simul_efun.c line 236 before end of line: Casting a value to mixed has no effect
+obj/spare_simul_efun.c line 331 before end of line: Missing 'return <value>' statement
+obj/simul_efun.c line 155 before ';': Unknown efun: message
+obj/spare_simul_efun.c line 155 before ';': Unknown efun: message
+obj/spare_simul_efun.c line 236 before end of line: Casting a value to mixed has no effect
+obj/spare_simul_efun.c line 331 before end of line: Missing 'return <value>' statement
