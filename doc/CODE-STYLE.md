@@ -41,8 +41,12 @@ Correct:
 ```
 if (condition) {
   do_something();
+
+  bar = "bar";
 } else {
   do_something_else();
+
+  show_success();
 }
 ```
 
@@ -113,10 +117,12 @@ int do_something(boolean foo) {
 
   write("foo is: " + foo + "\n");
 
-  if (foo) {
+  if (foo)
     a = 9;
-  } else {
+  else {
     a = 11;
+
+    do_something();
   }
 
   b = 4;
@@ -130,16 +136,18 @@ int do_something(boolean foo) {
 
 ## Control Flow
 
-- Always use braces, even for single-line bodies
+- Always use braces for multi-line blocks
+- Never use braces for single-line blocks
 - Prefer clear `if / else` chains over clever ternaries
 
 Correct:
 
 ```
-if (foo) {
+if (foo)
   a = 9;
-} else {
+else {
   a = 11;
+  b = 9;
 }
 ```
 
@@ -155,8 +163,13 @@ a = foo ? 9 : 11;
 
 - Use `return;` explicitly in `void` functions
 - Use a single return point unless clarity strongly benefits otherwise
+- Unless contained in a control flow structure, separate return statements from 
+  preceeding lines with a blank line.
 
 ```
+if (foo)
+  a = 9;
+
 return;
 ```
 
