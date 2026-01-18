@@ -7,9 +7,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Silent Court";
-  long_desc = "Silence hangs in this inner court where weeds thread between cracked\n"
-    "stones. A low step and a cracked curb trace where carts once\n"
-    "turned.\n";
+  long_desc = "Silence hangs in this inner court where weeds thread between cracked stones. A low step and a cracked curb trace where carts once turned.";
   dest_dir = ({
     "domain/original/area/vesla/room757", "west",
     "domain/original/area/vesla/room759", "south",

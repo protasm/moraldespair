@@ -7,9 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Shuttered Front";
-    long_desc = "A narrow storefront opens to a room of bare shelves and a sagging\n"
-                + "counter. Dust heaps in the corners, and a faded sign fragment clings to\n"
-                + "the lintel.\n";
+    long_desc = "A narrow storefront opens to a room of bare shelves and a sagging counter. Dust heaps in the corners, and a faded sign fragment clings to the lintel.";
     dest_dir = ({
         "domain/original/area/vesla/room191", "north",
     });

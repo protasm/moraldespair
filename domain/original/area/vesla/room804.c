@@ -8,9 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Brine Stall";
-  long_desc = "Brine has long dried into a crust, leaving the stall rank and silent.\n"
-              + "Splintered tables and a rusted hook hint at trade in flesh that has since\n"
-              + "rotted away.\n";
+  long_desc = "Brine has long dried into a crust, leaving the stall rank and silent. Splintered tables and a rusted hook hint at trade in flesh that has since rotted away.";
   dest_dir = ({
     "domain/original/area/vesla/room803", "north",
   });

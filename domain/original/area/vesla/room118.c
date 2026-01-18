@@ -8,9 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Dim Walk";
-  long_desc = "A narrow walk runs beneath slumped beams and the last remains of a shaded\n"
-              + "trellis. Motes of dust cling to the air, and the stones are slick with old\n"
-              + "rot.\n";
+  long_desc = "A narrow walk runs beneath slumped beams and the last remains of a shaded trellis. Motes of dust cling to the air, and the stones are slick with old rot.";
   dest_dir = ({
     "domain/original/area/vesla/room227", "north",
     "domain/original/area/vesla/room221", "south",

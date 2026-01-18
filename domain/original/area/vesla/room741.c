@@ -7,9 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Silent Bunks";
-    long_desc = "Rows of low frames line the walls, their slats warped and gray with\n"
-                + "dust. Mildew softens the plaster, and the floor is worn smooth by\n"
-                + "vanished footsteps.\n";
+    long_desc = "Rows of low frames line the walls, their slats warped and gray with dust. Mildew softens the plaster, and the floor is worn smooth by vanished footsteps.";
     dest_dir = ({
         "domain/original/area/vesla/room748", "up",
         "domain/original/area/vesla/room190", "south",

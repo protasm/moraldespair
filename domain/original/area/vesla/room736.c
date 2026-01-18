@@ -7,8 +7,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Market Lot";
-  long_desc = "Low foundations ring a vacant patch, silent beneath dust, mildew, and rot. A\n"
-              + "broken sign frame hints at trade, the lot left to crumble.\n";
+  long_desc = "Low foundations ring a vacant patch, silent beneath dust, mildew, and rot. A broken sign frame hints at trade, the lot left to crumble.";
   dest_dir = ({
     "domain/original/area/vesla/room173", "west",
   });

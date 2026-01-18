@@ -7,8 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Low Pens";
-    long_desc = "Low pen walls barely stand, their joints loose and sagging. Mildew\n"
-                + "freckles the timbers, and a damp chill clings to the floor.\n";
+    long_desc = "Low pen walls barely stand, their joints loose and sagging. Mildew freckles the timbers, and a damp chill clings to the floor.";
     dest_dir = ({
         "domain/original/area/vesla/room779", "southeast",
         "domain/original/area/vesla/room783", "south",

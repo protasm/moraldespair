@@ -7,9 +7,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Blackened Court";
-  long_desc = "The court is a hollow of scorched brick and collapsed awnings, silent and\n"
-              + "ruined. Mildew blooms on low walls, and rot mixes with dust around broken\n"
-              + "stalls left to crumble.\n";
+  long_desc = "The court is a hollow of scorched brick and collapsed awnings, silent and ruined. Mildew blooms on low walls, and rot mixes with dust around broken stalls left to crumble.";
   dest_dir = ({
     "domain/original/area/vesla/room844", "west",
     "domain/original/area/vesla/room841", "south",

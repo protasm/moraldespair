@@ -7,9 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Silent Way";
-    long_desc = "A long row of broken pillars lines the north side of the way,\n"
-              + "each stump dark with weathering. The ground is littered with\n"
-              + "slate chips and fine dust.\n";
+    long_desc = "A long row of broken pillars lines the north side of the way, each stump dark with weathering. The ground is littered with slate chips and fine dust.";
     dest_dir = ({
         "domain/original/area/vesla/room742", "south",
         "domain/original/area/vesla/room192", "west",

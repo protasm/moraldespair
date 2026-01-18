@@ -7,9 +7,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Dust Court";
-  long_desc = "Dust drifts along the open court, pooling against slumped walls and\n"
-    "empty doorways. The stones are worn smooth in a broad path, the\n"
-    "track of forgotten patrols.\n";
+  long_desc = "Dust drifts along the open court, pooling against slumped walls and empty doorways. The stones are worn smooth in a broad path, the track of forgotten patrols.";
   dest_dir = ({
     "domain/original/area/vesla/room756", "south",
     "domain/original/area/vesla/room765", "northeast",

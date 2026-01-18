@@ -7,9 +7,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Stone Trough";
-  long_desc = "A shallow trough sits in a drained corner, its stones green with\n"
-    "mildew and grit. Cracked channels run toward a blocked grate,\n"
-    "suggesting long-abandoned care for animals.\n";
+  long_desc = "A shallow trough sits in a drained corner, its stones green with mildew and grit. Cracked channels run toward a blocked grate, suggesting long-abandoned care for animals.";
   dest_dir = ({
     "domain/original/area/vesla/room778", "southeast",
     "domain/original/area/vesla/room777", "south",

@@ -7,9 +7,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Blind Cut";
-  long_desc = "This tight passage ends in rubble, its floor sunk with dust and\n"
-    "mortar. A bricked arch and iron pins suggest a once-used service\n"
-    "door.\n";
+  long_desc = "This tight passage ends in rubble, its floor sunk with dust and mortar. A bricked arch and iron pins suggest a once-used service door.";
   dest_dir = ({
     "domain/original/area/vesla/room814", "south",
     "domain/original/area/vesla/room795", "west",
