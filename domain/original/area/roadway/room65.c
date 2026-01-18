@@ -10,9 +10,7 @@ void reset(int arg) {
   short_desc = "Walking on a roadway";
   long_desc = "Walking on a roadway.\n";
   dest_dir = ({
-    "domain/original/area/roadway/room54", "north",
-    "domain/original/area/roadway/room69", "south",
+    "domain/original/area/roadway/room64", "south",
+    "domain/original/area/roadway/room66", "north",
   });
 }
-
-
