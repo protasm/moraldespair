@@ -6,4 +6,5 @@ obj/monster
 obj/treasure
 obj/weapon
 obj/armour
+daemon/wilderness_d
 domain/original/area/vesla/sanctuary.c

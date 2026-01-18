@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "<> Aladrin escapes reality and falls into Moral Decay. <>";
-    long_desc = "<> Aladrin escapes reality and falls into Moral Decay. <>\n";
+    long_desc = "<> Aladrin escapes reality and falls into Moral Decay. <>";
     dest_dir = ({
         "domain/original/area/vesla/room874", "down",
         "domain/original/area/vesla/room871", "up",

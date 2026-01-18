@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Faded Corridor";
-    long_desc = "A shallow slope of debris leads down into a widened passage. Fire-blackened\npatches run along the base of the walls.\n";
+    long_desc = "A shallow slope of debris leads down into a widened passage. Fire-blackened patches run along the base of the walls.";
     dest_dir = ({
         "domain/original/area/candera/room112", "east",
         "domain/original/area/candera/room1129", "up",

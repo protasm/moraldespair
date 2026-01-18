@@ -1,15 +1,18 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Entrance to Candera";
-    long_desc = "Entrance to Candera.\n";
-    dest_dir = ({
-        "domain/original/area/roadway/room2", "east",
-	"domain/original/area/candera/room1", "city",
-    });
+  short_desc = "Walking on a roadway";
+  long_desc = "Walking on a roadway.\n";
+  dest_dir = ({
+    "domain/original/area/candera/entrance", "west",
+    "domain/original/area/roadway/room2", "east",
+    "room/wilderness_room#L27", "north",
+    "room/wilderness_room#L29", "south",
+  });
 }

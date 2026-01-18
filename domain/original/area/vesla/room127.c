@@ -8,9 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Old City Gate";
-  long_desc = "A battered gateway stands between worn walls, its lintel cracked and sagging.\n"
-              + "Dust gathers in the deep grooves of the threshold, and no sound follows the\n"
-              + "road beyond.\n";
+  long_desc = "A battered gateway stands between worn walls, its lintel cracked and sagging. Dust gathers in the deep grooves of the threshold, and no sound follows the road beyond.";
   dest_dir = ({
     "domain/original/area/vesla/room128", "west",
     "domain/original/area/vesla/room126", "east",

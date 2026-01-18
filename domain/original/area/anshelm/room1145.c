@@ -1,15 +1,18 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Gatehouse Barracks";
-    long_desc = "Gatehouse Barracks.\n";
-    dest_dir = ({
-        "domain/original/area/anshelm/room1146", "east",
-        "domain/original/area/anshelm/room1144", "west",
-    });
+  short_desc = "Barracks";
+  long_desc =
+    "Low bunks have collapsed into heaps of wood and straw. The air carries a trace\n"
+    "of old straw and dust.\n";
+  dest_dir = ({
+    "domain/original/area/anshelm/room1146", "east",
+    "domain/original/area/anshelm/room1144", "west",
+  });
 }

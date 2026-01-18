@@ -7,9 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Hushed Cots";
-    long_desc = "Low bed frames run along the sides, stripped to bare ribs and powdery\n"
-                + "with dust. The ceiling sags, and the stale air holds the hint of old\n"
-                + "bedding.\n";
+    long_desc = "Low bed frames run along the sides, stripped to bare ribs and powdery with dust. The ceiling sags, and the stale air holds the hint of old bedding.";
     dest_dir = ({
         "domain/original/area/vesla/room748", "east",
     });

@@ -7,10 +7,8 @@ void reset(int arg) {
 
   set_light(1);
 
-  short_desc = "Rapier Way";
-  long_desc = "Rapier Way begins between tight stone walls, its paving set in narrow strips.\n"
-              + "The stones are chipped and uneven, and dark dust has gathered deep in the\n"
-              + "seams.\n";
+  short_desc = "Weathered Path";
+  long_desc = "The way is reduced to uneven slabs, their edges rounded and split by long neglect. Silt and mildew pool in the seams, and the path fades into quiet stonework to either side.";
   dest_dir = ({
     "domain/original/area/vesla/room194", "east",
     "domain/original/area/vesla/room137", "west",

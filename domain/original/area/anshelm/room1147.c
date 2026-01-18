@@ -1,16 +1,19 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Beitel Straad at the Promenade";
-    long_desc = "Beitel Straad at the Promenade.\n";
-    dest_dir = ({
-        "domain/original/area/anshelm/room1150", "west",
-        "domain/original/area/anshelm/room414", "east",
-        "domain/original/area/anshelm/room1169", "north",
-    });
+  short_desc = "Promenade";
+  long_desc =
+    "A broad walk runs along the inner wall, its stone railing cracked and low.\n"
+    "Ornate ironwork curves still cling to a few posts.\n";
+  dest_dir = ({
+    "domain/original/area/anshelm/room1150", "west",
+    "domain/original/area/anshelm/room414", "east",
+    "domain/original/area/anshelm/room1169", "north",
+  });
 }

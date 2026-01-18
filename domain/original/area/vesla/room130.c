@@ -8,8 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Westroad Silence";
-  long_desc = "The road narrows into a quiet channel of stone and dust. A collapsed lintel\n"
-              + "lies across one wall, and the space beyond it is dark and empty.\n";
+  long_desc = "The road narrows into a quiet channel of stone and dust. A collapsed lintel lies across one wall, and the space beyond it is dark and empty.";
   dest_dir = ({
     "domain/original/area/vesla/room131", "west",
     "domain/original/area/vesla/room129", "east",

@@ -8,6 +8,9 @@
 /* An array with destinations and directions: "room/church", "north" ... */
 string *dest_dir;
 
+/* Exit aliases: "c":"city" */
+mapping exit_aliases;
+
 /* Short description of the room */
 string short_desc;
 
@@ -27,25 +30,42 @@ string convert_number(int n);
 string *query_numbers();
 
 void init() {
-    int i;
-    if (!dest_dir)
-        return;
-    i = 1;
-    while (i < sizeof(dest_dir)) {
-        add_action("move", dest_dir[i]);
-        i += 2;
-    }
+  int i;
+  string *aliases;
+
+  if (!dest_dir)
+    return;
+  i = 1;
+  while (i < sizeof(dest_dir)) {
+    add_action("move", dest_dir[i]);
+    i += 2;
+  }
+
+  if (!exit_aliases) return;
+
+  aliases = m_indices(exit_aliases);
+  i = 0;
+
+  while (i < sizeof(aliases)) {
+    add_action("move_alias", aliases[i]);
+
+    i += 1;
+  }
 }
 
 int id(string str) {
     int i;
+
     if (!items)
         return 0;
+
     while (i < sizeof(items)) {
         if (items[i] == str)
             return 1;
-        i += 2;
+
+  i += 2;
     }
+
     return 0;
 }
 
@@ -54,11 +74,13 @@ string exitsDescription(int brief) {
     string desc;
 
     if (brief) {
-        if (!dest_dir)
-            return "(Exits: none)";
-        i = 1;
-        desc = "(Exits:";
-        while (i < sizeof(dest_dir)) {
+      if (!dest_dir)
+          return "(Exits: none)";
+
+  i = 1;
+      desc = "(Exits:";
+
+  while (i < sizeof(dest_dir)) {
             string short_dir;
 
             short_dir = (["north":"n",
@@ -67,53 +89,72 @@ string exitsDescription(int brief) {
                                "southeast":"se", "southwest":"sw", ])[dest_dir[i]];
             if (!short_dir)
                 short_dir = dest_dir[i];
-            desc += " " + short_dir;
+
+      desc += " " + short_dir;
             i += 2;
         }
-        return desc + ")";
+
+  return desc + ")";
     }
 
     if (!dest_dir)
         return "    No obvious exits.\n";
+
     i = 1;
+
     if (sizeof(dest_dir) == 2)
         desc = "    There is one obvious exit:";
     else
         desc = "    There are " + convert_number(sizeof(dest_dir) / 2) +
                " obvious exits:";
+
     while (i < sizeof(dest_dir)) {
         desc += " " + dest_dir[i];
         i += 2;
-        if (i == sizeof(dest_dir) - 1)
+
+  if (i == sizeof(dest_dir) - 1)
             desc += " and";
         else if (i < sizeof(dest_dir))
             desc += ",";
     }
+
     return desc + "\n";
 }
 
 void long(string str) {
-    int i;
-    if (set_light(0) == 0) {
-        write("It is dark.\n");
-        return;
-    }
-    if (!str) {
-        write(long_desc);
+  string ruler;
+  int i;
 
-        write(exitsDescription(0));
-        return;
+  if (set_light(0) == 0) {
+    write("It is dark.\n");
+
+    return;
+  }
+
+  ruler = "---------+---------+---------+---------+---------+---------+---------+---------+";
+
+  if (!str) {
+    write(ruler);
+    write("\n" + long_desc);
+    write("\n\n" + exitsDescription(0));
+
+    return;
+  }
+
+  if (!items)
+    return;
+
+  i = 0;
+
+  while (i < sizeof(items)) {
+    if (items[i] == str) {
+      write(items[i + 1] + ".\n");
+
+      return;
     }
-    if (!items)
-        return;
-    i = 0;
-    while (i < sizeof(items)) {
-        if (items[i] == str) {
-            write(items[i + 1] + ".\n");
-            return;
-        }
-        i += 2;
-    }
+
+    i += 2;
+  }
 }
 
 /*
@@ -123,17 +164,23 @@ void long(string str) {
  */
 mixed query_property(string str) {
     int i;
+
     if (str == 0)
         return property;
+
     if (!property)
         return 0;
+
     if (stringp(property))
         return str == property;
+
     while (i < sizeof(property)) {
         if (property[i] == str)
             return 1;
-        i += 1;
+
+  i += 1;
     }
+
     return 0;
 }
 
@@ -141,25 +188,57 @@ int move(string str) {
     int i;
 
     i = 1;
+
     while (i < sizeof(dest_dir)) {
         if (query_verb() == dest_dir[i]) {
             this_player()->move_player(dest_dir[i] + "#" + dest_dir[i - 1]);
-            return 1;
+
+      return 1;
         }
-        i += 2;
+
+  i += 2;
     }
+
     return 1;
 }
 
-string short() {
-    if (set_light(0))
-        return short_desc + "\n" + exitsDescription(1);
+int move_alias(string str) {
+  int i;
+  string canonical;
 
-    return "Dark room";
+  if (!exit_aliases)
+    return 0;
+
+  canonical = exit_aliases[query_verb()];
+
+  if (!canonical)
+    return 0;
+
+  i = 1;
+
+  while (i < sizeof(dest_dir)) {
+    if (dest_dir[i] == canonical) {
+      this_player()->move_player(dest_dir[i] + "#" + dest_dir[i - 1]);
+
+      return 1;
+    }
+
+    i += 2;
+  }
+
+  return 1;
+}
+
+string short() {
+  if (set_light(0))
+    return short_desc + "\n" + exitsDescription(1);
+
+  return "Dark room";
 }
 
 void set_short(string str) {
   short_desc = str;
+
   return;
 }
 
@@ -169,12 +248,21 @@ void set_long(string str) {
   return;
 }
 
+void add_exit_alias(string alias, string canonical) {
+  if (!exit_aliases)
+    exit_aliases = ([]);
+
+  exit_aliases[alias] = canonical;
+
+  return;
+}
+
 string *query_dest_dir() {
-    return dest_dir;
+  return dest_dir;
 }
 
 string query_long() {
-    return long_desc;
+  return long_desc;
 }
 
 /*
@@ -184,24 +272,27 @@ string query_long() {
 string *numbers;
 
 string convert_number(int n) {
-    if (!pointerp(numbers))
-        numbers = query_numbers();
-    if (n > 9)
-        return "lot of";
-    return numbers[n];
+  if (!pointerp(numbers))
+      numbers = query_numbers();
+
+  if (n > 9)
+      return "lot of";
+
+  return numbers[n];
 }
 
 string *query_numbers() {
-    if (!numbers) {
-        if (object_name(this_object()) == "room/room")
-            numbers = ({"no", "one", "two", "three", "four", "five", "six",
+  if (!numbers) {
+      if (object_name(this_object()) == "room/room")
+          numbers = ({"no", "one", "two", "three", "four", "five", "six",
                         "seven", "eight", "nine"});
-        else
-            numbers = "room/room"->query_numbers();
-    }
-    return numbers;
+      else
+          numbers = "room/room"->query_numbers();
+  }
+
+  return numbers;
 }
 
 int query_drop_castle() {
-    return no_castle_flag;
+  return no_castle_flag;
 }

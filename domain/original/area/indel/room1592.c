@@ -6,7 +6,7 @@ void reset(int arg) {
 
     set_light(1);
     short_desc = "Cold Narrow Way";
-    long_desc = "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Blackened streaks and gouges run along the masonry, breaking any clean line.\n\nThe way runs on in a narrow line, hemmed by broken walls. Thin lichen mats the shaded edges, and the air tastes of wet dust.\n";
+    long_desc = "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.";
     dest_dir = ({
         "domain/original/area/indel/room1593", "east",
         "domain/original/area/indel/room1591", "west",

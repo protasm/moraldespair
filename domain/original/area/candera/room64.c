@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Broken Passage";
-    long_desc = "A long strip of stonework drifts under dunes, only a spine still visible. Fire-\nblackened patches run along the base of the walls.\n";
+    long_desc = "A long strip of stonework drifts under dunes, only a spine still visible. Fire- blackened patches run along the base of the walls.";
     dest_dir = ({
         "domain/original/area/candera/room63", "north",
         "domain/original/area/candera/room65", "south",

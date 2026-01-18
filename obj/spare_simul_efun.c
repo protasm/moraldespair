@@ -795,30 +795,38 @@ object query_snoop(object ob)
 #define CAT_MAX_LINES 50
 varargs int cat(string file, int start, int num)
 {
+  int more;
+  string txt;
+
+  if (extern_call()) {
     set_this_object(previous_object());
-    int more;
+  }
 
-    if (num < 0 || !this_player())
-        return 0;
+  if (num < 0 || !this_player()) {
+    return 0;
+  }
 
-    if (!start)
-        start = 1;
+  if (!start) {
+    start = 1;
+  }
 
-    if (!num || num > CAT_MAX_LINES) {
-        num = CAT_MAX_LINES;
-        more = sizeof(read_file(file, start+num, 1));
-    }
+  if (!num || num > CAT_MAX_LINES) {
+    num = CAT_MAX_LINES;
+    more = sizeof(read_file(file, start + num, 1));
+  }
 
-    string txt = read_file(file, start, num);
-    if (!txt)
-        return 0;
+  txt = read_file(file, start, num);
+  if (!txt) {
+    return 0;
+  }
 
-    tell_object(this_player(), txt);
+  tell_object(this_player(), txt);
 
-    if (more)
-        tell_object(this_player(), "*****TRUNCATED****\n");
+  if (more) {
+    tell_object(this_player(), "*****TRUNCATED****\n");
+  }
 
-    return sizeof(txt & "\n");
+  return sizeof(txt & "\n");
 }
 #endif
 

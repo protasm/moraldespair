@@ -8,9 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Fallen Choir";
-  long_desc = "A narrow nave ends at a cracked lectern, its wood softened by rot. Faded\n"
-              + "murals curl from the damp walls, and a line of benches sits in dust and\n"
-              + "mildew, facing a silence that never lifts.\n";
+  long_desc = "A narrow nave ends at a cracked lectern, its wood softened by rot. Faded murals curl from the damp walls, and a line of benches sits in dust and mildew, facing a silence that never lifts.";
   dest_dir = ({
     "domain/original/area/vesla/room820", "east",
   });

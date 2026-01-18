@@ -1,14 +1,15 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg) {
+    return;
+  }
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Railed entrance";
-    long_desc = "Railed entrance.\n";
-    dest_dir = ({
-        "domain/original/area/exedoria/room336", "south",
-    });
+  short_desc = "Railed Gate";
+  long_desc = "A short railing borders a narrow entry in the wall. The iron bars are bent and\nmottled with rust.\n";
+  dest_dir = ({
+    "domain/original/area/exedoria/room336", "south",
+  });
 }

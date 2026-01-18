@@ -16,14 +16,7 @@ void reset(int arg) {
 
     reboot_time = time();
     short_desc = "Sanctuary";
-    long_desc = "You stand within the high, vaulted shadows of the Sanctuary. Two\n" +
-                "centuries ago, this hall was a beacon of hope for die-hard\n" +
-                "adventurers, but now the air is cold and tastes of stagnant incense.\n" +
-                "The glory that once beckoned is long forgotten, replaced by a\n" +
-                "hollow silence that whispers of the great abyss: MORAL DESPAIR!\n\n" +
-                "You feel a STRONG urge to... you can't recall?\n\n" +
-                "A weathered sign clings to the damp stone wall.\n" +
-                "A massive clock hangs above, its pendulum frozen in time.\n";
+    long_desc = "You stand within the high, vaulted shadows of the Sanctuary. Two centuries ago, this hall was a beacon of hope for die-hard adventurers. Now, the air is cold and tastes of stagnant incense. The glory that once beckoned is long forgotten, replaced by a hollow silence that whispers of a great decay.";
     dest_dir = ({
         "domain/original/area/vesla/room228", "south",
         "domain/original/area/vesla/lounge", "up",
@@ -90,9 +83,10 @@ void long(string str) {
         return;
     }
 
-    write(long_desc + "\n");
-    write("There is a clock here.\n");
-    write("There are exits up, down, and south.\n");
+    write(long_desc);
+    write("\n\nYou feel a STRONG urge to... you can't recall?");
+    write("\n\nA massive clock looms overhead, its pendulum swinging in a long, lazy arc.");
+    write("\n\nThere are exits up, down, and south.\n");
 
     return;
 }
@@ -112,10 +106,4 @@ int prevent_look_at_inv(string str) {
 int query_drop_castle() {
     return 1;
 }
-
-
-
-
-
-
 

@@ -7,9 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Saddling Corner";
-    long_desc = "A narrow corner holds a low block and scarred posts, now slick with\n"
-                + "mold. The surrounding boards are split, and the air is stale with wet\n"
-                + "wood.\n";
+    long_desc = "A narrow corner holds a low block and scarred posts, now slick with mold. The surrounding boards are split, and the air is stale with wet wood.";
     dest_dir = ({
         "domain/original/area/vesla/room774", "north",
     });

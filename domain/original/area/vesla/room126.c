@@ -8,8 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Park's End";
-  long_desc = "The walk widens before crumbling walls that once framed a corner of the city.\n"
-              + "Loose stone and soil have spilled over the paving, and the air hangs still.\n";
+  long_desc = "The walk widens before crumbling walls that once framed a corner of the city. Loose stone and soil have spilled over the paving, and the air hangs still.";
   dest_dir = ({
     "domain/original/area/vesla/room880", "south",
     "domain/original/area/vesla/room127", "west",

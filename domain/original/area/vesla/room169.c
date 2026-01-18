@@ -1,15 +1,15 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg)
+    return;
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Northern Gate";
-    long_desc = "Northern Gate\n";
-    dest_dir = ({
-        "domain/original/area/vesla/room168", "south",
-        "domain/original/area/vesla/room753", "northeast",
-    });
+  short_desc = "Riven Arch";
+  long_desc = "A split stone arch leans over a scatter of fallen gate timbers and rusted iron. Deep grooves where a portcullis once slid are choked with mildew and windblown grit.";
+  dest_dir = ({
+    "domain/original/area/vesla/room168", "south",
+    "domain/original/area/vesla/room753", "northeast",
+  });
 }

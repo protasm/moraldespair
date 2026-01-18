@@ -1,15 +1,15 @@
 inherit "room/room";
 
 void reset(int arg) {
-    if (arg)
-        return;
+  if (arg)
+    return;
 
-    set_light(1);
+  set_light(1);
 
-    short_desc = "Wash area";
-    long_desc = "Wash area\n";
-    dest_dir = ({
-        "domain/original/area/vesla/room778", "southeast",
-        "domain/original/area/vesla/room777", "south",
-    });
+  short_desc = "Stone Trough";
+  long_desc = "A shallow trough sits in a drained corner, its stones green with mildew and grit. Cracked channels run toward a blocked grate, suggesting long-abandoned care for animals.";
+  dest_dir = ({
+    "domain/original/area/vesla/room778", "southeast",
+    "domain/original/area/vesla/room777", "south",
+  });
 }
