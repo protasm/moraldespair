@@ -14,6 +14,7 @@ string query_room_id();
 string query_terrain();
 void set_exits();
 void set_descriptions();
+int sort_dirs(string a, string b);
 
 void reset(int arg) {
   if (arg) {
@@ -104,7 +105,7 @@ void set_exits() {
     return;
   }
 
-  dirs = sort_array(dirs, #'strcmp);
+  dirs = sort_array(dirs, #'sort_dirs);
   dest_dir = ({});
 
   i = 0;
@@ -124,4 +125,24 @@ void set_exits() {
   }
 
   return;
+}
+
+int sort_dirs(string a, string b) {
+  if (a == b) {
+    return 0;
+  }
+
+  if (strstr(a, b) == 0) {
+    return 1;
+  }
+
+  if (strstr(b, a) == 0) {
+    return -1;
+  }
+
+  if (a < b) {
+    return -1;
+  }
+
+  return 1;
 }
