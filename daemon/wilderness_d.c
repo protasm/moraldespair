@@ -7,6 +7,7 @@
  */
 string map_json;
 mapping rooms_by_id;
+mapping terrain_by_code;
 int loaded, room_count;
 
 string read_wilderness_file(string file) {
@@ -52,6 +53,7 @@ void reset(int arg) {
 
 void reload_wilderness() {
   rooms_by_id = ([]);
+  terrain_by_code = ([]);
   loaded = 0;
   room_count = 0;
 
@@ -62,6 +64,7 @@ void reload_wilderness() {
 
 void load_wilderness() {
   mixed data, rooms;
+  mapping terrain;
   mapping room;
   string contents, room_id;
   int size, i;
@@ -99,6 +102,12 @@ void load_wilderness() {
     loaded = 1;
 
     return;
+  }
+
+  terrain = data["terrain"];
+
+  if (mappingp(terrain)) {
+    terrain_by_code = terrain;
   }
 
   rooms = data["rooms"];
@@ -176,6 +185,20 @@ string query_terrain(string room_id) {
   terrain = room["terrain"];
 
   if (!stringp(terrain)) return 0;
+
+  return terrain;
+}
+
+mapping query_terrain_info(string terrain_code) {
+  mapping terrain;
+
+  if (!stringp(terrain_code)) return 0;
+
+  if (!mappingp(terrain_by_code)) return 0;
+
+  terrain = terrain_by_code[terrain_code];
+
+  if (!mappingp(terrain)) return 0;
 
   return terrain;
 }

@@ -1,4 +1,50 @@
 {
+  "terrain": {
+    "lf": {
+      "short": "Light Forest",
+      "long": "Thin trunks rise with wide gaps between them. Dull light falls across dry needles and scattered brush."
+    },
+    "p": {
+      "short": "Open Plain",
+      "long": "A flat plain stretches out in every direction. Wind presses through short grass."
+    },
+    "f": {
+      "short": "Forest",
+      "long": "Trees gather close, their limbs tangled above the ground. The understory is thin and uneven."
+    },
+    "df": {
+      "short": "Deep Forest",
+      "long": "Dense growth closes in on all sides. The canopy blocks most of the light."
+    },
+    "w": {
+      "short": "Open Water",
+      "long": "Dark water spreads without clear edge. Low ripples drift across the surface."
+    },
+    "d": {
+      "short": "Desert",
+      "long": "Pale sand runs out in hard waves. The air hangs dry and still."
+    },
+    "h": {
+      "short": "Low Hills",
+      "long": "Low hills roll in soft, broken lines. Stone shows through thin soil."
+    },
+    "m": {
+      "short": "Marsh",
+      "long": "Wet ground shifts beneath a cover of reeds. Shallow pools gleam between mud and grass."
+    },
+    "s": {
+      "short": "Swamp",
+      "long": "Dark water sits between heavy growth. Rotting trunks lean over the still surface."
+    },
+    "b": {
+      "short": "Barrens",
+      "long": "Bare earth stretches out with little sign of growth. Scattered stones lie exposed to the wind."
+    },
+    "default": {
+      "short": "Wilderness",
+      "long": "The land here is quiet and open. No clear paths remain."
+    }
+  },
   "rooms": [
     {
       "id": "A3", "terrain": "p",

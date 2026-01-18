@@ -44,64 +44,34 @@ string query_terrain() {
 }
 
 void set_descriptions() {
+  mapping terrain_info;
+  string short_name, long_name;
+
   if (!room_id) return;
 
   terrain = WILDERNESS_D->query_terrain(room_id);
 
-  switch (terrain) {
-    case "lf":
-      short_desc = "Light Forest";
-      long_desc = "Thin trunks rise with wide gaps between them. Dull light falls"
-        + " across dry needles and scattered brush.";
-      break;
-    case "p":
-      short_desc = "Open Plain";
-      long_desc = "A flat plain stretches out in every direction. Wind presses"
-        + " through short grass.";
-      break;
-    case "f":
-      short_desc = "Forest";
-      long_desc = "Trees gather close, their limbs tangled above the ground."
-        + " The understory is thin and uneven.";
-      break;
-    case "df":
-      short_desc = "Deep Forest";
-      long_desc = "Dense growth closes in on all sides. The canopy blocks most"
-        + " of the light.";
-      break;
-    case "w":
-      short_desc = "Open Water";
-      long_desc = "Dark water spreads without clear edge. Low ripples drift"
-        + " across the surface.";
-      break;
-    case "d":
-      short_desc = "Desert";
-      long_desc = "Pale sand runs out in hard waves. The air hangs dry and still.";
-      break;
-    case "h":
-      short_desc = "Low Hills";
-      long_desc = "Low hills roll in soft, broken lines. Stone shows through"
-        + " thin soil.";
-      break;
-    case "m":
-      short_desc = "Marsh";
-      long_desc = "Wet ground shifts beneath a cover of reeds. Shallow pools"
-        + " gleam between mud and grass.";
-      break;
-    case "s":
-      short_desc = "Swamp";
-      long_desc = "Dark water sits between heavy growth. Rotting trunks lean"
-        + " over the still surface.";
-      break;
-    case "b":
-      short_desc = "Barrens";
-      long_desc = "Bare earth stretches out with little sign of growth. Scattered"
-        + " stones lie exposed to the wind.";
-      break;
-    default:
-      short_desc = "Wilderness";
-      long_desc = "The land here is quiet and open. No clear paths remain.";
-      break;
+  terrain_info = WILDERNESS_D->query_terrain_info(terrain);
+
+  if (!mappingp(terrain_info)) {
+    terrain_info = WILDERNESS_D->query_terrain_info("default");
+  }
+
+  if (mappingp(terrain_info)) {
+    short_name = terrain_info["short"];
+    long_name = terrain_info["long"];
+  }
+
+  if (stringp(short_name)) {
+    short_desc = short_name;
+  } else {
+    short_desc = "Wilderness";
+  }
+
+  if (stringp(long_name)) {
+    long_desc = long_name;
+  } else {
+    long_desc = "The land here is quiet and open. No clear paths remain.";
   }
 
   return;
