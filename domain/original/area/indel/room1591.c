@@ -6,10 +6,7 @@ void reset(int arg) {
 
     set_light(1);
     short_desc = "Stained Narrow Way";
-    long_desc = "Rubble and crushed mortar blanket the surface, slick in places with old damp.\n"
-                "Blackened streaks and gouges run along the masonry, breaking any clean line. The\n"
-                "way runs on in a narrow line, hemmed by broken walls left to weather. Thin\n"
-                "lichen mats the shaded edges, and the air tastes of wet dust.\n";
+    long_desc = "Rubble and crushed mortar blanket the surface, slick in places with old damp. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.";
     dest_dir = ({
         "domain/original/area/indel/room1592", "east",
         "domain/original/area/indel/room1542", "west",
