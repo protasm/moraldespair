@@ -12,5 +12,7 @@ void reset(int arg) {
   dest_dir = ({
     "domain/original/area/roadway/room58", "west",
     "domain/original/area/roadway/room60", "east",
+    "room/wilderness_room#AP27", "north",
+    "room/wilderness_room#AP29", "south",
   });
 }
