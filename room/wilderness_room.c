@@ -15,6 +15,9 @@ string query_terrain();
 void set_exits();
 void set_descriptions();
 int sort_dirs(string a, string b);
+int move(string str);
+int move_alias(string str);
+int move_direction(string direction);
 
 void reset(int arg) {
   if (arg) return;
@@ -150,6 +153,59 @@ void set_exits() {
   }
 
   return;
+}
+
+int move(string str) {
+  string direction;
+
+  direction = query_verb();
+
+  return move_direction(direction);
+}
+
+int move_alias(string str) {
+  string canonical;
+
+  if (!exit_aliases) return 0;
+
+  canonical = exit_aliases[query_verb()];
+
+  if (!canonical) return 0;
+
+  return move_direction(canonical);
+}
+
+int move_direction(string direction) {
+  int i;
+  string destination, target_id, target_terrain;
+
+  i = 1;
+
+  while (i < sizeof(dest_dir)) {
+    if (direction == dest_dir[i]) {
+      destination = dest_dir[i - 1];
+
+      if (terrain != "w") {
+        if (sscanf(destination, "room/wilderness_room#%s", target_id) == 1) {
+          target_terrain = WILDERNESS_D->query_terrain(target_id);
+
+          if (target_terrain == "w") {
+            write("There is a body of water there.\n");
+
+            return 1;
+          }
+        }
+      }
+
+      this_player()->move_player(dest_dir[i] + "#" + dest_dir[i - 1]);
+
+      return 1;
+    }
+
+    i += 2;
+  }
+
+  return 1;
 }
 
 int sort_dirs(string a, string b) {
