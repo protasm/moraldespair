@@ -16,7 +16,7 @@ void reset(int arg) {
 
     reboot_time = time();
     short_desc = "Sanctuary";
-    long_desc = "You stand within the high, vaulted shadows of the Sanctuary. Two centuries ago, this hall was a beacon of hope for die-hard adventurers. Now, the air is cold and tastes of stagnant incense. The glory that once beckoned is long forgotten, replaced by a hollow silence that whispers of a great decay. You feel a STRONG urge to... you can't recall? A massive clock hangs above, its pendulum swinging lazily.";
+    long_desc = "You stand within the high, vaulted shadows of the Sanctuary. Two centuries ago, this hall was a beacon of hope for die-hard adventurers. Now, the air is cold and tastes of stagnant incense. The glory that once beckoned is long forgotten, replaced by a hollow silence that whispers of a great decay.";
     dest_dir = ({
         "domain/original/area/vesla/room228", "south",
         "domain/original/area/vesla/lounge", "up",
@@ -84,6 +84,8 @@ void long(string str) {
     }
 
     write(long_desc);
+    write("\n\nYou feel a STRONG urge to... you can't recall?");
+    write("\n\nA massive clock looms overhead, its pendulum swinging in a long, lazy arc.");
     write("\n\nThere are exits up, down, and south.\n");
 
     return;

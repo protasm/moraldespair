@@ -136,7 +136,7 @@ void long(string str) {
   if (!str) {
     write(ruler);
     write("\n" + long_desc);
-    write("\n" + exitsDescription(0));
+    write("\n\n" + exitsDescription(0));
 
     return;
   }
