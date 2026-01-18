@@ -93,6 +93,9 @@ mapping query_room(string room_id) {
   if (!mappingp(rooms_by_id)) {
     rooms_by_id = ([]);
     loaded = 0;
+  }
+
+  if (!loaded) {
     load_wilderness();
   }
 
