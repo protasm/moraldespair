@@ -47,7 +47,7 @@ void load_wilderness() {
     return;
   }
 
-  contents = read_bytes(map_file, 0, size);
+  contents = read_file(map_file);
   if (!contents) {
     loaded = 1;
     return;
