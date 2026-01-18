@@ -14,9 +14,6 @@ void reset(int arg) {
     "the shadows of monumental structures loom over the cooling metal torches.\n";
 
   dest_dir = ({
-    "domain/original/area/island/room613", "north",
-    "domain/original/area/island/room674", "east",
     "domain/original/area/island/room611", "south",
-    "domain/original/area/island/room642", "west",
   });
 }
