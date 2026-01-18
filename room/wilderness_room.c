@@ -45,29 +45,24 @@ void set_descriptions() {
 
   terrain = WILDERNESS_D->query_terrain(room_id);
 
-  if (terrain == "p") {
-    short_desc = "Open Plain";
-    long_desc = "A flat plain stretches out in every direction. Wind presses through short grass.";
-
-    return;
+  switch (terrain) {
+    case "p":
+      short_desc = "Open Plain";
+      long_desc = "A flat plain stretches out in every direction. Wind presses through short grass.";
+      break;
+    case "f":
+      short_desc = "Thin Forest";
+      long_desc = "Sparse trees stand in uneven clusters. The ground is shaded and quiet.";
+      break;
+    case "h":
+      short_desc = "Low Hills";
+      long_desc = "Low hills roll in soft, broken lines. Stone shows through thin soil.";
+      break;
+    default:
+      short_desc = "Wilderness";
+      long_desc = "The land here is quiet and open. No clear paths remain.";
+      break;
   }
-
-  if (terrain == "f") {
-    short_desc = "Thin Forest";
-    long_desc = "Sparse trees stand in uneven clusters. The ground is shaded and quiet.";
-
-    return;
-  }
-
-  if (terrain == "h") {
-    short_desc = "Low Hills";
-    long_desc = "Low hills roll in soft, broken lines. Stone shows through thin soil.";
-
-    return;
-  }
-
-  short_desc = "Wilderness";
-  long_desc = "The land here is quiet and open. No clear paths remain.";
 
   return;
 }
