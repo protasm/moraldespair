@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Sunken Span";
-    long_desc = "A gap between toppled arches forms a narrow throat in the route. Soot stains\ncling to the stone, and the air tastes of old smoke.\n";
+    long_desc = "A gap between toppled arches forms a narrow throat in the route. Soot stains cling to the stone, and the air tastes of old smoke.";
     dest_dir = ({
         "domain/original/area/candera/room112", "north",
         "domain/original/area/candera/room110", "south",

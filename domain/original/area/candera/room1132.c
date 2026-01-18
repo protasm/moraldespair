@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Sand-Choked Lane";
-    long_desc = "A wide run of cracked stone stretches north and south, its center scoured to\ndust. Soot stains cling to the stone, and the air tastes of old smoke.\n\nNo footprints remain; only layered grit records the years.\n";
+    long_desc = "A wide run of cracked stone stretches north and south, its center scoured to dust. Soot stains cling to the stone, and the air tastes of old smoke. No footprints remain; only layered grit records the years.";
     dest_dir = ({
         "domain/original/area/candera/room92", "down",
     });
