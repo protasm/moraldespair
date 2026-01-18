@@ -6,6 +6,8 @@
  */
 string room_id;
 
+void set_room_id(string id);
+
 void create() {
   string name;
   string id;
