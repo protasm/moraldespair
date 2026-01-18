@@ -14,14 +14,8 @@ void reset(int arg) {
     "domain/original/area/roadway/room43", "south",
     "domain/original/area/roadway/room13", "west",
     "domain/original/area/roadway/room16", "east",
-    "room/wilderness_room#X27", "northwest",
     "domain/original/area/vesla/room115", "city",
   });
 
   add_exit_alias("c", "city");
 }
-
-
-
-
-
