@@ -31,6 +31,10 @@ void reset(int arg) {
 void set_room_id(string id) {
   room_id = id;
 
+  if (stringp(room_id)) {
+    WILDERNESS_D->debug_log("set_room_id: " + room_id);
+  }
+
   set_descriptions();
 
   return;
@@ -102,6 +106,7 @@ void set_exits() {
 
   if (!pointerp(dirs)) {
     dest_dir = ({});
+    WILDERNESS_D->debug_log("no exits for room: " + room_id);
     return;
   }
 
@@ -116,6 +121,8 @@ void set_exits() {
         resolved = "room/wilderness_room#" + destination;
       } else {
         resolved = destination;
+        WILDERNESS_D->debug_log("exit points outside wilderness: "
+          + room_id + " -> " + destination);
       }
 
       dest_dir += ({ resolved, dirs[i] });
