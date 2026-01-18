@@ -28,6 +28,10 @@ void load_wilderness() {
   string room_id;
   int i;
 
+  if (!mappingp(rooms_by_id)) {
+    rooms_by_id = ([]);
+  }
+
   if (loaded) {
     return;
   }
@@ -73,6 +77,12 @@ mapping query_room(string room_id) {
 
   if (!room_id) {
     return 0;
+  }
+
+  if (!mappingp(rooms_by_id)) {
+    rooms_by_id = ([]);
+    loaded = 0;
+    load_wilderness();
   }
 
   room = rooms_by_id[room_id];
