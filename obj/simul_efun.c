@@ -29,6 +29,133 @@ mapping living_name_m, name_living_m;
    */
 
 //---------------------------------------------------------------------------
+string wrap_player_text(string text)
+{
+    string *lines, *wrapped_lines;
+    string line, prefix, content, word, current;
+    int i, lead, max_len, room;
+
+    max_len = 80;
+    if (!stringp(text)) {
+        return text;
+    }
+    if (strstr(text, "\n") == -1 && sizeof(text) <= max_len) {
+        return text;
+    }
+
+    lines = explode(text, "\n");
+    wrapped_lines = ({});
+
+    for (i = 0; i < sizeof(lines); i++) {
+        line = lines[i];
+        if (sizeof(line) <= max_len) {
+            wrapped_lines += ({ line });
+            continue;
+        }
+        if (line == "") {
+            wrapped_lines += ({ "" });
+            continue;
+        }
+
+        lead = 0;
+        while (lead < sizeof(line) && line[lead] == ' ') {
+            lead += 1;
+        }
+
+        if (lead > 0) {
+            prefix = line[0..lead - 1];
+            content = line[lead..];
+        } else {
+            prefix = "";
+            content = line;
+        }
+
+        current = prefix;
+        foreach (word : explode(content, " ")) {
+            if (word == "") {
+                continue;
+            }
+
+            if (current == prefix) {
+                if (sizeof(prefix) + sizeof(word) > max_len) {
+                    room = max_len - sizeof(prefix) - 1;
+                    while (sizeof(word) > room && room > 0) {
+                        wrapped_lines += ({ prefix + word[0..room - 1] + "-" });
+                        word = word[room..];
+                    }
+                    current = prefix + word;
+                    continue;
+                }
+                current = prefix + word;
+                continue;
+            }
+
+            if (sizeof(current) + 1 + sizeof(word) > max_len) {
+                wrapped_lines += ({ current });
+                current = prefix + word;
+                continue;
+            }
+
+            current += " " + word;
+        }
+
+        wrapped_lines += ({ current });
+    }
+
+    return implode(wrapped_lines, "\n");
+}
+
+//---------------------------------------------------------------------------
+varargs void write(mixed msg)
+{
+    if (stringp(msg) && this_player() && interactive(this_player())) {
+        msg = wrap_player_text(msg);
+    }
+
+    efun::write(msg);
+}
+
+//---------------------------------------------------------------------------
+varargs void tell_object(object ob, mixed msg)
+{
+    if (stringp(msg) && ob && interactive(ob)) {
+        msg = wrap_player_text(msg);
+    }
+
+    efun::tell_object(ob, msg);
+}
+
+//---------------------------------------------------------------------------
+varargs void tell_room(object room, mixed msg, mixed exclude)
+{
+    if (stringp(msg)) {
+        msg = wrap_player_text(msg);
+    }
+
+    efun::tell_room(room, msg, exclude);
+}
+
+//---------------------------------------------------------------------------
+varargs void say(mixed msg, mixed exclude)
+{
+    if (stringp(msg)) {
+        msg = wrap_player_text(msg);
+    }
+
+    efun::say(msg, exclude);
+}
+
+//---------------------------------------------------------------------------
+varargs void message(string class, mixed msg, mixed targets, mixed exclude)
+{
+    if (stringp(msg)) {
+        msg = wrap_player_text(msg);
+    }
+
+    efun::message(class, msg, targets, exclude);
+}
+
+//---------------------------------------------------------------------------
 void start_simul_efun()
 
 /* Activate the simul-efun object.
