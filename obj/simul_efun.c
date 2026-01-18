@@ -123,6 +123,7 @@ void write(mixed msg)
   string text;
 
   text = to_string(msg);
+
   efun::write(break_lines(text));
 }
 

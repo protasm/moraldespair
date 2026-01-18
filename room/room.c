@@ -122,8 +122,8 @@ string exitsDescription(int brief) {
 }
 
 void long(string str) {
-  int i;
   string ruler;
+  int i;
 
   if (set_light(0) == 0) {
     write("It is dark.\n");
@@ -131,12 +131,12 @@ void long(string str) {
     return;
   }
 
-  if (!str) {
-    ruler = "---------+---------+---------+---------+---------+---------+---------+---------+";
+  ruler = "---------+---------+---------+---------+---------+---------+---------+---------+";
 
-    write(ruler + "\n");
-    write(long_desc + "\n");
-    write(exitsDescription(0));
+  if (!str) {
+    write(ruler);
+    write("\n" + long_desc);
+    write("\n" + exitsDescription(0));
 
     return;
   }
