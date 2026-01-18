@@ -7,8 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Bare Bunks";
-    long_desc = "The room is divided by low rails where thin beds once rested in rows.\n"
-                + "Mildew and rot soften the timbers, and the air lies flat and stale.\n";
+    long_desc = "The room is divided by low rails where thin beds once rested in rows. Mildew and rot soften the timbers, and the air lies flat and stale.";
     dest_dir = ({
         "domain/original/area/vesla/room751", "west",
         "domain/original/area/vesla/room741", "down",

@@ -8,9 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Ruined Gate";
-  long_desc = "A broken stone arch leans over the road, its timbers split and sagging.\n"
-              + "Crumbled masonry seals the passage, and old iron fittings lie rusted in the\n"
-              + "weeds.\n";
+  long_desc = "A broken stone arch leans over the road, its timbers split and sagging. Crumbled masonry seals the passage, and old iron fittings lie rusted in the weeds.";
   dest_dir = ({
     "domain/original/area/vesla/room116", "west",
     "domain/original/area/vesla/entrance", "exit",

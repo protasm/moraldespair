@@ -8,8 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Sour Shed";
-  long_desc = "The shed reeks of damp earth and rot, with sacks collapsed into dark pulp. A\n"
-              + "battered scoop and stained planks hint at soil and dung once bartered here.\n";
+  long_desc = "The shed reeks of damp earth and rot, with sacks collapsed into dark pulp. A battered scoop and stained planks hint at soil and dung once bartered here.";
   dest_dir = ({
     "domain/original/area/vesla/room802", "north",
   });

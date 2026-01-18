@@ -7,9 +7,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Bitter Parlor";
-  long_desc = "A small parlor sits empty, its counters broken and its shelves\n"
-    "collapsed into dusty piles. A darkened hearth and stained ledges\n"
-    "suggest warm cups and quiet trade now gone cold.\n";
+  long_desc = "A small parlor sits empty, its counters broken and its shelves collapsed into dusty piles. A darkened hearth and stained ledges suggest warm cups and quiet trade now gone cold.";
   dest_dir = ({
     "domain/original/area/vesla/room157", "east",
   });

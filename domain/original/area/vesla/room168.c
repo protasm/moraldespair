@@ -6,8 +6,7 @@ void reset(int arg) {
 
     set_light(1);
     short_desc = "Main Wall Crossing";
-    long_desc = "The crossing is wide and empty, marked by worn paving and shallow ruts. A\n"
-              + "broken curb rings the corner where the streets meet.\n";
+    long_desc = "The crossing is wide and empty, marked by worn paving and shallow ruts. A broken curb rings the corner where the streets meet.";
     dest_dir = ({
         "domain/original/area/vesla/room167", "south",
         "domain/original/area/vesla/room793", "west",

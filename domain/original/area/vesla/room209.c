@@ -6,8 +6,7 @@ void reset(int arg) {
 
     set_light(1);
     short_desc = "East River Track";
-    long_desc = "A shallow rut marks the center line, worn deep before the silence. Small piles\n"
-              + "of gravel gather against the curb.\n";
+    long_desc = "A shallow rut marks the center line, worn deep before the silence. Small piles of gravel gather against the curb.";
     dest_dir = ({
         "domain/original/area/vesla/room208", "west",
         "domain/original/area/vesla/room210", "east",

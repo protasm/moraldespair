@@ -8,9 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Basalt Avenue";
-  long_desc = "Basalt Avenue runs between low facades, their lintels split and worn with age.\n"
-              + "Thin grass pushes through the cracks, and loose stones have slid into the\n"
-              + "road.\n";
+  long_desc = "Basalt Avenue runs between low facades, their lintels split and worn with age. Thin grass pushes through the cracks, and loose stones have slid into the road.";
   dest_dir = ({
     "domain/original/area/vesla/room142", "south",
     "domain/original/area/vesla/room140", "north",

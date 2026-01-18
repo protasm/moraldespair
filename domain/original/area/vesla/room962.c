@@ -7,8 +7,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Shuttered Front";
-  long_desc = "A warped counter blocks the entry, silent under dust and mildew. Bare shelves\n"
-              + "and a torn awning sit in rot, hinting at trade long faded.\n";
+  long_desc = "A warped counter blocks the entry, silent under dust and mildew. Bare shelves and a torn awning sit in rot, hinting at trade long faded.";
   dest_dir = ({
     "domain/original/area/vesla/room199", "west",
   });

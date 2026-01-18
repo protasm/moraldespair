@@ -8,9 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Counting Hall";
-  long_desc = "A long table runs beneath a broken lintel, its surface coated in dust and rot.\n"
-              + "Empty cubbies and warped ledgers hint at old records, now blurred by mildew\n"
-              + "and silence.\n";
+  long_desc = "A long table runs beneath a broken lintel, its surface coated in dust and rot. Empty cubbies and warped ledgers hint at old records, now blurred by mildew and silence.";
   dest_dir = ({
     "domain/original/area/vesla/room154", "west",
   });

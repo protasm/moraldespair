@@ -7,9 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Bare Plot";
-    long_desc = "A broad patch of bare earth interrupts the street, rimmed by broken\n"
-                + "foundations. Splintered posts and sunken stones hint at a lost structure\n"
-                + "beneath the weeds.\n";
+    long_desc = "A broad patch of bare earth interrupts the street, rimmed by broken foundations. Splintered posts and sunken stones hint at a lost structure beneath the weeds.";
     dest_dir = ({
         "domain/original/area/vesla/room192", "north",
     });

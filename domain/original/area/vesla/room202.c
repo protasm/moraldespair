@@ -8,10 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Silent Way";
-  long_desc =
-    "The paving narrows here, uneven and chipped, with damp dust clotted along\n"
-    "the edges. Empty brackets jut from the masonry overhead, their purpose lost\n"
-    "to the quiet.\n";
+  long_desc = "The paving narrows here, uneven and chipped, with damp dust clotted along the edges. Empty brackets jut from the masonry overhead, their purpose lost to the quiet.";
   dest_dir = ({
     "domain/original/area/vesla/room203", "west",
     "domain/original/area/vesla/room201", "east",

@@ -7,9 +7,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Stone Court";
-  long_desc = "Cold stone surrounds this open court, with mildew streaks and fallen\n"
-    "chips whitening the ground. A shallow channel in the paving runs\n"
-    "toward a broken drain, a remnant of tidy upkeep.\n";
+  long_desc = "Cold stone surrounds this open court, with mildew streaks and fallen chips whitening the ground. A shallow channel in the paving runs toward a broken drain, a remnant of tidy upkeep.";
   dest_dir = ({
     "domain/original/area/vesla/room758", "southeast",
     "domain/original/area/vesla/room757", "south",
