@@ -28,158 +28,157 @@ mapping living_name_m, name_living_m;
   /* Living -> Name and Name -> Living mappings.
    */
 
-//---------------------------------------------------------------------------
-string wrap_player_text(string text)
+string wrap_grammar_lines(string text)
 {
-    string *lines, *wrapped_lines;
-    string line, prefix, content, word, current;
-    int i, lead, max_len, room;
+  string *lines, *wrapped_lines;
+  string line, prefix, content, word, current;
+  int i, lead, max_len, room;
 
-    max_len = 80;
-    if (!stringp(text)) {
-        return text;
+  max_len = 80;
+  if (!stringp(text)) {
+    return text;
+  }
+  if (strstr(text, "\n") == -1 && sizeof(text) <= max_len) {
+    return text;
+  }
+
+  lines = explode(text, "\n");
+  wrapped_lines = ({});
+
+  for (i = 0; i < sizeof(lines); i++) {
+    line = lines[i];
+    if (sizeof(line) <= max_len) {
+      wrapped_lines += ({ line });
+      continue;
     }
-    if (strstr(text, "\n") == -1 && sizeof(text) <= max_len) {
-        return text;
+    if (line == "") {
+      wrapped_lines += ({ "" });
+      continue;
     }
 
-    lines = explode(text, "\n");
-    wrapped_lines = ({});
+    lead = 0;
+    while (lead < sizeof(line) && line[lead] == ' ') {
+      lead += 1;
+    }
 
-    for (i = 0; i < sizeof(lines); i++) {
-        line = lines[i];
-        if (sizeof(line) <= max_len) {
-            wrapped_lines += ({ line });
-            continue;
+    if (lead > 0) {
+      prefix = line[0..lead - 1];
+      content = line[lead..];
+    } else {
+      prefix = "";
+      content = line;
+    }
+
+    current = prefix;
+    foreach (word : explode(content, " ")) {
+      if (word == "") {
+        continue;
+      }
+
+      if (current == prefix) {
+        if (sizeof(prefix) + sizeof(word) > max_len) {
+          room = max_len - sizeof(prefix) - 1;
+          while (sizeof(word) > room && room > 0) {
+            wrapped_lines += ({ prefix + word[0..room - 1] + "-" });
+            word = word[room..];
+          }
+          current = prefix + word;
+          continue;
         }
-        if (line == "") {
-            wrapped_lines += ({ "" });
-            continue;
-        }
+        current = prefix + word;
+        continue;
+      }
 
-        lead = 0;
-        while (lead < sizeof(line) && line[lead] == ' ') {
-            lead += 1;
-        }
-
-        if (lead > 0) {
-            prefix = line[0..lead - 1];
-            content = line[lead..];
-        } else {
-            prefix = "";
-            content = line;
-        }
-
-        current = prefix;
-        foreach (word : explode(content, " ")) {
-            if (word == "") {
-                continue;
-            }
-
-            if (current == prefix) {
-                if (sizeof(prefix) + sizeof(word) > max_len) {
-                    room = max_len - sizeof(prefix) - 1;
-                    while (sizeof(word) > room && room > 0) {
-                        wrapped_lines += ({ prefix + word[0..room - 1] + "-" });
-                        word = word[room..];
-                    }
-                    current = prefix + word;
-                    continue;
-                }
-                current = prefix + word;
-                continue;
-            }
-
-            if (sizeof(current) + 1 + sizeof(word) > max_len) {
-                wrapped_lines += ({ current });
-                current = prefix + word;
-                continue;
-            }
-
-            current += " " + word;
-        }
-
+      if (sizeof(current) + 1 + sizeof(word) > max_len) {
         wrapped_lines += ({ current });
+        current = prefix + word;
+        continue;
+      }
+
+      current += " " + word;
     }
 
-    return implode(wrapped_lines, "\n");
+    wrapped_lines += ({ current });
+  }
+
+  return implode(wrapped_lines, "\n");
 }
 
 //---------------------------------------------------------------------------
 varargs void write(mixed msg)
 {
-    if (stringp(msg) && this_player() && interactive(this_player())) {
-        msg = wrap_player_text(msg);
-    }
+  if (stringp(msg) && this_player() && interactive(this_player())) {
+    msg = wrap_grammar_lines(msg);
+  }
 
-    efun::write(msg);
+  efun::write(msg);
 }
 
 //---------------------------------------------------------------------------
 varargs void tell_object(object ob, mixed msg)
 {
-    if (stringp(msg) && ob && interactive(ob)) {
-        msg = wrap_player_text(msg);
-    }
+  if (stringp(msg) && ob && interactive(ob)) {
+    msg = wrap_grammar_lines(msg);
+  }
 
-    efun::tell_object(ob, msg);
+  efun::tell_object(ob, msg);
 }
 
 //---------------------------------------------------------------------------
 varargs void tell_room(object room, mixed msg, mixed exclude)
 {
-    if (stringp(msg)) {
-        msg = wrap_player_text(msg);
-    }
+  if (stringp(msg)) {
+    msg = wrap_grammar_lines(msg);
+  }
 
-    efun::tell_room(room, msg, exclude);
+  efun::tell_room(room, msg, exclude);
 }
 
 //---------------------------------------------------------------------------
 varargs void say(mixed msg, mixed exclude)
 {
-    if (stringp(msg)) {
-        msg = wrap_player_text(msg);
-    }
+  if (stringp(msg)) {
+    msg = wrap_grammar_lines(msg);
+  }
 
-    efun::say(msg, exclude);
+  efun::say(msg, exclude);
 }
 
 //---------------------------------------------------------------------------
 varargs void message(string class, mixed msg, mixed targets, mixed exclude)
 {
-    mixed target;
-    int i;
+  mixed target;
+  int i;
 
-    if (stringp(msg)) {
-        msg = wrap_player_text(msg);
-    }
+  if (stringp(msg)) {
+    msg = wrap_grammar_lines(msg);
+  }
 
-    if (!targets) {
-        return;
-    }
+  if (!targets) {
+    return;
+  }
 
-    if (objectp(targets)) {
-        tell_object(targets, msg);
-        return;
-    }
+  if (objectp(targets)) {
+    tell_object(targets, msg);
+    return;
+  }
 
-    if (stringp(targets)) {
-        tell_room(targets, msg, exclude);
-        return;
-    }
+  if (stringp(targets)) {
+    tell_room(targets, msg, exclude);
+    return;
+  }
 
-    if (pointerp(targets)) {
-        for (i = 0; i < sizeof(targets); i++) {
-            target = targets[i];
-            if (objectp(target)) {
-                tell_object(target, msg);
-            } else if (stringp(target)) {
-                tell_room(target, msg, exclude);
-            }
-        }
-        return;
+  if (pointerp(targets)) {
+    for (i = 0; i < sizeof(targets); i++) {
+      target = targets[i];
+      if (objectp(target)) {
+        tell_object(target, msg);
+      } else if (stringp(target)) {
+        tell_room(target, msg, exclude);
+      }
     }
+    return;
+  }
 }
 
 //---------------------------------------------------------------------------
