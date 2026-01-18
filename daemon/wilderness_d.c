@@ -36,6 +36,10 @@ void load_wilderness() {
     return;
   }
 
+  if (!stringp(map_file)) {
+    map_file = "/domain/original/wilderness.json";
+  }
+
   contents = read_file(map_file);
   if (!contents) {
     loaded = 1;
