@@ -1,3 +1,4 @@
+#include <debug_message.h>
 #include "/daemon/wilderness_d.h"
 
 /*
@@ -5,125 +6,107 @@
  * This keeps virtual room lookups fast and predictable as the map grows
  * while leaving room for future overlay layers keyed by the same ids.
  */
-string map_file;
+string map_json;
 mapping rooms_by_id;
-int loaded;
-int debug_enabled;
-int room_count;
+int loaded, room_count;
 
-void create() {
-  map_file = "/domain/original/wilderness.json";
-  rooms_by_id = ([]);
-  loaded = 0;
-  debug_enabled = 1;
-  room_count = 0;
+void reset(int arg) {
+  if(arg) return;
+
+  map_json = "/domain/original/wilderness.json";
 
   /* Preloaded at startup so player movement never parses JSON. */
+  reload_wilderness();
+
+  return;
+}
+
+void reload_wilderness() {
+debug_message("Reloading wilderness...");
+  rooms_by_id = ([]);
+  loaded = 0;
+  room_count = 0;
+
   load_wilderness();
+debug_message("reloading wilderness complete\n.");
 
   return;
-}
-
-void set_debug(int enabled) {
-  if (enabled) {
-    debug_enabled = 1;
-  } else {
-    debug_enabled = 0;
-  }
-
-  debug_log("debug set to " + debug_enabled);
-
-  return;
-}
-
-int query_debug() {
-  return debug_enabled;
-}
-
-void debug_log(string message) {
-  string entry;
-
-  if (!debug_enabled) {
-    return;
-  }
-
-  if (!stringp(message)) {
-    return;
-  }
-
-  entry = ctime(time()) + " " + message + "\n";
-  log_file("wilderness", entry);
-
-  return;
-}
-
-mapping query_stats() {
-  mapping stats;
-
-  stats = ([]);
-  stats["map_file"] = map_file;
-  stats["loaded"] = loaded;
-  stats["rooms"] = room_count;
-  stats["debug"] = debug_enabled;
-
-  return stats;
 }
 
 void load_wilderness() {
-  mixed data;
-  mixed rooms;
+debug_message("Loading wilderness...");
+  mixed data, rooms;
   mapping room;
-  string contents;
-  string room_id;
-  int size;
-  int i;
+  string contents, room_id;
+  int size, i;
 
-  if (!mappingp(rooms_by_id)) {
+  if (!mappingp(rooms_by_id))
     rooms_by_id = ([]);
-  }
 
   if (loaded) {
+debug_message("already loaded!\n");
+
     return;
   }
 
-  if (!stringp(map_file)) {
-    map_file = "/domain/original/wilderness.json";
+  if (!stringp(map_json)) {
+    loaded = 1;
+
+debug_message("!stringp(map_json)!\n");
+
+    return;
   }
 
-  size = file_size(map_file);
+  size = file_size(map_json);
+
   if (size <= 0) {
-    debug_log("map file missing or empty: " + map_file);
     loaded = 1;
+
+debug_message("size <= 0!\n");
+
     return;
   }
 
-  contents = read_file(map_file);
+debug_message("reading: " + map_json);
+  contents = read_file(map_json);
+
   if (!contents) {
-    debug_log("map file unreadable: " + map_file);
     loaded = 1;
+
+debug_message("!contents!\n");
+
     return;
   }
 
   data = json_parse(contents);
+
   if (!mappingp(data)) {
-    debug_log("map file parse failed: " + map_file);
     loaded = 1;
+
+debug_message("!mappingp(data)!\n");
+
     return;
   }
 
   rooms = data["rooms"];
+
   if (!pointerp(rooms)) {
-    debug_log("map file missing rooms array: " + map_file);
     loaded = 1;
+
+debug_message("!pointerp(rooms)!\n");
+
     return;
   }
 
   /* Normalize room data for O(1) lookup and future overlay layers. */
   i = 0;
+
   while (i < sizeof(rooms)) {
     room = rooms[i];
+
     if (mappingp(room)) {
       room_id = room["id"];
+
       if (stringp(room_id)) {
         rooms_by_id[room_id] = room;
         room_count += 1;
@@ -133,18 +116,10 @@ void load_wilderness() {
     i += 1;
   }
 
-  debug_log("loaded wilderness rooms: " + room_count);
   loaded = 1;
-  return;
-}
 
-void reload_wilderness() {
-  rooms_by_id = ([]);
-  loaded = 0;
-  room_count = 0;
-
-  debug_log("reload requested");
-  load_wilderness();
+  debug_message("loading Wilderness complete.\n");
+  debug_message("Loaded " + room_count + " rooms.\n");
 
   return;
 }
@@ -152,41 +127,32 @@ void reload_wilderness() {
 mapping query_room(string room_id) {
   mapping room;
 
-  if (!room_id) {
-    return 0;
-  }
+  if (!room_id) return 0;
 
   if (!mappingp(rooms_by_id)) {
     rooms_by_id = ([]);
     loaded = 0;
   }
 
-  if (!loaded) {
-    load_wilderness();
-  }
+  if (!loaded) load_wilderness();
 
   room = rooms_by_id[room_id];
-  if (!mappingp(room)) {
-    debug_log("room id not found: " + room_id);
-    return 0;
-  }
+
+  if (!mappingp(room)) return 0;
 
   return room;
 }
 
 mapping query_exits(string room_id) {
-  mapping room;
-  mapping exits;
+  mapping room, exits;
 
   room = query_room(room_id);
-  if (!room) {
-    return ([]);
-  }
+
+  if (!room) return ([]);
 
   exits = room["exits"];
-  if (!mappingp(exits)) {
-    return ([]);
-  }
+
+  if (!mappingp(exits)) return ([]);
 
   return exits;
 }
@@ -196,26 +162,20 @@ string query_terrain(string room_id) {
   string terrain;
 
   room = query_room(room_id);
-  if (!room) {
-    return 0;
-  }
+
+  if (!room) return 0;
 
   terrain = room["terrain"];
-  if (!stringp(terrain)) {
-    return 0;
-  }
+
+  if (!stringp(terrain)) return 0;
 
   return terrain;
 }
 
 int room_exists(string room_id) {
-  if (!stringp(room_id)) {
-    return 0;
-  }
+  if (!stringp(room_id)) return 0;
 
-  if (mappingp(rooms_by_id[room_id])) {
-    return 1;
-  }
+  if (mappingp(rooms_by_id[room_id])) return 1;
 
   return 0;
 }
