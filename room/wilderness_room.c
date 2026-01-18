@@ -44,10 +44,13 @@ void init() {
   dirs = m_indices(exits);
 
   i = 0;
+
   while (i < sizeof(dirs)) {
     add_action("move", dirs[i]);
     i += 1;
   }
+
+  set_light(1);
 
   return;
 }
