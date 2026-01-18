@@ -14,6 +14,7 @@ string query_room_id();
 string query_terrain();
 void set_exits();
 void set_descriptions();
+void debug_player(string message);
 int sort_dirs(string a, string b);
 
 void reset(int arg) {
@@ -32,7 +33,7 @@ void set_room_id(string id) {
   room_id = id;
 
   if (stringp(room_id)) {
-    WILDERNESS_D->debug_log("set_room_id: " + room_id);
+    debug_player("set_room_id: " + room_id);
   }
 
   set_descriptions();
@@ -54,6 +55,7 @@ void set_descriptions() {
   }
 
   terrain = WILDERNESS_D->query_terrain(room_id);
+  debug_player("terrain: " + terrain);
 
   if (terrain == "p") {
     short_desc = "Open Plain";
@@ -106,7 +108,7 @@ void set_exits() {
 
   if (!pointerp(dirs)) {
     dest_dir = ({});
-    WILDERNESS_D->debug_log("no exits for room: " + room_id);
+    debug_player("no exits for room: " + room_id);
     return;
   }
 
@@ -121,7 +123,7 @@ void set_exits() {
         resolved = "room/wilderness_room#" + destination;
       } else {
         resolved = destination;
-        WILDERNESS_D->debug_log("exit points outside wilderness: "
+        debug_player("exit points outside wilderness: "
           + room_id + " -> " + destination);
       }
 
@@ -130,6 +132,23 @@ void set_exits() {
 
     i += 1;
   }
+
+  return;
+}
+
+void debug_player(string message) {
+  object player;
+
+  player = this_player();
+  if (!player) {
+    return;
+  }
+
+  if (!stringp(message)) {
+    return;
+  }
+
+  tell_object(player, "[wilderness debug] " + message + "\n");
 
   return;
 }
