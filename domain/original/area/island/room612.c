@@ -6,7 +6,7 @@ void reset(int arg) {
   }
 
   set_light(1);
-  short_desc = "Artisan Row";
+  short_desc = "Silver Street";
   long_desc = "The pale stones of the street remain eerily clear of debris, as if the\n" +
     "city itself refuses to decay. To the west, a massive, cold furnace marks\n" +
     "the remains of a foundry. The eastern storefront, once smelling of grain\n" +
