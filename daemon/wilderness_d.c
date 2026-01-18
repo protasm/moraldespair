@@ -15,7 +15,7 @@ void create() {
   map_file = "/domain/original/wilderness.json";
   rooms_by_id = ([]);
   loaded = 0;
-  debug_enabled = 0;
+  debug_enabled = 1;
   room_count = 0;
 
   /* Preloaded at startup so player movement never parses JSON. */
