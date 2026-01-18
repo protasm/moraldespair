@@ -7,7 +7,7 @@ void reset(int arg) {
     set_light(1);
 
     short_desc = "Bleached Bend";
-    long_desc = "Broken steps climb to a terrace of shattered stone, then fall away. Char marks\nstripe the walls, and fine ash mixes with grit underfoot.\n";
+    long_desc = "Broken steps climb to a terrace of shattered stone, then fall away. Char marks stripe the walls, and fine ash mixes with grit underfoot.";
     dest_dir = ({
         "domain/original/area/candera/room67", "north",
         "domain/original/area/candera/room69", "south",
