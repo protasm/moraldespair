@@ -10,6 +10,36 @@ string map_json;
 mapping rooms_by_id;
 int loaded, room_count;
 
+string read_wilderness_file(string file) {
+  string contents, chunk;
+  int line, line_count;
+
+  if (!stringp(file)) {
+    return 0;
+  }
+
+  contents = "";
+  line = 1;
+  line_count = 500;
+
+  while (1) {
+    chunk = read_file(file, line, line_count);
+
+    if (!chunk) {
+      break;
+    }
+
+    contents += chunk;
+    line += line_count;
+  }
+
+  if (contents == "") {
+    return 0;
+  }
+
+  return contents;
+}
+
 void reset(int arg) {
   if(arg) return;
 
@@ -68,7 +98,7 @@ debug_message("size <= 0!\n");
   }
 
 debug_message("reading: " + map_json);
-  contents = read_file(map_json);
+  contents = read_wilderness_file(map_json);
 
   if (!contents) {
     loaded = 1;
