@@ -13,7 +13,7 @@ void reset(int arg) {
               + "weeds.\n";
   dest_dir = ({
     "domain/original/area/vesla/room116", "west",
-    "domain/original/area/roadway/room14", "exit",
+    "domain/original/area/vesla/entrance", "exit",
   });
 
   add_exit_alias("x", "exit");

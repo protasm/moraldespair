@@ -7263,86 +7263,85 @@
     {
       "id": "K27", "terrain": "d",
       "exits": {
-        "north": "K26", "south": "K28", "west": "J27", "east": "L27"
+        "north": "K26", "west": "J27", "east": "L27"
       }
     },
     {
       "id": "L27", "terrain": "d",
       "exits": {
-        "north": "L26", "south": "L28", "west": "K27", "east": "M27"
+        "north": "L26", "south": "domain/original/area/roadway/room1", "west": "K27", "east": "M27"
       }
     },
     {
       "id": "M27", "terrain": "d",
       "exits": {
-        "north": "M26", "south": "M28", "west": "L27", "east": "N27"
+        "north": "M26", "south": "domain/original/area/roadway/room2", "west": "L27", "east": "N27"
       }
     },
     {
       "id": "N27", "terrain": "d",
       "exits": {
-        "north": "N26", "south": "N28", "west": "M27", "east": "O27"
+        "north": "N26", "south": "domain/original/area/roadway/room3", "west": "M27", "east": "O27"
       }
     },
     {
       "id": "O27", "terrain": "m",
       "exits": {
-        "north": "O26", "south": "O28", "west": "N27", "east": "P27"
+        "north": "O26", "south": "domain/original/area/roadway/room4", "west": "N27", "east": "P27"
       }
     },
     {
       "id": "P27", "terrain": "m",
       "exits": {
-        "north": "P26", "south": "P28", "west": "O27", "east": "Q27"
+        "north": "P26", "south": "domain/original/area/roadway/room5", "west": "O27", "east": "Q27"
       }
     },
     {
       "id": "Q27", "terrain": "m",
       "exits": {
-        "north": "Q26", "south": "Q28", "west": "P27", "east": "R27"
+        "north": "Q26", "south": "domain/original/area/roadway/room6", "west": "P27", "east": "R27"
       }
     },
     {
       "id": "R27", "terrain": "p",
       "exits": {
-        "north": "R26", "south": "R28", "west": "Q27", "east": "S27"
+        "north": "R26", "south": "domain/original/area/roadway/room7", "west": "Q27", "east": "S27"
       }
     },
     {
       "id": "S27", "terrain": "p",
       "exits": {
-        "north": "S26", "south": "S28", "west": "R27", "east": "T27"
+        "north": "S26", "south": "domain/original/area/roadway/room8", "west": "R27", "east": "T27"
       }
     },
     {
       "id": "T27", "terrain": "p",
       "exits": {
-        "north": "T26", "south": "T28", "west": "S27", "east": "U27"
+        "north": "T26", "south": "domain/original/area/roadway/room9", "west": "S27", "east": "U27"
       }
     },
     {
       "id": "U27", "terrain": "p",
       "exits": {
-        "north": "U26", "south": "U28", "west": "T27", "east": "V27"
+        "north": "U26", "south": "domain/original/area/roadway/room10", "west": "T27", "east": "V27"
       }
     },
     {
       "id": "V27", "terrain": "p",
       "exits": {
-        "north": "V26", "south": "V28", "west": "U27", "east": "W27"
+        "north": "V26", "south": "domain/original/area/roadway/room11", "west": "U27", "east": "W27"
       }
     },
     {
       "id": "W27", "terrain": "wv",
       "exits": {
-        "north": "W26", "south": "W28", "west": "V27", "east": "X27"
+        "north": "W26", "south": "domain/original/area/roadway/room12", "west": "V27", "east": "X27"
       }
     },
     {
       "id": "X27", "terrain": "p",
       "exits": {
-        "north": "X26", "south": "X28", "west": "W27", "east": "Y27",
-        "southeast": "domain/original/area/roadway/room14"
+        "north": "X26", "south": "domain/original/area/roadway/room13", "west": "W27", "east": "Y27"
       }
     },
     {
@@ -7558,97 +7557,13 @@
     {
       "id": "J28", "terrain": "d",
       "exits": {
-        "north": "J27", "south": "J29", "west": "I28", "east": "K28"
-      }
-    },
-    {
-      "id": "K28", "terrain": "Candera",
-      "exits": {
-        "north": "K27", "south": "K29", "west": "J28", "east": "L28"
-      }
-    },
-    {
-      "id": "L28", "terrain": "r",
-      "exits": {
-        "north": "L27", "south": "L29", "west": "K28", "east": "M28"
-      }
-    },
-    {
-      "id": "M28", "terrain": "r",
-      "exits": {
-        "north": "M27", "south": "M29", "west": "L28", "east": "N28"
-      }
-    },
-    {
-      "id": "N28", "terrain": "r",
-      "exits": {
-        "north": "N27", "south": "N29", "west": "M28", "east": "O28"
-      }
-    },
-    {
-      "id": "O28", "terrain": "r",
-      "exits": {
-        "north": "O27", "south": "O29", "west": "N28", "east": "P28"
-      }
-    },
-    {
-      "id": "P28", "terrain": "r",
-      "exits": {
-        "north": "P27", "south": "P29", "west": "O28", "east": "Q28"
-      }
-    },
-    {
-      "id": "Q28", "terrain": "r",
-      "exits": {
-        "north": "Q27", "south": "Q29", "west": "P28", "east": "R28"
-      }
-    },
-    {
-      "id": "R28", "terrain": "r",
-      "exits": {
-        "north": "R27", "south": "R29", "west": "Q28", "east": "S28"
-      }
-    },
-    {
-      "id": "S28", "terrain": "r",
-      "exits": {
-        "north": "S27", "south": "S29", "west": "R28", "east": "T28"
-      }
-    },
-    {
-      "id": "T28", "terrain": "r",
-      "exits": {
-        "north": "T27", "south": "T29", "west": "S28", "east": "U28"
-      }
-    },
-    {
-      "id": "U28", "terrain": "r",
-      "exits": {
-        "north": "U27", "south": "U29", "west": "T28", "east": "V28"
-      }
-    },
-    {
-      "id": "V28", "terrain": "r",
-      "exits": {
-        "north": "V27", "south": "V29", "west": "U28", "east": "W28"
-      }
-    },
-    {
-      "id": "W28", "terrain": "r",
-      "exits": {
-        "north": "W27", "south": "W29", "west": "V28", "east": "X28"
-      }
-    },
-    {
-      "id": "X28", "terrain": "r",
-      "exits": {
-        "north": "X27", "south": "X29", "west": "W28", "east": "Y28"
+        "north": "J27", "south": "J29", "west": "I28"
       }
     },
     {
       "id": "Y28", "terrain": "Vesla",
       "exits": {
-        "north": "Y27", "south": "Y29", "west": "X28", "east": "Z28"
+        "north": "Y27", "south": "Y29", "east": "Z28"
       }
     },
     {
@@ -7864,85 +7779,85 @@
     {
       "id": "K29", "terrain": "d",
       "exits": {
-        "north": "K28", "south": "K30", "west": "J29", "east": "L29"
+        "south": "K30", "west": "J29", "east": "L29"
       }
     },
     {
       "id": "L29", "terrain": "d",
       "exits": {
-        "north": "L28", "south": "L30", "west": "K29", "east": "M29"
+        "north": "domain/original/area/roadway/room1", "south": "L30", "west": "K29", "east": "M29"
       }
     },
     {
       "id": "M29", "terrain": "d",
       "exits": {
-        "north": "M28", "south": "M30", "west": "L29", "east": "N29"
+        "north": "domain/original/area/roadway/room2", "south": "M30", "west": "L29", "east": "N29"
       }
     },
     {
       "id": "N29", "terrain": "d",
       "exits": {
-        "north": "N28", "south": "N30", "west": "M29", "east": "O29"
+        "north": "domain/original/area/roadway/room3", "south": "N30", "west": "M29", "east": "O29"
       }
     },
     {
       "id": "O29", "terrain": "m",
       "exits": {
-        "north": "O28", "south": "O30", "west": "N29", "east": "P29"
+        "north": "domain/original/area/roadway/room4", "south": "O30", "west": "N29", "east": "P29"
       }
     },
     {
       "id": "P29", "terrain": "p",
       "exits": {
-        "north": "P28", "south": "P30", "west": "O29", "east": "Q29"
+        "north": "domain/original/area/roadway/room5", "south": "P30", "west": "O29", "east": "Q29"
       }
     },
     {
       "id": "Q29", "terrain": "m",
       "exits": {
-        "north": "Q28", "south": "Q30", "west": "P29", "east": "R29"
+        "north": "domain/original/area/roadway/room6", "south": "Q30", "west": "P29", "east": "R29"
       }
     },
     {
       "id": "R29", "terrain": "p",
       "exits": {
-        "north": "R28", "south": "R30", "west": "Q29", "east": "S29"
+        "north": "domain/original/area/roadway/room7", "south": "R30", "west": "Q29", "east": "S29"
       }
     },
     {
       "id": "S29", "terrain": "p",
       "exits": {
-        "north": "S28", "south": "S30", "west": "R29", "east": "T29"
+        "north": "domain/original/area/roadway/room8", "south": "S30", "west": "R29", "east": "T29"
       }
     },
     {
       "id": "T29", "terrain": "p",
       "exits": {
-        "north": "T28", "south": "T30", "west": "S29", "east": "U29"
+        "north": "domain/original/area/roadway/room9", "south": "T30", "west": "S29", "east": "U29"
       }
     },
     {
       "id": "U29", "terrain": "p",
       "exits": {
-        "north": "U28", "south": "U30", "west": "T29", "east": "V29"
+        "north": "domain/original/area/roadway/room10", "south": "U30", "west": "T29", "east": "V29"
       }
     },
     {
       "id": "V29", "terrain": "p",
       "exits": {
-        "north": "V28", "south": "V30", "west": "U29", "east": "W29"
+        "north": "domain/original/area/roadway/room11", "south": "V30", "west": "U29", "east": "W29"
       }
     },
     {
       "id": "W29", "terrain": "p",
       "exits": {
-        "north": "W28", "south": "W30", "west": "V29", "east": "X29"
+        "north": "domain/original/area/roadway/room12", "south": "W30", "west": "V29", "east": "X29"
       }
     },
     {
       "id": "X29", "terrain": "p",
       "exits": {
-        "north": "X28", "south": "X30", "west": "W29", "east": "Y29"
+        "north": "domain/original/area/roadway/room13", "south": "X30", "west": "W29", "east": "Y29"
       }
     },
     {
