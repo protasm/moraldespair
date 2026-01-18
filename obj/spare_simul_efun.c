@@ -148,11 +148,38 @@ varargs void say(mixed msg, mixed exclude)
 //---------------------------------------------------------------------------
 varargs void message(string class, mixed msg, mixed targets, mixed exclude)
 {
+    mixed target;
+    int i;
+
     if (stringp(msg)) {
         msg = wrap_player_text(msg);
     }
 
-    efun::message(class, msg, targets, exclude);
+    if (!targets) {
+        return;
+    }
+
+    if (objectp(targets)) {
+        tell_object(targets, msg);
+        return;
+    }
+
+    if (stringp(targets)) {
+        tell_room(targets, msg, exclude);
+        return;
+    }
+
+    if (pointerp(targets)) {
+        for (i = 0; i < sizeof(targets); i++) {
+            target = targets[i];
+            if (objectp(target)) {
+                tell_object(target, msg);
+            } else if (stringp(target)) {
+                tell_room(target, msg, exclude);
+            }
+        }
+        return;
+    }
 }
 
 //---------------------------------------------------------------------------
@@ -233,7 +260,7 @@ string create_wizard(string owner, string domain)
 
     set_this_object(previous_object());
     result =
-      (mixed)__MASTER_OBJECT__->master_create_wizard(owner, domain, previous_object());
+      __MASTER_OBJECT__->master_create_wizard(owner, domain, previous_object());
     if (stringp(result)) return result;
     return 0;
 }
@@ -328,6 +355,8 @@ varargs mixed snoop(mixed snoopee)
 	    break;
     }
     if (result > 0) return snoopee;
+
+    return 0;
 }
 
 //---------------------------------------------------------------------------
