@@ -16,6 +16,7 @@ string short_desc;
 
 /* Long description of the room */
 string long_desc;
+string formatted_long_desc;
 
 /* Special items in the room. "table", "A nice table", "window", "A window" */
 string *items;
@@ -123,6 +124,7 @@ string exitsDescription(int brief) {
 
 void long(string str) {
   string ruler;
+  string formatted;
   int i;
 
   if (set_light(0) == 0) {
@@ -134,8 +136,18 @@ void long(string str) {
   ruler = "---------+---------+---------+---------+---------+---------+---------+---------+";
 
   if (!str) {
+    formatted = formatted_long_desc;
+
+    if (!formatted && long_desc) {
+      formatted = "/daemon/text_d"->format_text(long_desc, 80);
+      formatted_long_desc = formatted;
+    }
+
+    if (!formatted)
+      formatted = "";
+
     write(ruler);
-    write("\n" + long_desc);
+    write("\n" + formatted);
     write("\n\n" + exitsDescription(0));
 
     return;
@@ -243,7 +255,15 @@ void set_short(string str) {
 }
 
 void set_long(string str) {
+  if (!stringp(str)) {
+    long_desc = 0;
+    formatted_long_desc = 0;
+
+    return;
+  }
+
   long_desc = str + "\n";
+  formatted_long_desc = "/daemon/text_d"->format_text(str, 80);
 
   return;
 }
