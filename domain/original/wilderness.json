@@ -7341,7 +7341,8 @@
     {
       "id": "X27", "terrain": "p",
       "exits": {
-        "north": "X26", "south": "X28", "west": "W27", "east": "Y27"
+        "north": "X26", "south": "X28", "west": "W27", "east": "Y27",
+        "southeast": "domain/original/area/roadway/room14"
       }
     },
     {

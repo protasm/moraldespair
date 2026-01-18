@@ -1,28 +1,36 @@
 #define WILDERNESS_D "/daemon/wilderness_d"
 
+inherit "room/room";
+
 /*
  * Virtual wilderness room. It stores only a room id and queries the daemon
  * for all state, keeping room data centralized and easy to extend.
  */
 string room_id;
+string terrain;
 
 void set_room_id(string id);
+string query_room_id();
+string query_terrain();
+void set_exits();
+void set_descriptions();
 
-void create() {
-  string name;
-  string id;
-
-  name = object_name(this_object());
-
-  if (sscanf(name, "room/wilderness_room#%s", id) == 1) {
-    set_room_id(id);
+void reset(int arg) {
+  if (arg) {
+    return;
   }
 
-  return;
+  set_light(1);
+
+  if (room_id) {
+    set_descriptions();
+  }
 }
 
 void set_room_id(string id) {
   room_id = id;
+
+  set_descriptions();
 
   return;
 }
@@ -31,97 +39,89 @@ string query_room_id() {
   return room_id;
 }
 
-void init() {
-  mapping exits;
-  string *dirs;
-  int i;
+string query_terrain() {
+  return terrain;
+}
 
+void set_descriptions() {
   if (!room_id) {
     return;
   }
 
-  exits = WILDERNESS_D->query_exits(room_id);
-  dirs = m_indices(exits);
+  terrain = WILDERNESS_D->query_terrain(room_id);
 
-  i = 0;
-
-  while (i < sizeof(dirs)) {
-    add_action("move", dirs[i]);
-    i += 1;
+  if (terrain == "p") {
+    short_desc = "Open Plain";
+    long_desc = "A flat plain stretches out in every direction. "
+      + "Wind presses through short grass.";
+    return;
   }
 
-  set_light(1);
+  if (terrain == "f") {
+    short_desc = "Thin Forest";
+    long_desc = "Sparse trees stand in uneven clusters. "
+      + "The ground is shaded and quiet.";
+    return;
+  }
+
+  if (terrain == "h") {
+    short_desc = "Low Hills";
+    long_desc = "Low hills roll in soft, broken lines. "
+      + "Stone shows through thin soil.";
+    return;
+  }
+
+  short_desc = "Wilderness";
+  long_desc = "The land here is quiet and open. "
+    + "No clear path remains.";
 
   return;
 }
 
-int move(string arg) {
-  mapping exits;
-  string destination;
-
+void init() {
   if (!room_id) {
-    return 0;
+    return;
   }
+
+  set_exits();
+  ::init();
+
+  return;
+}
+
+void set_exits() {
+  mapping exits;
+  string *dirs;
+  string destination;
+  string resolved;
+  int i;
 
   exits = WILDERNESS_D->query_exits(room_id);
-  destination = exits[query_verb()];
-  if (!stringp(destination)) {
-    return 0;
+  dirs = m_indices(exits);
+
+  if (!pointerp(dirs)) {
+    dest_dir = ({});
+    return;
   }
 
-  this_player()->move_player(query_verb() + "#room/wilderness_room#" + destination);
+  dirs = sort_array(dirs, #'strcmp);
+  dest_dir = ({});
 
-  return 1;
-}
+  i = 0;
+  while (i < sizeof(dirs)) {
+    destination = exits[dirs[i]];
+    if (stringp(destination)) {
+      if (WILDERNESS_D->room_exists(destination)) {
+        resolved = "room/wilderness_room#" + destination;
+      } else {
+        resolved = destination;
+      }
 
-string short() {
-  string terrain;
+      dest_dir += ({ resolved, dirs[i] });
+    }
 
-  terrain = WILDERNESS_D->query_terrain(room_id);
-
-  if (terrain == "p") {
-    return "Open Plain";
+    i += 1;
   }
 
-  if (terrain == "f") {
-    return "Thin Forest";
-  }
-
-  if (terrain == "h") {
-    return "Low Hills";
-  }
-
-  return "Wilderness";
-}
-
-string long() {
-  string terrain;
-
-  terrain = WILDERNESS_D->query_terrain(room_id);
-
-  if (terrain == "p") {
-    return "A flat plain stretches out in every direction. "
-      + "Wind presses through short grass.";
-  }
-
-  if (terrain == "f") {
-    return "Sparse trees stand in uneven clusters. "
-      + "The ground is shaded and quiet.";
-  }
-
-  if (terrain == "h") {
-    return "Low hills roll in soft, broken lines. "
-      + "Stone shows through thin soil.";
-  }
-
-  return "The land here is quiet and open. "
-    + "No clear path remains.";
-}
-
-mapping query_exits() {
-  if (!room_id) {
-    return ([]);
-  }
-
-  return WILDERNESS_D->query_exits(room_id);
+  return;
 }
