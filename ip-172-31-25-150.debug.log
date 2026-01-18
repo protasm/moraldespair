@@ -1,13 +1,13 @@
-2026.01.18 17:12:33 LDMud 3.6.8 (3.6.8-3-gfc87ac67) (development)
-2026.01.18 17:12:33 Seeding PRG from /dev/urandom.
-2026.01.18 17:12:33 Attempting to start erq '/opt/ldmud/bin/erq'.
-2026.01.18 17:12:33 Failed to start erq.
-2026.01.18 17:12:33 UDP recv-socket requested for port: 4246
-2026.01.18 17:12:33 Caught error: Error in loading object: 'obj/simul_efun'.
+2026.01.18 17:13:04 LDMud 3.6.8 (3.6.8-3-gfc87ac67) (development)
+2026.01.18 17:13:04 Seeding PRG from /dev/urandom.
+2026.01.18 17:13:04 Attempting to start erq '/opt/ldmud/bin/erq'.
+2026.01.18 17:13:04 Failed to start erq.
+2026.01.18 17:13:04 UDP recv-socket requested for port: 4246
+2026.01.18 17:13:04 Caught error: Error in loading object: 'obj/simul_efun'.
 ' get_simul_efun' in 'secure/master.c (/obj/master.c)' ('       secure/master') line 684
 '          CATCH' in '     secure/master.c' ('       secure/master')
-2026.01.18 17:12:33 ... execution continues.
-2026.01.18 17:12:33 Caught error: Error in loading object: 'obj/spare_simul_efun'.
+2026.01.18 17:13:04 ... execution continues.
+2026.01.18 17:13:04 Caught error: Error in loading object: 'obj/spare_simul_efun'.
 ' get_simul_efun' in 'secure/master.c (/obj/master.c)' ('       secure/master') line 691
 '          CATCH' in '     secure/master.c' ('       secure/master')
-2026.01.18 17:12:33 ... execution continues.
+2026.01.18 17:13:04 ... execution continues.
