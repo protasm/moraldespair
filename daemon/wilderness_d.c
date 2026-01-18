@@ -26,6 +26,7 @@ void load_wilderness() {
   mapping room;
   string contents;
   string room_id;
+  int size;
   int i;
 
   if (!mappingp(rooms_by_id)) {
@@ -40,7 +41,13 @@ void load_wilderness() {
     map_file = "/domain/original/wilderness.json";
   }
 
-  contents = read_file(map_file);
+  size = file_size(map_file);
+  if (size <= 0) {
+    loaded = 1;
+    return;
+  }
+
+  contents = read_bytes(map_file, 0, size);
   if (!contents) {
     loaded = 1;
     return;
