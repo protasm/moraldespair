@@ -46,6 +46,87 @@ void start_simul_efun()
 }
 
 //---------------------------------------------------------------------------
+string break_lines(string text)
+{
+  string *lines;
+  string *words;
+  string output;
+  string line;
+  string word;
+  int i;
+  int j;
+  int line_length;
+
+  if (!stringp(text))
+    return "";
+
+  lines = explode(text, "\n");
+  output = "";
+
+  for (i = 0; i < sizeof(lines); i++) {
+    if (i > 0)
+      output += "\n";
+
+    line = "";
+    line_length = 0;
+
+    if (lines[i] == "") {
+      output += line;
+      continue;
+    }
+
+    words = explode(lines[i], " ");
+    for (j = 0; j < sizeof(words); j++) {
+      word = words[j];
+      if (word == "")
+        continue;
+
+      if (sizeof(word) > 80) {
+        if (line_length > 0) {
+          line += "\n";
+          line_length = 0;
+        }
+        while (sizeof(word) > 80) {
+          line += word[0..79] + "\n";
+          word = word[80..];
+        }
+        line += word;
+        line_length = sizeof(word);
+        continue;
+      }
+
+      if (line_length == 0) {
+        line = word;
+        line_length = sizeof(word);
+        continue;
+      }
+
+      if (line_length + 1 + sizeof(word) > 80) {
+        line += "\n" + word;
+        line_length = sizeof(word);
+        continue;
+      }
+
+      line += " " + word;
+      line_length += 1 + sizeof(word);
+    }
+
+    output += line;
+  }
+
+  return output;
+}
+
+//---------------------------------------------------------------------------
+void write(mixed msg)
+{
+  string text;
+
+  text = to_string(msg);
+  efun::write(break_lines(text));
+}
+
+//---------------------------------------------------------------------------
 void ls (string path)
 
 /* Print the directory listing of <path>, like the unix command.
