@@ -11,6 +11,26 @@ int is_space(int c) {
   return 0;
 }
 
+string replace_string(string input, string search, string replacement) {
+  string *parts;
+
+  if (!stringp(input)) {
+    return "";
+  }
+
+  if (!stringp(search) || search == "") {
+    return input;
+  }
+
+  if (!stringp(replacement)) {
+    replacement = "";
+  }
+
+  parts = explode(input, search);
+
+  return implode(parts, replacement);
+}
+
 string trim_whitespace(string text) {
   int start, end, length;
 
