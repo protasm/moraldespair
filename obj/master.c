@@ -98,6 +98,7 @@ static string _include_dirs_hook (string include_name, string current_file) {
   name = "obj/"+include_name;
   if (file_size(ADD_SLASH(name)) >= 0)
     return name;
+
   return 0;
 }
 
@@ -159,6 +160,7 @@ static void _move_hook_fun (object item, object dest) {
       efun::set_this_player(obj);
       item->init();
     }
+
     if (!item)
       raise_error(sprintf("item->init() for %O destructed moved item %s\n",
         obj, name));
@@ -171,6 +173,7 @@ static void _move_hook_fun (object item, object dest) {
       if (environment(obj) == environment(item))
         obj->init();
     }
+
   }
 
   /* If the destination is living, call item->init() for it too. */
@@ -178,6 +181,7 @@ static void _move_hook_fun (object item, object dest) {
     efun::set_this_player(dest);
     item->init();
   }
+
 }
 
 //---------------------------------------------------------------------------
@@ -200,6 +204,7 @@ static string _auto_include_hook (string base_file, string current_file, int sys
   if (member((["/obj/light.c", "/obj/simul_efun.c", "/obj/spare_simul_efun.c",
     "/obj/master.c"]), base_file))
     return 0;
+
 
   return "virtual inherit \"/obj/light\";\n";
 }
@@ -251,6 +256,7 @@ static mixed _load_uids_fun (mixed object_name, object prev) {
     return geteuid(prev);
   if (prev && creator_name == get_bb_uid())
     return geteuid(prev);
+
   return ({ creator_name, 1 });
 }
 #endif
@@ -289,6 +295,7 @@ static mixed _clone_uids_fun (object blueprint, string new_name, object prev) {
     return geteuid(prev);
   if (prev && creator_name == get_bb_uid())
     return geteuid(prev);
+
   return ({ creator_name, 1 });
 }
 #endif
@@ -475,6 +482,7 @@ mixed get_master_uid () {
   // If your uids are filename-based, return a value that cannot appear in
   // a legal filename. OSB uses "ze/us" for this purpose.
 
+
   return 1;
 }
 
@@ -499,12 +507,14 @@ void flag (string arg) {
     shutdown();
     return;
   }
+
   if (sscanf(arg, "call %s %s %s", obj, fun, rest) >= 2) {
     write(obj+"->"+fun+"(\""+rest+"\") = ");
     write(call_other(obj, fun, rest));
     write("\n");
     return;
   }
+
   write("master: Unknown flag "+arg+"\n");
 }
 
@@ -531,6 +541,7 @@ string *epilog (int eflag) {
   debug_message(sprintf("Loading init file %s\n", INIT_FILE));
   current_time = rusage();
   current_time = current_time[0] + current_time[1];
+
   return explode(read_file(INIT_FILE), "\n");
 }
 
@@ -557,6 +568,7 @@ void preload (string file) {
     current_time = current_time[0] + current_time[1];
     debug_message(sprintf(" %.2f\n", (current_time - last_time) / 1000.0));
   }
+
 }
 
 //---------------------------------------------------------------------------
@@ -606,14 +618,17 @@ mixed get_simul_efun () {
     ob->start_simul_efun();
     return SIMUL_EFUN_FILE;
   }
+
   efun::write("Failed to load " + SIMUL_EFUN_FILE + ": "+error);
   error = catch(ob = load_object(SPARE_SIMUL_EFUN_FILE));
   if (!error) {
     ob->start_simul_efun();
     return SPARE_SIMUL_EFUN_FILE;
   }
+
   efun::write("Failed to load " + SPARE_SIMUL_EFUN_FILE + ": "+error);
   efun::shutdown();
+
   return 0;
 }
 
@@ -654,6 +669,7 @@ object connect () {
       return 0;
     tls_init_connection(this_object(), "tls_logon", ob);
   }
+
 #endif
 
   return ob;
@@ -748,6 +764,7 @@ object compile_object (string filename) {
     room = ({object})vmaster->compile_object(explode(filename,"/")[<1]);
   if (!room && 0 <= file_size(filepath+".c"))
     room = ({object})filepath->compile_object(explode(filename,"/")[<1]);
+
   return room;
 }
 
@@ -765,9 +782,9 @@ string get_wiz_name (string file) {
 
   string name, rest;
 
-  if (sscanf(file, "players/%s/%s", name, rest) == 2) {
+  if (sscanf(file, "players/%s/%s", name, rest) == 2)
     return name;
-  }
+
   return 0;
 }
 
@@ -810,12 +827,14 @@ void destruct_environment_of(object ob) {
         destruct(new_player);
         return;
       }
+
       exec(new_player, ob);
-      if (error = catch(new_player->replace_player(ob, "domain/lp-245/room/void"))) {
+      if (error = catch(new_player->replace_player(ob, "domain/lp-245/room/void")))
         write(error);
-      }
     }
+
   }
+
 }
 
 //---------------------------------------------------------------------------
@@ -833,6 +852,7 @@ void move_or_destruct(object what, object to) {
     if (catch( res = TRANSFER(what, to) )) res = 5;
     if ( !(res && what) ) return;
   } while( (res == 1 || res == 4 || res == 5) && (to = environment(to)) );
+
   /* PLAIN: native muds make this
   if (!catch(what->move(to, 1)))
     return;
@@ -857,20 +877,20 @@ handle_super_compat (object super, object ob) {
     mixed weight;
 
     set_this_object(ob);
-    if ( living(ob) ) {
+    if ( living(ob) )
       if (error = catch(super->exit(ob),0))
         write("exit"+": "+error);
-    }
     if ( error = catch((weight = ob->query_weight()),0) ) {
       write("query_weight"+": "+error);
       return 1;
     }
-    if (weight && intp(weight)) {
+
+    if (weight && intp(weight))
       if (error = catch(super->add_weight(-weight),0)) {
         write("add_weight"+": "+error);
         return 1;
       }
-    }
+
   }
 
   return 0;
@@ -912,10 +932,10 @@ mixed prepare_destruct (object ob) {
   super = environment(ob);
 
   /* PLAIN: This whole if (super) {...} block is for compat muds only */
-  if (super) {
+  if (super)
     if (funcall(#'handle_super_compat, super, ob))
       return;
-  }
+
   /* PLAIN: end of compat-mud block */
 
   if (!super) {
@@ -925,6 +945,7 @@ mixed prepare_destruct (object ob) {
       destruct_environment_of(item);
       if (item && environment(item) == ob) destruct(item);
     }
+
   } else {
     while ( first_inventory(ob) )
       move_or_destruct(first_inventory(ob), super);
@@ -1111,12 +1132,12 @@ string prg, string curobj, int line) {
   // Note that <prg> denotes the program actually executed (which might be
   // inherited one) whereas <curobj> is just the offending object.
 
-  if ( interactive(culprit) ) {
+  if ( interactive(culprit) )
     tell_object(
     culprit,
     "Game driver tells you: You have no heart beat !\n"
     );
-  }
+
   return 0; /* Don't restart */
 }
 
@@ -1241,9 +1262,11 @@ int privilege_violation (string op, mixed who, mixed arg, mixed arg2) {
         default:
           return -1;
       }
+
     default:
       return -1; /* Make this violation an error. */
   }
+
   return 0;
 }
 
@@ -1263,6 +1286,7 @@ int query_allow_shadow (object victim) {
 
   if (object_info(victim, OINFO_MEMORY)[OIM_NO_SHADOW])
     return 0;
+
   return !victim->query_prevent_shadow(previous_object());
 }
 
@@ -1295,6 +1319,7 @@ int query_player_level (string what) {
     case "error messages":
       return level >= 20;
   }
+
   return 0;
 }
 
@@ -1323,6 +1348,7 @@ int valid_trace (string what) {
     case "traceprefix":
       return level >= 24;
   }
+
   return 0;
 }
 
@@ -1345,9 +1371,8 @@ int valid_exec (string name, object ob, object obfrom) {
   switch (name) {
     case "secure/login.c":
     case "obj/master.c":
-      if (!interactive(ob)) {
+      if (!interactive(ob))
         return 1;
-      }
   }
 
   return 0;
@@ -1466,9 +1491,11 @@ mixed valid_read  (string path, string euid, string fun, object caller) {
           write("No error.\n");
           return 0;
         }
+
         write(error[0][1..]+" line "+error[1]+": "+error[2]+"\n");
         return ADD_SLASH(error[0]);
       }
+
       if (path[0] != '/')
         path = "/"+path;
     case "read_file":
@@ -1488,14 +1515,18 @@ mixed valid_read  (string path, string euid, string fun, object caller) {
           write("Bad file name.\n");
           return 0;
         }
+
         return ADD_SLASH(path);
       }
+
       path = ({string})"obj/player"->valid_read(path);
       if (stringp(path))
         return ADD_SLASH(path);
       return 0;
   }
+
   /* If no case returned a value or the operation is unrecognized, deny. */
+
   return 0;
 }
 
@@ -1562,6 +1593,7 @@ mixed valid_write (string path, string euid, string fun, object caller) {
           || user[0..3] == "std/")
           return ADD_SLASH(path);
       }
+
       return 0; /* deny access */
     default:
       return 0; /* deny access */
@@ -1571,9 +1603,8 @@ mixed valid_write (string path, string euid, string fun, object caller) {
       if (path[0..3] == "log/"
         && !(sizeof(regexp(({path[4..33]}), "/"))
         || path[4] == '.'
-        || sizeof(path) > 34)) {
+        || sizeof(path) > 34))
         return ADD_SLASH(path);
-      }
       break;
     case "ed_start":
       if (path[0] != '/')
@@ -1586,9 +1617,8 @@ mixed valid_write (string path, string euid, string fun, object caller) {
         && path[0..3] == "log/"
         && !(sizeof(regexp(({path[4..33]}), "/"))
         || path[4] == '.'
-        || sizeof(path) > 34)) {
+        || sizeof(path) > 34))
         return 1;
-      }
     case "mkdir":
     case "rmdir":
     case "write_bytes":
@@ -1603,8 +1633,10 @@ mixed valid_write (string path, string euid, string fun, object caller) {
       write("Bad file name.\n");
       return 0;
     }
+
     return ADD_SLASH(path);
   }
+
   path = ({string})"obj/player"->valid_write(path);
   if (stringp(path))
     return ADD_SLASH(path);
@@ -1655,6 +1687,7 @@ int save_ed_setup (object who, int code) {
     return 0;
   file = "/players/" + lower_case(({string})who->query_name()) + "/.edrc";
   rm(file);
+
   return write_file(file, code + "");
 }
 
@@ -1675,6 +1708,7 @@ int retrieve_ed_setup (object who) {
   if (file_size(file) <= 0)
     return 0;
   sscanf(read_file(file), "%d", code);
+
   return code;
 }
 
@@ -1696,11 +1730,11 @@ string get_ed_buffer_save_file_name (string file) {
   string path;
 
   path = "/players/"+this_player()->query_real_name()+"/.dead_ed_files";
-  if (file_size(path) == -1) {
+  if (file_size(path) == -1)
     mkdir(path);
-  }
   file_ar=explode(file,"/");
   file=file_ar[sizeof(file_ar)-1];
+
   return path+"/"+file;
 }
 
@@ -1772,6 +1806,7 @@ static void wiz_decay() {
   for (i=sizeof(wl); i--; ) {
     set_extra_wizinfo(wl[i][WL_NAME], wl[i][WL_EXTRA] * 99 / 100);
   }
+
   call_out("wiz_decay", 3600);
 }
 
@@ -1810,6 +1845,7 @@ int verify_create_wizard (object ob) {
   if (sscanf(object_name(ob), "domain/lp-245/room/port_castle#%d", dummy) == 1
     || sscanf(object_name(ob), "global/port_castle#%d", dummy) == 1)
     return 1;
+
   return 0;
 }
 
@@ -1837,10 +1873,12 @@ string master_create_wizard(string owner, string domain, object caller) {
     tell_object(player, "That is an illegal attempt!\n");
     return 0;
   }
+
   if (caller != previous_object()) {
     tell_object(player, "Faked call!\n");
     return 0;
   }
+
   wizard = "/players/" + owner;
   castle = "/players/" + owner + "/castle.c";
   if (file_size(wizard) == -1) {
@@ -1848,6 +1886,7 @@ string master_create_wizard(string owner, string domain, object caller) {
       wizard + "\n");
     mkdir(wizard);
   }
+
   dest = object_name(environment(player));
   def_castle = "#define NAME \"" + owner + "\"\n#define DEST \"" +
     dest + "\"\n" + read_file("/domain/lp-245/room/def_castle.c");
@@ -1862,7 +1901,9 @@ string master_create_wizard(string owner, string domain, object caller) {
     } else {
       tell_object(player, "Failed to make castle for you!\n");
     }
+
   }
+
   return castle;
 }
 
