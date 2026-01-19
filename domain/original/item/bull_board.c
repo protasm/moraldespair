@@ -48,10 +48,17 @@ void init() {
 }
 
 void reset(int arg) {
+  mapping data;
+
   if (arg)
     return;
 
-  restore_object("domain/original/item/bulletin");
+  data = "/obj/bulletin_store"->restore_board();
+  messages = data["messages"];
+  num_messages = data["num_messages"];
+
+  if (!messages)
+    messages = "";
 }
 
 void headers() {
@@ -112,11 +119,13 @@ void get_body(string str) {
   if (str == "**") {
     new_hd = new_hd + "(" + this_player()->query_name() + ", " +
       ctime(time())[4..9] + ")";
+    if (!messages)
+      messages = "";
     messages = messages + new_hd + ":\n**\n" + new_body + "\n**\n";
     num_messages += 1;
     new_body = 0;
     new_hd = 0;
-    save_object("domain/original/item/bulletin");
+    "/obj/bulletin_store"->save_board(messages, num_messages);
     write("Ok.\n");
     who = 0;
 
@@ -204,7 +213,7 @@ int remove(string str) {
       write("Ok.\n");
       messages = messages + rest;
       num_messages -= 1;
-      save_object("domain/original/item/bulletin");
+      "/obj/bulletin_store"->save_board(messages, num_messages);
 
       return 1;
     }
