@@ -83,10 +83,17 @@ void long(string str) {
         return;
     }
 
-    write(long_desc);
-    write("\n\nYou feel a STRONG urge to... you can't recall?");
-    write("\n\nA massive clock looms overhead, its pendulum swinging in a long, lazy arc.");
-    write("\n\nThere are exits up, down, and south.\n");
+    string result;
+
+    result = long_desc;
+
+    result += "\n\nYou feel a STRONG urge to... you can't recall?";
+    result += "\n\nA massive clock looms overhead, its pendulum swinging in a long, lazy arc.";
+    result += "\n\nThere are exits up, down, and south.\n";
+ 
+    result = "/daemon/text_d"->format_text(result, 80);
+
+    write(result + "\n");
 
     return;
 }
