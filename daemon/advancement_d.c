@@ -1,5 +1,3 @@
-#include "tune.h"
-
 static int next_level;
 static int next_exp;
 static int level;
@@ -162,7 +160,7 @@ int query_cost_for_level(int current_level, int current_exp) {
   if (next_exp <= exp)
     return 0;
 
-  return (next_exp - exp) * 1000 / EXP_COST;
+  return (next_exp - exp) * 1000 / 600;
 }
 
 int advance(string arg) {
@@ -217,7 +215,7 @@ int advance(string arg) {
   if (level == 0)
     next_exp = exp;
 
-  cost = (next_exp - exp) * 1000 / EXP_COST;
+  cost = (next_exp - exp) * 1000 / 600;
 
   if (next_exp > exp) {
     if (player_ob->query_money() < cost) {
@@ -348,7 +346,7 @@ static int raise_cost(int base, int action) {
   if (base >= 20)
     return 0;
 
-  cost = (get_next_exp(base) - get_next_exp(base - 1)) / STAT_COST;
+  cost = (get_next_exp(base) - get_next_exp(base - 1)) / 10;
   level_index = this_player()->query_level() - 1;
 
   if (level_index < 0)
