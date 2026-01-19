@@ -2,18 +2,16 @@
 
 /*  obj/master.c     (compat default)
 **
-** The master is the gateway between the gamedriver and the mudlib to perform
-** actions with mudlib specific effects.
-** Calls to the master by the gamedriver have an automatic catch() in effect.
+** The master bridges the gamedriver and the mudlib, translating driver calls
+** into mudlib behavior. Driver calls to the master are wrapped in an implicit
+** catch() to prevent unhandled errors from escaping.
 **
-** Note that the master is loaded first of all objects. Thus it is possible,
-** you shouldn't inherit an other object (as most files expect the master
-** to exist), nor is the compiler able to search include files
-** (read: they must be specified with full path).
+** The master loads before any other object. It must not inherit other objects
+** because many files assume the master already exists, and the compiler cannot
+** resolve include paths at that stage unless they are absolute.
 **
-** This master was written specifically for the 2.4.5 compat mode mudlib.
-** However it contains in comments marked with 'PLAIN' explanations how
-** a non-compat master differs from a compat one.
+** This master targets the 2.4.5 compatibility mudlib. Comments marked "PLAIN"
+** explain how non-compat masters differ where it matters.
 */
 
 #include "/sys/wizlist.h"
@@ -26,7 +24,7 @@
 #define INIT_FILE "/room/init_file"
 #define BACKBONE_WIZINFO_SIZE 5
 #define MUDWHO_INDEX 1
-  /* Index of the mudwho information in the extra wizinfo */
+/* Index into the extra wizinfo array reserved for mudwho state. */
 #define SIMUL_EFUN_FILE "obj/simul_efun"
 #define SPARE_SIMUL_EFUN_FILE "obj/spare_simul_efun"
 
@@ -58,54 +56,50 @@ static void mudwho_exec(object obfrom, object ob);
 #include "/sys/interactive_info.h"
 #endif
 
-void save_wiz_file(); // forward
-int query_player_level (string what); // forward
+void save_wiz_file(); // forward declaration
+int query_player_level (string what); // forward declaration
 
 //===========================================================================
-// Compatmode compat functions
+// Compatibility-mode helper functions.
 //
-// The functions here adapt a handful of efuns which differ between compat
-// and plain mode. They are a subset of the functions in simul_efun.c
+// These functions adapt efuns that behave differently in compat and plain
+// modes. They mirror a subset of the helpers defined in simul_efun.c.
 //===========================================================================
 
 #ifndef __COMPAT_MODE__
 
 //---------------------------------------------------------------------------
-string object_name(object ob)
-{
-    string rc;
+string object_name(object ob) {
+  string rc;
 
-    rc = efun::object_name(ob);
-    return stringp(rc) ? rc[1..] : 0;
+  rc = efun::object_name(ob);
+  return stringp(rc) ? rc[1..] : 0;
 }
 
 #endif /* __COMPAT_MODE__ */
 
 //===========================================================================
-//  Hooks
+//  Driver hooks
 //
-// These functions are set as driver hooks to perform low-level functions
-// for the mud.
+// These functions are installed as driver hooks to handle low-level mudlib
+// behavior during runtime.
 //===========================================================================
 
 //---------------------------------------------------------------------------
-static string _include_dirs_hook (string include_name, string current_file)
+static string _include_dirs_hook (string include_name, string current_file) {
 
-// Return the full pathname of an include file.
-//
-// Argument:
-//   include_name: the name given in the #include <...> directive.
-//   current_file: the filename of the file compiled.
-//
-// Result:
-//   The full pathname of the include file.
-//   0 if no such file exists.
-//
-// If include_name can't be found as such, the function looks in /room,
-// /sys, and /obj (in that order) for /room/<include_name>,
-// /sys/<include_name>, and /obj/<include_name>.
+  // Resolve an include name to a full pathname.
+  //
+  // Argument:
+  //   include_name: The name provided in the #include <...> directive.
+  //   current_file: The file currently being compiled.
+  //
+  // Result:
+  //   The full path to the include file, or 0 if it cannot be found.
+  //
+  // If include_name is not found verbatim, the function searches /room, /sys,
+  // and /obj (in that order), returning the first match it finds.
 
-{
   string name, part;
   int pos;
 
@@ -125,52 +119,47 @@ static string _include_dirs_hook (string include_name, string current_file)
 
 
 //---------------------------------------------------------------------------
-static void _move_hook_fun (object item, object dest)
+static void _move_hook_fun (object item, object dest) {
 
-// Move object <item> into object <dest>.
-//
-// Argument:
-//   item: the object to be moved.
-//   dest: the destination for the object.
-//
-// The function performs all the checks for a valid move (item exists,
-// destination exists, destination is not current environment, etc).
-// In addition, it implements the init() protocol needed for add_action()
-// to work.
+  // Move an object into its destination while honoring init() semantics.
+  //
+  // Argument:
+  //   item: The object to move.
+  //   dest: The destination object.
+  //
+  // The function validates the move (existence, environment changes, and
+  // legality) and enforces the init() protocol required for add_action().
 
-{
   object *others;
+  object env;
   int i;
   string name;
 
   /* PLAIN:
   if (item != this_object)
-      raise_error("Illegal to move other object than this_object()\n");
+    raise_error("Illegal to move other object than this_object()\n");
   */
 
-  if (living(item) && environment(item))
-  {
-      name = object_info(item, OI_ONCE_INTERACTIVE)
-           ? item->query_real_name()
-           : object_name(item);
-      /* PLAIN: the call to exit() is needed in compat mode only */
-      efun::set_this_player(item);
-      object env = environment(item);
-      env->exit(item);
-      if (!item)
-          raise_error(sprintf("%O->exit() destructed item %s before move.\n"
-                             , env, name));
+  if (living(item) && environment(item)) {
+    name = object_info(item, OI_ONCE_INTERACTIVE)
+      ? item->query_real_name()
+      : object_name(item);
+    /* PLAIN: exit() must be invoked explicitly in compat mode. */
+    efun::set_this_player(item);
+    env = environment(item);
+    env->exit(item);
+    if (!item)
+      raise_error(sprintf("%O->exit() destructed item %s before move.\n",
+        env, name));
   }
   else
-      name = object_name(item);
+    name = object_name(item);
 
-  /* This is the actual move of the object. */
+  /* Perform the actual move. */
 
   efun::set_environment(item, dest);
 
-  /* Moving a living object will cause init() to be called in the new
-   * environment.
-   */
+  /* Moving a living object triggers init() in the new environment. */
   if (living(item)) {
     efun::set_this_player(item);
     dest->init();
@@ -180,33 +169,28 @@ static void _move_hook_fun (object item, object dest)
       return;
   }
 
-  /* Call init() in item once foreach living object in the new environment
-   * but only if the item is (still) in the same environment.
-   */
+  /* Call item->init() once per living in the destination, if still present. */
   others = all_inventory(dest) - ({ item });
-  foreach (object obj : others)
-  {
+  foreach (object obj : others) {
     if (living(obj) && environment(obj) == environment(item)) {
       efun::set_this_player(obj);
       item->init();
     }
     if (!item)
-      raise_error(sprintf("item->init() for %O destructed moved item %s\n", obj, name));
+      raise_error(sprintf("item->init() for %O destructed moved item %s\n",
+        obj, name));
   }
 
-  /* Call init() in each of the  objects themselves, but only if item
-   * didn't move away already.
-   */
+  /* Call init() on each object, if the item has not moved away. */
   if (living(item)) {
-    foreach (object obj : others)
-    {
-        efun::set_this_player(item); // In case something new was cloned
-        if (environment(obj) == environment(item))
-            obj->init();
+    foreach (object obj : others) {
+      efun::set_this_player(item); // Ensure the mover is current.
+      if (environment(obj) == environment(item))
+        obj->init();
     }
   }
 
-  /* If the destination is alive as well, call item->init() for it. */
+  /* If the destination is living, call item->init() for it too. */
   if (living(dest) && item && environment(item) == dest) {
     efun::set_this_player(dest);
     item->init();
@@ -214,73 +198,67 @@ static void _move_hook_fun (object item, object dest)
 }
 
 //---------------------------------------------------------------------------
-static string _auto_include_hook (string base_file, string current_file, int sys_include)
+static string _auto_include_hook (string base_file, string current_file, int sys_include) {
 
-// Optional string to be included when compiling <base_file>.
-//
-// Argument:
-//   base_file: The file to be compiled.
-//   current_file: When handling #include statements, the file to be included
-//   sys_include:  1, when <current_file> is a system include
-//
+  // Return any automatic include text for a compiled object.
+  //
+  // Argument:
+  //   base_file: The file being compiled.
+  //   current_file: When handling #include statements, the file being included.
+  //   sys_include: 1 when <current_file> is a system include.
 
-{
-    // Do nothing for includes.
-    if(current_file)
-        return 0;
+  // Skip when processing an explicit include.
+  if (current_file)
+    return 0;
 
-    // Add the light mechanism to every object except the light object itself.
-    // And of course ignore master and simul-efun.
-    if(base_file[0] != '/')
-        base_file = "/" + base_file;
+  // Inject the light inheritance into most objects, excluding core ones.
+  if (base_file[0] != '/')
+    base_file = "/" + base_file;
 
-    if(member((["/obj/light.c", "/obj/simul_efun.c", "/obj/spare_simul_efun.c", "/obj/master.c" ]), base_file))
-        return 0;
+  if (member((["/obj/light.c", "/obj/simul_efun.c", "/obj/spare_simul_efun.c",
+    "/obj/master.c"]), base_file))
+    return 0;
 
-    return "virtual inherit \"/obj/light\";\n";
+  return "virtual inherit \"/obj/light\";\n";
 }
 
 
 //---------------------------------------------------------------------------
-static mixed _load_uids_fun (mixed object_name, object prev)
+static mixed _load_uids_fun (mixed object_name, object prev) {
 
-// Return the uids given to an object just loaded.
-//
-// Argument:
-//   object_name: name of the object loaded
-//   prev       : loading object.
-//
-// Result:
-//   The uid to give to the object. For objects /players/<name>/xxx
-//   it is "<name>", for everything else it is 1 which translates
-//   into the 0-uid (which is actually the backbone-uid).
-//
-// In general, the function can have these results (<num> is a non-zero
-// number):
-//   "<uid>"                     -> uid = "<uid>", euid = "<uid>"
-//   ({ "<uid>", "<euid>" })     -> uid = "<uid>", euid = "<euid>"
-//   ({ "<uid>", not-a-string }) -> uid = "<uid>", euid = 0
-//
-// If strict-euids is not set, the following results are possible, too:
-//   <num>                       -> uid = 0, euid = 0
-//   ({ <num>, "<euid>" })       -> uid = 0, euid = "<euid>"
-//   ({ <num>, not-a-string })   -> uid = 0, euid = 0
+  // Provide uids for a freshly loaded object.
+  //
+  // Argument:
+  //   object_name: Name of the object being loaded.
+  //   prev       : The loading object.
+  //
+  // Result:
+  //   The uid to assign. For /players/<name>/... objects this is "<name>";
+  //   everything else returns 1, which maps to the backbone uid.
+  //
+  // In general, the function can return (<num> is a non-zero number):
+  //   "<uid>"                     -> uid = "<uid>", euid = "<uid>"
+  //   ({ "<uid>", "<euid>" })     -> uid = "<uid>", euid = "<euid>"
+  //   ({ "<uid>", not-a-string }) -> uid = "<uid>", euid = 0
+  //
+  // If strict-euids is not set, these results are also valid:
+  //   <num>                       -> uid = 0, euid = 0
+  //   ({ <num>, "<euid>" })       -> uid = 0, euid = "<euid>"
+  //   ({ <num>, not-a-string })   -> uid = 0, euid = 0
 
-{
-  string * parts;
+  string *parts;
 
   parts = explode(object_name, "/");
   if (sizeof(parts) > 2 && parts[0] == "players")
-      return parts[1];
+    return parts[1];
   return 1;
 }
 
 #if 0
-// PLAIN: The following code fragment is used in OSB to give 'backbone'
-// objects (e.g. objects from /obj, /room) the uids of the loader.  Other
-// objects get their uid as normal, but a 0 euid.  One important effect is
-// that when user A loads his own objects, the come with a valid euid, but
-// other users objects come with a 0 euid.
+// PLAIN: The OSB fragment gives backbone objects (/obj, /room) the loader's
+// uid, while other objects keep their usual uid but a 0 euid. The practical
+// effect is that a wizard's own objects load with a valid euid, while other
+// users' objects load with euid 0.
 
 {
   string creator_name;
@@ -295,34 +273,31 @@ static mixed _load_uids_fun (mixed object_name, object prev)
 #endif
 
 //---------------------------------------------------------------------------
-static mixed _clone_uids_fun (object blueprint, string new_name, object prev)
+static mixed _clone_uids_fun (object blueprint, string new_name, object prev) {
 
-// Return the uids given to an object just cloned.
-//
-// Argument:
-//   blueprint: the blueprint cloned.
-//   new_name : name of the object cloned
-//   prev     : cloning object.
-//
-// Result:
-//   The uids to give.
-//   This is either, the uid of the blueprint, or the uid of the previous
-//   object, or 1 (tested in this order).
-//
-// The possible results in general are the same as for _load_uids_fun().
+  // Provide uids for a freshly cloned object.
+  //
+  // Argument:
+  //   blueprint: The cloned blueprint.
+  //   new_name : The new object's name.
+  //   prev     : The cloning object.
+  //
+  // Result:
+  //   The uids to assign. Prefer the blueprint uid, then the previous object's
+  //   uid, and finally 1.
+  //
+  // Possible results match those described for _load_uids_fun().
 
-{
   string creator_name;
 
   return GETUID(blueprint) || GETUID(prev) || 1;
 }
 
 #if 0
-// PLAIN: The following code fragment is used in OSB to give 'backbone'
-// objects (e.g. objects from /obj, /room) the uids of the cloner.  Other
-// objects get their uid as normal, but a 0 euid.  One important effect is
-// that when user A clones his own objects, the come with a valid euid, but
-// other users objects come with a 0 euid.
+// PLAIN: The OSB fragment gives backbone objects (/obj, /room) the cloner's
+// uid, while other objects keep their usual uid but a 0 euid. The practical
+// effect is that a wizard's own objects clone with a valid euid, while other
+// users' objects clone with euid 0.
 
 {
   string creator_name;
@@ -337,167 +312,169 @@ static mixed _clone_uids_fun (object blueprint, string new_name, object prev)
 #endif
 
 //---------------------------------------------------------------------------
-static void _create_fun (object ob, object creator)
+static void _create_fun (object ob, object creator) {
 
-// Initializes the given object that has just been created.
-// It just calls ob->reset(0).
-//
-// Argument:
-//   ob:        the created object
-//   creator:   the creator
-//
+  // Initialize a freshly created object by calling ob->reset(0).
+  //
+  // Argument:
+  //   ob: The created object.
+  //   creator: The creator object.
+  //
 
-{
   closure fun;
 
-  // Create a non-alien closure to reset().
+  // Create a non-alien reset() closure.
   set_this_object(ob);
   fun = symbol_function("reset", ob);
 
-  // Call it with the creator as the previous object.
+  // Invoke reset() with the creator as the previous object.
   set_this_object(creator);
   funcall(fun, 0);
 }
 
 //===========================================================================
-//  Initialisation
+//  Initialization
 //
-// These functions are called after (re)loading the master to establish the
-// most basic operation parameters.
+// These functions run after (re)loading the master to establish the
+// foundational driver settings.
 //
-// The initialisation of LPMud on startup follows this schedule:
+// LPMud startup follows this sequence:
 //   - The gamedriver evaluates the commandline options and initializes
 //     itself.
 //   - The master is loaded, but since the driverhooks are not set yet,
-//     no standard initialisation lfun is called.
+//     no standard initialization lfun is called.
 //   - get_master_uid() is called. If the result is valid, it becomes the
-//     masters uid and euid.
+//     master's uid and euid.
 //   - inaugurate_master() is called.
 //   - flag() is called for each given '-f' commandline option.
 //   - get_simul_efun() is called.
 //   - the WIZLIST is read in.
-//   - epilog() is called. If it returns an array of strings, they are given
-//     one at a time as argument to preload().
+//   - epilog() is called. If it returns an array of strings, each entry is
+//     passed to preload().
 //     Traditionally, these strings are the filenames of the objects to
-//     preload, read from /room/init_file, which preload() then does.
+//     preload, read from /room/init_file.
 //   - The gamedriver sets up the IP communication and enters the backend
 //     loop.
 //
-// If the master is reloaded during the game, this actions are taken:
-//   - The master is loaded, and its initialisation lfun is called according
+// If the master is reloaded during the game, the sequence is:
+//   - The master is loaded, and its initialization lfun is called according
 //     to the settings of the driverhooks (if set).
 //   - Any auto-include string and all driverhooks are cleared.
 //   - get_master_uid() is called. If the result is valid, it becomes the
-//     masters uid and euid.
+//     master's uid and euid.
 //   - inaugurate_master() is called.
 //
-// If the master was destructed, but couldn't be reloaded, the old
-// master object could be reactivated. In that case:
+// If the master was destructed but cannot be reloaded, the old master
+// object may be reactivated. In that case:
 //   - reactivate_destructed_master() is called.
 //   - inaugurate_master() is called.
 //===========================================================================
 
 //---------------------------------------------------------------------------
-// Initialization of the master object.
+// Initialization behavior for the master object.
 //
-// As the lfuns which are called to initialize objects after a load are
-// defined through driver hooks, and these hooks are cleared prior to
-// a master (re)load, the first function called is inaugurate_master().
-// Anyway it's not very sensible to do anything earlier as the master is
-// not recognized as such at that time, and so a number of (important) things
-// would not work.
+// Because object-initialization lfuns are defined by driver hooks, and those
+// hooks are cleared before a master (re)load, inaugurate_master() is the
+// first reliable entry point. Earlier calls are unsafe because the master
+// is not recognized yet and important systems are unavailable.
 //
-// Which lfun is called during runtime to reset the master is also depending
-// on the driverhook settings. Arbitrary actions may be done on a reset.
+// Which lfun resets the master during runtime depends on driverhook settings.
+// Use reset sparingly and intentionally.
 
 //---------------------------------------------------------------------------
-void inaugurate_master (int arg)
+void inaugurate_master (int arg) {
 
-// Perform mudlib specific setup of the master.
-//
-// Argument:
-//   arg: 0 if the mud just started.
-//        1 if the master is reactivated destructed one.
-//        2 if the master is a reactivated destructed one, which lost all
-//             variables.
-//        3 if the master was just reloaded.
-//
-// This function is called whenever the master becomes fully operational
-// after (re)loading (it is now recognized as _the_ master).
-// This doesn't imply that the game is up and running.
-//
-// This function has at least to set up the driverhooks to use. Also, any
-// mudwho or wizlist handling has to be initialized here.
-//
-// Besides that, do whatever you feel you need to do,
-// e.g. set_driver_hook(), or give the master a decent euid.
+  // Perform mudlib-specific setup for the master.
+  //
+  // Argument:
+  //   arg: 0 if the mud just started.
+  //        1 if the master is a reactivated destructed instance.
+  //        2 if the master is reactivated and lost its variables.
+  //        3 if the master was just reloaded.
+  //
+  // This function is called whenever the master becomes fully operational
+  // after (re)loading (it is now recognized as _the_ master).
+  // This does not imply that the game is up and running.
+  //
+  // This function must at least install driver hooks. Mudwho and wizlist
+  // handling are also initialized here.
+  //
+  // Perform any additional setup as needed, such as setting a master euid.
 
-{
-    if (!arg) {
-        if (previous_object() && previous_object() != this_object())
-            return;
-        set_extra_wizinfo(0, allocate(BACKBONE_WIZINFO_SIZE));
-    }
+  if (!arg) {
+    if (previous_object() && previous_object() != this_object())
+      return;
+    set_extra_wizinfo(0, allocate(BACKBONE_WIZINFO_SIZE));
+  }
 
-    mudwho_init(arg);
+  mudwho_init(arg);
 
-  // Wizlist simulation
+  // Schedule periodic wizlist decay.
   if (find_call_out("wiz_decay") < 0)
     call_out("wiz_decay", 3600);
 
   set_driver_hook(
-        H_MOVE_OBJECT0,
-        unbound_lambda( ({'item, 'dest}),
-        ({#'_move_hook_fun, 'item, 'dest })
-                      )
-                 );
+    H_MOVE_OBJECT0,
+    unbound_lambda(
+      ({'item, 'dest}),
+      ({#'_move_hook_fun, 'item, 'dest})
+    )
+  );
   set_driver_hook(
     H_LOAD_UIDS,
-    unbound_lambda( ({'object_name}), ({
-      #'_load_uids_fun, 'object_name, ({#'previous_object}) })
-                  )
+    unbound_lambda(
+      ({'object_name}),
+      ({#'_load_uids_fun, 'object_name, ({#'previous_object})})
+    )
   );
   set_driver_hook(
     H_CLONE_UIDS,
-    unbound_lambda( ({ /* object */ 'blueprint, 'new_name}), ({
-      #'_clone_uids_fun, 'blueprint, 'new_name, ({#'previous_object}) })
-                  )
+    unbound_lambda(
+      ({ /* object */ 'blueprint, 'new_name}),
+      ({#'_clone_uids_fun, 'blueprint, 'new_name, ({#'previous_object})})
+    )
   );
-  /* We simulate the old compat mode behavior and call reset()
-   * with an argument (0 when creating, 1 when resetting).
-   *
-   * Non-compat mudlibs usually specify "create" for the H_CREATE_* hooks
-   * and "reset" for the H_RESET hook.
-   */
+  /* Simulate compat-mode behavior by calling reset() with an argument:
+  * 0 when creating, 1 when resetting.
+  *
+  * Non-compat mudlibs usually specify "create" for H_CREATE_* hooks and
+  * "reset" for the H_RESET hook.
+  */
   set_driver_hook(
     H_CREATE_SUPER,
-    unbound_lambda( ({ 'ob }), ({
-      #'_create_fun, 'ob, ({#'this_object}) })
-                  )
+    unbound_lambda(
+      ({ 'ob }),
+      ({#'_create_fun, 'ob, ({#'this_object})})
+    )
   );
   set_driver_hook(
     H_CREATE_OB,
-    unbound_lambda( ({ 'ob }), ({
-      #'_create_fun, 'ob, ({#'this_object}) })
-                  )
+    unbound_lambda(
+      ({ 'ob }),
+      ({#'_create_fun, 'ob, ({#'this_object})})
+    )
   );
   set_driver_hook(
     H_CREATE_CLONE,
-    unbound_lambda( ({ 'ob }), ({
-      #'_create_fun, 'ob, ({#'this_object}) })
-                  )
+    unbound_lambda(
+      ({ 'ob }),
+      ({#'_create_fun, 'ob, ({#'this_object})})
+    )
   );
   set_driver_hook(
     H_RESET,
-    unbound_lambda(0, ({
-      #'funcall, ({#'symbol_function, "reset", ({#'this_object})}), 1 })
-                  )
+    unbound_lambda(
+      0,
+      ({#'funcall, ({#'symbol_function, "reset", ({#'this_object})}), 1})
+    )
   );
-  set_driver_hook(H_CLEAN_UP,     "clean_up");
-  set_driver_hook(H_MODIFY_COMMAND,
-    ([ "e":"east", "w":"west", "s":"south", "n":"north"
-     , "d":"down", "u":"up", "nw":"northwest", "ne":"northeast"
-     , "sw":"southwest", "se":"southeast" ]));
+  set_driver_hook(H_CLEAN_UP, "clean_up");
+  set_driver_hook(
+    H_MODIFY_COMMAND,
+    ([ "e":"east", "w":"west", "s":"south", "n":"north",
+      "d":"down", "u":"up", "nw":"northwest", "ne":"northeast",
+      "sw":"southwest", "se":"southeast" ])
+  );
   set_driver_hook(H_MODIFY_COMMAND_FNAME, "modify_command");
   set_driver_hook(H_NOTIFY_FAIL, "What?\n");
   set_driver_hook(H_INCLUDE_DIRS, #'_include_dirs_hook);
@@ -505,58 +482,48 @@ void inaugurate_master (int arg)
 }
 
 //---------------------------------------------------------------------------
-mixed get_master_uid ()
+mixed get_master_uid () {
 
-// Return the value to be used as uid (and -euid) of a (re)loaded master.
-//
-// Possible results are in general:
-//
-//     "<uid"> -> uid = "<uid>", euid = "<euid>"
-//
-// In non-strict-euids mode, more results are possible:
-//
-//     0       -> uid = 0, euid = 0
-//     <num>   -> uid = 'default', euid = 0
-//
-// If your uids are in general based on filenames, it is wise to return
-// a value here which can not be legally generated from any filename.
-// OSB for example uses 'ze/us'.
+  // Return the uid/euid value for a (re)loaded master.
+  //
+  // Possible results include:
+  //
+  //     "<uid"> -> uid = "<uid>", euid = "<euid>"
+  //
+  // In non-strict-euids mode, additional results are allowed:
+  //
+  //     0       -> uid = 0, euid = 0
+  //     <num>   -> uid = 'default', euid = 0
+  //
+  // If your uids are filename-based, return a value that cannot appear in
+  // a legal filename. OSB uses "ze/us" for this purpose.
 
-{
-    return 1;
+  return 1;
 }
 
 //---------------------------------------------------------------------------
-void flag (string arg)
+void flag (string arg) {
 
-// Evaluate an argument given as option '-f' to the driver.
-//
-// Arguments:
-//   arg: The argument string from the option text '-f<arg>'.
-//        If several '-f' options are given, this function
-//        will be called sequentially with all given arguments.
-//
-// This function can be used to pass the master commands via arguments to
-// the driver. This is useful when building a new mudlib from scratch.
-// It is called only when the game is started.
-//
-// The code given implements these commands:
-//   '-fcall <ob> <fun> <arg>': call function <fun> in object <ob> with
-//                              argument <arg>.
-//   '-fshutdown': shutdown the game immediately.
-// Thus, starting the game as 'parse "-fcall foo bar Yow!" -fshutdown' would
-// first do foo->bar("Yow!") and then shutdown the game.
+  // Handle '-f' command-line options passed to the driver.
+  //
+  // Arguments:
+  //   arg: The argument string from '-f<arg>'. Multiple '-f' options are
+  //        delivered sequentially.
+  //
+  // Supported commands:
+  //   '-fcall <ob> <fun> <arg>': call <ob>-><fun>(<arg>).
+  //   '-fshutdown': shut down the game immediately.
+  //
+  // For example: 'parse "-fcall foo bar Yow!" -fshutdown' executes the
+  // call before shutting down.
 
-{
   string obj, fun, rest;
 
-  if (arg == "shutdown")
-  {
+  if (arg == "shutdown") {
     shutdown();
     return;
   }
-  if (sscanf(arg, "call %s %s %s", obj, fun, rest) >= 2)
-  {
+  if (sscanf(arg, "call %s %s %s", obj, fun, rest) >= 2) {
     write(obj+"->"+fun+"(\""+rest+"\") = ");
     write(call_other(obj, fun, rest));
     write("\n");
@@ -567,130 +534,108 @@ void flag (string arg)
 
 //---------------------------------------------------------------------------
 static mixed current_time;
-  /* Saved start time of epilog, updated during preloading */
+/* Track epilog start time for preload timing output. */
 
-string *epilog (int eflag)
+string *epilog (int eflag) {
 
-// Perform final actions before opening the game to players.
-//
-// Arguments:
-//   eflag: This is the number of '-e' options given to the parser.
-//          Normally it is just 0 or 1.
-//
-// Result:
-//   An array of strings, which traditionally designate the objects to be
-//   preloaded with preload(), read from the file /room/init_file.
-//
-//   Any other result is interpreted as 'no object to preload'.
-//   The resulting strings will be passed one at the time as
-//   arguments to preload().
+  // Perform final setup before opening the game to players.
+  //
+  // Arguments:
+  //   eflag: The number of '-e' options given to the parser (usually 0 or 1).
+  //
+  // Result:
+  //   An array of object filenames to preload, typically read from
+  //   /room/init_file. Any other result means "no preload."
+  //
+  //   Each entry is passed to preload() in order.
 
-{
 
-    if (eflag)
-        return ({});
+  if (eflag)
+    return ({});
 
-    debug_message(sprintf("Loading init file %s\n", INIT_FILE));
-    current_time = rusage();
-    current_time = current_time[0] + current_time[1];
-    return explode(read_file(INIT_FILE), "\n");
+  debug_message(sprintf("Loading init file %s\n", INIT_FILE));
+  current_time = rusage();
+  current_time = current_time[0] + current_time[1];
+  return explode(read_file(INIT_FILE), "\n");
 }
 
 //---------------------------------------------------------------------------
-void preload (string file)
+void preload (string file) {
 
-// Preload a given object.
-//
-// Arguments:
-//   file: The filename of the object to preload, as returned by epilog().
-//
-// It is task of the epilog()/preload() pair to ensure the validity of
-// the given strings (e.g. filtering out comments and blank lines).
-// For preload itself a 'load_object(file)' is sufficient, but it
-// should be guarded by a catch() to avoid premature blockings.
-// Also it is wise to change the master's euid from master_uid to something
-// less privileged for the time of the preload.
-//
-// You can of course do anything else with the passed strings - preloading
-// is just the traditional task.
+  // Preload a single object entry.
+  //
+  // Arguments:
+  //   file: The filename to preload, as returned by epilog().
+  //
+  // epilog()/preload() should filter comments and blank lines. For each
+  // entry, load_object(file) is sufficient, but consider catch() to avoid
+  // blocking and consider lowering the master's euid for safety.
+  //
+  // Other behaviors are possible; preloading is just the traditional use.
 
-{
-    int last_time;
+  int last_time;
 
-    if (sizeof(file) && file[0] != '#')
-    {
-        last_time = current_time;
-        debug_message(sprintf("Preloading file: %s", file));
-        load_object(file);
-        current_time = rusage();
-        current_time = current_time[0] + current_time[1];
-        debug_message(sprintf(" %.2f\n", (current_time - last_time) / 1000.0));
-    }
+  if (sizeof(file) && file[0] != '#') {
+    last_time = current_time;
+    debug_message(sprintf("Preloading file: %s", file));
+    load_object(file);
+    current_time = rusage();
+    current_time = current_time[0] + current_time[1];
+    debug_message(sprintf(" %.2f\n", (current_time - last_time) / 1000.0));
+  }
 }
 
 //---------------------------------------------------------------------------
 //void external_master_reload ()
 
-// Master was reloaded on external request by SIGUSR1.
+// Handle a master reload initiated by SIGUSR1.
 //
-// If the gamedriver destruct and reloads the master on external request
-// via SIGUSR1, it does this by a call to this function.
-// It will be called after inaugurate_master() of course.
-// If you plan to do additional magic here, you're welcome.
+// The driver calls this after reloading the master in response to SIGUSR1.
+// It runs after inaugurate_master(). Add additional handling here if needed.
 
 
 //---------------------------------------------------------------------------
 //void reactivate_destructed_master (int removed)
 
-// Reactivate a formerly destructed master.
+// Reactivate a destructed master object.
 //
 // Arguments:
-//   removed: True if the master was already on the list of destructed
-//            objects.
+//   removed: True if the master was already on the destructed list.
 //
-// This function is called in an formerly destructed master since a new master
-// couldn't be loaded.
-// This function has to reinitialize all variables at least to continue
-// operation.
+// This function is invoked when the driver cannot load a new master.
+// It must reinitialize all state required to continue operation.
 
 
 //---------------------------------------------------------------------------
-mixed get_simul_efun ()
+mixed get_simul_efun () {
 
-// Load the simul_efun object(s) and return one or more paths of it.
-//
-// Result:
-//   Either a single string with the object_name() of the simul_efun object,
-//   or an array of strings which has to start with that object_name().
-//   Return 0 if this feature isn't wanted.
-//
-// Note that the object(s) must be loaded by this function!
-//
-// When you return an array of strings, the first string is taken as path
-// to the simul_efun object, and all other paths are used for backup
-// simul_efun objects to call simul_efuns that are not present in the
-// main simul_efun object. This allows to remove simul_efuns at runtime
-// without getting errors from old compiled programs that still use the
-// obsolete simul_efuns. A side use of this mechanism is to provide
-// a 'spare' simul_efun object in case the normal one fails to load.
-//
-// If the game depends on the simul_efun object, and none could be loaded,
-// an immediate shutdown should occur.
+  // Load simul_efun objects and return their paths.
+  //
+  // Result:
+  //   Either a single string containing the simul_efun object_name(), or an
+  //   array of strings that begins with that object_name(). Return 0 to
+  //   disable simul_efuns.
+  //
+  // The objects must be loaded by this function.
+  //
+  // When returning an array, the first entry is the primary simul_efun, and
+  // subsequent entries are backups used when older code calls removed efuns.
+  // This allows stale code to keep running while efuns are retired.
+  //
+  // If the mudlib requires simul_efuns and none load successfully, the game
+  // should shut down immediately.
 
-{
   mixed error;
   object ob;
 
   error = catch(ob = load_object(SIMUL_EFUN_FILE));
-  if (!error)
-  {
+  if (!error) {
     ob->start_simul_efun();
     return SIMUL_EFUN_FILE;
   }
   efun::write("Failed to load " + SIMUL_EFUN_FILE + ": "+error);
   error = catch(ob = load_object(SPARE_SIMUL_EFUN_FILE));
-  if (!error)
-  {
+  if (!error) {
     ob->start_simul_efun();
     return SPARE_SIMUL_EFUN_FILE;
   }
@@ -706,96 +651,91 @@ mixed get_simul_efun ()
 //===========================================================================
 
 //---------------------------------------------------------------------------
-object connect ()
+object connect () {
 
-// Handle the request for a new connection.
-//
-// Result:
-//   An login object the requested connection should be bound to,
-//   for us a copy of obj/player.c .
-//
-// Note that the connection is not bound yet!
-//
-// The gamedriver will call the lfun 'logon()' in the login object after
-// binding the connection to it. That lfun has to return !=0 to succeed.
+  // Handle an incoming connection request.
+  //
+  // Result:
+  //   A login object to bind the connection to (a clone of obj/player.c).
+  //
+  // The connection is not bound at this point.
+  //
+  // The driver calls logon() on the login object after binding the
+  // connection. logon() must return non-zero to succeed.
 
-{
-    object ob = clone_object("obj/player");
-    if (!ob)
-    {
-        return 0;
-    }
-
+  object ob;
 #if defined(__TLS__) && defined(TLS_PORT)
-    // Figure out what port the interactive is connected to.
-    int mud_port = efun::interactive_info(this_interactive(), II_MUD_PORT);
-    // If it's the TLS_PORT, then try to initialize TLS.
-    if (mud_port == TLS_PORT)
-    {
-        // reject connection if TLS is not available
-        if (!tls_available())
-            return 0;
-        tls_init_connection(this_object(), "tls_logon", ob);
-    }
+  int mud_port;
 #endif
 
-    mudwho_connect(ob);
-    return ob;
+  ob = clone_object("obj/player");
+  if (!ob)
+    return 0;
+
+#if defined(__TLS__) && defined(TLS_PORT)
+  // Determine which port the interactive connected to.
+  mud_port = efun::interactive_info(this_interactive(), II_MUD_PORT);
+  // If it is TLS_PORT, attempt to initialize TLS.
+  if (mud_port == TLS_PORT) {
+    // Reject the connection if TLS is unavailable.
+    if (!tls_available())
+      return 0;
+    tls_init_connection(this_object(), "tls_logon", ob);
+  }
+#endif
+
+  mudwho_connect(ob);
+  return ob;
 }
 
 //---------------------------------------------------------------------------
-void disconnect (object obj)
+void disconnect (object obj) {
 
-// Handle the loss of an IP connection.
-//
-// Argument:
-//   obj: The (formerly) interactive object (player).
-//
-// This called by the gamedriver to handle the removal of an IP connection,
-// either because the connection is already lost ('netdeath') or due to
-// calls to exec() or remove_interactive().
-// The connection will be unbound upon return from this call.
+  // Handle the loss of an IP connection.
+  //
+  // Argument:
+  //   obj: The (formerly) interactive object (player).
+  //
+  // This is called by the gamedriver when the IP connection is removed,
+  // either due to netdeath or because of exec() or remove_interactive().
+  // The connection will be unbound upon return from this call.
 
-{
-    mudwho_disconnect(ob);
+  mudwho_disconnect(ob);
 }
 
 //---------------------------------------------------------------------------
-void remove_player (object player)
+void remove_player (object player) {
 
-// Remove a player object from the game.
-//
-// Argument:
-//   player: The player object to be removed.
-//
-// This function is called by the gamedriver to expell remaining players
-// from the game on shutdown in a polite way.
-// If this functions fails to quit/destruct the player, it will be
-// destructed the hard way by the gamedriver.
-//
-// Note: This function must not cause runtime errors.
+  // Remove a player object from the game.
+  //
+  // Argument:
+  //   player: The player object to be removed.
+  //
+  // The gamedriver calls this during shutdown to politely remove players.
+  // If this function fails to quit/destruct a player, the driver will
+  // destruct the object forcefully.
+  //
+  // Note: This function must not cause runtime errors.
 
-{
-    catch(player->quit());
-    if (player)
-	destruct(player);
+  catch(player->quit());
+  if (player)
+    destruct(player);
 }
 
 //---------------------------------------------------------------------------
-void stale_erq (closure callback)
+void stale_erq (closure callback) {
 
-// Notify the loss of the erq demon.
-//
-// Argument:
-//   callback: the callback closure set for an erq request.
-//
-// If the erq connection dies prematurely, the driver will call this lfun for
-// every pending request with set callback. This function should notify the
-// originating object that the answer will never arrive.
-//
-// In our case, we simply reattach the default erq.
+  // Handle a lost erq daemon connection.
+  //
+  // Argument:
+  //   callback: The callback closure associated with the erq request.
+  //
+  // If the erq connection dies prematurely, the driver calls this lfun for
+  // every pending request. This function should notify the originating
+  // object that the answer will never arrive.
+  //
+  // In this mudlib, we simply reattach the default erq.
 
-{
   attach_erq_demon("", 0);
 }
 
@@ -807,31 +747,30 @@ void stale_erq (closure callback)
 //===========================================================================
 
 //---------------------------------------------------------------------------
-object compile_object (string filename)
+object compile_object (string filename) {
 
-// Compile an virtual object.
-//
-// Arguments:
-//   previous_object(): The object requesting the virtual object.
-//   filename         : The requested filename for the virtual object.
-//
-// Result:
-//   The object to serve as the requested virtual object, or 0.
-//
-// This function is called if the compiler can't find the filename for an
-// object to compile. The master has now the opportunity to return an other
-// which will then serve as if it was compiled from <filename>.
-// If the master returns 0, the usual 'Could not load'-error will occur.
-//
-// The function will try several possible VMasters in sequence, calling
-// compile_object(<filename>) in each of them, until on of them returns
-// an object. The objects tried in order (if existing) are:
-//  1. <path_of_filename>/vmaster.c
-//  2  <path_of_filename>.c
-//    In both cases, only the basename part of <filename> is passed
-//    to compile_object().
+  // Compile a virtual object.
+  //
+  // Arguments:
+  //   previous_object(): The object requesting the virtual object.
+  //   filename         : The requested filename for the virtual object.
+  //
+  // Result:
+  //   The object to serve as the requested virtual object, or 0.
+  //
+  // This function is called if the compiler cannot find a filename to
+  // compile. The master may return an alternative object that will serve as
+  // if it were compiled from <filename>.
+  // If the master returns 0, the usual 'Could not load'-error will occur.
+  //
+  // The function tries several possible VMasters in sequence, calling
+  // compile_object(<filename>) in each of them until one returns
+  // an object. The objects tried in order (if existing) are:
+  //  1. <path_of_filename>/vmaster.c
+  //  2  <path_of_filename>.c
+  //    In both cases, only the basename part of <filename> is passed
+  //    to compile_object().
 
-{
   object obj, room;
   mixed vmaster;
   string filepath;
@@ -848,26 +787,25 @@ object compile_object (string filename)
 
 
 //---------------------------------------------------------------------------
-string get_wiz_name (string file)
+string get_wiz_name (string file) {
 
-// Return the author of a file.
-//
-// Arguments:
-//   file: The name of the file in question.
-//
-// Result:
-//   The name of the file's author (or 0 if there is none).
-//
-// This function is called for maintenance of the wiz-list, to score errors
-// to the right wizard.
+  // Return the author of a file.
+  //
+  // Arguments:
+  //   file: The name of the file in question.
+  //
+  // Result:
+  //   The name of the file's author (or 0 if there is none).
+  //
+  // This function is called when maintaining the wiz-list to attribute
+  // errors to the correct wizard.
 
-{
-    string name, rest;
+  string name, rest;
 
-    if (sscanf(file, "players/%s/%s", name, rest) == 2) {
-	return name;
-    }
-    return 0;
+  if (sscanf(file, "players/%s/%s", name, rest) == 2) {
+    return name;
+  }
+  return 0;
 }
 
 //---------------------------------------------------------------------------
@@ -876,172 +814,167 @@ string get_wiz_name (string file)
 // Return a printable name for an object.
 //
 // Arguments:
-//   obj: The object which name is of interest.
+//   obj: The object whose name is being printed.
 //
 // Result:
-//   A string with the objects name, or 0.
+//   A string with the object's name, or 0.
 //
 // This function is called by sprintf() to print a meaningful name
 // in addition to the normal object_name().
-// If this functions returns a string, the object will be printed
+// If this function returns a string, the object will be printed
 // as "<obj_name> (<printf_obj_name>)".
 
 
 //---------------------------------------------------------------------------
-void destruct_environment_of(object ob)
+void destruct_environment_of(object ob) {
 
-/* When an object is destructed, this function is called with every
- * item in that room. We get the chance to save players !
- */
+  /* When an object is destructed, this function runs for every item in the
+  * room, giving us a chance to rescue any players.
+  */
 
-{
-    mixed error;
+  mixed error;
 
-    if (!interactive(ob))
-	return;
-    tell_object(ob, "Everything you see is disolved. Luckily, you are transported somewhere...\n");
-    if (error = catch(ob->move_player("is transfered#domain/lp-245/room/void"))) {
-	write(error);
-	if (error = catch(move_object(ob, "domain/lp-245/room/void"))) {
-	    object new_player;
+  if (!interactive(ob))
+    return;
+  tell_object(ob, "Everything you see is disolved. Luckily, you are transported somewhere...\n");
+  if (error = catch(ob->move_player("is transfered#domain/lp-245/room/void"))) {
+    write(error);
+    if (error = catch(move_object(ob, "domain/lp-245/room/void"))) {
+      object new_player;
 
-	    write(error);
-	    new_player = clone_object("obj/player");
-	    if (!function_exists("replace_player", new_player)) {
-		destruct(new_player);
-		return;
-	    }
-	    exec(new_player, ob);
-	    if (error = catch(new_player->replace_player(ob, "domain/lp-245/room/void"))) {
-		write(error);
-	    }
-	}
+      write(error);
+      new_player = clone_object("obj/player");
+      if (!function_exists("replace_player", new_player)) {
+        destruct(new_player);
+        return;
+      }
+      exec(new_player, ob);
+      if (error = catch(new_player->replace_player(ob, "domain/lp-245/room/void"))) {
+        write(error);
+      }
     }
+  }
 }
 
 //---------------------------------------------------------------------------
-void move_or_destruct(object what, object to)
+void move_or_destruct(object what, object to) {
 
-/* Move <what> into <to>, or destruct <what> if that is not possible.
- *
- * An error in this function can be very nasty. Note that unlimited recursion
- * is likely to cause errors when environments are deeply nested
- */
+  /* Move <what> into <to>, or destruct <what> if that is not possible.
+  *
+  * An error in this function can be very nasty. Note that unlimited recursion
+  * is likely to cause errors when environments are deeply nested.
+  */
 
-{
-    int res;
+  int res;
 
-    /* PLAIN: the following loop is for compat mode only */
-    do {
-        if (catch( res = TRANSFER(what, to) )) res = 5;
-        if ( !(res && what) ) return;
-    } while( (res == 1 || res == 4 || res == 5) && (to = environment(to)) );
-    /* PLAIN: native muds make this
-    if (!catch(what->move(to, 1)))
-        return;
-    */
+  /* PLAIN: the following loop is for compat mode only. */
+  do {
+    if (catch( res = TRANSFER(what, to) )) res = 5;
+    if ( !(res && what) ) return;
+  } while( (res == 1 || res == 4 || res == 5) && (to = environment(to)) );
+  /* PLAIN: native muds make this
+  if (!catch(what->move(to, 1)))
+    return;
+  */
 
-    /*
-     * Failed to move the object. Therefore it is destroyed.
-     */
-    destruct(what);
+  /*
+  * If the move failed, destroy the object.
+  */
+  destruct(what);
 }
 
 //---------------------------------------------------------------------------
 private int
-handle_super_compat (object super, object ob)
+handle_super_compat (object super, object ob) {
 
-/* For compat muds: handle the weight handling in the environment for
- * prepare_destruct().
- * Return non-0 if an error occurred, and 0 if not.
- */
+  /* For compat muds: handle the weight handling in the environment for
+  * prepare_destruct().
+  * Return non-0 if an error occurred, and 0 if not.
+  */
 
-{
-    if (super)
-    {
-	mixed error;
-	mixed weight;
+  if (super) {
+    mixed error;
+    mixed weight;
 
-	set_this_object(ob);
-	if ( living(ob) ) {
-	    if (error = catch(super->exit(ob),0))
-		write("exit"+": "+error);
-	}
-	if ( error = catch((weight = ob->query_weight()),0) ) {
-	    write("query_weight"+": "+error);
-            return 1;
-	}
-	if (weight && intp(weight)) {
-	    if (error = catch(super->add_weight(-weight),0)) {
-		write("add_weight"+": "+error);
-                return 1;
-	    }
-	}
+    set_this_object(ob);
+    if ( living(ob) ) {
+      if (error = catch(super->exit(ob),0))
+        write("exit"+": "+error);
     }
+    if ( error = catch((weight = ob->query_weight()),0) ) {
+      write("query_weight"+": "+error);
+      return 1;
+    }
+    if (weight && intp(weight)) {
+      if (error = catch(super->add_weight(-weight),0)) {
+        write("add_weight"+": "+error);
+        return 1;
+      }
+    }
+  }
 
-    return 0;
+  return 0;
 }
 
 //---------------------------------------------------------------------------
-mixed prepare_destruct (object ob)
+mixed prepare_destruct (object ob) {
 
-// Prepare the destruction of the given object.
-//
-// Argument:
-//   obj : The object to destruct.
-//
-// Result:
-//   Return 0 if the object is ready for destruction, any other value
-//   will abort the attempt.
-//   If a string is returned, an error with the string as message will
-//   be issued.
-//
-// The gamedriver calls this function whenever an object shall be destructed.
-// It expects, that this function cleans the inventory of the object, or
-// the destruct will fail.
-// Furthermore, the function could notify the former inventory objects that
-// their holder is under destruction (useful to move players out of rooms which
-// are updated); and it could announce mudwide the destruction(quitting) of
-// players.
+  // Prepare the destruction of the given object.
+  //
+  // Argument:
+  //   obj : The object to destruct.
+  //
+  // Result:
+  //   Return 0 if the object is ready for destruction, any other value
+  //   will abort the attempt.
+  //   If a string is returned, an error with the string as message will
+  //   be issued.
+  //
+  // The gamedriver calls this function whenever an object shall be destructed.
+  // It expects, that this function cleans the inventory of the object, or
+  // the destruct will fail.
+  // Furthermore, the function could notify the former inventory objects that
+  // their holder is under destruction (useful to move players out of rooms which
+  // are updated); and it could announce mudwide the destruction(quitting) of
+  // players.
 
-{
-    object super;
-    int i;
-    object sh, next;
+  object super;
+  int i;
+  object sh, next;
 
-    /* Remove all pending shadows */
-    if (!object_info(ob, OI_SHADOW_PREV))
-        for (sh = object_info(ob, OI_SHADOW_NEXT); sh; sh = next) {
-            next = efun::object_info(sh, OI_SHADOW_NEXT);
-            funcall(bind_lambda(#'unshadow, sh)); /* avoid deep recursion */
-            destruct(sh);
-        }
+  /* Remove all pending shadows */
+  if (!object_info(ob, OI_SHADOW_PREV))
+    for (sh = object_info(ob, OI_SHADOW_NEXT); sh; sh = next) {
+    next = efun::object_info(sh, OI_SHADOW_NEXT);
+    funcall(bind_lambda(#'unshadow, sh)); /* avoid deep recursion */
+    destruct(sh);
+  }
 
-    super = environment(ob);
+  super = environment(ob);
 
-    /* PLAIN: This whole if (super) {...} block is for compat muds only */
-    if (super) {
-        if (funcall(#'handle_super_compat, super, ob))
-            return;
+  /* PLAIN: This whole if (super) {...} block is for compat muds only */
+  if (super) {
+    if (funcall(#'handle_super_compat, super, ob))
+      return;
+  }
+  /* PLAIN: end of compat-mud block */
+
+  if (!super) {
+    object item;
+
+    while ( item = first_inventory(ob) ) {
+      destruct_environment_of(item);
+      if (item && environment(item) == ob) destruct(item);
     }
-    /* PLAIN: end of compat-mud block */
+  } else {
+    while ( first_inventory(ob) )
+      move_or_destruct(first_inventory(ob), super);
+  }
 
-    if (!super) {
-	object item;
+  if (interactive(ob))
+    disconnect(ob);
 
-	while ( item = first_inventory(ob) ) {
-	    destruct_environment_of(item);
-	    if (item && environment(item) == ob) destruct(item);
-	}
-    } else {
-	while ( first_inventory(ob) )
-	    move_or_destruct(first_inventory(ob), super);
-    }
-
-    if (interactive(ob))
-        disconnect(ob);
-
-    return 0; /* success */
+  return 0; /* success */
 }
 
 
@@ -1074,83 +1007,81 @@ mixed prepare_destruct (object ob)
 
 
 //---------------------------------------------------------------------------
-void slow_shut_down (int minutes)
+void slow_shut_down (int minutes) {
 
-// Schedule a shutdown for the near future.
-//
-// Argument:
-//   minutes: The desired time in minutes till the shutdown:
-//             6, if just the user reserve has been put into use;
-//             1, if the (smaller) system or even the master reserve
-//                has been put into use as well.
-//
-// The gamedriver calls this function when it runs low on memory.
-// At this time, it has freed its reserve, but since it won't last long,
-// the games needs to be shut down. Don't take the 'minutes' as granted
-// remaining uptime, just deduce the urgency of the shutdown from it.
-// The delay is to give the players the opportunity to finish quests,
-// sell their stuff, etc.
-// It is possible that the driver may reallocate some memory after the
-// function has been called, and then run again into a low memory situation,
-// calling this function again.
-//
-// In our case, this function loads an 'Armageddon' object and tells
-// it what to do. It is the Armageddon object then which performs
-// the shutdown.
-//
-// Technical:
-//   The memory handling of the gamedriver includes three reserved areas:
-//   user, system and master. All three are there to insure that the game
-//   shuts down gracefully when the memory runs out: the user area to give
-//   the players time to quit normally, the others to enable emergency-logouts
-//   when the user reserve is used up as well.
-//   The areas are allocated at start of the gamedriver, and released when
-//   no more memory could be obtained from the host. In such a case, one
-//   of the remaining areas is freed (so the game can continue a short
-//   while) and a garbagecollection is initiated.
-//   If the garbagecollection recycles enough memory (either true garbage
-//   or by the aid of the quota_demon) to reallocate the areas, all is
-//   fine, else the game is shut down by a call to this function.
+  // Schedule a shutdown for the near future.
+  //
+  // Argument:
+  //   minutes: The desired time in minutes till the shutdown:
+  //             6, if just the user reserve has been put into use;
+  //             1, if the (smaller) system or even the master reserve
+  //                has been put into use as well.
+  //
+  // The gamedriver calls this function when it runs low on memory.
+  // At this time, it has freed its reserve, but since it won't last long,
+  // the games needs to be shut down. Don't take the 'minutes' as granted
+  // remaining uptime, just deduce the urgency of the shutdown from it.
+  // The delay is to give the players the opportunity to finish quests,
+  // sell their stuff, etc.
+  // It is possible that the driver may reallocate some memory after the
+  // function has been called, and then run again into a low memory situation,
+  // calling this function again.
+  //
+  // In our case, this function loads an 'Armageddon' object and tells
+  // it what to do. It is the Armageddon object then which performs
+  // the shutdown.
+  //
+  // Technical:
+  //   The memory handling of the gamedriver includes three reserved areas:
+  //   user, system and master. All three are there to insure that the game
+  //   shuts down gracefully when the memory runs out: the user area to give
+  //   the players time to quit normally, the others to enable emergency-logouts
+  //   when the user reserve is used up as well.
+  //   The areas are allocated at start of the gamedriver, and released when
+  //   no more memory could be obtained from the host. In such a case, one
+  //   of the remaining areas is freed (so the game can continue a short
+  //   while) and a garbagecollection is initiated.
+  //   If the garbagecollection recycles enough memory (either true garbage
+  //   or by the aid of the quota_demon) to reallocate the areas, all is
+  //   fine, else the game is shut down by a call to this function.
 
-{
-    filter(users(), #'tell_object,
-      "Game driver shouts: The memory is getting low !\n");
-    "obj/shut"->shut(minutes);
+  filter(users(), #'tell_object,
+  "Game driver shouts: The memory is getting low !\n");
+  "obj/shut"->shut(minutes);
 }
 
 //---------------------------------------------------------------------------
-varargs void notify_shutdown (string crash_reason)
+varargs void notify_shutdown (string crash_reason) {
 
-// Notify the master about an immediate shutdown. If <crash_reason> is 0,
-// it is a normal shutdown, otherwise it is a crash and <crash_reason>
-// gives a hint at the reason.
-//
-// The function has the opportunity to perform any cleanup operation, like
-// informing the mudwho server that the mud is down. This can not be done
-// when remove_player() is called because the udp connectivity is already
-// gone then.
-//
-// If the gamedriver shuts down normally , this is the last function called
-// before the mud shuts down the udp connections and the accepting socket
-// for new players.
-//
-// If the gamedriver crashes, this is the last function called before the
-// mud attempts to dump core and exit. WARNING: Since the driver is in
-// an unstable state, this function may not be able to run to completion!
-// The following crash reasons are defined:
-//   "Fatal Error": an internal sanity check failed.
+  // Notify the master about an immediate shutdown. If <crash_reason> is 0,
+  // it is a normal shutdown, otherwise it is a crash and <crash_reason>
+  // gives a hint at the reason.
+  //
+  // The function has the opportunity to perform any cleanup operation, like
+  // informing the mudwho server that the mud is down. This can not be done
+  // when remove_player() is called because the udp connectivity is already
+  // gone then.
+  //
+  // If the gamedriver shuts down normally , this is the last function called
+  // before the mud shuts down the udp connections and the accepting socket
+  // for new players.
+  //
+  // If the gamedriver crashes, this is the last function called before the
+  // mud attempts to dump core and exit. WARNING: Since the driver is in
+  // an unstable state, this function may not be able to run to completion!
+  // The following crash reasons are defined:
+  //   "Fatal Error": an internal sanity check failed.
 
-{
-    if (previous_object() && previous_object() != this_object())
-        return;
-    if (!crash_reason)
-        filter(users(), #'tell_object,
-          "Game driver shouts: LPmud shutting down immediately.\n");
-    else
-        filter(users(), #'tell_object,
-          "Game driver shouts: PANIC! "+ crash_reason+"!\n");
-    save_wiz_file();
-    mudwho_shutdown();
+  if (previous_object() && previous_object() != this_object())
+    return;
+  if (!crash_reason)
+    filter(users(), #'tell_object,
+  "Game driver shouts: LPmud shutting down immediately.\n");
+  else
+    filter(users(), #'tell_object,
+  "Game driver shouts: PANIC! "+ crash_reason+"!\n");
+  save_wiz_file();
+  mudwho_shutdown();
 }
 
 //===========================================================================
@@ -1159,627 +1090,585 @@ varargs void notify_shutdown (string crash_reason)
 //===========================================================================
 
 //---------------------------------------------------------------------------
-void dangling_lfun_closure ()
+void dangling_lfun_closure () {
 
-// Handle a dangling lfun-closure.
-//
-// This is called when the gamedriver executes a closure using a vanished lfun.
-// A proper handling is to raise a runtime error.
-//
-// Technical:
-//   Upon replacing programs (see efun replace_program()), any existing
-//   lambda closures of the object are adjusted to the new environment.
-//   If a closure uses a lfun which vanished in the replacement process,
-//   the reference to this lfun is replaced by a reference to this function.
-//   The error will then occur when the execution of the adjusted lambda
-//   reaches the point of the lfun reference.
-//   There are two reasons for the delayed handling. First is that the
-//   program replacement and with it the closure adjustment happens at
-//   the end of a backend cycle, outside of any execution thread: noone
-//   would see the error at this time.
-//   Second, smart closures might know/recognize the program replacement
-//   and skip the call to the vanished lfun.
+  // Handle a dangling lfun closure.
+  //
+  // This is called when the driver executes a closure that references a
+  // vanished lfun. The correct response is to raise a runtime error.
+  //
+  // Technical:
+  //   When programs are replaced (see efun replace_program()), any existing
+  //   lambda closures are adjusted to the new environment. If a closure uses
+  //   an lfun that vanished in the replacement process,
+  //   the reference to this lfun is replaced by a reference to this function.
+  //   The error will then occur when the adjusted lambda executes the missing
+  //   call.
+  //   There are two reasons for delayed handling. First, program replacement
+  //   and closure adjustment happen at the end of a backend cycle, outside of
+  //   any execution thread, so no one would observe the error immediately.
+  //   Second, smart closures might recognize program replacement
+  //   and skip the call to the vanished lfun.
 
-{
   raise_error("dangling lfun closure\n");
 }
 
 //---------------------------------------------------------------------------
-void log_error (string file, string err)
+void log_error (string file, string err) {
 
-// Announce a compiler-time error.
-//
-// Arguments:
-//   file: The name of file containing the error (it needn't be an object
-//         file!).
-//   err : The error message.
-//
-// Whenever the LPC compiler detects an error, this function is called.
-// It should at least log the error in a file, and also announce it
-// to the active player if it is an wizard.
+  // Record a compiler-time error.
+  //
+  // Arguments:
+  //   file: The name of the file containing the error (not necessarily an
+  //         object file).
+  //   err : The error message.
+  //
+  // The LPC compiler calls this on error. It should log the error and notify
+  // the active player if they are a wizard.
 
-{
-    string name;
+  string name;
 
-    name = get_wiz_name(file);
-    if (name == 0)
-	name = "log";
-    write_file("/log/"+name, err);
+  name = get_wiz_name(file);
+  if (name == 0)
+    name = "log";
+  write_file("/log/"+name, err);
 }
 
 //---------------------------------------------------------------------------
 mixed heart_beat_error (object culprit, string err,
-                        string prg, string curobj, int line)
+string prg, string curobj, int line) {
 
-// Announce an error in the heart_beat() function.
-//
-// Arguments:
-//   culprit: The object which lost the heart_beat.
-//   err    : The error message.
-//   prg    : The executed program (might be 0).
-//   curobj : The object causing the error (might be 0).
-//   line   : The line number where the error occurred (might be 0).
-//
-// Result:
-//   Return anything != 0 to restart the heart_beat in culprit.
-//
-// This function has to announce an error in the heart_beat() function
-// of culprit.
-// At time of call, the heart_beat has been turned off.
-// A player should at least get a "You have no heartbeat!" message, a more
-// advanced handling would destruct the offending object and allow the
-// heartbeat to restart.
-//
-// Note that <prg> denotes the program actually executed (which might be
-// inherited one) whereas <curobj> is just the offending object.
+  // Report an error in the heart_beat() function.
+  //
+  // Arguments:
+  //   culprit: The object which lost the heart_beat.
+  //   err    : The error message.
+  //   prg    : The executed program (might be 0).
+  //   curobj : The object causing the error (might be 0).
+  //   line   : The line number where the error occurred (might be 0).
+  //
+  // Result:
+  //   Return anything != 0 to restart the heart_beat in culprit.
+  //
+  // This function reports an error in culprit->heart_beat(). The heartbeat is
+  // already turned off. Players should at least see a "You have no heartbeat!"
+  // message; more advanced handling could destruct the offending object and
+  // allow the heartbeat to restart.
+  //
+  // Note that <prg> denotes the program actually executed (which might be
+  // inherited one) whereas <curobj> is just the offending object.
 
-{
-    if ( interactive(culprit) ) {
-	tell_object(
-	  culprit,
-	  "Game driver tells you: You have no heart beat !\n"
-	);
-    }
-    return 0; /* Don't restart */
+  if ( interactive(culprit) ) {
+    tell_object(
+    culprit,
+    "Game driver tells you: You have no heart beat !\n"
+    );
+  }
+  return 0; /* Don't restart */
 }
 
 //---------------------------------------------------------------------------
 void runtime_error ( string err, string prg, string curobj, int line
-                   , mixed culprit)
+, mixed culprit) {
 
-// Announce a runtime error.
-//
-// Arguments:
-//   err    : The error message.
-//   prg    : The executed program.
-//   curobj : The object causing the error.
-//   line   : The line number where the error occurred.
-//   culprit: -1 for runtime errors; the object holding the heart_beat()
-//            function for heartbeat errors.
-//
-// This function has to announce a runtime error to the active user,
-// resp. handle a runtime error which occurred during the execution of
-// heart_beat() of <culprit>.
-//
-// For a normal runtime error, if the active user is a wizard, it might
-// give him the full error message together with the source line; if the
-// user is a is a player, it should issue a decent message ("Your sensitive
-// mind notices a wrongness in the fabric of space") and could also announce
-// the error to the wizards online.
-//
-// If the error is a heartbeat error, the heartbeat for the offending
-// <culprit> has been turned off. The function itself shouldn't do much, since
-// the lfun heart_beat_error() will be called right after this one.
-//
-// Note that <prg> denotes the program actually executed (which might be
-// inherited) whereas <curobj> is just the offending object for which the
-// program was executed.
+  // Report a runtime error.
+  //
+  // Arguments:
+  //   err    : The error message.
+  //   prg    : The executed program.
+  //   curobj : The object causing the error.
+  //   line   : The line number where the error occurred.
+  //   culprit: -1 for runtime errors; the object holding the heart_beat()
+  //            function for heartbeat errors.
+  //
+  // This function reports a runtime error to the active user or handles a
+  // runtime error that occurred during heart_beat() for <culprit>.
+  //
+  // For normal runtime errors, wizards should see the full message and source
+  // line. Players should see a restrained message and the error may be
+  // announced to online wizards.
+  //
+  // If the error is a heartbeat error, the heartbeat for the offending
+  // <culprit> has been turned off. This function should not do much, since
+  // heart_beat_error() will be called right after this one.
+  //
+  // Note that <prg> denotes the program actually executed (which might be
+  // inherited) whereas <curobj> is just the offending object for which the
+  // program was executed.
 
-{
   if (this_player() && interactive(this_player()))
     catch( write(
-	query_player_level("error messages") ?
-	    curobj ?
-		err +
-		"program: " + prg +
-		", object: " + curobj +
-		" line " + line + "\n"
-	    :
-		err
-	:
-	    "Your sensitive mind notices a wrongness in the fabric of space.\n"
-    ) );
+  query_player_level("error messages") ?
+  curobj ?
+  err +
+  "program: " + prg +
+  ", object: " + curobj +
+  " line " + line + "\n"
+  :
+  err
+  :
+  "Your sensitive mind notices a wrongness in the fabric of space.\n"
+  ) );
 }
 
 //===========================================================================
 //  Security and Permissions
 //
-// Most of these functions guard critical efuns. A good approach to deal
-// with them is to redefine the efuns by simul_efuns (which can then avoid
-// trouble prematurely) and give root objects only the permission to
-// execute the real efuns.
+// Most of these functions guard critical efuns. A common approach is to
+// wrap efuns in simul_efuns and reserve real efuns for privileged objects.
 //
 // See also valid_read() and valid_write().
 //===========================================================================
 
 //---------------------------------------------------------------------------
-int privilege_violation (string op, mixed who, mixed arg, mixed arg2)
+int privilege_violation (string op, mixed who, mixed arg, mixed arg2) {
 
-// Validate the execution of a privileged operation.
-//
-// Arguments:
-//   op   : the requestion operation (see below)
-//   who  : the object requesting the operation (filename or object pointer)
-//   arg  : additional argument, depending on <op>.
-//   arg2 : additional argument, depending on <op>.
-//
-// Result:
-//     >0: The caller is allowed for this operation.
-//      0: The caller was probably misleaded; try to fix the error
-//   else: A real privilege violation; handle it as error.
-//
-// Privileged operations are:
-//   attach_erq_demon  : Attach the erq demon to object <arg> with flag <arg2>.
-//   bind_lambda       : Bind a lambda-closure to object <arg>.
-//   call_out_info     : Return an array with all call_out informations.
-//   erq               : A the request <arg4> is to be send to the
-//                       erq-demon by the object <who>.
-//   input_to          : Object <who> issues an 'ignore-bang'-input_to() for
-//                       commandgiver <arg3>; the exakt flags are <arg4>.
-//   nomask simul_efun : Attempt to get an efun <arg> via efun:: when it
-//                       is shadowed by a 'nomask'-type simul_efun.
-//   rename_object     : The current object <who> renames object <arg>
-//                       to name <arg2>.
-//   send_imp          : Send UDP-data to host <arg>.
-//   get_extra_wizinfo : Get the additional wiz-list info for wizard <arg>.
-//   set_extra_wizinfo : Set the additional wiz-list info for wizard <arg>.
-//   set_extra_wizinfo_size : Set the size of the additional wizard info
-//                       in the wiz-list to <arg>.
-//   set_driver_hook   : Set hook <arg> to <arg2>.
-//   limited:          : Execute <arg> with reduced/changed limits.
-//   set_limits        : Set limits to <arg>.
-//   set_this_object   : Set this_object() to <arg>.
-//   shadow_add_action : Add an action to function <arg> from a shadow.
-//   symbol_variable   : Attempt to create symbol of a hidden variable
-//                       of object <arg> with with index <arg2> in the
-//                       objects variable table.
-//   wizlist_info      : Return an array with all wiz-list information.
-//
-// call_out_info can return the arguments to functions and lambda closures
-// to be called by call_out(); you should consider that read access to
-// closures, mappings and pointers means write access and/or other privileges.
-// wizlist_info() will return an array which holds, among others, the extra
-// wizlist field. While a toplevel array, if found, will be copied, this does
-// not apply to nested arrays or to any mappings. You might also have some
-// sensitive closures there.
-// send_imp() should be watched as it could be abused to mess up the IMP.
-// The xxx_extra_wizinfo operations are necessary for a proper wizlist and
-// should therefore be restricted to admins.
-// All other operations are potential sources for direct security breaches -
-// any use of them should be scrutinized closely.
+  // Validate the execution of a privileged operation.
+  //
+  // Arguments:
+  //   op   : The requested operation (see below).
+  //   who  : The object requesting the operation (filename or object).
+  //   arg  : Additional argument, depending on <op>.
+  //   arg2 : Additional argument, depending on <op>.
+  //
+  // Result:
+  //     >0: The caller is allowed for this operation.
+  //      0: The caller was probably misled; try to fix the error.
+  //   else: A real privilege violation; handle it as an error.
+  //
+  // Privileged operations include:
+  //   attach_erq_demon  : Attach the erq demon to object <arg> with flag <arg2>.
+  //   bind_lambda       : Bind a lambda-closure to object <arg>.
+  //   call_out_info     : Return an array with all call_out information.
+  //   erq               : Send request <arg4> to the erq daemon.
+  //   input_to          : Object <who> issues an ignore-bang input_to() for
+  //                       commandgiver <arg3>; the exact flags are <arg4>.
+  //   nomask simul_efun : Attempt to get an efun <arg> via efun:: when it
+  //                       is shadowed by a 'nomask'-type simul_efun.
+  //   rename_object     : The current object <who> renames object <arg>
+  //                       to name <arg2>.
+  //   send_imp          : Send UDP-data to host <arg>.
+  //   get_extra_wizinfo : Get the additional wiz-list info for wizard <arg>.
+  //   set_extra_wizinfo : Set the additional wiz-list info for wizard <arg>.
+  //   set_extra_wizinfo_size : Set the size of the additional wizard info
+  //                       in the wiz-list to <arg>.
+  //   set_driver_hook   : Set hook <arg> to <arg2>.
+  //   limited:          : Execute <arg> with reduced/changed limits.
+  //   set_limits        : Set limits to <arg>.
+  //   set_this_object   : Set this_object() to <arg>.
+  //   shadow_add_action : Add an action to function <arg> from a shadow.
+  //   symbol_variable   : Attempt to create a symbol for a hidden variable
+  //                       of object <arg> with index <arg2> in the object's
+  //                       variable table.
+  //   wizlist_info      : Return an array with all wiz-list information.
+  //
+  // call_out_info can reveal arguments to functions and lambda closures, and
+  // read access to closures, mappings, and arrays implies write access and
+  // other privileges. wizlist_info() returns extra wizlist data that may
+  // include sensitive closures. send_imp() can be abused to interfere with
+  // the IMP. The xxx_extra_wizinfo operations are necessary for wizlist
+  // maintenance and should be restricted to admins. All other operations
+  // are potential sources of security breaches and must be scrutinized.
 
-{
-    /* This object and the simul_efun objects may do everything */
-    if (who == this_object()
-     || who == find_object(SIMUL_EFUN_FILE)
-     || who == find_object(SPARE_SIMUL_EFUN_FILE))
-        return 1;
+  /* This object and the simul_efun objects may do everything. */
+  if (who == this_object()
+    || who == find_object(SIMUL_EFUN_FILE)
+    || who == find_object(SPARE_SIMUL_EFUN_FILE))
+    return 1;
 
-    switch(op) {
-      case "erq":
-	switch(arg) {
-	  case ERQ_RLOOKUP:
-	    return 1;
-	  case ERQ_EXECUTE:
-	  case ERQ_FORK:
-	  case ERQ_AUTH:
-	  case ERQ_SPAWN:
-	  case ERQ_SEND:
-	  case ERQ_KILL:
-	  default:
-	    return -1;
-	}
-      default:
-	return -1; /* Make this violation an error */
-    }
+  switch (op) {
+    case "erq":
+      switch (arg) {
+        case ERQ_RLOOKUP:
+          return 1;
+        case ERQ_EXECUTE:
+        case ERQ_FORK:
+        case ERQ_AUTH:
+        case ERQ_SPAWN:
+        case ERQ_SEND:
+        case ERQ_KILL:
+        default:
+          return -1;
+      }
+    default:
+      return -1; /* Make this violation an error. */
+  }
+  return 0;
+}
+
+//---------------------------------------------------------------------------
+int query_allow_shadow (object victim) {
+
+
+  // Validate a shadowing attempt.
+  //
+  // Arguments:
+  //   previous_object(): The object attempting to shadow.
+  //   victim           : The object to be shadowed.
+  //
+  // Result:
+  //   Return 0 to disallow the shadowing, any other value to allow it.
+  //   Destructing the shadow or the victim is another way of disallowing.
+  //
+  // This function asks the victim whether it denies the shadow.
+
+  if (object_info(victim, OINFO_MEMORY)[OIM_NO_SHADOW])
     return 0;
+  return !victim->query_prevent_shadow(previous_object());
 }
 
 //---------------------------------------------------------------------------
-int query_allow_shadow (object victim)
+int query_player_level (string what) {
 
+  // Check if the player is high enough level for a requested capability.
+  //
+  // Argument:
+  //   what: The requested capability (see below).
+  //
+  // Result:
+  //   Return 0 to disallow, any other value to allow it.
+  //
+  // Types asked for so far are:
+  //   "error messages": Is the player allowed to see error messages (used
+  //                     by the master)?
+  //                     (min-level: 20)
+  //   "wizard"        : Is the player considered a wizard (used by
+  //                     the mudlib)?
+  //                     (min-level: 20)
 
-// Validate a shadowing.
-//
-// Arguments:
-//   previous_object(): the wannabe shadow
-//   victim           : the object to be shadowed.
-//
-// Result:
-//   Return 0 to disallow the shadowing, any other value to allow it.
-//   Destructing the shadow or the victim is another way of disallowing.
-//
-// This function simply asks the victim if it denies a shadow.
+  int level;
 
-{
-    if (object_info(victim, OINFO_MEMORY)[OIM_NO_SHADOW])
-        return 0;
-    return !victim->query_prevent_shadow(previous_object());
-}
-
-//---------------------------------------------------------------------------
-int query_player_level (string what)
-
-// Check if the player is of high enough level for several things.
-//
-// Argument:
-//   what: The 'thing' type (see below).
-//
-// Result:
-//   Return 0 to disallow, any other value to allow it.
-//
-// Types asked for so far are:
-//   "error messages": Is the player allowed to see error messages (used
-//                     by the master)?
-//                     (min-level: 20)
-//   "wizard"        : Is the player is considered a wizard (used by
-//                     the mudlib)?
-//                     (min-level: 20)
-
-{
-    int level;
-
-    if (this_player() == 0)
-	return 0;
-    level = ({int})this_player()->query_level();
-    switch(what) {
+  if (this_player() == 0)
+    return 0;
+  level = ({int})this_player()->query_level();
+  switch (what) {
     case "wizard":
-	return level >= 20;
+      return level >= 20;
     case "error messages":
-	return level >= 20;
-    }
-    return 0;
+      return level >= 20;
+  }
+  return 0;
 }
 
 //---------------------------------------------------------------------------
-int valid_trace (string what)
+int valid_trace (string what) {
 
-// Check if the player is allowed to use tracing.
-//
-// Argument:
-//   what: The actual action (see below).
-//
-// Result:
-//   Return 0 to disallow, any other value to allow it.
-//
-// Actions asked for so far are:
-//   "trace":       Is the user allowed to use tracing?
-//   "traceprefix": Is the user allowed to set a traceprefix?
-//                  (min-level: 24 for both)
+  // Check if the player is allowed to use tracing.
+  //
+  // Argument:
+  //   what: The actual action (see below).
+  //
+  // Result:
+  //   Return 0 to disallow, any other value to allow it.
+  //
+  // Actions handled so far are:
+  //   "trace":       Is the user allowed to use tracing?
+  //   "traceprefix": Is the user allowed to set a traceprefix?
+  //                  (min-level: 24 for both)
 
-{
-    int level;
+  int level;
 
-    if (this_player() == 0)
-	return 0;
-    level = ({int})this_player()->query_level();
-    switch(what) {
+  if (this_player() == 0)
+    return 0;
+  level = ({int})this_player()->query_level();
+  switch (what) {
     case "trace":
     case "traceprefix":
-	return level >= 24;
-    }
-    return 0;
+      return level >= 24;
+  }
+  return 0;
 }
 
 //---------------------------------------------------------------------------
-int valid_exec (string name, object ob, object obfrom)
+int valid_exec (string name, object ob, object obfrom) {
 
-// Validate the rebinding of an IP connection by usage of efun exec().
-//
-// Arguments:
-//    name  : The name of the _program_ attempting to rebind the connection.
-//            This is not the object_name() of the object, and has no leading
-//            slash.
-//    ob    : The object to receive the connection.
-//    obfrom: The object giving the connection away.
-//
-// Result:
-//   Return a non-zero number to allow the action,
-//   any other value to disallow it.
-//
-// Only obj/master.c and secure/login.c are allowed to do that.
+  // Validate rebinding an IP connection using exec().
+  //
+  // Arguments:
+  //    name  : The name of the _program_ attempting to rebind the connection.
+  //            This is not the object_name() of the object, and has no leading
+  //            slash.
+  //    ob    : The object to receive the connection.
+  //    obfrom: The object giving the connection away.
+  //
+  // Result:
+  //   Return a non-zero number to allow the action; any other value disallows.
+  //
+  // Only obj/master.c and secure/login.c are allowed to do this.
 
-{
-    switch(name) {
-      case "secure/login.c":
-      case "obj/master.c":
-	if (!interactive(ob)) {
-            mudwho_exec(obfrom, ob);
-	    return 1;
-        }
-    }
-
-    return 0;
-}
-
-//---------------------------------------------------------------------------
-int valid_query_snoop (object obj)
-
-// Validate if the snoopers of an object may be revealed by usage of the
-// efun query_snoop().
-//
-// Arguments:
-//   previous_object(): the asking object.
-//   obj              : the object which snoopers are to be revealed.
-//
-// Result:
-//   Return a non-zero number to allow the action,
-//   any other value to disallow it.
-//
-// Every true wizard can test for a snoop.
-
-{
-    return this_player()->query_level() >= 22;
-}
-
-//---------------------------------------------------------------------------
-int valid_snoop (object snoopee, object snooper)
-
-// Validate the start/stop of a snoop.
-//
-// Arguments:
-//   snoopee: The victim of the snoop.
-//   snooper: The wannabe snooper, or 0 when stopping a snoop.
-//
-// Result:
-//   Return a non-zero number to allow the action,
-//   any other value to disallow it.
-//
-// It is up to the simul_efun object to start/stop snoops.
-
-{
-    /* PLAIN:
-    if (!geteuid(previous_object()))
-        return 0;
-    */
-    if (object_name(previous_object()) == get_simul_efun())
+  switch (name) {
+    case "secure/login.c":
+    case "obj/master.c":
+      if (!interactive(ob)) {
+        mudwho_exec(obfrom, ob);
         return 1;
+      }
+  }
 
+  return 0;
+}
+
+//---------------------------------------------------------------------------
+int valid_query_snoop (object obj) {
+
+  // Validate whether query_snoop() may reveal snoopers for an object.
+  //
+  // Arguments:
+  //   previous_object(): the asking object.
+  //   obj              : the object which snoopers are to be revealed.
+  //
+  // Result:
+  //   Return a non-zero number to allow the action; any other value disallows.
+  //
+  // Any true wizard may test for a snoop.
+
+  return this_player()->query_level() >= 22;
+}
+
+//---------------------------------------------------------------------------
+int valid_snoop (object snoopee, object snooper) {
+
+  // Validate the start or stop of a snoop.
+  //
+  // Arguments:
+  //   snoopee: The victim of the snoop.
+  //   snooper: The wannabe snooper, or 0 when stopping a snoop.
+  //
+  // Result:
+  //   Return a non-zero number to allow the action; any other value disallows.
+  //
+  // The simul_efun object is responsible for starting and stopping snoops.
+
+  /* PLAIN:
+  if (!geteuid(previous_object()))
     return 0;
+  */
+  if (object_name(previous_object()) == get_simul_efun())
+    return 1;
+
+  return 0;
 }
 
 
 //===========================================================================
-//  Userids and depending Security
+//  Userids and related security
 //
-// For each object in the mud exists a string attribute which determines the
-// objects rights in security-sensitive matters. In compat muds this attribute
-// is called the "creator" of the object, in !compat muds the object's "userid"
-// ("uid" for short).
+// Each object in the mud has a string attribute that determines its rights in
+// security-sensitive matters. In compat muds this is the object's "creator";
+// in !compat muds it is the object's "userid" ("uid").
 //
-// "Effective Userids" are an extension of this system, to allow the easier
-// implementation of mudlib security by diffentiating between an objects
-// theoretical permissions (uid) and its current permissions (euid) (some
-// experts think that this attempt has failed (Heya Macbeth!)).
+// "Effective userids" (euid) extend this system to differentiate between an
+// object's theoretical permissions (uid) and its current permissions (euid).
 //
-// The driver mainly implements the setting/querying of the (e)uids -- it is
-// task of the mudlib to give out the right (e)uid to the right object, and
-// to check them where necessary.
+// The driver implements setting/querying of (e)uids, while the mudlib assigns
+// the correct (e)uid to each object and checks them where necessary.
 //
-// If the driver is set to use 'strict euids', the loading and cloning
-// of objects requires the initiating object to have a non-zero euid.
+// If the driver uses strict euids, loading and cloning require a non-zero
+// euid on the initiating object.
 //
-// The main use for (e)uids is for determination of file access rights, but
-// you can of course use the (e)uids for other identification purposes as well.
+// The primary use of (e)uids is file access control, but they can also be
+// used for identification purposes.
 //===========================================================================
 
 //---------------------------------------------------------------------------
 // string get_bb_uid()
 
-// Return the string (or 0) to be used as backbone-euid.
-// It is just used by process_string() only if no this_object() is present.
-// If strict-euids, the function must exist and return a string.
+// Return the string (or 0) to be used as the backbone euid.
+// It is used by process_string() only when no this_object() is present.
+// If strict-euids is enabled, the function must exist and return a string.
 
 //---------------------------------------------------------------------------
-mixed valid_read  (string path, string euid, string fun, object caller)
+mixed valid_read  (string path, string euid, string fun, object caller) {
 
-// Validate a reading/writing file operation.
-//
-// Arguments:
-//   path   : The (possibly partial) filename given to the operation.
-//   euid   : the euid of the caller (might be 0).
-//   fun    : The name of the operation requested (see below).
-//   caller : The calling object.
-//
-// Result:
-//   The full pathname of the file to operate on, or 0 if the action is not
-//   allowed.
-//   You can also return 1 to indicate that the path can be used unchanged.
-//
-// The path finally to be used must not contain spaces or '..'s .
-//
-// These are the central functions establishing the various file access
-// rights. In this implementation, the main work is done by
-// obj/player->valid_read(<path>).
-//
-// valid_read() is called for these operations:
-//   ed_start        (when reading a file)
-//   file_size
-//   get_dir
-//   print_file
-//   read_bytes
-//   read_file
-//   restore_object
-//   tail
+  // Validate a file read operation.
+  //
+  // Arguments:
+  //   path   : The (possibly partial) filename given to the operation.
+  //   euid   : The euid of the caller (might be 0).
+  //   fun    : The name of the operation requested (see below).
+  //   caller : The calling object.
+  //
+  // Result:
+  //   The full pathname to operate on, or 0 if the action is not allowed.
+  //   Return 1 to indicate that the path can be used unchanged.
+  //
+  // The final path must not contain spaces or "..".
+  //
+  // These functions establish file access rights. In this implementation,
+  // obj/player->valid_read(<path>) performs most of the work.
+  //
+  // valid_read() is called for these operations:
+  //   ed_start        (when reading a file)
+  //   file_size
+  //   get_dir
+  //   print_file
+  //   read_bytes
+  //   read_file
+  //   restore_object
+  //   tail
 
-{
-    string user;
+  string user;
 
-    switch ( fun ) {
-        case "restore_object": return 1;
-        case "ed_start":
-            if ( previous_object() && previous_object() != this_player() )
-                return 0;
-            if (!path) {
-                /* request for file with last error */
-                mixed *error;
+  switch (fun) {
+    case "restore_object":
+      return 1;
+    case "ed_start":
+      if (previous_object() && previous_object() != this_player())
+        return 0;
+      if (!path) {
+        /* Request the last error file. */
+        mixed *error;
 
-                error =
-                  get_error_file(({string})this_player()->query_real_name());
-                if (!error || error[3]) {
-                    write("No error.\n");
-                    return 0;
-                }
-                write(error[0][1..]+" line "+error[1]+": "+error[2]+"\n");
-                return ADD_SLASH(error[0]);
-            }
-            if (path[0] != '/')
-                path = "/"+path;
-        case "read_file":
-        case "read_bytes":
-        case "file_size":
-        case "get_dir":
-        case "do_rename":
-            if (caller == this_object()) return 1;
-        case "tail":
-        case "print_file":
-        case "make_path_absolute": /* internal use, see below */
-            set_this_object(caller);
-            if( this_player() && interactive(this_player()) ) {
-                path = ({string})this_player()->valid_read(path);
-                if (!stringp(path)) {
-                    write("Bad file name.\n");
-                    return 0;
-                }
-                return ADD_SLASH(path);
-            }
-            path = ({string})"obj/player"->valid_read(path);
-            if (stringp(path))
-                return ADD_SLASH(path);
-            return 0;
-    }
-    /* if a case failed to return a value or the caller function wasn't
-     * recognized, we come here.
-     * The default returned zero indicates deny of access.
-     */
-    return 0;
+        error = get_error_file(({string})this_player()->query_real_name());
+        if (!error || error[3]) {
+          write("No error.\n");
+          return 0;
+        }
+        write(error[0][1..]+" line "+error[1]+": "+error[2]+"\n");
+        return ADD_SLASH(error[0]);
+      }
+      if (path[0] != '/')
+        path = "/"+path;
+    case "read_file":
+    case "read_bytes":
+    case "file_size":
+    case "get_dir":
+    case "do_rename":
+      if (caller == this_object())
+        return 1;
+    case "tail":
+    case "print_file":
+    case "make_path_absolute": /* internal use, see below */
+      set_this_object(caller);
+      if (this_player() && interactive(this_player())) {
+        path = ({string})this_player()->valid_read(path);
+        if (!stringp(path)) {
+          write("Bad file name.\n");
+          return 0;
+        }
+        return ADD_SLASH(path);
+      }
+      path = ({string})"obj/player"->valid_read(path);
+      if (stringp(path))
+        return ADD_SLASH(path);
+      return 0;
+  }
+  /* If no case returned a value or the operation is unrecognized, deny. */
+  return 0;
 }
 
 //---------------------------------------------------------------------------
-mixed valid_write (string path, string euid, string fun, object caller)
+mixed valid_write (string path, string euid, string fun, object caller) {
 
-// Validate a writing file operation.
-//
-// Arguments:
-//   path   : The (possibly partial) filename given to the operation.
-//   euid   : the euid of the caller (might be 0).
-//   fun    : The name of the operation requested (see below).
-//   caller : The calling object.
-//
-// Result:
-//   The full pathname of the file to operate on, or 0 if the action is not
-//   allowed.
-//   You can also return 1 to indicate that the path can be used unchanged.
-//
-// The path finally to be used must not contain spaces or '..'s .
-//
-// These are the central functions establishing the various file access
-// rights. In this implementation, the main work is done by
-// obj/player->valid_write(<path>).
-//
-// valid_write() is called for these operations:
-//   ed_start     (when writing a file)
-//   rename_from  (for each the old name of a rename())
-//   rename_to    (for the new name of a rename())
-//   mkdir
-//   save_object
-//   objdump
-//   opcdump
-//   remove_file
-//   rmdir
-//   write_bytes
-//   write_file
+  // Validate a file write operation.
+  //
+  // Arguments:
+  //   path   : The (possibly partial) filename given to the operation.
+  //   euid   : The euid of the caller (might be 0).
+  //   fun    : The name of the operation requested (see below).
+  //   caller : The calling object.
+  //
+  // Result:
+  //   The full pathname to operate on, or 0 if the action is not allowed.
+  //   Return 1 to indicate that the path can be used unchanged.
+  //
+  // The final path must not contain spaces or "..".
+  //
+  // These functions establish file access rights. In this implementation,
+  // obj/player->valid_write(<path>) performs most of the work.
+  //
+  // valid_write() is called for these operations:
+  //   ed_start     (when writing a file)
+  //   rename_from  (for each old name of a rename())
+  //   rename_to    (for the new name of a rename())
+  //   mkdir
+  //   save_object
+  //   objdump
+  //   opcdump
+  //   remove_file
+  //   rmdir
+  //   write_bytes
+  //   write_file
 
-{
-    string user;
+  string user;
 
-    if (path[0] == '/' && path != "/")
-        path = path[1..];
+  if (path[0] == '/' && path != "/")
+    path = path[1..];
 
-    switch ( fun ) {
+  switch (fun) {
     case "objdump":
-        if (path == "OBJ_DUMP") return path;
-        return 0;
+      if (path == "OBJ_DUMP")
+        return path;
+      return 0;
 
     case "opcdump":
-        if (path == "OPC_DUMP") return path;
-        return 0;
+      if (path == "OPC_DUMP")
+        return path;
+      return 0;
 
     case "save_object":
-        if ( user = GETUID(previous_object()) ) {
-            if ( path[0 .. sizeof(user)+7] == "players/" + user
-             &&  sscanf(path, ".%s", user) == 0)
-                return ADD_SLASH(path);
-        } else {
-            user = efun::object_name(previous_object());
+      if (user = GETUID(previous_object())) {
+        if (path[0 .. sizeof(user)+7] == "players/" + user
+          && sscanf(path, ".%s", user) == 0)
+          return ADD_SLASH(path);
+      } else {
+        user = efun::object_name(previous_object());
 #ifndef __COMPAT_MODE__
-            user = user[1..];
+        user = user[1..];
 #endif
-            if ( user[0..3] == "obj/"
-             ||  user[0..4] == "domain/lp-245/room/"
-             ||  user[0..3] == "std/"  )
-                return ADD_SLASH(path);
-        }
-        return 0; /* deny access */
+        if (user[0..3] == "obj/"
+          || user[0..4] == "domain/lp-245/room/"
+          || user[0..3] == "std/")
+          return ADD_SLASH(path);
+      }
+      return 0; /* deny access */
     default:
-        return 0; /* deny access */
+      return 0; /* deny access */
     case "write_file":
-        if (caller == this_object()) return 1;
-        if (path[0..3] == "log/"
-         && !(   sizeof(regexp(({path[4..33]}), "/"))
-              || path[4] == '.'
-              || sizeof(path) > 34
-            ) ) {
-            return ADD_SLASH(path);
-        }
-        break;
+      if (caller == this_object())
+        return 1;
+      if (path[0..3] == "log/"
+        && !(sizeof(regexp(({path[4..33]}), "/"))
+        || path[4] == '.'
+        || sizeof(path) > 34)) {
+        return ADD_SLASH(path);
+      }
+      break;
     case "ed_start":
-        if (path[0] != '/')
-            path = "/"+path;
-        break;
+      if (path[0] != '/')
+        path = "/"+path;
+      break;
     case "rename_from":
     case "rename_to":
-        if ((   efun::object_name(caller) == SIMUL_EFUN_FILE
-             || efun::object_name(caller) == SPARE_SIMUL_EFUN_FILE)
-         && path[0..3] == "log/"
-         && !(   sizeof(regexp(({path[4..33]}), "/"))
-              || path[4] == '.'
-              || sizeof(path) > 34
-            ) ) {
-            return 1;
-        }
+      if ((efun::object_name(caller) == SIMUL_EFUN_FILE
+        || efun::object_name(caller) == SPARE_SIMUL_EFUN_FILE)
+        && path[0..3] == "log/"
+        && !(sizeof(regexp(({path[4..33]}), "/"))
+        || path[4] == '.'
+        || sizeof(path) > 34)) {
+        return 1;
+      }
     case "mkdir":
     case "rmdir":
     case "write_bytes":
     case "remove_file":
-        if (caller == this_object()) return 1;
-    }
+      if (caller == this_object()) return 1;
+  }
 
-    set_this_object(caller);
-    if( this_player() && interactive(this_player()) )
-    {
-        path = ({string})this_player()->valid_write(path);
-        if (!stringp(path)) {
-            write("Bad file name.\n");
-            return 0;
-        }
-        return ADD_SLASH(path);
+  set_this_object(caller);
+  if (this_player() && interactive(this_player())) {
+    path = ({string})this_player()->valid_write(path);
+    if (!stringp(path)) {
+      write("Bad file name.\n");
+      return 0;
     }
-    path = ({string})"obj/player"->valid_write(path);
-    if (stringp(path))
-        return ADD_SLASH(path);
+    return ADD_SLASH(path);
+  }
+  path = ({string})"obj/player"->valid_write(path);
+  if (stringp(path))
+    return ADD_SLASH(path);
 
-    return 0;
+  return 0;
 }
 
 //===========================================================================
@@ -1788,277 +1677,264 @@ mixed valid_write (string path, string euid, string fun, object caller)
 //===========================================================================
 
 //---------------------------------------------------------------------------
-string make_path_absolute (string str)
+string make_path_absolute (string str) {
 
-// Absolutize a relative filename given to the editor.
-//
-// Argument:
-//   str : The relative filename (without leading slash).
-//
-// Result:
-//   The full pathname of the file to use.
-//   Any non-string result will act as 'bad file name'.
+  // Convert a relative filename to an absolute path for the editor.
+  //
+  // Argument:
+  //   str : The relative filename (without leading slash).
+  //
+  // Result:
+  //   The full pathname of the file to use. Any non-string result signals a
+  //   bad file name.
 
-{
-    return valid_read(str,0,"make_path_absolute", this_player());
+  return valid_read(str,0,"make_path_absolute", this_player());
 }
 
 //---------------------------------------------------------------------------
-int save_ed_setup (object who, int code)
+int save_ed_setup (object who, int code) {
 
-// Save individual settings of ed for a wizard.
-//
-// Arguments:
-//   who : The wizard using the editor.
-//   code: The encoded options to be saved.
-//
-// Result:
-//   Return 0 on failure, any other value for success.
-//
-// This function has to save the given integer into a safe place in the
-// realm of the given wizard, either a file, or in the wizard itself.
-//
-// Be aware of possible security breaches: under !compat, a write_file()
-// should be surrounded by a temporary setting of the masters euid to
-// that of the wizard.
+  // Save a wizard's ed settings.
+  //
+  // Arguments:
+  //   who : The wizard using the editor.
+  //   code: The encoded options to be saved.
+  //
+  // Result:
+  //   Return 0 on failure, any other value for success.
+  //
+  // Save the given integer in a safe location for the wizard, either a file
+  // or the wizard object itself.
+  //
+  // Be aware of possible security breaches: under !compat, write_file()
+  // should be wrapped by temporarily setting the master's euid to the
+  // wizard's euid.
 
-{
-    string file;
+  string file;
 
-    if (!intp(code))
-	return 0;
-    file = "/players/" + lower_case(({string})who->query_name()) + "/.edrc";
-    rm(file);
-    return write_file(file, code + "");
+  if (!intp(code))
+    return 0;
+  file = "/players/" + lower_case(({string})who->query_name()) + "/.edrc";
+  rm(file);
+  return write_file(file, code + "");
 }
 
 //---------------------------------------------------------------------------
-int retrieve_ed_setup (object who)
+int retrieve_ed_setup (object who) {
 
-// Retrieve individual settings of ed for a wizard.
-//
-// Arguments:
-//   who : The wizard using the editor.
-//
-// Result:
-//   The encoded options retrieved (0 if there are none).
+  // Retrieve a wizard's ed settings.
+  //
+  // Arguments:
+  //   who : The wizard using the editor.
+  //
+  // Result:
+  //   The encoded options retrieved (0 if there are none).
 
-{
-    string file;
-    int code;
+  string file;
+  int code;
 
-    file = "/players/" + lower_case(({string})who->query_name()) + "/.edrc";
-    if (file_size(file) <= 0)
-	return 0;
-    sscanf(read_file(file), "%d", code);
-    return code;
+  file = "/players/" + lower_case(({string})who->query_name()) + "/.edrc";
+  if (file_size(file) <= 0)
+    return 0;
+  sscanf(read_file(file), "%d", code);
+  return code;
 }
 
 //---------------------------------------------------------------------------
-string get_ed_buffer_save_file_name (string file)
+string get_ed_buffer_save_file_name (string file) {
 
-// Return a filename for the ed buffer to be saved into.
-//
-// Arguments:
-//   this_player(): The wizard using the editor.
-//   file         : The name of the file currently in the buffer.
-//
-// Result:
-//   The name of the file to save the buffer into, or 0.
-//
-// This function is called whenever a wizard is destructed/goes netdeath
-// while editing. Using this function, his editing is not done in vain.
+  // Return a filename for saving the ed buffer.
+  //
+  // Arguments:
+  //   this_player(): The wizard using the editor.
+  //   file         : The name of the file currently in the buffer.
+  //
+  // Result:
+  //   The name of the file to save the buffer into, or 0.
+  //
+  // This function is called when a wizard is destructed or goes netdead
+  // while editing, so their work is not lost.
 
-{
-    string *file_ar;
-    string path;
+  string *file_ar;
+  string path;
 
-    path = "/players/"+this_player()->query_real_name()+"/.dead_ed_files";
-    if (file_size(path) == -1) {
-        mkdir(path);
-    }
-    file_ar=explode(file,"/");
-    file=file_ar[sizeof(file_ar)-1];
-    return path+"/"+file;
+  path = "/players/"+this_player()->query_real_name()+"/.dead_ed_files";
+  if (file_size(path) == -1) {
+    mkdir(path);
+  }
+  file_ar=explode(file,"/");
+  file=file_ar[sizeof(file_ar)-1];
+  return path+"/"+file;
 }
 
 //===========================================================================
-//  parse_command() Support  (!compat, SUPPLY_PARSE_COMMAND defined)
+//  parse_command() support (!compat, SUPPLY_PARSE_COMMAND defined)
 //
-// LPMud has a builtin support for parsing complex commands.
-// It does this by requestion several types of ids from the objects.
-// The same queried functions are also in the master to provide decent
-// defaults, especially for generic ids like 'all the blue ones'.
+// LPMud has built-in support for parsing complex commands by requesting
+// multiple kinds of ids from objects. The master provides defaults,
+// especially for generic ids like "all the blue ones".
 //
-// Each of the functions has to return an array of strings (with the exception
-// of parse_command_all_word), each string being one of the ids for that type
-// of id.
+// Each function returns an array of strings (except parse_command_all_word),
+// where each string is one id of that type.
 //
-// The whole parsing has a preference for the english language, so the
-// the code for parsing english constructs is given as well.
+// Parsing favors English grammar, so the default ids are English.
 //===========================================================================
 
 //---------------------------------------------------------------------------
-string *parse_command_id_list ()
+string *parse_command_id_list () {
 
-// Return generic singular ids.
+  // Return generic singular ids.
 
-{
   return ({ "one", "thing" });
 }
 
 
 //---------------------------------------------------------------------------
-string *parse_command_plural_id_list ()
+string *parse_command_plural_id_list () {
 
-// Return generic plural ids.
+  // Return generic plural ids.
 
-{
   return ({ "ones", "things", "them" });
 }
 
 
 //---------------------------------------------------------------------------
-string *parse_command_adjectiv_id_list ()
+string *parse_command_adjectiv_id_list () {
 
-// Return generic adjective ids.
-// If there are none (like here), return some junk which is likely never
-// typed.
+  // Return generic adjective ids.
+  // If none are defined, return a value that is unlikely to be used.
 
-{
   return ({ "iffish" });
 }
 
 
 //---------------------------------------------------------------------------
-string *parse_command_prepos_list ()
+string *parse_command_prepos_list () {
 
-// Return common prepositions.
+  // Return common prepositions used by the parser.
 
-{
-    return ({ "in", "on", "under", "behind", "beside" });
+  return ({ "in", "on", "under", "behind", "beside" });
 }
 
 
 //---------------------------------------------------------------------------
-string parse_command_all_word()
+string parse_command_all_word() {
 
-// Return the one(!) 'all' word.
+  // Return the single "all" word used by the parser.
 
-{
   return "all";
 }
 
 #ifdef MUDWHO
 
 //===========================================================================
-// Mudwho support functions
+// Mudwho support
 //
-// Mudwho was (is?) a system of interconnected servers which keep track
-// who is in which mud. Once quite popular, it is now propably defunct.
-// But anyway, here is the code once used by Nightfall.
+// Mudwho was a network of servers that tracked which users were online across
+// different muds. It is likely defunct, but the legacy implementation remains.
 //===========================================================================
 
 #define MUDWHO_SERVER   "134.2.62.161"
 #define MUDWHO_PORT     6888
-  /* IP and port of the closest mudwho server */
+/* IP and port of the closest mudwho server. */
 
 #define MUDWHO_NAME     "TestNase"
 #define MUDWHO_PASSWORD "TestPassword"
-  /* Participation in the mudwho service required registration */
+/* Participation in mudwho required registration. */
 
 #define MUDWHO_REFRESH_TIME 100
 
 #define QUOTE_PERCENT(s) (implode(explode(s, "%"), "%%"))
 
 private string mudwho_ping;
-private mapping mudwho_info = ([]);
+private mapping mudwho_info;
 private closure send_mudwho_info;
 
 //---------------------------------------------------------------------------
-static void mudwho_init (int arg)
-{
-    send_mudwho_info
-      = lambda( ({'key, 'info})
-              , ({#'send_imp, MUDWHO_SERVER, MUDWHO_PORT, 'info }));
-    if (!arg)
-    {
-        send_imp(MUDWHO_SERVER, MUDWHO_PORT
-                , sprintf("U\t%.20s\t%.20s\t%.20s\t%:010d\t0\t%.25s"
-                         , MUDWHO_NAME, MUDWHO_PASSWORD, MUDWHO_NAME
-                         , time(), __VERSION__)
-                );
-        get_extra_wizinfo(0)[MUDWHO_INDEX] = mudwho_info;
-    }
-    else
-    {
-        mudwho_info = get_extra_wizinfo(0)[MUDWHO_INDEX];
-    }
+static void mudwho_init (int arg) {
+  if (!mudwho_info)
+    mudwho_info = ([]);
+  send_mudwho_info = lambda(
+    ({'key, 'info}),
+    ({#'send_imp, MUDWHO_SERVER, MUDWHO_PORT, 'info})
+  );
+  if (!arg) {
+    send_imp(
+      MUDWHO_SERVER,
+      MUDWHO_PORT,
+      sprintf("U\t%.20s\t%.20s\t%.20s\t%:010d\t0\t%.25s",
+        MUDWHO_NAME, MUDWHO_PASSWORD, MUDWHO_NAME,
+        time(), __VERSION__)
+    );
+    get_extra_wizinfo(0)[MUDWHO_INDEX] = mudwho_info;
+  }
+  else {
+    mudwho_info = get_extra_wizinfo(0)[MUDWHO_INDEX];
+  }
 
-    mudwho_ping = sprintf("M\t%.20s\t%.20s\t%.20s\t%%:010d\t0\t%.25s"
-                         , QUOTE_PERCENT(MUDWHO_NAME)
-                         , QUOTE_PERCENT(MUDWHO_PASSWORD)
-                         , QUOTE_PERCENT(MUDWHO_NAME)
-                         , QUOTE_PERCENT(__VERSION__)
-                         );
+  mudwho_ping = sprintf(
+    "M\t%.20s\t%.20s\t%.20s\t%%:010d\t0\t%.25s",
+    QUOTE_PERCENT(MUDWHO_NAME),
+    QUOTE_PERCENT(MUDWHO_PASSWORD),
+    QUOTE_PERCENT(MUDWHO_NAME),
+    QUOTE_PERCENT(__VERSION__)
+  );
 
-    if (find_call_out("send_mudwho_info") < 0)
-        call_out("send_mudwho_info", MUDWHO_REFRESH_TIME);
-}
-
-//---------------------------------------------------------------------------
-static void mudwho_shutdown()
-{
-    send_imp(MUDWHO_SERVER, MUDWHO_PORT
-            , sprintf("D\t%.20s\t%.20s\t%.20s"
-                     , MUDWHO_NAME, MUDWHO_PASSWORD, MUDWHO_NAME));
-}
-
-//---------------------------------------------------------------------------
-static void mudwho_connect (object ob)
-{
-    mudwho_info[ob] = sprintf("A\t%.20s\t%.20s\t%.20s\t%:010d\t0\tlogin"
-                             , MUDWHO_NAME, MUDWHO_PASSWORD, MUDWHO_NAME
-                             , explode(object_name(ob), "#")[<1]
-                               + "@" MUDWHO_NAME
-                             , time()
-                             );
-}
-
-//---------------------------------------------------------------------------
-static void send_mudwho_info()
-{
-    send_imp(MUDWHO_SERVER, MUDWHO_PORT, sprintf(mudwho_ping, time()));
-    walk_mapping(mudwho_info, send_mudwho_info);
+  if (find_call_out("send_mudwho_info") < 0)
     call_out("send_mudwho_info", MUDWHO_REFRESH_TIME);
 }
 
 //---------------------------------------------------------------------------
-static void adjust_mudwho (object ob)
-{
-    if (ob && interactive(ob) && mudwho_info[ob][<5..] == "login")
-    {
-        mudwho_info[ob][<5..] = ob->query_real_name()[0..24];
-        send_imp(MUDWHO_SERVER, MUDWHO_PORT, mudwho_info[ob]);
-    }
+static void mudwho_shutdown() {
+  send_imp(
+    MUDWHO_SERVER,
+    MUDWHO_PORT,
+    sprintf("D\t%.20s\t%.20s\t%.20s",
+      MUDWHO_NAME, MUDWHO_PASSWORD, MUDWHO_NAME)
+  );
 }
 
 //---------------------------------------------------------------------------
-static void mudwho_exec (object obfrom, object ob)
-{
-    if (interactive(obfrom))
-    {
-        mudwho_info[ob] = mudwho_info[obfrom];
-        efun::m_delete(mudwho_info, obfrom);
-        call_out("adjust_mudwho", 0, ob);
-    }
+static void mudwho_connect (object ob) {
+  mudwho_info[ob] = sprintf(
+    "A\t%.20s\t%.20s\t%.20s\t%:010d\t0\tlogin",
+    MUDWHO_NAME, MUDWHO_PASSWORD, MUDWHO_NAME,
+    explode(object_name(ob), "#")[<1] + "@" + MUDWHO_NAME,
+    time()
+  );
 }
 
 //---------------------------------------------------------------------------
-static void mudwho_disconnect (object ob)
-{
-    send_imp(MUDWHO_SERVER, MUDWHO_PORT
-            , "Z\t"+implode(explode(mudwho_info[ob], "\t")[1..4], "\t"));
+static void send_mudwho_info() {
+  send_imp(MUDWHO_SERVER, MUDWHO_PORT, sprintf(mudwho_ping, time()));
+  walk_mapping(mudwho_info, send_mudwho_info);
+  call_out("send_mudwho_info", MUDWHO_REFRESH_TIME);
+}
+
+//---------------------------------------------------------------------------
+static void adjust_mudwho (object ob) {
+  if (ob && interactive(ob) && mudwho_info[ob][<5..] == "login") {
+    mudwho_info[ob][<5..] = ob->query_real_name()[0..24];
+    send_imp(MUDWHO_SERVER, MUDWHO_PORT, mudwho_info[ob]);
+  }
+}
+
+//---------------------------------------------------------------------------
+static void mudwho_exec (object obfrom, object ob) {
+  if (interactive(obfrom)) {
+    mudwho_info[ob] = mudwho_info[obfrom];
+    efun::m_delete(mudwho_info, obfrom);
+    call_out("adjust_mudwho", 0, ob);
+  }
+}
+
+//---------------------------------------------------------------------------
+static void mudwho_disconnect (object ob) {
+  send_imp(
+    MUDWHO_SERVER,
+    MUDWHO_PORT,
+    "Z\t"+implode(explode(mudwho_info[ob], "\t")[1..4], "\t")
+  );
 }
 
 //---------------------------------------------------------------------------
@@ -2070,117 +1946,110 @@ static void mudwho_disconnect (object ob)
 //===========================================================================
 
 //---------------------------------------------------------------------------
-static void wiz_decay()
+static void wiz_decay() {
 
-/* Decay the 'worth' entry in the wizlist
- */
+  /* Decay the "worth" entry in the wizlist. */
 
-{
-    mixed *wl;
-    int i;
+  mixed *wl;
+  int i;
 
-    wl = wizlist_info();
-    for (i=sizeof(wl); i--; ) {
-        set_extra_wizinfo(wl[i][WL_NAME], wl[i][WL_EXTRA] * 99 / 100);
-    }
-    call_out("wiz_decay", 3600);
+  wl = wizlist_info();
+  for (i=sizeof(wl); i--; ) {
+    set_extra_wizinfo(wl[i][WL_NAME], wl[i][WL_EXTRA] * 99 / 100);
+  }
+  call_out("wiz_decay", 3600);
 }
 
 //---------------------------------------------------------------------------
-void save_wiz_file()
+void save_wiz_file() {
 
-/* Save the wizlist file.
- */
+  /* Save the wizlist file. */
 
-{
 #ifdef __WIZLIST__
-    rm(__WIZLIST__);
-    write_file(
-      __WIZLIST__,
-      implode(
-        map(wizlist_info(),
-          lambda(({'a}),
-            ({#'sprintf, "%s %d %d\n",
-              ({#'[, 'a, WL_NAME}),
-              ({#'[, 'a, WL_COMMANDS}),
-              ({#'[, 'a, WL_EXTRA})
-            })
-          )
-        ), ""
-      )
-    );
+  rm(__WIZLIST__);
+  write_file(
+    __WIZLIST__,
+    implode(
+      map(
+        wizlist_info(),
+        lambda(({'a}),
+          ({#'sprintf, "%s %d %d\n",
+            ({#'[, 'a, WL_NAME}),
+            ({#'[, 'a, WL_COMMANDS}),
+            ({#'[, 'a, WL_EXTRA})
+          })
+        )
+      ),
+      ""
+    )
+  );
 #endif
 }
 
 //---------------------------------------------------------------------------
-int verify_create_wizard (object ob)
+int verify_create_wizard (object ob) {
 
-/* This function is called for a wizard that has dropped a castle.
- * The argument is the file name of the object that called create_wizard().
- * Verify that this object is allowed to do this call.
- */
+  /* Verify that the castle dropper is authorized to create a wizard. */
 
-{
-    int dummy;
+  int dummy;
 
-    if (sscanf(object_name(ob), "domain/lp-245/room/port_castle#%d", dummy) == 1
-      || sscanf(object_name(ob), "global/port_castle#%d", dummy) == 1)
-	return 1;
-    return 0;
+  if (sscanf(object_name(ob), "domain/lp-245/room/port_castle#%d", dummy) == 1
+    || sscanf(object_name(ob), "global/port_castle#%d", dummy) == 1)
+    return 1;
+  return 0;
 }
 
 //---------------------------------------------------------------------------
-string master_create_wizard(string owner, string domain, object caller)
+string master_create_wizard(string owner, string domain, object caller) {
 
-/* Create a home dritectory and a castle for a new wizard. It is called
- * automatically from create_wizard(). We don't use the 'domain' info.
- * The create_wizard() efun is not really needed any longer, as a call
- * could be done to this function directly.
- *
- * This function can create directories and files in /players. It is
- * garded from calls from the wrong places.
- */
+  /* Create a home directory and castle for a new wizard.
+  *
+  * This is called automatically from create_wizard(), and the 'domain'
+  * argument is ignored. The create_wizard() efun could call this directly.
+  *
+  * This function creates directories and files under /players, so it
+  * guards against unauthorized callers.
+  */
 
-{
-    string def_castle;
-    string dest, castle, wizard;
-    object player;
+  string def_castle;
+  string dest, castle, wizard;
+  object player;
 
-    /* find_player() is a simul_efun. Resolve it at run time. */
-    player = funcall(symbol_function('find_player),owner);
-    if (!player)
-	return 0;
-    if (!verify_create_wizard(caller)) {
-	tell_object(player, "That is an illegal attempt!\n");
-	return 0;
-    }
-    if (caller != previous_object()) {
-	tell_object(player, "Faked call!\n");
-	return 0;
-    }
-    wizard = "/players/" + owner;
-    castle = "/players/" + owner + "/castle.c";
-    if (file_size(wizard) == -1) {
-	tell_object(player, "You now have a home directory: " +
-		    wizard + "\n");
-	mkdir(wizard);
-    }
-    dest = object_name(environment(player));
-    def_castle = "#define NAME \"" + owner + "\"\n#define DEST \"" +
-	dest + "\"\n" + read_file("/domain/lp-245/room/def_castle.c");
-    if (file_size(castle) > 0) {
-	tell_object(player, "You already had a castle !\n");
+  /* find_player() is a simul_efun, so resolve it at runtime. */
+  player = funcall(symbol_function('find_player), owner);
+  if (!player)
+    return 0;
+  if (!verify_create_wizard(caller)) {
+    tell_object(player, "That is an illegal attempt!\n");
+    return 0;
+  }
+  if (caller != previous_object()) {
+    tell_object(player, "Faked call!\n");
+    return 0;
+  }
+  wizard = "/players/" + owner;
+  castle = "/players/" + owner + "/castle.c";
+  if (file_size(wizard) == -1) {
+    tell_object(player, "You now have a home directory: " +
+      wizard + "\n");
+    mkdir(wizard);
+  }
+  dest = object_name(environment(player));
+  def_castle = "#define NAME \"" + owner + "\"\n#define DEST \"" +
+    dest + "\"\n" + read_file("/domain/lp-245/room/def_castle.c");
+  if (file_size(castle) > 0) {
+    tell_object(player, "You already had a castle !\n");
+  } else {
+    /* The master object is authorized to do this. */
+    if (write_file(castle, def_castle)) {
+      tell_object(player, "You now have a castle: " + castle + "\n");
+      if (!write_file("/room/init_file", castle[1..] + "\n"))
+        tell_object(player, "It couldn't be loaded automatically!\n");
     } else {
-	/* The master object can do this ! */
-	if (write_file(castle, def_castle)) {
-	    tell_object(player, "You now have a castle: " + castle + "\n");
-	    if (!write_file("/room/init_file", castle[1..] + "\n"))
-		tell_object(player, "It couldn't be loaded automatically!\n");
-	} else {
-	    tell_object(player, "Failed to make castle for you!\n");
-	}
+      tell_object(player, "Failed to make castle for you!\n");
     }
-    return castle;
+  }
+  return castle;
 }
 
 /****************************************************************************/
