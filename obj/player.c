@@ -1437,7 +1437,7 @@ static void new_password(string p) {
     return;
   }
   password = crypt(password, 0);
-  "domain/lp-245/room/adv_guild"->advance(0);
+  "daemon/advancement_d"->advance(0);
   set_level(1);
   set_str(1);
   set_con(1);
