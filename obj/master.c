@@ -1,7 +1,6 @@
 #pragma strong_types
 
-/*  obj/master.c     (plain default)
-**
+/*
 ** The master bridges the gamedriver and the mudlib, translating driver calls
 ** into mudlib behavior. Driver calls to the master are wrapped in an implicit
 ** catch() to prevent unhandled errors from escaping.
@@ -9,8 +8,6 @@
 ** The master loads before any other object. It must not inherit other objects
 ** because many files assume the master already exists, and the compiler cannot
 ** resolve include paths at that stage unless they are absolute.
-**
-** This master targets the 2.4.5 plain-mode mudlib.
 */
 
 #include "/sys/wizlist.h"
@@ -77,13 +74,19 @@ static string _include_dirs_hook (string include_name, string current_file) {
 
   if (file_size(ADD_SLASH(include_name)) >= 0)
     return include_name;
+
   name = "room/"+include_name;
+
   if (file_size(ADD_SLASH(name)) >= 0)
     return name;
+
   name = "sys/"+include_name;
+
   if (file_size(ADD_SLASH(name)) >= 0)
     return name;
+
   name = "obj/"+include_name;
+
   if (file_size(ADD_SLASH(name)) >= 0)
     return name;
 
@@ -120,11 +123,11 @@ static void _move_hook_fun (object item, object dest) {
     efun::set_this_player(item);
     env = environment(item);
     env->exit(item);
+
     if (!item)
       raise_error(sprintf("%O->exit() destructed item %s before move.\n",
         env, name));
-  }
-  else
+  } else
     name = object_name(item);
 
   /* Perform the actual move. */
@@ -135,8 +138,10 @@ static void _move_hook_fun (object item, object dest) {
   if (living(item)) {
     efun::set_this_player(item);
     dest->init();
+    
     if (!item)
       raise_error(sprintf("%O->init() destructed moved item %s\n", dest, name));
+    
     if (environment(item) != dest)
       return;
   }
