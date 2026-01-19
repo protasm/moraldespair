@@ -1,6 +1,6 @@
 /*
  * This file defines flags that will make the game log facts.
- * If you change a definition, be sure to remove obj/player.i and
+ * If you change a definition, be sure to remove secure/player.i and
  * obj/living.i if you have them.
  */
 /*
