@@ -1,6 +1,6 @@
 #pragma strong_types
 
-/*  obj/master.c     (compat default)
+/*  obj/master.c     (plain default)
 **
 ** The master bridges the gamedriver and the mudlib, translating driver calls
 ** into mudlib behavior. Driver calls to the master are wrapped in an implicit
@@ -10,8 +10,7 @@
 ** because many files assume the master already exists, and the compiler cannot
 ** resolve include paths at that stage unless they are absolute.
 **
-** This master targets the 2.4.5 compatibility mudlib. Comments marked "PLAIN"
-** explain how non-compat masters differ where it matters.
+** This master targets the 2.4.5 plain-mode mudlib.
 */
 
 #include "/sys/wizlist.h"
@@ -26,15 +25,8 @@
 #define SIMUL_EFUN_FILE "obj/simul_efun"
 #define SPARE_SIMUL_EFUN_FILE "obj/spare_simul_efun"
 
-#ifdef __COMPAT_MODE__
-#    define ADD_SLASH(p) p
-#    define GETUID(p) creator(p)
-#    define TRANSFER(a,b) transfer(a,b)
-#else
-#    define ADD_SLASH(p) "/"+p
-#    define GETUID(p) getuid(p)
-#    define TRANSFER(a,b) funcall(symbol_function('transfer), a,b)
-#endif
+#define ADD_SLASH(p) "/"+p
+#define GETUID(p) getuid(p)
 
 #if defined(__TLS__) && defined(TLS_PORT)
 #include "/sys/interactive_info.h"
@@ -50,8 +42,6 @@ int query_player_level (string what); // forward declaration
 // modes. They mirror a subset of the helpers defined in simul_efun.c.
 //===========================================================================
 
-#ifndef __COMPAT_MODE__
-
 //---------------------------------------------------------------------------
 string object_name(object ob) {
   string rc;
@@ -60,8 +50,6 @@ string object_name(object ob) {
 
   return stringp(rc) ? rc[1..] : 0;
 }
-
-#endif /* __COMPAT_MODE__ */
 
 //===========================================================================
 //  Driver hooks
@@ -846,55 +834,13 @@ void move_or_destruct(object what, object to) {
   * is likely to cause errors when environments are deeply nested.
   */
 
-  int res;
-
-  /* PLAIN: the following loop is for compat mode only. */
-  do {
-    if (catch( res = TRANSFER(what, to) )) res = 5;
-    if ( !(res && what) ) return;
-  } while( (res == 1 || res == 4 || res == 5) && (to = environment(to)) );
-
-  /* PLAIN: native muds make this
   if (!catch(what->move(to, 1)))
     return;
-  */
 
   /*
   * If the move failed, destroy the object.
   */
   destruct(what);
-}
-
-//---------------------------------------------------------------------------
-private int
-handle_super_compat (object super, object ob) {
-  /* For compat muds: handle the weight handling in the environment for
-  * prepare_destruct().
-  * Return non-0 if an error occurred, and 0 if not.
-  */
-
-  if (super) {
-    mixed error;
-    mixed weight;
-
-    set_this_object(ob);
-    if ( living(ob) )
-      if (error = catch(super->exit(ob),0))
-        write("exit"+": "+error);
-    if ( error = catch((weight = ob->query_weight()),0) ) {
-      write("query_weight"+": "+error);
-      return 1;
-    }
-
-    if (weight && intp(weight))
-      if (error = catch(super->add_weight(-weight),0)) {
-        write("add_weight"+": "+error);
-        return 1;
-      }
-
-  }
-
-  return 0;
 }
 
 //---------------------------------------------------------------------------
@@ -931,13 +877,6 @@ mixed prepare_destruct (object ob) {
   }
 
   super = environment(ob);
-
-  /* PLAIN: This whole if (super) {...} block is for compat muds only */
-  if (super)
-    if (funcall(#'handle_super_compat, super, ob))
-      return;
-
-  /* PLAIN: end of compat-mud block */
 
   if (!super) {
     object item;
