@@ -1539,50 +1539,68 @@ static void move_player_to_start3(mixed where) {
     set_dex(tmp);
     stats_is_updated = 1;
   }
+
   set_heart_beat(1);
+
   add_standard_commands();
+
   if (level >= 20)
     wiz_commands();
   if (level >= 21)
     wiz_commands2();
+
   move_object(clone_object("obj/soul"), player_self);
+
   if (tot_value) {
     write("You find " + tot_value + " coins of your lost money!\n");
+
     money += tot_value;
+
     tot_value = 0;
   }
+
   cat("/NEWS");
+
   if (where)
     move_object(player_self, where);
   else {
     move_object(player_self, "domain/original/area/vesla/sanctuary");
+
     load_auto_obj(auto_load);
   }
+
   if (is_invis && level < 20)
     vis();
+
   if (!is_invis)
     say(cap_name + " enters the game.\n");
   else
     write("YOU ARE INVISIBLE !\n\n");
+  
   if (level >= 21)
     cat("/WIZNEWS");
-  "domain/lp-245/room/post"->query_mail();
+
   if (query_ip_number() != called_from_ip && called_from_ip) {
   }
 
   called_from_ip = query_ip_number();
   ob = first_inventory(environment());
+
   while (ob) {
     if (ob != this_object()) {
       string sh;
 
       sh = ob->short();
+
       if (sh)
         write(sh + ".\n");
     }
+
     ob = next_inventory(ob);
   }
+
   current_working_path = "players/" + name;
+
   set_living_name(name);
 }
 
@@ -1593,9 +1611,12 @@ static void move_player_to_start3(mixed where) {
 static int list_files(string path) {
   if (!path)
     path = "/" + current_working_path;
+
   if (path != "/")
     path = path + "/.";
+
   ls(path);
+
   return 1;
 }
 
