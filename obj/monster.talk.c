@@ -207,7 +207,7 @@ void set_level(int l) {
     hit_point = 50 + (level - 1) * 8; /* Same as a player */
     max_hp = hit_point;
     spell_points = max_hp;
-    experience = "domain/lp-245/room/adv_guild"->query_cost(l - 1);
+    experience = "daemon/advancement_d"->query_cost(l - 1);
     /* This is for level 1 monsters. */
     if (experience == 0)
         experience = random(500);
