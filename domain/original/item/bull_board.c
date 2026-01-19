@@ -117,7 +117,7 @@ int new(string hd) {
 
 void get_body(string str) {
   if (str == "**") {
-    new_hd = new_hd + "(" + this_player()->query_name() + ", " +
+    new_hd = new_hd + " (" + this_player()->query_name() + ", " +
       ctime(time())[4..9] + ")";
     if (!messages)
       messages = "";
