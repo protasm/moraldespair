@@ -1,10 +1,10 @@
 #
 # List of objects to load automatically at reboot.
 #
-obj/living
-obj/monster
-obj/treasure
-obj/weapon
-obj/armour
+#obj/living
+#obj/monster
+#obj/treasure
+#obj/weapon
+#obj/armour
 daemon/wilderness_d
 domain/original/area/vesla/sanctuary.c
