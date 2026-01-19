@@ -2756,15 +2756,19 @@ void save_me(int value_items) {
     tot_value = compute_values(first_inventory(this_object()));
   else
     tot_value = 0;
+
   compute_auto_str();
+
   save_object("players/" + name);
 }
 
 /* Logs illegal patch attempts. */
 int illegal_patch(string what) {
   write("You are struck by a mental bolt from the interior of the game.\n");
+
   log_file("ILLEGAL", ctime(time()) + ":\n");
   log_file("ILLEGAL", this_player()->query_real_name() + " " + what + "\n");
+
   return 0;
 }
 
@@ -2776,17 +2780,24 @@ void load_auto_obj(string str) {
   while (str && str != "") {
     if (sscanf(str, "%s:%s^!%s", file, argument, rest) != 3) {
       write("Auto load string corrupt.\n");
+
       return;
     }
+
     str = rest;
     ob = find_object(file);
+
     if (!ob) {
       write("Can't autoload '" + file + "': not in game.\n");
+
       continue;
     }
+
     ob = clone_object(file);
+
     if (argument)
       ob->init_arg(argument);
+
     move_object(ob, this_object());
   }
 }
@@ -2798,11 +2809,14 @@ void compute_auto_str() {
 
   auto_load = "";
   ob = first_inventory(this_object());
+
   while (ob) {
     str = ob->query_auto_load();
     ob = next_inventory(ob);
+
     if (!str)
       continue;
+
     auto_load = auto_load + str + "^!";
   }
 }
@@ -2814,19 +2828,27 @@ mixed query_quests(string str) {
 
   if (str == 0)
     return quests;
+
   rest = quests;
+
   while (rest) {
     if (str == rest)
       return 1;
+
     i = sscanf(rest, "%s#%s", tmp, rest_tmp);
+
     if (i == 0)
       return 0;
+
     if (tmp == str)
       return 1;
+
     if (i == 1)
       return 0;
+
     rest = rest_tmp;
   }
+
   return 0;
 }
 
@@ -2834,22 +2856,27 @@ mixed query_quests(string str) {
 int set_quest(string q) {
   if (!q)
     return 0;
+
   if (query_quests(q))
     return 0;
+
 #ifdef LOG_SET_QUEST
   if (previous_object()) {
     log_file("QUESTS", name + ": " + q + " from " +
                            object_name(previous_object()) + "\n");
+
     if (this_player() && this_player() != this_object() &&
         query_ip_number(this_player()))
       log_file("QUESTS",
                "Done by " + this_player()->query_real_name() + "\n");
   }
 #endif /* LOG_SET_QUEST */
+
   if (quests == 0)
     quests = q;
   else
     quests = quests + "#" + q;
+
   return 1;
 }
 
