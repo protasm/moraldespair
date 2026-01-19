@@ -816,9 +816,9 @@ void destruct_environment_of(object ob) {
   if (!interactive(ob))
     return;
   tell_object(ob, "Everything you see is disolved. Luckily, you are transported somewhere...\n");
-  if (error = catch(ob->move_player("is transfered#domain/lp-245/room/void"))) {
+  if (error = catch(ob->move_player("is transfered#room/void"))) {
     write(error);
-    if (error = catch(move_object(ob, "domain/lp-245/room/void"))) {
+    if (error = catch(move_object(ob, "room/void"))) {
       object new_player;
 
       write(error);
@@ -829,7 +829,7 @@ void destruct_environment_of(object ob) {
       }
 
       exec(new_player, ob);
-      if (error = catch(new_player->replace_player(ob, "domain/lp-245/room/void")))
+      if (error = catch(new_player->replace_player(ob, "room/void")))
         write(error);
     }
 
