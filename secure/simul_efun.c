@@ -1,6 +1,6 @@
 #pragma save_types
 
-/* obj/simul_efun.c
+/* secure/simul_efun.c
  *
  * The simul-efun object provides functions which can be accessed as
  * if they were true efuns. This is most useful to protect sensitive
@@ -106,7 +106,7 @@ string create_wizard(string owner, string domain)
 
     set_this_object(previous_object());
     result =
-      (mixed)__MASTER_OBJECT__->master_create_wizard(owner, domain, previous_object());
+      __MASTER_OBJECT__->master_create_wizard(owner, domain, previous_object());
     if (stringp(result)) return result;
     return 0;
 }
@@ -201,6 +201,8 @@ varargs mixed snoop(mixed snoopee)
 	    break;
     }
     if (result > 0) return snoopee;
+
+    return 0;
 }
 
 //---------------------------------------------------------------------------
@@ -795,38 +797,31 @@ object query_snoop(object ob)
 #define CAT_MAX_LINES 50
 varargs int cat(string file, int start, int num)
 {
-  int more;
-  string txt;
-
-  if (extern_call()) {
     set_this_object(previous_object());
-  }
+    int more;
 
-  if (num < 0 || !this_player()) {
-    return 0;
-  }
+    if (num < 0 || !this_player())
+        return 0;
 
-  if (!start) {
-    start = 1;
-  }
+    if (!start)
+        start = 1;
 
-  if (!num || num > CAT_MAX_LINES) {
-    num = CAT_MAX_LINES;
-    more = sizeof(read_file(file, start + num, 1));
-  }
+    if (!num || num > CAT_MAX_LINES) {
+        num = CAT_MAX_LINES;
+        more = sizeof(read_file(file, start+num, 1));
+    }
 
-  txt = read_file(file, start, num);
-  if (!txt) {
-    return 0;
-  }
+    string txt = read_file(file, start, num);
 
-  tell_object(this_player(), txt);
+    if (!txt)
+        return 0;
 
-  if (more) {
-    tell_object(this_player(), "*****TRUNCATED****\n");
-  }
+    tell_object(this_player(), txt);
 
-  return sizeof(txt & "\n");
+    if (more)
+        tell_object(this_player(), "*****TRUNCATED****\n");
+
+    return sizeof(txt & "\n");
 }
 #endif
 

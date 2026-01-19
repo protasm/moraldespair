@@ -361,7 +361,7 @@ To find all the available functions you should read the following files
 and try to understand them, since they are the most inherited and cloned
 objects in the game.
 
-	/obj/player.c	- For player functions.
+	/secure/player.c	- For player functions.
 	/obj/monster.c	- For monster functions.
 	/obj/living.c	- For common monster and player functions.
 	/obj/weapon.c	- For weapon functions.
