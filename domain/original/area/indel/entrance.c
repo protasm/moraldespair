@@ -11,6 +11,9 @@ void reset(int arg) {
   long_desc = "A city overtaken by the dead.";
   dest_dir = ({
     "domain/original/area/roadway/room71", "north",
+    "room/wilderness_room#X45", "west",
+    "room/wilderness_room#Z45", "east",
+    "room/wilderness_room#Y46", "south",
     "domain/original/area/indel/room1401", "city",
   });
 
