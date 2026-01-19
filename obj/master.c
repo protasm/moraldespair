@@ -816,9 +816,10 @@ void destruct_environment_of(object ob) {
   if (!interactive(ob))
     return;
   tell_object(ob, "Everything you see is disolved. Luckily, you are transported somewhere...\n");
-  if (error = catch(ob->move_player("is transfered#room/void"))) {
+
+  if (error = catch(ob->move_player("is transfered#domain/original/void"))) {
     write(error);
-    if (error = catch(move_object(ob, "room/void"))) {
+    if (error = catch(move_object(ob, "domain/original/void"))) {
       object new_player;
 
       write(error);
@@ -829,7 +830,7 @@ void destruct_environment_of(object ob) {
       }
 
       exec(new_player, ob);
-      if (error = catch(new_player->replace_player(ob, "room/void")))
+      if (error = catch(new_player->replace_player(ob, "domain/original/void")))
         write(error);
     }
 
@@ -1589,8 +1590,7 @@ mixed valid_write (string path, string euid, string fun, object caller) {
         user = user[1..];
 #endif
         if (user[0..3] == "obj/"
-          || user[0..4] == "domain/lp-245/room/"
-          || user[0..3] == "std/")
+         || user[0..3] == "std/")
           return ADD_SLASH(path);
       }
 
