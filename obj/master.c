@@ -23,8 +23,6 @@
 
 #define INIT_FILE "/room/init_file"
 #define BACKBONE_WIZINFO_SIZE 5
-#define MUDWHO_INDEX 1
-/* Index into the extra wizinfo array reserved for mudwho state. */
 #define SIMUL_EFUN_FILE "obj/simul_efun"
 #define SPARE_SIMUL_EFUN_FILE "obj/spare_simul_efun"
 
@@ -36,20 +34,6 @@
 #    define ADD_SLASH(p) "/"+p
 #    define GETUID(p) getuid(p)
 #    define TRANSFER(a,b) funcall(symbol_function('transfer), a,b)
-#endif
-
-#ifdef MUDWHO
-static void mudwho_init(int arg);
-static void mudwho_connect (object ob);
-static void mudwho_disconnect (object ob);
-static void mudwho_shutdown();
-static void mudwho_exec(object obfrom, object ob);
-#else
-#    define mudwho_init(arg)       0
-#    define mudwho_connect(ob)     0
-#    define mudwho_disconnect(ob)  0
-#    define mudwho_shutdown()      0
-#    define mudwho_exec(a,b)       0
 #endif
 
 #if defined(__TLS__) && defined(TLS_PORT)
@@ -73,6 +57,7 @@ string object_name(object ob) {
   string rc;
 
   rc = efun::object_name(ob);
+
   return stringp(rc) ? rc[1..] : 0;
 }
 
@@ -87,7 +72,6 @@ string object_name(object ob) {
 
 //---------------------------------------------------------------------------
 static string _include_dirs_hook (string include_name, string current_file) {
-
   // Resolve an include name to a full pathname.
   //
   // Argument:
@@ -120,7 +104,6 @@ static string _include_dirs_hook (string include_name, string current_file) {
 
 //---------------------------------------------------------------------------
 static void _move_hook_fun (object item, object dest) {
-
   // Move an object into its destination while honoring init() semantics.
   //
   // Argument:
@@ -199,7 +182,6 @@ static void _move_hook_fun (object item, object dest) {
 
 //---------------------------------------------------------------------------
 static string _auto_include_hook (string base_file, string current_file, int sys_include) {
-
   // Return any automatic include text for a compiled object.
   //
   // Argument:
@@ -225,7 +207,6 @@ static string _auto_include_hook (string base_file, string current_file, int sys
 
 //---------------------------------------------------------------------------
 static mixed _load_uids_fun (mixed object_name, object prev) {
-
   // Provide uids for a freshly loaded object.
   //
   // Argument:
@@ -249,8 +230,10 @@ static mixed _load_uids_fun (mixed object_name, object prev) {
   string *parts;
 
   parts = explode(object_name, "/");
+
   if (sizeof(parts) > 2 && parts[0] == "players")
     return parts[1];
+
   return 1;
 }
 
@@ -274,7 +257,6 @@ static mixed _load_uids_fun (mixed object_name, object prev) {
 
 //---------------------------------------------------------------------------
 static mixed _clone_uids_fun (object blueprint, string new_name, object prev) {
-
   // Provide uids for a freshly cloned object.
   //
   // Argument:
@@ -313,7 +295,6 @@ static mixed _clone_uids_fun (object blueprint, string new_name, object prev) {
 
 //---------------------------------------------------------------------------
 static void _create_fun (object ob, object creator) {
-
   // Initialize a freshly created object by calling ob->reset(0).
   //
   // Argument:
@@ -383,7 +364,6 @@ static void _create_fun (object ob, object creator) {
 
 //---------------------------------------------------------------------------
 void inaugurate_master (int arg) {
-
   // Perform mudlib-specific setup for the master.
   //
   // Argument:
@@ -406,8 +386,6 @@ void inaugurate_master (int arg) {
       return;
     set_extra_wizinfo(0, allocate(BACKBONE_WIZINFO_SIZE));
   }
-
-  mudwho_init(arg);
 
   // Schedule periodic wizlist decay.
   if (find_call_out("wiz_decay") < 0)
@@ -483,7 +461,6 @@ void inaugurate_master (int arg) {
 
 //---------------------------------------------------------------------------
 mixed get_master_uid () {
-
   // Return the uid/euid value for a (re)loaded master.
   //
   // Possible results include:
@@ -503,7 +480,6 @@ mixed get_master_uid () {
 
 //---------------------------------------------------------------------------
 void flag (string arg) {
-
   // Handle '-f' command-line options passed to the driver.
   //
   // Arguments:
@@ -537,7 +513,6 @@ static mixed current_time;
 /* Track epilog start time for preload timing output. */
 
 string *epilog (int eflag) {
-
   // Perform final setup before opening the game to players.
   //
   // Arguments:
@@ -561,7 +536,6 @@ string *epilog (int eflag) {
 
 //---------------------------------------------------------------------------
 void preload (string file) {
-
   // Preload a single object entry.
   //
   // Arguments:
@@ -608,7 +582,6 @@ void preload (string file) {
 
 //---------------------------------------------------------------------------
 mixed get_simul_efun () {
-
   // Load simul_efun objects and return their paths.
   //
   // Result:
@@ -652,7 +625,6 @@ mixed get_simul_efun () {
 
 //---------------------------------------------------------------------------
 object connect () {
-
   // Handle an incoming connection request.
   //
   // Result:
@@ -684,13 +656,11 @@ object connect () {
   }
 #endif
 
-  mudwho_connect(ob);
   return ob;
 }
 
 //---------------------------------------------------------------------------
 void disconnect (object obj) {
-
   // Handle the loss of an IP connection.
   //
   // Argument:
@@ -700,12 +670,10 @@ void disconnect (object obj) {
   // either due to netdeath or because of exec() or remove_interactive().
   // The connection will be unbound upon return from this call.
 
-  mudwho_disconnect(ob);
 }
 
 //---------------------------------------------------------------------------
 void remove_player (object player) {
-
   // Remove a player object from the game.
   //
   // Argument:
@@ -724,7 +692,6 @@ void remove_player (object player) {
 
 //---------------------------------------------------------------------------
 void stale_erq (closure callback) {
-
   // Handle a lost erq daemon connection.
   //
   // Argument:
@@ -748,7 +715,6 @@ void stale_erq (closure callback) {
 
 //---------------------------------------------------------------------------
 object compile_object (string filename) {
-
   // Compile a virtual object.
   //
   // Arguments:
@@ -788,9 +754,6 @@ object compile_object (string filename) {
 
 //---------------------------------------------------------------------------
 string get_wiz_name (string file) {
-
-  // Return the author of a file.
-  //
   // Arguments:
   //   file: The name of the file in question.
   //
@@ -827,7 +790,6 @@ string get_wiz_name (string file) {
 
 //---------------------------------------------------------------------------
 void destruct_environment_of(object ob) {
-
   /* When an object is destructed, this function runs for every item in the
   * room, giving us a chance to rescue any players.
   */
@@ -858,7 +820,6 @@ void destruct_environment_of(object ob) {
 
 //---------------------------------------------------------------------------
 void move_or_destruct(object what, object to) {
-
   /* Move <what> into <to>, or destruct <what> if that is not possible.
   *
   * An error in this function can be very nasty. Note that unlimited recursion
@@ -886,7 +847,6 @@ void move_or_destruct(object what, object to) {
 //---------------------------------------------------------------------------
 private int
 handle_super_compat (object super, object ob) {
-
   /* For compat muds: handle the weight handling in the environment for
   * prepare_destruct().
   * Return non-0 if an error occurred, and 0 if not.
@@ -918,7 +878,6 @@ handle_super_compat (object super, object ob) {
 
 //---------------------------------------------------------------------------
 mixed prepare_destruct (object ob) {
-
   // Prepare the destruction of the given object.
   //
   // Argument:
@@ -1008,7 +967,6 @@ mixed prepare_destruct (object ob) {
 
 //---------------------------------------------------------------------------
 void slow_shut_down (int minutes) {
-
   // Schedule a shutdown for the near future.
   //
   // Argument:
@@ -1052,7 +1010,6 @@ void slow_shut_down (int minutes) {
 
 //---------------------------------------------------------------------------
 varargs void notify_shutdown (string crash_reason) {
-
   // Notify the master about an immediate shutdown. If <crash_reason> is 0,
   // it is a normal shutdown, otherwise it is a crash and <crash_reason>
   // gives a hint at the reason.
@@ -1081,7 +1038,6 @@ varargs void notify_shutdown (string crash_reason) {
     filter(users(), #'tell_object,
   "Game driver shouts: PANIC! "+ crash_reason+"!\n");
   save_wiz_file();
-  mudwho_shutdown();
 }
 
 //===========================================================================
@@ -1091,7 +1047,6 @@ varargs void notify_shutdown (string crash_reason) {
 
 //---------------------------------------------------------------------------
 void dangling_lfun_closure () {
-
   // Handle a dangling lfun closure.
   //
   // This is called when the driver executes a closure that references a
@@ -1114,8 +1069,7 @@ void dangling_lfun_closure () {
 }
 
 //---------------------------------------------------------------------------
-void log_error (string file, string err) {
-
+void log_error(string file, string err) {
   // Record a compiler-time error.
   //
   // Arguments:
@@ -1135,9 +1089,8 @@ void log_error (string file, string err) {
 }
 
 //---------------------------------------------------------------------------
-mixed heart_beat_error (object culprit, string err,
+mixed heart_beat_error(object culprit, string err,
 string prg, string curobj, int line) {
-
   // Report an error in the heart_beat() function.
   //
   // Arguments:
@@ -1168,9 +1121,8 @@ string prg, string curobj, int line) {
 }
 
 //---------------------------------------------------------------------------
-void runtime_error ( string err, string prg, string curobj, int line
+void runtime_error( string err, string prg, string curobj, int line
 , mixed culprit) {
-
   // Report a runtime error.
   //
   // Arguments:
@@ -1222,7 +1174,6 @@ void runtime_error ( string err, string prg, string curobj, int line
 
 //---------------------------------------------------------------------------
 int privilege_violation (string op, mixed who, mixed arg, mixed arg2) {
-
   // Validate the execution of a privileged operation.
   //
   // Arguments:
@@ -1298,8 +1249,6 @@ int privilege_violation (string op, mixed who, mixed arg, mixed arg2) {
 
 //---------------------------------------------------------------------------
 int query_allow_shadow (object victim) {
-
-
   // Validate a shadowing attempt.
   //
   // Arguments:
@@ -1319,7 +1268,6 @@ int query_allow_shadow (object victim) {
 
 //---------------------------------------------------------------------------
 int query_player_level (string what) {
-
   // Check if the player is high enough level for a requested capability.
   //
   // Argument:
@@ -1352,7 +1300,6 @@ int query_player_level (string what) {
 
 //---------------------------------------------------------------------------
 int valid_trace (string what) {
-
   // Check if the player is allowed to use tracing.
   //
   // Argument:
@@ -1381,7 +1328,6 @@ int valid_trace (string what) {
 
 //---------------------------------------------------------------------------
 int valid_exec (string name, object ob, object obfrom) {
-
   // Validate rebinding an IP connection using exec().
   //
   // Arguments:
@@ -1400,7 +1346,6 @@ int valid_exec (string name, object ob, object obfrom) {
     case "secure/login.c":
     case "obj/master.c":
       if (!interactive(ob)) {
-        mudwho_exec(obfrom, ob);
         return 1;
       }
   }
@@ -1410,7 +1355,6 @@ int valid_exec (string name, object ob, object obfrom) {
 
 //---------------------------------------------------------------------------
 int valid_query_snoop (object obj) {
-
   // Validate whether query_snoop() may reveal snoopers for an object.
   //
   // Arguments:
@@ -1427,7 +1371,6 @@ int valid_query_snoop (object obj) {
 
 //---------------------------------------------------------------------------
 int valid_snoop (object snoopee, object snooper) {
-
   // Validate the start or stop of a snoop.
   //
   // Arguments:
@@ -1479,7 +1422,6 @@ int valid_snoop (object snoopee, object snooper) {
 
 //---------------------------------------------------------------------------
 mixed valid_read  (string path, string euid, string fun, object caller) {
-
   // Validate a file read operation.
   //
   // Arguments:
@@ -1559,7 +1501,6 @@ mixed valid_read  (string path, string euid, string fun, object caller) {
 
 //---------------------------------------------------------------------------
 mixed valid_write (string path, string euid, string fun, object caller) {
-
   // Validate a file write operation.
   //
   // Arguments:
@@ -1678,7 +1619,6 @@ mixed valid_write (string path, string euid, string fun, object caller) {
 
 //---------------------------------------------------------------------------
 string make_path_absolute (string str) {
-
   // Convert a relative filename to an absolute path for the editor.
   //
   // Argument:
@@ -1693,7 +1633,6 @@ string make_path_absolute (string str) {
 
 //---------------------------------------------------------------------------
 int save_ed_setup (object who, int code) {
-
   // Save a wizard's ed settings.
   //
   // Arguments:
@@ -1721,7 +1660,6 @@ int save_ed_setup (object who, int code) {
 
 //---------------------------------------------------------------------------
 int retrieve_ed_setup (object who) {
-
   // Retrieve a wizard's ed settings.
   //
   // Arguments:
@@ -1742,7 +1680,6 @@ int retrieve_ed_setup (object who) {
 
 //---------------------------------------------------------------------------
 string get_ed_buffer_save_file_name (string file) {
-
   // Return a filename for saving the ed buffer.
   //
   // Arguments:
@@ -1782,7 +1719,6 @@ string get_ed_buffer_save_file_name (string file) {
 
 //---------------------------------------------------------------------------
 string *parse_command_id_list () {
-
   // Return generic singular ids.
 
   return ({ "one", "thing" });
@@ -1791,7 +1727,6 @@ string *parse_command_id_list () {
 
 //---------------------------------------------------------------------------
 string *parse_command_plural_id_list () {
-
   // Return generic plural ids.
 
   return ({ "ones", "things", "them" });
@@ -1800,7 +1735,6 @@ string *parse_command_plural_id_list () {
 
 //---------------------------------------------------------------------------
 string *parse_command_adjectiv_id_list () {
-
   // Return generic adjective ids.
   // If none are defined, return a value that is unlikely to be used.
 
@@ -1810,7 +1744,6 @@ string *parse_command_adjectiv_id_list () {
 
 //---------------------------------------------------------------------------
 string *parse_command_prepos_list () {
-
   // Return common prepositions used by the parser.
 
   return ({ "in", "on", "under", "behind", "beside" });
@@ -1819,127 +1752,10 @@ string *parse_command_prepos_list () {
 
 //---------------------------------------------------------------------------
 string parse_command_all_word() {
-
   // Return the single "all" word used by the parser.
 
   return "all";
 }
-
-#ifdef MUDWHO
-
-//===========================================================================
-// Mudwho support
-//
-// Mudwho was a network of servers that tracked which users were online across
-// different muds. It is likely defunct, but the legacy implementation remains.
-//===========================================================================
-
-#define MUDWHO_SERVER   "134.2.62.161"
-#define MUDWHO_PORT     6888
-/* IP and port of the closest mudwho server. */
-
-#define MUDWHO_NAME     "TestNase"
-#define MUDWHO_PASSWORD "TestPassword"
-/* Participation in mudwho required registration. */
-
-#define MUDWHO_REFRESH_TIME 100
-
-#define QUOTE_PERCENT(s) (implode(explode(s, "%"), "%%"))
-
-private string mudwho_ping;
-private mapping mudwho_info;
-private closure send_mudwho_info;
-
-//---------------------------------------------------------------------------
-static void mudwho_init (int arg) {
-  if (!mudwho_info)
-    mudwho_info = ([]);
-  send_mudwho_info = lambda(
-    ({'key, 'info}),
-    ({#'send_imp, MUDWHO_SERVER, MUDWHO_PORT, 'info})
-  );
-  if (!arg) {
-    send_imp(
-      MUDWHO_SERVER,
-      MUDWHO_PORT,
-      sprintf("U\t%.20s\t%.20s\t%.20s\t%:010d\t0\t%.25s",
-        MUDWHO_NAME, MUDWHO_PASSWORD, MUDWHO_NAME,
-        time(), __VERSION__)
-    );
-    get_extra_wizinfo(0)[MUDWHO_INDEX] = mudwho_info;
-  }
-  else {
-    mudwho_info = get_extra_wizinfo(0)[MUDWHO_INDEX];
-  }
-
-  mudwho_ping = sprintf(
-    "M\t%.20s\t%.20s\t%.20s\t%%:010d\t0\t%.25s",
-    QUOTE_PERCENT(MUDWHO_NAME),
-    QUOTE_PERCENT(MUDWHO_PASSWORD),
-    QUOTE_PERCENT(MUDWHO_NAME),
-    QUOTE_PERCENT(__VERSION__)
-  );
-
-  if (find_call_out("send_mudwho_info") < 0)
-    call_out("send_mudwho_info", MUDWHO_REFRESH_TIME);
-}
-
-//---------------------------------------------------------------------------
-static void mudwho_shutdown() {
-  send_imp(
-    MUDWHO_SERVER,
-    MUDWHO_PORT,
-    sprintf("D\t%.20s\t%.20s\t%.20s",
-      MUDWHO_NAME, MUDWHO_PASSWORD, MUDWHO_NAME)
-  );
-}
-
-//---------------------------------------------------------------------------
-static void mudwho_connect (object ob) {
-  mudwho_info[ob] = sprintf(
-    "A\t%.20s\t%.20s\t%.20s\t%:010d\t0\tlogin",
-    MUDWHO_NAME, MUDWHO_PASSWORD, MUDWHO_NAME,
-    explode(object_name(ob), "#")[<1] + "@" + MUDWHO_NAME,
-    time()
-  );
-}
-
-//---------------------------------------------------------------------------
-static void send_mudwho_info() {
-  send_imp(MUDWHO_SERVER, MUDWHO_PORT, sprintf(mudwho_ping, time()));
-  walk_mapping(mudwho_info, send_mudwho_info);
-  call_out("send_mudwho_info", MUDWHO_REFRESH_TIME);
-}
-
-//---------------------------------------------------------------------------
-static void adjust_mudwho (object ob) {
-  if (ob && interactive(ob) && mudwho_info[ob][<5..] == "login") {
-    mudwho_info[ob][<5..] = ob->query_real_name()[0..24];
-    send_imp(MUDWHO_SERVER, MUDWHO_PORT, mudwho_info[ob]);
-  }
-}
-
-//---------------------------------------------------------------------------
-static void mudwho_exec (object obfrom, object ob) {
-  if (interactive(obfrom)) {
-    mudwho_info[ob] = mudwho_info[obfrom];
-    efun::m_delete(mudwho_info, obfrom);
-    call_out("adjust_mudwho", 0, ob);
-  }
-}
-
-//---------------------------------------------------------------------------
-static void mudwho_disconnect (object ob) {
-  send_imp(
-    MUDWHO_SERVER,
-    MUDWHO_PORT,
-    "Z\t"+implode(explode(mudwho_info[ob], "\t")[1..4], "\t")
-  );
-}
-
-//---------------------------------------------------------------------------
-
-#endif /* MUDWHO */
 
 //===========================================================================
 // 2.4.5-Lib related functions
@@ -1947,7 +1763,6 @@ static void mudwho_disconnect (object ob) {
 
 //---------------------------------------------------------------------------
 static void wiz_decay() {
-
   /* Decay the "worth" entry in the wizlist. */
 
   mixed *wl;
@@ -1962,7 +1777,6 @@ static void wiz_decay() {
 
 //---------------------------------------------------------------------------
 void save_wiz_file() {
-
   /* Save the wizlist file. */
 
 #ifdef __WIZLIST__
