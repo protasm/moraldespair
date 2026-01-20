@@ -1671,18 +1671,19 @@ int cat_file(string path) {
       return 1;
     }
 
-    here_path = file_name(here);
+    here_path = program_name(here);
 
     if (!here_path) {
-      write("No such file.\n");
+      write("Could not locate file '" + here_path + "'.\n");
 
       return 1;
     }
 
     path = here_path;
   }
+
   if (!cat(path))
-    write("No such file.\n");
+    write("Could not cat file '" + here_path + "'.\n");
   return 1;
 }
 
