@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Dim Walk";
   long_desc = "A narrow walk runs beneath slumped beams and the last remains of a shaded trellis. Motes of dust cling to the air, and the stones are slick with old rot.";
@@ -15,4 +11,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room119", "west",
     "chapter/prologue/area/ruined/room117", "east",
   });
+
+  set_light(1);
 }

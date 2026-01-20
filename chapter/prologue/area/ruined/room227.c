@@ -1,8 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg)
-    return;
+void create() {
+  ::create();
 
   short_desc = "Overgrown Park";
   long_desc = "Thick grass swallows old benches, leaving warped planks and rusted bolts. A sagging iron fence lists inward, half-buried in leaf mold.";

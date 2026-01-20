@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Ruined Gate";
   long_desc = "A broken stone arch leans over the road, its timbers split and sagging. Crumbled masonry seals the passage, and old iron fittings lie rusted in the weeds.";
@@ -14,18 +10,18 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/entrance", "exit",
   });
 
+  set_light(1);
   add_exit_alias("x", "exit");
 }
 
 void init() {
   ::init();
 
-  //add_action("block_exit", "exit");
+  add_action("block_exit", "exit");
 }
 
 int block_exit() {
-  write("The ruined gate has collapsed; the way to the wilderness is\n"
-        + "impassable.\n");
+  write("The ruined gate has collapsed; the way to the wilderness is impassable.\n");
 
   return 1;
 }
