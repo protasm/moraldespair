@@ -86,9 +86,31 @@ void tls_logon(int handshake_result) {
 
 /* Starts the login prompt flow. */
 static int logon() {
+  int count;
+  int i;
+  object *current_users;
+
   autosave_at = 500;
 
   cat("/WELCOME");
+
+  current_users = users();
+  count = 0;
+  i = 0;
+
+  while (i < sizeof(current_users)) {
+    if (current_users[i] != this_object())
+      count += 1;
+
+    i += 1;
+  }
+
+  if (count == 0)
+    write("Nobody is playing right now.\n");
+  else if (count == 1)
+    write("One person is playing right now.\n");
+  else
+    write(count + " people are playing right now.\n");
 
   write("What is your name? ");
 
@@ -1635,8 +1657,30 @@ int tail_file(string path) {
 
 /* Cats a file. */
 int cat_file(string path) {
+  object here;
+  string here_path;
+
   if (!path)
     return 0;
+  if (path == "here") {
+    here = environment(this_object());
+
+    if (!here) {
+      write("You are nowhere.\n");
+
+      return 1;
+    }
+
+    here_path = file_name(here);
+
+    if (!here_path) {
+      write("No such file.\n");
+
+      return 1;
+    }
+
+    path = here_path;
+  }
   if (!cat(path))
     write("No such file.\n");
   return 1;
