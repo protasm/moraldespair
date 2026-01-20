@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Quiet Square";
   long_desc =
@@ -17,4 +13,6 @@ void reset(int arg) {
     "domain/original/area/anshelm/room1194", "east",
     "domain/original/area/anshelm/room256", "north",
   });
+
+  set_light(1);
 }
