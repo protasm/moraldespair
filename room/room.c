@@ -1,6 +1,4 @@
 /*
- * This is a proposal of a replacement to std.h. It is used with
- * 'inherit "room/room";'.
  * All global variables below are supposed to be setup by the reset()
  * in the function that inherits this file.
  */
@@ -36,13 +34,17 @@ void init() {
 
   if (!dest_dir)
     return;
+
   i = 1;
+
   while (i < sizeof(dest_dir)) {
     add_action("move", dest_dir[i]);
+
     i += 2;
   }
 
-  if (!exit_aliases) return;
+  if (!exit_aliases)
+    return;
 
   aliases = m_indices(exit_aliases);
   i = 0;
@@ -55,76 +57,76 @@ void init() {
 }
 
 int id(string str) {
-    int i;
+  int i;
 
-    if (!items)
-        return 0;
-
-    while (i < sizeof(items)) {
-        if (items[i] == str)
-            return 1;
-
-  i += 2;
-    }
-
+  if (!items)
     return 0;
+
+  while (i < sizeof(items)) {
+    if (items[i] == str)
+      return 1;
+
+    i += 2;
+  }
+
+  return 0;
 }
 
 string exitsDescription(int brief) {
-    int i;
-    string desc;
+  int i;
+  string desc;
 
-    if (brief) {
-      if (!dest_dir)
-          return "(Exits: none)";
-
-  i = 1;
-      desc = "(Exits:";
-
-  while (i < sizeof(dest_dir)) {
-            string short_dir;
-
-            short_dir = (["north":"n",
-                               "south":"s", "east":"e", "west":"w", "up":"u",
-                               "down":"d", "northeast":"ne", "northwest":"nw",
-                               "southeast":"se", "southwest":"sw", ])[dest_dir[i]];
-            if (!short_dir)
-                short_dir = dest_dir[i];
-
-      desc += " " + short_dir;
-            i += 2;
-        }
-
-  return desc + ")";
-    }
-
+  if (brief) {
     if (!dest_dir)
-        return "    No obvious exits.\n";
+      return "(Exits: none)";
 
     i = 1;
-
-    if (sizeof(dest_dir) == 2)
-        desc = "    There is one obvious exit:";
-    else
-        desc = "    There are " + convert_number(sizeof(dest_dir) / 2) +
-               " obvious exits:";
+    desc = "(Exits:";
 
     while (i < sizeof(dest_dir)) {
-        desc += " " + dest_dir[i];
-        i += 2;
+      string short_dir;
 
-  if (i == sizeof(dest_dir) - 1)
-            desc += " and";
-        else if (i < sizeof(dest_dir))
-            desc += ",";
+      short_dir = (["north":"n",
+                    "south":"s", "east":"e", "west":"w", "up":"u", "down":"d",
+                    "northeast":"ne", "northwest":"nw", "southeast":"se",
+                    "southwest":"sw", ])[dest_dir[i]];
+
+      if (!short_dir)
+        short_dir = dest_dir[i];
+
+      desc += " " + short_dir;
+      i += 2;
     }
 
-    return desc + "\n";
+    return desc + ")";
+  }
+
+  if (!dest_dir)
+    return "No obvious exits.\n";
+
+  i = 1;
+
+  if (sizeof(dest_dir) == 2)
+    desc = "There is one obvious exit:";
+  else
+    desc =
+        "There are " + convert_number(sizeof(dest_dir) / 2) + " obvious exits:";
+
+  while (i < sizeof(dest_dir)) {
+    desc += " " + dest_dir[i];
+    i += 2;
+
+    if (i == sizeof(dest_dir) - 1)
+      desc += " and";
+    else if (i < sizeof(dest_dir))
+      desc += ",";
+  }
+
+  return desc + "\n";
 }
 
 void long(string str) {
-  string ruler;
-  string formatted;
+  string ruler, formatted;
   int i;
 
   if (set_light(0) == 0) {
@@ -170,48 +172,48 @@ void long(string str) {
 }
 
 /*
- * Does this room has a special property ?
+ * Does this room have a special property ?
  * The 'property' variable can be both a string and array of strings.
  * If no argument is given, return the 'property' variable.
  */
 mixed query_property(string str) {
-    int i;
+  int i;
 
-    if (str == 0)
-        return property;
+  if (str == 0)
+    return property;
 
-    if (!property)
-        return 0;
-
-    if (stringp(property))
-        return str == property;
-
-    while (i < sizeof(property)) {
-        if (property[i] == str)
-            return 1;
-
-  i += 1;
-    }
-
+  if (!property)
     return 0;
+
+  if (stringp(property))
+    return str == property;
+
+  while (i < sizeof(property)) {
+    if (property[i] == str)
+      return 1;
+
+    i += 1;
+  }
+
+  return 0;
 }
 
 int move(string str) {
-    int i;
+  int i;
 
-    i = 1;
+  i = 1;
 
-    while (i < sizeof(dest_dir)) {
-        if (query_verb() == dest_dir[i]) {
-            this_player()->move_player(dest_dir[i] + "#" + dest_dir[i - 1]);
+  while (i < sizeof(dest_dir)) {
+    if (query_verb() == dest_dir[i]) {
+      this_player()->move_player(dest_dir[i] + "#" + dest_dir[i - 1]);
 
       return 1;
-        }
-
-  i += 2;
     }
 
-    return 1;
+    i += 2;
+  }
+
+  return 1;
 }
 
 int move_alias(string str) {
@@ -277,42 +279,36 @@ void add_exit_alias(string alias, string canonical) {
   return;
 }
 
-string *query_dest_dir() {
-  return dest_dir;
-}
+string *query_dest_dir() { return dest_dir; }
 
-string query_long() {
-  return long_desc;
-}
+string query_long() { return long_desc; }
 
 /*
- * Convert a number to a word. The array is being created by the
+ * Convert a number to a word. The array is created by the
  * standard room/room, and shared by all rooms.
  */
 string *numbers;
 
 string convert_number(int n) {
   if (!pointerp(numbers))
-      numbers = query_numbers();
+    numbers = query_numbers();
 
   if (n > 9)
-      return "lot of";
+    return "lot of";
 
   return numbers[n];
 }
 
 string *query_numbers() {
   if (!numbers) {
-      if (object_name(this_object()) == "room/room")
-          numbers = ({"no", "one", "two", "three", "four", "five", "six",
-                        "seven", "eight", "nine"});
-      else
-          numbers = "room/room"->query_numbers();
+    if (object_name(this_object()) == "room/room")
+      numbers = ({"no", "one", "two", "three", "four", "five", "six", "seven",
+                  "eight", "nine"});
+    else
+      numbers = "room/room"->query_numbers();
   }
 
   return numbers;
 }
 
-int query_drop_castle() {
-  return no_castle_flag;
-}
+int query_drop_castle() { return no_castle_flag; }
