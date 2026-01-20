@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Flagstone Path";
   long_desc = "Flat stones form a narrow path, each one tilted and cracked. Grass grows thick\nbetween the joints.\n";
@@ -15,4 +11,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room918", "east",
     "chapter/prologue/area/silent/room603", "north",
   });
+
+  set_light(1);
 }

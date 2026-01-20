@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Vine Gate";
   long_desc = "Vines curtain a low arch, their roots wedged into the stone. The entry beyond\nis dim and cool.\n";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room907", "southeast",
     "chapter/prologue/area/silent/room909", "north",
   });
+
+  set_light(1);
 }

@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Paved Cross";
   long_desc = "A square of broken paving holds the meeting of several paths. The stones are\nsunken and split by roots.\n";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room386", "northwest",
     "chapter/prologue/area/silent/room527", "south",
   });
+
+  set_light(1);
 }

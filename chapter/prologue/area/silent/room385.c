@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Broken Road";
   long_desc = "The road is scarred with shallow ruts and missing stones. Wind has piled grit\nagainst the surviving curb.\n";
@@ -13,4 +9,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room384", "east",
     "chapter/prologue/area/silent/room300", "west",
   });
+
+  set_light(1);
 }

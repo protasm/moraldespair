@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Grand Foyer";
   long_desc = "A tall foyer rises toward a broken skylight. Bits of colored glass glitter in\nthe dust.\n";
@@ -15,4 +11,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room912", "east",
     "chapter/prologue/area/silent/room908", "south",
   });
+
+  set_light(1);
 }

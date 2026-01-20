@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Cold Hall";
   long_desc = "A narrow hall carries the breath of cold stone. The floor is slick with old\nmoisture.\n";
@@ -13,4 +9,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room346", "east",
     "chapter/prologue/area/silent/room349", "south",
   });
+
+  set_light(1);
 }
