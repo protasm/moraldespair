@@ -11854,7 +11854,7 @@
         "north": "K26",
         "west": "J27",
         "east": "L27",
-        "south": "domain/original/area/candera/entrance"
+        "south": "chapter/prologue/area/sunken/entrance"
       }
     },
     {
@@ -12332,7 +12332,7 @@
         "north": "J27",
         "south": "J29",
         "west": "I28",
-        "east": "domain/original/area/candera/entrance"
+        "east": "chapter/prologue/area/sunken/entrance"
       }
     },
     {
@@ -12490,7 +12490,7 @@
         "south": "K30",
         "west": "J29",
         "east": "L29",
-        "north": "domain/original/area/candera/entrance"
+        "north": "chapter/prologue/area/sunken/entrance"
       }
     },
     {
