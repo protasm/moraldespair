@@ -7,7 +7,7 @@ void create() {
   long_desc = "The western gate has collapsed into a heap of stone and splintered wood. Rusted fittings lie half buried, and the blocked passage holds a deep, unmoving quiet.";
   dest_dir = ({
     "chapter/prologue/area/ruined/room133", "east",
-    "domain/original/area/roadway/room12", "exit",
+    "chapter/prologue/area/roadway/room12", "exit",
   });
 
   add_exit_alias("x", "exit");
