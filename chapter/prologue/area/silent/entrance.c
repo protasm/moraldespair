@@ -8,7 +8,7 @@ void reset(int arg) {
   set_light(1);
 
   short_desc = "Silent City";
-  long_desc = "A graveyard where a city once thrived.";
+  long_desc = "An open grave where a small city once thrived.";
   dest_dir = ({
     "domain/original/area/roadway/room61", "west",
     "room/wilderness_room#AS27", "north",
@@ -19,4 +19,5 @@ void reset(int arg) {
 
   add_exit_alias("c", "city");
 }
+
 

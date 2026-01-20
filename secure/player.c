@@ -2648,6 +2648,9 @@ mixed valid_write(string str) {
   if (sscanf(str, "/domain/%s/area/%s/%s", domain, area, file) == 3)
     return str;
 
+  if (sscanf(str, "/chapter/prologue/area/%s/%s", area, file) == 2)
+    return str;
+
   if (sscanf(str, "/players/%s/%s", who, file) == 2) {
     if (who == owner || level > 23)
       return "players/" + who + "/" + file;
@@ -2667,9 +2670,6 @@ mixed valid_write(string str) {
 
   if (sscanf(str, "/ftp/%s", file) == 1)
     return "ftp/" + file;
-
-  if (sscanf(str, "/domain/lp-245/room/%s/%s", who, file) == 2)
-    return check_access_list("domain/lp-245/room/", who, file);
 
   return 0;
 }
