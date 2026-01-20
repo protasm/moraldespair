@@ -106,7 +106,7 @@ static void try_throw_out(string response) {
   object inventory_item;
 
   if (response == "" || (response[0] != 'y' && response[0] != 'Y')) {
-    write("Welcome another time then !\n");
+    write("Another time then!\n");
 
     destruct(this_object());
 
@@ -166,7 +166,6 @@ int valid_name(string str) {
     write("Too long name.\n");
 
     return 0;
-
   }
 
   i = 0;
@@ -298,10 +297,13 @@ int query_hit_point() {
 string short() {
   if (is_invis)
     return 0;
+
   if (ghost)
     return "ghost of " + cap_name;
+
   if (frog)
     return cap_name + " the frog";
+
   return cap_name + " " + title + " (" + al_title + ")";
 }
 
@@ -317,22 +319,27 @@ void show_scar() {
   first = 1;
   old_value = scar;
   i = 0;
+
   while (i < MAX_SCAR) {
     if (scar & j) {
       old_value &= ~j;
+
       if (first) {
         write(cap_name + " has a scar on " + query_possessive() + " " +
               scar_desc[i]);
-        first = 0;
+
+	first = 0;
       } else if (old_value) {
         write(", " + query_possessive() + " " + scar_desc[i]);
       } else {
         write(" and " + query_possessive() + " " + scar_desc[i]);
       }
     }
+
     j *= 2;
     i += 1;
   }
+
   if (!first)
     write(".\n");
 }
@@ -341,6 +348,7 @@ void show_scar() {
 static void make_scar() {
   if (level < 10)
     return;
+
   scar |= 1 << random(MAX_SCAR);
 }
 
@@ -350,25 +358,36 @@ void long() {
 
   cap_pronoun = capitalize(query_pronoun());
   write(short() + ".\n");
+
   if (ghost || frog)
     return;
+
   show_scar();
+
   if (hit_point < max_hp / 10) {
     write(cap_pronoun + " is in very bad shape.\n");
+
     return;
   }
+
   if (hit_point < max_hp / 5) {
     write(cap_pronoun + " is in bad shape.\n");
+
     return;
   }
+
   if (hit_point < max_hp / 2) {
     write(cap_pronoun + " is not in a good shape.\n");
+
     return;
   }
+
   if (hit_point < max_hp - 20) {
     write(cap_pronoun + " is slightly hurt.\n");
+
     return;
   }
+
   write(cap_pronoun + " is in good shape.\n");
 }
 
@@ -378,6 +397,7 @@ int score(string arg) {
 
   if (ghost) {
     write("You are in an immaterial state with no scores.\n");
+
     return 1;
   }
 
@@ -386,6 +406,7 @@ int score(string arg) {
     write("Dex: " + Dex + "\n");
     write("Int: " + Int + "\n");
     write("Con: " + Con + "\n");
+
     return 1;
   }
 
@@ -393,15 +414,20 @@ int score(string arg) {
         " gold coins, ");
   write(hit_point + " hit points(" + max_hp + ").\n");
   write(spell_points + " spell points.\n");
+
   if (hunter)
     write("You are hunted by " + hunter->query_name() + ".\n");
+
   tmp = intoxication_status_message();
+
   if (tmp)
     write(tmp);
 
   if (whimpy)
     write("Wimpy mode.\n");
+
   show_age();
+
   return 1;
 }
 
@@ -410,12 +436,16 @@ int id(string str, int lvl) {
   if (level < 20)
     if (str == name || str == "ghost of " + name)
       return 1;
+
   if (is_invis && lvl <= level)
     return 0;
+
   if (ghost)
     return str == "ghost of " + name;
+
   if (str == name)
     return 1;
+
   return 0;
 }
 
@@ -430,19 +460,27 @@ void set_level(int lev) {
 
   if (lev > 21 || lev < level && level >= 20) {
     illegal_patch("set_level");
+
     return;
   }
+
   level = lev;
+
   if (level == 20) {
     scroll = clone_object("doc/examples/init_scroll");
+
     move_object(scroll, player_self);
+
     tell_object(player_self, "You have been given a scroll containing valuable "
                             "information. Read it now!\n");
     tell_object(player_self, "Adding wizard commands...\n");
+
     wiz_commands();
   }
+
   if (level == 21) {
     tell_object(player_self, "Adding more wizard commands...\n");
+
     wiz_commands2();
   }
 }
@@ -451,9 +489,12 @@ void set_level(int lev) {
 int set_title(string t) {
   if (!t) {
     write("Your title is " + title + ".\n");
+
     return 1;
   }
+
   title = t;
+
   return 1;
 }
 
@@ -464,10 +505,12 @@ static string escape_lpc_string(string str) {
 
   escaped = "";
   i = 0;
+
   while (i < sizeof(str)) {
     if (str[i] == '\\' || str[i] == '"') {
       escaped += "\\";
     }
+
     escaped += str[i..i];
     i += 1;
   }
@@ -485,6 +528,7 @@ static int update_room_description(string text, string prompt, string field_name
 
   if (!text) {
     write(prompt + " what?\n");
+
     return 1;
   }
 
@@ -492,11 +536,13 @@ static int update_room_description(string text, string prompt, string field_name
 
   if (!room) {
     write("You are nowhere.\n");
+
     return 1;
   }
 
   if (!function_exists(setter_name, room)) {
     write("This room cannot be updated.\n");
+
     return 1;
   }
 
@@ -510,11 +556,13 @@ static int update_room_description(string text, string prompt, string field_name
 
   if (!file_path) {
     write("You can only update rooms you can write.\n");
+
     return 1;
   }
 
   if (file_size("/" + file_path) <= 0) {
     write("Room source file not found.\n");
+
     return 1;
   }
 
@@ -522,6 +570,7 @@ static int update_room_description(string text, string prompt, string field_name
 
   if (!content) {
     write("Unable to read room source file.\n");
+
     return 1;
   }
 
@@ -551,6 +600,7 @@ static int update_room_description(string text, string prompt, string field_name
 
   if (!found) {
     write("No " + field_name + " assignment found.\n");
+
     return 1;
   }
 
@@ -558,11 +608,13 @@ static int update_room_description(string text, string prompt, string field_name
 
   if (!rm("/" + file_path)) {
     write("Unable to update room file.\n");
+
     return 1;
   }
 
   if (!write_file("/" + file_path, new_content)) {
     write("Unable to write updated room file.\n");
+
     return 1;
   }
 
@@ -591,6 +643,7 @@ static int set_room_short(string str) {
 static void wiz_commands2() {
   if (this_object() != this_player())
     return;
+
   add_action("earmuffs", "earmuffs");
   add_action("makedir", "mkdir");
   add_action("removedir", "rmdir");
@@ -615,6 +668,7 @@ static void wiz_commands2() {
 static void wiz_commands() {
   if (this_object() != this_player())
     return;
+
   add_action("local_commands", "localcmd");
   add_action("wiz_score_list", "wizlist");
   add_action("force_player", "force");
@@ -656,6 +710,7 @@ static int listen_to_shouts_from_level;
 int filter_tell(object ob) {
   if (ob == this_player())
     return 0;
+
   return ob->catch_shout(shout_message);
 }
 
@@ -663,8 +718,10 @@ int filter_tell(object ob) {
 int catch_shout(string str) {
   if (this_player()->query_level() >= listen_to_shouts_from_level) {
     tell_object(this_object(), str);
+
     return 1;
   }
+
   return 0;
 }
 
@@ -672,6 +729,7 @@ int catch_shout(string str) {
 int listen_shout(int lev) {
   if (lev && lev <= level + 1)
     listen_to_shouts_from_level = lev;
+
   return listen_to_shouts_from_level;
 }
 
@@ -681,7 +739,9 @@ int earmuffs(string str) {
 
   if (str && sscanf(str, "%d", lev) == 1)
     listen_shout(lev);
+
   write("Earmuffs at level " + listen_to_shouts_from_level + ".\n");
+
   return 1;
 }
 
@@ -689,9 +749,12 @@ int earmuffs(string str) {
 static int echo_all(string str) {
   if (!str) {
     write("Echoall what?\n");
+
     return 1;
   }
+
   SHOUT(str + "\n");
+
   write("You echo: " + str + "\n");
   return 1;
 }
@@ -700,10 +763,14 @@ static int echo_all(string str) {
 static int echo(string str) {
   if (!str) {
     write("Echo what?\n");
+
     return 1;
   }
+
   say(str + "\n");
+
   write("You echo: " + str + "\n");
+
   return 1;
 }
 
