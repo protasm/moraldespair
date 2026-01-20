@@ -1,12 +1,12 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
 
-    short_desc = "A Bloody Arena.";
-    long_desc = "A Bloody Arena..\n";
-    dest_dir = ({ });
+  short_desc = "A Bloody Arena.";
+  long_desc = "A Bloody Arena..\n";
+  dest_dir = ({ });
+
+  set_light(1);
 }

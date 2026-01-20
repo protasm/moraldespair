@@ -1,15 +1,15 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
 
-    short_desc = "Archway of Servitude";
-    long_desc = "Archway of Servitude.\n";
-    dest_dir = ({
-        "domain/original/area/island/room725", "south",
-        "domain/original/area/island/room723", "north",
-    });
+  short_desc = "Archway of Servitude";
+  long_desc = "Archway of Servitude.\n";
+  dest_dir = ({
+    "domain/original/area/island/room725", "south",
+    "domain/original/area/island/room723", "north",
+  });
+
+  set_light(1);
 }

@@ -1,14 +1,14 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
 
-    short_desc = "Wheelwright";
-    long_desc = "Wheelwright.\n";
-    dest_dir = ({
-        "domain/original/area/island/room636", "northeast",
-    });
+  short_desc = "Wheelwright";
+  long_desc = "Wheelwright.\n";
+  dest_dir = ({
+    "domain/original/area/island/room636", "northeast",
+  });
+
+  set_light(1);
 }
