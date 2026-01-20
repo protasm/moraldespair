@@ -5,12 +5,12 @@ void create() {
 
   short_desc = "Walking on a roadway";
   long_desc = "Walking on a roadway.\n";
-  dest_dir = ({
-    "chapter/prologue/area/roadway/room30", "south",
-    "chapter/prologue/area/roadway/room32", "north",
-    "room/wilderness_room#X26", "west",
-    "room/wilderness_room#Z26", "east",
-  });
+  dest_dir = ([
+    "south":"/chapter/prologue/area/roadway/room30",
+    "north":"/chapter/prologue/area/roadway/room32",
+    "west":"/room/wilderness_room#X26",
+    "east":"/room/wilderness_room#Z26",
+  ]);
 
   set_light(1);
 }
