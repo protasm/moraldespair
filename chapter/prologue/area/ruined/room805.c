@@ -5,9 +5,9 @@ void create() {
 
   short_desc = "Sour Shed";
   long_desc = "The shed reeks of damp earth and rot, with sacks collapsed into dark pulp. A battered scoop and stained planks hint at soil and dung once bartered here.";
-  dest_dir = ({
-    "chapter/prologue/area/ruined/room802", "north",
-  });
+  dest_dir = ([
+    "north":"/chapter/prologue/area/ruined/room802",
+  ]);
 
   set_light(1);
 }

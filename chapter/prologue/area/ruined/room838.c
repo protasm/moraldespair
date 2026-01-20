@@ -5,9 +5,9 @@ void create() {
 
     short_desc = "Chapel of War";
     long_desc = "Chapel of War";
-    dest_dir = ({
-        "chapter/prologue/area/ruined/room820", "south",
-    });
+    dest_dir = ([
+      "south":"/chapter/prologue/area/ruined/room820",
+    ]);
 
   set_light(1);
 }

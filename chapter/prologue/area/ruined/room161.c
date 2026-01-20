@@ -5,11 +5,11 @@ void create() {
 
     short_desc = "North Road";
     long_desc = "Here the main road is flanked by crumbling foundations. A patch of nettles spills across the center line.";
-    dest_dir = ({
-        "chapter/prologue/area/ruined/room160", "south",
-        "chapter/prologue/area/ruined/room808", "east",
-        "chapter/prologue/area/ruined/room162", "north",
-    });
+    dest_dir = ([
+      "south":"/chapter/prologue/area/ruined/room160",
+      "east":"/chapter/prologue/area/ruined/room808",
+      "north":"/chapter/prologue/area/ruined/room162",
+    ]);
 
   set_light(1);
 }

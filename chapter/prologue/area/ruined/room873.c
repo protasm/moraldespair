@@ -5,10 +5,10 @@ void create() {
 
     short_desc = "<> Aladrin escapes reality and falls into Moral Decay. <>";
     long_desc = "<> Aladrin escapes reality and falls into Moral Decay. <>";
-    dest_dir = ({
-        "chapter/prologue/area/ruined/room874", "down",
-        "chapter/prologue/area/ruined/room871", "up",
-    });
+    dest_dir = ([
+      "down":"/chapter/prologue/area/ruined/room874",
+      "up":"/chapter/prologue/area/ruined/room871",
+    ]);
 
   set_light(1);
 }
