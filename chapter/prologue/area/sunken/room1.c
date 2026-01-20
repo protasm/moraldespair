@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Sand-Choked Lane";
   long_desc = "A wide run of cracked stone stretches north and south, its center scoured to dust. Soot stains cling to the stone, and the air tastes of old smoke. No footprints remain; only layered grit records the years.";
@@ -17,4 +13,6 @@ void reset(int arg) {
   });
 
   add_exit_alias("x", "exit");
+
+  set_light(1);
 }
