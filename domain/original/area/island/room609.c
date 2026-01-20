@@ -11,12 +11,12 @@ void create() {
     "runes are carved deep into the rock, though only the word 'Welcome'\n" +
     "remains legible. To the north, a brick-paved street stretches between\n" +
     "rows of cold, metallic torches.\n";
-  dest_dir = ({
-    "domain/original/area/island/room608", "south",
-    "domain/original/area/island/room631", "west",
-    "domain/original/area/island/room634", "east",
-    "domain/original/area/island/room610", "north",
-  });
+  dest_dir = ([
+    "south" : "/domain/original/area/island/room608",
+    "west" : "/domain/original/area/island/room631",
+    "east" : "/domain/original/area/island/room634",
+    "north" : "/domain/original/area/island/room610",
+  ]);
 
   set_light(1);
 }

@@ -9,11 +9,11 @@ void create() {
     "two salt-pitted stone pillars stand like skeletal sentinels marking a\n" +
     "forgotten threshold. The path leads south toward the sound of the surf\n" +
     "and north toward the looming city silhouette.\n";
-  dest_dir = ({
-    "domain/original/area/island/room606", "south",
-    "domain/original/area/island/room628", "east",
-    "domain/original/area/island/room608", "north",
-  });
+  dest_dir = ([
+    "south" : "/domain/original/area/island/room606",
+    "east" : "/domain/original/area/island/room628",
+    "north" : "/domain/original/area/island/room608",
+  ]);
 
   set_light(1);
 }

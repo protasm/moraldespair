@@ -6,11 +6,11 @@ void create() {
 
   short_desc = "Keep Of Alcibiades";
   long_desc = "Keep Of Alcibiades.\n";
-  dest_dir = ({
-    "domain/original/area/island/room659", "west",
-    "domain/original/area/island/room658", "east",
-    "domain/original/area/island/room640", "north",
-  });
+  dest_dir = ([
+    "west" : "/domain/original/area/island/room659",
+    "east" : "/domain/original/area/island/room658",
+    "north" : "/domain/original/area/island/room640",
+  ]);
 
   set_light(1);
 }

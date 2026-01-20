@@ -11,10 +11,10 @@ void create() {
     "stained sign remains fixed to the stone wall, its lettering faded into\n" +
     "obscurity. To the east, a doorway leads into the shadows of a silent\n" +
     "backroom, stripped of the rhythmic hammers that once defined this space.\n";
-  dest_dir = ({
-    "domain/original/area/island/room621", "east",
-    "domain/original/area/island/room619", "west",
-  });
+  dest_dir = ([
+    "east" : "/domain/original/area/island/room621",
+    "west" : "/domain/original/area/island/room619",
+  ]);
 
   set_light(1);
 }

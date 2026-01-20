@@ -12,11 +12,11 @@ void create() {
     "Hall of Mazarbul'. An iron fence to the east cordons off a vacant, dust-\n" +
     "choked lot. The pale road continues its path north and south, cutting\n" +
     "a clean line through the silent, surrounding ruins.\n";
-  dest_dir = ({
-    "domain/original/area/island/room690", "west",
-    "domain/original/area/island/room616", "south",
-    "domain/original/area/island/room618", "north",
-  });
+  dest_dir = ([
+    "west" : "/domain/original/area/island/room690",
+    "south" : "/domain/original/area/island/room616",
+    "north" : "/domain/original/area/island/room618",
+  ]);
 
   set_light(1);
 }

@@ -6,7 +6,8 @@ void create() {
 
   short_desc = "A Bloody Arena.";
   long_desc = "A Bloody Arena..\n";
-  dest_dir = ({ });
+  dest_dir = ([
+  ]);
 
   set_light(1);
 }

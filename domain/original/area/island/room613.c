@@ -11,12 +11,12 @@ void create() {
     "inner fires long since spent. To the east, the sharp, medicinal tang of\n" +
     "evaporated spirits lingers in the air. A low wall to the west overlooks\n" +
     "a choked canal where black, motionless water reflects only the gray sky.\n";
-  dest_dir = ({
-    "domain/original/area/island/room612", "south",
-    "domain/original/area/island/room675", "west",
-    "domain/original/area/island/room676", "east",
-    "domain/original/area/island/room614", "north",
-  });
+  dest_dir = ([
+    "south" : "/domain/original/area/island/room612",
+    "west" : "/domain/original/area/island/room675",
+    "east" : "/domain/original/area/island/room676",
+    "north" : "/domain/original/area/island/room614",
+  ]);
 
   set_light(1);
 }

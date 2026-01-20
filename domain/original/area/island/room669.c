@@ -6,9 +6,9 @@ void create() {
 
   short_desc = "Office";
   long_desc = "Office.\n";
-  dest_dir = ({
-    "domain/original/area/island/room668", "south",
-  });
+  dest_dir = ([
+    "south" : "/domain/original/area/island/room668",
+  ]);
 
   set_light(1);
 }

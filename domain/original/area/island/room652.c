@@ -6,11 +6,11 @@ void create() {
 
   short_desc = "Highland Avenue";
   long_desc = "Highland Avenue.\n";
-  dest_dir = ({
-    "domain/original/area/island/room653", "west",
-    "domain/original/area/island/room650", "east",
-    "domain/original/area/island/room654", "north",
-  });
+  dest_dir = ([
+    "west" : "/domain/original/area/island/room653",
+    "east" : "/domain/original/area/island/room650",
+    "north" : "/domain/original/area/island/room654",
+  ]);
 
   set_light(1);
 }

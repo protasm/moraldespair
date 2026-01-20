@@ -11,11 +11,11 @@ void create() {
     "walls of a derelict shop. A massive, ornate structure dominates the\n" +
     "western view, its smooth facade offering no entry. To the south, the\n" +
     "distant glow of the plaza is a dim, dying amber against the gray horizon.\n";
-  dest_dir = ({
-    "domain/original/area/island/room615", "south",
-    "domain/original/area/island/room689", "east",
-    "domain/original/area/island/room617", "north",
-  });
+  dest_dir = ([
+    "south" : "/domain/original/area/island/room615",
+    "east" : "/domain/original/area/island/room689",
+    "north" : "/domain/original/area/island/room617",
+  ]);
 
   set_light(1);
 }

@@ -10,12 +10,12 @@ void create() {
     "shells of distant temples. Four massive metallic torches stand at the\n" +
     "corners, their frames blackened and cold. The bustling crowds are long\n" +
     "gone, leaving only the wind to whistle through the empty thoroughfares.\n";
-  dest_dir = ({
-    "domain/original/area/island/room609", "south",
-    "domain/original/area/island/room635", "west",
-    "domain/original/area/island/room660", "east",
-    "domain/original/area/island/room611", "north",
-  });
+  dest_dir = ([
+    "south" : "/domain/original/area/island/room609",
+    "west" : "/domain/original/area/island/room635",
+    "east" : "/domain/original/area/island/room660",
+    "north" : "/domain/original/area/island/room611",
+  ]);
 
   set_light(1);
 }
