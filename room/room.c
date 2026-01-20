@@ -3,8 +3,8 @@
  * in the function that inherits this file.
  */
 
-/* An array with destinations and directions: "room/church", "north" ... */
-string *dest_dir;
+/* A mapping with directions and destinations: "north":"room/church" */
+mapping dest_dir;
 
 /* Exit aliases: "c":"city" */
 mapping exit_aliases;
@@ -32,7 +32,7 @@ string *query_numbers();
 
 void create() {
   // Initialize containers defensively
-  dest_dir = ({ });
+  dest_dir = ([]);
   exit_aliases = ([ ]);
 
   // Sensible defaults
@@ -49,10 +49,13 @@ void create() {
 void init() {
   int i;
   string *aliases;
+  string *exit_dirs;
 
   // Register primary exits
-  for (i = 1; i < sizeof(dest_dir); i += 2)
-    add_action("move", dest_dir[i]);
+  exit_dirs = m_indices(dest_dir);
+
+  for (i = 0; i < sizeof(exit_dirs); i++)
+    add_action("move", exit_dirs[i]);
 
   // Register alias exits
   aliases = m_indices(exit_aliases);
@@ -79,28 +82,37 @@ int id(string str) {
 
 string exitsDescription(int brief) {
   int i;
+  int exit_count;
   string desc;
+  string *exit_dirs;
+  string short_dir;
+  string direction;
 
   if (brief) {
     if (!dest_dir)
       return "(Exits: none)";
 
-    i = 1;
+    exit_dirs = m_indices(dest_dir);
+    exit_count = sizeof(exit_dirs);
+
+    if (exit_count == 0)
+      return "(Exits: none)";
+
+    i = 0;
     desc = "(Exits:";
 
-    while (i < sizeof(dest_dir)) {
-      string short_dir;
-
+    while (i < exit_count) {
+      direction = exit_dirs[i];
       short_dir = (["north":"n",
                     "south":"s", "east":"e", "west":"w", "up":"u", "down":"d",
                     "northeast":"ne", "northwest":"nw", "southeast":"se",
-                    "southwest":"sw", ])[dest_dir[i]];
+                    "southwest":"sw", ])[direction];
 
       if (!short_dir)
-        short_dir = dest_dir[i];
+        short_dir = direction;
 
       desc += " " + short_dir;
-      i += 2;
+      i += 1;
     }
 
     return desc + ")";
@@ -109,21 +121,27 @@ string exitsDescription(int brief) {
   if (!dest_dir)
     return "No obvious exits.\n";
 
-  i = 1;
+  exit_dirs = m_indices(dest_dir);
+  exit_count = sizeof(exit_dirs);
 
-  if (sizeof(dest_dir) == 2)
+  if (exit_count == 0)
+    return "No obvious exits.\n";
+
+  i = 0;
+
+  if (exit_count == 1)
     desc = "There is one obvious exit:";
   else
     desc =
-        "There are " + convert_number(sizeof(dest_dir) / 2) + " obvious exits:";
+        "There are " + convert_number(exit_count) + " obvious exits:";
 
-  while (i < sizeof(dest_dir)) {
-    desc += " " + dest_dir[i];
-    i += 2;
+  while (i < exit_count) {
+    desc += " " + exit_dirs[i];
+    i += 1;
 
-    if (i == sizeof(dest_dir) - 1)
+    if (i == exit_count - 1)
       desc += " and";
-    else if (i < sizeof(dest_dir))
+    else if (i < exit_count)
       desc += ",";
   }
 
@@ -204,26 +222,23 @@ mixed query_property(string str) {
 }
 
 int move(string str) {
-  int i;
+  string destination;
+  string direction;
 
-  i = 1;
+  direction = query_verb();
+  destination = dest_dir[direction];
 
-  while (i < sizeof(dest_dir)) {
-    if (query_verb() == dest_dir[i]) {
-      this_player()->move_player(dest_dir[i] + "#" + dest_dir[i - 1]);
+  if (!destination)
+    return 0;
 
-      return 1;
-    }
-
-    i += 2;
-  }
+  this_player()->move_player(direction + "#" + destination);
 
   return 1;
 }
 
 int move_alias(string str) {
-  int i;
   string canonical;
+  string destination;
 
   if (!exit_aliases)
     return 0;
@@ -233,17 +248,12 @@ int move_alias(string str) {
   if (!canonical)
     return 0;
 
-  i = 1;
+  destination = dest_dir[canonical];
 
-  while (i < sizeof(dest_dir)) {
-    if (dest_dir[i] == canonical) {
-      this_player()->move_player(dest_dir[i] + "#" + dest_dir[i - 1]);
+  if (!destination)
+    return 0;
 
-      return 1;
-    }
-
-    i += 2;
-  }
+  this_player()->move_player(canonical + "#" + destination);
 
   return 1;
 }
@@ -284,7 +294,7 @@ void add_exit_alias(string alias, string canonical) {
   return;
 }
 
-string *query_dest_dir() { return dest_dir; }
+mapping query_dest_dir() { return dest_dir; }
 
 string query_long() { return long_desc; }
 
