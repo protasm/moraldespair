@@ -1734,7 +1734,7 @@
       "terrain": "m",
       "exits": {
         "north": "Y5",
-        "south": "domain/original/area/anshelm/entrance",
+        "south": "chapter/prologue/area/anshelm/entrance",
         "west": "X6",
         "east": "Z6"
       }
@@ -2224,7 +2224,7 @@
         "north": "X6",
         "south": "X8",
         "west": "W7",
-        "east": "domain/original/area/anshelm/entrance"
+        "east": "chapter/prologue/area/anshelm/entrance"
       }
     },
     {
@@ -2233,7 +2233,7 @@
       "exits": {
         "north": "Z6",
         "south": "Z8",
-        "west": "domain/original/area/anshelm/entrance",
+        "west": "chapter/prologue/area/anshelm/entrance",
         "east": "AA7"
       }
     },
@@ -20428,7 +20428,7 @@
         "north": "X44",
         "south": "X46",
         "west": "W45",
-        "east": "domain/original/area/indel/entrance"
+        "east": "chapter/prologue/area/indel/entrance"
       }
     },
     {
@@ -20437,7 +20437,7 @@
       "exits": {
         "north": "Z44",
         "south": "Z46",
-        "west": "domain/original/area/indel/entrance",
+        "west": "chapter/prologue/area/indel/entrance",
         "east": "AA45"
       }
     },
@@ -20923,7 +20923,7 @@
       "id": "Y46",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/indel/entrance",
+        "north": "chapter/prologue/area/indel/entrance",
         "south": "Y47",
         "west": "X46",
         "east": "Z46"

@@ -1,0 +1,14 @@
+inherit "room/room";
+
+void create() {
+  ::create();
+
+  short_desc = "Cold Narrow Way";
+  long_desc = "Split slabs tilt against each other, their edges worn to chalk. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.";
+  dest_dir = ({
+    "chapter/prologue/area/indel/room1575", "east",
+    "chapter/prologue/area/indel/room1573", "west",
+  });
+
+  set_light(1);
+}

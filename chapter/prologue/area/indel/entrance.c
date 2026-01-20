@@ -1,0 +1,19 @@
+inherit "room/room";
+
+void create() {
+  ::create();
+
+  short_desc = "City of the Dead";
+  long_desc = "A city overtaken by the dead.";
+  dest_dir = ({
+    "chapter/prologue/area/roadway/room71", "north",
+    "room/wilderness_room#X45", "west",
+    "room/wilderness_room#Z45", "east",
+    "room/wilderness_room#Y46", "south",
+    "chapter/prologue/area/indel/room1401", "city",
+  });
+
+  add_exit_alias("c", "city");
+
+  set_light(1);
+}
