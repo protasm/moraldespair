@@ -77,9 +77,9 @@ void set_descriptions() {
 void init() {
   if (!room_id) return;
 
-  ::init();
-
   set_exits();
+
+  ::init();
 
   return;
 }
