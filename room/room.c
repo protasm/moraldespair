@@ -28,32 +28,37 @@ int no_castle_flag;
 string convert_number(int n);
 string *query_numbers();
 
+/* --- Lifecycle --- */
+
+void create() {
+  // Initialize containers defensively
+  dest_dir = ({ });
+  exit_aliases = ([ ]);
+
+  // Sensible defaults
+  short_desc = "An unremarkable place";
+  long_desc  = "There is nothing of note here.";
+
+  set_light(1);
+}
+
+/*
+ * init() is called when a player enters scope.
+ * This is where command bindings belong.
+ */
 void init() {
   int i;
   string *aliases;
 
-  if (!dest_dir)
-    return;
-
-  i = 1;
-
-  while (i < sizeof(dest_dir)) {
+  // Register primary exits
+  for (i = 1; i < sizeof(dest_dir); i += 2)
     add_action("move", dest_dir[i]);
 
-    i += 2;
-  }
-
-  if (!exit_aliases)
-    return;
-
+  // Register alias exits
   aliases = m_indices(exit_aliases);
-  i = 0;
 
-  while (i < sizeof(aliases)) {
+  for (i = 0; i < sizeof(aliases); i++)
     add_action("move_alias", aliases[i]);
-
-    i += 1;
-  }
 }
 
 int id(string str) {

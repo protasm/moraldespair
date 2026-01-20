@@ -122,7 +122,9 @@ void tls_logon(int handshake_result) {
   if (handshake_result < 0) {
     printf("Can't establish a TLS/SSL encrypted connection: %s\n",
            tls_error(handshake_result));
+
     destruct(this_object());
+
     return;
   }
 
@@ -136,10 +138,15 @@ void tls_logon(int handshake_result) {
 /* Starts the login prompt flow. */
 static int logon() {
   autosave_at = 500;
+
   cat("/WELCOME");
+
   write("What is your name? ");
+
   input_to("logon2", INPUT_PROMPT, "");
+
   call_out("time_out", 120);
+
   return 1;
 }
 
@@ -148,33 +155,47 @@ static object existing_session;
 /* Handles the duplicate session prompt. */
 static void try_throw_out(string response) {
   object inventory_item;
+
   if (response == "" || (response[0] != 'y' && response[0] != 'Y')) {
     write("Welcome another time then !\n");
+
     destruct(this_object());
+
     return;
   }
+
   inventory_item = first_inventory(existing_session);
+
   while (inventory_item) {
     int item_weight;
     object next_item;
 
     item_weight = inventory_item->query_weight();
     next_item = next_inventory(inventory_item);
+
     if (!inventory_item->id("soul") && add_weight(item_weight)) {
       inventory_item->drop();
+
       if (inventory_item)
         move_object(inventory_item, this_player());
     }
+
     inventory_item = next_item;
   }
+
   inventory_item = environment(existing_session);
+
   existing_session->quit();
+
   if (restore_object("players/" + name))
     write("Points restored from the other object.\n");
   else
     destruct(existing_session);
+
   existing_session = 0;
+
   move_player_to_start(inventory_item);
+
 #ifdef LOG_ENTER
   log_file("ENTER", " (throw)\n");
 #endif
@@ -186,22 +207,33 @@ int valid_name(string str) {
 
   if (str == "logon") {
     write("Invalid name");
+
     return 0;
   }
+
   length = sizeof(str);
+
   if (length > 11) {
     write("Too long name.\n");
+
     return 0;
+
   }
+
   i = 0;
+
   while (i < length) {
     if (str[i] < 'a' || str[i] > 'z') {
       write("Invalid characters in name:" + str + "\n");
+
       write("Character number was " + (i + 1) + ".\n");
+
       return 0;
     }
+
     i += 1;
   }
+
   return 1;
 }
 
@@ -209,30 +241,43 @@ int valid_name(string str) {
 static void logon2(string str) {
   if (!str || str == "") {
     destruct(this_object());
+
     return;
   }
+
   if (name != "logon") {
     illegal_patch("logon2 " + name);
+
     destruct(this_object());
+
     return;
   }
+
   str = lower_case(str);
+
   if (!valid_name(str)) {
     input_to("logon2", INPUT_PROMPT, "Give name again: ");
+
     return;
   }
+
   if (restore_object("banish/" + str)) {
     write("That name is reserved.\n");
+
     destruct(this_object());
+
     return;
   }
+
   if (!restore_object("players/" + str)) {
     write("New character.\n");
   }
+
   autosave_at = age + 500;
   name = str;
   dead = ghost;
   player_self = this_player();
+
   if (is_invis)
     cap_name = "Someone";
   else
@@ -242,15 +287,21 @@ static void logon2(string str) {
   armour_class = 0;
   name_of_weapon = 0;
   weapon_class = 0;
+
   if (level != -1)
     input_to("check_password", 1);
   else
     input_to("new_password", 1);
+
   write("Password: ");
+
   if (name == "guest")
     write("(just CR) ");
+
   attacker_ob = 0;
+
   alt_attacker_ob = 0;
+
   return;
 }
 
@@ -265,16 +316,18 @@ int save_character() {
 }
 
 /* Initializes a fresh player object. */
-void reset(int arg) {
-  if (arg)
-    return;
+void create() {
   if (player_self)
     return;
+
   if (creator(this_object())) {
     illegal_patch("Cloned player.c");
+
     destruct(this_object());
+
     return;
   }
+
   level = -1;
   name = "logon";
   cap_name = "Logon";
@@ -2765,6 +2818,7 @@ void save_me(int value_items) {
 /* Logs illegal patch attempts. */
 int illegal_patch(string what) {
   write("You are struck by a mental bolt from the interior of the game.\n");
+  write(what + "\n");
 
   log_file("ILLEGAL", ctime(time()) + ":\n");
   log_file("ILLEGAL", this_player()->query_real_name() + " " + what + "\n");

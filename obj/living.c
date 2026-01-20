@@ -316,9 +316,10 @@ void transfer_all_to(object dest) {
 }
 
 string query_name() {
-    if (ghost)
-        return NAME_OF_GHOST;
-    return cap_name;
+  if (ghost)
+    return NAME_OF_GHOST;
+
+  return cap_name;
 }
 
 int query_alignment() {
