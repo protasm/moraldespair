@@ -5,9 +5,9 @@ void create() {
 
   short_desc = "Silent Yard";
   long_desc = "Practice posts lean at odd angles, their tops splintered and gray with rot. Racks of rusted gear line the walls, and dust has buried the scuffed floor where drills once rang.";
-  dest_dir = ({
-    "chapter/prologue/area/ruined/room156", "west",
-  });
+  dest_dir = ([
+    "west":"/chapter/prologue/area/ruined/room156",
+  ]);
 
   set_light(1);
 }

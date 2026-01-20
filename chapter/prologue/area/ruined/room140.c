@@ -5,11 +5,11 @@ void create() {
 
   short_desc = "Somber Junction";
   long_desc = "A wider crossing opens where the paving is deeply scored by cart ruts and rain. The basalt is cracked into plates, and iron rings lie rusted into the stones.";
-  dest_dir = ({
-    "chapter/prologue/area/ruined/room141", "south",
-    "chapter/prologue/area/ruined/room204", "east",
-    "chapter/prologue/area/ruined/room139", "north",
-  });
+  dest_dir = ([
+    "south":"/chapter/prologue/area/ruined/room141",
+    "east":"/chapter/prologue/area/ruined/room204",
+    "north":"/chapter/prologue/area/ruined/room139",
+  ]);
 
   set_light(1);
 }

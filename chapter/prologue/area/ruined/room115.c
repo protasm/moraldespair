@@ -5,10 +5,10 @@ void create() {
 
   short_desc = "Ruined Gate";
   long_desc = "A broken stone arch leans over the road, its timbers split and sagging. Crumbled masonry seals the passage, and old iron fittings lie rusted in the weeds.";
-  dest_dir = ({
-    "chapter/prologue/area/ruined/room116", "west",
-    "chapter/prologue/area/ruined/entrance", "exit",
-  });
+  dest_dir = ([
+    "west":"/chapter/prologue/area/ruined/room116",
+    "exit":"/chapter/prologue/area/ruined/entrance",
+  ]);
 
   set_light(1);
   add_exit_alias("x", "exit");

@@ -5,9 +5,9 @@ void create() {
 
     short_desc = "Quiet Office";
     long_desc = "A low hall of stone desks and alcoves sits gutted and still. Mildew darkens the plaster, and empty niches line the walls where records once rested.";
-    dest_dir = ({
-        "chapter/prologue/area/ruined/room187", "south",
-    });
+    dest_dir = ([
+      "south":"/chapter/prologue/area/ruined/room187",
+    ]);
 
   set_light(1);
 }

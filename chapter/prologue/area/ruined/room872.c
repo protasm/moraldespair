@@ -5,9 +5,9 @@ void create() {
 
     short_desc = "In Vella's bedroom";
     long_desc = "In Vella's bedroom";
-    dest_dir = ({
-        "chapter/prologue/area/ruined/room871", "down",
-    });
+    dest_dir = ([
+      "down":"/chapter/prologue/area/ruined/room871",
+    ]);
 
   set_light(1);
 }

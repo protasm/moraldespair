@@ -5,9 +5,9 @@ void create() {
 
     short_desc = "Inner Sanctum";
     long_desc = "Inner Sanctum";
-    dest_dir = ({
-        "chapter/prologue/area/ruined/room835", "east",
-    });
+    dest_dir = ([
+      "east":"/chapter/prologue/area/ruined/room835",
+    ]);
 
   set_light(1);
 }

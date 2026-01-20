@@ -5,12 +5,12 @@ void create() {
 
     short_desc = "Rutted Road";
     long_desc = "The road narrows between low heaps of stone, the old curbs almost buried under grit and grass. A tilted signboard rests against a wall, its paint long gone.";
-    dest_dir = ({
-        "chapter/prologue/area/ruined/room172", "south",
-        "chapter/prologue/area/ruined/room232", "west",
-        "chapter/prologue/area/ruined/room736", "east",
-        "chapter/prologue/area/ruined/room174", "north",
-    });
+    dest_dir = ([
+      "south":"/chapter/prologue/area/ruined/room172",
+      "west":"/chapter/prologue/area/ruined/room232",
+      "east":"/chapter/prologue/area/ruined/room736",
+      "north":"/chapter/prologue/area/ruined/room174",
+    ]);
 
   set_light(1);
 }
