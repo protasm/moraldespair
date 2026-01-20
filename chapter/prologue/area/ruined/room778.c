@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
-
-    set_light(1);
+void create() {
+  ::create();
 
     short_desc = "Hay Loft";
     long_desc = "A collapsed loft hangs above, its beams broken and draped in cobwebs. Dry chaff dust coats the ground, now darkened by years of damp.";
@@ -14,5 +11,7 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room780", "northwest",
         "chapter/prologue/area/ruined/room779", "south",
     });
+
+  set_light(1);
 }
 

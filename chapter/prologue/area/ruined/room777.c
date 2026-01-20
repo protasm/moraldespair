@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
-
-    set_light(1);
+void create() {
+  ::create();
 
     short_desc = "Low Pens";
     long_desc = "Low pen walls barely stand, their joints loose and sagging. Mildew freckles the timbers, and a damp chill clings to the floor.";
@@ -15,5 +12,7 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room778", "east",
         "chapter/prologue/area/ruined/room780", "north",
     });
+
+  set_light(1);
 }
 

@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Westroad Scar";
   long_desc = "A long crack splits the paving, running the length of the road. The break is filled with rubble and silt, and the surrounding stones are polished dull by time.";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room131", "east",
     "chapter/prologue/area/ruined/room421", "south",
   });
+
+  set_light(1);
 }

@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
-
-    set_light(1);
+void create() {
+  ::create();
 
     short_desc = "Dusty Cots";
     long_desc = "A tight room of empty pallets sits in silence, the straw long gone. Rot has crept up the posts, and the air is stale with old sweat and mildew.";
@@ -12,5 +9,7 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room746", "east",
         "chapter/prologue/area/ruined/room741", "south",
     });
+
+  set_light(1);
 }
 

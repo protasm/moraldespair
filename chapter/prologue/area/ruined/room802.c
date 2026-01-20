@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg)
-    return;
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Crooked Cut";
   long_desc = "This crooked alley is lined with cracked stone and peeling plaster that smells of old damp. A broken curb and shallow ruts hint at steady foot and cart traffic.";
@@ -14,4 +11,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room799", "east",
     "chapter/prologue/area/ruined/room807", "north",
   });
+
+  set_light(1);
 }

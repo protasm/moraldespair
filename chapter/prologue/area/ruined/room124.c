@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Broken Canopy";
   long_desc = "The cover above the walk has failed, opening to a pale strip of sky. Loose stones and splintered wood lie scattered, and the ground shows long years of weathering.";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room123", "east",
     "chapter/prologue/area/ruined/room412", "north",
   });
+
+  set_light(1);
 }

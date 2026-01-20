@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Worn Way";
   long_desc = "The paving breaks into small islands, the gaps filled with dark soil and rot. The street narrows toward a wider crossing ahead, where the stones dip slightly.";
@@ -13,5 +9,7 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room197", "east",
     "chapter/prologue/area/ruined/room195", "west",
   });
+
+  set_light(1);
 }
 

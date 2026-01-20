@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg)
-    return;
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Narrow Cut";
   long_desc = "The alley narrows between damp walls, with soot and slime streaking the stone. Old drainage grooves and a collapsed plank hint at service traffic that no longer comes.";
@@ -14,4 +11,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room796", "east",
     "chapter/prologue/area/ruined/room797", "north",
   });
+
+  set_light(1);
 }

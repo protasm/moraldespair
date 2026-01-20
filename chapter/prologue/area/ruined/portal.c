@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
-
-    set_light(1);
+void create() {
+  ::create();
 
     short_desc = "Portal Room";
     long_desc = "This is the portal room. As development continues, these areas will be removed from the portal room and linked to the full world.";
@@ -17,4 +14,6 @@ void reset(int arg) {
         "domain/original/area/village-green/room1687", "green",
         "domain/original/area/barb-caves/room515", "caves",
     });
+
+  set_light(1);
 }

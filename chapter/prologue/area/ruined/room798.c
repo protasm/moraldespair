@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg)
-    return;
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Sour Cut";
   long_desc = "The passage bends in shadow, damp with rot and flecked with peeling lime. A shallow gutter runs along the base of the wall, a remnant of old refuse flow.";
@@ -12,4 +9,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room797", "south",
     "chapter/prologue/area/ruined/room799", "north",
   });
+
+  set_light(1);
 }

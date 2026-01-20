@@ -1,10 +1,8 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
     short_desc = "Withered Park";
     long_desc = "Dry shrubs crowd a cracked path, and pale trunks stand stripped of bark. Old lantern hooks hang crooked from a low wall, black with rust.";
     dest_dir = ({
@@ -13,4 +11,6 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room228", "east",
         "chapter/prologue/area/ruined/room426", "north",
     });
+
+  set_light(1);
 }

@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Park's End";
   long_desc = "The walk widens before crumbling walls that once framed a corner of the city. Loose stone and soil have spilled over the paving, and the air hangs still.";
@@ -15,4 +11,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room125", "east",
     "chapter/prologue/area/ruined/room879", "north",
   });
+
+  set_light(1);
 }

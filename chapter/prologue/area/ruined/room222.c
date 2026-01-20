@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Empty Taproom";
   long_desc = "Rot-softened beams sag over a long counter gone gray with dust and mildew. Benches lie broken in the hush, and a sour stain clings where drink once spilled. The hearth is cold, its iron hooks rusted and half-buried in grit.";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room221", "east",
     "chapter/prologue/area/ruined/room119", "north",
   });
+
+  set_light(1);
 }

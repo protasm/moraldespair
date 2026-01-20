@@ -1,11 +1,8 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
+void create() {
+  ::create();
 
-  set_light(1);
   short_desc = "Hollow Counter";
   long_desc = "A long counter sags under its own weight, split and furred with dust. Behind it, shelves lie in heaps, and the air is stale and still.";
   dest_dir = ({
@@ -13,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room220", "east",
     "chapter/prologue/area/ruined/room118", "north",
   });
+
+  set_light(1);
 }

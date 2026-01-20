@@ -1,10 +1,8 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
     short_desc = "South Road";
     long_desc = "The southern main road is rutted and split, its stones tipped at odd angles. A fallen signboard lies half buried in dust.";
     dest_dir = ({
@@ -13,6 +11,8 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room817", "east",
         "chapter/prologue/area/ruined/room153", "north",
     });
+
+  set_light(1);
 }
 
 

@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg)
-    return;
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Blind Cut";
   long_desc = "This tight passage ends in rubble, its floor sunk with dust and mortar. A bricked arch and iron pins suggest a once-used service door.";
@@ -14,4 +11,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room231", "east",
     "chapter/prologue/area/ruined/room961", "north",
   });
+
+  set_light(1);
 }

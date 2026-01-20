@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
-
-    set_light(1);
+void create() {
+  ::create();
 
     short_desc = "Stink Alley Way";
     long_desc = "Stink Alley Way";
@@ -12,4 +9,6 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room802", "east",
         "chapter/prologue/area/ruined/room804", "south",
     });
+
+  set_light(1);
 }

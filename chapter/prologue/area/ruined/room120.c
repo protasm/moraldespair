@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Hollow Walk";
   long_desc = "A hollowed stretch of passage runs between damp stone walls. The roof timbers have fallen away, leaving the corridor open to dull light and slow rain.";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room119", "east",
     "chapter/prologue/area/ruined/room223", "south",
   });
+
+  set_light(1);
 }

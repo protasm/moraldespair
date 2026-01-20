@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg)
-    return;
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Silent Court";
   long_desc = "Silence hangs in this inner court where weeds thread between cracked stones. A low step and a cracked curb trace where carts once turned.";
@@ -14,4 +11,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room766", "northwest",
     "chapter/prologue/area/ruined/room765", "north",
   });
+
+  set_light(1);
 }

@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
-
-    set_light(1);
+void create() {
+  ::create();
 
     short_desc = "Iron Rings";
     long_desc = "Rusty ring bolts stud the posts, and the plank walls bow with age. Old straw dust clings to the floor, mixed with a sour, damp rot.";
@@ -14,5 +11,7 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room774", "east",
         "chapter/prologue/area/ruined/room788", "north",
     });
+
+  set_light(1);
 }
 

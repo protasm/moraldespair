@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Shattered Walk";
   long_desc = "The covered path is broken here, its ribs split and scattered across the paving. Wind drifts through the gaps, stirring leaves that have gathered in the hollows.";
@@ -15,4 +11,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room118", "east",
     "chapter/prologue/area/ruined/room230", "north",
   });
+
+  set_light(1);
 }
