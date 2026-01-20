@@ -5,7 +5,6 @@
  * This keeps virtual room lookups fast and predictable as the map grows
  * while leaving room for future overlay layers keyed by the same ids.
  */
-string map_json;
 mapping rooms_by_id;
 mapping terrain_by_code;
 int loaded, room_count;
@@ -40,29 +39,31 @@ string read_wilderness_file(string file) {
   return contents;
 }
 
-void reset(int arg) {
-  if(arg) return;
+void create() {
+  ::create();
+
+  string map_json;
 
   map_json = "/domain/original/wilderness.json";
 
   /* Preloaded at startup so player movement never parses JSON. */
-  reload_wilderness();
+  reload_wilderness(map_json);
 
   return;
 }
 
-void reload_wilderness() {
+void reload_wilderness(string map_json) {
   rooms_by_id = ([]);
   terrain_by_code = ([]);
   loaded = 0;
   room_count = 0;
 
-  load_wilderness();
+  load_wilderness(map_json);
 
   return;
 }
 
-void load_wilderness() {
+void load_wilderness(string map_json) {
   mixed data, rooms;
   mapping terrain;
   mapping room;
@@ -150,8 +151,6 @@ mapping query_room(string room_id) {
     rooms_by_id = ([]);
     loaded = 0;
   }
-
-  if (!loaded) load_wilderness();
 
   room = rooms_by_id[room_id];
 
