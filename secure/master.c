@@ -295,7 +295,7 @@ static mixed _clone_uids_fun (object blueprint, string new_name, object prev) {
 
 //---------------------------------------------------------------------------
 static void _create_fun (object ob, object creator) {
-  // Initialize a freshly created object by calling ob->reset(0).
+  // Initialize a freshly created object by calling ob->create().
   //
   // Argument:
   //   ob: The created object.
@@ -303,14 +303,14 @@ static void _create_fun (object ob, object creator) {
   //
 
   closure fun;
-
-  // Create a non-alien reset() closure.
+  // Create a non-alien create() closure if it exists.
   set_this_object(ob);
-  fun = symbol_function("reset", ob);
+  fun = symbol_function("create", ob);
 
-  // Invoke reset() with the creator as the previous object.
+  // Invoke create() with the creator as the previous object.
   set_this_object(creator);
-  funcall(fun, 0);
+  if (fun)
+    funcall(fun);
 }
 
 //===========================================================================
