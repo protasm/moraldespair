@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Cobble Hall";
   long_desc = "A cobbled corridor runs straight beneath a low ceiling. Water has darkened the\nstones near the edges.\n";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room363", "east",
     "chapter/prologue/area/silent/room364", "north",
   });
+
+  set_light(1);
 }

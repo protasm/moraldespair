@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Stone Walk";
   long_desc = "A formal walkway continues between shuttered halls. Only wind and birds move\namong the stones.\n";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room900", "east",
     "chapter/prologue/area/silent/room898", "north",
   });
+
+  set_light(1);
 }

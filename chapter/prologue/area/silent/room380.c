@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Gravel Cross";
   long_desc = "Gravel paths meet in a small clearing of trampled stone. One branch is almost\nlost beneath grass.\n";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room382", "southeast",
     "chapter/prologue/area/silent/room381", "north",
   });
+
+  set_light(1);
 }

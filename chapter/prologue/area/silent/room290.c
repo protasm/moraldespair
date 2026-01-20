@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Cracked Circle";
   long_desc = "A low ring of stone marks a circle at the center of the road. Whatever stood\nhere is gone, leaving only shattered plinths.\n";
@@ -15,4 +11,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room291", "east",
     "chapter/prologue/area/silent/room369", "north",
   });
+
+  set_light(1);
 }

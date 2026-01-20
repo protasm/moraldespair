@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Sagging Shed";
   long_desc = "A low structure of rough boards leans at a tired angle. Its roof has caved in\nalong one side.\n";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room391", "east",
     "chapter/prologue/area/silent/room904", "south",
   });
+
+  set_light(1);
 }

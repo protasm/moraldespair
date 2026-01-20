@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Old Bridge";
   long_desc = "A heavy bridge spans a shallow moat now filled with reed and mud. Chains hang\nslack where the lift once rose.\n";
@@ -13,4 +9,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room310", "east",
     "chapter/prologue/area/silent/room356", "west",
   });
+
+  set_light(1);
 }

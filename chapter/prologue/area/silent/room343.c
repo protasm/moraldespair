@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Ruined Lawn";
   long_desc = "Broken statues stand amid tall grass, their faces worn away. Plinths sit\ncracked and empty where others fell.\n";
@@ -13,4 +9,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room344", "south",
     "chapter/prologue/area/silent/room340", "north",
   });
+
+  set_light(1);
 }

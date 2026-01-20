@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Narrow Lane";
   long_desc = "The lane runs straight between close walls streaked with damp. A thin line of\ngrass follows the center.\n";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room311", "south",
     "chapter/prologue/area/silent/room309", "north",
   });
+
+  set_light(1);
 }

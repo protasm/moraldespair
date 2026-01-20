@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Gravel Path";
   long_desc = "Loose gravel crunches along a narrow path. The ground beside it is soft with\nmoss.\n";
@@ -13,4 +9,6 @@ void reset(int arg) {
     "chapter/prologue/area/silent/room604", "southeast",
     "chapter/prologue/area/silent/room908", "northeast",
   });
+
+  set_light(1);
 }
