@@ -19,8 +19,8 @@ int move(string str);
 int move_alias(string str);
 int move_direction(string direction);
 
-void reset(int arg) {
-  if (arg) return;
+void create() {
+  ::create();
 
   set_light(1);
 
@@ -53,26 +53,23 @@ void set_descriptions() {
 
   terrain_info = WILDERNESS_D->query_terrain_info(terrain);
 
-  if (!mappingp(terrain_info)) {
+  if (!mappingp(terrain_info))
     terrain_info = WILDERNESS_D->query_terrain_info("default");
-  }
 
   if (mappingp(terrain_info)) {
     short_name = terrain_info["short"];
     long_name = terrain_info["long"];
   }
 
-  if (stringp(short_name)) {
+  if (stringp(short_name))
     short_desc = short_name;
-  } else {
+  else
     short_desc = "Wilderness";
-  }
 
-  if (stringp(long_name)) {
+  if (stringp(long_name))
     long_desc = long_name;
-  } else {
+  else
     long_desc = "The land here is quiet and open. No clear paths remain.";
-  }
 
   return;
 }
@@ -80,9 +77,9 @@ void set_descriptions() {
 void init() {
   if (!room_id) return;
 
-  set_exits();
-
   ::init();
+
+  set_exits();
 
   return;
 }
@@ -110,14 +107,13 @@ void set_exits() {
   while (i < sizeof(dirs)) {
     destination = exits[dirs[i]];
 
-    if (stringp(destination)) {
+    if (stringp(destination))
       if (WILDERNESS_D->room_exists(destination))
         resolved = "room/wilderness_room#" + destination;
       else
         resolved = destination;
 
       dest_dir += ({ resolved, dirs[i] });
-    }
 
     i += 1;
   }
