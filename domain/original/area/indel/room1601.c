@@ -1,13 +1,13 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
-    short_desc = "Cold Choked End";
-    long_desc = "Rubble and crushed mortar blanket the surface, slick in places with old damp. Fragments of arches and lintels hang at odd angles, cut and burned through. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.";
-    dest_dir = ({
-        "domain/original/area/indel/room1600", "west",
-    });
+  short_desc = "Cold Choked End";
+  long_desc = "Rubble and crushed mortar blanket the surface, slick in places with old damp. Fragments of arches and lintels hang at odd angles, cut and burned through. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.";
+  dest_dir = ({
+    "domain/original/area/indel/room1600", "west",
+  });
+
+  set_light(1);
 }

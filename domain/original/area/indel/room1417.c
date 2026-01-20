@@ -1,14 +1,14 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
-    short_desc = "Lichen Narrow Way";
-    long_desc = "Loose stones shift underfoot, buried in silt and powdered mortar. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.";
-    dest_dir = ({
-        "domain/original/area/indel/room1416", "east",
-        "domain/original/area/indel/room1418", "west",
-    });
+  short_desc = "Lichen Narrow Way";
+  long_desc = "Loose stones shift underfoot, buried in silt and powdered mortar. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.";
+  dest_dir = ({
+    "domain/original/area/indel/room1416", "east",
+    "domain/original/area/indel/room1418", "west",
+  });
+
+  set_light(1);
 }

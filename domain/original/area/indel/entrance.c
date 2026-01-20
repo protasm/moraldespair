@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "City of the Dead";
   long_desc = "A city overtaken by the dead.";
@@ -18,4 +14,6 @@ void reset(int arg) {
   });
 
   add_exit_alias("c", "city");
+
+  set_light(1);
 }
