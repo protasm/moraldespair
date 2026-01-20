@@ -95,7 +95,7 @@ static void decay_food_and_drink() {
 }
 
 /* Adjusts intoxication. */
-void add_intoxination(int i) {
+void add_intoxication(int i) {
   if (i < 0) {
     if (-i > intoxicated / 10)
       i = -intoxicated / 10;
@@ -128,7 +128,7 @@ void add_soaked(int i) {
 }
 
 /* Returns intoxication level. */
-int query_intoxination() {
+int query_intoxication() {
   return intoxicated;
 }
 

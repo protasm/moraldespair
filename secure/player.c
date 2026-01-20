@@ -58,7 +58,7 @@ void tls_init(int handshake_result);
 #endif
 
 #include "/secure/player/movement_messages.c"
-#include "/secure/player/intoxication.c"
+#include "/secure/player/satiety.c"
 
 /* Returns the player object version. */
 string version() {
