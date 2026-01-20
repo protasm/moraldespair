@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg)
-    return;
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Gray Court";
   long_desc = "Gray dust coats the paving, and fragments of plaster lie in soft ridges. A broad, straight run of stones implies an old processional path through the ward.";
@@ -14,4 +11,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room769", "east",
     "chapter/prologue/area/ruined/room765", "south",
   });
+
+  set_light(1);
 }

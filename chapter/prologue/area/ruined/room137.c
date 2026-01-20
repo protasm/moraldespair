@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Worn Crossing";
   long_desc = "Two worn streets cross on uneven basalt, their corners softened by age and grit. The stones are cracked and slumped, leaving shallow puddles and windblown grit.";
@@ -14,5 +10,7 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room193", "east",
     "chapter/prologue/area/ruined/room136", "north",
   });
+
+  set_light(1);
 }
 

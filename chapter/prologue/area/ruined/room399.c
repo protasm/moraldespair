@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Low Hearth";
   long_desc = "The low room smells of damp stone, its beams soft with rot and its floor hidden beneath dust. A simple table has collapsed beside a cold hearth, and a notched post stands where some small training once took place.";
@@ -13,4 +9,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room734", "up",
     "chapter/prologue/area/ruined/room213", "west",
   });
+
+  set_light(1);
 }

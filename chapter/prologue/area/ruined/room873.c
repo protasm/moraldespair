@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
-
-    set_light(1);
+void create() {
+  ::create();
 
     short_desc = "<> Aladrin escapes reality and falls into Moral Decay. <>";
     long_desc = "<> Aladrin escapes reality and falls into Moral Decay. <>";
@@ -12,4 +9,6 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room874", "down",
         "chapter/prologue/area/ruined/room871", "up",
     });
+
+  set_light(1);
 }

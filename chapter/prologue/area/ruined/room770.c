@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
-
-    set_light(1);
+void create() {
+  ::create();
 
     short_desc = "Broken Stalls";
     long_desc = "Splintered stall walls lean inward, their rails slick with mildew. A cracked feeding trough sits dry, and dust lies thick where hooves once churned.";
@@ -14,5 +11,7 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room773", "east",
         "chapter/prologue/area/ruined/room791", "north",
     });
+
+  set_light(1);
 }
 

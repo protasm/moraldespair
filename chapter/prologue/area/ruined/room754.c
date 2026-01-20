@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg)
-    return;
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Twin Shadows";
   long_desc = "Two battered towers hem in this passage, their upper floors cracked and open to the sky. Loose stones and damp rubble gather where a wooden span once steadied the gap.";
@@ -12,4 +9,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room753", "south",
     "chapter/prologue/area/ruined/room755", "north",
   });
+
+  set_light(1);
 }

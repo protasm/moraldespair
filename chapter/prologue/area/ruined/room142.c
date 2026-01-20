@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Basalt Avenue";
   long_desc = "The avenue slopes toward the river quarter, the basalt slick with old stains. A scatter of masonry narrows the passage, leaving the street choked and quiet.";
@@ -14,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room850", "east",
     "chapter/prologue/area/ruined/room141", "north",
   });
+
+  set_light(1);
 }

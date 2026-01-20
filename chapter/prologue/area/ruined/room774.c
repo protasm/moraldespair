@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
-
-    set_light(1);
+void create() {
+  ::create();
 
     short_desc = "Tack Hooks";
     long_desc = "Crooked hooks line the wall, empty but scarred by long use. The boards are warped and blackened with damp, and the air is still and rank.";
@@ -14,5 +11,7 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room775", "east",
         "chapter/prologue/area/ruined/room786", "north",
     });
+
+  set_light(1);
 }
 

@@ -1,11 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Broken Threshold";
   long_desc = "A wide threshold of cracked stone leads into a cavernous hall, its pillars pocked and green with mildew. Shattered bowls lie at the base of a raised dais, and ash-dark banners hang in ragged silence.";
@@ -13,4 +9,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room404", "east",
     "chapter/prologue/area/ruined/room216", "west",
   });
+
+  set_light(1);
 }

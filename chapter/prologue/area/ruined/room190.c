@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
-
-    set_light(1);
+void create() {
+  ::create();
 
     short_desc = "Silent Way";
     long_desc = "The way crosses another street in a small square of worn stone. Old foundations crowd the corners, their rooms open and empty. Wind moves freely through the gaps.";
@@ -14,6 +11,8 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room189", "east",
         "chapter/prologue/area/ruined/room741", "north",
     });
+
+  set_light(1);
 }
 
 

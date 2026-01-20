@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
-
-    set_light(1);
+void create() {
+  ::create();
 
     short_desc = "Silent Bunks";
     long_desc = "Rows of low frames line the walls, their slats warped and gray with dust. Mildew softens the plaster, and the floor is worn smooth by vanished footsteps.";
@@ -14,5 +11,7 @@ void reset(int arg) {
         "chapter/prologue/area/ruined/room747", "east",
         "chapter/prologue/area/ruined/room745", "north",
     });
+
+  set_light(1);
 }
 

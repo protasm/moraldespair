@@ -1,10 +1,7 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg)
-    return;
-
-  set_light(1);
+void create() {
+  ::create();
 
   short_desc = "Rot Cut";
   long_desc = "The alley widens slightly, filled with rotting boards and a soft bed of dust. A leaning beam and iron staple suggest a former stall or screen.";
@@ -13,4 +10,6 @@ void reset(int arg) {
     "chapter/prologue/area/ruined/room801", "east",
     "chapter/prologue/area/ruined/room806", "north",
   });
+
+  set_light(1);
 }
