@@ -10,6 +10,6 @@ void reset(int arg) {
     long_desc = "End of Pylus road.\n";
     dest_dir = ({
         "domain/original/area/pylus/room1206", "south",
-        "domain/original/area/vesla/portal", "vesla",
+        "chapter/prologue/area/ruined/portal", "vesla",
     });
 }

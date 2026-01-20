@@ -10,6 +10,6 @@ void reset(int arg) {
     long_desc = "Bridge.\n";
     dest_dir = ({
         "domain/original/area/preserve/room433", "west",
-        "domain/original/area/vesla/portal", "vesla",
+        "chapter/prologue/area/ruined/portal", "vesla",
     });
 }
