@@ -1,14 +1,14 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
-    short_desc = "Sundered Sunk Narrow Way";
-    long_desc = "Broken paving lies in uneven ridges, with fine dust caked between. Chunks of wall have been scooped away, leaving raw ribs of stone. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.";
-    dest_dir = ({
-        "domain/original/area/indel/room1540", "east",
-        "domain/original/area/indel/room1538", "west",
-    });
+  short_desc = "Sundered Sunk Narrow Way";
+  long_desc = "Broken paving lies in uneven ridges, with fine dust caked between. Chunks of wall have been scooped away, leaving raw ribs of stone. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.";
+  dest_dir = ({
+    "domain/original/area/indel/room1540", "east",
+    "domain/original/area/indel/room1538", "west",
+  });
+
+  set_light(1);
 }
