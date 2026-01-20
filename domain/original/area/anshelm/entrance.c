@@ -10,7 +10,7 @@ void reset(int arg) {
   short_desc = "Defiled City";
   long_desc = "The defiled remains of a final refuge.";
   dest_dir = ({
-    "domain/original/area/roadway/room68", "south",
+    "chapter/prologue/area/roadway/room68", "south",
     "room/wilderness_room#Y6", "north",
     "room/wilderness_room#X7", "west",
     "room/wilderness_room#Z7", "east",

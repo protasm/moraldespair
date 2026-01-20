@@ -2712,7 +2712,7 @@
         "north": "X7",
         "south": "X9",
         "west": "W8",
-        "east": "domain/original/area/roadway/room68"
+        "east": "chapter/prologue/area/roadway/room68"
       }
     },
     {
@@ -2721,7 +2721,7 @@
       "exits": {
         "north": "Z7",
         "south": "Z9",
-        "west": "domain/original/area/roadway/room68",
+        "west": "chapter/prologue/area/roadway/room68",
         "east": "AA8"
       }
     },
@@ -3200,7 +3200,7 @@
         "north": "X8",
         "south": "X10",
         "west": "W9",
-        "east": "domain/original/area/roadway/room67"
+        "east": "chapter/prologue/area/roadway/room67"
       }
     },
     {
@@ -3209,7 +3209,7 @@
       "exits": {
         "north": "Z8",
         "south": "Z10",
-        "west": "domain/original/area/roadway/room67",
+        "west": "chapter/prologue/area/roadway/room67",
         "east": "AA9"
       }
     },
@@ -3688,7 +3688,7 @@
         "north": "X9",
         "south": "X11",
         "west": "W10",
-        "east": "domain/original/area/roadway/room66"
+        "east": "chapter/prologue/area/roadway/room66"
       }
     },
     {
@@ -3697,7 +3697,7 @@
       "exits": {
         "north": "Z9",
         "south": "Z11",
-        "west": "domain/original/area/roadway/room66",
+        "west": "chapter/prologue/area/roadway/room66",
         "east": "AA10"
       }
     },
@@ -4176,7 +4176,7 @@
         "north": "X10",
         "south": "X12",
         "west": "W11",
-        "east": "domain/original/area/roadway/room65"
+        "east": "chapter/prologue/area/roadway/room65"
       }
     },
     {
@@ -4185,7 +4185,7 @@
       "exits": {
         "north": "Z10",
         "south": "Z12",
-        "west": "domain/original/area/roadway/room65",
+        "west": "chapter/prologue/area/roadway/room65",
         "east": "AA11"
       }
     },
@@ -4664,7 +4664,7 @@
         "north": "X11",
         "south": "X13",
         "west": "W12",
-        "east": "domain/original/area/roadway/room64"
+        "east": "chapter/prologue/area/roadway/room64"
       }
     },
     {
@@ -4673,7 +4673,7 @@
       "exits": {
         "north": "Z11",
         "south": "Z13",
-        "west": "domain/original/area/roadway/room64",
+        "west": "chapter/prologue/area/roadway/room64",
         "east": "AA12"
       }
     },
@@ -5152,7 +5152,7 @@
         "north": "X12",
         "south": "X14",
         "west": "W13",
-        "east": "domain/original/area/roadway/room63"
+        "east": "chapter/prologue/area/roadway/room63"
       }
     },
     {
@@ -5161,7 +5161,7 @@
       "exits": {
         "north": "Z12",
         "south": "Z14",
-        "west": "domain/original/area/roadway/room63",
+        "west": "chapter/prologue/area/roadway/room63",
         "east": "AA13"
       }
     },
@@ -5640,7 +5640,7 @@
         "north": "X13",
         "south": "X15",
         "west": "W14",
-        "east": "domain/original/area/roadway/room62"
+        "east": "chapter/prologue/area/roadway/room62"
       }
     },
     {
@@ -5649,7 +5649,7 @@
       "exits": {
         "north": "Z13",
         "south": "Z15",
-        "west": "domain/original/area/roadway/room62",
+        "west": "chapter/prologue/area/roadway/room62",
         "east": "AA14"
       }
     },
@@ -6128,7 +6128,7 @@
         "north": "X14",
         "south": "X16",
         "west": "W15",
-        "east": "domain/original/area/roadway/room42"
+        "east": "chapter/prologue/area/roadway/room42"
       }
     },
     {
@@ -6137,7 +6137,7 @@
       "exits": {
         "north": "Z14",
         "south": "Z16",
-        "west": "domain/original/area/roadway/room42",
+        "west": "chapter/prologue/area/roadway/room42",
         "east": "AA15"
       }
     },
@@ -6616,7 +6616,7 @@
         "north": "X15",
         "south": "X17",
         "west": "W16",
-        "east": "domain/original/area/roadway/room41"
+        "east": "chapter/prologue/area/roadway/room41"
       }
     },
     {
@@ -6625,7 +6625,7 @@
       "exits": {
         "north": "Z15",
         "south": "Z17",
-        "west": "domain/original/area/roadway/room41",
+        "west": "chapter/prologue/area/roadway/room41",
         "east": "AA16"
       }
     },
@@ -7104,7 +7104,7 @@
         "north": "X16",
         "south": "X18",
         "west": "W17",
-        "east": "domain/original/area/roadway/room40"
+        "east": "chapter/prologue/area/roadway/room40"
       }
     },
     {
@@ -7113,7 +7113,7 @@
       "exits": {
         "north": "Z16",
         "south": "Z18",
-        "west": "domain/original/area/roadway/room40",
+        "west": "chapter/prologue/area/roadway/room40",
         "east": "AA17"
       }
     },
@@ -7592,7 +7592,7 @@
         "north": "X17",
         "south": "X19",
         "west": "W18",
-        "east": "domain/original/area/roadway/room39"
+        "east": "chapter/prologue/area/roadway/room39"
       }
     },
     {
@@ -7601,7 +7601,7 @@
       "exits": {
         "north": "Z17",
         "south": "Z19",
-        "west": "domain/original/area/roadway/room39",
+        "west": "chapter/prologue/area/roadway/room39",
         "east": "AA18"
       }
     },
@@ -8080,7 +8080,7 @@
         "north": "X18",
         "south": "X20",
         "west": "W19",
-        "east": "domain/original/area/roadway/room38"
+        "east": "chapter/prologue/area/roadway/room38"
       }
     },
     {
@@ -8089,7 +8089,7 @@
       "exits": {
         "north": "Z18",
         "south": "Z20",
-        "west": "domain/original/area/roadway/room38",
+        "west": "chapter/prologue/area/roadway/room38",
         "east": "AA19"
       }
     },
@@ -8568,7 +8568,7 @@
         "north": "X19",
         "south": "X21",
         "west": "W20",
-        "east": "domain/original/area/roadway/room37"
+        "east": "chapter/prologue/area/roadway/room37"
       }
     },
     {
@@ -8577,7 +8577,7 @@
       "exits": {
         "north": "Z19",
         "south": "Z21",
-        "west": "domain/original/area/roadway/room37",
+        "west": "chapter/prologue/area/roadway/room37",
         "east": "AA20"
       }
     },
@@ -9056,7 +9056,7 @@
         "north": "X20",
         "south": "X22",
         "west": "W21",
-        "east": "domain/original/area/roadway/room36"
+        "east": "chapter/prologue/area/roadway/room36"
       }
     },
     {
@@ -9065,7 +9065,7 @@
       "exits": {
         "north": "Z20",
         "south": "Z22",
-        "west": "domain/original/area/roadway/room36",
+        "west": "chapter/prologue/area/roadway/room36",
         "east": "AA21"
       }
     },
@@ -9544,7 +9544,7 @@
         "north": "X21",
         "south": "X23",
         "west": "W22",
-        "east": "domain/original/area/roadway/room35"
+        "east": "chapter/prologue/area/roadway/room35"
       }
     },
     {
@@ -9553,7 +9553,7 @@
       "exits": {
         "north": "Z21",
         "south": "Z23",
-        "west": "domain/original/area/roadway/room35",
+        "west": "chapter/prologue/area/roadway/room35",
         "east": "AA22"
       }
     },
@@ -10032,7 +10032,7 @@
         "north": "X22",
         "south": "X24",
         "west": "W23",
-        "east": "domain/original/area/roadway/room34"
+        "east": "chapter/prologue/area/roadway/room34"
       }
     },
     {
@@ -10041,7 +10041,7 @@
       "exits": {
         "north": "Z22",
         "south": "Z24",
-        "west": "domain/original/area/roadway/room34",
+        "west": "chapter/prologue/area/roadway/room34",
         "east": "AA23"
       }
     },
@@ -10520,7 +10520,7 @@
         "north": "X23",
         "south": "X25",
         "west": "W24",
-        "east": "domain/original/area/roadway/room33"
+        "east": "chapter/prologue/area/roadway/room33"
       }
     },
     {
@@ -10529,7 +10529,7 @@
       "exits": {
         "north": "Z23",
         "south": "Z25",
-        "west": "domain/original/area/roadway/room33",
+        "west": "chapter/prologue/area/roadway/room33",
         "east": "AA24"
       }
     },
@@ -11008,7 +11008,7 @@
         "north": "X24",
         "south": "X26",
         "west": "W25",
-        "east": "domain/original/area/roadway/room32"
+        "east": "chapter/prologue/area/roadway/room32"
       }
     },
     {
@@ -11017,7 +11017,7 @@
       "exits": {
         "north": "Z24",
         "south": "Z26",
-        "west": "domain/original/area/roadway/room32",
+        "west": "chapter/prologue/area/roadway/room32",
         "east": "AA25"
       }
     },
@@ -11496,7 +11496,7 @@
         "north": "X25",
         "south": "X27",
         "west": "W26",
-        "east": "domain/original/area/roadway/room31"
+        "east": "chapter/prologue/area/roadway/room31"
       }
     },
     {
@@ -11505,7 +11505,7 @@
       "exits": {
         "north": "Z25",
         "south": "Z27",
-        "west": "domain/original/area/roadway/room31",
+        "west": "chapter/prologue/area/roadway/room31",
         "east": "AA26"
       }
     },
@@ -11862,7 +11862,7 @@
       "terrain": "d",
       "exits": {
         "north": "L26",
-        "south": "domain/original/area/roadway/room1",
+        "south": "chapter/prologue/area/roadway/room1",
         "west": "K27",
         "east": "M27"
       }
@@ -11872,7 +11872,7 @@
       "terrain": "d",
       "exits": {
         "north": "M26",
-        "south": "domain/original/area/roadway/room2",
+        "south": "chapter/prologue/area/roadway/room2",
         "west": "L27",
         "east": "N27"
       }
@@ -11882,7 +11882,7 @@
       "terrain": "d",
       "exits": {
         "north": "N26",
-        "south": "domain/original/area/roadway/room3",
+        "south": "chapter/prologue/area/roadway/room3",
         "west": "M27",
         "east": "O27"
       }
@@ -11892,7 +11892,7 @@
       "terrain": "m",
       "exits": {
         "north": "O26",
-        "south": "domain/original/area/roadway/room4",
+        "south": "chapter/prologue/area/roadway/room4",
         "west": "N27",
         "east": "P27"
       }
@@ -11902,7 +11902,7 @@
       "terrain": "m",
       "exits": {
         "north": "P26",
-        "south": "domain/original/area/roadway/room5",
+        "south": "chapter/prologue/area/roadway/room5",
         "west": "O27",
         "east": "Q27"
       }
@@ -11912,7 +11912,7 @@
       "terrain": "m",
       "exits": {
         "north": "Q26",
-        "south": "domain/original/area/roadway/room6",
+        "south": "chapter/prologue/area/roadway/room6",
         "west": "P27",
         "east": "R27"
       }
@@ -11922,7 +11922,7 @@
       "terrain": "p",
       "exits": {
         "north": "R26",
-        "south": "domain/original/area/roadway/room7",
+        "south": "chapter/prologue/area/roadway/room7",
         "west": "Q27",
         "east": "S27"
       }
@@ -11932,7 +11932,7 @@
       "terrain": "p",
       "exits": {
         "north": "S26",
-        "south": "domain/original/area/roadway/room8",
+        "south": "chapter/prologue/area/roadway/room8",
         "west": "R27",
         "east": "T27"
       }
@@ -11942,7 +11942,7 @@
       "terrain": "p",
       "exits": {
         "north": "T26",
-        "south": "domain/original/area/roadway/room9",
+        "south": "chapter/prologue/area/roadway/room9",
         "west": "S27",
         "east": "U27"
       }
@@ -11952,7 +11952,7 @@
       "terrain": "p",
       "exits": {
         "north": "U26",
-        "south": "domain/original/area/roadway/room10",
+        "south": "chapter/prologue/area/roadway/room10",
         "west": "T27",
         "east": "V27"
       }
@@ -11962,7 +11962,7 @@
       "terrain": "p",
       "exits": {
         "north": "V26",
-        "south": "domain/original/area/roadway/room11",
+        "south": "chapter/prologue/area/roadway/room11",
         "west": "U27",
         "east": "W27"
       }
@@ -11972,7 +11972,7 @@
       "terrain": "wv",
       "exits": {
         "north": "W26",
-        "south": "domain/original/area/roadway/room12",
+        "south": "chapter/prologue/area/roadway/room12",
         "west": "V27",
         "east": "X27"
       }
@@ -11982,9 +11982,9 @@
       "terrain": "p",
       "exits": {
         "north": "X26",
-        "south": "domain/original/area/roadway/room13",
+        "south": "chapter/prologue/area/roadway/room13",
         "west": "W27",
-        "east": "domain/original/area/roadway/room30"
+        "east": "chapter/prologue/area/roadway/room30"
       }
     },
     {
@@ -11992,8 +11992,8 @@
       "terrain": "p",
       "exits": {
         "north": "Z26",
-        "south": "domain/original/area/roadway/room16",
-        "west": "domain/original/area/roadway/room30",
+        "south": "chapter/prologue/area/roadway/room16",
+        "west": "chapter/prologue/area/roadway/room30",
         "east": "AA27"
       }
     },
@@ -12002,7 +12002,7 @@
       "terrain": "p",
       "exits": {
         "north": "AA26",
-        "south": "domain/original/area/roadway/room17",
+        "south": "chapter/prologue/area/roadway/room17",
         "west": "Z27",
         "east": "AB27"
       }
@@ -12012,7 +12012,7 @@
       "terrain": "village",
       "exits": {
         "north": "AB26",
-        "south": "domain/original/area/roadway/room18",
+        "south": "chapter/prologue/area/roadway/room18",
         "west": "AA27",
         "east": "AC27"
       }
@@ -12022,7 +12022,7 @@
       "terrain": "h",
       "exits": {
         "north": "AC26",
-        "south": "domain/original/area/roadway/room19",
+        "south": "chapter/prologue/area/roadway/room19",
         "west": "AB27",
         "east": "AD27"
       }
@@ -12032,7 +12032,7 @@
       "terrain": "h",
       "exits": {
         "north": "AD26",
-        "south": "domain/original/area/roadway/room20",
+        "south": "chapter/prologue/area/roadway/room20",
         "west": "AC27",
         "east": "AE27"
       }
@@ -12042,7 +12042,7 @@
       "terrain": "p",
       "exits": {
         "north": "AE26",
-        "south": "domain/original/area/roadway/room21",
+        "south": "chapter/prologue/area/roadway/room21",
         "west": "AD27",
         "east": "AF27"
       }
@@ -12052,7 +12052,7 @@
       "terrain": "p",
       "exits": {
         "north": "AF26",
-        "south": "domain/original/area/roadway/room22",
+        "south": "chapter/prologue/area/roadway/room22",
         "west": "AE27",
         "east": "AG27"
       }
@@ -12062,7 +12062,7 @@
       "terrain": "b",
       "exits": {
         "north": "AG26",
-        "south": "domain/original/area/roadway/room23",
+        "south": "chapter/prologue/area/roadway/room23",
         "west": "AF27",
         "east": "AH27"
       }
@@ -12072,7 +12072,7 @@
       "terrain": "b",
       "exits": {
         "north": "AH26",
-        "south": "domain/original/area/roadway/room24",
+        "south": "chapter/prologue/area/roadway/room24",
         "west": "AG27",
         "east": "AI27"
       }
@@ -12082,7 +12082,7 @@
       "terrain": "b",
       "exits": {
         "north": "AI26",
-        "south": "domain/original/area/roadway/room25",
+        "south": "chapter/prologue/area/roadway/room25",
         "west": "AH27",
         "east": "AJ27"
       }
@@ -12092,7 +12092,7 @@
       "terrain": "b",
       "exits": {
         "north": "AJ26",
-        "south": "domain/original/area/roadway/room26",
+        "south": "chapter/prologue/area/roadway/room26",
         "west": "AI27",
         "east": "AK27"
       }
@@ -12102,7 +12102,7 @@
       "terrain": "b",
       "exits": {
         "north": "AK26",
-        "south": "domain/original/area/roadway/room27",
+        "south": "chapter/prologue/area/roadway/room27",
         "west": "AJ27",
         "east": "AL27"
       }
@@ -12112,7 +12112,7 @@
       "terrain": "p",
       "exits": {
         "north": "AL26",
-        "south": "domain/original/area/roadway/room28",
+        "south": "chapter/prologue/area/roadway/room28",
         "west": "AK27",
         "east": "AM27"
       }
@@ -12122,7 +12122,7 @@
       "terrain": "p",
       "exits": {
         "north": "AM26",
-        "south": "domain/original/area/roadway/room56",
+        "south": "chapter/prologue/area/roadway/room56",
         "west": "AL27",
         "east": "AN27"
       }
@@ -12132,7 +12132,7 @@
       "terrain": "p",
       "exits": {
         "north": "AN26",
-        "south": "domain/original/area/roadway/room57",
+        "south": "chapter/prologue/area/roadway/room57",
         "west": "AM27",
         "east": "AO27"
       }
@@ -12142,7 +12142,7 @@
       "terrain": "p",
       "exits": {
         "north": "AO26",
-        "south": "domain/original/area/roadway/room58",
+        "south": "chapter/prologue/area/roadway/room58",
         "west": "AN27",
         "east": "AP27"
       }
@@ -12152,7 +12152,7 @@
       "terrain": "p",
       "exits": {
         "north": "AP26",
-        "south": "domain/original/area/roadway/room59",
+        "south": "chapter/prologue/area/roadway/room59",
         "west": "AO27",
         "east": "AQ27"
       }
@@ -12162,7 +12162,7 @@
       "terrain": "p",
       "exits": {
         "north": "AQ26",
-        "south": "domain/original/area/roadway/room60",
+        "south": "chapter/prologue/area/roadway/room60",
         "west": "AP27",
         "east": "AR27"
       }
@@ -12172,7 +12172,7 @@
       "terrain": "p",
       "exits": {
         "north": "AR26",
-        "south": "domain/original/area/roadway/room61",
+        "south": "chapter/prologue/area/roadway/room61",
         "west": "AQ27",
         "east": "AS27"
       }
@@ -12497,7 +12497,7 @@
       "id": "L29",
       "terrain": "d",
       "exits": {
-        "north": "domain/original/area/roadway/room1",
+        "north": "chapter/prologue/area/roadway/room1",
         "south": "L30",
         "west": "K29",
         "east": "M29"
@@ -12507,7 +12507,7 @@
       "id": "M29",
       "terrain": "d",
       "exits": {
-        "north": "domain/original/area/roadway/room2",
+        "north": "chapter/prologue/area/roadway/room2",
         "south": "M30",
         "west": "L29",
         "east": "N29"
@@ -12517,7 +12517,7 @@
       "id": "N29",
       "terrain": "d",
       "exits": {
-        "north": "domain/original/area/roadway/room3",
+        "north": "chapter/prologue/area/roadway/room3",
         "south": "N30",
         "west": "M29",
         "east": "O29"
@@ -12527,7 +12527,7 @@
       "id": "O29",
       "terrain": "m",
       "exits": {
-        "north": "domain/original/area/roadway/room4",
+        "north": "chapter/prologue/area/roadway/room4",
         "south": "O30",
         "west": "N29",
         "east": "P29"
@@ -12537,7 +12537,7 @@
       "id": "P29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room5",
+        "north": "chapter/prologue/area/roadway/room5",
         "south": "P30",
         "west": "O29",
         "east": "Q29"
@@ -12547,7 +12547,7 @@
       "id": "Q29",
       "terrain": "m",
       "exits": {
-        "north": "domain/original/area/roadway/room6",
+        "north": "chapter/prologue/area/roadway/room6",
         "south": "Q30",
         "west": "P29",
         "east": "R29"
@@ -12557,7 +12557,7 @@
       "id": "R29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room7",
+        "north": "chapter/prologue/area/roadway/room7",
         "south": "R30",
         "west": "Q29",
         "east": "S29"
@@ -12567,7 +12567,7 @@
       "id": "S29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room8",
+        "north": "chapter/prologue/area/roadway/room8",
         "south": "S30",
         "west": "R29",
         "east": "T29"
@@ -12577,7 +12577,7 @@
       "id": "T29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room9",
+        "north": "chapter/prologue/area/roadway/room9",
         "south": "T30",
         "west": "S29",
         "east": "U29"
@@ -12587,7 +12587,7 @@
       "id": "U29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room10",
+        "north": "chapter/prologue/area/roadway/room10",
         "south": "U30",
         "west": "T29",
         "east": "V29"
@@ -12597,7 +12597,7 @@
       "id": "V29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room11",
+        "north": "chapter/prologue/area/roadway/room11",
         "south": "V30",
         "west": "U29",
         "east": "W29"
@@ -12607,7 +12607,7 @@
       "id": "W29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room12",
+        "north": "chapter/prologue/area/roadway/room12",
         "south": "W30",
         "west": "V29",
         "east": "X29"
@@ -12617,19 +12617,19 @@
       "id": "X29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room13",
+        "north": "chapter/prologue/area/roadway/room13",
         "south": "X30",
         "west": "W29",
-        "east": "domain/original/area/roadway/room43"
+        "east": "chapter/prologue/area/roadway/room43"
       }
     },
     {
       "id": "Z29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room16",
+        "north": "chapter/prologue/area/roadway/room16",
         "south": "Z30",
-        "west": "domain/original/area/roadway/room43",
+        "west": "chapter/prologue/area/roadway/room43",
         "east": "AA29"
       }
     },
@@ -12637,7 +12637,7 @@
       "id": "AA29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room17",
+        "north": "chapter/prologue/area/roadway/room17",
         "south": "AA30",
         "west": "Z29",
         "east": "AB29"
@@ -12647,7 +12647,7 @@
       "id": "AB29",
       "terrain": "h",
       "exits": {
-        "north": "domain/original/area/roadway/room18",
+        "north": "chapter/prologue/area/roadway/room18",
         "south": "AB30",
         "west": "AA29",
         "east": "AC29"
@@ -12657,7 +12657,7 @@
       "id": "AC29",
       "terrain": "h",
       "exits": {
-        "north": "domain/original/area/roadway/room19",
+        "north": "chapter/prologue/area/roadway/room19",
         "south": "AC30",
         "west": "AB29",
         "east": "AD29"
@@ -12667,7 +12667,7 @@
       "id": "AD29",
       "terrain": "h",
       "exits": {
-        "north": "domain/original/area/roadway/room20",
+        "north": "chapter/prologue/area/roadway/room20",
         "south": "AD30",
         "west": "AC29",
         "east": "AE29"
@@ -12677,7 +12677,7 @@
       "id": "AE29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room21",
+        "north": "chapter/prologue/area/roadway/room21",
         "south": "AE30",
         "west": "AD29",
         "east": "AF29"
@@ -12687,7 +12687,7 @@
       "id": "AF29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room22",
+        "north": "chapter/prologue/area/roadway/room22",
         "south": "AF30",
         "west": "AE29",
         "east": "AG29"
@@ -12697,7 +12697,7 @@
       "id": "AG29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room23",
+        "north": "chapter/prologue/area/roadway/room23",
         "south": "AG30",
         "west": "AF29",
         "east": "AH29"
@@ -12707,7 +12707,7 @@
       "id": "AH29",
       "terrain": "b",
       "exits": {
-        "north": "domain/original/area/roadway/room24",
+        "north": "chapter/prologue/area/roadway/room24",
         "south": "AH30",
         "west": "AG29",
         "east": "AI29"
@@ -12717,7 +12717,7 @@
       "id": "AI29",
       "terrain": "b",
       "exits": {
-        "north": "domain/original/area/roadway/room25",
+        "north": "chapter/prologue/area/roadway/room25",
         "south": "AI30",
         "west": "AH29",
         "east": "AJ29"
@@ -12727,7 +12727,7 @@
       "id": "AJ29",
       "terrain": "b",
       "exits": {
-        "north": "domain/original/area/roadway/room26",
+        "north": "chapter/prologue/area/roadway/room26",
         "south": "AJ30",
         "west": "AI29",
         "east": "AK29"
@@ -12737,7 +12737,7 @@
       "id": "AK29",
       "terrain": "b",
       "exits": {
-        "north": "domain/original/area/roadway/room27",
+        "north": "chapter/prologue/area/roadway/room27",
         "south": "AK30",
         "west": "AJ29",
         "east": "AL29"
@@ -12747,7 +12747,7 @@
       "id": "AL29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room28",
+        "north": "chapter/prologue/area/roadway/room28",
         "south": "AL30",
         "west": "AK29",
         "east": "AM29"
@@ -12757,7 +12757,7 @@
       "id": "AM29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room56",
+        "north": "chapter/prologue/area/roadway/room56",
         "south": "AM30",
         "west": "AL29",
         "east": "AN29"
@@ -12767,7 +12767,7 @@
       "id": "AN29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room57",
+        "north": "chapter/prologue/area/roadway/room57",
         "south": "AN30",
         "west": "AM29",
         "east": "AO29"
@@ -12777,7 +12777,7 @@
       "id": "AO29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room58",
+        "north": "chapter/prologue/area/roadway/room58",
         "south": "AO30",
         "west": "AN29",
         "east": "AP29"
@@ -12787,7 +12787,7 @@
       "id": "AP29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room59",
+        "north": "chapter/prologue/area/roadway/room59",
         "south": "AP30",
         "west": "AO29",
         "east": "AQ29"
@@ -12797,7 +12797,7 @@
       "id": "AQ29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room60",
+        "north": "chapter/prologue/area/roadway/room60",
         "south": "AQ30",
         "west": "AP29",
         "east": "AR29"
@@ -12807,7 +12807,7 @@
       "id": "AR29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/roadway/room61",
+        "north": "chapter/prologue/area/roadway/room61",
         "south": "AR30",
         "west": "AQ29",
         "east": "AS29"
@@ -13108,7 +13108,7 @@
         "north": "X29",
         "south": "X31",
         "west": "W30",
-        "east": "domain/original/area/roadway/room44"
+        "east": "chapter/prologue/area/roadway/room44"
       }
     },
     {
@@ -13117,7 +13117,7 @@
       "exits": {
         "north": "Z29",
         "south": "Z31",
-        "west": "domain/original/area/roadway/room44",
+        "west": "chapter/prologue/area/roadway/room44",
         "east": "AA30"
       }
     },
@@ -13596,7 +13596,7 @@
         "north": "X30",
         "south": "X32",
         "west": "W31",
-        "east": "domain/original/area/roadway/room45"
+        "east": "chapter/prologue/area/roadway/room45"
       }
     },
     {
@@ -13605,7 +13605,7 @@
       "exits": {
         "north": "Z30",
         "south": "Z32",
-        "west": "domain/original/area/roadway/room45",
+        "west": "chapter/prologue/area/roadway/room45",
         "east": "AA31"
       }
     },
@@ -14084,7 +14084,7 @@
         "north": "X31",
         "south": "X33",
         "west": "W32",
-        "east": "domain/original/area/roadway/room46"
+        "east": "chapter/prologue/area/roadway/room46"
       }
     },
     {
@@ -14093,7 +14093,7 @@
       "exits": {
         "north": "Z31",
         "south": "Z33",
-        "west": "domain/original/area/roadway/room46",
+        "west": "chapter/prologue/area/roadway/room46",
         "east": "AA32"
       }
     },
@@ -14572,7 +14572,7 @@
         "north": "X32",
         "south": "X34",
         "west": "W33",
-        "east": "domain/original/area/roadway/room47"
+        "east": "chapter/prologue/area/roadway/room47"
       }
     },
     {
@@ -14581,7 +14581,7 @@
       "exits": {
         "north": "Z32",
         "south": "Z34",
-        "west": "domain/original/area/roadway/room47",
+        "west": "chapter/prologue/area/roadway/room47",
         "east": "AA33"
       }
     },
@@ -15060,7 +15060,7 @@
         "north": "X33",
         "south": "X35",
         "west": "W34",
-        "east": "domain/original/area/roadway/room48"
+        "east": "chapter/prologue/area/roadway/room48"
       }
     },
     {
@@ -15069,7 +15069,7 @@
       "exits": {
         "north": "Z33",
         "south": "Z35",
-        "west": "domain/original/area/roadway/room48",
+        "west": "chapter/prologue/area/roadway/room48",
         "east": "AA34"
       }
     },
@@ -15548,7 +15548,7 @@
         "north": "X34",
         "south": "X36",
         "west": "W35",
-        "east": "domain/original/area/roadway/room49"
+        "east": "chapter/prologue/area/roadway/room49"
       }
     },
     {
@@ -15557,7 +15557,7 @@
       "exits": {
         "north": "Z34",
         "south": "Z36",
-        "west": "domain/original/area/roadway/room49",
+        "west": "chapter/prologue/area/roadway/room49",
         "east": "AA35"
       }
     },
@@ -16036,7 +16036,7 @@
         "north": "X35",
         "south": "X37",
         "west": "W36",
-        "east": "domain/original/area/roadway/room50"
+        "east": "chapter/prologue/area/roadway/room50"
       }
     },
     {
@@ -16045,7 +16045,7 @@
       "exits": {
         "north": "Z35",
         "south": "Z37",
-        "west": "domain/original/area/roadway/room50",
+        "west": "chapter/prologue/area/roadway/room50",
         "east": "AA36"
       }
     },
@@ -16524,7 +16524,7 @@
         "north": "X36",
         "south": "X38",
         "west": "W37",
-        "east": "domain/original/area/roadway/room51"
+        "east": "chapter/prologue/area/roadway/room51"
       }
     },
     {
@@ -16533,7 +16533,7 @@
       "exits": {
         "north": "Z36",
         "south": "Z38",
-        "west": "domain/original/area/roadway/room51",
+        "west": "chapter/prologue/area/roadway/room51",
         "east": "AA37"
       }
     },
@@ -17012,7 +17012,7 @@
         "north": "X37",
         "south": "X39",
         "west": "W38",
-        "east": "domain/original/area/roadway/room52"
+        "east": "chapter/prologue/area/roadway/room52"
       }
     },
     {
@@ -17021,7 +17021,7 @@
       "exits": {
         "north": "Z37",
         "south": "Z39",
-        "west": "domain/original/area/roadway/room52",
+        "west": "chapter/prologue/area/roadway/room52",
         "east": "AA38"
       }
     },
@@ -17500,7 +17500,7 @@
         "north": "X38",
         "south": "X40",
         "west": "W39",
-        "east": "domain/original/area/roadway/room53"
+        "east": "chapter/prologue/area/roadway/room53"
       }
     },
     {
@@ -17509,7 +17509,7 @@
       "exits": {
         "north": "Z38",
         "south": "Z40",
-        "west": "domain/original/area/roadway/room53",
+        "west": "chapter/prologue/area/roadway/room53",
         "east": "AA39"
       }
     },
@@ -17988,7 +17988,7 @@
         "north": "X39",
         "south": "X41",
         "west": "W40",
-        "east": "domain/original/area/roadway/room54"
+        "east": "chapter/prologue/area/roadway/room54"
       }
     },
     {
@@ -17997,7 +17997,7 @@
       "exits": {
         "north": "Z39",
         "south": "Z41",
-        "west": "domain/original/area/roadway/room54",
+        "west": "chapter/prologue/area/roadway/room54",
         "east": "AA40"
       }
     },
@@ -18476,7 +18476,7 @@
         "north": "X40",
         "south": "X42",
         "west": "W41",
-        "east": "domain/original/area/roadway/room55"
+        "east": "chapter/prologue/area/roadway/room55"
       }
     },
     {
@@ -18485,7 +18485,7 @@
       "exits": {
         "north": "Z40",
         "south": "Z42",
-        "west": "domain/original/area/roadway/room55",
+        "west": "chapter/prologue/area/roadway/room55",
         "east": "AA41"
       }
     },
@@ -18964,7 +18964,7 @@
         "north": "X41",
         "south": "X43",
         "west": "W42",
-        "east": "domain/original/area/roadway/room69"
+        "east": "chapter/prologue/area/roadway/room69"
       }
     },
     {
@@ -18973,7 +18973,7 @@
       "exits": {
         "north": "Z41",
         "south": "Z43",
-        "west": "domain/original/area/roadway/room69",
+        "west": "chapter/prologue/area/roadway/room69",
         "east": "AA42"
       }
     },
@@ -19452,7 +19452,7 @@
         "north": "X42",
         "south": "X44",
         "west": "W43",
-        "east": "domain/original/area/roadway/room70"
+        "east": "chapter/prologue/area/roadway/room70"
       }
     },
     {
@@ -19461,7 +19461,7 @@
       "exits": {
         "north": "Z42",
         "south": "Z44",
-        "west": "domain/original/area/roadway/room70",
+        "west": "chapter/prologue/area/roadway/room70",
         "east": "AA43"
       }
     },
@@ -19940,7 +19940,7 @@
         "north": "X43",
         "south": "X45",
         "west": "W44",
-        "east": "domain/original/area/roadway/room71"
+        "east": "chapter/prologue/area/roadway/room71"
       }
     },
     {
@@ -19949,7 +19949,7 @@
       "exits": {
         "north": "Z43",
         "south": "Z45",
-        "west": "domain/original/area/roadway/room71",
+        "west": "chapter/prologue/area/roadway/room71",
         "east": "AA44"
       }
     },
