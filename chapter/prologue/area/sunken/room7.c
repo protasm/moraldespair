@@ -1,15 +1,14 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
+  short_desc = "Shattered Cut";
+  long_desc = "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.";
+  dest_dir = ({
+    "chapter/prologue/area/sunken/room8", "east",
+    "chapter/prologue/area/sunken/room6", "west",
+  });
 
-    short_desc = "Shattered Cut";
-    long_desc = "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.";
-    dest_dir = ({
-        "chapter/prologue/area/sunken/room8", "east",
-        "chapter/prologue/area/sunken/room6", "west",
-    });
+  set_light(1);
 }

@@ -1,15 +1,14 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
+  short_desc = "Pitted Turn";
+  long_desc = "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.";
+  dest_dir = ({
+    "chapter/prologue/area/sunken/room65", "north",
+    "chapter/prologue/area/sunken/room67", "south",
+  });
 
-    short_desc = "Pitted Turn";
-    long_desc = "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.";
-    dest_dir = ({
-        "chapter/prologue/area/sunken/room65", "north",
-        "chapter/prologue/area/sunken/room67", "south",
-    });
+  set_light(1);
 }

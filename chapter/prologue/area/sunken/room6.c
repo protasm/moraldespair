@@ -1,15 +1,14 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
+  short_desc = "Cracked Drop";
+  long_desc = "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.";
+  dest_dir = ({
+    "chapter/prologue/area/sunken/room7", "east",
+    "chapter/prologue/area/sunken/room5", "west",
+  });
 
-    short_desc = "Cracked Drop";
-    long_desc = "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.";
-    dest_dir = ({
-        "chapter/prologue/area/sunken/room7", "east",
-        "chapter/prologue/area/sunken/room5", "west",
-    });
+  set_light(1);
 }

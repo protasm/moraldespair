@@ -1,15 +1,14 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
+  short_desc = "Faded Corridor";
+  long_desc = "A shallow slope of debris leads down into a widened passage. Fire-blackened patches run along the base of the walls.";
+  dest_dir = ({
+    "chapter/prologue/area/sunken/room91", "east",
+    "chapter/prologue/area/sunken/room1132", "up",
+  });
 
-    short_desc = "Faded Corridor";
-    long_desc = "A shallow slope of debris leads down into a widened passage. Fire-blackened patches run along the base of the walls.";
-    dest_dir = ({
-        "chapter/prologue/area/sunken/room91", "east",
-        "chapter/prologue/area/sunken/room1132", "up",
-    });
+  set_light(1);
 }
