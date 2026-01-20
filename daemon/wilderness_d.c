@@ -40,8 +40,6 @@ string read_wilderness_file(string file) {
 }
 
 void create() {
-  ::create();
-
   string map_json;
 
   map_json = "/domain/original/wilderness.json";
