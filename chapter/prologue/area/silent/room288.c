@@ -1,0 +1,18 @@
+inherit "room/room";
+
+void reset(int arg) {
+  if (arg) {
+    return;
+  }
+
+  set_light(1);
+
+  short_desc = "Rutted Street";
+  long_desc = "Broken stones show where wheels once cut a track through the city. Old gutter\nstones run broken and half buried at the sides.\n";
+  dest_dir = ({
+    "chapter/prologue/area/silent/room368", "south",
+    "chapter/prologue/area/silent/room287", "west",
+    "chapter/prologue/area/silent/room289", "east",
+    "chapter/prologue/area/silent/room367", "north",
+  });
+}

@@ -1564,7 +1564,7 @@ static void move_player_to_start3(mixed where) {
   if (where)
     move_object(player_self, where);
   else {
-    move_object(player_self, "domain/original/area/vesla/sanctuary");
+    move_object(player_self, "chapter/prologue/area/ruined/sanctuary");
 
     load_auto_obj(auto_load);
   }

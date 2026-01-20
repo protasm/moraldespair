@@ -20,7 +20,7 @@ void reset(int arg) {
     set_long("He looks like he enjoys to stop the game.\n");
     set_alias("shut");
     mmsgin = "Arrives in a puff of smoke";
-    move_player("X#domain/original/area/vesla/sanctuary");
+    move_player("X#chapter/prologue/area/ruined/sanctuary");
 }
 
 void shut(int seconds) {

@@ -10,6 +10,6 @@ void reset(int arg) {
     long_desc = "The start of a forest path.\n";
     dest_dir = ({
         "domain/original/area/forest/room530", "northeast",
-        "domain/original/area/vesla/portal", "vesla",
+        "chapter/prologue/area/ruined/portal", "vesla",
     });
 }

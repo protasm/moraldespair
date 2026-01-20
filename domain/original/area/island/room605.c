@@ -13,6 +13,6 @@ void reset(int arg) {
       "its wood bleached white by years of salt and sun.\n";
     dest_dir = ({
         "domain/original/area/island/room606", "north",
-	"domain/original/area/vesla/portal", "vesla",
+	"chapter/prologue/area/ruined/portal", "vesla",
     });
 }

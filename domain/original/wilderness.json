@@ -12182,7 +12182,7 @@
       "terrain": "p",
       "exits": {
         "north": "AS26",
-        "south": "domain/original/area/exedoria/entrance",
+        "south": "chapter/prologue/area/silent/entrance",
         "west": "AR27",
         "east": "AT27"
       }
@@ -12341,7 +12341,7 @@
       "exits": {
         "north": "AT27",
         "south": "AT29",
-        "west": "domain/original/area/exedoria/entrance",
+        "west": "chapter/prologue/area/silent/entrance",
         "east": "AU28"
       }
     },
@@ -12817,7 +12817,7 @@
       "id": "AS29",
       "terrain": "p",
       "exits": {
-        "north": "domain/original/area/exedoria/entrance",
+        "north": "chapter/prologue/area/silent/entrance",
         "south": "AS30",
         "west": "AR29",
         "east": "AT29"

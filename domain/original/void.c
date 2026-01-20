@@ -9,7 +9,7 @@ void long() {
     write("Give the command 'sanctuary', and you will return to the "
           "Sanctuary.\n");
     write("\nYou are transferred to the Sanctuary...\n");
-    this_player()->move_player("X#domain/original/area/vesla/sanctuary");
+    this_player()->move_player("X#chapter/prologue/area/ruined/sanctuary");
 }
 
 void init() {
@@ -17,7 +17,7 @@ void init() {
 }
 
 int sanctuary() {
-    this_player()->move_player("away#domain/original/area/vesla/sanctuary");
+    this_player()->move_player("away#chapter/prologue/area/ruined/sanctuary");
     return 1;
 }
 
