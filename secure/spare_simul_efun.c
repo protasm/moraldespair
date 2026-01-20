@@ -436,13 +436,13 @@ string object_name(object ob)
 }
 
 //---------------------------------------------------------------------------
-string program_name(object ob)
-{
-    string rc;
+//string program_name(object ob) {
+    //string rc;
 
-    rc = efun::program_name(ob);
-    return stringp(rc) ? rc[1..] : 0;
-}
+    //rc = efun::program_name(ob);
+
+    //return stringp(rc) ? rc[1..] : 0;
+//}
 
 //---------------------------------------------------------------------------
 string* inherit_list(object ob)

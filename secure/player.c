@@ -1764,29 +1764,42 @@ int list_peoples() {
   int i, active_count;
 
   list = users();
+
   write("There are now " + sizeof(list) + " players");
+
   for (i = 0, active_count = 0; i < sizeof(list); i++)
     if (query_idle(list[i]) >= 5 * 60)
       active_count++;
+
   if (active_count)
     write(" (" + (sizeof(list) - active_count) + " active)");
+
   write(". " + query_load_average() + "\n");
+
   for (i = 0; i < sizeof(list); i++) {
     string name;
 
     name = list[i]->query_real_name();
+
     if (!name)
       name = list[i]->query_name();
+
     if (!name)
       name = "logon";
+
     name = capitalize(name);
+
     if (list[i]->short() == 0)
       name = "(" + name + ")";
+
     if (sizeof(name) < 8)
       name = name + "\t";
+
     write(query_ip_number(list[i]) + "\t" + name + "\t" +
           list[i]->query_level() + "\t");
+
     active_count = list[i]->query_age();
+
     if (active_count / 43200 > 9)
       write(active_count / 43200 + " D");
     else if (active_count / 43200 > 0)
@@ -1803,10 +1816,13 @@ int list_peoples() {
       write(" I\t");
     else
       write("\t");
+
     if (environment(list[i]))
       write(object_name(environment(list[i])));
+
     write("\n");
   }
+
   return 1;
 }
 
@@ -1818,18 +1834,27 @@ static int update_object(string str) {
     write("Update what object ?\n");
     return 1;
   }
+
   str = valid_read(str, WIZ);
+
   if (!str) {
     write("Invalid file name.\n");
+
     return 1;
   }
+
   ob = find_object(str);
+
   if (!ob) {
     write("No such object.\n");
+
     return 1;
   }
+
   destruct(ob);
+
   write(str + " will be reloaded at next reference.\n");
+
   return 1;
 }
 

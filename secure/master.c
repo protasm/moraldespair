@@ -20,7 +20,7 @@
 #define INIT_FILE "/room/init_file"
 #define BACKBONE_WIZINFO_SIZE 5
 #define SIMUL_EFUN_FILE "secure/simul_efun"
-#define SPARE_SIMUL_EFUN_FILE "secure/spare_simul_efun"
+//#define SPARE_SIMUL_EFUN_FILE "secure/spare_simul_efun"
 
 #define ADD_SLASH(p) "/"+p
 #define GETUID(p) getuid(p)
@@ -194,8 +194,11 @@ static string _auto_include_hook (string base_file, string current_file, int sys
   if (base_file[0] != '/')
     base_file = "/" + base_file;
 
+  //if (member((["/obj/light.c", "/secure/simul_efun.c",
+    //"/secure/spare_simul_efun.c", "/secure/master.c"]), base_file))
+    //return 0;
   if (member((["/obj/light.c", "/secure/simul_efun.c",
-    "/secure/spare_simul_efun.c", "/secure/master.c"]), base_file))
+    "/secure/master.c"]), base_file))
     return 0;
 
 
@@ -607,19 +610,24 @@ mixed get_simul_efun () {
   object ob;
 
   error = catch(ob = load_object(SIMUL_EFUN_FILE));
+
   if (!error) {
     ob->start_simul_efun();
+
     return SIMUL_EFUN_FILE;
   }
 
-  efun::write("Failed to load " + SIMUL_EFUN_FILE + ": "+error);
-  error = catch(ob = load_object(SPARE_SIMUL_EFUN_FILE));
-  if (!error) {
-    ob->start_simul_efun();
-    return SPARE_SIMUL_EFUN_FILE;
-  }
+  efun::write("Failed to load " + SIMUL_EFUN_FILE + ": " + error);
 
-  efun::write("Failed to load " + SPARE_SIMUL_EFUN_FILE + ": "+error);
+  //error = catch(ob = load_object(SPARE_SIMUL_EFUN_FILE));
+
+  //if (!error) {
+    //ob->start_simul_efun();
+
+    //return SPARE_SIMUL_EFUN_FILE;
+  //}
+
+  //efun::write("Failed to load " + SPARE_SIMUL_EFUN_FILE + ": "+error);
   efun::shutdown();
 
   return 0;
@@ -1189,8 +1197,8 @@ int privilege_violation (string op, mixed who, mixed arg, mixed arg2) {
 
   /* This object and the simul_efun objects may do everything. */
   if (who == this_object()
-    || who == find_object(SIMUL_EFUN_FILE)
-    || who == find_object(SPARE_SIMUL_EFUN_FILE))
+    || who == find_object(SIMUL_EFUN_FILE))
+    //|| who == find_object(SPARE_SIMUL_EFUN_FILE))
     return 1;
 
   switch (op) {
@@ -1560,8 +1568,8 @@ mixed valid_write (string path, string euid, string fun, object caller) {
       break;
     case "rename_from":
     case "rename_to":
-      if ((efun::object_name(caller) == SIMUL_EFUN_FILE
-        || efun::object_name(caller) == SPARE_SIMUL_EFUN_FILE)
+      if ((efun::object_name(caller) == SIMUL_EFUN_FILE)
+        //|| efun::object_name(caller) == SPARE_SIMUL_EFUN_FILE)
         && path[0..3] == "log/"
         && !(sizeof(regexp(({path[4..33]}), "/"))
         || path[4] == '.'
