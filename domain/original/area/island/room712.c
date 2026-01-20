@@ -1,14 +1,14 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
 
-    short_desc = "Hermit's Chamber";
-    long_desc = "Hermit's Chamber.\n";
-    dest_dir = ({
-        "domain/original/area/island/room655", "east",
-    });
+  short_desc = "Hermit's Chamber";
+  long_desc = "Hermit's Chamber.\n";
+  dest_dir = ({
+    "domain/original/area/island/room655", "east",
+  });
+
+  set_light(1);
 }

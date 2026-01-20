@@ -1,16 +1,16 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
 
-    short_desc = "Turkish Bath";
-    long_desc = "Turkish Bath.\n";
-    dest_dir = ({
-        "domain/original/area/island/room705", "south",
-        "domain/original/area/island/room706", "east",
-        "domain/original/area/island/room703", "north",
-    });
+  short_desc = "Turkish Bath";
+  long_desc = "Turkish Bath.\n";
+  dest_dir = ({
+    "domain/original/area/island/room705", "south",
+    "domain/original/area/island/room706", "east",
+    "domain/original/area/island/room703", "north",
+  });
+
+  set_light(1);
 }

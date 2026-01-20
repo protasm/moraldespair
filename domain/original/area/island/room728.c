@@ -1,15 +1,15 @@
 inherit "room/room";
 
-void reset(int arg) {
-    if (arg)
-        return;
+void create() {
+  ::create();
 
-    set_light(1);
 
-    short_desc = "Western slave bazaar";
-    long_desc = "Western slave bazaar.\n";
-    dest_dir = ({
-        "domain/original/area/island/room732", "east",
-        "domain/original/area/island/room727", "north",
-    });
+  short_desc = "Western slave bazaar";
+  long_desc = "Western slave bazaar.\n";
+  dest_dir = ({
+    "domain/original/area/island/room732", "east",
+    "domain/original/area/island/room727", "north",
+  });
+
+  set_light(1);
 }

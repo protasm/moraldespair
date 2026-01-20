@@ -1,9 +1,10 @@
 inherit "room/room";
 
-void reset(int arg) {
-  if (arg) {
-    return;
-  }
+void create() {
+  ::create();
+
+  set_light(1);
+}
 
   set_light(1);
   short_desc = "Silver Street";
