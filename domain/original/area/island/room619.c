@@ -12,10 +12,10 @@ void create() {
     "the gray sky, their gaze fixed eternally upon the vacant streets below.\n" +
     "A silent storefront stands to the east, while a stone facade blocks the\n" +
     "view to the west.\n";
-  dest_dir = ({
-    "domain/original/area/island/room620", "east",
-    "domain/original/area/island/room618", "south",
-  });
+  dest_dir = ([
+    "east" : "/domain/original/area/island/room620",
+    "south" : "/domain/original/area/island/room618",
+  ]);
 
   set_light(1);
 }

@@ -6,9 +6,9 @@ void create() {
 
   short_desc = "Dwarven Home";
   long_desc = "Dwarven Home.\n";
-  dest_dir = ({
-    "domain/original/area/island/room648", "west",
-  });
+  dest_dir = ([
+    "west" : "/domain/original/area/island/room648",
+  ]);
 
   set_light(1);
 }

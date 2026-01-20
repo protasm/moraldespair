@@ -6,10 +6,10 @@ void create() {
 
   short_desc = "Ruins";
   long_desc = "Ruins.\n";
-  dest_dir = ({
-    "domain/original/area/island/room627", "east",
-    "domain/original/area/island/room606", "west",
-  });
+  dest_dir = ([
+    "east" : "/domain/original/area/island/room627",
+    "west" : "/domain/original/area/island/room606",
+  ]);
 
   set_light(1);
 }

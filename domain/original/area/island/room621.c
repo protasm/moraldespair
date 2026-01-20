@@ -11,9 +11,9 @@ void create() {
     "The cheerful whistling that once filled the air has been replaced by\n" +
     "a hollow, oppressive silence. To the west, the dim archway leads back\n" +
     "into the cold expanse of the main smeltery.\n";
-  dest_dir = ({
-    "domain/original/area/island/room620", "west",
-  });
+  dest_dir = ([
+    "west" : "/domain/original/area/island/room620",
+  ]);
 
   set_light(1);
 }

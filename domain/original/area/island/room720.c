@@ -6,9 +6,9 @@ void create() {
 
   short_desc = "Foyer of House of Ill Repute";
   long_desc = "Foyer of House of Ill Repute.\n";
-  dest_dir = ({
-    "domain/original/area/island/room637", "southwest",
-  });
+  dest_dir = ([
+    "southwest" : "/domain/original/area/island/room637",
+  ]);
 
   set_light(1);
 }

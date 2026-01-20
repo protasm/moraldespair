@@ -6,9 +6,9 @@ void create() {
 
   short_desc = "Administrative hallway";
   long_desc = "Administrative hallway.\n";
-  dest_dir = ({
-    "domain/original/area/island/room732", "north",
-  });
+  dest_dir = ([
+    "north" : "/domain/original/area/island/room732",
+  ]);
 
   set_light(1);
 }

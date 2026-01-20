@@ -6,9 +6,9 @@ void create() {
 
   short_desc = "Turkish Bath";
   long_desc = "Turkish Bath.\n";
-  dest_dir = ({
-    "domain/original/area/island/room706", "north",
-  });
+  dest_dir = ([
+    "north" : "/domain/original/area/island/room706",
+  ]);
 
   set_light(1);
 }

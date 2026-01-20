@@ -6,9 +6,9 @@ void create() {
 
   short_desc = "Alchemist Shop";
   long_desc = "Alchemist Shop.\n";
-  dest_dir = ({
-    "domain/original/area/island/room616", "west",
-  });
+  dest_dir = ([
+    "west" : "/domain/original/area/island/room616",
+  ]);
 
   set_light(1);
 }

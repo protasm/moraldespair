@@ -6,10 +6,10 @@ void create() {
 
   short_desc = "Archway of Servitude";
   long_desc = "Archway of Servitude.\n";
-  dest_dir = ({
-    "domain/original/area/island/room725", "south",
-    "domain/original/area/island/room723", "north",
-  });
+  dest_dir = ([
+    "south" : "/domain/original/area/island/room725",
+    "north" : "/domain/original/area/island/room723",
+  ]);
 
   set_light(1);
 }

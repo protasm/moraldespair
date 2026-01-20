@@ -9,10 +9,10 @@ void create() {
     "land. To the north, a desolate beachhead stretches toward the interior of\n" +
     "a silent island. A small, waterlogged boat drifts aimlessly in the surf,\n" +
     "its wood bleached white by years of salt and sun.\n";
-  dest_dir = ({
-    "domain/original/area/island/room606", "north",
-    "chapter/prologue/area/ruined/portal", "vesla",
-  });
+  dest_dir = ([
+    "north" : "/domain/original/area/island/room606",
+    "vesla" : "/chapter/prologue/area/ruined/portal",
+  ]);
 
   set_light(1);
 }

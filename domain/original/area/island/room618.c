@@ -13,12 +13,12 @@ void create() {
     "open beneath a fixed 'Closed' sign. Thick plumes of steam rise from the\n" +
     "northern rocks, veiling the path where the silver road finally dissolves\n" +
     "into stone and dust.\n";
-  dest_dir = ({
-    "domain/original/area/island/room617", "south",
-    "domain/original/area/island/room622", "west",
-    "domain/original/area/island/room691", "east",
-    "domain/original/area/island/room619", "north",
-  });
+  dest_dir = ([
+    "south" : "/domain/original/area/island/room617",
+    "west" : "/domain/original/area/island/room622",
+    "east" : "/domain/original/area/island/room691",
+    "north" : "/domain/original/area/island/room619",
+  ]);
 
   set_light(1);
 }

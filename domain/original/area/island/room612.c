@@ -14,10 +14,10 @@ void create() {
     "and yeast, now exhales only the scent of damp flour and rot. Northward,\n" +
     "the shadows of monumental structures loom over the cooling metal torches.\n";
 
-  dest_dir = ({
-    "domain/original/area/island/room613", "north",
-    "domain/original/area/island/room674", "east",
-    "domain/original/area/island/room611", "south",
-    "domain/original/area/island/room642", "west",
-  });
+  dest_dir = ([
+    "north" : "/domain/original/area/island/room613",
+    "east" : "/domain/original/area/island/room674",
+    "south" : "/domain/original/area/island/room611",
+    "west" : "/domain/original/area/island/room642",
+  ]);
 }

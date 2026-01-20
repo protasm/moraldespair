@@ -6,12 +6,12 @@ void create() {
 
   short_desc = "West End of Balin Road";
   long_desc = "West End of Balin Road.\n";
-  dest_dir = ({
-    "domain/original/area/island/room638", "west",
-    "domain/original/area/island/room720", "northeast",
-    "domain/original/area/island/room636", "east",
-    "domain/original/area/island/room723", "south",
-  });
+  dest_dir = ([
+    "west" : "/domain/original/area/island/room638",
+    "northeast" : "/domain/original/area/island/room720",
+    "east" : "/domain/original/area/island/room636",
+    "south" : "/domain/original/area/island/room723",
+  ]);
 
   set_light(1);
 }

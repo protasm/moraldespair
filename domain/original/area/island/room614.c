@@ -11,12 +11,12 @@ void create() {
     "cracking the masonry in a slow, silent conquest. A forest of metallic\n" +
     "torches stands frozen around the perimeter, their glass housings clouded\n" +
     "by time. To the north, the path climbs toward a high, shadowed hill.\n";
-  dest_dir = ({
-    "domain/original/area/island/room613", "south",
-    "domain/original/area/island/room678", "west",
-    "domain/original/area/island/room677", "east",
-    "domain/original/area/island/room615", "north",
-  });
+  dest_dir = ([
+    "south" : "/domain/original/area/island/room613",
+    "west" : "/domain/original/area/island/room678",
+    "east" : "/domain/original/area/island/room677",
+    "north" : "/domain/original/area/island/room615",
+  ]);
 
   set_light(1);
 }

@@ -6,7 +6,8 @@ void create() {
 
   short_desc = "The hermit says: Is there anything you would like to talk about?";
   long_desc = "The hermit says: Is there anything you would like to talk about?.\n";
-  dest_dir = ({ });
+  dest_dir = ([
+  ]);
 
   set_light(1);
 }
