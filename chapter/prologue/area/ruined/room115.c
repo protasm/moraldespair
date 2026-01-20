@@ -17,7 +17,7 @@ void create() {
 void init() {
   ::init();
 
-  add_action("block_exit", "exit");
+  //add_action("block_exit", "exit");
 }
 
 int block_exit() {
