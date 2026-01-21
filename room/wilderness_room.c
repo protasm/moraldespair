@@ -87,6 +87,7 @@ void init() {
 void set_exits() {
   mapping exits;
   string *dirs;
+  string direction;
   string destination, resolved;
   int i;
 
@@ -105,15 +106,21 @@ void set_exits() {
   i = 0;
 
   while (i < sizeof(dirs)) {
-    destination = exits[dirs[i]];
+    direction = dirs[i];
+    destination = exits[direction];
 
-    if (stringp(destination))
+    if (stringp(destination)) {
       if (WILDERNESS_D->room_exists(destination))
-        resolved = "room/wilderness_room#" + destination;
-      else
-        resolved = destination;
+        resolved = "/room/wilderness_room#" + destination;
+      else {
+        if (destination[0] == '/')
+          resolved = destination;
+        else
+          resolved = "/" + destination;
+      }
 
-      dest_dir += ({ resolved, dirs[i] });
+      dest_dir[direction] = resolved;
+    }
 
     i += 1;
   }
@@ -142,34 +149,26 @@ int move_alias(string str) {
 }
 
 int move_direction(string direction) {
-  int i;
   string destination, target_id, target_terrain;
 
-  i = 1;
+  destination = dest_dir[direction];
 
-  while (i < sizeof(dest_dir)) {
-    if (direction == dest_dir[i]) {
-      destination = dest_dir[i - 1];
+  if (!destination)
+    return 0;
 
-      if (terrain != "w") {
-        if (sscanf(destination, "room/wilderness_room#%s", target_id) == 1) {
-          target_terrain = WILDERNESS_D->query_terrain(target_id);
+  if (terrain != "w") {
+    if (sscanf(destination, "/room/wilderness_room#%s", target_id) == 1) {
+      target_terrain = WILDERNESS_D->query_terrain(target_id);
 
-          if (target_terrain == "w") {
-            write("There is a body of water there.\n");
+      if (target_terrain == "w") {
+        write("There is a body of water there.\n");
 
-            return 1;
-          }
-        }
+        return 1;
       }
-
-      this_player()->move_player(dest_dir[i] + "#" + dest_dir[i - 1]);
-
-      return 1;
     }
-
-    i += 2;
   }
+
+  this_player()->move_player(direction + "#" + destination);
 
   return 1;
 }
