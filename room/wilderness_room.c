@@ -94,13 +94,13 @@ void set_exits() {
   dirs = m_indices(exits);
 
   if (!pointerp(dirs)) {
-    dest_dir = ({});
+    dest_dir = ([]);
 
     return;
   }
 
   dirs = sort_array(dirs, #'sort_dirs);
-  dest_dir = ({});
+  dest_dir = ([]);
 
   i = 0;
 
