@@ -14,7 +14,7 @@ object compile_object(string filename) {
   if (sscanf(id, "%s.c", base_id) == 1)
     id = base_id;
 
-  room = clone_object("room/wilderness_room");
+  room = clone_object("/room/wilderness_room");
 
   if (!room) return 0;
 
