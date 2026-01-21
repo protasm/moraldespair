@@ -5,9 +5,9 @@ void create() {
 
   short_desc = "Cold Chamber";
   long_desc = "This chamber holds a chill that lingers year round. Frost clings to the stone\nin thin, pale sheets.\n";
-  dest_dir = ({
-    "chapter/prologue/area/silent/room346", "west",
-  });
+  dest_dir = ([
+    "west":"/chapter/prologue/area/silent/room346",
+  ]);
 
   set_light(1);
 }

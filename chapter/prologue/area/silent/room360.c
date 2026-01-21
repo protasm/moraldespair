@@ -5,9 +5,9 @@ void create() {
 
   short_desc = "Stone Cell";
   long_desc = "This small chamber is plain, its walls marked by soot and smoke. A slit window\nadmits a thin stripe of light.\n";
-  dest_dir = ({
-    "chapter/prologue/area/silent/room357", "west",
-  });
+  dest_dir = ([
+    "west":"/chapter/prologue/area/silent/room357",
+  ]);
 
   set_light(1);
 }
