@@ -3,7 +3,7 @@
  * in the function that inherits this file.
  */
 
-/* A mapping with directions and destinations: "north":"room/church" */
+/* A mapping with directions and destinations: "north":"/room/church" */
 mapping dest_dir;
 
 /* Exit aliases: "c":"city" */
