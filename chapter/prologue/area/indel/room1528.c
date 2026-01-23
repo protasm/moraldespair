@@ -5,10 +5,10 @@ void create() {
 
   short_desc = "Fallen Narrow Way";
   long_desc = "The ground is a mosaic of cracked slabs and loose grit, dulled by age. The stonework is torn open, exposing fill and roots, with scorch marks in the cracks. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.";
-  dest_dir = ({
-    "chapter/prologue/area/indel/room1527", "north",
-    "chapter/prologue/area/indel/room1529", "south",
-  });
+  dest_dir = ([
+    "north" : "/chapter/prologue/area/indel/room1527",
+    "south" : "/chapter/prologue/area/indel/room1529",
+  ]);
 
   set_light(1);
 }
