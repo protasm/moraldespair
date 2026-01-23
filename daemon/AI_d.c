@@ -13,8 +13,8 @@
 //   6) Errors or timeouts trigger "error" callbacks and cleanup.
 //
 // Callback routing:
-//   call_other(cb_obj, cb_func, status, payload, request_id)
-//   status is one of: "stream", "ok", "error".
+//   call_other(cb_obj, cb_func, statuz, payload, request_id)
+//   statuz is one of: "stream", "ok", "error".
 //
 // Proxy configuration:
 //   Adjust AI_HOST_IP/AI_PORT/AI_PATH for your local HTTP proxy. TLS is
@@ -41,7 +41,7 @@ private void tcp_open_cb(int *reply, int id);
 private void tcp_read_cb(mixed msg, int id);
 private void deliver(mapping req);
 private void fail(mapping req, string msg);
-private void notify(mapping req, string status, mixed payload);
+private void notify(mapping req, string statuz, mixed payload);
 private void cleanup(int id);
 private void check_timeouts();
 private void kill_request(mapping req);
@@ -90,7 +90,7 @@ public int query(string prompt, object cb_obj, string cb_func) {
   return start_request(payload, cb_obj, cb_func);
 }
 
-public mapping req_status() {
+public mapping statuz() {
   return copy(requests);
 }
 
@@ -237,7 +237,7 @@ private void fail(mapping req, string msg) {
   notify(req, "error", msg);
 }
 
-private void notify(mapping req, string status, mixed payload) {
+private void notify(mapping req, string statuz, mixed payload) {
   object cb_obj;
   string cb_func;
 
@@ -247,7 +247,7 @@ private void notify(mapping req, string status, mixed payload) {
   if (!objectp(cb_obj) || !stringp(cb_func))
     return;
 
-  call_other(cb_obj, cb_func, status, payload, req["id"]);
+  call_other(cb_obj, cb_func, statuz, payload, req["id"]);
 }
 
 private void cleanup(int id) {
