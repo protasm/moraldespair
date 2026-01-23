@@ -3,29 +3,6 @@
 //
 // Production AI daemon using ERQ/XERQ.
 //
-// Request flow:
-//   1) query_response()/query() builds a JSON payload and stores request state.
-//   2) ERQ_OPEN_TCP opens the connection to the local proxy.
-//   3) ERQ_SEND transmits the HTTP POST.
-//   4) ERQ_STDOUT chunks stream through tcp_read_cb() and are forwarded to the
-//      caller via cb_obj/cb_func as "stream" messages, while also buffering.
-//   5) ERQ_EXITED triggers final JSON parsing and a single "ok" callback.
-//   6) Errors or timeouts trigger "error" callbacks and cleanup.
-//
-// Callback routing:
-//   call_other(cb_obj, cb_func, statuz, payload, request_id)
-//   statuz is one of: "stream", "ok", "error".
-//
-// Proxy configuration:
-//   Adjust AI_HOST_IP/AI_PORT/AI_PATH for your local HTTP proxy. TLS is
-//   expected to be handled externally by that proxy.
-//
-// NOTE:
-// ERQ_OPEN_TCP only reports ERQ_OK once and does not reliably signal
-// connection failure. We therefore treat lack of first inbound data
-// as the real failure signal and enforce a first-byte deadline.
-//
-
 
 #pragma strong_types
 #pragma save_types
@@ -42,20 +19,20 @@
 private mapping requests;
 private int next_id;
 
-private int start_request(mapping payload, object cb_obj, string cb_func);
+/* forward declarations */
+private int  start_request(mapping payload, object cb_obj, string cb_func);
 private void tcp_open_cb(int *reply, int id);
 private void tcp_read_cb(mixed msg, int id);
 private void deliver(mapping req);
 private void fail(mapping req, string msg);
 private void notify(mapping req, string statuz, mixed payload);
 private void cleanup(int id);
-void check_timeouts();
+public  void check_timeouts();
 private void kill_request(mapping req);
 
 void create() {
   requests = ([]);
   next_id = 1;
-
   call_out("check_timeouts", AI_POLL_INTERVAL);
 }
 
@@ -63,37 +40,11 @@ void create() {
  * Public API
  * ========================================================= */
 
-public int query_response(
-  mixed npc_id,
-  mixed player_id,
-  string event,
-  mapping context,
-  mapping options,
-  object cb_obj,
-  string cb_func
-) {
-  mapping payload;
-
-  payload = ([
-    "npc_id" : npc_id,
-    "player_id" : player_id,
-    "event" : event,
-    "context" : context,
-    "options" : options,
-  ]);
-
-  return start_request(payload, cb_obj, cb_func);
-}
-
 public int query(string prompt, object cb_obj, string cb_func) {
-  mapping payload;
-
   if (!stringp(prompt))
     raise_error("AI_d->query(): prompt must be string\n");
 
-  payload = ([ "prompt" : prompt ]);
-
-  return start_request(payload, cb_obj, cb_func);
+  return start_request(([ "prompt" : prompt ]), cb_obj, cb_func);
 }
 
 public mapping statuz() {
@@ -105,25 +56,24 @@ public mapping statuz() {
  * ========================================================= */
 
 private int start_request(mapping payload, object cb_obj, string cb_func) {
-  mapping req;
   int id;
+  mapping req;
   int *msg;
 
   if (!objectp(cb_obj) || !stringp(cb_func))
     raise_error("AI_d->start_request(): bad callback\n");
 
-  id = next_id;
-  next_id += 1;
+  id = next_id++;
 
   req = ([
-    "id" : id,
-    "payload" : payload,
-    "cb_obj" : cb_obj,
-    "cb_func" : cb_func,
-    "buffer" : "",
+    "id"         : id,
+    "payload"    : payload,
+    "cb_obj"     : cb_obj,
+    "cb_func"    : cb_func,
+    "buffer"     : "",
     "started_at" : time(),
     "updated_at" : time(),
-    "got_data" : 0,
+    "got_data"   : 0,
   ]);
 
   requests[id] = req;
@@ -133,9 +83,10 @@ private int start_request(mapping payload, object cb_obj, string cb_func) {
   send_erq(
     ERQ_OPEN_TCP,
     msg,
-    lambda(({ 'reply }),
-      ({ #'tcp_open_cb, 'reply, id }))
+    lambda(({ 'reply }), ({ #'tcp_open_cb, 'reply, id }))
   );
+
+  tell_object(this_player(), sprintf("[AI_D] request %d stored\n", id));
 
   return id;
 }
@@ -145,98 +96,53 @@ private int start_request(mapping payload, object cb_obj, string cb_func) {
  * ========================================================= */
 
 private void tcp_open_cb(int *reply, int id) {
+  tell_object(this_player(), "[AI_D] tcp_open_cb fired\n");
+  tell_object(find_player("solfeggio"), "[AI_D] tcp_open_cb fired\n");
+
   mapping req;
   int *ticket;
-  string body;
-  string http;
-  string headers;
+  string body, http;
 
   req = requests[id];
   if (!req)
     return;
 
-  if (reply[0] != ERQ_OK) {
-    //fail(req, "connection failed");
-    //cleanup(id);
+  if (reply[0] != ERQ_OK)
     return;
-  }
 
   ticket = reply[1..];
   req["ticket"] = ticket;
-  req["updated_at"] = time();
 
   body = json_serialize(req["payload"]);
 
-  headers =
-    "POST " + AI_PATH + " HTTP/1.1\r\n"
+  http =
+    "POST " + AI_PATH + " HTTP/1.0\r\n"
     "Host: localhost\r\n"
     "Content-Type: application/json\r\n"
     "Content-Length: " + sizeof(body) + "\r\n"
-    "Connection: close\r\n";
-
-  http = headers + "\r\n" + body;
+    "Connection: close\r\n"
+    "\r\n" +
+    body;
 
   send_erq(
     ERQ_SEND,
     ticket + to_array(http),
-    lambda(({ 'msg }),
-      ({ #'tcp_read_cb, 'msg, id }))
+    lambda(({ 'msg }), ({ #'tcp_read_cb, 'msg, id }))
   );
 }
 
 private void tcp_read_cb(mixed msg, int id) {
-object solf;
-
-solf = find_player("solfeggio");
-  tell_object(solf,
-    sprintf(
-      "[AI_PROBE] msg=%O type=%s\n",
-      msg,
-      stringp(msg) ? "string" :
-      bytesp(msg)  ? "bytes"  :
-      intp(msg)    ? "int"    :
-      pointerp(msg)? "array"  : "other"
-    )
-  );
-
   mapping req;
   string chunk;
   int statuz;
 
   req = requests[id];
-
   if (!req)
     return;
 
-  if (stringp(msg) || bytesp(msg)) {
-
-  if (bytesp(msg))
-    chunk = to_text(msg, "utf-8");
-  else
-    chunk = msg;
-
-  // With ERQ_CB_STRING, ERQ may signal EOF by sending "".
-  if (chunk == "") {
-    if (req["buffer"] != "") {
-      deliver(req);
-    } else {
-      fail(req, "empty response");
-    }
- 
-    cleanup(id);
- 
+  /* ignore SEND acks / junk */
+  if (stringp(msg) || bytesp(msg))
     return;
-  }
-
-  // We only consider this "got data" if we got actual bytes.
-  req["got_data"] = 1;
-
-  req["buffer"] += chunk;
-  req["updated_at"] = time();
-
-  notify(req, "stream", chunk);
-  return;
-}
 
   if (intp(msg)) {
     deliver(req);
@@ -244,35 +150,33 @@ solf = find_player("solfeggio");
     return;
   }
 
-  if (pointerp(msg)) {
-    if (!sizeof(msg)) {
-      fail(req, "empty ERQ message");
-      cleanup(id);
-      return;
+  if (!pointerp(msg) || !sizeof(msg))
+    return;
+
+  statuz = msg[0];
+
+  /* control / ok */
+  if (statuz == ERQ_OK)
+    return;
+
+  if (statuz == ERQ_STDOUT) {
+    if (sizeof(msg) > 1) {
+      chunk = to_text(msg[1..], "utf-8");
+      req["buffer"] += chunk;
+      req["got_data"] = 1;
+      req["updated_at"] = time();
+      notify(req, "stream", chunk);
     }
-
-    statuz = msg[0];
-
-// ERQ_OK / control signal — ignore
-if (statuz == ERQ_OK)
-  return;
-
-if (statuz == ERQ_STDOUT) {
-  ...
-}
-
-if (statuz == ERQ_EXITED) {
-  deliver(req);
-  cleanup(id);
-  return;
-}
-
-fail(req, sprintf("unexpected ERQ status: %d", statuz));
-cleanup(id);
-return;
+    return;
   }
 
-  fail(req, "unexpected ERQ message");
+  if (statuz == ERQ_EXITED) {
+    deliver(req);
+    cleanup(id);
+    return;
+  }
+
+  fail(req, sprintf("unexpected ERQ status: %d", statuz));
   cleanup(id);
 }
 
@@ -281,17 +185,16 @@ return;
  * ========================================================= */
 
 private void deliver(mapping req) {
-  string raw;
-  string body;
-  int header_end;
+  string raw, body;
+  int p;
   mixed parsed;
 
   raw = req["buffer"];
   body = raw;
 
-  header_end = strstr(raw, "\r\n\r\n");
-  if (header_end >= 0)
-    body = raw[header_end + 4 ..];
+  p = strstr(raw, "\r\n\r\n");
+  if (p >= 0)
+    body = raw[p + 4 ..];
 
   parsed = 0;
   catch(parsed = json_parse(body));
@@ -309,16 +212,10 @@ private void fail(mapping req, string msg) {
 }
 
 private void notify(mapping req, string statuz, mixed payload) {
-  object cb_obj;
-  string cb_func;
-
-  cb_obj = req["cb_obj"];
-  cb_func = req["cb_func"];
-
-  if (!objectp(cb_obj) || !stringp(cb_func))
+  if (!objectp(req["cb_obj"]) || !stringp(req["cb_func"]))
     return;
 
-  call_other(cb_obj, cb_func, statuz, payload, req["id"]);
+  call_other(req["cb_obj"], req["cb_func"], statuz, payload, req["id"]);
 }
 
 private void cleanup(int id) {
@@ -329,53 +226,38 @@ private void cleanup(int id) {
  * Timeouts
  * ========================================================= */
 
-void check_timeouts() {
-  int now;
-  int *ids;
-  int i;
+public void check_timeouts() {
+  int now, *ids, i;
   mapping req;
 
   now = time();
   ids = m_indices(requests);
 
-  for (i = 0; i < sizeof(ids); i += 1) {
+  for (i = 0; i < sizeof(ids); i++) {
     req = requests[ids[i]];
-
     if (!req)
       continue;
 
-    // No data received yet - early failure
-    if (!req["got_data"] && (now - req["started_at"]) >= 10) {
+    if (!req["got_data"] && now - req["started_at"] >= 10) {
       kill_request(req);
-  
       fail(req, "no response from proxy");
-  
       cleanup(ids[i]);
-  
       continue;
     }
 
-    // Hard timeout
-    if ((now - req["started_at"]) >= AI_TIMEOUT) {
+    if (now - req["started_at"] >= AI_TIMEOUT) {
       kill_request(req);
-  
       fail(req, "timeout");
-  
       cleanup(ids[i]);
     }
-  } //for
+  }
 
   call_out("check_timeouts", AI_POLL_INTERVAL);
 }
 
 private void kill_request(mapping req) {
-  int *ticket;
-
-  ticket = req["ticket"];
-  if (!pointerp(ticket))
-    return;
-
-  send_erq(ERQ_KILL, ticket, 0);
+  if (pointerp(req["ticket"]))
+    send_erq(ERQ_KILL, req["ticket"], 0);
 }
 
 void remove() {
