@@ -5,11 +5,11 @@ void create() {
 
   short_desc = "Slick Split Way";
   long_desc = "Stone underfoot is split into plates, with grit and ash packed into the seams. Fragments of arches and lintels hang at odd angles, cut and burned through. The path splits around a heap of fallen blocks, offering lines gone to ruin. Thin lichen mats the shaded edges, and the air tastes of wet dust.";
-  dest_dir = ({
-    "chapter/prologue/area/indel/room1598", "north",
-    "chapter/prologue/area/indel/room1596", "south",
-    "chapter/prologue/area/indel/room1533", "west",
-  });
+  dest_dir = ([
+    "north" : "/chapter/prologue/area/indel/room1598",
+    "south" : "/chapter/prologue/area/indel/room1596",
+    "west" : "/chapter/prologue/area/indel/room1533",
+  ]);
 
   set_light(1);
 }

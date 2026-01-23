@@ -5,9 +5,9 @@ void create() {
 
   short_desc = "Silted Choked End";
   long_desc = "Stone underfoot is split into plates, with grit and ash packed into the seams. The remains of pillars stand jagged, split and fused by old force. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.";
-  dest_dir = ({
-    "chapter/prologue/area/indel/room1511", "south",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/indel/room1511",
+  ]);
 
   set_light(1);
 }
