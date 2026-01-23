@@ -223,17 +223,23 @@ private void tcp_read_cb(mixed msg, int id) {
     }
 
     statuz = msg[0];
+
     if (statuz == ERQ_STDOUT) {
-      if (sizeof(msg) > 1)
+      if (sizeof(msg) > 1) {
         chunk = to_text(msg[1..], "utf-8");
-      else
-        chunk = "";
-
-      req["buffer"] += chunk;
-      req["updated_at"] = time();
-
-      if (chunk != "")
+        req["buffer"] += chunk;
+        req["updated_at"] = time();
         notify(req, "stream", chunk);
+        return;
+      }
+
+      // ERQ_STDOUT with no data often means EOF
+      if (req["buffer"] != "") {
+        deliver(req);
+        cleanup(id);
+        return;
+      }
+
       return;
     }
 

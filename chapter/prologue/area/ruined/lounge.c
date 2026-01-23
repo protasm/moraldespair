@@ -101,28 +101,55 @@ int aitest(string str) {
   return 1;
 }
 
+/*
 void ai_cb(string req_status, mixed payload, int request_id) {
   object who;
   string output;
 
   who = ai_requests[request_id];
+
+  tell_object(who,
+    sprintf("[AI_CB] status=%s id=%d\n", req_status, request_id));
+
   if (!who) {
     m_delete(ai_requests, request_id);
+
     return;
   }
 
   if (req_status == "stream") {
     tell_object(who, payload);
+
     return;
   }
 
   if (req_status == "ok") {
     output = sprintf("%O\n", payload);
+
     tell_object(who, output);
+
     m_delete(ai_requests, request_id);
+
     return;
   }
 
   tell_object(who, "AI error: " + payload + "\n");
+
   m_delete(ai_requests, request_id);
 }
+*/
+
+void ai_cb(string req_status, mixed payload, int request_id) {
+  object who;
+
+  who = ai_requests[request_id];
+  if (!who) return;
+
+  tell_object(who,
+    sprintf("[AI_CB] status=%s id=%d payload=%O\n",
+            req_status, request_id, payload));
+
+  if (req_status == "ok" || req_status == "error")
+    m_delete(ai_requests, request_id);
+}
+
