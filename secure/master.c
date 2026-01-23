@@ -1566,6 +1566,10 @@ mixed valid_write (string path, string euid, string fun, object caller) {
         if (user[0..3] == "obj/"
          || user[0..3] == "std/")
           return ADD_SLASH(path);
+        if (sizeof(user) > 7 && user[0..7] == "chapter/") {
+          if (sizeof(path) > 7 && path[0..7] == "chapter/")
+            return ADD_SLASH(path);
+        }
         if (sizeof(user) > 12
           && user[0..12] == "secure/player"
           && path[0..7] == "players/")
