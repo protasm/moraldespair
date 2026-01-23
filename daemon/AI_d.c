@@ -49,7 +49,7 @@ private void deliver(mapping req);
 private void fail(mapping req, string msg);
 private void notify(mapping req, string statuz, mixed payload);
 private void cleanup(int id);
-private void check_timeouts();
+void check_timeouts();
 private void kill_request(mapping req);
 
 void create() {
@@ -177,7 +177,7 @@ private void tcp_open_cb(int *reply, int id) {
   http = headers + "\r\n" + body;
 
   send_erq(
-    ERQ_SEND | ERQ_CB_STRING,
+    ERQ_SEND,
     ticket + to_array(http),
     lambda(({ 'msg }),
       ({ #'tcp_read_cb, 'msg, id }))
@@ -185,6 +185,20 @@ private void tcp_open_cb(int *reply, int id) {
 }
 
 private void tcp_read_cb(mixed msg, int id) {
+object solf;
+
+solf = find_player("solfeggio");
+  tell_object(solf,
+    sprintf(
+      "[AI_PROBE] msg=%O type=%s\n",
+      msg,
+      stringp(msg) ? "string" :
+      bytesp(msg)  ? "bytes"  :
+      intp(msg)    ? "int"    :
+      pointerp(msg)? "array"  : "other"
+    )
+  );
+
   mapping req;
   string chunk;
   int statuz;
@@ -194,20 +208,35 @@ private void tcp_read_cb(mixed msg, int id) {
   if (!req)
     return;
 
-  req["got_data"] = 1;
-
   if (stringp(msg) || bytesp(msg)) {
-    if (bytesp(msg))
-      chunk = to_text(msg, "utf-8");
-    else
-      chunk = msg;
 
-    req["buffer"] += chunk;
-    req["updated_at"] = time();
+  if (bytesp(msg))
+    chunk = to_text(msg, "utf-8");
+  else
+    chunk = msg;
 
-    notify(req, "stream", chunk);
+  // With ERQ_CB_STRING, ERQ may signal EOF by sending "".
+  if (chunk == "") {
+    if (req["buffer"] != "") {
+      deliver(req);
+    } else {
+      fail(req, "empty response");
+    }
+ 
+    cleanup(id);
+ 
     return;
   }
+
+  // We only consider this "got data" if we got actual bytes.
+  req["got_data"] = 1;
+
+  req["buffer"] += chunk;
+  req["updated_at"] = time();
+
+  notify(req, "stream", chunk);
+  return;
+}
 
   if (intp(msg)) {
     deliver(req);
@@ -224,34 +253,23 @@ private void tcp_read_cb(mixed msg, int id) {
 
     statuz = msg[0];
 
-    if (statuz == ERQ_STDOUT) {
-      if (sizeof(msg) > 1) {
-        chunk = to_text(msg[1..], "utf-8");
-        req["buffer"] += chunk;
-        req["updated_at"] = time();
-        notify(req, "stream", chunk);
-        return;
-      }
+// ERQ_OK / control signal — ignore
+if (statuz == ERQ_OK)
+  return;
 
-      // ERQ_STDOUT with no data often means EOF
-      if (req["buffer"] != "") {
-        deliver(req);
-        cleanup(id);
-        return;
-      }
+if (statuz == ERQ_STDOUT) {
+  ...
+}
 
-      return;
-    }
+if (statuz == ERQ_EXITED) {
+  deliver(req);
+  cleanup(id);
+  return;
+}
 
-    if (statuz == ERQ_EXITED) {
-      deliver(req);
-      cleanup(id);
-      return;
-    }
-
-    fail(req, sprintf("unexpected ERQ status: %d", statuz));
-    cleanup(id);
-    return;
+fail(req, sprintf("unexpected ERQ status: %d", statuz));
+cleanup(id);
+return;
   }
 
   fail(req, "unexpected ERQ message");
@@ -311,7 +329,7 @@ private void cleanup(int id) {
  * Timeouts
  * ========================================================= */
 
-private void check_timeouts() {
+void check_timeouts() {
   int now;
   int *ids;
   int i;
@@ -359,3 +377,8 @@ private void kill_request(mapping req) {
 
   send_erq(ERQ_KILL, ticket, 0);
 }
+
+void remove() {
+  remove_call_out("check_timeouts");
+}
+
