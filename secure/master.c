@@ -20,7 +20,6 @@
 #define INIT_FILE "/room/init_file"
 #define BACKBONE_WIZINFO_SIZE 5
 #define SIMUL_EFUN_FILE "secure/simul_efun"
-//#define SPARE_SIMUL_EFUN_FILE "secure/spare_simul_efun"
 
 #define ADD_SLASH(p) "/"+p
 #define GETUID(p) getuid(p)
@@ -201,9 +200,6 @@ static string _auto_include_hook (string base_file, string current_file, int sys
   if (base_file[0] != '/')
     base_file = "/" + base_file;
 
-  //if (member((["/obj/light.c", "/secure/simul_efun.c",
-    //"/secure/spare_simul_efun.c", "/secure/master.c"]), base_file))
-    //return 0;
   if (member((["/obj/light.c", "/secure/simul_efun.c",
     "/secure/master.c"]), base_file))
     return 0;
