@@ -6,5 +6,6 @@
 #obj/treasure
 #obj/weapon
 #obj/armour
+daemon/AI_d
 daemon/wilderness_d
 chapter/prologue/area/ruined/sanctuary.c

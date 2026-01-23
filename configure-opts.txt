@@ -1,0 +1,6 @@
+./configure \
+  --enable-use-json \
+  --enable-erq=xerq \
+  --enable-use-ipv6 \
+  --enable-use-tls
+

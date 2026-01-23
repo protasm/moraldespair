@@ -1168,8 +1168,8 @@ void runtime_error( string err, string prg, string curobj, int line
 // See also valid_read() and valid_write().
 //===========================================================================
 
-//---------------------------------------------------------------------------
 int privilege_violation (string op, mixed who, mixed arg, mixed arg2) {
+//---------------------------------------------------------------------------
   // Validate the execution of a privileged operation.
   //
   // Arguments:
@@ -1219,30 +1219,27 @@ int privilege_violation (string op, mixed who, mixed arg, mixed arg2) {
 
   /* This object and the simul_efun objects may do everything. */
   if (who == this_object()
-    || who == find_object(SIMUL_EFUN_FILE))
-    //|| who == find_object(SPARE_SIMUL_EFUN_FILE))
-    return 1;
+      || who == find_object(SIMUL_EFUN_FILE))
+      return 1;
 
   switch (op) {
     case "erq":
-      switch (arg) {
-        case ERQ_RLOOKUP:
-          return 1;
-        case ERQ_EXECUTE:
-        case ERQ_FORK:
-        case ERQ_AUTH:
-        case ERQ_SPAWN:
+      switch (arg2) {   // <-- FIX IS HERE
+        case ERQ_LOOKUP:
+        case ERQ_OPEN_TCP:
+        case ERQ_OPEN_UDP:
         case ERQ_SEND:
+        case ERQ_ACCEPT:
         case ERQ_KILL:
+          return 1;
+
         default:
           return -1;
       }
 
     default:
-      return -1; /* Make this violation an error. */
+      return -1;
   }
-
-  return 0;
 }
 
 //---------------------------------------------------------------------------
