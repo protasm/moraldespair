@@ -4,6 +4,13 @@ string save_file;
 mapping *messages;
 mapping pending_writes;
 
+int do_erase(string str);
+int do_read(string str);
+int do_write(string str);
+void finalize_message(object writer, mapping data);
+void list_titles();
+void receive_line(string line, object writer);
+
 void create() {
   board_short = "a bulletin board";
   board_long = "A battered board of dark wood hangs against the wall.\n";
@@ -180,7 +187,7 @@ void finalize_message(object writer, mapping data) {
 
   if (!sizeof(lines)) {
     write("No message entered.\n");
-    map_delete(pending_writes, writer);
+    pending_writes = m_delete(pending_writes, writer);
     return;
   }
 
@@ -194,7 +201,7 @@ void finalize_message(object writer, mapping data) {
   ]);
 
   messages += ({ entry });
-  map_delete(pending_writes, writer);
+  pending_writes = m_delete(pending_writes, writer);
   save_object(save_file);
 
   write("Message posted.\n");
