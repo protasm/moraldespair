@@ -20,6 +20,12 @@
 //   Adjust AI_HOST_IP/AI_PORT/AI_PATH for your local HTTP proxy. TLS is
 //   expected to be handled externally by that proxy.
 //
+// NOTE:
+// ERQ_OPEN_TCP only reports ERQ_OK once and does not reliably signal
+// connection failure. We therefore treat lack of first inbound data
+// as the real failure signal and enforce a first-byte deadline.
+//
+
 
 #pragma strong_types
 #pragma save_types
@@ -117,6 +123,7 @@ private int start_request(mapping payload, object cb_obj, string cb_func) {
     "buffer" : "",
     "started_at" : time(),
     "updated_at" : time(),
+    "got_data" : 0,
   ]);
 
   requests[id] = req;
@@ -183,8 +190,11 @@ private void tcp_read_cb(mixed msg, int id) {
   int statuz;
 
   req = requests[id];
+
   if (!req)
     return;
+
+  req["got_data"] = 1;
 
   if (stringp(msg) || bytesp(msg)) {
     if (bytesp(msg))
@@ -306,15 +316,30 @@ private void check_timeouts() {
 
   for (i = 0; i < sizeof(ids); i += 1) {
     req = requests[ids[i]];
+
     if (!req)
       continue;
 
+    // No data received yet - early failure
+    if (!req["got_data"] && (now - req["started_at"]) >= 10) {
+      kill_request(req);
+  
+      fail(req, "no response from proxy");
+  
+      cleanup(ids[i]);
+  
+      continue;
+    }
+
+    // Hard timeout
     if ((now - req["started_at"]) >= AI_TIMEOUT) {
       kill_request(req);
+  
       fail(req, "timeout");
+  
       cleanup(ids[i]);
     }
-  }
+  } //for
 
   call_out("check_timeouts", AI_POLL_INTERVAL);
 }
