@@ -1,5 +1,6 @@
 string board_short;
 string board_long;
+string input_prompt;
 string save_file;
 mapping *messages;
 mapping pending_writes;
@@ -8,12 +9,14 @@ int do_erase(string str);
 int do_read(string str);
 int do_write(string str);
 void finalize_message(object writer, mapping data);
+string format_est_date(int timestamp);
 void list_titles();
 void receive_line(string line, object writer);
 
 void create() {
   board_short = "a bulletin board";
   board_long = "A battered board of dark wood hangs against the wall.\n";
+  input_prompt = "]";
   save_file = "/chapter/prologue/area/ruined/item/lounge_board_save";
   messages = ({});
   pending_writes = ([]);
@@ -40,6 +43,7 @@ string short() {
 void long() {
   write(board_long);
   list_titles();
+  write("Use 'write <title>', 'read <#>', and 'erase <#>' to use the board.\n");
 
   return;
 }
@@ -74,7 +78,7 @@ void list_titles() {
   index = 0;
   while (index < total) {
     entry = messages[index];
-    date = ctime(entry["time"]);
+    date = format_est_date(entry["time"]);
 
     write((index + 1) + ") " + entry["title"] + " (" + date + ")\n");
     index += 1;
@@ -104,11 +108,10 @@ int do_read(string str) {
   }
 
   entry = messages[number - 1];
-  date = ctime(entry["time"]);
+  date = format_est_date(entry["time"]);
 
   write("Title: " + entry["title"] + "\n");
-  write("Name: " + entry["name"] + "\n");
-  write("User: " + entry["user"] + "\n");
+  write("By: " + entry["name"] + "\n");
   write("Date: " + date + "\n\n");
   write(entry["body"]);
 
@@ -144,7 +147,7 @@ int do_write(string str) {
   write("Enter your message.\n");
   write("End with ** on a new line.\n");
 
-  input_to("receive_line", 0, this_player());
+  input_to("receive_line", 0, this_player(), input_prompt);
 
   return 1;
 }
@@ -173,9 +176,33 @@ void receive_line(string line, object writer) {
   data["lines"] = lines;
   pending_writes[writer] = data;
 
-  input_to("receive_line", 0, writer);
+  input_to("receive_line", 0, writer, input_prompt);
 
   return;
+}
+
+string format_est_date(int timestamp) {
+  int adjusted;
+  int *parts;
+  string *days;
+  string *months;
+  string result;
+
+  adjusted = timestamp - (5 * 60 * 60);
+  parts = gmtime(adjusted);
+  days = ({ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" });
+  months = ({ "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" });
+  result = sprintf("%s %s %02d %02d:%02d:%02d %04d EST",
+                   days[parts[6]],
+                   months[parts[4]],
+                   parts[3],
+                   parts[2],
+                   parts[1],
+                   parts[0],
+                   parts[5]);
+
+  return result;
 }
 
 void finalize_message(object writer, mapping data) {
