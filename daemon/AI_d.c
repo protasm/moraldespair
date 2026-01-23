@@ -180,13 +180,17 @@ private void tcp_open_cb(int *reply, int id) {
 private void tcp_read_cb(mixed msg, int id) {
   mapping req;
   string chunk;
+  int status;
 
   req = requests[id];
   if (!req)
     return;
 
-  if (stringp(msg)) {
-    chunk = msg;
+  if (stringp(msg) || bytesp(msg)) {
+    if (bytesp(msg))
+      chunk = to_text(msg, "utf-8");
+    else
+      chunk = msg;
 
     req["buffer"] += chunk;
     req["updated_at"] = time();
@@ -197,6 +201,39 @@ private void tcp_read_cb(mixed msg, int id) {
 
   if (intp(msg)) {
     deliver(req);
+    cleanup(id);
+    return;
+  }
+
+  if (pointerp(msg)) {
+    if (!sizeof(msg)) {
+      fail(req, "empty ERQ message");
+      cleanup(id);
+      return;
+    }
+
+    status = msg[0];
+    if (status == ERQ_STDOUT) {
+      if (sizeof(msg) > 1)
+        chunk = to_text(msg[1..], "utf-8");
+      else
+        chunk = "";
+
+      req["buffer"] += chunk;
+      req["updated_at"] = time();
+
+      if (chunk != "")
+        notify(req, "stream", chunk);
+      return;
+    }
+
+    if (status == ERQ_EXITED) {
+      deliver(req);
+      cleanup(id);
+      return;
+    }
+
+    fail(req, sprintf("unexpected ERQ status: %d", status));
     cleanup(id);
     return;
   }
