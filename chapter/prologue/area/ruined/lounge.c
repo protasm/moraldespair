@@ -12,7 +12,7 @@ void create() {
   ]);
 
   if (!present("board")) {
-    board = clone_object("chapter/prologue/item/bull_board");
+    board = clone_object("chapter/prologue/area/ruined/item/lounge_board");
 
     move_object(board, this_object());
   }

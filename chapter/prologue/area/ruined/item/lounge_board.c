@@ -7,7 +7,7 @@ mapping pending_writes;
 void create() {
   board_short = "a bulletin board";
   board_long = "A battered board of dark wood hangs against the wall.\n";
-  save_file = "/chapter/prologue/item/bulletin_board_save";
+  save_file = "/chapter/prologue/area/ruined/item/lounge_board_save";
   messages = ({});
   pending_writes = ([]);
 
