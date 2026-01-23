@@ -42,7 +42,7 @@ string read_wilderness_file(string file) {
 void create() {
   string map_json;
 
-  map_json = "/domain/original/wilderness.json";
+  map_json = "/chapter/prologue/wilderness.json";
 
   /* Preloaded at startup so player movement never parses JSON. */
   reload_wilderness(map_json);
