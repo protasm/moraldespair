@@ -1,0 +1,16 @@
+inherit "room/room";
+
+void create() {
+  ::create();
+
+
+  short_desc = "Highland Avenue";
+  long_desc = "Highland Avenue.\n";
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/island/room657",
+    "east" : "/chapter/prologue/area/island/room639",
+    "north" : "/chapter/prologue/area/island/room641",
+  ]);
+
+  set_light(1);
+}
