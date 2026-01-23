@@ -8,11 +8,11 @@ void create() {
     "The vaulting of the gatehouse is blackened with soot and age, and the\n"
     "portcullis is long gone. Light spills through gaps above where beams have\n"
     "fallen.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1143", "west",
-    "chapter/prologue/area/anshelm/room235", "south",
-    "chapter/prologue/area/anshelm/room237", "north",
-  });
+  dest_dir = ([
+    "west" : "/chapter/prologue/area/anshelm/room1143",
+    "south" : "/chapter/prologue/area/anshelm/room235",
+    "north" : "/chapter/prologue/area/anshelm/room237",
+  ]);
 
   set_light(1);
 }

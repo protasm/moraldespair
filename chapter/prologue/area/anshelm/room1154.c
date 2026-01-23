@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "A guard niche watches the road through a broken arrow slit. The ledge is slick\n"
     "with damp and moss.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room237", "northwest",
-    "chapter/prologue/area/anshelm/room1155", "east",
-  });
+  dest_dir = ([
+    "northwest" : "/chapter/prologue/area/anshelm/room237",
+    "east" : "/chapter/prologue/area/anshelm/room1155",
+  ]);
 
   set_light(1);
 }

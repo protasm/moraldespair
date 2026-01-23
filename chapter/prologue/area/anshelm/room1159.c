@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "This cramped room has a narrow slit for light and a floor of cracked stone.\n"
     "Water stains run down the corners.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1158", "down",
-    "chapter/prologue/area/anshelm/room1160", "west",
-  });
+  dest_dir = ([
+    "down" : "/chapter/prologue/area/anshelm/room1158",
+    "west" : "/chapter/prologue/area/anshelm/room1160",
+  ]);
 
   set_light(1);
 }

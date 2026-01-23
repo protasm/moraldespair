@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "A once-grand hall stands here, its pillars chipped and dim. Faded motifs curl\n"
     "along the walls like ghosts of paint.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room283", "south",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/anshelm/room283",
+  ]);
 
   set_light(1);
 }

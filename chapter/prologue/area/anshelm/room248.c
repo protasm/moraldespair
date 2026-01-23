@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "Unfinished walls stand in a rough square, their mortar crumbled into dust.\n"
     "Timber scaffolds lie splintered across the ground.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room247", "north",
-  });
+  dest_dir = ([
+    "north" : "/chapter/prologue/area/anshelm/room247",
+  ]);
 
   set_light(1);
 }

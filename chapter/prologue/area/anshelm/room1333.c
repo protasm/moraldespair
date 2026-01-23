@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "The remains of carved figures crowd the north wall in silent rows. Lichen\n"
     "spreads across their fractured bases.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1330", "south",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/anshelm/room1330",
+  ]);
 
   set_light(1);
 }

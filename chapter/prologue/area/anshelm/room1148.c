@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "Stone steps climb within the eastern tower, their edges worn thin. A trickle\n"
     "of water runs down one wall.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1149", "down",
-  });
+  dest_dir = ([
+    "down" : "/chapter/prologue/area/anshelm/room1149",
+  ]);
 
   set_light(1);
 }

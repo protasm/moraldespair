@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "Low stalls line the walls, their timber slats collapsed and gray. A trough\n"
     "sits dry beneath a broken window.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room284", "south",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/anshelm/room284",
+  ]);
 
   set_light(1);
 }

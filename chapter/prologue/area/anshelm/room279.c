@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "The stone is cracked and uneven, with weeds in the seams. A line of iron pegs\n"
     "runs along one wall.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room280", "east",
-    "chapter/prologue/area/anshelm/room278", "west",
-  });
+  dest_dir = ([
+    "east" : "/chapter/prologue/area/anshelm/room280",
+    "west" : "/chapter/prologue/area/anshelm/room278",
+  ]);
 
   set_light(1);
 }

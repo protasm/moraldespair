@@ -7,11 +7,11 @@ void create() {
   long_desc =
     "The landing opens onto two dark passages with flaked plaster. A fallen torch\n"
     "bracket lies on the floor.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1136", "down",
-    "chapter/prologue/area/anshelm/room1142", "east",
-    "chapter/prologue/area/anshelm/room1138", "up",
-  });
+  dest_dir = ([
+    "down" : "/chapter/prologue/area/anshelm/room1136",
+    "east" : "/chapter/prologue/area/anshelm/room1142",
+    "up" : "/chapter/prologue/area/anshelm/room1138",
+  ]);
 
   set_light(1);
 }

@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "A pit of rubble and half-set stone marks an abandoned build. Weeds knot around\n"
     "a snapped beam.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room271", "south",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/anshelm/room271",
+  ]);
 
   set_light(1);
 }
