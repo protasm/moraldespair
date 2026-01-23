@@ -1,28 +1,25 @@
 inherit "room/room";
 
-#include <erq.h>
+#include <sys/erq.h>
 
 /* -------------------------
  * Forward declarations
  * ------------------------- */
 int erqtest();
-int tcptest();
 int aitest(string str);
-
-void tcp_cb(int *data, int len);
-void send_http();
+void ai_cb(string status, mixed payload, int request_id);
 
 /* -------------------------
  * State
  * ------------------------- */
-static int *tcp_ticket;
-static object tcptest_who;
+private mapping ai_requests;
 
 /* -------------------------
  * Room setup
  * ------------------------- */
 void create() {
   ::create();
+  ai_requests = ([]);
 
   short_desc = "Players' Lounge";
   long_desc =
@@ -33,7 +30,6 @@ void create() {
     "center, its light pulsing like a dying heart as it leads upward.\n\n"
     "You may test the whispering machinery with:\n"
     "  erqtest\n"
-    "  tcptest\n"
     "  aitest <prompt>\n";
 
   dest_dir = ([
@@ -46,7 +42,6 @@ void create() {
 void init() {
   ::init();
   add_action("erqtest", "erqtest");
-  add_action("tcptest", "tcptest");
   add_action("aitest", "aitest");
 }
 
@@ -82,87 +77,11 @@ int erqtest() {
 }
 
 /* -------------------------
- * TCP + HTTP test
- * ------------------------- */
-int tcptest() {
-  int *addr;
-
-  tcptest_who = this_player();
-  if (!tcptest_who) return 0;
-
-  tell_object(tcptest_who,
-    "Opening TCP to 127.0.0.1:8000...\n");
-
-  addr = ({ 127,0,0,1, 8000>>8, 8000&255 });
-
-  tcp_ticket = 0;
-
-  send_erq(
-    ERQ_OPEN_TCP,
-    addr,
-    #'tcp_cb
-  );
-
-  return 1;
-}
-
-void send_http() {
-  int *req;
-  object who;
-
-  who = tcptest_who;
-  if (who)
-    tell_object(who, "Sending HTTP GET...\n");
-
-  req = to_array(to_bytes(
-    "GET / HTTP/1.0\r\n"
-    "Host: localhost\r\n"
-    "\r\n",
-    "ascii"
-  ));
-
-  send_erq(ERQ_SEND, tcp_ticket + req, 0);
-}
-
-void tcp_cb(int *data, int len) {
-  object who;
-
-  who = tcptest_who;
-  if (!who || !pointerp(data) || !sizeof(data))
-    return;
-
-  switch (data[0]) {
-
-    case ERQ_OK:
-      if (!tcp_ticket) {
-        tcp_ticket = data[1..];
-        tell_object(who,
-          "TCP connected, ticket stored.\n");
-        send_http();
-      }
-      return;
-
-    case ERQ_STDOUT:
-      tell_object(who, to_string(data[1..]) + "\n");
-      return;
-
-    case ERQ_EXITED:
-      tell_object(who,
-        "Connection closed.\n");
-      return;
-
-    default:
-      tell_object(who,
-        sprintf("ERQ event: %O\n", data));
-      return;
-  }
-}
-
-/* -------------------------
  * AI test placeholder
  * ------------------------- */
 int aitest(string str) {
   object who;
+  int request_id;
 
   who = this_player();
   if (!who) return 0;
@@ -176,6 +95,34 @@ int aitest(string str) {
   tell_object(who,
     "You whisper into the unseen machinery...\n");
 
-  /* Hook point for daemon/AI_d */
+  request_id = "/daemon/AI_d"->query(str, this_object(), "ai_cb");
+  ai_requests[request_id] = who;
+
   return 1;
+}
+
+void ai_cb(string status, mixed payload, int request_id) {
+  object who;
+  string output;
+
+  who = ai_requests[request_id];
+  if (!who) {
+    m_delete(ai_requests, request_id);
+    return;
+  }
+
+  if (status == "stream") {
+    tell_object(who, payload);
+    return;
+  }
+
+  if (status == "ok") {
+    output = sprintf("%O\n", payload);
+    tell_object(who, output);
+    m_delete(ai_requests, request_id);
+    return;
+  }
+
+  tell_object(who, "AI error: " + payload + "\n");
+  m_delete(ai_requests, request_id);
 }
