@@ -119,9 +119,12 @@ static void _move_hook_fun (object item, object dest) {
     name = object_info(item, OI_ONCE_INTERACTIVE)
       ? item->query_real_name()
       : object_name(item);
+
     /* PLAIN: exit() must be invoked explicitly in compat mode. */
     efun::set_this_player(item);
+
     env = environment(item);
+
     env->exit(item);
 
     if (!item)
@@ -131,12 +134,12 @@ static void _move_hook_fun (object item, object dest) {
     name = object_name(item);
 
   /* Perform the actual move. */
-
   efun::set_environment(item, dest);
 
   /* Moving a living object triggers init() in the new environment. */
   if (living(item)) {
     efun::set_this_player(item);
+
     dest->init();
     
     if (!item)
@@ -148,9 +151,11 @@ static void _move_hook_fun (object item, object dest) {
 
   /* Call item->init() once per living in the destination, if still present. */
   others = all_inventory(dest) - ({ item });
+
   foreach (object obj : others) {
     if (living(obj) && environment(obj) == environment(item)) {
       efun::set_this_player(obj);
+
       item->init();
     }
 
@@ -163,6 +168,7 @@ static void _move_hook_fun (object item, object dest) {
   if (living(item)) {
     foreach (object obj : others) {
       efun::set_this_player(item); // Ensure the mover is current.
+
       if (environment(obj) == environment(item))
         obj->init();
     }
@@ -172,6 +178,7 @@ static void _move_hook_fun (object item, object dest) {
   /* If the destination is living, call item->init() for it too. */
   if (living(dest) && item && environment(item) == dest) {
     efun::set_this_player(dest);
+
     item->init();
   }
 
@@ -200,7 +207,6 @@ static string _auto_include_hook (string base_file, string current_file, int sys
   if (member((["/obj/light.c", "/secure/simul_efun.c",
     "/secure/master.c"]), base_file))
     return 0;
-
 
   return "virtual inherit \"/obj/light\";\n";
 }
@@ -306,12 +312,15 @@ static void _create_fun (object ob, object creator) {
   //
 
   closure fun;
+
   // Create a non-alien create() closure if it exists.
   set_this_object(ob);
+
   fun = symbol_function("create", ob);
 
   // Invoke create() with the creator as the previous object.
   set_this_object(creator);
+
   if (fun)
     funcall(fun);
 }
@@ -387,6 +396,7 @@ void inaugurate_master (int arg) {
   if (!arg) {
     if (previous_object() && previous_object() != this_object())
       return;
+
     set_extra_wizinfo(0, allocate(BACKBONE_WIZINFO_SIZE));
   }
 
@@ -401,6 +411,7 @@ void inaugurate_master (int arg) {
       ({#'_move_hook_fun, 'item, 'dest})
     )
   );
+
   set_driver_hook(
     H_LOAD_UIDS,
     unbound_lambda(
@@ -408,6 +419,7 @@ void inaugurate_master (int arg) {
       ({#'_load_uids_fun, 'object_name, ({#'previous_object})})
     )
   );
+
   set_driver_hook(
     H_CLONE_UIDS,
     unbound_lambda(
@@ -415,6 +427,7 @@ void inaugurate_master (int arg) {
       ({#'_clone_uids_fun, 'blueprint, 'new_name, ({#'previous_object})})
     )
   );
+
   /* Simulate compat-mode behavior by calling reset() with an argument:
   * 0 when creating, 1 when resetting.
   *
@@ -428,6 +441,7 @@ void inaugurate_master (int arg) {
       ({#'_create_fun, 'ob, ({#'this_object})})
     )
   );
+
   set_driver_hook(
     H_CREATE_OB,
     unbound_lambda(
@@ -435,6 +449,7 @@ void inaugurate_master (int arg) {
       ({#'_create_fun, 'ob, ({#'this_object})})
     )
   );
+
   set_driver_hook(
     H_CREATE_CLONE,
     unbound_lambda(
@@ -442,6 +457,7 @@ void inaugurate_master (int arg) {
       ({#'_create_fun, 'ob, ({#'this_object})})
     )
   );
+
   set_driver_hook(
     H_RESET,
     unbound_lambda(
@@ -449,13 +465,16 @@ void inaugurate_master (int arg) {
       ({#'funcall, ({#'symbol_function, "reset", ({#'this_object})}), 1})
     )
   );
+
   set_driver_hook(H_CLEAN_UP, "clean_up");
+
   set_driver_hook(
     H_MODIFY_COMMAND,
     ([ "e":"east", "w":"west", "s":"south", "n":"north",
       "d":"down", "u":"up", "nw":"northwest", "ne":"northeast",
       "sw":"southwest", "se":"southeast" ])
   );
+
   set_driver_hook(H_MODIFY_COMMAND_FNAME, "modify_command");
   set_driver_hook(H_NOTIFY_FAIL, "What?\n");
   set_driver_hook(H_INCLUDE_DIRS, #'_include_dirs_hook);
@@ -477,7 +496,6 @@ mixed get_master_uid () {
   //
   // If your uids are filename-based, return a value that cannot appear in
   // a legal filename. OSB uses "ze/us" for this purpose.
-
 
   return 1;
 }
@@ -501,6 +519,7 @@ void flag (string arg) {
 
   if (arg == "shutdown") {
     shutdown();
+
     return;
   }
 
@@ -508,6 +527,7 @@ void flag (string arg) {
     write(obj+"->"+fun+"(\""+rest+"\") = ");
     write(call_other(obj, fun, rest));
     write("\n");
+
     return;
   }
 
@@ -530,11 +550,11 @@ string *epilog (int eflag) {
   //
   //   Each entry is passed to preload() in order.
 
-
   if (eflag)
     return ({});
 
   debug_message(sprintf("Loading init file %s\n", INIT_FILE));
+
   current_time = rusage();
   current_time = current_time[0] + current_time[1];
 
@@ -558,10 +578,14 @@ void preload (string file) {
 
   if (sizeof(file) && file[0] != '#') {
     last_time = current_time;
+
     debug_message(sprintf("Preloading file: %s", file));
+
     load_object(file);
+
     current_time = rusage();
     current_time = current_time[0] + current_time[1];
+
     debug_message(sprintf(" %.2f\n", (current_time - last_time) / 1000.0));
   }
 
@@ -628,6 +652,7 @@ mixed get_simul_efun () {
   //}
 
   //efun::write("Failed to load " + SPARE_SIMUL_EFUN_FILE + ": "+error);
+
   efun::shutdown();
 
   return 0;
@@ -663,11 +688,13 @@ object connect () {
 #if defined(__TLS__) && defined(TLS_PORT)
   // Determine which port the interactive connected to.
   mud_port = efun::interactive_info(this_interactive(), II_MUD_PORT);
+
   // If it is TLS_PORT, attempt to initialize TLS.
   if (mud_port == TLS_PORT) {
     // Reject the connection if TLS is unavailable.
     if (!tls_available())
       return 0;
+
     tls_init_connection(this_object(), "tls_logon", ob);
   }
 
@@ -686,7 +713,6 @@ void disconnect (object obj) {
   // This is called by the gamedriver when the IP connection is removed,
   // either due to netdeath or because of exec() or remove_interactive().
   // The connection will be unbound upon return from this call.
-
 }
 
 //---------------------------------------------------------------------------
@@ -703,6 +729,7 @@ void remove_player (object player) {
   // Note: This function must not cause runtime errors.
 
   catch(player->quit());
+
   if (player)
     destruct(player);
 }
@@ -722,7 +749,6 @@ void stale_erq (closure callback) {
 
   attach_erq_demon("", 0);
 }
-
 
 //===========================================================================
 //  Runtime Support
