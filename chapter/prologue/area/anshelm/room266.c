@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "The road climbs slightly, flanked by taller facades. Broken balcony ironwork\n"
     "hangs over the street.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room265", "south",
-    "chapter/prologue/area/anshelm/room267", "north",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/anshelm/room265",
+    "north" : "/chapter/prologue/area/anshelm/room267",
+  ]);
 
   set_light(1);
 }

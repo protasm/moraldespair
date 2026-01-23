@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "The lane opens toward the outer wall, its paving split and worn. A heap of\n"
     "fallen bricks blocks one old doorway.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1329", "east",
-    "chapter/prologue/area/anshelm/room281", "west",
-  });
+  dest_dir = ([
+    "east" : "/chapter/prologue/area/anshelm/room1329",
+    "west" : "/chapter/prologue/area/anshelm/room281",
+  ]);
 
   set_light(1);
 }

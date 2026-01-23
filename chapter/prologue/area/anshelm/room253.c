@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "Dust lies thick in the seams between stones. A sagging awning frame still\n"
     "clings to a wall.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room252", "south",
-    "chapter/prologue/area/anshelm/room254", "north",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/anshelm/room252",
+    "north" : "/chapter/prologue/area/anshelm/room254",
+  ]);
 
   set_light(1);
 }

@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "The avenue is paved in broad stones worn smooth by time. A row of bent iron\n"
     "lamps leans over the gutter.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1189", "east",
-    "chapter/prologue/area/anshelm/room1187", "west",
-  });
+  dest_dir = ([
+    "east" : "/chapter/prologue/area/anshelm/room1189",
+    "west" : "/chapter/prologue/area/anshelm/room1187",
+  ]);
 
   set_light(1);
 }

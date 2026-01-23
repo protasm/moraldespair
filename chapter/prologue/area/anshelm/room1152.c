@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "The roof of the eastern spire is open to the weather, its parapet broken. A\n"
     "lone flagpole lies across the stones.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1151", "down",
-  });
+  dest_dir = ([
+    "down" : "/chapter/prologue/area/anshelm/room1151",
+  ]);
 
   set_light(1);
 }

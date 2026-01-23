@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "The street widens near a cluster of fallen columns and brick. Dried vines lace\n"
     "across the cracked masonry.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1188", "west",
-  });
+  dest_dir = ([
+    "west" : "/chapter/prologue/area/anshelm/room1188",
+  ]);
 
   set_light(1);
 }

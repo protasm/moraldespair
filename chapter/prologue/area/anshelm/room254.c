@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "Old iron rails bracket the street, many bent or missing. The roadway is\n"
     "scarred by shallow ruts.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room253", "south",
-    "chapter/prologue/area/anshelm/room255", "north",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/anshelm/room253",
+    "north" : "/chapter/prologue/area/anshelm/room255",
+  ]);
 
   set_light(1);
 }

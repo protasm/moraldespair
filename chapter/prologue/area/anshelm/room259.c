@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "The street tightens, squeezed by leaning masonry. Loose slate tiles litter the\n"
     "edges of the road.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room258", "east",
-    "chapter/prologue/area/anshelm/room260", "west",
-  });
+  dest_dir = ([
+    "east" : "/chapter/prologue/area/anshelm/room258",
+    "west" : "/chapter/prologue/area/anshelm/room260",
+  ]);
 
   set_light(1);
 }

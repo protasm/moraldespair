@@ -7,11 +7,11 @@ void create() {
   long_desc =
     "The road narrows as the surrounding walls thin. A fragment of mosaic tile\n"
     "glints among the dust.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room267", "south",
-    "chapter/prologue/area/anshelm/room1202", "northwest",
-    "chapter/prologue/area/anshelm/room274", "north",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/anshelm/room267",
+    "northwest" : "/chapter/prologue/area/anshelm/room1202",
+    "north" : "/chapter/prologue/area/anshelm/room274",
+  ]);
 
   set_light(1);
 }

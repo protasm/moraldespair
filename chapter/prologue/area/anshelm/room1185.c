@@ -7,11 +7,11 @@ void create() {
   long_desc =
     "A wide street runs beneath faded facades with ornate iron balconies. Many of\n"
     "the balconies have collapsed, leaving jagged anchors.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room239", "west",
-    "chapter/prologue/area/anshelm/room1186", "east",
-    "chapter/prologue/area/anshelm/room1191", "north",
-  });
+  dest_dir = ([
+    "west" : "/chapter/prologue/area/anshelm/room239",
+    "east" : "/chapter/prologue/area/anshelm/room1186",
+    "north" : "/chapter/prologue/area/anshelm/room1191",
+  ]);
 
   set_light(1);
 }

@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "The buildings here are little more than low walls. Grass grows thick where\n"
     "floors once lay.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room278", "east",
-    "chapter/prologue/area/anshelm/room276", "west",
-  });
+  dest_dir = ([
+    "east" : "/chapter/prologue/area/anshelm/room278",
+    "west" : "/chapter/prologue/area/anshelm/room276",
+  ]);
 
   set_light(1);
 }

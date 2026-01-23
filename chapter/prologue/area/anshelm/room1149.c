@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "The base of the eastern stairwell is ringed with fallen tiles. The doorway to\n"
     "the yard stands doorless and warped.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1148", "up",
-  });
+  dest_dir = ([
+    "up" : "/chapter/prologue/area/anshelm/room1148",
+  ]);
 
   set_light(1);
 }

@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "The roof is bare to the sky, ringed by a broken parapet. Pooled rainwater\n"
     "glints in shallow basins.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1139", "down",
-  });
+  dest_dir = ([
+    "down" : "/chapter/prologue/area/anshelm/room1139",
+  ]);
 
   set_light(1);
 }

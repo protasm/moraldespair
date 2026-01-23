@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "A low shack of stone holds a cold forge and a broken anvil. Rust flakes\n"
     "glitter across the hearth.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room270", "north",
-  });
+  dest_dir = ([
+    "north" : "/chapter/prologue/area/anshelm/room270",
+  ]);
 
   set_light(1);
 }

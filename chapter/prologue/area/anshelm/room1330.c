@@ -7,12 +7,12 @@ void create() {
   long_desc =
     "A quiet room holds a few toppled chairs and a cracked mosaic floor. The walls\n"
     "are stained with old smoke and damp.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1332", "south",
-    "chapter/prologue/area/anshelm/room1329", "west",
-    "chapter/prologue/area/anshelm/room1331", "east",
-    "chapter/prologue/area/anshelm/room1333", "north",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/anshelm/room1332",
+    "west" : "/chapter/prologue/area/anshelm/room1329",
+    "east" : "/chapter/prologue/area/anshelm/room1331",
+    "north" : "/chapter/prologue/area/anshelm/room1333",
+  ]);
 
   set_light(1);
 }

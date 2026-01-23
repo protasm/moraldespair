@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "A wide track of stone holds pooled rainwater. A shattered doorway arches into\n"
     "darkness.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room279", "east",
-    "chapter/prologue/area/anshelm/room277", "west",
-  });
+  dest_dir = ([
+    "east" : "/chapter/prologue/area/anshelm/room279",
+    "west" : "/chapter/prologue/area/anshelm/room277",
+  ]);
 
   set_light(1);
 }

@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "Shuttered storefronts line the way, their thresholds choked with weeds. The\n"
     "stone is slick where rainwater pools.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room255", "south",
-    "chapter/prologue/area/anshelm/room257", "north",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/anshelm/room255",
+    "north" : "/chapter/prologue/area/anshelm/room257",
+  ]);
 
   set_light(1);
 }
