@@ -36,6 +36,16 @@
 private mapping requests;
 private int next_id;
 
+private int start_request(mapping payload, object cb_obj, string cb_func);
+private void tcp_open_cb(int *reply, int id);
+private void tcp_read_cb(mixed msg, int id);
+private void deliver(mapping req);
+private void fail(mapping req, string msg);
+private void notify(mapping req, string status, mixed payload);
+private void cleanup(int id);
+private void check_timeouts();
+private void kill_request(mapping req);
+
 void create() {
   requests = ([]);
   next_id = 1;
