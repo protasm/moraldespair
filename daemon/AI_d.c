@@ -149,8 +149,8 @@ private void tcp_open_cb(int *reply, int id) {
     return;
 
   if (reply[0] != ERQ_OK) {
-    fail(req, "connection failed");
-    cleanup(id);
+    //fail(req, "connection failed");
+    //cleanup(id);
     return;
   }
 
