@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "Broken paving leads up to the archway, scattered with fallen masonry. The\n"
     "flanking towers stand cracked and hollow.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room274", "south",
-  });
+  dest_dir = ([
+    "south" : "/chapter/prologue/area/anshelm/room274",
+  ]);
 
   set_light(1);
 }

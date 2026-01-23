@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "A steep stair climbs the western spire, the inner wall scarred by old tool\n"
     "marks. Loose rubble gathers in the corners.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1138", "down",
-    "chapter/prologue/area/anshelm/room1140", "up",
-  });
+  dest_dir = ([
+    "down" : "/chapter/prologue/area/anshelm/room1138",
+    "up" : "/chapter/prologue/area/anshelm/room1140",
+  ]);
 
   set_light(1);
 }

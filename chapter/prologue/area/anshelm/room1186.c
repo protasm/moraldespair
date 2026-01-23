@@ -7,11 +7,11 @@ void create() {
   long_desc =
     "Shallow arcades line the street, their arches chipped and stained. Bits of\n"
     "colored tile still cling to the lower walls.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1185", "west",
-    "chapter/prologue/area/anshelm/room1187", "east",
-    "chapter/prologue/area/anshelm/room1190", "north",
-  });
+  dest_dir = ([
+    "west" : "/chapter/prologue/area/anshelm/room1185",
+    "east" : "/chapter/prologue/area/anshelm/room1187",
+    "north" : "/chapter/prologue/area/anshelm/room1190",
+  ]);
 
   set_light(1);
 }

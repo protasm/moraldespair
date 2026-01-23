@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "A stone stair rises along a battered wall, its steps chipped and damp. A\n"
     "broken lantern hook hangs above the landing.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1155", "down",
-    "chapter/prologue/area/anshelm/room1159", "up",
-  });
+  dest_dir = ([
+    "down" : "/chapter/prologue/area/anshelm/room1155",
+    "up" : "/chapter/prologue/area/anshelm/room1159",
+  ]);
 
   set_light(1);
 }

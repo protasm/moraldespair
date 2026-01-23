@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "Loose courses of stone mark the outline of a forgotten build. Wind has piled\n"
     "grit against a fallen beam.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room273", "southeast",
-  });
+  dest_dir = ([
+    "southeast" : "/chapter/prologue/area/anshelm/room273",
+  ]);
 
   set_light(1);
 }

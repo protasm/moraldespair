@@ -7,11 +7,11 @@ void create() {
   long_desc =
     "The street is lined with long foundations and collapsed roofs. Rusted iron\n"
     "hoops lie in the dirt.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room267", "west",
-    "chapter/prologue/area/anshelm/room277", "east",
-    "chapter/prologue/area/anshelm/room1200", "north",
-  });
+  dest_dir = ([
+    "west" : "/chapter/prologue/area/anshelm/room267",
+    "east" : "/chapter/prologue/area/anshelm/room277",
+    "north" : "/chapter/prologue/area/anshelm/room1200",
+  ]);
 
   set_light(1);
 }

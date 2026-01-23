@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "The landing connects two stairwells, its stone worn smooth. A length of\n"
     "collapsed railing rests against the wall.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1161", "east",
-    "chapter/prologue/area/anshelm/room1163", "down",
-  });
+  dest_dir = ([
+    "east" : "/chapter/prologue/area/anshelm/room1161",
+    "down" : "/chapter/prologue/area/anshelm/room1163",
+  ]);
 
   set_light(1);
 }

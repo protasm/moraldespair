@@ -7,9 +7,9 @@ void create() {
   long_desc =
     "Half-raised walls stand in a rectangle, their courses uneven and cracked. Old\n"
     "scaffolding poles lie snapped across the ground.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1195", "east",
-  });
+  dest_dir = ([
+    "east" : "/chapter/prologue/area/anshelm/room1195",
+  ]);
 
   set_light(1);
 }

@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "A long chamber lies open and empty, its ceiling partially collapsed. Soot\n"
     "stains the stone where braziers once burned.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1153", "east",
-    "chapter/prologue/area/anshelm/room1137", "west",
-  });
+  dest_dir = ([
+    "east" : "/chapter/prologue/area/anshelm/room1153",
+    "west" : "/chapter/prologue/area/anshelm/room1137",
+  ]);
 
   set_light(1);
 }

@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "Long tables are gone, but their scars remain in the floor. A hearth stands\n"
     "cold beneath a chipped mantle.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room1145", "east",
-    "chapter/prologue/area/anshelm/room1138", "west",
-  });
+  dest_dir = ([
+    "east" : "/chapter/prologue/area/anshelm/room1145",
+    "west" : "/chapter/prologue/area/anshelm/room1138",
+  ]);
 
   set_light(1);
 }

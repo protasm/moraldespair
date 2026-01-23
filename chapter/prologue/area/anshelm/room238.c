@@ -7,11 +7,11 @@ void create() {
   long_desc =
     "A narrow street of pale stone stretches between blank walls. Rusted iron\n"
     "brackets jut where balconies once hung.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room413", "west",
-    "chapter/prologue/area/anshelm/room237", "south",
-    "chapter/prologue/area/anshelm/room239", "north",
-  });
+  dest_dir = ([
+    "west" : "/chapter/prologue/area/anshelm/room413",
+    "south" : "/chapter/prologue/area/anshelm/room237",
+    "north" : "/chapter/prologue/area/anshelm/room239",
+  ]);
 
   set_light(1);
 }

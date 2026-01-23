@@ -7,10 +7,10 @@ void create() {
   long_desc =
     "The road ends near a heap of collapsed roof tiles. A rusted bell frame tilts\n"
     "in the rubble.\n";
-  dest_dir = ({
-    "chapter/prologue/area/anshelm/room279", "west",
-    "chapter/prologue/area/anshelm/room1201", "south",
-  });
+  dest_dir = ([
+    "west" : "/chapter/prologue/area/anshelm/room279",
+    "south" : "/chapter/prologue/area/anshelm/room1201",
+  ]);
 
   set_light(1);
 }
