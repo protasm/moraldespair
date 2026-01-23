@@ -7,7 +7,7 @@ inherit "room/room";
  * ------------------------- */
 int erqtest();
 int aitest(string str);
-void ai_cb(string status, mixed payload, int request_id);
+void ai_cb(string req_status, mixed payload, int request_id);
 
 /* -------------------------
  * State
@@ -101,7 +101,7 @@ int aitest(string str) {
   return 1;
 }
 
-void ai_cb(string status, mixed payload, int request_id) {
+void ai_cb(string req_status, mixed payload, int request_id) {
   object who;
   string output;
 
@@ -111,12 +111,12 @@ void ai_cb(string status, mixed payload, int request_id) {
     return;
   }
 
-  if (status == "stream") {
+  if (req_status == "stream") {
     tell_object(who, payload);
     return;
   }
 
-  if (status == "ok") {
+  if (req_status == "ok") {
     output = sprintf("%O\n", payload);
     tell_object(who, output);
     m_delete(ai_requests, request_id);
