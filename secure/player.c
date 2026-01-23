@@ -3002,6 +3002,7 @@ void add_standard_commands() {
   add_action("converse", "converse");
   add_action("toggle_brief", "brief");
   add_action("who", "who");
+  add_action("score", "score");
 #if defined(__TLS__)
   add_action("tls", "tls");
 #endif

@@ -1,4 +1,5 @@
 #include "log.h"
+#include "living/stats.c"
 
 #define KILL_NEUTRAL_ALIGNMENT 10
 #define ADJ_ALIGNMENT(al) ((-al - KILL_NEUTRAL_ALIGNMENT) / 4)
@@ -39,7 +40,6 @@ int is_npc, brief;       /* Flags. */
 int level;               /* Level of monster. */
 static int armour_class; /* What armour class of monster. */
 int hit_point;           /* Number of hit points of monster. */
-int max_hp, max_sp;
 int experience;                /* Experience points of monster. */
 string mmsgout;                /* Message when leaving magically. */
 string mmsgin;                 /* Message when arriving magically. */
@@ -71,11 +71,6 @@ string flags;     /* Bit field of flags */
  */
 int alignment;
 int gender; /* 0 means neuter ("it"), 1 male ("he"),  2 female ("she") */
-
-/*
- * Character stat variables.
- */
-int Str, Int, Con, Dex;
 
 /*
  * The following routines are defined for usage:
@@ -114,7 +109,6 @@ void stop_fight();
 void transfer_all_to(object dest);
 string short();
 string query_gender_string();
-string query_stats();
 void show_age();
 
 /*
@@ -1025,49 +1019,4 @@ int clear_flag(int n) {
 
   flags = clear_bit(flags, n);
   return 1;
-}
-
-string query_stats() {
-  return "str:\t" + Str + "\nint:\t" + Int + "\ncon:\t" + Con + "\ndex:\t" +
-       Dex + "\n";
-}
-
-int query_str() {
-  return Str;
-}
-int query_int() {
-  return Int;
-}
-int query_con() {
-  return Con;
-}
-int query_dex() {
-  return Dex;
-}
-
-/* Note that previous object is 0 if called from ourselves. */
-void set_str(int i) {
-  if (i < 1 || i > 20)
-    return;
-  Str = i;
-}
-
-void set_int(int i) {
-  if (i < 1 || i > 20)
-    return;
-  Int = i;
-  max_sp = 42 + Int * 8;
-}
-
-void set_con(int i) {
-  if (i < 1 || i > 20)
-    return;
-  Con = i;
-  max_hp = 42 + Con * 8;
-}
-
-void set_dex(int i) {
-  if (i < 1 || i > 20)
-    return;
-  Dex = i;
 }
