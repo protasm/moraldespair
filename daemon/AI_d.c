@@ -34,6 +34,7 @@ private mapping split_response(string raw);
 private int parse_content_length(string headers);
 private string dechunk(string body);
 private string normalize_chunk(mixed msg);
+private string read_chunk(mixed msg);
 private void fail(mapping req, string msg);
 private void notify(mapping req, string statuz, mixed payload);
 private void cleanup(int id);
@@ -330,7 +331,7 @@ private void tcp_read_cb(mixed msg, int id) {
 
   /* direct data chunks */
   if (stringp(msg) || bytesp(msg)) {
-    chunk = normalize_chunk(msg);
+    chunk = read_chunk(msg);
     if (!sizeof(chunk)) {
       request_read(req, id);
       return;
@@ -363,30 +364,34 @@ private void tcp_read_cb(mixed msg, int id) {
 
   /* control / ok */
   if (statuz == ERQ_OK) {
-    if (sizeof(msg) > 1) {
-      chunk = normalize_chunk(msg[1..]);
-      req["buffer"] += chunk;
-      req["got_data"] = 1;
-      req["updated_at"] = time();
-      notify(req, "stream", chunk);
-      debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_OK chunk-id=%d len=%d\n",
-        id, sizeof(chunk)));
+    chunk = read_chunk(msg);
+    if (!sizeof(chunk)) {
       request_read(req, id);
+      return;
     }
+    req["buffer"] += chunk;
+    req["got_data"] = 1;
+    req["updated_at"] = time();
+    notify(req, "stream", chunk);
+    debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_OK chunk-id=%d len=%d\n",
+      id, sizeof(chunk)));
+    request_read(req, id);
     return;
   }
 
   if (statuz == ERQ_STDOUT) {
-    if (sizeof(msg) > 1) {
-      chunk = normalize_chunk(msg[1..]);
-      req["buffer"] += chunk;
-      req["got_data"] = 1;
-      req["updated_at"] = time();
-      notify(req, "stream", chunk);
-      debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_STDOUT chunk-id=%d len=%d\n",
-        id, sizeof(chunk)));
+    chunk = read_chunk(msg);
+    if (!sizeof(chunk)) {
       request_read(req, id);
+      return;
     }
+    req["buffer"] += chunk;
+    req["got_data"] = 1;
+    req["updated_at"] = time();
+    notify(req, "stream", chunk);
+    debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_STDOUT chunk-id=%d len=%d\n",
+      id, sizeof(chunk)));
+    request_read(req, id);
     return;
   }
 
@@ -588,6 +593,23 @@ private string normalize_chunk(mixed msg) {
     raw = to_bytes(msg);
 
     return to_text(raw, "utf-8");
+  }
+
+  return "";
+}
+
+private string read_chunk(mixed msg) {
+  if (stringp(msg) || bytesp(msg))
+    return normalize_chunk(msg);
+
+  if (pointerp(msg)) {
+    if (sizeof(msg) < 2)
+      return "";
+
+    if (stringp(msg[1]) || bytesp(msg[1]))
+      return normalize_chunk(msg[1]);
+
+    return normalize_chunk(msg[1..]);
   }
 
   return "";
