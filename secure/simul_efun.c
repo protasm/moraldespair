@@ -33,16 +33,15 @@ void start_simul_efun()
 
 /* Activate the simul-efun object.
  */
-
-{
+ {
     mixed *info;
 
     if ( !(info = get_extra_wizinfo(0)) )
-	set_extra_wizinfo(0, info = allocate(BACKBONE_WIZINFO_SIZE));
+    set_extra_wizinfo(0, info = allocate(BACKBONE_WIZINFO_SIZE));
     if (!(living_name_m = info[LIVING_NAME]))
-	living_name_m = info[LIVING_NAME] = m_allocate(0, 1);
+    living_name_m = info[LIVING_NAME] = m_allocate(0, 1);
     if (!(name_living_m = info[NAME_LIVING]))
-	name_living_m = info[NAME_LIVING] = m_allocate(0, 1);
+    name_living_m = info[NAME_LIVING] = m_allocate(0, 1);
 }
 
 //---------------------------------------------------------------------------
@@ -50,15 +49,14 @@ void ls (string path)
 
 /* Print the directory listing of <path>, like the unix command.
  */
-
-{
+ {
     int max, i, len, tmp;
     status trunc_flag;
     mixed *dir;
     set_this_object(previous_object());
     dir = get_dir (path, GETDIR_NAMES|GETDIR_SIZES);
     if (path != "/")
-	path += "/";
+    path += "/";
     if (!dir) {
         write("No such directory.\n");
         return;
@@ -79,14 +77,14 @@ void ls (string path)
     if (max > 79)
         max = 79;
     for (i=0; i < sizeof(dir); i+=2) {
-	string name;
+    string name;
             name = dir[i];
-	tmp = sizeof(name);
-	if (len + tmp > 79) {
-	    len = 0;
-	    write("\n");
-	}
-	write(name);
+    tmp = sizeof(name);
+    if (len + tmp > 79) {
+        len = 0;
+        write("\n");
+    }
+    write(name);
         if (len + max > 79) {
             write("\n");
             len = 0;
@@ -100,8 +98,7 @@ void ls (string path)
 }
 
 //---------------------------------------------------------------------------
-string create_wizard(string owner, string domain)
-{
+string create_wizard(string owner, string domain) {
     mixed result;
 
     set_this_object(previous_object());
@@ -112,42 +109,34 @@ string create_wizard(string owner, string domain)
 }
 
 //---------------------------------------------------------------------------
-void log_file(string file,string str)
-{
+void log_file(string file, string str) {
     string file_name;
     int *st;
 
     file_name = "/log/" + file;
-#ifdef COMPAT_FLAG
-    if (sizeof(regexp(({file}), "/")) || file[0] == '.' || sizeof(file) > 30 )
-    {
-        write("Illegal file name to log_file("+file+")\n");
-        return;
-    }
-#endif
-    if ( sizeof(st = get_dir(file_name,2) ) && st[0] > MAX_LOG_SIZE) {
-	catch(rename(file_name, file_name + ".old")); /* No panic if failure */
-    }
+
+    if ( sizeof(st = get_dir(file_name,2) ) && st[0] > MAX_LOG_SIZE)
+      catch(rename(file_name, file_name + ".old")); /* No panic if failure */
+
     set_this_object(previous_object());
+
     write_file(file_name, str);
 }
 
 //---------------------------------------------------------------------------
-void localcmd()
-{
+void localcmd() {
     string *verbs;
     int i,j;
 
     verbs = query_actions(this_player());
     for (i=0, j = sizeof(verbs); --j >= 0; i++) {
-	write(verbs[i]+" ");
+    write(verbs[i]+" ");
     }
     write("\n");
 }
 
 //---------------------------------------------------------------------------
-mixed *unique_array(mixed *arr,string func,mixed skipnum)
-{
+mixed *unique_array(mixed *arr,string func,mixed skipnum) {
     mixed *al, last;
     mapping m;
     int i, j, k, *ordinals;
@@ -155,7 +144,7 @@ mixed *unique_array(mixed *arr,string func,mixed skipnum)
     if (sizeof(arr) < 32)
         return efun::unique_array(arr, func, skipnum);
     for (ordinals = allocate(i = sizeof(arr)); i--; )
-	    ordinals[i] = i;
+        ordinals[i] = i;
     m = mkmapping(map_objects(arr, func), ordinals, arr);
     al = m_indices(m);
     ordinals = m_values(m, 0);
@@ -175,12 +164,12 @@ mixed *unique_array(mixed *arr,string func,mixed skipnum)
             ordinals[k] = ordinals[j];
         }
     }
+
     return m_values(mkmapping(ordinals[k..], arr[k..]),0);
 }
 
 //---------------------------------------------------------------------------
-varargs mixed snoop(mixed snoopee)
-{
+varargs mixed snoop(mixed snoopee) {
     int result;
 
     if (snoopee && interactive(snoopee) && interactive_info(snoopee, II_SNOOP_NEXT)) {
@@ -190,15 +179,15 @@ varargs mixed snoop(mixed snoopee)
     result = snoopee ? efun::snoop(this_player(), snoopee)
                      : efun::snoop(this_player());
     switch (result) {
-	case -1:
-	    write("Busy.\n");
-	    break;
-	case  0:
-	    write("Failed.\n");
-	    break;
-	case  1:
-	    write("Ok.\n");
-	    break;
+    case -1:
+        write("Busy.\n");
+        break;
+    case  0:
+        write("Failed.\n");
+        break;
+    case  1:
+        write("Ok.\n");
+        break;
     }
     if (result > 0) return snoopee;
 
@@ -206,11 +195,10 @@ varargs mixed snoop(mixed snoopee)
 }
 
 //---------------------------------------------------------------------------
-void notify_fail(mixed message)
-{
+void notify_fail(mixed message) {
     if ( !(stringp(message) && strstr(message, "@@") < 0) ) {
-	efun::notify_fail(message);
-	return;
+    efun::notify_fail(message);
+    return;
     }
     efun::notify_fail(
       funcall(
@@ -236,8 +224,7 @@ nomask void set_environment() {}
 nomask void set_this_player() {}
 
 //---------------------------------------------------------------------------
-varargs void add_worth(int value, object ob)
-{
+varargs void add_worth(int value, object ob) {
     mixed old;
 #ifdef __COMPAT_MODE__
     switch (explode(object_name(previous_object()), "/")[0]) {
@@ -245,22 +232,21 @@ varargs void add_worth(int value, object ob)
     switch (explode(object_name(previous_object()), "/")[1]) {
 #endif
       default:
-	raise_error("Illegal call of add_worth.\n");
+    raise_error("Illegal call of add_worth.\n");
       case "obj":
       case "std":
       case "room":
     }
     if (!ob) {
-	if ( !(ob = previous_object(1)) )
-	    return;
+    if ( !(ob = previous_object(1)) )
+        return;
     }
     if (intp(old = get_extra_wizinfo(ob)))
         set_extra_wizinfo(ob, old + value);
 }
 
 //---------------------------------------------------------------------------
-varargs void wizlist(string name)
-{
+varargs void wizlist(string name) {
     int i, pos, total_cmd;
     int *cmds;
     mixed *a;
@@ -329,8 +315,7 @@ varargs void wizlist(string name)
 }
 
 //---------------------------------------------------------------------------
-void shout(string s)
-{
+void shout(string s) {
     filter(users(), lambda(({'u}),({#'&&,
       ({#'environment, 'u}),
       ({#'!=, 'u, ({#'this_player})}),
@@ -339,76 +324,78 @@ void shout(string s)
 }
 
 //---------------------------------------------------------------------------
-void set_living_name(string name)
-{
+void set_living_name(string name) {
     string old;
     mixed a;
     int i;
 
     if (old = living_name_m[previous_object()]) {
-	if (pointerp(a = name_living_m[old])) {
-	    a[member(a, previous_object())] = 0;
-	} else {
-	    efun::m_delete(name_living_m, old);
-	}
+    if (pointerp(a = name_living_m[old])) {
+        a[member(a, previous_object())] = 0;
+    } else {
+        efun::m_delete(name_living_m, old);
+    }
     }
     living_name_m[previous_object()] = name;
     if (a = name_living_m[name]) {
-	if (!pointerp(a)) {
-	    name_living_m[name] = ({a, previous_object()});
-	    return;
-	}
-	/* Try to reallocate entry from destructed object */
-	if ((i = member(a, 0)) >= 0) {
-	    a[i] = previous_object();
-	    return;
-	}
-	name_living_m[name] = a + ({previous_object()});
-	return;
+    if (!pointerp(a)) {
+        name_living_m[name] = ({a, previous_object()});
+        return;
+    }
+    /* Try to reallocate entry from destructed object */
+    if ((i = member(a, 0)) >= 0) {
+        a[i] = previous_object();
+        return;
+    }
+    name_living_m[name] = a + ({previous_object()});
+    return;
     }
     name_living_m[name] = previous_object();
 }
 
 //---------------------------------------------------------------------------
-object find_living(string name)
-{
+object find_living(string name) {
     mixed *a, r;
     int i;
 
     if (pointerp(r = name_living_m[name])) {
-	if ( !living(r = (a = r)[0])) {
-	    for (i = sizeof(a); --i;) {
-		if (living(a[<i])) {
-		    r = a[<i];
-		    a[<i] = a[0];
-		    return a[0] = r;
-		}
-	    }
-	}
-	return r;
+    if ( !living(r = (a = r)[0])) {
+        for (i = sizeof(a); --i;) {
+        if (living(a[<i])) {
+            r = a[<i];
+            a[<i] = a[0];
+            return a[0] = r;
+        }
+        }
     }
+
+    return r;
+    }
+
     return living(r) && r;
 }
 
 //---------------------------------------------------------------------------
-object find_player(string name)
-{
+object find_player(string name) {
     mixed *a, r;
     int i;
 
     if (pointerp(r = name_living_m[name])) {
-	if ( !(r = (a = r)[0]) || !efun::object_info(r, OI_ONCE_INTERACTIVE)) {
-	    for (i = sizeof(a); --i;) {
-		if (a[<i] && efun::object_info(a[<i], OI_ONCE_INTERACTIVE)) {
-		    r = a[<i];
-		    a[<i] = a[0];
-		    return a[0] = r;
-		}
-	    }
-	    return 0;
-	}
-	return r;
+    if ( !(r = (a = r)[0]) || !efun::object_info(r, OI_ONCE_INTERACTIVE)) {
+        for (i = sizeof(a); --i;) {
+        if (a[<i] && efun::object_info(a[<i], OI_ONCE_INTERACTIVE)) {
+            r = a[<i];
+            a[<i] = a[0];
+            return a[0] = r;
+        }
+        }
+
+return 0;
     }
+
+    return r;
+    }
+
     return r && efun::object_info(r, OI_ONCE_INTERACTIVE) && r;
 }
 
@@ -420,8 +407,7 @@ object find_player(string name)
 
 #ifndef __COMPAT_MODE__
 //---------------------------------------------------------------------------
-string function_exists (string str, object ob)
-{
+string function_exists (string str, object ob) {
     string rc;
 
     rc = efun::function_exists(str, ob);
@@ -429,8 +415,7 @@ string function_exists (string str, object ob)
 }
 
 //---------------------------------------------------------------------------
-string object_name(object ob)
-{
+string object_name(object ob) {
     string rc;
 
     rc = efun::object_name(ob);
@@ -438,17 +423,7 @@ string object_name(object ob)
 }
 
 //---------------------------------------------------------------------------
-//string program_name(object ob) {
-    //string rc;
-
-    //rc = efun::program_name(ob);
-
-    //return stringp(rc) ? rc[1..] : 0;
-//}
-
-//---------------------------------------------------------------------------
-string* inherit_list(object ob)
-{
+string* inherit_list(object ob) {
     string *rc;
     int i;
 
@@ -459,8 +434,7 @@ string* inherit_list(object ob)
 }
 
 //---------------------------------------------------------------------------
-string to_string(mixed arg)
-{
+string to_string(mixed arg) {
     string rc;
 
     rc = efun::to_string(arg);
@@ -468,14 +442,12 @@ string to_string(mixed arg)
 }
 
 //---------------------------------------------------------------------------
-string creator(object ob)
-{
+string creator(object ob) {
     return getuid(ob);
 }
 
 //---------------------------------------------------------------------------
-varargs void add_action(string fun, string cmd, int flag)
-{
+varargs void add_action(string fun, string cmd, int flag) {
     if (fun == "exit")
         raise_error("Illegal to define a command to the exit() function.\n");
 
@@ -485,8 +457,7 @@ varargs void add_action(string fun, string cmd, int flag)
 }
 
 //---------------------------------------------------------------------------
-object present_clone (mixed obj, object env)
-{
+object present_clone (mixed obj, object env) {
   if (stringp(obj) && '/' != obj[0])
       obj = "/"+obj;
   return efun::present_clone(obj, env);
@@ -497,8 +468,7 @@ object present_clone (mixed obj, object env)
 
 #if !__EFUN_DEFINED__(present)
 //---------------------------------------------------------------------------
-varargs object present(mixed ob, object env)
-{
+varargs object present(mixed ob, object env) {
     int specific, num, i;
     object found;
     string str;
@@ -584,8 +554,7 @@ varargs object present(mixed ob, object env)
  * 5: The destination doesn't allow insertions of objects.
  * 6: The object can't be picked up.
  */
-int transfer(object item, object dest)
-{
+int transfer(object item, object dest) {
     int weight;
     object from;
 
@@ -663,8 +632,7 @@ int transfer(object item, object dest)
 #if !__EFUN_DEFINED__(extract)
 //---------------------------------------------------------------------------
 mixed extract (mixed data, varargs mixed*from_to)
-
-{
+ {
     int from, to;
 
     if (!stringp(data) && !pointerp(data))
@@ -713,8 +681,7 @@ mixed extract (mixed data, varargs mixed*from_to)
 
 #if ! __EFUN_DEFINED__(set_heart_beat)
 //---------------------------------------------------------------------------
-int set_heart_beat(int flag)
-{
+int set_heart_beat(int flag) {
     object ob = previous_object();
     int hb = object_info(ob, OC_HEART_BEAT);
 
@@ -730,8 +697,7 @@ int set_heart_beat(int flag)
 
 #if ! __EFUN_DEFINED__(enable_commands)
 //---------------------------------------------------------------------------
-void enable_commands()
-{
+void enable_commands() {
     object ob = previous_object();
 
     configure_object(ob, OC_COMMANDS_ENABLED, 1);
@@ -742,8 +708,7 @@ void enable_commands()
 
 #if ! __EFUN_DEFINED__(query_ip_name)
 //---------------------------------------------------------------------------
-varargs string query_ip_name(object player)
-{
+varargs string query_ip_name(object player) {
     return interactive_info(player || this_player(), II_IP_NAME);
 }
 
@@ -751,8 +716,7 @@ varargs string query_ip_name(object player)
 
 #if ! __EFUN_DEFINED__(query_ip_number)
 //---------------------------------------------------------------------------
-varargs string query_ip_number(object player)
-{
+varargs string query_ip_number(object player) {
     return interactive_info(player || this_player(), II_IP_NUMBER);
 }
 
@@ -760,8 +724,7 @@ varargs string query_ip_number(object player)
 
 #if ! __EFUN_DEFINED__(query_idle)
 //---------------------------------------------------------------------------
-int query_idle(object ob)
-{
+int query_idle(object ob) {
     return interactive_info(ob, II_IDLE);
 }
 
@@ -769,8 +732,7 @@ int query_idle(object ob)
 
 #if ! __EFUN_DEFINED__(query_load_average)
 //---------------------------------------------------------------------------
-string query_load_average()
-{
+string query_load_average() {
     return sprintf("%.2f cmds/s, %.2f comp lines/s",
         driver_info(DI_LOAD_AVERAGE_COMMANDS),
         driver_info(DI_LOAD_AVERAGE_LINES));
@@ -780,8 +742,7 @@ string query_load_average()
 
 #if ! __EFUN_DEFINED__(query_snoop)
 //---------------------------------------------------------------------------
-object query_snoop(object ob)
-{
+object query_snoop(object ob) {
     if(!interactive(ob))
         return 0;
 
@@ -795,8 +756,7 @@ object query_snoop(object ob)
 #if ! __EFUN_DEFINED__(cat)
 //---------------------------------------------------------------------------
 #define CAT_MAX_LINES 50
-varargs int cat(string file, int start, int num)
-{
+varargs int cat(string file, int start, int num) {
     set_this_object(previous_object());
     int more;
 
@@ -828,8 +788,7 @@ varargs int cat(string file, int start, int num)
 #if ! __EFUN_DEFINED__(tail)
 //---------------------------------------------------------------------------
 #define TAIL_MAX_BYTES 1000
-varargs int tail(string file)
-{
+varargs int tail(string file) {
     if (extern_call())
         set_this_object(previous_object());
 
