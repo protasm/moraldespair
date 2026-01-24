@@ -3,6 +3,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 import sys
+import socket
 
 HOST = "127.0.0.1"
 PORT = 8000
@@ -53,6 +54,8 @@ class Handler(BaseHTTPRequestHandler):
 
         self.wfile.write(out)
         self.wfile.flush()
+
+        self.connection.shutdown(socket.SHUT_WR)
 
         # Explicit close (belt + suspenders)
         self.close_connection = True
