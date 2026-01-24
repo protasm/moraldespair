@@ -29,6 +29,7 @@ private void notify(mapping req, string statuz, mixed payload);
 private void cleanup(int id);
 public  void check_timeouts();
 private void kill_request(mapping req);
+private void request_read(mapping req, int id);
 
 void create() {
   requests = ([]);
@@ -83,7 +84,7 @@ private int start_request(mapping payload, object cb_obj, string cb_func) {
   send_erq(
     ERQ_OPEN_TCP,
     msg,
-    lambda(({ 'reply }), ({ #'tcp_open_cb, 'reply, id }))
+    lambda(({ 'reply, 'len }), ({ #'tcp_open_cb, 'reply, id }))
   );
 
   tell_object(this_player(), sprintf("[AI_D] request %d stored\n", id));
@@ -96,10 +97,6 @@ private int start_request(mapping payload, object cb_obj, string cb_func) {
  * ========================================================= */
 
 private void tcp_open_cb(int *reply, int id) {
-  tell_object(this_player(), "[AI_D] tcp_open_cb fired\n");
-  tell_object(find_player("solfeggio"), "[AI_D] tcp_open_cb fired\n");
-  tell_object(find_player("solfeggio"), "[AI_D] tcp_open_cb fired\n");
-
   mapping req;
   int *ticket;
   string body, http;
@@ -128,7 +125,7 @@ private void tcp_open_cb(int *reply, int id) {
   send_erq(
     ERQ_SEND,
     ticket + to_array(http),
-    lambda(({ 'msg }), ({ #'tcp_read_cb, 'msg, id }))
+    lambda(({ 'msg, 'len }), ({ #'tcp_read_cb, 'msg, id }))
   );
 }
 
@@ -141,9 +138,19 @@ private void tcp_read_cb(mixed msg, int id) {
   if (!req)
     return;
 
-  /* ignore SEND acks / junk */
-  if (stringp(msg) || bytesp(msg))
+  /* direct data chunks */
+  if (stringp(msg) || bytesp(msg)) {
+    chunk = stringp(msg) ? msg : to_text(msg, "utf-8");
+    if (chunk == "") {
+      request_read(req, id);
+      return;
+    }
+    req["buffer"] += chunk;
+    req["got_data"] = 1;
+    req["updated_at"] = time();
+    notify(req, "stream", chunk);
     return;
+  }
 
   if (intp(msg)) {
     deliver(req);
@@ -157,8 +164,20 @@ private void tcp_read_cb(mixed msg, int id) {
   statuz = msg[0];
 
   /* control / ok */
-  if (statuz == ERQ_OK)
+  if (statuz == ERQ_OK) {
+    if (sizeof(msg) == 1) {
+      request_read(req, id);
+      return;
+    }
+    if (sizeof(msg) > 1) {
+      chunk = to_text(msg[1..], "utf-8");
+      req["buffer"] += chunk;
+      req["got_data"] = 1;
+      req["updated_at"] = time();
+      notify(req, "stream", chunk);
+    }
     return;
+  }
 
   if (statuz == ERQ_STDOUT) {
     if (sizeof(msg) > 1) {
@@ -261,7 +280,17 @@ private void kill_request(mapping req) {
     send_erq(ERQ_KILL, req["ticket"], 0);
 }
 
+private void request_read(mapping req, int id) {
+  if (!pointerp(req["ticket"]))
+    return;
+
+  send_erq(
+    ERQ_SEND,
+    req["ticket"],
+    lambda(({ 'msg, 'len }), ({ #'tcp_read_cb, 'msg, id }))
+  );
+}
+
 void remove() {
   remove_call_out("check_timeouts");
 }
-
