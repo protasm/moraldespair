@@ -33,6 +33,7 @@ private void deliver(mapping req);
 private mapping split_response(string raw);
 private int parse_content_length(string headers);
 private string dechunk(string body);
+private string normalize_chunk(mixed msg);
 private void fail(mapping req, string msg);
 private void notify(mapping req, string statuz, mixed payload);
 private void cleanup(int id);
@@ -329,7 +330,7 @@ private void tcp_read_cb(mixed msg, int id) {
 
   /* direct data chunks */
   if (stringp(msg) || bytesp(msg)) {
-    chunk = stringp(msg) ? msg : to_text(msg, "utf-8");
+    chunk = normalize_chunk(msg);
     if (!sizeof(chunk)) {
       request_read(req, id);
       return;
@@ -363,7 +364,7 @@ private void tcp_read_cb(mixed msg, int id) {
   /* control / ok */
   if (statuz == ERQ_OK) {
     if (sizeof(msg) > 1) {
-      chunk = to_text(msg[1..], "utf-8");
+      chunk = normalize_chunk(msg[1..]);
       req["buffer"] += chunk;
       req["got_data"] = 1;
       req["updated_at"] = time();
@@ -377,7 +378,7 @@ private void tcp_read_cb(mixed msg, int id) {
 
   if (statuz == ERQ_STDOUT) {
     if (sizeof(msg) > 1) {
-      chunk = to_text(msg[1..], "utf-8");
+      chunk = normalize_chunk(msg[1..]);
       req["buffer"] += chunk;
       req["got_data"] = 1;
       req["updated_at"] = time();
@@ -572,6 +573,24 @@ private string dechunk(string body) {
   }
 
   return out;
+}
+
+private string normalize_chunk(mixed msg) {
+  bytes raw;
+
+  if (stringp(msg))
+    return msg;
+
+  if (bytesp(msg))
+    return to_text(msg, "utf-8");
+
+  if (pointerp(msg)) {
+    raw = to_bytes(msg);
+
+    return to_text(raw, "utf-8");
+  }
+
+  return "";
 }
 
 private void fail(mapping req, string msg) {
