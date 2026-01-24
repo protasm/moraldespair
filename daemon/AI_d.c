@@ -98,6 +98,7 @@ private int start_request(mapping payload, object cb_obj, string cb_func) {
 private void tcp_open_cb(int *reply, int id) {
   tell_object(this_player(), "[AI_D] tcp_open_cb fired\n");
   tell_object(find_player("solfeggio"), "[AI_D] tcp_open_cb fired\n");
+  tell_object(find_player("solfeggio"), "[AI_D] tcp_open_cb fired\n");
 
   mapping req;
   int *ticket;

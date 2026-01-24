@@ -21,7 +21,7 @@
 #define BACKBONE_WIZINFO_SIZE 5
 #define SIMUL_EFUN_FILE "secure/simul_efun"
 
-#define ERQ_PRIVILEGE_DEBUG 0
+#define ERQ_PRIVILEGE_DEBUG 1
 
 #define ADD_SLASH(p) "/"+p
 #define GETUID(p) getuid(p)
@@ -1218,7 +1218,6 @@ int privilege_violation (string op, mixed who, mixed arg, mixed arg2) {
   // the IMP. The xxx_extra_wizinfo operations are necessary for wizlist
   // maintenance and should be restricted to admins. All other operations
   // are potential sources of security breaches and must be scrutinized.
-
   if (ERQ_PRIVILEGE_DEBUG && op == "erq") {
     log_file("ERQ_PRIV",
       sprintf("%s who=%O arg=%O arg2=%O\n", ctime(time()), who, arg, arg2));
