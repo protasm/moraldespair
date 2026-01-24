@@ -30,7 +30,8 @@ private void tcp_open_cb(int *reply, int id);
 private void tcp_send_cb(mixed msg, int id);
 private void tcp_read_cb(mixed msg, int id);
 private void deliver(mapping req);
-private string extract_body(string raw);
+private mapping split_response(string raw);
+private int parse_content_length(string headers);
 private string dechunk(string body);
 private void fail(mapping req, string msg);
 private void notify(mapping req, string statuz, mixed payload);
@@ -416,11 +417,39 @@ private void tcp_read_cb(mixed msg, int id) {
  * ========================================================= */
 
 private void deliver(mapping req) {
-  string raw, body;
+  string raw, body, headers, lower_headers;
+  mapping split;
+  int content_length;
   mixed parsed;
 
   raw = req["buffer"];
-  body = extract_body(raw);
+  split = split_response(raw);
+  headers = split["headers"];
+  body = split["body"];
+
+  if (!sizeof(headers) && strstr(raw, "HTTP/") == 0) {
+    fail(req, "incomplete HTTP response");
+    return;
+  }
+
+  lower_headers = lower_case(headers);
+  if (strstr(lower_headers, "transfer-encoding: chunked") >= 0)
+    body = dechunk(body);
+
+  content_length = parse_content_length(headers);
+  if (content_length >= 0) {
+    if (sizeof(body) < content_length) {
+      fail(req, "incomplete response body");
+      return;
+    }
+
+    if (content_length == 0)
+      body = "";
+    else
+      body = body[0..content_length - 1];
+  }
+
+  body = trim(body);
 
   debug_msg("raw: >>" + raw + "<<\n");
   debug_msg("body: >>" + body + "<<\n");
@@ -453,8 +482,8 @@ private void deliver(mapping req) {
   notify(req, "ok", parsed);
 }
 
-private string extract_body(string raw) {
-  string headers, body, lower_headers;
+private mapping split_response(string raw) {
+  string headers, body;
   int p;
 
   headers = "";
@@ -472,13 +501,33 @@ private string extract_body(string raw) {
     }
   }
 
-  lower_headers = lower_case(headers);
-  if (strstr(lower_headers, "transfer-encoding: chunked") >= 0)
-    body = dechunk(body);
+  return ([
+    "headers" : headers,
+    "body"    : body,
+  ]);
+}
 
-  body = trim(body);
+private int parse_content_length(string headers) {
+  string *lines;
+  string line, lower;
+  int i;
+  int length;
 
-  return body;
+  if (!sizeof(headers))
+    return -1;
+
+  lines = explode(headers, "\n");
+  length = -1;
+
+  for (i = 0; i < sizeof(lines); i++) {
+    line = trim(lines[i]);
+    lower = lower_case(line);
+
+    if (sscanf(lower, "content-length: %d", length) == 1)
+      return length;
+  }
+
+  return -1;
 }
 
 private string dechunk(string body) {
