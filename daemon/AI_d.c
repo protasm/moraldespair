@@ -299,12 +299,17 @@ private void deliver(mapping req) {
   raw = req["buffer"];
   body = raw;
 
+  debug_msg("raw: >>" + raw + "<<\n");
+  debug_msg("body: >>" + body + "<<\n");
+
   p = strstr(raw, "\r\n\r\n");
   if (p >= 0)
     body = raw[p + 4 ..];
 
-  debug_msg(sprintf("[AI_D] deliver id=%d raw_len=%d body_len=%d\n",
-    req["id"], sizeof(raw), sizeof(body)));
+  debug_msg(
+    sprintf("[AI_D] deliver id=%d raw_len=%d body_len=%d\n",
+    req["id"], sizeof(raw), sizeof(body))
+  );
 
   parsed = 0;
   catch(parsed = json_parse(body));
