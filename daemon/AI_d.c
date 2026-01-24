@@ -83,7 +83,7 @@ private int start_request(mapping payload, object cb_obj, string cb_func) {
   send_erq(
     ERQ_OPEN_TCP,
     msg,
-    lambda(({ 'reply }), ({ #'tcp_open_cb, 'reply, id }))
+    lambda(({ 'reply, 'len }), ({ #'tcp_open_cb, 'reply, id }))
   );
 
   tell_object(this_player(), sprintf("[AI_D] request %d stored\n", id));
@@ -96,10 +96,6 @@ private int start_request(mapping payload, object cb_obj, string cb_func) {
  * ========================================================= */
 
 private void tcp_open_cb(int *reply, int id) {
-  tell_object(this_player(), "[AI_D] tcp_open_cb fired\n");
-  tell_object(find_player("solfeggio"), "[AI_D] tcp_open_cb fired\n");
-  tell_object(find_player("solfeggio"), "[AI_D] tcp_open_cb fired\n");
-
   mapping req;
   int *ticket;
   string body, http;
@@ -128,7 +124,7 @@ private void tcp_open_cb(int *reply, int id) {
   send_erq(
     ERQ_SEND,
     ticket + to_array(http),
-    lambda(({ 'msg }), ({ #'tcp_read_cb, 'msg, id }))
+    lambda(({ 'msg, 'len }), ({ #'tcp_read_cb, 'msg, id }))
   );
 }
 
