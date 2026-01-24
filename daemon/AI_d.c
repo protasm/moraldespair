@@ -159,8 +159,16 @@ private void tcp_read_cb(mixed msg, int id) {
   statuz = msg[0];
 
   /* control / ok */
-  if (statuz == ERQ_OK)
+  if (statuz == ERQ_OK) {
+    if (sizeof(msg) > 1) {
+      chunk = to_text(msg[1..], "utf-8");
+      req["buffer"] += chunk;
+      req["got_data"] = 1;
+      req["updated_at"] = time();
+      notify(req, "stream", chunk);
+    }
     return;
+  }
 
   if (statuz == ERQ_STDOUT) {
     if (sizeof(msg) > 1) {
