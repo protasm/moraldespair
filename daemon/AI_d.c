@@ -35,6 +35,7 @@ private int parse_content_length(string headers);
 private string dechunk(string body);
 private string normalize_chunk(mixed msg);
 private string read_chunk(mixed msg);
+private mapping decode_reply(mixed msg);
 private void fail(mapping req, string msg);
 private void notify(mapping req, string statuz, mixed payload);
 private void cleanup(int id);
@@ -322,6 +323,7 @@ private void tcp_read_cb(mixed msg, int id) {
   mapping req;
   string chunk;
   int statuz;
+  mapping reply;
 
   req = requests[id];
   if (!req) {
@@ -360,12 +362,13 @@ private void tcp_read_cb(mixed msg, int id) {
     return;
   }
 
-  statuz = msg[0];
+  reply = decode_reply(msg);
+  statuz = reply["status"];
+  chunk = reply["data"];
 
   /* control / ok */
   if (statuz == ERQ_OK) {
-    chunk = read_chunk(msg);
-    if (!sizeof(chunk)) {
+    if (!sizeof(chunk) || (sizeof(chunk) == 1 && chunk[0] == 0)) {
       request_read(req, id);
       return;
     }
@@ -380,7 +383,6 @@ private void tcp_read_cb(mixed msg, int id) {
   }
 
   if (statuz == ERQ_STDOUT) {
-    chunk = read_chunk(msg);
     if (!sizeof(chunk)) {
       request_read(req, id);
       return;
@@ -391,6 +393,11 @@ private void tcp_read_cb(mixed msg, int id) {
     notify(req, "stream", chunk);
     debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_STDOUT chunk-id=%d len=%d\n",
       id, sizeof(chunk)));
+    request_read(req, id);
+    return;
+  }
+
+  if (statuz == ERQ_E_WOULDBLOCK || statuz == ERQ_E_INCOMPLETE) {
     request_read(req, id);
     return;
   }
@@ -616,6 +623,46 @@ private string read_chunk(mixed msg) {
   }
 
   return "";
+}
+
+private mapping decode_reply(mixed msg) {
+  int *raw;
+  int statuz;
+  string chunk;
+
+  raw = 0;
+  statuz = ERQ_E_INCOMPLETE;
+  chunk = "";
+
+  if (intp(msg)) {
+    return ([
+      "status" : msg,
+      "data"   : "",
+    ]);
+  }
+
+  if (stringp(msg))
+    raw = to_array(msg);
+  else if (bytesp(msg))
+    raw = to_array(to_text(msg, "utf-8"));
+  else if (pointerp(msg))
+    raw = msg;
+
+  if (!pointerp(raw) || !sizeof(raw)) {
+    return ([
+      "status" : ERQ_E_INCOMPLETE,
+      "data"   : "",
+    ]);
+  }
+
+  statuz = raw[0];
+  if (sizeof(raw) > 1)
+    chunk = normalize_chunk(raw[1..]);
+
+  return ([
+    "status" : statuz,
+    "data"   : chunk,
+  ]);
 }
 
 private void fail(mapping req, string msg) {
