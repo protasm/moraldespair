@@ -6,6 +6,18 @@ string get_bb_uid() {
   return "Backbone";
 }
 
+string creator_file(string file) {
+  return get_root_uid();
+}
+
+string domain_file(string file) {
+  return get_bb_uid();
+}
+
+string author_file(string file) {
+  return get_root_uid();
+}
+
 string get_simul_efun() {
   return "/core/simul_efun";
 }
