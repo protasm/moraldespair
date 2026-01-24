@@ -23,6 +23,7 @@ private int next_id;
 private void debug_msg(string msg);
 private int  start_request(mapping payload, object cb_obj, string cb_func);
 private void tcp_open_cb(int *reply, int id);
+private void tcp_send_cb(mixed msg, int id);
 private void tcp_read_cb(mixed msg, int id);
 private void deliver(mapping req);
 private void fail(mapping req, string msg);
@@ -188,11 +189,49 @@ private void tcp_open_cb(int *reply, int id) {
   send_erq(
     ERQ_SEND,
     ticket + to_array(http),
-    lambda(({ 'msg, 'len }), ({ #'tcp_read_cb, 'msg, id }))
+    lambda(({ 'msg, 'len }), ({ #'tcp_send_cb, 'msg, id }))
   );
 
   debug_msg(sprintf("[AI_D] tcp_open_cb: sent http id=%d bytes=%d\n",
     id, sizeof(http)));
+}
+
+private void tcp_send_cb(mixed msg, int id) {
+  mapping req;
+
+  req = requests[id];
+  if (!req) {
+    debug_msg(sprintf("[AI_D] tcp_send_cb: missing request id=%d\n", id));
+    return;
+  }
+
+  if (intp(msg)) {
+    debug_msg(sprintf("[AI_D] tcp_send_cb: int-msg-id=%d msg=%O\n", id, msg));
+    if (msg != ERQ_OK) {
+      fail(req, sprintf("ERQ_SEND failed: %d", msg));
+      cleanup(id);
+      return;
+    }
+
+    request_read(req, id);
+    return;
+  }
+
+  if (!pointerp(msg) || !sizeof(msg)) {
+    debug_msg(sprintf("[AI_D] tcp_send_cb: unexpected msg id=%d msg=%O\n",
+      id, msg));
+    return;
+  }
+
+  if (msg[0] != ERQ_OK) {
+    debug_msg(sprintf("[AI_D] tcp_send_cb: send failed id=%d status=%d\n",
+      id, msg[0]));
+    fail(req, sprintf("ERQ_SEND failed: %d", msg[0]));
+    cleanup(id);
+    return;
+  }
+
+  request_read(req, id);
 }
 
 private void tcp_read_cb(mixed msg, int id) {
@@ -209,6 +248,10 @@ private void tcp_read_cb(mixed msg, int id) {
   /* direct data chunks */
   if (stringp(msg) || bytesp(msg)) {
     chunk = stringp(msg) ? msg : to_text(msg, "utf-8");
+    if (!sizeof(chunk)) {
+      request_read(req, id);
+      return;
+    }
     req["buffer"] += chunk;
     req["got_data"] = 1;
     req["updated_at"] = time();
