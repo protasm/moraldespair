@@ -21,6 +21,10 @@ private int next_id;
 
 /* forward declarations */
 private void debug_msg(string msg);
+private string indent_prefix(int depth);
+private string pretty_value(mixed value, int depth);
+private string pretty_mapping(mapping data, int depth);
+private string pretty_array(mixed *data, int depth);
 private int  start_request(mapping payload, object cb_obj, string cb_func);
 private void tcp_open_cb(int *reply, int id);
 private void tcp_send_cb(mixed msg, int id);
@@ -51,6 +55,79 @@ private void debug_msg(string msg) {
   tell_object(watcher, msg);
 }
 
+private string indent_prefix(int depth) {
+  string pad;
+  int i;
+
+  pad = "";
+
+  for (i = 0; i < depth; i++)
+    pad += "  ";
+
+  return pad;
+}
+
+private string pretty_value(mixed value, int depth) {
+  if (mappingp(value))
+    return pretty_mapping(value, depth);
+
+  if (pointerp(value))
+    return pretty_array(value, depth);
+
+  return sprintf("%O", value);
+}
+
+private string pretty_mapping(mapping data, int depth) {
+  string out, pad, inner_pad;
+  mixed *keys;
+  int i;
+
+  if (!mappingp(data))
+    return sprintf("%O", data);
+
+  keys = m_indices(data);
+  pad = indent_prefix(depth);
+  inner_pad = indent_prefix(depth + 1);
+  out = "([\n";
+
+  for (i = 0; i < sizeof(keys); i++) {
+    out += inner_pad + sprintf("%O", keys[i]) + " : ";
+    out += pretty_value(data[keys[i]], depth + 1);
+    if (i < sizeof(keys) - 1)
+      out += ",\n";
+    else
+      out += "\n";
+  }
+
+  out += pad + "])";
+
+  return out;
+}
+
+private string pretty_array(mixed *data, int depth) {
+  string out, pad, inner_pad;
+  int i;
+
+  if (!pointerp(data))
+    return sprintf("%O", data);
+
+  pad = indent_prefix(depth);
+  inner_pad = indent_prefix(depth + 1);
+  out = "({\n";
+
+  for (i = 0; i < sizeof(data); i++) {
+    out += inner_pad + pretty_value(data[i], depth + 1);
+    if (i < sizeof(data) - 1)
+      out += ",\n";
+    else
+      out += "\n";
+  }
+
+  out += pad + "})";
+
+  return out;
+}
+
 /* =========================================================
  * Public API
  * ========================================================= */
@@ -65,6 +142,7 @@ public int query(string prompt, object cb_obj, string cb_func) {
     sizeof(prompt), cb_obj, cb_func));
 
   payload = ([ "prompt" : prompt ]);
+  debug_msg("[AI_D] query payload\n" + pretty_mapping(payload, 0) + "\n");
 
   return start_request(payload, cb_obj, cb_func);
 }
@@ -144,6 +222,7 @@ private int start_request(mapping payload, object cb_obj, string cb_func) {
 
   debug_msg(sprintf("[AI_D] request %d stored payload=%O cb_obj=%O cb_func=%s\n",
     id, payload, cb_obj, cb_func));
+  debug_msg("[AI_D] request stored mapping\n" + pretty_mapping(req, 0) + "\n");
 
   return id;
 }
@@ -366,6 +445,10 @@ private void deliver(mapping req) {
 
   debug_msg(sprintf("[AI_D] deliver ok id=%d parsed=%O\n",
     req["id"], parsed));
+  if (mappingp(parsed)) {
+    debug_msg("[AI_D] deliver parsed mapping\n"
+      + pretty_mapping(parsed, 0) + "\n");
+  }
 
   notify(req, "ok", parsed);
 }
@@ -453,6 +536,10 @@ private void notify(mapping req, string statuz, mixed payload) {
 
   debug_msg(sprintf("[AI_D] notify id=%d status=%s cb_obj=%O cb_func=%s\n",
     req["id"], statuz, req["cb_obj"], req["cb_func"]));
+  if (mappingp(payload)) {
+    debug_msg("[AI_D] notify mapping payload\n"
+      + pretty_mapping(payload, 0) + "\n");
+  }
 
   call_other(req["cb_obj"], req["cb_func"], statuz, payload, req["id"]);
 }
