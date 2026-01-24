@@ -141,9 +141,15 @@ private void tcp_read_cb(mixed msg, int id) {
   if (!req)
     return;
 
-  /* ignore SEND acks / junk */
-  if (stringp(msg) || bytesp(msg))
+  /* direct data chunks */
+  if (stringp(msg) || bytesp(msg)) {
+    chunk = stringp(msg) ? msg : to_text(msg, "utf-8");
+    req["buffer"] += chunk;
+    req["got_data"] = 1;
+    req["updated_at"] = time();
+    notify(req, "stream", chunk);
     return;
+  }
 
   if (intp(msg)) {
     deliver(req);
@@ -264,4 +270,3 @@ private void kill_request(mapping req) {
 void remove() {
   remove_call_out("check_timeouts");
 }
-
