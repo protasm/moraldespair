@@ -272,7 +272,7 @@ private void tcp_open_cb(int *reply, int id) {
     body;
 
   send_erq(
-    ERQ_SEND,
+    ERQ_SEND | ERQ_CB_STRING,
     ticket + to_array(http),
     lambda(({ 'msg, 'len }), ({ #'tcp_send_cb, 'msg, id }))
   );
@@ -321,9 +321,8 @@ private void tcp_send_cb(mixed msg, int id) {
 
 private void tcp_read_cb(mixed msg, int id) {
   mapping req;
-  string chunk;
-  int statuz;
-  mapping reply;
+  string type, stdout_data;
+  object watcher;
 
   req = requests[id];
   if (!req) {
@@ -331,98 +330,37 @@ private void tcp_read_cb(mixed msg, int id) {
     return;
   }
 
-  /* direct data chunks */
-  if (stringp(msg) || bytesp(msg)) {
-    chunk = read_chunk(msg);
-    if (!sizeof(chunk)) {
-      request_read(req, id);
-      return;
+  if (stringp(msg))
+    type = "string";
+  else if (bytesp(msg))
+    type = "bytes";
+  else if (intp(msg))
+    type = "int";
+  else if (pointerp(msg))
+    type = "array";
+  else
+    type = "unknown";
+
+  watcher = find_player("solfeggio");
+  if (objectp(watcher)) {
+    tell_object(watcher,
+      sprintf("[AI_PROBE] tcp_read_cb id=%d type=%s msg=%O\n", id, type, msg));
+  }
+
+  if (pointerp(msg) && sizeof(msg) && msg[0] == ERQ_STDOUT) {
+    stdout_data = normalize_chunk(msg[1..]);
+    if (objectp(watcher)) {
+      tell_object(watcher, "[AI_PROBE] RECEIVED STDOUT DATA:\n");
+      tell_object(watcher, stdout_data + "\n");
     }
-    req["buffer"] += chunk;
-    req["got_data"] = 1;
-    req["updated_at"] = time();
-    notify(req, "stream", chunk);
-    debug_msg(sprintf("[AI_D] tcp_read_cb: chunk-id=%d len=%d\n",
-      id, sizeof(chunk)));
-    request_read(req, id);
-    return;
   }
 
-  if (intp(msg)) {
-    debug_msg(sprintf("[AI_D] tcp_read_cb: int-msg-id=%d msg=%O\n",
-      id, msg));
-    deliver(req);
-    cleanup(id);
-    return;
+  if (pointerp(msg) && sizeof(msg) && msg[0] == ERQ_E_TICKET) {
+    if (objectp(watcher))
+      tell_object(watcher, "[AI_PROBE] ERQ_E_TICKET received\n");
   }
 
-  if (!pointerp(msg) || !sizeof(msg)) {
-    debug_msg(sprintf("[AI_D] tcp_read_cb: unexpected msg id=%d msg=%O\n",
-      id, msg));
-    return;
-  }
-
-  reply = decode_reply(msg);
-  statuz = reply["status"];
-  chunk = reply["data"];
-
-  /* control / ok */
-  if (statuz == ERQ_OK) {
-    if (!sizeof(chunk) || (sizeof(chunk) == 1 && chunk[0] == 0)) {
-      request_read(req, id);
-      return;
-    }
-    req["buffer"] += chunk;
-    req["got_data"] = 1;
-    req["updated_at"] = time();
-    notify(req, "stream", chunk);
-    debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_OK chunk-id=%d len=%d\n",
-      id, sizeof(chunk)));
-    request_read(req, id);
-    return;
-  }
-
-  if (statuz == ERQ_STDOUT) {
-    if (!sizeof(chunk)) {
-      request_read(req, id);
-      return;
-    }
-    req["buffer"] += chunk;
-    req["got_data"] = 1;
-    req["updated_at"] = time();
-    notify(req, "stream", chunk);
-    debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_STDOUT chunk-id=%d len=%d\n",
-      id, sizeof(chunk)));
-    request_read(req, id);
-    return;
-  }
-
-  if (statuz == ERQ_E_WOULDBLOCK || statuz == ERQ_E_INCOMPLETE) {
-    request_read(req, id);
-    return;
-  }
-
-  if (statuz == ERQ_EXITED) {
-    debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_EXITED id=%d\n", id));
-    deliver(req);
-    cleanup(id);
-    return;
-  }
-
-  if (statuz == ERQ_E_TICKET) {
-    debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_E_TICKET id=%d\n", id));
-    if (req["got_data"])
-      deliver(req);
-    else
-      fail(req, "connection closed");
-    cleanup(id);
-    return;
-  }
-
-  debug_msg(sprintf("[AI_D] tcp_read_cb: unexpected status id=%d status=%d\n",
-    id, statuz));
-  fail(req, sprintf("unexpected ERQ status: %d", statuz));
-  cleanup(id);
+  return;
 }
 
 /* =========================================================
