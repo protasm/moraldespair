@@ -20,6 +20,7 @@ private mapping requests;
 private int next_id;
 
 /* forward declarations */
+private void debug_msg(string msg);
 private int  start_request(mapping payload, object cb_obj, string cb_func);
 private void tcp_open_cb(int *reply, int id);
 private void tcp_read_cb(mixed msg, int id);
@@ -37,18 +38,69 @@ void create() {
   call_out("check_timeouts", AI_POLL_INTERVAL);
 }
 
+private void debug_msg(string msg) {
+  object watcher;
+
+  watcher = find_player("solfeggio");
+  if (!objectp(watcher))
+    return;
+
+  tell_object(watcher, msg);
+}
+
 /* =========================================================
  * Public API
  * ========================================================= */
 
 public int query(string prompt, object cb_obj, string cb_func) {
+  mapping payload;
+
   if (!stringp(prompt))
     raise_error("AI_d->query(): prompt must be string\n");
 
-  return start_request(([ "prompt" : prompt ]), cb_obj, cb_func);
+  debug_msg(sprintf("[AI_D] query prompt len=%d cb_obj=%O cb_func=%s\n",
+    sizeof(prompt), cb_obj, cb_func));
+
+  payload = ([ "prompt" : prompt ]);
+
+  return start_request(payload, cb_obj, cb_func);
 }
 
-public mapping statuz() {
+public int query_response(
+  mixed npc_id,
+  mixed player_id,
+  string event,
+  mapping context,
+  mapping options,
+  object cb_obj,
+  string cb_func
+) {
+  mapping payload;
+
+  if (!stringp(event))
+    raise_error("AI_d->query_response(): event must be string\n");
+
+  if (!mapp(context))
+    raise_error("AI_d->query_response(): context must be mapping\n");
+
+  if (!mapp(options))
+    raise_error("AI_d->query_response(): options must be mapping\n");
+
+  payload = ([
+    "npc_id"    : npc_id,
+    "player_id" : player_id,
+    "event"     : event,
+    "context"   : context,
+    "options"   : options,
+  ]);
+
+  debug_msg(sprintf("[AI_D] query_response event=%s npc=%O player=%O\n",
+    event, npc_id, player_id));
+
+  return start_request(payload, cb_obj, cb_func);
+}
+
+public mapping req_status() {
   return copy(requests);
 }
 
@@ -87,7 +139,8 @@ private int start_request(mapping payload, object cb_obj, string cb_func) {
     lambda(({ 'reply, 'len }), ({ #'tcp_open_cb, 'reply, id }))
   );
 
-  tell_object(this_player(), sprintf("[AI_D] request %d stored\n", id));
+  debug_msg(sprintf("[AI_D] request %d stored payload=%O cb_obj=%O cb_func=%s\n",
+    id, payload, cb_obj, cb_func));
 
   return id;
 }
@@ -102,14 +155,24 @@ private void tcp_open_cb(int *reply, int id) {
   string body, http;
 
   req = requests[id];
-  if (!req)
+  if (!req) {
+    debug_msg(sprintf("[AI_D] tcp_open_cb: missing request id=%d\n", id));
     return;
+  }
 
-  if (reply[0] != ERQ_OK)
+  if (reply[0] != ERQ_OK) {
+    debug_msg(sprintf("[AI_D] tcp_open_cb: open failed id=%d status=%d\n",
+      id, reply[0]));
+    fail(req, sprintf("ERQ_OPEN_TCP failed: %d", reply[0]));
+    cleanup(id);
     return;
+  }
 
   ticket = reply[1..];
   req["ticket"] = ticket;
+
+  debug_msg(sprintf("[AI_D] tcp_open_cb: open ok id=%d ticket=%O\n",
+    id, ticket));
 
   body = json_serialize(req["payload"]);
 
@@ -127,6 +190,9 @@ private void tcp_open_cb(int *reply, int id) {
     ticket + to_array(http),
     lambda(({ 'msg, 'len }), ({ #'tcp_read_cb, 'msg, id }))
   );
+
+  debug_msg(sprintf("[AI_D] tcp_open_cb: sent http id=%d bytes=%d\n",
+    id, sizeof(http)));
 }
 
 private void tcp_read_cb(mixed msg, int id) {
@@ -135,8 +201,10 @@ private void tcp_read_cb(mixed msg, int id) {
   int statuz;
 
   req = requests[id];
-  if (!req)
+  if (!req) {
+    debug_msg(sprintf("[AI_D] tcp_read_cb: missing request id=%d\n", id));
     return;
+  }
 
   /* direct data chunks */
   if (stringp(msg) || bytesp(msg)) {
@@ -145,17 +213,24 @@ private void tcp_read_cb(mixed msg, int id) {
     req["got_data"] = 1;
     req["updated_at"] = time();
     notify(req, "stream", chunk);
+    debug_msg(sprintf("[AI_D] tcp_read_cb: chunk id=%d len=%d\n",
+      id, sizeof(chunk)));
     return;
   }
 
   if (intp(msg)) {
+    debug_msg(sprintf("[AI_D] tcp_read_cb: int msg id=%d msg=%O\n",
+      id, msg));
     deliver(req);
     cleanup(id);
     return;
   }
 
-  if (!pointerp(msg) || !sizeof(msg))
+  if (!pointerp(msg) || !sizeof(msg)) {
+    debug_msg(sprintf("[AI_D] tcp_read_cb: unexpected msg id=%d msg=%O\n",
+      id, msg));
     return;
+  }
 
   statuz = msg[0];
 
@@ -167,6 +242,8 @@ private void tcp_read_cb(mixed msg, int id) {
       req["got_data"] = 1;
       req["updated_at"] = time();
       notify(req, "stream", chunk);
+      debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_OK chunk id=%d len=%d\n",
+        id, sizeof(chunk)));
     }
     return;
   }
@@ -178,16 +255,21 @@ private void tcp_read_cb(mixed msg, int id) {
       req["got_data"] = 1;
       req["updated_at"] = time();
       notify(req, "stream", chunk);
+      debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_STDOUT chunk id=%d len=%d\n",
+        id, sizeof(chunk)));
     }
     return;
   }
 
   if (statuz == ERQ_EXITED) {
+    debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_EXITED id=%d\n", id));
     deliver(req);
     cleanup(id);
     return;
   }
 
+  debug_msg(sprintf("[AI_D] tcp_read_cb: unexpected status id=%d status=%d\n",
+    id, statuz));
   fail(req, sprintf("unexpected ERQ status: %d", statuz));
   cleanup(id);
 }
@@ -208,6 +290,9 @@ private void deliver(mapping req) {
   if (p >= 0)
     body = raw[p + 4 ..];
 
+  debug_msg(sprintf("[AI_D] deliver id=%d raw_len=%d body_len=%d\n",
+    req["id"], sizeof(raw), sizeof(body)));
+
   parsed = 0;
   catch(parsed = json_parse(body));
 
@@ -216,10 +301,14 @@ private void deliver(mapping req) {
     return;
   }
 
+  debug_msg(sprintf("[AI_D] deliver ok id=%d parsed=%O\n",
+    req["id"], parsed));
+
   notify(req, "ok", parsed);
 }
 
 private void fail(mapping req, string msg) {
+  debug_msg(sprintf("[AI_D] fail id=%d msg=%s\n", req["id"], msg));
   notify(req, "error", msg);
 }
 
@@ -227,11 +316,15 @@ private void notify(mapping req, string statuz, mixed payload) {
   if (!objectp(req["cb_obj"]) || !stringp(req["cb_func"]))
     return;
 
+  debug_msg(sprintf("[AI_D] notify id=%d status=%s cb_obj=%O cb_func=%s\n",
+    req["id"], statuz, req["cb_obj"], req["cb_func"]));
+
   call_other(req["cb_obj"], req["cb_func"], statuz, payload, req["id"]);
 }
 
 private void cleanup(int id) {
   m_delete(requests, id);
+  debug_msg(sprintf("[AI_D] cleanup id=%d\n", id));
 }
 
 /* =========================================================
