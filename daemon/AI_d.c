@@ -26,6 +26,8 @@ private void tcp_open_cb(int *reply, int id);
 private void tcp_send_cb(mixed msg, int id);
 private void tcp_read_cb(mixed msg, int id);
 private void deliver(mapping req);
+private string extract_body(string raw);
+private string dechunk(string body);
 private void fail(mapping req, string msg);
 private void notify(mapping req, string statuz, mixed payload);
 private void cleanup(int id);
@@ -336,23 +338,23 @@ private void tcp_read_cb(mixed msg, int id) {
 
 private void deliver(mapping req) {
   string raw, body;
-  int p;
   mixed parsed;
 
   raw = req["buffer"];
-  body = raw;
+  body = extract_body(raw);
 
   debug_msg("raw: >>" + raw + "<<\n");
   debug_msg("body: >>" + body + "<<\n");
-
-  p = strstr(raw, "\r\n\r\n");
-  if (p >= 0)
-    body = raw[p + 4 ..];
 
   debug_msg(
     sprintf("[AI_D] deliver id=%d raw_len=%d body_len=%d\n",
     req["id"], sizeof(raw), sizeof(body))
   );
+
+  if (!sizeof(body)) {
+    fail(req, "empty response body");
+    return;
+  }
 
   parsed = 0;
   catch(parsed = json_parse(body));
@@ -366,6 +368,78 @@ private void deliver(mapping req) {
     req["id"], parsed));
 
   notify(req, "ok", parsed);
+}
+
+private string extract_body(string raw) {
+  string headers, body, lower_headers;
+  int p;
+
+  headers = "";
+  body = raw;
+
+  p = strstr(raw, "\r\n\r\n");
+  if (p >= 0) {
+    headers = raw[0..p - 1];
+    body = raw[p + 4 ..];
+  } else {
+    p = strstr(raw, "\n\n");
+    if (p >= 0) {
+      headers = raw[0..p - 1];
+      body = raw[p + 2 ..];
+    }
+  }
+
+  lower_headers = lower_case(headers);
+  if (strstr(lower_headers, "transfer-encoding: chunked") >= 0)
+    body = dechunk(body);
+
+  body = trim(body);
+
+  return body;
+}
+
+private string dechunk(string body) {
+  string out, rest, size_line, chunk;
+  int size, p;
+
+  out = "";
+  rest = body;
+
+  while (sizeof(rest)) {
+    p = strstr(rest, "\r\n");
+    if (p < 0) {
+      p = strstr(rest, "\n");
+      if (p < 0)
+        break;
+
+      size_line = rest[0..p - 1];
+      rest = rest[p + 1 ..];
+    } else {
+      size_line = rest[0..p - 1];
+      rest = rest[p + 2 ..];
+    }
+
+    size = 0;
+    if (sscanf(size_line, "%x", size) != 1)
+      break;
+
+    if (size == 0)
+      break;
+
+    if (sizeof(rest) < size)
+      break;
+
+    chunk = rest[0..size - 1];
+    out += chunk;
+    rest = rest[size ..];
+
+    if (sizeof(rest) >= 2 && rest[0..1] == "\r\n")
+      rest = rest[2 ..];
+    else if (sizeof(rest) >= 1 && rest[0..0] == "\n")
+      rest = rest[1 ..];
+  }
+
+  return out;
 }
 
 private void fail(mapping req, string msg) {
