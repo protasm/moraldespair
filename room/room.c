@@ -52,13 +52,13 @@ void init() {
   string *exit_dirs;
 
   // Register primary exits
-  exit_dirs = m_indices(dest_dir);
+  exit_dirs = keys(dest_dir);
 
   for (i = 0; i < sizeof(exit_dirs); i++)
     add_action("move", exit_dirs[i]);
 
   // Register alias exits
-  aliases = m_indices(exit_aliases);
+  aliases = keys(exit_aliases);
 
   for (i = 0; i < sizeof(aliases); i++)
     add_action("move_alias", aliases[i]);
@@ -92,7 +92,7 @@ string exitsDescription(int brief) {
     if (!dest_dir)
       return "(Exits: none)";
 
-    exit_dirs = m_indices(dest_dir);
+    exit_dirs = keys(dest_dir);
     exit_count = sizeof(exit_dirs);
 
     if (exit_count == 0)
@@ -121,7 +121,7 @@ string exitsDescription(int brief) {
   if (!dest_dir)
     return "No obvious exits.\n";
 
-  exit_dirs = m_indices(dest_dir);
+  exit_dirs = keys(dest_dir);
   exit_count = sizeof(exit_dirs);
 
   if (exit_count == 0)
@@ -316,7 +316,7 @@ string convert_number(int n) {
 
 string *query_numbers() {
   if (!numbers) {
-    if (object_name(this_object()) == "room/room")
+    if (efun::file_name() == "room/room")
       numbers = ({"no", "one", "two", "three", "four", "five", "six", "seven",
                   "eight", "nine"});
     else

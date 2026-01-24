@@ -285,6 +285,7 @@ private void tcp_send_cb(mixed msg, int id) {
   mapping req;
 
   req = requests[id];
+
   if (!req) {
     debug_msg(sprintf("[AI_D] tcp_send_cb: missing request id=%d\n", id));
     return;
@@ -299,6 +300,13 @@ private void tcp_send_cb(mixed msg, int id) {
     }
 
     request_read(req, id);
+    return;
+  }
+
+  if (stringp(msg) || bytesp(msg)) {
+    /* ERQ_OK ack delivered as CB_STRING */
+    request_read(req, id);
+  
     return;
   }
 
@@ -325,8 +333,17 @@ private void tcp_read_cb(mixed msg, int id) {
   object watcher;
 
   req = requests[id];
+  
   if (!req) {
     debug_msg(sprintf("[AI_D] tcp_read_cb: missing request id=%d\n", id));
+    
+    return;
+  }
+
+  if (pointerp(msg) && sizeof(msg) && msg[0] == ERQ_OK) {
+    /* data available, ask ERQ to read */
+    request_read(req, id);
+  
     return;
   }
 
@@ -349,10 +366,15 @@ private void tcp_read_cb(mixed msg, int id) {
 
   if (pointerp(msg) && sizeof(msg) && msg[0] == ERQ_STDOUT) {
     stdout_data = normalize_chunk(msg[1..]);
+
     if (objectp(watcher)) {
       tell_object(watcher, "[AI_PROBE] RECEIVED STDOUT DATA:\n");
       tell_object(watcher, stdout_data + "\n");
     }
+
+    request_read(req, id);
+
+    return;
   }
 
   if (pointerp(msg) && sizeof(msg) && msg[0] == ERQ_E_TICKET) {
