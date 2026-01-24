@@ -1218,9 +1218,18 @@ int privilege_violation (string op, mixed who, mixed arg, mixed arg2) {
   // the IMP. The xxx_extra_wizinfo operations are necessary for wizlist
   // maintenance and should be restricted to admins. All other operations
   // are potential sources of security breaches and must be scrutinized.
-  if (ERQ_PRIVILEGE_DEBUG && op == "erq")
-    log_file("ERQ_PRIV",
-      sprintf("%s who=%O arg=%O arg2=%O\n", ctime(time()), who, arg, arg2));
+  string message;
+  object simul_efun;
+
+  if (ERQ_PRIVILEGE_DEBUG && op == "erq") {
+    message = sprintf("%s who=%O arg=%O arg2=%O\n", ctime(time()), who, arg, arg2);
+    simul_efun = find_object(SIMUL_EFUN_FILE);
+
+    if (simul_efun)
+      simul_efun->log_file("ERQ_PRIV", message);
+    else
+      efun::write_file("/log/ERQ_PRIV", message);
+  }
 
   /* This object and the simul_efun objects may do everything. */
   if (who == this_object()
