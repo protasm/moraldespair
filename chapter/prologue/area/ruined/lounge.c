@@ -8,6 +8,7 @@ inherit "room/room";
 int erqtest();
 int aitest(string str);
 void ai_cb(string req_status, mixed payload, int request_id);
+void debug_msg(string msg);
 
 /* -------------------------
  * State
@@ -37,6 +38,16 @@ void create() {
   ]);
 
   set_light(1);
+}
+
+void debug_msg(string msg) {
+  object watcher;
+
+  watcher = find_player("solfeggio");
+  if (!objectp(watcher))
+    return;
+
+  tell_object(watcher, msg);
 }
 
 void init() {
@@ -93,17 +104,32 @@ int aitest(string str) {
     return 1;
   }
 
+  debug_msg(sprintf("[LOUNGE] aitest who=%O prompt_len=%d\n",
+    who, sizeof(str)));
+
   tell_object(who,
     "You whisper into the unseen machinery...\n");
 
   request_id = "/daemon/AI_d"->query(str, this_object(), "ai_cb");
+
+  if (!request_id) {
+    debug_msg(sprintf("[LOUNGE] aitest failed request_id=%d\n", request_id));
+    tell_object(who, "The machinery does not answer.\n");
+    return 1;
+  }
+
   ai_requests[request_id] = who;
+
+  debug_msg(sprintf("[LOUNGE] aitest stored request_id=%d\n", request_id));
 
   return 1;
 }
 
 void ai_cb(string req_status, mixed payload, int request_id) {
   object who;
+
+  debug_msg(sprintf("[LOUNGE] ai_cb status=%s id=%d payload=%O\n",
+    req_status, request_id, payload));
 
   who = ai_requests[request_id];
   if (!who) return;
@@ -126,4 +152,3 @@ int erqlookuptest() {
   );
   return 1;
 }
-
