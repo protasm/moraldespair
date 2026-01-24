@@ -80,10 +80,10 @@ public int query_response(
   if (!stringp(event))
     raise_error("AI_d->query_response(): event must be string\n");
 
-  if (!mapp(context))
+  if (!mappingp(context))
     raise_error("AI_d->query_response(): context must be mapping\n");
 
-  if (!mapp(options))
+  if (!mappingp(options))
     raise_error("AI_d->query_response(): options must be mapping\n");
 
   payload = ([
