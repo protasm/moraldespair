@@ -29,6 +29,7 @@ private void notify(mapping req, string statuz, mixed payload);
 private void cleanup(int id);
 public  void check_timeouts();
 private void kill_request(mapping req);
+private void request_read(mapping req, int id);
 
 void create() {
   requests = ([]);
@@ -269,6 +270,17 @@ public void check_timeouts() {
 private void kill_request(mapping req) {
   if (pointerp(req["ticket"]))
     send_erq(ERQ_KILL, req["ticket"], 0);
+}
+
+private void request_read(mapping req, int id) {
+  if (!pointerp(req["ticket"]))
+    return;
+
+  send_erq(
+    ERQ_SEND,
+    req["ticket"],
+    lambda(({ 'msg, 'len }), ({ #'tcp_read_cb, 'msg, id }))
+  );
 }
 
 void remove() {
