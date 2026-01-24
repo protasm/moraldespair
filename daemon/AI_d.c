@@ -215,6 +215,7 @@ private void tcp_read_cb(mixed msg, int id) {
     notify(req, "stream", chunk);
     debug_msg(sprintf("[AI_D] tcp_read_cb: chunk-id=%d len=%d\n",
       id, sizeof(chunk)));
+    request_read(req, id);
     return;
   }
 
@@ -244,6 +245,7 @@ private void tcp_read_cb(mixed msg, int id) {
       notify(req, "stream", chunk);
       debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_OK chunk-id=%d len=%d\n",
         id, sizeof(chunk)));
+      request_read(req, id);
     }
     return;
   }
@@ -257,6 +259,7 @@ private void tcp_read_cb(mixed msg, int id) {
       notify(req, "stream", chunk);
       debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_STDOUT chunk-id=%d len=%d\n",
         id, sizeof(chunk)));
+      request_read(req, id);
     }
     return;
   }
