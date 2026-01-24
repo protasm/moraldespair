@@ -271,6 +271,16 @@ private void tcp_read_cb(mixed msg, int id) {
     return;
   }
 
+  if (statuz == ERQ_E_TICKET) {
+    debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_E_TICKET id=%d\n", id));
+    if (req["got_data"])
+      deliver(req);
+    else
+      fail(req, "connection closed");
+    cleanup(id);
+    return;
+  }
+
   debug_msg(sprintf("[AI_D] tcp_read_cb: unexpected status id=%d status=%d\n",
     id, statuz));
   fail(req, sprintf("unexpected ERQ status: %d", statuz));
