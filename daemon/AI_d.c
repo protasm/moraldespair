@@ -141,10 +141,6 @@ private void tcp_read_cb(mixed msg, int id) {
   /* direct data chunks */
   if (stringp(msg) || bytesp(msg)) {
     chunk = stringp(msg) ? msg : to_text(msg, "utf-8");
-    if (chunk == "") {
-      request_read(req, id);
-      return;
-    }
     req["buffer"] += chunk;
     req["got_data"] = 1;
     req["updated_at"] = time();
@@ -165,10 +161,6 @@ private void tcp_read_cb(mixed msg, int id) {
 
   /* control / ok */
   if (statuz == ERQ_OK) {
-    if (sizeof(msg) == 1) {
-      request_read(req, id);
-      return;
-    }
     if (sizeof(msg) > 1) {
       chunk = to_text(msg[1..], "utf-8");
       req["buffer"] += chunk;
