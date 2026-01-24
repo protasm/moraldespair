@@ -609,6 +609,9 @@ private string read_chunk(mixed msg) {
     if (stringp(msg[1]) || bytesp(msg[1]))
       return normalize_chunk(msg[1]);
 
+    if (pointerp(msg[1]))
+      return normalize_chunk(msg[1]);
+
     return normalize_chunk(msg[1..]);
   }
 
