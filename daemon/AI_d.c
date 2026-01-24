@@ -161,10 +161,10 @@ private void tcp_open_cb(int *reply, int id) {
   }
 
   if (reply[0] != ERQ_OK) {
-    debug_msg(sprintf("[AI_D] tcp_open_cb: open failed id=%d status=%d\n",
-      id, reply[0]));
-    fail(req, sprintf("ERQ_OPEN_TCP failed: %d", reply[0]));
-    cleanup(id);
+    //debug_msg(sprintf("[AI_D] tcp_open_cb: open failed id=%d status=%d\n",
+      //id, reply[0]));
+    //fail(req, sprintf("ERQ_OPEN_TCP failed: %d", reply[0]));
+    //cleanup(id);
     return;
   }
 
@@ -213,13 +213,13 @@ private void tcp_read_cb(mixed msg, int id) {
     req["got_data"] = 1;
     req["updated_at"] = time();
     notify(req, "stream", chunk);
-    debug_msg(sprintf("[AI_D] tcp_read_cb: chunk id=%d len=%d\n",
+    debug_msg(sprintf("[AI_D] tcp_read_cb: chunk-id=%d len=%d\n",
       id, sizeof(chunk)));
     return;
   }
 
   if (intp(msg)) {
-    debug_msg(sprintf("[AI_D] tcp_read_cb: int msg id=%d msg=%O\n",
+    debug_msg(sprintf("[AI_D] tcp_read_cb: int-msg-id=%d msg=%O\n",
       id, msg));
     deliver(req);
     cleanup(id);
@@ -242,7 +242,7 @@ private void tcp_read_cb(mixed msg, int id) {
       req["got_data"] = 1;
       req["updated_at"] = time();
       notify(req, "stream", chunk);
-      debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_OK chunk id=%d len=%d\n",
+      debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_OK chunk-id=%d len=%d\n",
         id, sizeof(chunk)));
     }
     return;
@@ -255,7 +255,7 @@ private void tcp_read_cb(mixed msg, int id) {
       req["got_data"] = 1;
       req["updated_at"] = time();
       notify(req, "stream", chunk);
-      debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_STDOUT chunk id=%d len=%d\n",
+      debug_msg(sprintf("[AI_D] tcp_read_cb: ERQ_STDOUT chunk-id=%d len=%d\n",
         id, sizeof(chunk)));
     }
     return;
