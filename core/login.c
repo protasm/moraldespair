@@ -1,7 +1,9 @@
+#include <globals.h>
+
 void logon() {
   object player;
 
-  player = new("/core/player");
+  player = new(PLAYER_OB);
 
   exec(player, this_object());
 

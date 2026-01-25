@@ -1,9 +1,11 @@
+#include <globals.h>
+
 string get_root_uid() {
-  return "Root";
+  return ROOT_UID;
 }
 
 string get_bb_uid() {
-  return "Backbone";
+  return BACKBONE_UID;
 }
 
 string creator_file(string file) {
@@ -19,7 +21,7 @@ string author_file(string file) {
 }
 
 string get_simul_efun() {
-  return "/core/simul_efun";
+  return OVERRIDES_FILE;
 }
 
 string *epilog(int) {
@@ -35,9 +37,5 @@ void log_error(string file, string message) {
 }
 
 object connect() {
-  object login_ob;
-
-  login_ob = new("/core/login");
-
-  return login_ob;
+  return new(LOGIN_OB);
 }
