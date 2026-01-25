@@ -1,9 +1,9 @@
-string short_desc;
-string long_desc;
-mapping dest_dir;
-mapping exit_aliases;
+string short_desc, long_desc;
+mapping dest_dir, exit_aliases;
 
 void create() {
+  short_desc = "";
+  long_desc = "";
   dest_dir = ([]);
   exit_aliases = ([]);
 
@@ -11,30 +11,25 @@ void create() {
 }
 
 void init() {
-  string *dirs;
-  string *aliases;
+  string *dirs, *aliases;
   int i;
 
-  if (mappingp(dest_dir))
-    dirs = m_indices(dest_dir);
-  else
-    dirs = ({ });
+  dirs = keys(dest_dir);
+  aliases = keys(exit_aliases);
 
-  if (mappingp(exit_aliases))
-    aliases = m_indices(exit_aliases);
-  else
-    aliases = ({ });
   i = 0;
 
-  while (pointerp(dirs) && i < sizeof(dirs)) {
+  while (i < sizeof(dirs)) {
     add_action("move", dirs[i]);
+
     i += 1;
   }
 
   i = 0;
 
-  while (pointerp(aliases) && i < sizeof(aliases)) {
+  while (i < sizeof(aliases)) {
     add_action("move_alias", aliases[i]);
+
     i += 1;
   }
 
@@ -42,43 +37,18 @@ void init() {
 }
 
 string short() {
-  if (stringp(short_desc))
-    return short_desc;
-
-  return "Room";
+  return short_desc;
 }
 
-string query_short() {
-  return short();
-}
-
-void long(string str) {
-  string desc;
-  int length;
-
-  desc = long_desc;
-  if (stringp(desc)) {
-    write(desc);
-
-    length = strlen(desc);
-    if (length == 0 || desc[length - 1] != '\n')
-      write("\n");
-  } else {
-    write("Nothing stands out here.\n");
-  }
-
-  return;
-}
-
-string query_long() {
+string long(string str) {
   return long_desc;
 }
 
-mapping query_dest_dir() {
+mapping dest_dir() {
   return dest_dir;
 }
 
-mapping query_exit_aliases() {
+mapping exit_aliases() {
   return exit_aliases;
 }
 
@@ -100,13 +70,14 @@ int move(string str) {
 }
 
 int move_alias(string str) {
-  string alias;
-  string canonical;
+  string alias, canonical;
 
   alias = query_verb();
+
   if (!exit_aliases) return 0;
 
   canonical = exit_aliases[alias];
+
   if (!canonical) return 0;
 
   return move_direction(canonical);
@@ -119,6 +90,7 @@ int move_direction(string direction) {
     return 0;
 
   destination = dest_dir[direction];
+
   if (!stringp(destination))
     return 0;
 
