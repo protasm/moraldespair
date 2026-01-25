@@ -7,5 +7,7 @@ void logon() {
 
   player->start_session();
 
+  player->move(START_ROOM);
+
   destruct(this_object());
 }

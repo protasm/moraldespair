@@ -34,7 +34,13 @@ Before performing **any task**, agents **must read and internalize** the documen
 
    Prose is treated as a **first-class system** in this project. Agents must not generate descriptive text that violates these constraints.
 
-3. **PHASE1.md**  
+4. **EFUNS.md**  
+   This document defines:
+   - a list of efuns available in Fluffos.
+
+   Only use an efun if it appears in this list; do not assume the existence of any other efuns.
+
+5. **PHASE1.md**  
    This document defines:
    - Guidance as how to transform rooms and descriptions to appear "aged" and "abandoned".
 
