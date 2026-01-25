@@ -1,5 +1,6 @@
 void start_session() {
   write("> ");
+
   input_to("handle_input");
 }
 
@@ -8,11 +9,11 @@ void handle_input(string str) {
 
   line = str;
 
-  if (!line) {
+  if (!line)
     line = "";
-  }
 
   write("You typed: '" + line + "'\n");
   write("> ");
+
   input_to("handle_input");
 }
