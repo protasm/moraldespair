@@ -1,16 +1,31 @@
 #include <command.h>
 
-#ifdef __NO_ENVIRONMENT__
-#define say(x) shout(x)
-#endif
-
 int main(string arg) {
-  say(
-    (string)previous_object()->query_name()
-    + " says: " +  arg + "\n"
-  );
+  object player, location;
+  string description;
 
-  tell_object(this_player(), "foo");
-  
+  player = this_player();
+
+  if (!objectp(player))
+    return 0;
+
+  location = environment(player);
+
+  if (!objectp(location)) {
+    write("There is nothing here.\n");
+
+    return 1;
+  }
+
+  description = location->long(arg);
+
+  if (!stringp(description))
+    return 0;
+
+  if (strlen(description) && description[<1] != '\n')
+    description += "\n";
+
+  write(description);
+
   return 1;
 }
