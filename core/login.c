@@ -365,6 +365,7 @@ void handle_password_confirm(string input) {
     return;
   }
 
+  ACCOUNT_D->record_login(pending_username);
   write("Confirmed!\n");
   prompt_avatar();
 }
@@ -439,6 +440,7 @@ void handle_password_existing(string input) {
     return;
   }
 
+  ACCOUNT_D->record_login(pending_username);
   prompt_avatar_selection();
 }
 
@@ -490,6 +492,8 @@ void start_player_session(string avatar_name) {
   player = new(PLAYER_OB);
   player->set_name(avatar_name);
   player->set_account(pending_username);
+
+  ACCOUNT_D->record_avatar_login(pending_username, avatar_name);
 
   exec(player, this_object());
 
