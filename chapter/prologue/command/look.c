@@ -2,7 +2,7 @@
 
 int main(string arg) {
   object player, location;
-  string description;
+  string description, short_desc, divider;
 
   player = this_player();
 
@@ -17,10 +17,24 @@ int main(string arg) {
     return 1;
   }
 
+  short_desc = location->short();
   description = location->long(arg);
 
   if (!stringp(description))
     return 0;
+
+  if (!stringp(short_desc))
+    short_desc = "";
+
+  divider = "---------+---------+---------+---------+---------+---------+---------+---------+";
+
+  if (short_desc == "" || short_desc[<1] != '\n')
+    short_desc += "\n";
+
+  if (divider[<1] != '\n')
+    divider += "\n";
+
+  description = short_desc + divider + description;
 
   if (strlen(description) && description[<1] != '\n')
     description += "\n";
