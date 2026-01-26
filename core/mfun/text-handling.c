@@ -1,52 +1,76 @@
+#include "text-handling.h"
+
 private string wrap_line(string line) {
-  string *words, *chunks;
-  string current, word;
-  int i, word_length;
+  string *tokens, *chunks;
+  string current, token, character;
+  int i, token_length, length;
 
   if (!stringp(line) || line == "")
     return "";
 
-  words = explode(line, " ");
-  chunks = ({});
+  tokens = ({});
   current = "";
+  length = strlen(line);
 
-  for (i = 0; i < sizeof(words); i++) {
-    word = words[i];
+  for (i = 0; i < length; i++) {
+    character = line[i..i];
 
-    if (word == "")
+    if (!sizeof(tokens)) {
+      tokens += ({ character });
+
       continue;
+    }
 
-    word_length = strlen(word);
+    token = tokens[sizeof(tokens) - 1];
 
-    if (word_length > 80) {
+    if (character == " ") {
+      if (token[0..0] == " ")
+        tokens[sizeof(tokens) - 1] += character;
+      else
+        tokens += ({ character });
+    } else {
+      if (token[0..0] != " ")
+        tokens[sizeof(tokens) - 1] += character;
+      else
+        tokens += ({ character });
+    }
+  }
+
+  chunks = ({});
+
+  for (i = 0; i < sizeof(tokens); i++) {
+    token = tokens[i];
+    token_length = strlen(token);
+
+    if (token_length > 80) {
       if (strlen(current)) {
         chunks += ({ current });
         current = "";
       }
 
-      while (word_length > 80) {
-        chunks += ({ word[0..79] });
-        word = word[80..];
-        word_length = strlen(word);
+      while (token_length > 80) {
+        chunks += ({ token[0..79] });
+        token = token[80..];
+        token_length = strlen(token);
       }
 
-      if (strlen(word))
-        current = word;
+      if (strlen(token))
+        current = token;
 
       continue;
     }
 
     if (!strlen(current)) {
-      current = word;
+      current = token;
 
       continue;
     }
 
-    if (strlen(current) + 1 + word_length <= 80)
-      current += " " + word;
+    if (strlen(current) + token_length <= 80)
+      current += token;
     else {
       chunks += ({ current });
-      current = word;
+      current = token;
     }
   }
 
