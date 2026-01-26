@@ -1,5 +1,7 @@
 #include <globals.h>
 
+#include "player.h"
+
 inherit "/inherit/base.c";
 
 int move(mixed dest) {
@@ -17,8 +19,9 @@ int move(mixed dest) {
     moved = 1;
 
   if (moved) {
-    set_this_player(this_object());
-    command("look");
+    //set_this_player(this_object());
+
+    handle_input("look");
   }
 
   return moved;
@@ -90,7 +93,7 @@ int attempt_movement(string verb) {
 }
 
 void repl() {
-  write("> ");
+  write("\n> ");
 
   input_to("handle_input");
 }

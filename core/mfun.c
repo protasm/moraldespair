@@ -56,15 +56,16 @@ string wrap_line(string line) {
   return implode(chunks, "\n");
 }
 
-void write_wrapped(string text) {
+//override
+void write(mixed str) {
   string *lines, *wrapped_lines;
   string line, wrapped_line;
   int i;
 
-  if (!stringp(text))
+  if (!stringp(str))
     return;
 
-  lines = explode(text, "\n");
+  lines = explode(str, "\n");
   wrapped_lines = ({});
 
   for (i = 0; i < sizeof(lines); i++) {
