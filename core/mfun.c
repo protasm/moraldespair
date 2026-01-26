@@ -59,13 +59,30 @@ string wrap_line(string line) {
 //override
 void write(mixed str) {
   string *lines, *wrapped_lines;
-  string line, wrapped_line;
-  int i;
+  string line, wrapped_line, current, character;
+  int i, length;
 
   if (!stringp(str))
     return;
 
-  lines = explode(str, "\n");
+  lines = ({});
+  current = "";
+  length = strlen(str);
+
+  for (i = 0; i < length; i++) {
+    character = str[i..i];
+
+    if (character == "\n") {
+      lines += ({ current });
+      current = "";
+
+      continue;
+    }
+
+    current += character;
+  }
+
+  lines += ({ current });
   wrapped_lines = ({});
 
   for (i = 0; i < sizeof(lines); i++) {
