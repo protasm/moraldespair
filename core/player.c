@@ -121,7 +121,7 @@ int attempt_movement(string verb) {
 }
 
 void repl() {
-  write("\n> ");
+  write("\n" + PLAYER_PROMPT);
 
   input_to("handle_input");
 }

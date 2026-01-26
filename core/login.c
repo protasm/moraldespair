@@ -9,9 +9,9 @@ void logon() {
 
   //cat("/etc/motd");
 
-  player->start_session();
-
   player->move(START_ROOM);
+
+  player->start_session();
 
   destruct(this_object());
 }
