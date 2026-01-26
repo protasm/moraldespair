@@ -10,6 +10,7 @@ void logon() {
   //cat("/etc/motd");
 
   player->move(START_ROOM);
+  player->show_location();
 
   player->start_session();
 

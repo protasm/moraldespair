@@ -18,12 +18,6 @@ int move(mixed dest) {
   if (objectp(new_env) && new_env != old_env)
     moved = 1;
 
-  if (moved) {
-    //set_this_player(this_object());
-
-    show_location();
-  }
-
   return moved;
 }
 
@@ -43,13 +37,9 @@ void show_location() {
   return;
 }
 
-int attempt_movement(string verb) {
+string resolve_movement_alias(string verb) {
   mapping directions;
-  mapping exits;
   string direction;
-  string destination;
-  object location;
-  int moved;
 
   directions = ([
     "north" : "north",
@@ -76,48 +66,10 @@ int attempt_movement(string verb) {
 
   direction = directions[verb];
 
-  if (!direction)
-    return 0;
+  if (!stringp(direction))
+    return "";
 
-  location = environment(this_object());
-
-  if (!objectp(location)) {
-    write("You can't go that way.\n");
-
-    return 1;
-  }
-
-  if (!function_exists("dest_dir", location)) {
-    write("You can't go that way.\n");
-
-    return 1;
-  }
-
-  exits = location->dest_dir();
-
-  if (!mapp(exits)) {
-    write("You can't go that way.\n");
-
-    return 1;
-  }
-
-  destination = exits[direction];
-
-  if (!stringp(destination)) {
-    write("You can't go that way.\n");
-
-    return 1;
-  }
-
-  if (destination[0] != '/')
-    destination = "/" + destination;
-
-  moved = move(destination);
-
-  if (!moved)
-    write("You can't go that way.\n");
-
-  return 1;
+  return direction;
 }
 
 void repl() {
@@ -131,10 +83,10 @@ void start_session() {
 }
 
 void handle_input(string str) {
-  string line, verb, arg, command_path;
+  string line, verb, arg, command_path, movement_arg;
   string *parts;
   object command_object;
-  int handled;
+  int handled, moved;
 
   line = str;
 
@@ -158,6 +110,33 @@ void handle_input(string str) {
     arg = "";
 
   handled = 0;
+  moved = 0;
+  movement_arg = resolve_movement_alias(verb);
+
+  if (movement_arg != "" || verb == "go") {
+    if (movement_arg != "") {
+      verb = "go";
+      arg = movement_arg;
+    }
+
+    command_path = COMMAND_PREFIX + "go";
+
+    if (file_size(command_path + ".c") >= 0) {
+      command_object = load_object(command_path);
+
+      if (objectp(command_object))
+        moved = call_other(command_object, "main", arg);
+    }
+
+    if (moved)
+      show_location();
+    else
+      write("You can't go that way.\n");
+
+    repl();
+
+    return;
+  }
 
   command_path = COMMAND_PREFIX + verb;
 
@@ -167,9 +146,6 @@ void handle_input(string str) {
     if (objectp(command_object))
       handled = call_other(command_object, "main", arg);
   }
-
-  if (!handled)
-    handled = attempt_movement(verb);
 
   if (!handled)
     write("Unknown command.\n");
