@@ -1,5 +1,15 @@
 #include <command.h>
 
+void create() {
+  ::create();
+
+  set_category("Movement");
+  set_help_text(
+    "Move in a direction or to a specific destination file.\n"
+    "Common directions include north, south, east, west, up, and down.\n"
+  );
+}
+
 int main(string arg) {
   object player, location;
   mapping directions, exits;

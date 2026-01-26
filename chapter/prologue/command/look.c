@@ -1,5 +1,15 @@
 #include <command.h>
 
+void create() {
+  ::create();
+
+  set_category("General");
+  set_help_text(
+    "Show the description of your current location.\n"
+    "You can also look at a specific target to inspect it.\n"
+  );
+}
+
 int main(string arg) {
   object player, location;
   string description, short_desc, divider;

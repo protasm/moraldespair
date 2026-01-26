@@ -1,5 +1,15 @@
 #include <command.h>
 
+void create() {
+  ::create();
+
+  set_category("General");
+  set_help_text(
+    "Leave the game and end your current session.\n"
+    "Your character disappears from the world.\n"
+  );
+}
+
 int main(string arg) {
   write("Bye.\n");
 
