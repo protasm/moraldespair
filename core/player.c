@@ -109,7 +109,8 @@ void start_session() {
 void handle_input(string str) {
   string line, verb, arg, command_path, movement_arg;
   string *parts;
-  object command_object;
+  object command_object, location;
+  mapping exits;
   int handled, moved;
 
   line = str;
@@ -135,7 +136,42 @@ void handle_input(string str) {
 
   handled = 0;
   moved = 0;
+
+  /* First: try a command file that exactly matches the verb. */
+  if (verb != "go") {
+    command_path = COMMAND_PREFIX + verb;
+
+    if (file_size(command_path + ".c") >= 0) {
+      command_object = load_object(command_path);
+
+      if (objectp(command_object))
+        handled = call_other(command_object, "main", arg);
+    }
+
+    if (handled) {
+      repl();
+
+      return;
+    }
+  }
+
+  /*
+   * Second: treat the verb as movement only after all command files are
+   * exhausted. This includes standard direction aliases and any room-defined
+   * exits like "door" or "pylus".
+   */
   movement_arg = resolve_movement_alias(verb);
+
+  if (movement_arg == "") {
+    location = environment(this_object());
+
+    if (objectp(location) && function_exists("dest_dir", location)) {
+      exits = location->dest_dir();
+
+      if (mapp(exits) && stringp(exits[verb]))
+        movement_arg = verb;
+    }
+  }
 
   if (movement_arg != "" || verb == "go") {
     if (movement_arg != "") {
@@ -160,15 +196,6 @@ void handle_input(string str) {
     repl();
 
     return;
-  }
-
-  command_path = COMMAND_PREFIX + verb;
-
-  if (file_size(command_path + ".c") >= 0) {
-    command_object = load_object(command_path);
-
-    if (objectp(command_object))
-      handled = call_other(command_object, "main", arg);
   }
 
   if (!handled)
