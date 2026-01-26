@@ -9,6 +9,8 @@ void create() {
   dest_dir = ([]);
   exit_aliases = ([]);
 
+  set_light(1);
+
   return;
 }
 
