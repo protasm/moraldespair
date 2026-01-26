@@ -1,4 +1,4 @@
-#include <command.h>
+inherit "/core/command";
 
 void create() {
   ::create();
