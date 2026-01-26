@@ -21,7 +21,7 @@ string author_file(string file) {
 }
 
 string get_simul_efun() {
-  return OVERRIDES_FILE;
+  return MFUN_OB;
 }
 
 string *epilog(int) {
