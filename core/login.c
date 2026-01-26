@@ -50,23 +50,27 @@ void prompt_username() {
 void prompt_email() {
   write("What is your email address?\n");
   write("> ");
+
   input_to("handle_email");
 }
 
 void prompt_new_username() {
   write("Got it.  What would you like your username to be?\n");
   write("> ");
+
   input_to("handle_new_username");
 }
 
 void prompt_existing_password() {
   write("Please enter your password:\n");
   write("> ");
+
   input_to("handle_password_existing", 1);
 }
 
 void prompt_new_password() {
   write("> ");
+
   input_to("handle_password", 1);
 }
 
@@ -74,6 +78,7 @@ void prompt_avatar() {
   write("Finally, let's add an avatar (i.e., a character) to your account.\n");
   write("What would you like to name your first avatar?\n");
   write("> ");
+
   input_to("handle_new_avatar");
 }
 
@@ -86,6 +91,7 @@ void prompt_avatar_choice(string *avatars) {
     write("  - " + avatars[i] + "\n");
 
   write("> ");
+
   input_to("handle_avatar_choice");
 }
 
@@ -135,36 +141,43 @@ int is_valid_password(string password) {
     return 0;
 
   matches = regexp(({ password }), "[0-9]");
+
   if (!pointerp(matches) || sizeof(matches) == 0)
     return 0;
 
   matches = regexp(({ password }), "[A-Z]");
+
   if (!pointerp(matches) || sizeof(matches) == 0)
     return 0;
 
   matches = regexp(({ password }), "[a-z]");
+
   if (!pointerp(matches) || sizeof(matches) == 0)
     return 0;
 
   matches = regexp(({ password }), "[!@#$%^&*]");
+
   if (!pointerp(matches) || sizeof(matches) == 0)
     return 0;
 
   return 1;
 }
 
-int contains_profanity(string value) {
+int contains_reserved(string value) {
   string lowered;
   string *terms;
   int i;
 
   lowered = lower_case(value);
-  terms = ({ "fuck", "shit", "cunt", "bitch", "asshole" });
+  terms = ({
+    "account", "email", "user", "guest",
+    "fuck", "shit", "cunt", "bitch", "asshole", "ass",
+    "bastard", "whore",
+   });
 
-  for (i = 0; i < sizeof(terms); i++) {
+  for (i = 0; i < sizeof(terms); i++)
     if (strsrch(lowered, terms[i]) != -1)
       return 1;
-  }
 
   return 0;
 }
@@ -209,19 +222,20 @@ void handle_username(string input) {
   if (ACCOUNT_D->account_exists(username)) {
     pending_username = username;
     pending_display_name = ACCOUNT_D->query_display_name(username);
+
     prompt_existing_password();
+
     return;
   }
 
   write("Sorry, I don't recognize \"" + raw + "\".  Please try again.\n");
   write("(Or, enter \"new\" to create a new account.)\n");
+
   prompt_username();
 }
 
 void handle_email(string input) {
-  string email;
-  string existing;
-  string raw;
+  string raw, existing, email;
 
   if (!stringp(input))
     input = "";
@@ -231,23 +245,31 @@ void handle_email(string input) {
 
   if (!is_valid_email(email)) {
     write("Sorry, that's not a valid email address.  Please try again.\n");
+
     prompt_email();
+
     return;
   }
 
+  /* TODO
   existing = ACCOUNT_D->query_username_by_email(email);
 
   if (existing != "") {
     pending_existing_username = existing;
     pending_email = email;
+
     write("That email address is already associated with an account.\n");
     write("Would you like to log in with that account? [y/n]\n");
     write("> ");
+
     input_to("handle_existing_email");
+
     return;
   }
+  */
 
   pending_email = email;
+
   prompt_new_username();
 }
 
@@ -268,6 +290,7 @@ void handle_existing_email(string input) {
 
   if (response == "n" || response == "no") {
     prompt_email();
+
     return;
   }
 
@@ -277,8 +300,7 @@ void handle_existing_email(string input) {
 }
 
 void handle_new_username(string input) {
-  string raw;
-  string normalized;
+  string raw, normalized;
 
   if (!stringp(input))
     input = "";
@@ -287,18 +309,23 @@ void handle_new_username(string input) {
 
   if (raw == "") {
     prompt_new_username();
+
     return;
   }
 
-  if (contains_profanity(raw)) {
-    write("Sorry, profanity is not allowed.  Try again?\n");
+  if (contains_reserved(raw)) {
+    write("Sorry, that word is not allowed.  Try again?\n");
+
     prompt_new_username();
+
     return;
   }
 
   if (!is_valid_username(raw)) {
     write("Just one word, please, with no punctuation or special characters.\n");
+
     prompt_new_username();
+
     return;
   }
 
@@ -306,7 +333,9 @@ void handle_new_username(string input) {
 
   if (ACCOUNT_D->account_exists(normalized)) {
     write("That username is already taken.  Please try again.\n");
+
     prompt_new_username();
+
     return;
   }
 
@@ -318,6 +347,7 @@ void handle_new_username(string input) {
   write("A password can be 6-20 characters long, with at least\n");
   write("one number, one upper-case letter, one lower-case letter,\n");
   write("and one special character (!@#$%^&*).\n");
+
   prompt_new_password();
 }
 
@@ -330,7 +360,9 @@ void handle_password(string input) {
     write("A password can be 6-20 characters long, with at least\n");
     write("one number, one upper-case letter, one lower-case letter,\n");
     write("and one special character (!@#$%^&*).\n");
+
     prompt_new_password();
+
     return;
   }
 
@@ -338,6 +370,7 @@ void handle_password(string input) {
 
   write("That works!  Please type it again, to confirm:\n");
   write("> ");
+
   input_to("handle_password_confirm", 1);
 }
 
@@ -352,7 +385,9 @@ void handle_password_confirm(string input) {
     write("A password can be 6-20 characters long, with at least\n");
     write("one number, one upper-case letter, one lower-case letter,\n");
     write("and one special character (!@#$%^&*).\n");
+
     prompt_new_password();
+
     return;
   }
 
@@ -366,7 +401,9 @@ void handle_password_confirm(string input) {
   }
 
   ACCOUNT_D->record_login(pending_username);
+
   write("Confirmed!\n");
+
   prompt_avatar();
 }
 
@@ -381,18 +418,23 @@ void handle_new_avatar(string input) {
 
   if (raw == "") {
     prompt_avatar();
+
     return;
   }
 
-  if (contains_profanity(raw)) {
-    write("Sorry, profanity is not allowed.  Try again?\n");
+  if (contains_reserved(raw)) {
+    write("Sorry, that word is not allowed.  Try again?\n");
+
     prompt_avatar();
+
     return;
   }
 
   if (!is_valid_username(raw)) {
     write("Just one word, please, with no punctuation or special characters.\n");
+
     prompt_avatar();
+
     return;
   }
 
@@ -400,13 +442,17 @@ void handle_new_avatar(string input) {
 
   if (ACCOUNT_D->avatar_exists(pending_username, display)) {
     write("That avatar already exists on your account.  Try again?\n");
+
     prompt_avatar();
+
     return;
   }
 
   if (!ACCOUNT_D->add_avatar(pending_username, display)) {
     write("Something went wrong while creating your avatar.\n");
+
     prompt_avatar();
+
     return;
   }
 
@@ -428,7 +474,9 @@ void handle_password_existing(string input) {
 
   if (password_hash == "") {
     write("Password incorrect.  Try again.\n");
+
     prompt_existing_password();
+
     return;
   }
 
@@ -436,11 +484,14 @@ void handle_password_existing(string input) {
 
   if (attempt_hash != password_hash) {
     write("Password incorrect.  Try again.\n");
+
     prompt_existing_password();
+
     return;
   }
 
   ACCOUNT_D->record_login(pending_username);
+
   prompt_avatar_selection();
 }
 
@@ -458,12 +509,15 @@ void handle_avatar_choice(string input) {
   for (i = 0; i < sizeof(avatars); i++) {
     if (normalize_value(avatars[i]) == choice) {
       write("Connecting as " + avatars[i] + "....\n");
+
       start_player_session(avatars[i]);
+
       return;
     }
   }
 
   write("Sorry, that avatar isn't on your account.  Try again.\n");
+
   prompt_avatar_choice(avatars);
 }
 
@@ -474,12 +528,15 @@ void prompt_avatar_selection() {
 
   if (sizeof(avatars) == 0) {
     prompt_avatar();
+
     return;
   }
 
   if (sizeof(avatars) == 1) {
     write("Connecting as " + avatars[0] + "....\n");
+
     start_player_session(avatars[0]);
+
     return;
   }
 
