@@ -4,6 +4,8 @@
 
 inherit "/inherit/base.c";
 
+int brief;
+
 int move(mixed dest) {
   object old_env, new_env;
   int moved;
@@ -19,6 +21,28 @@ int move(mixed dest) {
     moved = 1;
 
   return moved;
+}
+
+int query_brief() {
+  return brief;
+}
+
+void set_brief(int state) {
+  if (state)
+    brief = 1;
+  else
+    brief = 0;
+
+  return;
+}
+
+int toggle_brief() {
+  if (brief)
+    brief = 0;
+  else
+    brief = 1;
+
+  return brief;
 }
 
 void show_location() {
