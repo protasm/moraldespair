@@ -42,7 +42,7 @@ master file : /core/master
 simulated efun file : /core/mfun
 
 # alternate debug.log file name (assumed to be in specified 'log directory')
-debug log file : debug.log
+debug log file : debug
 
 # This is an include file which is automatically #include'd in all objects
 global include file : <globals.h>

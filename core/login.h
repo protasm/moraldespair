@@ -1,0 +1,18 @@
+void prompt_username();
+void prompt_email();
+void prompt_new_username();
+void prompt_existing_password();
+void prompt_new_password();
+void prompt_avatar();
+void prompt_avatar_choice(string *avatars);
+void prompt_avatar_selection();
+void start_player_session(string avatar_name);
+void clear_pending();
+string normalize_value(string value);
+string format_display_name(string value);
+int is_valid_email(string email);
+int is_valid_username(string name);
+int is_valid_password(string password);
+int contains_profanity(string value);
+string make_salt();
+

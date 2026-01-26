@@ -1,28 +1,12 @@
 #include <globals.h>
 
+#include "login.h"
+
 private string pending_username;
 private string pending_display_name;
 private string pending_email;
 private string pending_password;
 private string pending_existing_username;
-
-static void prompt_username();
-static void prompt_email();
-static void prompt_new_username();
-static void prompt_existing_password();
-static void prompt_new_password();
-static void prompt_avatar();
-static void prompt_avatar_choice(string *avatars);
-static void prompt_avatar_selection();
-static void start_player_session(string avatar_name);
-static void clear_pending();
-static string normalize_value(string value);
-static string format_display_name(string value);
-static int is_valid_email(string email);
-static int is_valid_username(string name);
-static int is_valid_password(string password);
-static int contains_profanity(string value);
-static string make_salt();
 
 void logon() {
   clear_pending();
@@ -31,7 +15,7 @@ void logon() {
   prompt_username();
 }
 
-static void clear_pending() {
+void clear_pending() {
   pending_username = "";
   pending_display_name = "";
   pending_email = "";
@@ -39,14 +23,14 @@ static void clear_pending() {
   pending_existing_username = "";
 }
 
-static string normalize_value(string value) {
+string normalize_value(string value) {
   if (!stringp(value))
     return "";
 
   return lower_case(trim(value));
 }
 
-static string format_display_name(string value) {
+string format_display_name(string value) {
   value = normalize_value(value);
 
   if (value == "")
@@ -55,42 +39,42 @@ static string format_display_name(string value) {
   return capitalize(value);
 }
 
-static void prompt_username() {
+void prompt_username() {
   write("> ");
   input_to("handle_username");
 }
 
-static void prompt_email() {
+void prompt_email() {
   write("What is your email address?\n");
   write("> ");
   input_to("handle_email");
 }
 
-static void prompt_new_username() {
+void prompt_new_username() {
   write("Got it.  What would you like your username to be?\n");
   write("> ");
   input_to("handle_new_username");
 }
 
-static void prompt_existing_password() {
+void prompt_existing_password() {
   write("Please enter your password:\n");
   write("> ");
   input_to("handle_password_existing");
 }
 
-static void prompt_new_password() {
+void prompt_new_password() {
   write("> ");
   input_to("handle_password");
 }
 
-static void prompt_avatar() {
+void prompt_avatar() {
   write("Finally, let's add an avatar (i.e., a character) to your account.\n");
   write("What would you like to name your first avatar?\n");
   write("> ");
   input_to("handle_new_avatar");
 }
 
-static void prompt_avatar_choice(string *avatars) {
+void prompt_avatar_choice(string *avatars) {
   int i;
 
   write("Which avatar would you like to use?\n");
@@ -102,7 +86,7 @@ static void prompt_avatar_choice(string *avatars) {
   input_to("handle_avatar_choice");
 }
 
-static int is_valid_email(string email) {
+int is_valid_email(string email) {
   string *matches;
 
   if (email == "")
@@ -116,7 +100,7 @@ static int is_valid_email(string email) {
   return 1;
 }
 
-static int is_valid_username(string name) {
+int is_valid_username(string name) {
   string *matches;
   int length;
 
@@ -135,7 +119,7 @@ static int is_valid_username(string name) {
   return 1;
 }
 
-static int is_valid_password(string password) {
+int is_valid_password(string password) {
   string *matches;
   int length;
 
@@ -166,7 +150,7 @@ static int is_valid_password(string password) {
   return 1;
 }
 
-static int contains_profanity(string value) {
+int contains_profanity(string value) {
   string lowered;
   string *terms;
   int i;
@@ -182,7 +166,7 @@ static int contains_profanity(string value) {
   return 0;
 }
 
-static string make_salt() {
+string make_salt() {
   string chars;
   string salt;
   int i;
@@ -479,7 +463,7 @@ void handle_avatar_choice(string input) {
   prompt_avatar_choice(avatars);
 }
 
-static void prompt_avatar_selection() {
+void prompt_avatar_selection() {
   string *avatars;
 
   avatars = ACCOUNT_D->query_avatars(pending_username);
@@ -498,7 +482,7 @@ static void prompt_avatar_selection() {
   prompt_avatar_choice(avatars);
 }
 
-static void start_player_session(string avatar_name) {
+void start_player_session(string avatar_name) {
   object player;
 
   player = new(PLAYER_OB);
