@@ -11,7 +11,7 @@ void create() {
     "its wood bleached white by years of salt and sun.\n";
   dest_dir = ([
     "north" : "/chapter/prologue/area/island/room606",
-    "vesla" : "/chapter/prologue/area/ruined/portal",
+    "vesla" : "/chapter/prologue/area/ruined/room/portal",
   ]);
 
   set_light(1);
