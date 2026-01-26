@@ -1,3 +1,5 @@
+#include "room.h"
+
 string short_desc, long_desc;
 mapping dest_dir, exit_aliases;
 
@@ -86,7 +88,7 @@ int move_alias(string str) {
 int move_direction(string direction) {
   string destination;
 
-  if (!mappingp(dest_dir))
+  if (!mapp(dest_dir))
     return 0;
 
   destination = dest_dir[direction];

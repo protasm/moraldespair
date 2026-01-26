@@ -1,3 +1,5 @@
+inherit "/inherit/base.c";
+
 void start_session() {
   write("> ");
 

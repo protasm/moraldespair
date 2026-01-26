@@ -1,7 +1,5 @@
+int clean_up(int inh) {
+  destruct(this_object());
 
-int
-clean_up(int inh)
-{
-	destruct(this_object());
-	return 0;
+  return 0;
 }
