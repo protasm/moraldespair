@@ -59,12 +59,12 @@ void prompt_new_username() {
 void prompt_existing_password() {
   write("Please enter your password:\n");
   write("> ");
-  input_to("handle_password_existing");
+  input_to("handle_password_existing", 1);
 }
 
 void prompt_new_password() {
   write("> ");
-  input_to("handle_password");
+  input_to("handle_password", 1);
 }
 
 void prompt_avatar() {
@@ -333,7 +333,7 @@ void handle_password(string input) {
 
   write("That works!  Please type it again, to confirm:\n");
   write("> ");
-  input_to("handle_password_confirm");
+  input_to("handle_password_confirm", 1);
 }
 
 void handle_password_confirm(string input) {
@@ -361,10 +361,7 @@ void handle_password_confirm(string input) {
   }
 
   write("Confirmed!\n");
-  write("Finally, let's add an avatar (i.e., a character) to your account.\n");
-  write("What would you like to name your first avatar?\n");
-  write("> ");
-  input_to("handle_new_avatar");
+  prompt_avatar();
 }
 
 void handle_new_avatar(string input) {
