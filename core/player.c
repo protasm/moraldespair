@@ -12,14 +12,14 @@ int move(mixed dest) {
   object old_env, new_env;
   int moved;
 
-  old_env = environment(this_object());
+  old_env = efun::environment(efun::this_object());
 
   ::move(dest);
 
-  new_env = environment(this_object());
+  new_env = efun::environment(efun::this_object());
   moved = 0;
 
-  if (objectp(new_env) && new_env != old_env)
+  if (efun::objectp(new_env) && new_env != old_env)
     moved = 1;
 
   return moved;
@@ -73,11 +73,11 @@ void show_location() {
 
   command_path = COMMAND_PREFIX + "look";
 
-  if (file_size(command_path + ".c") >= 0) {
-    command_object = load_object(command_path);
+  if (efun::file_size(command_path + ".c") >= 0) {
+    command_object = efun::load_object(command_path);
 
-    if (objectp(command_object))
-      call_other(command_object, "main", "");
+    if (efun::objectp(command_object))
+      efun::call_other(command_object, "main", "");
   }
 
   return;
@@ -112,16 +112,16 @@ string resolve_movement_alias(string verb) {
 
   direction = directions[verb];
 
-  if (!stringp(direction))
+  if (!efun::stringp(direction))
     return "";
 
   return direction;
 }
 
 void repl() {
-  write(PLAYER_PROMPT);
+  efun::write(PLAYER_PROMPT);
 
-  input_to("handle_input");
+  efun::input_to("handle_input");
 }
 
 void start_session() {
@@ -140,7 +140,7 @@ void handle_input(string str) {
   if (!line)
     line = "";
 
-  line = trim(line);
+  line = efun::trim(line);
 
   if (line == "") {
     repl();
@@ -148,11 +148,11 @@ void handle_input(string str) {
     return;
   }
 
-  parts = explode(line, " ");
+  parts = efun::explode(line, " ");
   verb = parts[0];
 
-  if (sizeof(parts) > 1)
-    arg = implode(parts[1..], " ");
+  if (efun::sizeof(parts) > 1)
+    arg = efun::implode(parts[1..], " ");
   else
     arg = "";
 
@@ -163,11 +163,11 @@ void handle_input(string str) {
   if (verb != "go") {
     command_path = COMMAND_PREFIX + verb;
 
-    if (file_size(command_path + ".c") >= 0) {
-      command_object = load_object(command_path);
+    if (efun::file_size(command_path + ".c") >= 0) {
+      command_object = efun::load_object(command_path);
 
-      if (objectp(command_object))
-        handled = call_other(command_object, "main", arg);
+      if (efun::objectp(command_object))
+        handled = efun::call_other(command_object, "main", arg);
     }
 
     if (handled) {
@@ -185,12 +185,12 @@ void handle_input(string str) {
   movement_arg = resolve_movement_alias(verb);
 
   if (movement_arg == "") {
-    location = environment(this_object());
+    location = efun::environment(efun::this_object());
 
-    if (objectp(location) && function_exists("dest_dir", location)) {
+    if (efun::objectp(location) && efun::function_exists("dest_dir", location)) {
       exits = location->dest_dir();
 
-      if (mapp(exits) && stringp(exits[verb]))
+      if (efun::mapp(exits) && efun::stringp(exits[verb]))
         movement_arg = verb;
     }
   }
@@ -203,17 +203,17 @@ void handle_input(string str) {
 
     command_path = COMMAND_PREFIX + "go";
 
-    if (file_size(command_path + ".c") >= 0) {
-      command_object = load_object(command_path);
+    if (efun::file_size(command_path + ".c") >= 0) {
+      command_object = efun::load_object(command_path);
 
-      if (objectp(command_object))
-        moved = call_other(command_object, "main", arg);
+      if (efun::objectp(command_object))
+        moved = efun::call_other(command_object, "main", arg);
     }
 
     if (moved)
       show_location();
     else
-      write("You can't go that way.\n");
+      efun::write("You can't go that way.\n");
 
     repl();
 
@@ -221,7 +221,7 @@ void handle_input(string str) {
   }
 
   if (!handled)
-    write("Unknown command.\n");
+    efun::write("Unknown command.\n");
 
   repl();
 }

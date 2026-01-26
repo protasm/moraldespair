@@ -12,27 +12,27 @@ void create() {
 }
 
 void set_property(string name, string value) {
-  if (!stringp(name))
+  if (!efun::stringp(name))
     return;
 
-  if (!mapp(properties))
+  if (!efun::mapp(properties))
     properties = ([]);
 
   properties[name] = value;
 }
 
 string query_property(string name) {
-  if (!stringp(name))
+  if (!efun::stringp(name))
     return "";
 
-  if (!mapp(properties))
+  if (!efun::mapp(properties))
     properties = ([]);
 
   return properties[name];
 }
 
 void set_category(string value) {
-  if (!stringp(value))
+  if (!efun::stringp(value))
     return;
 
   set_property("category", value);
@@ -43,7 +43,7 @@ string query_category() {
 }
 
 void set_help_text(string value) {
-  if (!stringp(value))
+  if (!efun::stringp(value))
     return;
 
   set_property("help-text", value);
