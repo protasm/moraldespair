@@ -255,7 +255,7 @@ int main() {
     TIME("local call (3 args)",100000, lfun3("foo", 1, i));
     TIME("simul_efun",100000, simul());
     TIME("call_other",100000,this_object()->lfun0());
-    TIME("call_other (string)",100000,"/command/speed"->lfun0());
+    TIME("call_other (string)",100000,"/chapter/prologue/command/speed"->lfun0());
     TIME("call_other (miss)",100000,this_object()->doesnt_exist());
     TIME("inherited call",100000,ifun());
     TIME("explicit inherited",100000,inh::ifun());

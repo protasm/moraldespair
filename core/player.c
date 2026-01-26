@@ -1,4 +1,56 @@
+#include <globals.h>
+
 inherit "/inherit/base.c";
+
+int attempt_movement(string verb) {
+  mapping directions;
+  string direction;
+  object location;
+  int moved;
+
+  directions = ([
+    "north" : "north",
+    "south" : "south",
+    "east" : "east",
+    "west" : "west",
+    "northeast" : "northeast",
+    "northwest" : "northwest",
+    "southeast" : "southeast",
+    "southwest" : "southwest",
+    "up" : "up",
+    "down" : "down",
+    "n" : "north",
+    "s" : "south",
+    "e" : "east",
+    "w" : "west",
+    "ne" : "northeast",
+    "nw" : "northwest",
+    "se" : "southeast",
+    "sw" : "southwest",
+    "u" : "up",
+    "d" : "down"
+  ]);
+
+  direction = directions[verb];
+
+  if (!direction)
+    return 0;
+
+  location = environment(this_object());
+
+  if (!objectp(location))
+    return 0;
+
+  if (!function_exists("move_direction", location))
+    return 0;
+
+  moved = call_other(location, "move_direction", direction);
+
+  if (!moved)
+    write("You can't go that way.\n");
+
+  return 1;
+}
 
 void repl() {
   write("> ");
@@ -37,27 +89,19 @@ void handle_input(string str) {
   else
     arg = "";
 
-  command_path = "/command/" + verb;
+  handled = 0;
 
-  if (file_size(command_path + ".c") < 0) {
-    write("Unknown command.\n");
+  command_path = COMMAND_PREFIX + verb;
 
-    repl();
- 
-    return;
+  if (file_size(command_path + ".c") >= 0) {
+    command_object = load_object(command_path);
+
+    if (objectp(command_object))
+      handled = call_other(command_object, "main", arg);
   }
 
-  command_object = load_object(command_path);
-
-  if (!objectp(command_object)) {
-    write("Unknown command.\n");
-
-    repl();
-
-    return;
-  }
-
-  handled = call_other(command_object, "main", arg);
+  if (!handled)
+    handled = attempt_movement(verb);
 
   if (!handled)
     write("Unknown command.\n");

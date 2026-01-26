@@ -12,6 +12,6 @@
 
 #define START_ROOM "/chapter/prologue/area/ruined/room/sanctuary"
 
-#define COMMAND_PREFIX "/command/"
+#define COMMAND_PREFIX "/chapter/prologue/command/"
 
 #define CLEAN_UP "/inherit/clean_up"
