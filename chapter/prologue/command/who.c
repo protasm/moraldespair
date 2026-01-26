@@ -5,6 +5,7 @@ void create() {
 
   set_category("General");
   set_help_text(
+    "Usage: who\n"
     "List connected players and their idle time.\n"
     "Indicators show who is editing or entering input.\n"
   );

@@ -5,8 +5,9 @@ void create() {
 
   set_category("Communication");
   set_help_text(
+    "Usage: say <message>\n"
     "Speak to everyone in your current location.\n"
-    "Use: say <message>\n"
+    "Your words are heard by anyone nearby.\n"
   );
 }
 

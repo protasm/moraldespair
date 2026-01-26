@@ -5,6 +5,7 @@ void create() {
 
   set_category("General");
   set_help_text(
+    "Usage: help or help <command>\n"
     "List available commands, grouped by category.\n"
     "Use: help <command> to read more about a specific command.\n"
   );
@@ -16,7 +17,7 @@ int main(string arg) {
   mapping categories;
   object command_object;
   string command, category;
-  int i, j;
+  int i;
 
   if (!stringp(arg))
     arg = "";
@@ -56,6 +57,7 @@ int main(string arg) {
     }
 
     category_names = keys(categories);
+    category_names = sort_array(category_names, 1);
     output = "";
 
     for (i = 0; i < sizeof(category_names); i++) {
@@ -64,8 +66,9 @@ int main(string arg) {
 
       output += category + ":\n";
 
-      for (j = 0; j < sizeof(commands); j++)
-        output += "  " + commands[j] + "\n";
+      commands = sort_array(commands, 1);
+
+      output += "  " + implode(commands, ", ") + "\n";
 
       output += "\n";
     }

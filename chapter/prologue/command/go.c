@@ -5,6 +5,7 @@ void create() {
 
   set_category("Movement");
   set_help_text(
+    "Usage: go <direction> or go <filename>\n"
     "Move in a direction or to a specific destination file.\n"
     "Common directions include north, south, east, west, up, and down.\n"
   );
