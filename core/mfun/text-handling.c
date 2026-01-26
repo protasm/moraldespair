@@ -1,4 +1,4 @@
-string wrap_line(string line) {
+private string wrap_line(string line) {
   string *words, *chunks;
   string current, word;
   int i, word_length;

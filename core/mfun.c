@@ -1,1 +1,1 @@
-#include "core/mfun/text-handling"
+#include "/core/mfun/text-handling.c"
