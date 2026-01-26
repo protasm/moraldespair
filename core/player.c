@@ -4,7 +4,9 @@ inherit "/inherit/base.c";
 
 int attempt_movement(string verb) {
   mapping directions;
+  mapping exits;
   string direction;
+  string destination;
   object location;
   int moved;
 
@@ -41,10 +43,24 @@ int attempt_movement(string verb) {
   if (!objectp(location))
     return 0;
 
-  if (!function_exists("move_direction", location))
+  if (!function_exists("dest_dir", location))
     return 0;
 
-  moved = call_other(location, "move_direction", direction);
+  exits = location->dest_dir();
+
+  if (!mapp(exits))
+    return 0;
+
+  destination = exits[direction];
+
+  if (!stringp(destination))
+    return 0;
+
+  if (destination[0] != '/')
+    destination = "/" + destination;
+
+  move(destination);
+  moved = 1;
 
   if (!moved)
     write("You can't go that way.\n");
