@@ -11,8 +11,8 @@ private string pending_existing_username;
 void logon() {
   clear_pending();
 
-  write("Welcome!  What is your username?\n");
-  write("(Enter \"create\" to make a new account.\n");
+  efun::write("Welcome!  What is your username?\n");
+  efun::write("(Enter \"create\" to make a new account.\n");
 
   prompt_username();
 }
@@ -26,10 +26,10 @@ void clear_pending() {
 }
 
 string normalize_value(string value) {
-  if (!stringp(value))
+  if (!efun::stringp(value))
     return "";
 
-  return lower_case(trim(value));
+  return efun::lower_case(efun::trim(value));
 }
 
 string format_display_name(string value) {
@@ -38,61 +38,61 @@ string format_display_name(string value) {
   if (value == "")
     return "";
 
-  return capitalize(value);
+  return efun::capitalize(value);
 }
 
 void prompt_username() {
-  write("> ");
+  efun::write("> ");
 
-  input_to("handle_username");
+  efun::input_to("handle_username");
 }
 
 void prompt_email() {
-  write("What is your email address?\n");
-  write("> ");
+  efun::write("What is your email address?\n");
+  efun::write("> ");
 
-  input_to("handle_email");
+  efun::input_to("handle_email");
 }
 
 void prompt_new_username() {
-  write("Got it.  What would you like your username to be?\n");
-  write("> ");
+  efun::write("Got it.  What would you like your username to be?\n");
+  efun::write("> ");
 
-  input_to("handle_new_username");
+  efun::input_to("handle_new_username");
 }
 
 void prompt_existing_password() {
-  write("Please enter your password:\n");
-  write("> ");
+  efun::write("Please enter your password:\n");
+  efun::write("> ");
 
-  input_to("handle_password_existing", 1);
+  efun::input_to("handle_password_existing", 1);
 }
 
 void prompt_new_password() {
-  write("> ");
+  efun::write("> ");
 
-  input_to("handle_password", 1);
+  efun::input_to("handle_password", 1);
 }
 
 void prompt_avatar() {
-  write("Finally, let's add an avatar (i.e., a character) to your account.\n");
-  write("What would you like to name your first avatar?\n");
-  write("> ");
+  efun::write("Finally, let's add an avatar (i.e., a character) to your account.\n");
+  efun::write("What would you like to name your first avatar?\n");
+  efun::write("> ");
 
-  input_to("handle_new_avatar");
+  efun::input_to("handle_new_avatar");
 }
 
 void prompt_avatar_choice(string *avatars) {
   int i;
 
-  write("Which avatar would you like to use?\n");
+  efun::write("Which avatar would you like to use?\n");
 
-  for (i = 0; i < sizeof(avatars); i++)
-    write("  - " + avatars[i] + "\n");
+  for (i = 0; i < efun::sizeof(avatars); i++)
+    efun::write("  - " + avatars[i] + "\n");
 
-  write("> ");
+  efun::write("> ");
 
-  input_to("handle_avatar_choice");
+  efun::input_to("handle_avatar_choice");
 }
 
 int is_valid_email(string email) {
@@ -101,9 +101,9 @@ int is_valid_email(string email) {
   if (email == "")
     return 0;
 
-  matches = regexp(({ email }), "^[^@ ]+@[^@ ]+\\.[^@ ]+$");
+  matches = efun::regexp(({ email }), "^[^@ ]+@[^@ ]+\\.[^@ ]+$");
 
-  if (!pointerp(matches) || sizeof(matches) == 0)
+  if (!efun::pointerp(matches) || efun::sizeof(matches) == 0)
     return 0;
 
   return 1;
@@ -116,10 +116,10 @@ int is_valid_username(string name) {
   if (name == "")
     return 0;
 
-  matches = regexp(({ name }), "^[A-Za-z]+$");
-  length = strlen(name);
+  matches = efun::regexp(({ name }), "^[A-Za-z]+$");
+  length = efun::strlen(name);
 
-  if (!pointerp(matches) || sizeof(matches) == 0)
+  if (!efun::pointerp(matches) || efun::sizeof(matches) == 0)
     return 0;
 
   if (length < 3 || length > 20)
@@ -135,29 +135,29 @@ int is_valid_password(string password) {
   if (password == "")
     return 0;
 
-  length = strlen(password);
+  length = efun::strlen(password);
 
   if (length < 6 || length > 20)
     return 0;
 
-  matches = regexp(({ password }), "[0-9]");
+  matches = efun::regexp(({ password }), "[0-9]");
 
-  if (!pointerp(matches) || sizeof(matches) == 0)
+  if (!efun::pointerp(matches) || efun::sizeof(matches) == 0)
     return 0;
 
-  matches = regexp(({ password }), "[A-Z]");
+  matches = efun::regexp(({ password }), "[A-Z]");
 
-  if (!pointerp(matches) || sizeof(matches) == 0)
+  if (!efun::pointerp(matches) || efun::sizeof(matches) == 0)
     return 0;
 
-  matches = regexp(({ password }), "[a-z]");
+  matches = efun::regexp(({ password }), "[a-z]");
 
-  if (!pointerp(matches) || sizeof(matches) == 0)
+  if (!efun::pointerp(matches) || efun::sizeof(matches) == 0)
     return 0;
 
-  matches = regexp(({ password }), "[!@#$%^&*]");
+  matches = efun::regexp(({ password }), "[!@#$%^&*]");
 
-  if (!pointerp(matches) || sizeof(matches) == 0)
+  if (!efun::pointerp(matches) || efun::sizeof(matches) == 0)
     return 0;
 
   return 1;
@@ -168,15 +168,15 @@ int contains_reserved(string value) {
   string *terms;
   int i;
 
-  lowered = lower_case(value);
+  lowered = efun::lower_case(value);
   terms = ({
     "account", "email", "user", "guest",
     "fuck", "shit", "cunt", "bitch", "asshole", "ass",
     "bastard", "whore",
    });
 
-  for (i = 0; i < sizeof(terms); i++)
-    if (strsrch(lowered, terms[i]) != -1)
+  for (i = 0; i < efun::sizeof(terms); i++)
+    if (efun::strsrch(lowered, terms[i]) != -1)
       return 1;
 
   return 0;
@@ -189,8 +189,8 @@ string make_salt() {
   int j;
 
   chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./";
-  i = random(strlen(chars));
-  j = random(strlen(chars));
+  i = efun::random(efun::strlen(chars));
+  j = efun::random(efun::strlen(chars));
   salt = chars[i..i] + chars[j..j];
 
   return salt;
@@ -199,10 +199,10 @@ string make_salt() {
 void handle_username(string input) {
   string raw, username;
 
-  if (!stringp(input))
+  if (!efun::stringp(input))
     input = "";
 
-  raw = trim(input);
+  raw = efun::trim(input);
   username = normalize_value(raw);
 
   if (username == "") {
@@ -212,7 +212,7 @@ void handle_username(string input) {
   }
 
   if (username == "create") {
-    write("New account - great!\n");
+    efun::write("New account - great!\n");
 
     prompt_email();
 
@@ -228,8 +228,8 @@ void handle_username(string input) {
     return;
   }
 
-  write("Sorry, I don't recognize \"" + raw + "\".  Please try again.\n");
-  write("(Or, enter \"new\" to create a new account.)\n");
+  efun::write("Sorry, I don't recognize \"" + raw + "\".  Please try again.\n");
+  efun::write("(Or, enter \"new\" to create a new account.)\n");
 
   prompt_username();
 }
@@ -237,14 +237,14 @@ void handle_username(string input) {
 void handle_email(string input) {
   string raw, existing, email;
 
-  if (!stringp(input))
+  if (!efun::stringp(input))
     input = "";
 
-  raw = trim(input);
+  raw = efun::trim(input);
   email = normalize_value(raw);
 
   if (!is_valid_email(email)) {
-    write("Sorry, that's not a valid email address.  Please try again.\n");
+    efun::write("Sorry, that's not a valid email address.  Please try again.\n");
 
     prompt_email();
 
@@ -258,11 +258,11 @@ void handle_email(string input) {
     pending_existing_username = existing;
     pending_email = email;
 
-    write("That email address is already associated with an account.\n");
-    write("Would you like to log in with that account? [y/n]\n");
-    write("> ");
+    efun::write("That email address is already associated with an account.\n");
+    efun::write("Would you like to log in with that account? [y/n]\n");
+    efun::write("> ");
 
-    input_to("handle_existing_email");
+    efun::input_to("handle_existing_email");
 
     return;
   }
@@ -276,7 +276,7 @@ void handle_email(string input) {
 void handle_existing_email(string input) {
   string response;
 
-  if (!stringp(input))
+  if (!efun::stringp(input))
     input = "";
 
   response = normalize_value(input);
@@ -294,18 +294,18 @@ void handle_existing_email(string input) {
     return;
   }
 
-  write("Please type \"[y]es\" or \"[n]o\".\n");
-  write("> ");
-  input_to("handle_existing_email");
+  efun::write("Please type \"[y]es\" or \"[n]o\".\n");
+  efun::write("> ");
+  efun::input_to("handle_existing_email");
 }
 
 void handle_new_username(string input) {
   string raw, normalized;
 
-  if (!stringp(input))
+  if (!efun::stringp(input))
     input = "";
 
-  raw = trim(input);
+  raw = efun::trim(input);
 
   if (raw == "") {
     prompt_new_username();
@@ -314,7 +314,7 @@ void handle_new_username(string input) {
   }
 
   if (contains_reserved(raw)) {
-    write("Sorry, that word is not allowed.  Try again?\n");
+    efun::write("Sorry, that word is not allowed.  Try again?\n");
 
     prompt_new_username();
 
@@ -322,7 +322,7 @@ void handle_new_username(string input) {
   }
 
   if (!is_valid_username(raw)) {
-    write("Just one word, please, with no punctuation or special characters.\n");
+    efun::write("Just one word, please, with no punctuation or special characters.\n");
 
     prompt_new_username();
 
@@ -332,7 +332,7 @@ void handle_new_username(string input) {
   normalized = normalize_value(raw);
 
   if (ACCOUNT_D->account_exists(normalized)) {
-    write("That username is already taken.  Please try again.\n");
+    efun::write("That username is already taken.  Please try again.\n");
 
     prompt_new_username();
 
@@ -342,24 +342,24 @@ void handle_new_username(string input) {
   pending_username = normalized;
   pending_display_name = format_display_name(raw);
 
-  write("Okay, \"" + pending_display_name + "\" it is!  Now, you need a ");
-  write("password.\n");
-  write("A password can be 6-20 characters long, with at least\n");
-  write("one number, one upper-case letter, one lower-case letter,\n");
-  write("and one special character (!@#$%^&*).\n");
+  efun::write("Okay, \"" + pending_display_name + "\" it is!  Now, you need a ");
+  efun::write("password.\n");
+  efun::write("A password can be 6-20 characters long, with at least\n");
+  efun::write("one number, one upper-case letter, one lower-case letter,\n");
+  efun::write("and one special character (!@#$%^&*).\n");
 
   prompt_new_password();
 }
 
 void handle_password(string input) {
-  if (!stringp(input))
+  if (!efun::stringp(input))
     input = "";
 
   if (!is_valid_password(input)) {
-    write("Hmm, that won't work.  Please try again.\n");
-    write("A password can be 6-20 characters long, with at least\n");
-    write("one number, one upper-case letter, one lower-case letter,\n");
-    write("and one special character (!@#$%^&*).\n");
+    efun::write("Hmm, that won't work.  Please try again.\n");
+    efun::write("A password can be 6-20 characters long, with at least\n");
+    efun::write("one number, one upper-case letter, one lower-case letter,\n");
+    efun::write("and one special character (!@#$%^&*).\n");
 
     prompt_new_password();
 
@@ -368,41 +368,41 @@ void handle_password(string input) {
 
   pending_password = input;
 
-  write("That works!  Please type it again, to confirm:\n");
-  write("> ");
+  efun::write("That works!  Please type it again, to confirm:\n");
+  efun::write("> ");
 
-  input_to("handle_password_confirm", 1);
+  efun::input_to("handle_password_confirm", 1);
 }
 
 void handle_password_confirm(string input) {
   string password_hash;
 
-  if (!stringp(input))
+  if (!efun::stringp(input))
     input = "";
 
   if (input != pending_password) {
-    write("Oh, man.  They didn't match.  Try again?\n");
-    write("A password can be 6-20 characters long, with at least\n");
-    write("one number, one upper-case letter, one lower-case letter,\n");
-    write("and one special character (!@#$%^&*).\n");
+    efun::write("Oh, man.  They didn't match.  Try again?\n");
+    efun::write("A password can be 6-20 characters long, with at least\n");
+    efun::write("one number, one upper-case letter, one lower-case letter,\n");
+    efun::write("and one special character (!@#$%^&*).\n");
 
     prompt_new_password();
 
     return;
   }
 
-  password_hash = crypt(pending_password, make_salt());
+  password_hash = efun::crypt(pending_password, make_salt());
 
   if (!ACCOUNT_D->create_account(pending_username, pending_display_name,
                                 pending_email, password_hash)) {
-    write("Something went wrong while creating your account.\n");
+    efun::write("Something went wrong while creating your account.\n");
     prompt_username();
     return;
   }
 
   ACCOUNT_D->record_login(pending_username);
 
-  write("Confirmed!\n");
+  efun::write("Confirmed!\n");
 
   prompt_avatar();
 }
@@ -411,10 +411,10 @@ void handle_new_avatar(string input) {
   string raw;
   string display;
 
-  if (!stringp(input))
+  if (!efun::stringp(input))
     input = "";
 
-  raw = trim(input);
+  raw = efun::trim(input);
 
   if (raw == "") {
     prompt_avatar();
@@ -423,7 +423,7 @@ void handle_new_avatar(string input) {
   }
 
   if (contains_reserved(raw)) {
-    write("Sorry, that word is not allowed.  Try again?\n");
+    efun::write("Sorry, that word is not allowed.  Try again?\n");
 
     prompt_avatar();
 
@@ -431,7 +431,7 @@ void handle_new_avatar(string input) {
   }
 
   if (!is_valid_username(raw)) {
-    write("Just one word, please, with no punctuation or special characters.\n");
+    efun::write("Just one word, please, with no punctuation or special characters.\n");
 
     prompt_avatar();
 
@@ -441,7 +441,7 @@ void handle_new_avatar(string input) {
   display = format_display_name(raw);
 
   if (ACCOUNT_D->avatar_exists(pending_username, display)) {
-    write("That avatar already exists on your account.  Try again?\n");
+    efun::write("That avatar already exists on your account.  Try again?\n");
 
     prompt_avatar();
 
@@ -449,16 +449,16 @@ void handle_new_avatar(string input) {
   }
 
   if (!ACCOUNT_D->add_avatar(pending_username, display)) {
-    write("Something went wrong while creating your avatar.\n");
+    efun::write("Something went wrong while creating your avatar.\n");
 
     prompt_avatar();
 
     return;
   }
 
-  write("Perfect - \"" + display + "\" has been added to your account.\n");
-  write("And now... let's play!\n");
-  write("Connecting as " + display + "....\n");
+  efun::write("Perfect - \"" + display + "\" has been added to your account.\n");
+  efun::write("And now... let's play!\n");
+  efun::write("Connecting as " + display + "....\n");
 
   start_player_session(display);
 }
@@ -467,23 +467,23 @@ void handle_password_existing(string input) {
   string password_hash;
   string attempt_hash;
 
-  if (!stringp(input))
+  if (!efun::stringp(input))
     input = "";
 
   password_hash = ACCOUNT_D->query_password_hash(pending_username);
 
   if (password_hash == "") {
-    write("Password incorrect.  Try again.\n");
+    efun::write("Password incorrect.  Try again.\n");
 
     prompt_existing_password();
 
     return;
   }
 
-  attempt_hash = crypt(input, password_hash);
+  attempt_hash = efun::crypt(input, password_hash);
 
   if (attempt_hash != password_hash) {
-    write("Password incorrect.  Try again.\n");
+    efun::write("Password incorrect.  Try again.\n");
 
     prompt_existing_password();
 
@@ -500,15 +500,15 @@ void handle_avatar_choice(string input) {
   string *avatars;
   int i;
 
-  if (!stringp(input))
+  if (!efun::stringp(input))
     input = "";
 
   choice = normalize_value(input);
   avatars = ACCOUNT_D->query_avatars(pending_username);
 
-  for (i = 0; i < sizeof(avatars); i++) {
+  for (i = 0; i < efun::sizeof(avatars); i++) {
     if (normalize_value(avatars[i]) == choice) {
-      write("Connecting as " + avatars[i] + "....\n");
+      efun::write("Connecting as " + avatars[i] + "....\n");
 
       start_player_session(avatars[i]);
 
@@ -516,7 +516,7 @@ void handle_avatar_choice(string input) {
     }
   }
 
-  write("Sorry, that avatar isn't on your account.  Try again.\n");
+  efun::write("Sorry, that avatar isn't on your account.  Try again.\n");
 
   prompt_avatar_choice(avatars);
 }
@@ -526,14 +526,14 @@ void prompt_avatar_selection() {
 
   avatars = ACCOUNT_D->query_avatars(pending_username);
 
-  if (sizeof(avatars) == 0) {
+  if (efun::sizeof(avatars) == 0) {
     prompt_avatar();
 
     return;
   }
 
-  if (sizeof(avatars) == 1) {
-    write("Connecting as " + avatars[0] + "....\n");
+  if (efun::sizeof(avatars) == 1) {
+    efun::write("Connecting as " + avatars[0] + "....\n");
 
     start_player_session(avatars[0]);
 
@@ -546,17 +546,17 @@ void prompt_avatar_selection() {
 void start_player_session(string avatar_name) {
   object player;
 
-  player = new(PLAYER_OB);
+  player = efun::new(PLAYER_OB);
   player->set_name(avatar_name);
   player->set_account(pending_username);
 
   ACCOUNT_D->record_avatar_login(pending_username, avatar_name);
 
-  exec(player, this_object());
+  efun::exec(player, efun::this_object());
 
   player->move(START_ROOM);
   player->show_location();
   player->start_session();
 
-  destruct(this_object());
+  efun::destruct(efun::this_object());
 }
