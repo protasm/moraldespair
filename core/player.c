@@ -21,10 +21,26 @@ int move(mixed dest) {
   if (moved) {
     //set_this_player(this_object());
 
-    handle_input("look");
+    show_location();
   }
 
   return moved;
+}
+
+void show_location() {
+  string command_path;
+  object command_object;
+
+  command_path = COMMAND_PREFIX + "look";
+
+  if (file_size(command_path + ".c") >= 0) {
+    command_object = load_object(command_path);
+
+    if (objectp(command_object))
+      call_other(command_object, "main", "");
+  }
+
+  return;
 }
 
 int attempt_movement(string verb) {
@@ -65,21 +81,33 @@ int attempt_movement(string verb) {
 
   location = environment(this_object());
 
-  if (!objectp(location))
-    return 0;
+  if (!objectp(location)) {
+    write("You can't go that way.\n");
 
-  if (!function_exists("dest_dir", location))
-    return 0;
+    return 1;
+  }
+
+  if (!function_exists("dest_dir", location)) {
+    write("You can't go that way.\n");
+
+    return 1;
+  }
 
   exits = location->dest_dir();
 
-  if (!mapp(exits))
-    return 0;
+  if (!mapp(exits)) {
+    write("You can't go that way.\n");
+
+    return 1;
+  }
 
   destination = exits[direction];
 
-  if (!stringp(destination))
-    return 0;
+  if (!stringp(destination)) {
+    write("You can't go that way.\n");
+
+    return 1;
+  }
 
   if (destination[0] != '/')
     destination = "/" + destination;
