@@ -12,6 +12,8 @@ void logon() {
   clear_pending();
 
   write("Welcome!  What is your username?\n");
+  write("(Enter \"create\" to make a new account.\n");
+
   prompt_username();
 }
 
@@ -41,6 +43,7 @@ string format_display_name(string value) {
 
 void prompt_username() {
   write("> ");
+
   input_to("handle_username");
 }
 
@@ -181,8 +184,7 @@ string make_salt() {
 }
 
 void handle_username(string input) {
-  string username;
-  string raw;
+  string raw, username;
 
   if (!stringp(input))
     input = "";
@@ -192,12 +194,15 @@ void handle_username(string input) {
 
   if (username == "") {
     prompt_username();
+
     return;
   }
 
-  if (username == "new") {
+  if (username == "create") {
     write("New account - great!\n");
+
     prompt_email();
+
     return;
   }
 
