@@ -1,7 +1,7 @@
 #define LOG_DIR "/log"
 
-#define ROOT_UID "Root"
-#define BACKBONE_UID "Backbone"
+#define ROOT_UID "ROOT"
+#define BACKBONE_UID "BACKBONE"
 
 #define BASE_OB "/inherit/base"
 #define MFUN_OB "/core/mfun"

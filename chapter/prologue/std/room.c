@@ -45,25 +45,17 @@ string short() {
 }
 
 string long(string str) {
-  string description, exit_line;
+  string exit_line;
   string *exits;
-
-  description = long_desc;
-
-  if (!mapp(dest_dir))
-    return description;
 
   exits = keys(dest_dir);
 
   if (!sizeof(exits))
-    return description;
+    return long_desc;
 
   exit_line = "Exits: " + implode(exits, ", ") + ".";
 
-  if (description == "")
-    return exit_line;
-
-  return description + "\n" + exit_line;
+  return long_desc + "\n\n" + exit_line;
 }
 
 mapping dest_dir() {

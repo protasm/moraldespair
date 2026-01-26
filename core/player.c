@@ -1,9 +1,13 @@
 inherit "/inherit/base.c";
 
-void start_session() {
+void repl() {
   write("> ");
 
   input_to("handle_input");
+}
+
+void start_session() {
+  repl();
 }
 
 void handle_input(string str) {
@@ -20,9 +24,7 @@ void handle_input(string str) {
   line = trim(line);
 
   if (line == "") {
-    write("> ");
-
-    input_to("handle_input");
+    repl();
 
     return;
   }
@@ -39,10 +41,9 @@ void handle_input(string str) {
 
   if (file_size(command_path + ".c") < 0) {
     write("Unknown command.\n");
-    write("> ");
 
-    input_to("handle_input");
-
+    repl();
+ 
     return;
   }
 
@@ -50,9 +51,8 @@ void handle_input(string str) {
 
   if (!objectp(command_object)) {
     write("Unknown command.\n");
-    write("> ");
 
-    input_to("handle_input");
+    repl();
 
     return;
   }
@@ -62,7 +62,5 @@ void handle_input(string str) {
   if (!handled)
     write("Unknown command.\n");
 
-  write("> ");
-
-  input_to("handle_input");
+  repl();
 }
