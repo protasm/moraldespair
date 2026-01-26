@@ -14,4 +14,6 @@
 
 #define COMMAND_PREFIX "/chapter/prologue/command/"
 
+#define PLAYER_PROMPT "> "
+
 #define CLEAN_UP "/inherit/clean_up"
