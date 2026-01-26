@@ -1,4 +1,4 @@
-inherit "room/room";
+inherit "/chapter/prologue/std/room";
 
 void create() {
   ::create();
@@ -10,6 +10,4 @@ void create() {
     "up":"/chapter/prologue/area/ruined/lounge",
     "down":"/chapter/prologue/area/ruined/portal",
   ]);
-
-  set_light(1);
 }
