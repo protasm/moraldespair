@@ -7,6 +7,8 @@ void logon() {
 
   exec(player, this_object());
 
+  //cat("/etc/motd");
+
   player->start_session();
 
   player->move(START_ROOM);
