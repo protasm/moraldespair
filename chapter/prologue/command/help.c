@@ -7,7 +7,6 @@ void create() {
   set_help_text(
     "Usage: help or help <command>\n"
     "List available commands, grouped by category.\n"
-    "Use: help <command> to read more about a specific command.\n"
   );
 }
 
