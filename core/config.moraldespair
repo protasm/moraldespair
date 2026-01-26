@@ -39,7 +39,7 @@ include directories : /include
 master file : /core/master
 
 # the file where all global simulated efuns are defined.
-simulated efun file : /core/simul_efun
+simulated efun file : /core/mfun
 
 # alternate debug.log file name (assumed to be in specified 'log directory')
 debug log file : debug.log
