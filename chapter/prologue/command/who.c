@@ -1,19 +1,40 @@
 #include <command.h>
 
-int
-main(string arg)
-{
-	object *list;
-	int j;
+void create() {
+  ::create();
 
-	printf("%-25s idle\n", "name (*edit, +input)");
-	printf("--------------------      ----\n");
-	for (list = users(), j = 0; j < sizeof(list); j++) {
-		printf("%-25s %4d\n", (string)list[j]->query_name() +
-		(in_edit(this_player()) ? "*" : "") +
-		(in_input(this_player()) ? "+" : ""),
-		query_idle(this_player()) / 60
-		);
-	}
-	return 1;
+  set_category("General");
+  set_help_text(
+    "List connected players and their idle time.\n"
+    "Indicators show who is editing or entering input.\n"
+  );
+}
+
+int main(string arg) {
+  object *list;
+  int j;
+  string name;
+
+  printf("%-25s idle\n", "name (*edit, +input)");
+  printf("--------------------      ----\n");
+
+  list = users();
+
+  for (j = 0; j < sizeof(list); j++) {
+    name = (string)list[j]->query_name();
+
+    if (in_edit(this_player()))
+      name += "*";
+
+    if (in_input(this_player()))
+      name += "+";
+
+    printf(
+      "%-25s %4d\n",
+      name,
+      query_idle(this_player()) / 60
+    );
+  }
+
+  return 1;
 }

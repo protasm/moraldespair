@@ -1,3 +1,3 @@
 #include <globals.h>
 
-inherit CLEAN_UP;
+inherit "/core/command";
