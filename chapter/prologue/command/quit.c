@@ -5,6 +5,7 @@ void create() {
 
   set_category("General");
   set_help_text(
+    "Usage: quit\n"
     "Leave the game and end your current session.\n"
     "Your character disappears from the world.\n"
   );

@@ -5,6 +5,7 @@ void create() {
 
   set_category("General");
   set_help_text(
+    "Usage: look or look <target>\n"
     "Show the description of your current location.\n"
     "You can also look at a specific target to inspect it.\n"
   );
