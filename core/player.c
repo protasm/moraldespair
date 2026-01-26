@@ -2,6 +2,28 @@
 
 inherit "/inherit/base.c";
 
+int move(mixed dest) {
+  object old_env, new_env;
+  int moved;
+
+  old_env = environment(this_object());
+
+  ::move(dest);
+
+  new_env = environment(this_object());
+  moved = 0;
+
+  if (objectp(new_env) && new_env != old_env)
+    moved = 1;
+
+  if (moved) {
+    set_this_player(this_object());
+    command("look");
+  }
+
+  return moved;
+}
+
 int attempt_movement(string verb) {
   mapping directions;
   mapping exits;
@@ -59,8 +81,7 @@ int attempt_movement(string verb) {
   if (destination[0] != '/')
     destination = "/" + destination;
 
-  move(destination);
-  moved = 1;
+  moved = move(destination);
 
   if (!moved)
     write("You can't go that way.\n");
