@@ -10,6 +10,8 @@
 #define PLAYER_OB "/core/player"
 #define VOID_OB "/core/void"
 
+#define ACCOUNT_D "/daemon/account_d"
+
 #define START_ROOM "/chapter/prologue/area/ruined/room/sanctuary"
 
 #define COMMAND_PREFIX "/chapter/prologue/command/"

@@ -5,6 +5,8 @@
 inherit "/inherit/base.c";
 
 int brief;
+string name;
+string account_name;
 
 int move(mixed dest) {
   object old_env, new_env;
@@ -25,6 +27,26 @@ int move(mixed dest) {
 
 int query_brief() {
   return brief;
+}
+
+string query_name() {
+  return name;
+}
+
+void set_name(string new_name) {
+  name = new_name;
+
+  return;
+}
+
+string query_account() {
+  return account_name;
+}
+
+void set_account(string new_account) {
+  account_name = new_account;
+
+  return;
 }
 
 void set_brief(int state) {
