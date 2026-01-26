@@ -97,7 +97,7 @@ string resolve_movement_alias(string verb) {
 }
 
 void repl() {
-  write("\n" + PLAYER_PROMPT);
+  write(PLAYER_PROMPT);
 
   input_to("handle_input");
 }
