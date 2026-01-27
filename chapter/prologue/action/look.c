@@ -121,8 +121,6 @@ int main(string arg) {
   if (arg == "") {
     if (stringp(description) && strlen(description) && description[<1] != '\n')
       description += "\n";
-
-    description += "\n";
   }
 
   description = short_desc + divider + description;
