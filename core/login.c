@@ -233,7 +233,6 @@ void handle_username(string input) {
   }
 
   write("Sorry, I don't recognize \"" + raw + "\".  Please try again.\n");
-  write("(Or, enter \"create\" to create a new account.)\n");
 
   prompt_username();
 }
@@ -555,22 +554,27 @@ void start_player_session(string avatar_name) {
 
   player = new(PLAYER_OB);
   avatar = new(AVATAR_OB);
+write("foo2\n");
 
   player->set_name(avatar_name);
   player->set_account(pending_username);
   player->set_curr_avatar(avatar);
+write("foo3\n");
 
   avatar->set_account(pending_username);
   avatar->set_name(avatar_name);
+write("foo4\n");
 
   ACCOUNT_D->record_avatar_login(pending_username, avatar_name);
+write("fo5555\n");
 
   exec(avatar, this_object());
-
+write("foo5\n");
   avatar->set_player(player);
   avatar->move(START_ROOM);
   avatar->show_location();
   avatar->start_session();
+write("foo6\n");
 
   destruct(this_object());
 }
