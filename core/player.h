@@ -1,5 +1,4 @@
-void handle_input(string str);
-void show_location();
+int handle_command(string verb, string arg);
 string query_name();
 void set_name(string new_name);
 string query_account();

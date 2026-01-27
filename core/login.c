@@ -565,11 +565,12 @@ void start_player_session(string avatar_name) {
 
   ACCOUNT_D->record_avatar_login(pending_username, avatar_name);
 
-  exec(player, this_object());
+  exec(avatar, this_object());
 
-  player->move(START_ROOM);
-  player->show_location();
-  player->start_session();
+  avatar->set_player(player);
+  avatar->move(START_ROOM);
+  avatar->show_location();
+  avatar->start_session();
 
   destruct(this_object());
 }

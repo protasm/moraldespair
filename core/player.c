@@ -4,7 +4,6 @@
 
 inherit "/inherit/base.c";
 
-int brief;
 string name, account_name;
 object curr_avatar;
 
@@ -87,32 +86,15 @@ int try_command(string prefix, string verb, string arg) {
   return handled;
 }
 
-int move(mixed dest) {
-  object old_env, new_env;
-  int moved;
+int handle_command(string verb, string arg) {
+  int handled;
 
-  old_env = environment(this_object());
+  handled = try_command(COMMAND_PREFIX, verb, arg);
 
-  ::move(dest);
+  if (handled)
+    return 1;
 
-  new_env = environment(this_object());
-  moved = 0;
-
-  if (objectp(new_env) && new_env != old_env)
-    moved = 1;
-
-  return moved;
-}
-
-int query_brief() {
-  object avatar;
-
-  avatar = query_curr_avatar();
-
-  if (objectp(avatar))
-    return avatar->query_brief();
-
-  return brief;
+  return 0;
 }
 
 string query_name() {
@@ -287,200 +269,4 @@ int set_account_last_login(int last_login) {
   account["last_login"] = last_login;
 
   return save_account_data(account);
-}
-
-void set_brief(int state) {
-  object avatar;
-
-  avatar = query_curr_avatar();
-
-  if (objectp(avatar)) {
-    avatar->set_brief(state);
-
-    return;
-  }
-
-  if (state)
-    brief = 1;
-  else
-    brief = 0;
-
-  return;
-}
-
-int toggle_brief() {
-  object avatar;
-
-  avatar = query_curr_avatar();
-
-  if (objectp(avatar))
-    return avatar->toggle_brief();
-
-  if (brief)
-    brief = 0;
-  else
-    brief = 1;
-
-  return brief;
-}
-
-void show_location() {
-  string command_path;
-  object command_object;
-
-  command_path = ACTION_PREFIX + "look";
-
-  if (file_size(command_path + ".c") >= 0) {
-    command_object = load_object(command_path);
-
-    if (objectp(command_object))
-      call_other(command_object, "main", "");
-  }
-
-  return;
-}
-
-string resolve_movement_alias(string verb) {
-  mapping directions;
-  string direction;
-
-  directions = ([
-    "north" : "north",
-    "south" : "south",
-    "east" : "east",
-    "west" : "west",
-    "northeast" : "northeast",
-    "northwest" : "northwest",
-    "southeast" : "southeast",
-    "southwest" : "southwest",
-    "up" : "up",
-    "down" : "down",
-    "n" : "north",
-    "s" : "south",
-    "e" : "east",
-    "w" : "west",
-    "ne" : "northeast",
-    "nw" : "northwest",
-    "se" : "southeast",
-    "sw" : "southwest",
-    "u" : "up",
-    "d" : "down"
-  ]);
-
-  direction = directions[verb];
-
-  if (!stringp(direction))
-    return "";
-
-  return direction;
-}
-
-void repl() {
-  write(PLAYER_PROMPT);
-
-  input_to("handle_input");
-}
-
-void start_session() {
-  repl();
-}
-
-void handle_input(string str) {
-  string line, verb, arg, command_path, movement_arg;
-  string *parts;
-  object command_object, location;
-  mapping exits;
-  int handled, moved;
-
-  line = str;
-
-  if (!line)
-    line = "";
-
-  line = trim(line);
-
-  if (line == "") {
-    repl();
-
-    return;
-  }
-
-  parts = explode(line, " ");
-  verb = parts[0];
-
-  if (sizeof(parts) > 1)
-    arg = implode(parts[1..], " ");
-  else
-    arg = "";
-
-  handled = 0;
-  moved = 0;
-
-  /* First: try account-level commands. */
-  handled = try_command(COMMAND_PREFIX, verb, arg);
-
-  if (handled) {
-    repl();
-
-    return;
-  }
-
-  /* Second: try chapter-level actions. */
-  if (verb != "go") {
-    handled = try_command(ACTION_PREFIX, verb, arg);
-
-    if (handled) {
-      repl();
-
-      return;
-    }
-  }
-
-  /*
-   * Second: treat the verb as movement only after all command files are
-   * exhausted. This includes standard direction aliases and any room-defined
-   * exits like "door" or "pylus".
-   */
-  movement_arg = resolve_movement_alias(verb);
-
-  if (movement_arg == "") {
-    location = environment(this_object());
-
-    if (objectp(location) && function_exists("dest_dir", location)) {
-      exits = location->dest_dir();
-
-      if (mapp(exits) && stringp(exits[verb]))
-        movement_arg = verb;
-    }
-  }
-
-  if (movement_arg != "" || verb == "go") {
-    if (movement_arg != "") {
-      verb = "go";
-      arg = movement_arg;
-    }
-
-    command_path = ACTION_PREFIX + "go";
-
-    if (file_size(command_path + ".c") >= 0) {
-      command_object = load_object(command_path);
-
-      if (objectp(command_object))
-        moved = call_other(command_object, "main", arg);
-    }
-
-    if (moved)
-      show_location();
-    else
-      write("You can't go that way.\n");
-
-    repl();
-
-    return;
-  }
-
-  if (!handled)
-    write("Unknown command.\n");
-
-  repl();
 }
