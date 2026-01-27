@@ -383,11 +383,7 @@ void handle_input(string str) {
   player = query_player();
 
   if (objectp(player)) {
-    set_this_player(player);
-
     handled = player->handle_command(verb, arg);
-
-    set_this_player(this_object());
   }
 
   if (!handled)

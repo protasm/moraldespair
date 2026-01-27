@@ -552,7 +552,7 @@ void start_player_session(string avatar_name) {
   object player;
   object avatar;
 
-  player = new(PLAYER_OB);
+  player = new(ACCOUNT_OB);
   avatar = new(AVATAR_OB);
 write("foo2\n");
 

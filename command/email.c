@@ -11,11 +11,16 @@ void create() {
 }
 
 int main(string arg) {
-  object player;
+  object player, active;
   string email;
   int saved;
 
-  player = this_player();
+  active = this_player();
+
+  if (objectp(active) && function_exists("query_player", active))
+    player = active->query_player();
+  else
+    player = active;
 
   if (!objectp(player))
     return 0;
