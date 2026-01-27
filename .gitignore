@@ -1,7 +1,4 @@
 /log/
-/players/
-
-LP_SWAP.*
-ip-*.debug.log
+/a/
 
 .DS_Store

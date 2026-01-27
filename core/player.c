@@ -5,8 +5,7 @@
 inherit "/inherit/base.c";
 
 int brief;
-string name;
-string account_name;
+string name, account_name;
 object curr_avatar;
 
 string normalize_key(string value) {
@@ -29,8 +28,7 @@ string account_file_path() {
 
 mapping load_account_data() {
   mapping account;
-  string path;
-  string raw;
+  string path, raw;
 
   path = account_file_path();
 
@@ -54,8 +52,7 @@ mapping load_account_data() {
 }
 
 int save_account_data(mapping account) {
-  string path;
-  string raw;
+  string path, raw;
 
   if (!mapp(account))
     return 0;
