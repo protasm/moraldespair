@@ -553,6 +553,7 @@ void prompt_avatar_selection() {
 void start_session(string avatar_name) {
   object account;
   object avatar;
+  int brief;
 
   account = new(ACCOUNT_OB);
   avatar = new(AVATAR_OB);
@@ -561,6 +562,9 @@ void start_session(string avatar_name) {
 
   avatar->set_account(account);
   avatar->set_name(avatar_name);
+
+  brief = avatar->query_brief();
+  avatar->set_brief(brief);
 
   ACCOUNT_D->record_avatar_login(pending_username, avatar_name);
 
