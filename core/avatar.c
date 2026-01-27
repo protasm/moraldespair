@@ -2,9 +2,8 @@
 
 inherit "/inherit/base.c";
 
-string account_name;
 string avatar_name;
-object player_object;
+object player_object, account_object;
 
 int try_command(string prefix, string verb, string arg) {
   string command_path;
@@ -32,10 +31,9 @@ string normalize_key(string value) {
 }
 
 string avatar_file_path() {
-  string username;
-  string avatar;
+  string username, avatar;
 
-  username = normalize_key(account_name);
+  username = account_object->username();
   avatar = normalize_key(avatar_name);
 
   if (username == "" || avatar == "")
@@ -116,12 +114,12 @@ void set_player(object player) {
   return;
 }
 
-string query_account() {
-  return account_name;
+object query_account() {
+  return account_object;
 }
 
-void set_account(string new_account) {
-  account_name = new_account;
+void set_account(object new_account) {
+  account_object = new_account;
 
   return;
 }
@@ -131,7 +129,7 @@ string query_name() {
 }
 
 void set_name(string new_name) {
-  avatar_name = new_name;
+  avatar_name = normalize_key(new_name);
 
   return;
 }

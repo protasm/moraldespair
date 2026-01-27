@@ -4,8 +4,15 @@
 
 inherit "/inherit/base.c";
 
-string name, account_name;
-object curr_avatar;
+string username;
+
+string username() {
+  return username;
+}
+
+void set_username(string new_username) {
+  username = normalize_key(new_username);
+}
 
 string normalize_key(string value) {
   if (!stringp(value))
@@ -15,10 +22,6 @@ string normalize_key(string value) {
 }
 
 string account_file_path() {
-  string username;
-
-  username = normalize_key(account_name);
-
   if (username == "")
     return "";
 
@@ -68,13 +71,13 @@ int save_account_data(mapping account) {
   return write_file(path, raw);
 }
 
-int try_command(string prefix, string verb, string arg) {
+int handle_command(string verb, string arg) {
   string command_path;
   object command_object;
   int handled;
 
   handled = 0;
-  command_path = prefix + verb;
+  command_path = COMMAND_PREFIX + verb;
 
   if (file_size(command_path + ".c") >= 0) {
     command_object = load_object(command_path);
@@ -86,75 +89,7 @@ int try_command(string prefix, string verb, string arg) {
   return handled;
 }
 
-int handle_command(string verb, string arg) {
-  int handled;
-
-  handled = try_command(COMMAND_PREFIX, verb, arg);
-
-  if (handled)
-    return 1;
-
-  return 0;
-}
-
-string query_name() {
-  return name;
-}
-
-void set_name(string new_name) {
-  name = new_name;
-
-  return;
-}
-
-string query_account() {
-  return account_name;
-}
-
-void set_account(string new_account) {
-  account_name = new_account;
-
-  return;
-}
-
-object query_curr_avatar() {
-  return curr_avatar;
-}
-
-void set_curr_avatar(object avatar) {
-  curr_avatar = avatar;
-
-  return;
-}
-
-string query_account_display_name() {
-  mapping account;
-
-  account = load_account_data();
-
-  if (!mapp(account))
-    return "";
-
-  return account["display_name"];
-}
-
-int set_account_display_name(string new_display_name) {
-  mapping account;
-
-  if (!stringp(new_display_name))
-    return 0;
-
-  account = load_account_data();
-
-  if (!mapp(account))
-    return 0;
-
-  account["display_name"] = new_display_name;
-
-  return save_account_data(account);
-}
-
-string query_account_email() {
+string query_email() {
   mapping account;
 
   account = load_account_data();
@@ -165,7 +100,7 @@ string query_account_email() {
   return account["email"];
 }
 
-int set_account_email(string new_email) {
+int set_email(string new_email) {
   mapping account;
   string normalized;
 
@@ -187,7 +122,7 @@ int set_account_email(string new_email) {
   return save_account_data(account);
 }
 
-string query_account_password_hash() {
+string query_password_hash() {
   mapping account;
 
   account = load_account_data();
@@ -198,7 +133,7 @@ string query_account_password_hash() {
   return account["password_hash"];
 }
 
-int set_account_password_hash(string new_hash) {
+int set_password_hash(string new_hash) {
   mapping account;
 
   if (!stringp(new_hash))
@@ -214,7 +149,7 @@ int set_account_password_hash(string new_hash) {
   return save_account_data(account);
 }
 
-string *query_account_avatars() {
+string *query_avatars() {
   mapping account;
   string *avatars;
 
@@ -231,7 +166,7 @@ string *query_account_avatars() {
   return avatars;
 }
 
-int set_account_avatars(string *avatars) {
+int set_avatars(string *avatars) {
   mapping account;
 
   if (!pointerp(avatars))
@@ -247,7 +182,7 @@ int set_account_avatars(string *avatars) {
   return save_account_data(account);
 }
 
-int query_account_last_login() {
+int query_last_login() {
   mapping account;
 
   account = load_account_data();
@@ -258,7 +193,7 @@ int query_account_last_login() {
   return account["last_login"];
 }
 
-int set_account_last_login(int last_login) {
+int set_last_login(int last_login) {
   mapping account;
 
   account = load_account_data();

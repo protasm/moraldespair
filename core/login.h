@@ -8,7 +8,7 @@ void prompt_new_password();
 void prompt_avatar();
 void prompt_avatar_choice(string *avatars);
 void prompt_avatar_selection();
-void start_player_session(string avatar_name);
+void start_session(string avatar_name);
 void clear_pending();
 void write_password_advice();
 string normalize_value(string value);

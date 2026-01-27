@@ -238,7 +238,7 @@ void handle_username(string input) {
 }
 
 void handle_email(string input) {
-  string raw, existing, email;
+  string raw, email;
 
   if (!stringp(input))
     input = "";
@@ -255,6 +255,8 @@ void handle_email(string input) {
   }
 
   /* TODO
+  string existing;
+
   existing = ACCOUNT_D->query_username_by_email(email);
 
   if (existing != "") {
@@ -467,7 +469,7 @@ void handle_new_avatar(string input) {
   write("And now... let's play!\n");
   write("Connecting as " + display + "....\n");
 
-  start_player_session(display);
+  start_session(display);
 }
 
 void handle_password_existing(string input) {
@@ -516,7 +518,7 @@ void handle_avatar_choice(string input) {
     if (normalize_value(avatars[i]) == choice) {
       write("Connecting as " + avatars[i] + "....\n");
 
-      start_player_session(avatars[i]);
+      start_session(avatars[i]);
 
       return;
     }
@@ -540,7 +542,7 @@ void prompt_avatar_selection() {
   if (sizeof(avatars) == 1) {
     write("Connecting as " + avatars[0] + "....\n");
 
-    start_player_session(avatars[0]);
+    start_session(avatars[0]);
 
     return;
   }
@@ -548,33 +550,25 @@ void prompt_avatar_selection() {
   prompt_avatar_choice(avatars);
 }
 
-void start_player_session(string avatar_name) {
-  object player;
+void start_session(string avatar_name) {
+  object account;
   object avatar;
 
-  player = new(ACCOUNT_OB);
+  account = new(ACCOUNT_OB);
   avatar = new(AVATAR_OB);
-write("foo2\n");
 
-  player->set_name(avatar_name);
-  player->set_account(pending_username);
-  player->set_curr_avatar(avatar);
-write("foo3\n");
+  account->set_username(pending_username);
 
-  avatar->set_account(pending_username);
+  avatar->set_account(account);
   avatar->set_name(avatar_name);
-write("foo4\n");
 
   ACCOUNT_D->record_avatar_login(pending_username, avatar_name);
-write("fo5555\n");
 
   exec(avatar, this_object());
-write("foo5\n");
-  avatar->set_player(player);
+
   avatar->move(START_ROOM);
   avatar->show_location();
   avatar->start_session();
-write("foo6\n");
 
   destruct(this_object());
 }
