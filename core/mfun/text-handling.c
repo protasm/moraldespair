@@ -5,32 +5,32 @@ private string wrap_line(string line) {
   string current, token, character;
   int i, token_length, length;
 
-  if (!efun::stringp(line) || line == "")
+  if (!stringp(line) || line == "")
     return "";
 
   tokens = ({});
   current = "";
-  length = efun::strlen(line);
+  length = strlen(line);
 
   for (i = 0; i < length; i++) {
     character = line[i..i];
 
-    if (!efun::sizeof(tokens)) {
+    if (!sizeof(tokens)) {
       tokens += ({ character });
 
       continue;
     }
 
-    token = tokens[efun::sizeof(tokens) - 1];
+    token = tokens[sizeof(tokens) - 1];
 
     if (character == " ") {
       if (token[0..0] == " ")
-        tokens[efun::sizeof(tokens) - 1] += character;
+        tokens[sizeof(tokens) - 1] += character;
       else
         tokens += ({ character });
     } else {
       if (token[0..0] != " ")
-        tokens[efun::sizeof(tokens) - 1] += character;
+        tokens[sizeof(tokens) - 1] += character;
       else
         tokens += ({ character });
     }
@@ -38,12 +38,12 @@ private string wrap_line(string line) {
 
   chunks = ({});
 
-  for (i = 0; i < efun::sizeof(tokens); i++) {
+  for (i = 0; i < sizeof(tokens); i++) {
     token = tokens[i];
-    token_length = efun::strlen(token);
+    token_length = strlen(token);
 
     if (token_length > 80) {
-      if (efun::strlen(current)) {
+      if (strlen(current)) {
         chunks += ({ current });
         current = "";
       }
@@ -51,22 +51,22 @@ private string wrap_line(string line) {
       while (token_length > 80) {
         chunks += ({ token[0..79] });
         token = token[80..];
-        token_length = efun::strlen(token);
+        token_length = strlen(token);
       }
 
-      if (efun::strlen(token))
+      if (strlen(token))
         current = token;
 
       continue;
     }
 
-    if (!efun::strlen(current)) {
+    if (!strlen(current)) {
       current = token;
 
       continue;
     }
 
-    if (efun::strlen(current) + token_length <= 80)
+    if (strlen(current) + token_length <= 80)
       current += token;
     else {
       chunks += ({ current });
@@ -74,10 +74,10 @@ private string wrap_line(string line) {
     }
   }
 
-  if (efun::strlen(current))
+  if (strlen(current))
     chunks += ({ current });
 
-  return efun::implode(chunks, "\n");
+  return implode(chunks, "\n");
 }
 
 //override
@@ -86,12 +86,12 @@ void write(mixed str) {
   string line, wrapped_line, current, character;
   int i, length;
 
-  if (!efun::stringp(str))
+  if (!stringp(str))
     return;
 
   lines = ({});
   current = "";
-  length = efun::strlen(str);
+  length = strlen(str);
 
   for (i = 0; i < length; i++) {
     character = str[i..i];
@@ -109,11 +109,11 @@ void write(mixed str) {
   lines += ({ current });
   wrapped_lines = ({});
 
-  for (i = 0; i < efun::sizeof(lines); i++) {
+  for (i = 0; i < sizeof(lines); i++) {
     line = lines[i];
     wrapped_line = wrap_line(line);
     wrapped_lines += ({ wrapped_line });
   }
 
-  efun::write(efun::implode(wrapped_lines, "\n"));
+  efun::write(implode(wrapped_lines, "\n"));
 }

@@ -1,27 +1,21 @@
-static string account_root;
+#include "/daemon/account_d.h"
 
-static string normalize_key(string value);
-static string account_dir(string username);
-static string account_file(string username);
-static string avatar_file(string username, string avatar_name);
-static void ensure_account_root();
-static void ensure_account_dir(string username);
-static mapping load_data(string path);
-static int save_data(string path, mapping data);
+string account_root;
 
 void create() {
   account_root = "/a";
+
   ensure_account_root();
 }
 
-static string normalize_key(string value) {
+string normalize_key(string value) {
   if (!stringp(value))
     return "";
 
   return lower_case(trim(value));
 }
 
-static string account_dir(string username) {
+string account_dir(string username) {
   username = normalize_key(username);
 
   if (username == "")
@@ -30,7 +24,7 @@ static string account_dir(string username) {
   return account_root + "/" + username;
 }
 
-static string account_file(string username) {
+string account_file(string username) {
   string dir;
 
   dir = account_dir(username);
@@ -41,7 +35,7 @@ static string account_file(string username) {
   return dir + "/account.o";
 }
 
-static string avatar_file(string username, string avatar_name) {
+string avatar_file(string username, string avatar_name) {
   string dir;
   string normalized;
 
@@ -54,12 +48,12 @@ static string avatar_file(string username, string avatar_name) {
   return dir + "/" + normalized + ".o";
 }
 
-static void ensure_account_root() {
+void ensure_account_root() {
   if (file_size(account_root) != -2)
     mkdir(account_root);
 }
 
-static void ensure_account_dir(string username) {
+void ensure_account_dir(string username) {
   string dir;
 
   ensure_account_root();
@@ -72,7 +66,7 @@ static void ensure_account_dir(string username) {
     mkdir(dir);
 }
 
-static mapping load_data(string path) {
+mapping load_data(string path) {
   mapping data;
   string raw;
 
@@ -95,7 +89,7 @@ static mapping load_data(string path) {
   return data;
 }
 
-static int save_data(string path, mapping data) {
+int save_data(string path, mapping data) {
   string raw;
 
   if (path == "")

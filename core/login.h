@@ -1,3 +1,5 @@
+void create_account();
+void write_prompt(string question);
 void prompt_username();
 void prompt_email();
 void prompt_new_username();
@@ -8,6 +10,7 @@ void prompt_avatar_choice(string *avatars);
 void prompt_avatar_selection();
 void start_player_session(string avatar_name);
 void clear_pending();
+void write_password_advice();
 string normalize_value(string value);
 string format_display_name(string value);
 int is_valid_email(string email);

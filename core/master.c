@@ -33,9 +33,9 @@ void preload(string) {
 }
 
 void log_error(string file, string message) {
-  efun::write_file("/log/compile", file + ": " + message);
+  write_file("/log/compile", file + ": " + message);
 }
 
 object connect() {
-  return efun::new(LOGIN_OB);
+  return new(LOGIN_OB);
 }
