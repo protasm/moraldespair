@@ -551,11 +551,17 @@ void prompt_avatar_selection() {
 
 void start_player_session(string avatar_name) {
   object player;
+  object avatar;
 
   player = new(PLAYER_OB);
+  avatar = new(AVATAR_OB);
 
   player->set_name(avatar_name);
   player->set_account(pending_username);
+  player->set_curr_avatar(avatar);
+
+  avatar->set_account(pending_username);
+  avatar->set_name(avatar_name);
 
   ACCOUNT_D->record_avatar_login(pending_username, avatar_name);
 

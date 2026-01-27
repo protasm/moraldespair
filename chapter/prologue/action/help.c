@@ -25,7 +25,7 @@ int main(string arg) {
 
   if (target == "") {
     categories = ([]);
-    files = get_dir(COMMAND_PREFIX + "*.c");
+    files = get_dir(ACTION_PREFIX + "*.c");
 
     if (!arrayp(files) || !sizeof(files)) {
       write("No commands are available.\n");
@@ -39,7 +39,7 @@ int main(string arg) {
       if (command[<2..] == ".c")
         command = command[0..<3];
 
-      command_object = load_object(COMMAND_PREFIX + command);
+      command_object = load_object(ACTION_PREFIX + command);
 
       if (!objectp(command_object))
         continue;
@@ -78,7 +78,7 @@ int main(string arg) {
     return 1;
   }
 
-  path = COMMAND_PREFIX + target;
+  path = ACTION_PREFIX + target;
 
   if (file_size(path + ".c") < 0) {
     write("No help is available for that command.\n");
