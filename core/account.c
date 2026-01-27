@@ -1,6 +1,6 @@
 #include <globals.h>
 
-#include "player.h"
+#include "account.h"
 
 inherit "/inherit/base.c";
 

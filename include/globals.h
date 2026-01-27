@@ -7,7 +7,7 @@
 #define MFUN_OB "/core/mfun"
 
 #define LOGIN_OB "/core/login"
-#define PLAYER_OB "/core/player"
+#define ACCOUNT_OB "/core/account"
 #define AVATAR_OB "/core/avatar"
 #define VOID_OB "/core/void"
 
