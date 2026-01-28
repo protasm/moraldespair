@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 inherit "chapter/prologue/std/room";
+=======
+inherit "/chapter/prologue/std/room";
+>>>>>>> 8aaca6e5af8ef9e9f4487e77a57e960b51c21d1b
 
 void create() {
   ::create();
