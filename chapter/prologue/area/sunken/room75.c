@@ -1,4 +1,4 @@
-inherit "room/room";
+inherit "/room/room";
 
 void create() {
   ::create();
