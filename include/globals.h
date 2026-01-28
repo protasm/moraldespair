@@ -13,6 +13,9 @@
 
 #define ACCOUNT_D "/daemon/account_d"
 
+#define WELCOME_FILE "/etc/welcome"
+#define MOTD_FILE "/etc/motd"
+
 #define START_ROOM "/chapter/prologue/area/ruined/room/sanctuary"
 
 #define COMMAND_PREFIX "/command/"

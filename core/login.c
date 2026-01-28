@@ -11,6 +11,8 @@ private string pending_existing_username;
 void logon() {
   clear_pending();
 
+  cat(WELCOME_FILE, 1, 1);
+
   write("Welcome!  What is your username?\n");
 
   prompt_username();
@@ -466,7 +468,7 @@ void handle_new_avatar(string input) {
   }
 
   write("Perfect - \"" + display + "\" has been added to your account.\n");
-  write("And now... let's play!\n");
+  write("And now... let's play!\n\n");
   write("Connecting as " + display + "....\n");
 
   start_session(display);
@@ -551,8 +553,7 @@ void prompt_avatar_selection() {
 }
 
 void start_session(string avatar_name) {
-  object account;
-  object avatar;
+  object account, avatar;
   int brief;
 
   account = new(ACCOUNT_OB);
@@ -570,6 +571,8 @@ void start_session(string avatar_name) {
 
   exec(avatar, this_object());
 
+  cat(MOTD_FILE, 1, 1);
+
   avatar->move(START_ROOM);
   avatar->show_location();
   avatar->start_session();
@@ -581,5 +584,5 @@ void write_prompt(string question) {
   if (question != "")
     write(question + "\n");
 
-  write("> ");
+  write(PLAYER_PROMPT);
 }

@@ -1,4 +1,4 @@
-inherit "room/room";
+inherit "chapter/prologue/std/room";
 
 void create() {
   ::create();
