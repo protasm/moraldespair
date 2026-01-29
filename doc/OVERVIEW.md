@@ -2,7 +2,9 @@
 
 ## High-Level Description
 
-**Moral Despair** is a custom LPMud mudlib designed to run on the **LDMud** driver. It is deployed on an AWS EC2 instance and publicly accessible at:
+**Moral Despair** is a custom LPMud mudlib designed to run on the
+**FluffOS** driver. It is deployed on an AWS EC2 instance and publicly
+accessible at:
 
 ```
 mud.moraldecay.net 3003
@@ -10,7 +12,8 @@ mud.moraldecay.net 3003
 
 The project represents a *reboot* or *successor* to the early‑1990s LPMud **Moral Decay**. While it shares the same world and geography, Moral Despair is **not** intended to recreate the original game mechanically, narratively, or system‑by‑system. Instead, it is a clean restart with modern design goals, implemented incrementally through clearly defined development phases.
 
-This repository contains **only the mudlib** (game logic, world definitions, commands, systems, etc.), not the LDMud driver itself.
+This repository contains **only the mudlib** (game logic, world
+definitions, commands, systems, etc.), not the FluffOS driver itself.
 
 ---
 
@@ -161,4 +164,3 @@ None of these systems should be assumed to exist yet.
 Moral Despair is a deliberately slow‑built LPMud set in a familiar but abandoned world. The current goal is not feature completeness, but **foundation, atmosphere, and correctness**.
 
 All development decisions should preserve that intent.
-

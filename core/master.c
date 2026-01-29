@@ -36,6 +36,23 @@ void log_error(string file, string message) {
   write_file("/log/compile", file + ": " + message);
 }
 
+object compile_object(string file) {
+  string room_id;
+  object room;
+
+  if (!stringp(file))
+    return 0;
+
+  if (sscanf(file, "/room/wilderness_room#%s", room_id) != 1)
+    return 0;
+
+  room = "/chapter/prologue/std/vmaster"->compile_object(
+    "wilderness_room#" + room_id
+  );
+
+  return room;
+}
+
 object connect() {
   return new(LOGIN_OB);
 }
