@@ -72,7 +72,6 @@ int main(string arg) {
       destination = "/" + destination;
 
     moved = player->move(destination);
-write("moved: " + moved + "\n");
 
     return moved;
   }

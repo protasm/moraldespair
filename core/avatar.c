@@ -1,6 +1,6 @@
 #include <globals.h>
 
-inherit "/inherit/base.c";
+//inherit "/inherit/base.c";
 
 string avatar_name;
 object player_object, account_object;
@@ -93,7 +93,7 @@ int move(mixed dest) {
 
   old_env = environment(this_object());
 
-  ::move(dest);
+  move_object(dest);
 
   new_env = environment(this_object());
   moved = 0;

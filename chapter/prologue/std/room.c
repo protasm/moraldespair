@@ -4,6 +4,7 @@ string short_desc, long_desc;
 mapping dest_dir, exit_aliases;
 
 void create() {
+write("/chapter/prologue/std/room:create()\n");
   short_desc = "";
   long_desc = "";
   dest_dir = ([]);
@@ -15,6 +16,7 @@ void create() {
 }
 
 void init() {
+write("/chapter/prologue/std/room:init()\n");
   string *dirs, *aliases;
   int i;
 
@@ -76,6 +78,7 @@ void add_exit_alias(string alias, string direction) {
 }
 
 int move(string str) {
+write("/chapter/prologue/std/room:move " + str + "\n");
   string direction;
 
   direction = query_verb();
@@ -98,6 +101,7 @@ int move_alias(string str) {
 }
 
 int move_direction(string direction) {
+write("/chapter/prologue/std/room:move_direction " + direction + "\n");
   string destination;
 
   if (!mapp(dest_dir))

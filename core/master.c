@@ -1,6 +1,6 @@
 #include <globals.h>
 
-inherit "/inherit/master/valid.c";
+#include "/inherit/master/valid.c"
 
 string get_root_uid() {
   return ROOT_UID;
