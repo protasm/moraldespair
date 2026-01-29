@@ -149,27 +149,31 @@ int set_password_hash(string new_hash) {
   return save_account_data(account);
 }
 
-string *query_avatars() {
+string *query_players() {
   mapping account;
-  string *avatars;
+  string *players;
 
   account = load_account_data();
 
   if (!mapp(account))
     return ({});
 
-  avatars = account["avatars"];
+  players = account["players"];
 
-  if (!pointerp(avatars))
-    return ({});
+  if (!pointerp(players)) {
+    players = account["avatars"];
 
-  return avatars;
+    if (!pointerp(players))
+      return ({});
+  }
+
+  return players;
 }
 
-int set_avatars(string *avatars) {
+int set_players(string *players) {
   mapping account;
 
-  if (!pointerp(avatars))
+  if (!pointerp(players))
     return 0;
 
   account = load_account_data();
@@ -177,7 +181,8 @@ int set_avatars(string *avatars) {
   if (!mapp(account))
     return 0;
 
-  account["avatars"] = avatars;
+  account["players"] = players;
+  account["avatars"] = players;
 
   return save_account_data(account);
 }

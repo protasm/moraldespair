@@ -2,7 +2,7 @@
 
 //inherit "/inherit/base.c";
 
-string avatar_name;
+string player_name;
 object player_object, account_object;
 
 int try_command(string prefix, string verb, string arg) {
@@ -30,24 +30,24 @@ string normalize_key(string value) {
   return lower_case(trim(value));
 }
 
-string avatar_file_path() {
-  string username, avatar;
+string player_file_path() {
+  string username, player;
 
   username = account_object->username();
-  avatar = normalize_key(avatar_name);
+  player = normalize_key(player_name);
 
-  if (username == "" || avatar == "")
+  if (username == "" || player == "")
     return "";
 
-  return "/a/" + username + "/" + avatar + ".o";
+  return "/a/" + username + "/" + player + ".o";
 }
 
-mapping load_avatar_data() {
-  mapping avatar;
+mapping load_player_data() {
+  mapping player;
   string path;
   string raw;
 
-  path = avatar_file_path();
+  path = player_file_path();
 
   if (path == "")
     return 0;
@@ -60,27 +60,27 @@ mapping load_avatar_data() {
   if (!stringp(raw))
     return 0;
 
-  avatar = restore_variable(raw);
+  player = restore_variable(raw);
 
-  if (!mapp(avatar))
+  if (!mapp(player))
     return 0;
 
-  return avatar;
+  return player;
 }
 
-int save_avatar_data(mapping avatar) {
+int save_player_data(mapping player) {
   string path;
   string raw;
 
-  if (!mapp(avatar))
+  if (!mapp(player))
     return 0;
 
-  path = avatar_file_path();
+  path = player_file_path();
 
   if (path == "")
     return 0;
 
-  raw = save_variable(avatar);
+  raw = save_variable(player);
 
   rm(path);
 
@@ -125,113 +125,113 @@ void set_account(object new_account) {
 }
 
 string query_name() {
-  return avatar_name;
+  return player_name;
 }
 
 void set_name(string new_name) {
-  avatar_name = normalize_key(new_name);
+  player_name = normalize_key(new_name);
 
   return;
 }
 
 string query_display_name() {
-  mapping avatar;
+  mapping player;
 
-  avatar = load_avatar_data();
+  player = load_player_data();
 
-  if (!mapp(avatar))
+  if (!mapp(player))
     return "";
 
-  return avatar["display_name"];
+  return player["display_name"];
 }
 
 int set_display_name(string new_display_name) {
-  mapping avatar;
+  mapping player;
 
   if (!stringp(new_display_name))
     return 0;
 
-  avatar = load_avatar_data();
+  player = load_player_data();
 
-  if (!mapp(avatar))
+  if (!mapp(player))
     return 0;
 
-  avatar["display_name"] = new_display_name;
+  player["display_name"] = new_display_name;
 
-  return save_avatar_data(avatar);
+  return save_player_data(player);
 }
 
 int query_brief() {
-  mapping avatar;
+  mapping player;
 
-  avatar = load_avatar_data();
+  player = load_player_data();
 
-  if (!mapp(avatar))
+  if (!mapp(player))
     return 0;
 
-  return avatar["brief"];
+  return player["brief"];
 }
 
 int set_brief(int state) {
-  mapping avatar;
+  mapping player;
 
-  avatar = load_avatar_data();
+  player = load_player_data();
 
-  if (!mapp(avatar))
+  if (!mapp(player))
     return 0;
 
   if (state)
-    avatar["brief"] = 1;
+    player["brief"] = 1;
   else
-    avatar["brief"] = 0;
+    player["brief"] = 0;
 
-  return save_avatar_data(avatar);
+  return save_player_data(player);
 }
 
 int toggle_brief() {
-  mapping avatar;
+  mapping player;
   int brief;
 
-  avatar = load_avatar_data();
+  player = load_player_data();
 
-  if (!mapp(avatar))
+  if (!mapp(player))
     return 0;
 
-  brief = avatar["brief"];
+  brief = player["brief"];
 
   if (brief)
-    avatar["brief"] = 0;
+    player["brief"] = 0;
   else
-    avatar["brief"] = 1;
+    player["brief"] = 1;
 
-  if (!save_avatar_data(avatar))
+  if (!save_player_data(player))
     return 0;
 
-  return avatar["brief"];
+  return player["brief"];
 }
 
 int query_last_played() {
-  mapping avatar;
+  mapping player;
 
-  avatar = load_avatar_data();
+  player = load_player_data();
 
-  if (!mapp(avatar))
+  if (!mapp(player))
     return 0;
 
-  return avatar["last_played"];
+  return player["last_played"];
 }
 
 int set_last_played(int last_played) {
-  mapping avatar;
+  mapping player;
 
-  avatar = load_avatar_data();
+  player = load_player_data();
 
-  if (!mapp(avatar))
+  if (!mapp(player))
     return 0;
 
-  avatar["last_played"] = last_played;
+  player["last_played"] = last_played;
 
-  return save_avatar_data(avatar);
+  return save_player_data(player);
 }
 
 void repl() {

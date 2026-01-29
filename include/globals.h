@@ -8,7 +8,7 @@
 
 #define LOGIN_OB "/core/login"
 #define ACCOUNT_OB "/core/account"
-#define AVATAR_OB "/core/avatar"
+#define PLAYER_OB "/core/player"
 #define VOID_OB "/core/void"
 
 #define ACCOUNT_D "/daemon/account_d"
