@@ -15,7 +15,7 @@ void create() {
 
 void init() {
   ::init();
-
+write("init() in /chapter/prologue/area/ruined/room115.c\n");
   //add_action("block_exit", "exit");
 }
 
