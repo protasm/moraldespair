@@ -35,12 +35,12 @@ string account_file(string username) {
   return dir + "/account.o";
 }
 
-string avatar_file(string username, string avatar_name) {
+string player_file(string username, string player_name) {
   string dir;
   string normalized;
 
   dir = account_dir(username);
-  normalized = normalize_key(avatar_name);
+  normalized = normalize_key(player_name);
 
   if (dir == "" || normalized == "")
     return "";
@@ -183,9 +183,9 @@ string query_display_name(string username) {
   return account["display_name"];
 }
 
-string *query_avatars(string username) {
+string *query_players(string username) {
   mapping account;
-  string *avatars;
+  string *players;
 
   username = normalize_key(username);
   account = load_data(account_file(username));
@@ -193,24 +193,28 @@ string *query_avatars(string username) {
   if (!mapp(account))
     return ({});
 
-  avatars = account["avatars"];
+  players = account["players"];
 
-  if (!pointerp(avatars))
-    return ({});
+  if (!pointerp(players)) {
+    players = account["avatars"];
 
-  return avatars;
+    if (!pointerp(players))
+      return ({});
+  }
+
+  return players;
 }
 
-int avatar_exists(string username, string avatar_name) {
-  string *avatars;
+int player_exists(string username, string player_name) {
+  string *players;
   string normalized;
   int i;
 
-  avatars = query_avatars(username);
-  normalized = normalize_key(avatar_name);
+  players = query_players(username);
+  normalized = normalize_key(player_name);
 
-  for (i = 0; i < sizeof(avatars); i++) {
-    if (normalize_key(avatars[i]) == normalized)
+  for (i = 0; i < sizeof(players); i++) {
+    if (normalize_key(players[i]) == normalized)
       return 1;
   }
 
@@ -236,6 +240,7 @@ int create_account(string username, string display_name, string email,
   account["display_name"] = display_name;
   account["email"] = email;
   account["password_hash"] = password_hash;
+  account["players"] = ({});
   account["avatars"] = ({});
   account["last_login"] = 0;
 
@@ -245,17 +250,17 @@ int create_account(string username, string display_name, string email,
   return saved;
 }
 
-int add_avatar(string username, string avatar_name) {
+int add_player(string username, string player_name) {
   mapping account;
-  string *avatars;
-  mapping avatar;
+  string *players;
+  mapping player;
   string path;
   int saved;
 
   if (!account_exists(username))
     return 0;
 
-  if (avatar_exists(username, avatar_name))
+  if (player_exists(username, player_name))
     return 0;
 
   account = load_data(account_file(username));
@@ -263,31 +268,36 @@ int add_avatar(string username, string avatar_name) {
   if (!mapp(account))
     return 0;
 
-  avatars = account["avatars"];
+  players = account["players"];
 
-  if (!pointerp(avatars))
-    avatars = ({});
+  if (!pointerp(players)) {
+    players = account["avatars"];
 
-  avatars += ({ avatar_name });
-  account["avatars"] = avatars;
+    if (!pointerp(players))
+      players = ({});
+  }
+
+  players += ({ player_name });
+  account["players"] = players;
+  account["avatars"] = players;
   saved = save_data(account_file(username), account);
 
   if (!saved)
     return 0;
 
-  avatar = ([]);
-  avatar["display_name"] = avatar_name;
-  avatar["brief"] = 0;
-  avatar["last_played"] = 0;
+  player = ([]);
+  player["display_name"] = player_name;
+  player["brief"] = 0;
+  player["last_played"] = 0;
 
-  path = avatar_file(username, avatar_name);
+  path = player_file(username, player_name);
 
   if (path == "")
     return 0;
 
   ensure_account_dir(username);
 
-  return save_data(path, avatar);
+  return save_data(path, player);
 }
 
 void record_login(string username) {
@@ -306,20 +316,20 @@ void record_login(string username) {
   save_data(account_file(username), account);
 }
 
-void record_avatar_login(string username, string avatar_name) {
-  mapping avatar;
+void record_player_login(string username, string player_name) {
+  mapping player;
   string path;
 
   if (!account_exists(username))
     return;
 
-  path = avatar_file(username, avatar_name);
-  avatar = load_data(path);
+  path = player_file(username, player_name);
+  player = load_data(path);
 
-  if (!mapp(avatar))
+  if (!mapp(player))
     return;
 
-  avatar["last_played"] = time();
+  player["last_played"] = time();
 
-  save_data(path, avatar);
+  save_data(path, player);
 }

@@ -83,24 +83,24 @@ void prompt_new_password() {
   input_to("handle_password", 1);
 }
 
-void prompt_avatar() {
-  write("Finally, let's add an avatar (i.e., a character) to your account.\n");
-  write_prompt("What would you like to name your first avatar?");
+void prompt_player() {
+  write("Finally, let's add a player name to your account.\n");
+  write_prompt("What would you like to name your first player?");
 
-  input_to("handle_new_avatar");
+  input_to("handle_new_player");
 }
 
-void prompt_avatar_choice(string *avatars) {
+void prompt_player_choice(string *players) {
   int i;
 
-  write("Which avatar would you like to use?\n");
+  write("Which player would you like to use?\n");
 
-  for (i = 0; i < sizeof(avatars); i++)
-    write("  - " + avatars[i] + "\n");
+  for (i = 0; i < sizeof(players); i++)
+    write("  - " + players[i] + "\n");
 
   write_prompt("");
 
-  input_to("handle_avatar_choice");
+  input_to("handle_player_choice");
 }
 
 int is_valid_email(string email) {
@@ -414,10 +414,10 @@ void create_account() {
 
   write("Account created - we're in business!\n");
 
-  prompt_avatar();
+  prompt_player();
 }
 
-void handle_new_avatar(string input) {
+void handle_new_player(string input) {
   string raw, display;
 
   if (!stringp(input))
@@ -426,7 +426,7 @@ void handle_new_avatar(string input) {
   raw = trim(input);
 
   if (raw == "") {
-    prompt_avatar();
+    prompt_player();
 
     return;
   }
@@ -434,7 +434,7 @@ void handle_new_avatar(string input) {
   if (contains_reserved(raw)) {
     write("Sorry, that word is not allowed.  Try again?\n");
 
-    prompt_avatar();
+    prompt_player();
 
     return;
   }
@@ -442,7 +442,7 @@ void handle_new_avatar(string input) {
   if (!is_valid_username(raw)) {
     write("Just one word, please, with no punctuation or special characters.\n");
 
-    prompt_avatar();
+    prompt_player();
 
     return;
   }
@@ -450,19 +450,19 @@ void handle_new_avatar(string input) {
   display = format_display_name(raw);
 
   /* TODO
-  if (ACCOUNT_D->avatar_exists(pending_username, display)) {
-    write("That avatar already exists on your account.  Try again?\n");
+  if (ACCOUNT_D->player_exists(pending_username, display)) {
+    write("That player already exists on your account.  Try again?\n");
 
-    prompt_avatar();
+    prompt_player();
 
     return;
   }
   */
 
-  if (!ACCOUNT_D->add_avatar(pending_username, display)) {
-    write("Something went wrong while creating your avatar.\n");
+  if (!ACCOUNT_D->add_player(pending_username, display)) {
+    write("Something went wrong while creating your player.\n");
 
-    prompt_avatar();
+    prompt_player();
 
     return;
   }
@@ -502,80 +502,80 @@ void handle_password_existing(string input) {
 
   ACCOUNT_D->record_login(pending_username);
 
-  prompt_avatar_selection();
+  prompt_player_selection();
 }
 
-void handle_avatar_choice(string input) {
+void handle_player_choice(string input) {
   string choice;
-  string *avatars;
+  string *players;
   int i;
 
   if (!stringp(input))
     input = "";
 
   choice = normalize_value(input);
-  avatars = ACCOUNT_D->query_avatars(pending_username);
+  players = ACCOUNT_D->query_players(pending_username);
 
-  for (i = 0; i < sizeof(avatars); i++)
-    if (normalize_value(avatars[i]) == choice) {
-      write("Connecting as " + avatars[i] + "....\n");
+  for (i = 0; i < sizeof(players); i++)
+    if (normalize_value(players[i]) == choice) {
+      write("Connecting as " + players[i] + "....\n");
 
-      start_session(avatars[i]);
+      start_session(players[i]);
 
       return;
     }
 
-  write("Sorry, that avatar isn't on your account.  Try again.\n");
+  write("Sorry, that player isn't on your account.  Try again.\n");
 
-  prompt_avatar_choice(avatars);
+  prompt_player_choice(players);
 }
 
-void prompt_avatar_selection() {
-  string *avatars;
+void prompt_player_selection() {
+  string *players;
 
-  avatars = ACCOUNT_D->query_avatars(pending_username);
+  players = ACCOUNT_D->query_players(pending_username);
 
-  if (sizeof(avatars) == 0) {
-    prompt_avatar();
+  if (sizeof(players) == 0) {
+    prompt_player();
 
     return;
   }
 
-  if (sizeof(avatars) == 1) {
-    write("Connecting as " + avatars[0] + "....\n");
+  if (sizeof(players) == 1) {
+    write("Connecting as " + players[0] + "....\n");
 
-    start_session(avatars[0]);
+    start_session(players[0]);
 
     return;
   }
 
-  prompt_avatar_choice(avatars);
+  prompt_player_choice(players);
 }
 
-void start_session(string avatar_name) {
-  object account, avatar;
+void start_session(string player_name) {
+  object account, player;
   int brief;
 
   account = new(ACCOUNT_OB);
-  avatar = new(AVATAR_OB);
+  player = new(PLAYER_OB);
 
   account->set_username(pending_username);
 
-  avatar->set_account(account);
-  avatar->set_name(avatar_name);
+  player->set_account(account);
+  player->set_name(player_name);
 
-  brief = avatar->query_brief();
-  avatar->set_brief(brief);
+  brief = player->query_brief();
+  player->set_brief(brief);
 
-  ACCOUNT_D->record_avatar_login(pending_username, avatar_name);
+  ACCOUNT_D->record_player_login(pending_username, player_name);
 
-  exec(avatar, this_object());
+  exec(player, this_object());
 
   cat(MOTD_FILE, 1, 1);
 
-  avatar->move(START_ROOM);
-  avatar->show_location();
-  avatar->start_session();
+  player->move(START_ROOM);
+  player->show_location();
+  player->start_session();
 
   destruct(this_object());
 }
