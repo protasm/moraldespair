@@ -111,7 +111,7 @@ void set_exits() {
 
     if (stringp(destination)) {
       if (WILDERNESS_D->room_exists(destination))
-        resolved = "/room/wilderness_room#" + destination;
+        resolved = "/chapter/prologue/std/wilderness_room#" + destination;
       else {
         if (destination[0] == '/')
           resolved = destination;
@@ -157,7 +157,7 @@ int move_direction(string direction) {
     return 0;
 
   if (terrain != "w") {
-    if (sscanf(destination, "/room/wilderness_room#%s", target_id) == 1) {
+    if (sscanf(destination, "wilderness_room#%s", target_id) == 1) {
       target_terrain = WILDERNESS_D->query_terrain(target_id);
 
       if (target_terrain == "w") {

@@ -8,8 +8,8 @@ void create() {
   dest_dir = ([
     "west":"/chapter/prologue/area/sunken/entrance",
     "east":"/chapter/prologue/area/roadway/room2",
-    "north":"/room/wilderness_room#L27",
-    "south":"/room/wilderness_room#L29",
+    "north":"/chapter/prologue/std/wilderness_room#L27",
+    "south":"/chapter/prologue/std/wilderness_room#L29",
   ]);
 
   set_light(1);
