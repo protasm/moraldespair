@@ -39,13 +39,14 @@ void log_error(string file, string message) {
 }
 
 object compile_object(string file) {
+write("/core/master:compile_object " + file + "\n");
   string room_id;
   object room;
 
   if (!stringp(file))
     return 0;
 
-  if (sscanf(file, "/room/wilderness_room#%s", room_id) != 1)
+  if (sscanf(file, "/chapter/prologue/std/wilderness_room#%s", room_id) != 1)
     return 0;
 
   room = "/chapter/prologue/std/vmaster"->compile_object(

@@ -35,7 +35,7 @@ int valid_override(string file, string name) {
   if (file == MFUN_OB)
     return 1;
 
-  if ((name == "move_object") && (file != BASE))
+  if ((name == "move_object") && (file != BASE_OB))
     return 0;
 
   //  may also wish to protect destruct, shutdown, snoop, and exec.

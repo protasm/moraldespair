@@ -1,4 +1,4 @@
-inherit "//core/command";
+inherit "/core/command";
 
 string format_brief_exits(mapping exits) {
   mapping abbreviations;

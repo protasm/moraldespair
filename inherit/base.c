@@ -12,6 +12,7 @@ void remove() {
 int move(mixed dest) {
   // add code here to prevent disallowed moves (target is full, object
   // is immovable, etc.).
+write("in inherit base, dest is: " + dest + "\n");
   move_object(dest);
 }
 

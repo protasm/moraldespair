@@ -1,4 +1,4 @@
-inherit "//core/command";
+inherit "/core/command";
 
 void create() {
   ::create();
@@ -72,6 +72,7 @@ int main(string arg) {
       destination = "/" + destination;
 
     moved = player->move(destination);
+write("moved: " + moved + "\n");
 
     return moved;
   }

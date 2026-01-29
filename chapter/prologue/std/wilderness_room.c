@@ -1,6 +1,6 @@
 #define WILDERNESS_D "/daemon/wilderness_d"
 
-inherit "/room/room";
+inherit "/chapter/prologue/std/room";
 
 /*
  * Virtual wilderness room. It stores only a room id and queries the daemon
@@ -21,6 +21,7 @@ int move_direction(string direction);
 
 void create() {
   ::create();
+write("/chapter/prologue/std/wilderness_room:create()\n");
 
   set_light(1);
 
@@ -75,6 +76,7 @@ void set_descriptions() {
 }
 
 void init() {
+write("/chapter/prologue/std/wilderness_room:init()\n");
   if (!room_id) return;
 
   set_exits();

@@ -1,4 +1,4 @@
-inherit "//core/command";
+inherit "/core/command";
 
 void create() {
   ::create();
