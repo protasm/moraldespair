@@ -3,6 +3,8 @@
 #include "player-data.c"
 
 void create() {
+  write("apply create called in player.c\n");
+
   //enable_commands();
 }
 
@@ -20,12 +22,14 @@ void show_location() {
  ****************************************************************************/
 string process_input(string raw) {
   write("apply process_input called in player.c\n");
+  write("raw: " + raw + "\n");
 
   return raw;
 }
 
 void catch_tell(string message) {
   write("apply catch_tell called in player.c\n");
+  write("message: " + message + "\n");
 
   return;
 }
@@ -96,20 +100,25 @@ void receive_environ(string message) {
   return;
 }
 
-void receive_message(string class, string message) {
+void receive_message(string clazz, string message) {
   write("apply receive_message called in player.c\n");
+  write("class: " + clazz + "\n");
+  write("message: " + message + "\n");
 
   return;
 }
 
 void receive_snoop(string message) {
   write("apply receive_snoop called in player.c\n");
+  write("message: " + message + "\n");
 
   return;
 }
 
 void telnet_suboption(int option, string message) {
   write("apply telnet_suboption called in player.c\n");
+  write("option: " + option + "\n");
+  write("message: " + message + "\n");
 
   return;
 }
