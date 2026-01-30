@@ -1,6 +1,7 @@
 inherit "/core/object";
 
 #include "room.h"
+#include <room-checks.c>
 
 string short_desc, long_desc;
 mapping exits;
