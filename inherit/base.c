@@ -3,19 +3,6 @@
 
 //private static string *ids;
 
-void remove() {
-  // add code here to prevent unwanted destructions.
-  // update attributes of the container and the containees.
-  destruct(this_object());
-}
-
-int move(mixed dest) {
-  // add code here to prevent disallowed moves (target is full, object
-  // is immovable, etc.).
-write("in inherit base, dest is: " + dest + "\n");
-  move_object(dest);
-}
-
 void set_ids(string *arg) {
   // probably want to add some security here.
 //  ids = arg;

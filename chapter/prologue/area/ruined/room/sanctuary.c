@@ -16,6 +16,8 @@ void init() {
   add_action("do_foo", "foo");
 }
 
-void foo() {
+int do_foo() {
   write("foo!\n");
+
+  return 1;
 }
