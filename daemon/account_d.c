@@ -1,4 +1,5 @@
 #include "/daemon/account_d.h"
+#include <globals.h>
 
 string account_root;
 
@@ -255,6 +256,7 @@ int add_player(string username, string player_name) {
   string *players;
   mapping player;
   string path;
+  string default_chapter;
   int saved;
 
   if (!account_exists(username))
@@ -289,6 +291,12 @@ int add_player(string username, string player_name) {
   player["display_name"] = player_name;
   player["brief"] = 0;
   player["last_played"] = 0;
+  default_chapter = CHAPTER_D->query_latest_chapter();
+
+  if (default_chapter != "") {
+    player["current_chapter"] = default_chapter;
+    player["unlocked_chapters"] = ({ default_chapter });
+  }
 
   path = player_file(username, player_name);
 
