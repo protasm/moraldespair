@@ -29,7 +29,10 @@ void show_location() {
  ****************************************************************************/
 string process_input(string raw) {
   object command;
-  string input, verb, arg, command_path;
+  object location;
+  string input, verb, arg, command_path, destination;
+  mapping exits;
+  int moved, exit_index;
 
   if (!stringp(raw))
     return raw;
@@ -51,8 +54,42 @@ string process_input(string raw) {
   if (file_size(command_path + ".c") < 0)
     command_path = "/chapter/prologue/action/" + verb;
 
-  if (file_size(command_path + ".c") < 0)
-    return raw;
+  if (file_size(command_path + ".c") < 0) {
+    if (!is_direction(verb))
+      return raw;
+
+    location = environment(this_object());
+
+    if (objectp(location)) {
+      if (function_exists("dest_dir", location))
+        exits = location->dest_dir();
+      else if (function_exists("exits", location))
+        exits = location->exits();
+
+      if (mapp(exits))
+        destination = exits[verb];
+      else if (pointerp(exits)) {
+        exit_index = member_array(verb, exits);
+
+        if (exit_index > 0)
+          destination = exits[exit_index - 1];
+      } else if (function_exists("get_exit_dest", location))
+        destination = location->get_exit_dest(verb);
+    }
+
+    if (!stringp(destination)) {
+      write("You can't go that way.\n");
+
+      return "";
+    }
+
+    if (destination[0] != '/')
+      destination = "/" + destination;
+
+    moved = move_object(destination);
+
+    return "";
+  }
 
   command = load_object(command_path);
 
