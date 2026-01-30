@@ -1,59 +1,59 @@
 int clean_up(int inherited) {
-  write("apply clean_up called in object.c\n");
+  write("OBJECT:clean_up()\n");
 
   return 0;
 }
 
 varargs void create(mixed args...) {
-  write("apply create called in object.c\n");
+  write("OBJECT:create()\n");
 
   return;
 }
 
 void heart_beat() {
-  write("apply heart_beat called in object.c\n");
+  write("OBJECT:heart_beat()\n");
 
   return;
 }
 
 int id(string an_id) {
-  write("apply id called in object.c\n");
+  write("OBJECT:id()\n");
 
   return 0;
 }
 
 void init() {
-  write("apply init called in object.c\n");
+  write("OBJECT:init()\n");
 
   return;
 }
 
 int is_living() {
-  write("apply is_living called in object.c\n");
+  write("OBJECT:is_living()\n");
 
   return 0;
 }
 
 void move_or_destruct(object dest) {
-  write("apply move_or_destruct called in object.c\n");
+  write("OBJECT:move_or_destruct()\n");
 
   return;
 }
 
 void on_destruct() {
-  write("apply on_destruct called in object.c\n");
+  write("OBJECT:destruct()\n");
 
   return;
 }
 
 void reset() {
-  write("apply reset called in object.c\n");
+  write("OBJECT:reset()\n");
 
   return;
 }
 
 void virtual_start() {
-  write("apply virtual_start called in object.c\n");
+  write("OBJECT:virtual_start()\n");
 
   return;
 }

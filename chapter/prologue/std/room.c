@@ -1,9 +1,13 @@
+inherit "/core/object";
+
 #include "room.h"
 
 string short_desc, long_desc;
 mapping exits;
 
 void create() {
+  ::create();
+
   short_desc = "";
   long_desc = "";
   exits = ([]);

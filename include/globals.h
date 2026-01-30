@@ -3,11 +3,11 @@
 #define ROOT_UID "ROOT"
 #define BACKBONE_UID "BACKBONE"
 
-#define BASE_OB "/inherit/base"
-#define MFUN_OB "/core/mfun"
+#define BASE_OB "/core/object"
+#define MFUN_OB "/core/mfun/mfun"
 
-#define LOGIN_OB "/core/login"
-#define ACCOUNT_OB "/core/account"
+#define LOGIN_OB "/core/login/login"
+#define ACCOUNT_OB "/core/account/account"
 #define PLAYER_OB "/core/player/player"
 #define VOID_OB "/core/void"
 

@@ -1,5 +1,5 @@
-#include "/core/mfun/file-handling.c"
-#include "/core/mfun/text-handling.c"
+#include "file-handling.c"
+#include "text-handling.c"
 
 /****************************************************************************
  * Generic containment test.

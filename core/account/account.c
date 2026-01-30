@@ -2,8 +2,6 @@
 
 #include "account.h"
 
-//inherit "/inherit/base.c";
-
 string username;
 
 string username() {

@@ -1,5 +1,3 @@
-#include <globals.h>
-
 #include "login.h"
 
 private string pending_username;
