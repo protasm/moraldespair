@@ -1,43 +1,14 @@
 #include "room.h"
 
 string short_desc, long_desc;
-mapping dest_dir, exit_aliases;
+mapping exits;
 
 void create() {
-write("/chapter/prologue/std/room:create()\n");
   short_desc = "";
   long_desc = "";
-  dest_dir = ([]);
-  exit_aliases = ([]);
+  exits = ([]);
 
   set_light(1);
-
-  return;
-}
-
-void init() {
-write("/chapter/prologue/std/room:init()\n");
-  string *dirs, *aliases;
-  int i;
-
-  dirs = keys(dest_dir);
-  aliases = keys(exit_aliases);
-
-  i = 0;
-
-  while (i < sizeof(dirs)) {
-    add_action("move", dirs[i]);
-
-    i += 1;
-  }
-
-  i = 0;
-
-  while (i < sizeof(aliases)) {
-    add_action("move_alias", aliases[i]);
-
-    i += 1;
-  }
 
   return;
 }
@@ -46,76 +17,28 @@ string short() {
   return short_desc;
 }
 
-string long(string str) {
+string long() {
   string exit_line;
-  string *exits;
+  string *dirs;
 
-  exits = keys(dest_dir);
+  dirs = keys(exits);
 
-  if (!sizeof(exits))
+  if (!sizeof(dirs))
     return long_desc;
 
-  exit_line = "Exits: " + implode(exits, ", ") + ".";
+  exit_line = "Exits: " + implode(dirs, ", ") + ".";
 
   return long_desc + "\n\n" + exit_line;
 }
 
-mapping dest_dir() {
-  return dest_dir;
+mapping exits() {
+  return exits;
 }
 
-mapping exit_aliases() {
-  return exit_aliases;
+int has_exit(string str) {
+  return is_member(keys(exits), str);
 }
 
-void add_exit_alias(string alias, string direction) {
-  if (!exit_aliases)
-    exit_aliases = ([]);
-
-  exit_aliases[alias] = direction;
-
-  return;
-}
-
-int move(string str) {
-write("/chapter/prologue/std/room:move " + str + "\n");
-  string direction;
-
-  direction = query_verb();
-
-  return move_direction(direction);
-}
-
-int move_alias(string str) {
-  string alias, canonical;
-
-  alias = query_verb();
-
-  if (!exit_aliases) return 0;
-
-  canonical = exit_aliases[alias];
-
-  if (!canonical) return 0;
-
-  return move_direction(canonical);
-}
-
-int move_direction(string direction) {
-write("/chapter/prologue/std/room:move_direction " + direction + "\n");
-  string destination;
-
-  if (!mapp(dest_dir))
-    return 0;
-
-  destination = dest_dir[direction];
-
-  if (!stringp(destination))
-    return 0;
-
-  if (destination[0] != '/')
-    destination = "/" + destination;
-
-  this_player()->move_player(direction + "#" + destination);
-
-  return 1;
+int get_exit_dest(string dir) {
+  return exits[dir];
 }

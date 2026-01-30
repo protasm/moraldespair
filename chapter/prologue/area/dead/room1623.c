@@ -9,18 +9,4 @@ void create() {
     "north" : "/chapter/prologue/area/dead/room1643",
     "south" : "/chapter/prologue/area/dead/room1510",
   ]);
-
-  set_light(1);
-}
-
-void init() {
-  ::init();
-
-  //add_action("block_exit", "north");
-}
-
-int block_exit() {
-  write("The way is blocked by a choke of fallen stone.\n");
-
-  return 1;
 }

@@ -12,7 +12,4 @@ void create() {
     "east":"/chapter/prologue/area/roadway/room16",
     "city":"/chapter/prologue/area/ruined/room/room115",
   ]);
-
-  add_exit_alias("c", "city");
-
 }

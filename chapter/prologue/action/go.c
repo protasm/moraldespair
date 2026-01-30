@@ -71,7 +71,7 @@ int main(string arg) {
     if (destination[0] != '/')
       destination = "/" + destination;
 
-    moved = player->move(destination);
+    moved = move_object(destination);
 
     return moved;
   }

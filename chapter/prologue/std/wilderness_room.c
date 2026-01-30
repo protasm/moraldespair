@@ -6,24 +6,10 @@ inherit "/chapter/prologue/std/room";
  * Virtual wilderness room. It stores only a room id and queries the daemon
  * for all state, keeping room data centralized and easy to extend.
  */
-string room_id;
-string terrain;
-
-void set_room_id(string id);
-string query_room_id();
-string query_terrain();
-void set_exits();
-void set_descriptions();
-int sort_dirs(string a, string b);
-int move(string str);
-int move_alias(string str);
-int move_direction(string direction);
+string room_id, terrain;
 
 void create() {
   ::create();
-write("/chapter/prologue/std/wilderness_room:create()\n");
-
-  set_light(1);
 
   if (room_id) set_descriptions();
 }
@@ -75,22 +61,10 @@ void set_descriptions() {
   return;
 }
 
-void init() {
-write("/chapter/prologue/std/wilderness_room:init()\n");
-  if (!room_id) return;
-
-  set_exits();
-
-  ::init();
-
-  return;
-}
-
 void set_exits() {
   mapping exits;
   string *dirs;
-  string direction;
-  string destination, resolved;
+  string direction, destination, resolved;
   int i;
 
   exits = WILDERNESS_D->query_exits(room_id);
@@ -128,51 +102,6 @@ void set_exits() {
   }
 
   return;
-}
-
-int move(string str) {
-  string direction;
-
-  direction = query_verb();
-
-  return move_direction(direction);
-}
-
-int move_alias(string str) {
-  string canonical;
-
-  if (!exit_aliases) return 0;
-
-  canonical = exit_aliases[query_verb()];
-
-  if (!canonical) return 0;
-
-  return move_direction(canonical);
-}
-
-int move_direction(string direction) {
-  string destination, target_id, target_terrain;
-
-  destination = dest_dir[direction];
-
-  if (!destination)
-    return 0;
-
-  if (terrain != "w") {
-    if (sscanf(destination, "wilderness_room#%s", target_id) == 1) {
-      target_terrain = WILDERNESS_D->query_terrain(target_id);
-
-      if (target_terrain == "w") {
-        write("There is a body of water there.\n");
-
-        return 1;
-      }
-    }
-  }
-
-  this_player()->move_player(direction + "#" + destination);
-
-  return 1;
 }
 
 int sort_dirs(string a, string b) {

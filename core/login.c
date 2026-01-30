@@ -573,9 +573,8 @@ void start_session(string player_name) {
 
   cat(MOTD_FILE, 1, 1);
 
-  player->move(START_ROOM);
+  move_object(START_ROOM);
   player->show_location();
-  player->start_session();
 
   destruct(this_object());
 }

@@ -9,19 +9,4 @@ void create() {
     "east":"/chapter/prologue/area/ruined/room/room133",
     "exit":"/chapter/prologue/area/roadway/room12",
   ]);
-
-  add_exit_alias("x", "exit");
-
-}
-
-void init() {
-  ::init();
-
-  //add_action("block_exit", "exit");
-}
-
-int block_exit() {
-  write("The ruined gate is choked with stone; the wilderness beyond is\n"
-        + "impassable.\n");
-  return 1;
 }

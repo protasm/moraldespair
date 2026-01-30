@@ -9,18 +9,4 @@ void create() {
     "west":"/chapter/prologue/area/ruined/room/room116",
     "exit":"/chapter/prologue/area/ruined/room/entrance",
   ]);
-
-  add_exit_alias("x", "exit");
-}
-
-void init() {
-  ::init();
-write("init() in /chapter/prologue/area/ruined/room115.c\n");
-  //add_action("block_exit", "exit");
-}
-
-int block_exit() {
-  write("The ruined gate has collapsed; the way to the wilderness is impassable.\n");
-
-  return 1;
 }
