@@ -553,6 +553,7 @@ void prompt_player_selection() {
 void start_session(string player_name) {
   object account, player;
   int brief;
+  string start_room;
 
   account = new(ACCOUNT_OB);
   player = new(PLAYER_OB);
@@ -571,7 +572,8 @@ void start_session(string player_name) {
 
   cat(MOTD_FILE, 1, 1);
 
-  player->move(START_ROOM);
+  start_room = CHAPTER_D->resolve_player_start_room(player);
+  player->move(start_room);
   player->show_location();
 
   destruct(this_object());

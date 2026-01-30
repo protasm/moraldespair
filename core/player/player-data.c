@@ -1,3 +1,5 @@
+#include <globals.h>
+
 string player_name;
 object player_object, account_object;
 
@@ -104,6 +106,124 @@ string query_display_name() {
   return player_data["display_name"];
 }
 
+string query_current_chapter() {
+  mapping player_data;
+
+  player_data = load_player_data();
+
+  if (!mapp(player_data))
+    return "";
+
+  if (!stringp(player_data["current_chapter"]))
+    return "";
+
+  return player_data["current_chapter"];
+}
+
+int set_current_chapter(string chapter_id) {
+  mapping player_data;
+  string normalized;
+
+  normalized = normalize_key(chapter_id);
+
+  if (normalized == "")
+    return 0;
+
+  if (!CHAPTER_D->chapter_exists(normalized))
+    return 0;
+
+  player_data = load_player_data();
+
+  if (!mapp(player_data))
+    return 0;
+
+  player_data["current_chapter"] = normalized;
+
+  return save_player_data(player_data);
+}
+
+string *query_unlocked_chapters() {
+  mapping player_data;
+  string *unlocked;
+
+  player_data = load_player_data();
+
+  if (!mapp(player_data))
+    return ({});
+
+  unlocked = player_data["unlocked_chapters"];
+
+  if (!pointerp(unlocked))
+    return ({});
+
+  return unlocked;
+}
+
+int set_unlocked_chapters(string *chapter_ids) {
+  mapping player_data;
+  string *normalized;
+  string id;
+  int i;
+
+  if (!pointerp(chapter_ids))
+    return 0;
+
+  normalized = ({});
+
+  for (i = 0; i < sizeof(chapter_ids); i++) {
+    id = normalize_key(chapter_ids[i]);
+
+    if (id == "")
+      continue;
+
+    if (!CHAPTER_D->chapter_exists(id))
+      continue;
+
+    if (member_array(id, normalized) == -1)
+      normalized += ({ id });
+  }
+
+  player_data = load_player_data();
+
+  if (!mapp(player_data))
+    return 0;
+
+  player_data["unlocked_chapters"] = normalized;
+
+  return save_player_data(player_data);
+}
+
+int unlock_chapter(string chapter_id) {
+  mapping player_data;
+  string normalized;
+  string *unlocked;
+
+  normalized = normalize_key(chapter_id);
+
+  if (normalized == "")
+    return 0;
+
+  if (!CHAPTER_D->chapter_exists(normalized))
+    return 0;
+
+  player_data = load_player_data();
+
+  if (!mapp(player_data))
+    return 0;
+
+  unlocked = player_data["unlocked_chapters"];
+
+  if (!pointerp(unlocked))
+    unlocked = ({});
+
+  if (member_array(normalized, unlocked) == -1)
+    unlocked += ({ normalized });
+
+  player_data["unlocked_chapters"] = unlocked;
+
+  return save_player_data(player_data);
+}
+
 int set_display_name(string new_display_name) {
   mapping player_data;
 
@@ -192,4 +312,3 @@ int set_last_played(int last_played) {
 
   return save_player_data(player_data);
 }
-

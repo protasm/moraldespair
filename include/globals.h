@@ -12,6 +12,7 @@
 #define VOID_OB "/core/void"
 
 #define ACCOUNT_D "/daemon/account_d"
+#define CHAPTER_D "/daemon/chapter_d"
 
 #define WELCOME_FILE "/etc/welcome"
 #define MOTD_FILE "/etc/motd"
