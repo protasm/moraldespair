@@ -4,10 +4,9 @@ void create() {
   ::create();
 
   short_desc = "Lower Vault";
-  long_desc = "A low vault collects silt and pebbles beneath a ceiling of "
-              "cracked\n"
-              "stone. A narrow chute rises back toward the shifting "
-              "passage.";
+  long_desc = "This room is the redirect destination for the down link from "
+              "the hub.\n"
+              "Use \"linkgo up\" to return to the passage.";
 
   add_link("up", "link_demo_redirect");
 

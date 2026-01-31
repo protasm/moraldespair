@@ -6,11 +6,11 @@ void create() {
   ::create();
 
   short_desc = "Guarded Shelf";
-  long_desc = "A raised shelf of stone overlooks the antechamber, marked "
-              "by the\n"
-              "scraped tracks of something once stationed here. Broken "
-              "shield\n"
-              "plates lie in a loose fan against the wall.";
+  long_desc = "This room demonstrates a link that allows entry but "
+              "immediately\n"
+              "reverses you with a message. Use \"linkgo west\" from the "
+              "hub\n"
+              "to trigger the reversal.";
 
   add_link("east", "link_demo_hub");
 
