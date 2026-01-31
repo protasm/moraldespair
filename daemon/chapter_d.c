@@ -66,7 +66,7 @@ void create() {
     "Prologue: Despair",
     "Two hundred years have passed....",
     "/chapter/prologue",
-    "/chapter/prologue/area/ruined/room/sanctuary"
+    START_ROOM,
   );
 }
 
