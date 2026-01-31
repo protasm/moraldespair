@@ -1,6 +1,7 @@
 inherit "/core/object";
 
 #include "player-data.c"
+#include "player-process-input.c"
 
 void create() {
   ::create();
@@ -22,60 +23,8 @@ void show_location() {
 
   if (env)
     write(env->long() + "\n");
-}
-
-/****************************************************************************
- * Called automatically by the FluffOS driver for each line of user input.
- ****************************************************************************/
-string process_input(string raw) {
-  object command;
-  string input, verb, arg, command_path;
-
-  if (!stringp(raw))
-    return "";
-
-  input = trim(raw);
-
-  if (input == "")
-    return "";
-
-  if (sscanf(input, "%s %s", verb, arg) != 2) {
-    verb = input;
-    arg = "";
-  }
-
-  verb = lower_case(verb);
-
-  command_path = "/command/" + verb;
-
-  if (file_size(command_path + ".c") >= 0) {
-    command = load_object(command_path);
-
-    command->main(arg);
-
-    return "";
-  }
-
-  command_path = "/chapter/prologue/action/" + verb;
-
-  if (file_size(command_path + ".c") >= 0) {
-    command = load_object(command_path);
-
-    command->main(arg);
-
-    return "";
-  }
-
-  command_path = "/chapter/prologue/action/linkgo";
-
-  if (file_size(command_path + ".c") >= 0) {
-    command = load_object(command_path);
-
-    if (command->main(input))
-      return "";
-  }
-
-  return raw;
+  else
+    write("You are nowhere.\n");
 }
 
 void catch_tell(string message) {

@@ -1,0 +1,16 @@
+#ifndef _LINK_H
+#define _LINK_H
+
+#define LINK_OUTCOME_DENY 0
+#define LINK_OUTCOME_ALLOW 1
+#define LINK_OUTCOME_ALLOW_REVERSE 2
+#define LINK_OUTCOME_ALLOW_REDIRECT 3
+#define LINK_OUTCOME_ALLOW_MUTATE 4
+
+#define LINK_RESULT_OUTCOME "outcome"
+#define LINK_RESULT_MESSAGE "message"
+#define LINK_RESULT_REDIRECT "redirect"
+#define LINK_RESULT_INTERMEDIATE "intermediate"
+#define LINK_RESULT_MUTATIONS "mutations"
+
+#endif

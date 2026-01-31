@@ -1,90 +1,92 @@
+/*
+ * /core/command/go.c
+ *
+ * Minimal movement command using Link-based traversal.
+ *
+ * This command:
+ * - resolves a direction label in the current room
+ * - retrieves the corresponding Link
+ * - delegates all movement logic to the Link
+ *
+ * No exits. No doors. No room logic.
+ */
 inherit "/core/command";
+
+#include <link.h>
 
 void create() {
   ::create();
 
   set_category("Movement");
   set_help_text(
-    "Usage: go <direction> or go <filename>\n"
-    "Move in a direction or to a specific destination file.\n"
-    "Common directions include north, south, east, west, up, and down.\n"
+    "Usage: go <direction>\n"
+    "Move through a registered link in the given direction.\n"
   );
 }
 
 int main(string arg) {
-  object player, location;
-  mapping directions, exits;
-  string direction, destination, filename;
-  int moved;
+  object player, env, link;
+  mapping result;
+  string msg;
 
   player = this_player();
 
-  if (!objectp(player))
+  if (!objectp(player)) {
+write("In go - no player\n");
     return 0;
+  }
 
-  if (!stringp(arg))
+  env = environment(player);
+
+  if (!objectp(env)) {
+write("In go - no env\n");
     return 0;
+  }
 
   arg = trim(arg);
 
-  if (arg == "")
-    return 0;
+write("arg is '" + arg + "'\n");
+  if (!stringp(arg) || arg == "") {
+    write("Go where?\n");
 
-  directions = ([
-    "north" : "north",
-    "south" : "south",
-    "east" : "east",
-    "west" : "west",
-    "northeast" : "northeast",
-    "northwest" : "northwest",
-    "southeast" : "southeast",
-    "southwest" : "southwest",
-    "up" : "up",
-    "down" : "down",
-    "n" : "north",
-    "s" : "south",
-    "e" : "east",
-    "w" : "west",
-    "ne" : "northeast",
-    "nw" : "northwest",
-    "se" : "southeast",
-    "sw" : "southwest",
-    "u" : "up",
-    "d" : "down"
-  ]);
-
-  direction = directions[arg];
-
-  if (!stringp(direction))
-    direction = arg;
-
-  location = environment(player);
-
-  if (objectp(location) && function_exists("dest_dir", location)) {
-    exits = location->dest_dir();
-
-    if (mapp(exits))
-      destination = exits[direction];
+    return 1;
   }
 
-  if (stringp(destination)) {
-    if (destination[0] != '/')
-      destination = "/" + destination;
+  /*
+   * Ask the room for the Link corresponding to this label.
+   * Room is responsible only for affordance mapping.
+   */
+  if (!function_exists("query_link", env)) {
+    write("You cannot go anywhere from here.\n");
 
-    moved = move_object(destination);
-
-    return moved;
+    return 1;
   }
 
-  filename = arg;
+  link = env->query_link(arg);
 
-  if (filename[0] != '/')
-    filename = "/" + filename;
-
-  if (file_size(filename + ".c") < 0)
+  if (!objectp(link))
     return 0;
 
-  moved = player->move(filename);
+  /*
+   * Delegate movement to the Link.
+   */
+  result = link->traverse(player, env);
 
-  return moved;
+  if (!mapp(result)) {
+    write("Something goes wrong.\n");
+
+    return 1;
+  }
+
+  /*
+   * Handle link-owned narration.
+   * Room/actor narration already happened inside traversal hooks.
+   */
+  msg = result[LINK_RESULT_MESSAGE];
+
+  if (stringp(msg) && msg != "")
+    write(msg + "\n");
+
+  return 1;
 }
+

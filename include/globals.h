@@ -18,7 +18,7 @@
 #define WELCOME_FILE "/etc/welcome"
 #define MOTD_FILE "/etc/motd"
 
-#define START_ROOM "/chapter/prologue/area/demo/link_demo_hub"
+#define START_ROOM "/chapter/prologue/area/demo/cell"
 
 #define COMMAND_PREFIX "/command/"
 #define ACTION_PREFIX "/chapter/prologue/action/"

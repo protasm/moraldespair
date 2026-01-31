@@ -1,58 +1,81 @@
 /*
- * /core/link_gate.c
+ * /core/gate.c
  *
- * A Gate is a structural barrier that lives on a Link.
- * It represents something encountered while traversing the space
- * between two environments (e.g. doors, bars, seals, rubble).
+ * Abstract base class for all Gates.
  *
- * A Gate has two sides, each facing one Link endpoint.
- * Side behavior may differ depending on perspective.
+ * A Gate is a structural barrier that lives on a Link and mediates
+ * traversal between two endpoints. Gates are ordered and directional.
  *
- * Gates do NOT move players.
- * Gates do NOT know about rooms directly.
- * Gates are evaluated during Link traversal.
+ * Gates:
+ *  - are NOT rooms
+ *  - are NOT exits
+ *  - do NOT move players
+ *  - do NOT know about rooms directly
+ *
+ * Subclasses implement specific mechanics (doors, portals, forcefields).
  */
 
 inherit "/std/object";
 
+/* Internal endpoint identities (never exposed semantically) */
 #define SIDE_A 0
 #define SIDE_B 1
 
-/* Side state */
-mapping side_state_a;
-mapping side_state_b;
+/* ------------------------------------------------------------ */
+/* Internal state */
+/* ------------------------------------------------------------ */
 
-/* Optional metadata */
-string gate_name;
+/*
+ * Each side stores arbitrary state relevant to the subclass.
+ * Base class only enforces traversal contract.
+ */
+mapping _side_a;
+mapping _side_b;
 
-/* Cost modifier */
-int base_cost;
+/* Base traversal cost (applies regardless of direction) */
+int _base_cost;
+
+/* Optional name for narration / inspection */
+string _name;
 
 /* ------------------------------------------------------------ */
 
 void create() {
   ::create();
 
-  gate_name = "gate";
-  base_cost = 0;
+  _side_a = ([]);
+  _side_b = ([]);
 
-  side_state_a = ([
-    "open"      : 1,
-    "locked"    : 0,
-    "lock_id"   : 0,
-    "examine"   : 0,
-    "block_msg" : "Something blocks your way.",
-  ]);
-
-  side_state_b = copy(side_state_a);
+  _base_cost = 0;
+  _name = "gate";
 }
 
 /* ------------------------------------------------------------ */
-/* Utility */
+/* Identity & metadata */
+/* ------------------------------------------------------------ */
+
+void set_name(string name) {
+  _name = name;
+}
+
+string query_name() {
+  return _name;
+}
+
+void set_base_cost(int cost) {
+  _base_cost = cost;
+}
+
+int query_base_cost() {
+  return _base_cost;
+}
+
+/* ------------------------------------------------------------ */
+/* Side utilities */
 /* ------------------------------------------------------------ */
 
 mapping side_state(int side) {
-  return side == SIDE_A ? side_state_a : side_state_b;
+  return side == SIDE_A ? _side_a : _side_b;
 }
 
 int opposite_side(int side) {
@@ -60,159 +83,96 @@ int opposite_side(int side) {
 }
 
 /*
- * Translate an endpoint perspective into a gate side.
- * The Link is responsible for calling this correctly.
+ * Called by Link to translate traversal perspective into a side.
+ * endpoint_index is Link-internal (0 or 1).
  */
 int side_facing_endpoint(int endpoint_index) {
-  return endpoint_index == SIDE_A ? SIDE_A : SIDE_B;
+  return endpoint_index == 0 ? SIDE_A : SIDE_B;
 }
 
 /* ------------------------------------------------------------ */
-/* Configuration */
-/* ------------------------------------------------------------ */
-
-void set_name(string name) {
-  gate_name = name;
-}
-
-string query_name() {
-  return gate_name;
-}
-
-void set_base_cost(int cost) {
-  base_cost = cost;
-}
-
-int query_base_cost() {
-  return base_cost;
-}
-
-/* ------------------------------------------------------------ */
-/* Side configuration helpers */
-/* ------------------------------------------------------------ */
-
-void set_open(int side, int open) {
-  side_state(side)["open"] = open;
-}
-
-int is_open(int side) {
-  return side_state(side)["open"];
-}
-
-void set_locked(int side, int locked) {
-  side_state(side)["locked"] = locked;
-}
-
-int is_locked(int side) {
-  return side_state(side)["locked"];
-}
-
-void set_lock_id(int side, mixed id) {
-  side_state(side)["lock_id"] = id;
-}
-
-mixed query_lock_id(int side) {
-  return side_state(side)["lock_id"];
-}
-
-void set_block_message(int side, string msg) {
-  side_state(side)["block_msg"] = msg;
-}
-
-string query_block_message(int side) {
-  return side_state(side)["block_msg"];
-}
-
-/* ------------------------------------------------------------ */
-/* Traversal interface */
-/* ------------------------------------------------------------ */
+/* Traversal contract (CORE API)
+ *
+ * Subclasses MUST honor this contract.
+ * ------------------------------------------------------------ */
 
 /*
- * Can the actor pass through this gate from this side?
- * Return a mapping describing the result.
+ * Attempt to traverse this gate from the given side.
  *
- * Expected keys:
- *   allow   : int (1 or 0)
- *   cost    : int (>= 0)
- *   effects : array (optional)
- *   message : string (optional, actor-facing)
+ * Must return a mapping with:
+ *   allow   : int (1 = pass, 0 = block)
+ * Optional:
+ *   cost    : int (>= 0, added to traversal cost)
+ *   effects : array of effect mappings
+ *   message : string (actor-facing narration)
+ *
+ * Base class provides a permissive default.
  */
 mapping attempt_pass(object actor, int side) {
-  mapping state;
-
-  state = side_state(side);
-
-  if (!state["open"]) {
-    return ([
-      "allow"   : 0,
-      "cost"    : base_cost,
-      "effects" : ({ }),
-      "message" : state["block_msg"],
-    ]);
-  }
-
-  if (state["locked"]) {
-    return ([
-      "allow"   : 0,
-      "cost"    : base_cost,
-      "effects" : ({ }),
-      "message" : "It is locked.",
-    ]);
-  }
-
   return ([
     "allow"   : 1,
-    "cost"    : base_cost,
+    "cost"    : _base_cost,
     "effects" : ({ }),
   ]);
 }
 
 /* ------------------------------------------------------------ */
-/* Interaction hooks (optional, future-facing) */
-/* ------------------------------------------------------------ */
+/* Optional interaction hooks
+ * (Subclasses may override)
+ * ------------------------------------------------------------ */
 
 /*
- * Called when an actor examines this gate from a given side.
+ * Examine the gate from a given side.
  */
 string examine(int side) {
-  if (side_state(side)["examine"])
-    return side_state(side)["examine"];
-
-  return "It appears to be " + gate_name + ".";
+  return "It appears to be " + _name + ".";
 }
 
 /*
- * Attempt to unlock from a given side.
- * The caller (command system) handles key checks.
+ * Whether this gate supports being opened.
  */
-int unlock(int side, mixed key_id) {
-  if (!side_state(side)["locked"])
-    return 0;
-
-  if (side_state(side)["lock_id"] &&
-      side_state(side)["lock_id"] != key_id)
-    return 0;
-
-  side_state(side)["locked"] = 0;
-  return 1;
+int supports_opening() {
+  return 0;
 }
 
 /*
- * Attempt to open from a given side.
+ * Whether this gate supports locking.
  */
-int open(int side) {
-  if (side_state(side)["locked"])
-    return 0;
-
-  side_state(side)["open"] = 1;
-  return 1;
+int supports_locking() {
+  return 0;
 }
 
 /*
- * Attempt to close from a given side.
+ * Default verb handlers (fail closed)
+ * Subclasses override as needed.
  */
-int close(int side) {
-  side_state(side)["open"] = 0;
-  return 1;
+
+int open(int side, object actor) {
+  return 0;
+}
+
+int close(int side, object actor) {
+  return 0;
+}
+
+int lock(int side, object actor, mixed key) {
+  return 0;
+}
+
+int unlock(int side, object actor, mixed key) {
+  return 0;
+}
+
+/* ------------------------------------------------------------ */
+/* Debug / introspection (optional but helpful)
+ * ------------------------------------------------------------ */
+
+mapping debug_state() {
+  return ([
+    "name"      : _name,
+    "base_cost" : _base_cost,
+    "side_a"    : copy(_side_a),
+    "side_b"    : copy(_side_b),
+  ]);
 }
 
