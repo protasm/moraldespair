@@ -14,13 +14,15 @@ void create() {
               "This room demonstrates basic link exits. Use \"linkgo "
               "<direction>\"\n"
               "(for example, \"linkgo north\") to try north, west, down, "
-              "or east.\n"
+              "east,\n"
+              "or door.\n"
               "The east link is gated so you can see the blocked traversal "
               "message.";
 
   link = add_link("north", "link_demo_clear");
   add_link("west", "link_demo_guard");
   add_link("down", "link_demo_redirect");
+  add_link("door", "link_demo_loft");
 
   link = add_link("east", "link_demo_gate");
   origin_id = base_name(this_object());

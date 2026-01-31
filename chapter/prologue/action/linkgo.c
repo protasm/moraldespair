@@ -17,6 +17,7 @@ int main(string arg) {
   mapping directions;
   mapping result;
   string direction, message;
+  string *valid_directions;
   int outcome;
 
   player = this_player();
@@ -35,16 +36,6 @@ int main(string arg) {
   arg = lower_case(arg);
 
   directions = ([
-    "north" : "north",
-    "south" : "south",
-    "east" : "east",
-    "west" : "west",
-    "northeast" : "northeast",
-    "northwest" : "northwest",
-    "southeast" : "southeast",
-    "southwest" : "southwest",
-    "up" : "up",
-    "down" : "down",
     "n" : "north",
     "s" : "south",
     "e" : "east",
@@ -59,10 +50,20 @@ int main(string arg) {
     "c" : "city"
   ]);
 
-  direction = directions[arg];
-
-  if (!stringp(direction))
-    direction = arg;
+  valid_directions = ({
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "exit",
+    "city"
+  });
 
   location = environment(player);
 
@@ -72,9 +73,17 @@ int main(string arg) {
   if (!function_exists("link_for", location))
     return 0;
 
+  direction = directions[arg];
+
+  if (!stringp(direction))
+    direction = arg;
+
   link = location->link_for(direction);
 
   if (!objectp(link)) {
+    if (member_array(direction, valid_directions) == -1)
+      return 0;
+
     write("You can't go that way.\n");
 
     return 1;
