@@ -60,7 +60,9 @@ void create() {
 int main(string arg) {
   object player, env, link;
   mapping result;
+  string *labels;
   string msg;
+  int is_direction;
 
   player = this_player();
 
@@ -86,11 +88,28 @@ int main(string arg) {
   if (mapp(direction_aliases) && stringp(direction_aliases[arg]))
     arg = direction_aliases[arg];
 
-  /*
-   * Ask the room for the Link corresponding to this label.
-   * Room is responsible only for affordance mapping.
-   */
-  link = env->query_link(arg);
+  labels = env->query_link_labels();
+
+  if (!pointerp(labels))
+    labels = ({ });
+
+  if (member_array(arg, labels) != -1) {
+    /*
+     * Ask the room for the Link corresponding to this label.
+     * Room is responsible only for affordance mapping.
+     */
+    link = env->query_link(arg);
+  } else {
+    is_direction = (member_array(arg, direction_words) != -1);
+
+    if (is_direction) {
+      write("You can't go that way.\n");
+
+      return 1;
+    }
+
+    return 0;
+  }
 
   if (!objectp(link)) {
     write("You can't go that way.\n");
