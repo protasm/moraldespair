@@ -29,8 +29,7 @@ void show_location() {
  ****************************************************************************/
 string process_input(string raw) {
   object command, location;
-  string input, verb, arg, command_path, destination;
-  mapping exits;
+  string input, verb, arg, command_path;
 
   if (!stringp(raw))
     return "";
@@ -72,20 +71,11 @@ string process_input(string raw) {
 
   location = environment(this_object());
 
-  exits = location->exits();
-  destination = exits[verb];
-
-  if (!stringp(destination)) {
-    write("You can't go that way.\n");
-
+  if (!objectp(location))
     return "";
-  }
 
-  if (destination[0] != '/')
-    destination = "/" + destination;
-
-  write("attempting move to " + destination + "\n");
-  move_object(destination);
+  if (function_exists("use_exit", location))
+    location->use_exit(verb);
 
   return "";
 }

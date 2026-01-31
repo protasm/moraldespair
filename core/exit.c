@@ -1,4 +1,4 @@
-inherit "/core/object"
+inherit "/core/object";
 
 string use_word;
 string destination;
@@ -9,6 +9,8 @@ string use_word() {
 
 string set_use_word(string value) {
   use_word = value;
+
+  return use_word;
 }
 
 string destination() {
@@ -17,17 +19,37 @@ string destination() {
 
 string set_destination(string value) {
   destination = value;
+
+  return destination;
 }
 
 void use() {
-  object env;
+  object env, new_env, player;
+  string target;
 
-  env = environment(this_player());
+  player = this_player();
 
-  if (!ienv->pre_move(this_object())
+  if (!objectp(player))
     return;
 
-  move(destination);
+  env = environment(player);
 
-  env->post_move(this_object());
+  if (objectp(env)) {
+    if (!env->pre_move(this_object()))
+      return;
+  }
+
+  target = destination;
+
+  if (stringp(target) && target[0] != '/')
+    target = "/" + target;
+
+  player->move(target);
+
+  new_env = environment(player);
+
+  if (objectp(new_env))
+    new_env->post_move(this_object());
+
+  return;
 }
