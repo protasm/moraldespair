@@ -1,5 +1,5 @@
 /*
- * /core/link_gate_door.c
+ * /core/gate_door.c
  *
  * Concrete Gate subclass implementing door semantics.
  *
@@ -16,7 +16,7 @@
  *  - portcullises
  */
 
-inherit "/core/link_gate";
+inherit "/core/gate";
 
 /* ------------------------------------------------------------ */
 /* Door state (per side)
@@ -136,6 +136,7 @@ int lock(int side, object actor, mixed key_id) {
     return 0;
 
   state["locked"] = 1;
+
   return 1;
 }
 
@@ -149,6 +150,7 @@ int unlock(int side, object actor, mixed key_id) {
     return 0;
 
   state["locked"] = 0;
+
   return 1;
 }
 

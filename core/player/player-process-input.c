@@ -20,29 +20,28 @@ string process_input(string raw) {
 
   verb = lower_case(verb);
 
-write("DEBUG: trying command '" + verb + "'\n");
   command_path = "/command/" + verb;
 
   if (file_size(command_path + ".c") >= 0) {
     command = load_object(command_path);
 
-    command->main(arg);
-
-    return "";
+    if (command->main(arg))
+      return "";
+    else
+      return raw;
   }
 
-write("DEBUG: trying action '" + verb + "'\n");
   command_path = "/chapter/prologue/action/" + verb;
 
   if (file_size(command_path + ".c") >= 0) {
     command = load_object(command_path);
 
-    command->main(arg);
-
-    return "";
+    if (command->main(arg))
+      return "";
+    else
+      return raw;
   }
 
-write("DEBUG: trying implied go '" + verb + "'\n");
   command_path = "/chapter/prologue/action/go";
 
   if (file_size(command_path + ".c") >= 0) {
@@ -52,6 +51,5 @@ write("DEBUG: trying implied go '" + verb + "'\n");
       return "";
   }
 
-write("DEBUG: falling through\n");
   return raw;
 }

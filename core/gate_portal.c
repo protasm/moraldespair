@@ -1,5 +1,5 @@
 /*
- * /core/link_gate_portal.c
+ * /core/gate_portal.c
  *
  * Concrete Gate subclass implementing portal semantics.
  *
@@ -17,7 +17,7 @@
  *  - one-way rifts
  */
 
-inherit "/core/link_gate";
+inherit "/core/gate";
 
 #define SIDE_A 0
 #define SIDE_B 1

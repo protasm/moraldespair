@@ -33,8 +33,6 @@ void create() {
     "down",
     "in",
     "out",
-    "enter",
-    "exit"
   });
 
   direction_aliases = ([
@@ -53,7 +51,7 @@ void create() {
   set_category("Movement");
   set_help_text(
     "Usage: go <direction>\n"
-    "Move through a registered link in the given direction.\n"
+    "Attmpt to move to or through the given direction.\n"
   );
 }
 
@@ -93,17 +91,17 @@ int main(string arg) {
   if (!pointerp(labels))
     labels = ({ });
 
-  if (member_array(arg, labels) != -1) {
+  if (member_array(arg, labels) != -1)
     /*
      * Ask the room for the Link corresponding to this label.
      * Room is responsible only for affordance mapping.
      */
     link = env->query_link(arg);
-  } else {
+  else {
     is_direction = (member_array(arg, direction_words) != -1);
 
     if (is_direction) {
-      write("You can't go that way.\n");
+      write("You can't go " + arg + " from here.\n");
 
       return 1;
     }
