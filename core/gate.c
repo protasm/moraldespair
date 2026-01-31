@@ -15,7 +15,7 @@
  * Subclasses implement specific mechanics (doors, portals, forcefields).
  */
 
-inherit "/std/object";
+inherit "/core/object";
 
 /* Internal endpoint identities (never exposed semantically) */
 #define SIDE_A 0
@@ -175,4 +175,3 @@ mapping debug_state() {
     "side_b"    : copy(_side_b),
   ]);
 }
-
