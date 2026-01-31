@@ -3,10 +3,14 @@ inherit "/chapter/prologue/std/link_room";
 #include <link.h>
 
 void create() {
+  string room_path;
+
   ::create();
 
   short_desc = "Tilting Passage";
-  long_desc = "This room demonstrates a link that redirects you to another "
+  room_path = base_name(this_object());
+  long_desc = room_path + "\n\n"
+              "This room demonstrates a link that redirects you to another "
               "room\n"
               "after entry. Use \"linkgo down\" from the hub to trigger the "
               "redirect.";

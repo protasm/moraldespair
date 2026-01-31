@@ -3,10 +3,14 @@ inherit "/chapter/prologue/std/link_room";
 #include <link.h>
 
 void create() {
+  string room_path;
+
   ::create();
 
   short_desc = "Guarded Shelf";
-  long_desc = "This room demonstrates a link that allows entry but "
+  room_path = base_name(this_object());
+  long_desc = room_path + "\n\n"
+              "This room demonstrates a link that allows entry but "
               "immediately\n"
               "reverses you with a message. Use \"linkgo west\" from the "
               "hub\n"

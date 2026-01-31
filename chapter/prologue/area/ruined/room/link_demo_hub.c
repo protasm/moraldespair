@@ -4,11 +4,14 @@ void create() {
   object link;
   object gate;
   string origin_id;
+  string room_path;
 
   ::create();
 
   short_desc = "Bare Antechamber";
-  long_desc = "This room demonstrates basic link exits. Use \"linkgo "
+  room_path = base_name(this_object());
+  long_desc = room_path + "\n\n"
+              "This room demonstrates basic link exits. Use \"linkgo "
               "<direction>\"\n"
               "(for example, \"linkgo north\") to try north, west, down, "
               "or east.\n"
