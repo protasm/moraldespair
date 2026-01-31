@@ -2,6 +2,8 @@ int move(mixed dest) {
   // add code here to prevent disallowed moves (target is full, object
   // is immovable, etc.).
   move_object(dest);
+
+  return 1;
 }
 
 void remove() {

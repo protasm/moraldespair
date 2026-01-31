@@ -4,11 +4,10 @@ void create() {
   ::create();
 
   short_desc = "Open Landing";
-  long_desc = "A broad landing holds only fractured tiles and the last "
-              "scraps\n"
-              "of a faded mosaic. A torn archway to the south frames the "
-              "empty\n"
-              "antechamber.";
+  long_desc = "This room demonstrates a basic link that allows movement "
+              "without\n"
+              "any special behavior. Use \"linkgo south\" to return to the "
+              "hub.";
 
   add_link("south", "link_demo_hub");
 

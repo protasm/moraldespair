@@ -6,10 +6,10 @@ void create() {
   ::create();
 
   short_desc = "Tilting Passage";
-  long_desc = "The passage dips sharply under a crust of fallen stone, its\n"
-              "centerline worn smooth. A dark seam cuts across the floor "
-              "where the\n"
-              "slab has begun to shift.";
+  long_desc = "This room demonstrates a link that redirects you to another "
+              "room\n"
+              "after entry. Use \"linkgo down\" from the hub to trigger the "
+              "redirect.";
 
   add_link("up", "link_demo_hub");
 

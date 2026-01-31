@@ -8,11 +8,12 @@ void create() {
   ::create();
 
   short_desc = "Bare Antechamber";
-  long_desc = "A shallow chamber sits open to the wind, its stone ribs "
-              "exposed\n"
-              "where plaster once clung. Dust coils along the floor in "
-              "thin\n"
-              "drifts, and four dark passages open in the walls.";
+  long_desc = "This room demonstrates basic link exits. Use \"linkgo "
+              "<direction>\"\n"
+              "(for example, \"linkgo north\") to try north, west, down, "
+              "or east.\n"
+              "The east link is gated so you can see the blocked traversal "
+              "message.";
 
   link = add_link("north", "link_demo_clear");
   add_link("west", "link_demo_guard");
