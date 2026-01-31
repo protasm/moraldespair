@@ -1,5 +1,7 @@
 #include <globals.h>
 
+#include "chapter_d.h"
+
 mapping chapter_registry;
 string latest_chapter_id;
 

@@ -40,10 +40,20 @@ mapping exits() {
   return exits;
 }
 
-int has_exit(string str) {
-  return is_member(keys(exits), str);
+int has_exit(string use_word) {
+  return is_member(keys(exits), use_word);
 }
 
-int get_exit_dest(string dir) {
-  return exits[dir];
+void use_exit(string use_word) {
+  if (!has_exit(use_word))
+    write("You can't go that way.\n");
+
+    return;
+  }
+
+  object exit;
+
+  exit = exits[use_word];
+
+  exit->use();
 }

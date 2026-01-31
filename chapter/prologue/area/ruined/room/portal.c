@@ -5,7 +5,7 @@ void create() {
 
     short_desc = "Portal Room";
     long_desc = "This is the portal room. As development continues, these areas will be removed from the portal room and linked to the full world.";
-    dest_dir = ([
+    exits = ([
       "up":"/chapter/prologue/area/ruined/room/sanctuary",
       "island":"/chapter/prologue/area/island/room605",
       "preserve":"/domain/original/area/preserve/room432",

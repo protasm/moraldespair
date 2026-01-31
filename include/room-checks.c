@@ -3,6 +3,12 @@ int pre_move(object exit) {
 }
 
 void post_move(object exit) {
+  object env;
+
+  env = environment(this_player());
+
+  write(env->long());
+
   return;
 }
 

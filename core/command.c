@@ -1,7 +1,3 @@
-#include <globals.h>
-
-inherit CLEAN_UP;
-
 mapping properties;
 
 void create() {

@@ -28,19 +28,17 @@ void show_location() {
  * Called automatically by the FluffOS driver for each line of user input.
  ****************************************************************************/
 string process_input(string raw) {
-  object command;
-  object location;
+  object command, location;
   string input, verb, arg, command_path, destination;
   mapping exits;
-  int exit_index;
 
   if (!stringp(raw))
-    return raw;
+    return "";
 
   input = trim(raw);
 
   if (input == "")
-    return raw;
+    return "";
 
   if (sscanf(input, "%s %s", verb, arg) != 2) {
     verb = input;
@@ -54,12 +52,6 @@ string process_input(string raw) {
   if (file_size(command_path + ".c") >= 0) {
     command = load_object(command_path);
 
-    if (!objectp(command))
-      return raw;
-
-    if (!function_exists("main", command))
-      return raw;
-
     command->main(arg);
 
     return "";
@@ -69,12 +61,6 @@ string process_input(string raw) {
 
   if (file_size(command_path + ".c") >= 0) {
     command = load_object(command_path);
-
-    if (!objectp(command))
-      return raw;
-
-    if (!function_exists("main", command))
-      return raw;
 
     command->main(arg);
 
@@ -86,22 +72,8 @@ string process_input(string raw) {
 
   location = environment(this_object());
 
-  if (objectp(location)) {
-    if (function_exists("dest_dir", location))
-      exits = location->dest_dir();
-    else if (function_exists("exits", location))
-      exits = location->exits();
-
-    if (mapp(exits))
-      destination = exits[verb];
-    else if (pointerp(exits)) {
-      exit_index = member_array(verb, exits);
-
-      if (exit_index > 0)
-        destination = exits[exit_index - 1];
-    } else if (function_exists("get_exit_dest", location))
-      destination = location->get_exit_dest(verb);
-  }
+  exits = location->exits();
+  destination = exits[verb];
 
   if (!stringp(destination)) {
     write("You can't go that way.\n");
@@ -112,6 +84,7 @@ string process_input(string raw) {
   if (destination[0] != '/')
     destination = "/" + destination;
 
+  write("attempting move to " + destination + "\n");
   move_object(destination);
 
   return "";

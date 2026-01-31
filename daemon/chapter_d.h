@@ -1,0 +1,11 @@
+string normalize_id(string value);
+string normalize_path(string path);
+void register_chapter(string id, string title, string description, string root, string start_room);
+void create();
+int chapter_exists(string id);
+string query_latest_chapter();
+string get_chapter_root(string id);
+string get_start_room(string id);
+int can_player_access(object player, string id);
+string resolve_player_chapter(object player);
+string resolve_player_start_room(object player);

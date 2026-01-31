@@ -23,7 +23,11 @@ int member(mixed container, mixed item) {
 }
 
 int is_member(mixed container, mixed item) {
-  return member(container, item) != -1;
+  int result;
+
+  result = member(container, item) != -1;
+
+  return result;
 }
 
 string *query_directions() {
@@ -35,6 +39,10 @@ string *query_directions() {
 }
 
 int is_direction(string str) {
-  return is_member(query_directions(), str);
+  int result;
+
+  result = is_member(query_directions(), str);
+
+  return result;
 }
 
