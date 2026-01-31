@@ -16,7 +16,6 @@ inherit "/core/command";
 
 mapping direction_aliases;
 string *direction_words;
-string implied_prefix;
 
 void create() {
   ::create();
@@ -51,8 +50,6 @@ void create() {
     "d" : "down"
   ]);
 
-  implied_prefix = "__implied__:";
-
   set_category("Movement");
   set_help_text(
     "Usage: go <direction>\n"
@@ -63,8 +60,7 @@ void create() {
 int main(string arg) {
   object player, env, link;
   mapping result;
-  string msg, normalized, implied_arg;
-  int implied;
+  string msg;
 
   player = this_player();
 
@@ -75,14 +71,6 @@ int main(string arg) {
 
   if (!objectp(env))
     return 0;
-
-  implied = 0;
-  implied_arg = "";
-
-  if (stringp(arg) && sscanf(arg, implied_prefix + "%s", implied_arg) == 1) {
-    implied = 1;
-    arg = implied_arg;
-  }
 
   if (!stringp(arg))
     arg = "";
@@ -95,25 +83,14 @@ int main(string arg) {
     return 1;
   }
 
-  normalized = arg;
-
-  if (mapp(direction_aliases) && stringp(direction_aliases[normalized]))
-    normalized = direction_aliases[normalized];
-
-  if (implied && member_array(normalized, direction_words) == -1)
-    return 0;
+  if (mapp(direction_aliases) && stringp(direction_aliases[arg]))
+    arg = direction_aliases[arg];
 
   /*
    * Ask the room for the Link corresponding to this label.
    * Room is responsible only for affordance mapping.
    */
-  if (!function_exists("query_link", env)) {
-    write("You can't go that way.\n");
-
-    return 1;
-  }
-
-  link = env->query_link(normalized);
+  link = env->query_link(arg);
 
   if (!objectp(link)) {
     write("You can't go that way.\n");

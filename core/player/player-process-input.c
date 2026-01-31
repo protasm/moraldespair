@@ -3,22 +3,23 @@
  ****************************************************************************/
 string process_input(string raw) {
   object command;
-  string input, verb, arg, command_path, implied_input;
+  string verb, arg, command_path;
 
   if (!stringp(raw))
     return "";
 
-  input = trim(raw);
+  raw = trim(raw);
 
-  if (input == "")
+  if (raw == "")
     return "";
 
-  if (sscanf(input, "%s %s", verb, arg) != 2) {
-    verb = input;
+  if (sscanf(raw, "%s %s", verb, arg) != 2) {
+    verb = raw;
     arg = "";
   }
 
   verb = lower_case(verb);
+
 write("DEBUG: trying command '" + verb + "'\n");
   command_path = "/command/" + verb;
 
@@ -41,15 +42,13 @@ write("DEBUG: trying action '" + verb + "'\n");
     return "";
   }
 
-write("DEBUG: trying implied go '" + input + "'\n");
+write("DEBUG: trying implied go '" + verb + "'\n");
   command_path = "/chapter/prologue/action/go";
 
   if (file_size(command_path + ".c") >= 0) {
     command = load_object(command_path);
 
-    implied_input = "__implied__:" + input;
-
-    if (command->main(implied_input))
+    if (command->main(verb))
       return "";
   }
 
