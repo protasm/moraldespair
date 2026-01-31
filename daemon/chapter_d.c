@@ -62,7 +62,7 @@ void create() {
   register_chapter(
     "prologue",
     "Prologue: Despair",
-    "The first chapter begins in the silent ruins, where the world waits.",
+    "Two hundred years have passed....",
     "/chapter/prologue",
     "/chapter/prologue/area/ruined/room/sanctuary"
   );
@@ -150,8 +150,7 @@ int can_player_access(object player, string id) {
 }
 
 string resolve_player_chapter(object player) {
-  string current;
-  string resolved;
+  string current, resolved;
 
   /* Default to the global chapter so empty saves still load cleanly. */
   resolved = latest_chapter_id;
@@ -179,8 +178,7 @@ string resolve_player_chapter(object player) {
 }
 
 string resolve_player_start_room(object player) {
-  string chapter_id;
-  string start_room;
+  string chapter_id, start_room;
 
   chapter_id = resolve_player_chapter(player);
   start_room = get_start_room(chapter_id);
