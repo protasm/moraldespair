@@ -1,55 +1,52 @@
 inherit "/core/object";
 
 string use_word;
+object origin;
 string destination;
 
 string use_word() {
   return use_word;
 }
 
-string set_use_word(string value) {
+void set_use_word(string value) {
   use_word = value;
+}
 
-  return use_word;
+object origin() {
+  return origin;
+}
+
+void set_origin(object value) {
+  origin = value;
 }
 
 string destination() {
   return destination;
 }
 
-string set_destination(string value) {
+void set_destination(string value) {
   destination = value;
-
-  return destination;
 }
 
-void use() {
-  object env, new_env, player;
-  string target;
+int use() {
+  object env, player;
 
   player = this_player();
 
   if (!objectp(player))
-    return;
+    return 0;
 
   env = environment(player);
 
-  if (objectp(env)) {
-    if (!env->pre_move(this_object()))
-      return;
-  }
+  if (!objectp(env))
+    return 0;
 
-  target = destination;
+  if (!env->pre_leave(this_object()))
+    return 1;
 
-  if (stringp(target) && target[0] != '/')
-    target = "/" + target;
+  player->move(destination);
 
-  player->move(target);
+  env->post_leave(this_object());
 
-  new_env = environment(player);
-
-  if (objectp(new_env))
-    new_env->post_move(this_object());
-
-  return;
+  return 1;
 }

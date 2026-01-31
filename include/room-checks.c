@@ -1,15 +1,16 @@
-int pre_move(object exit) {
+int pre_leave(object exit) {
   return 1;
 }
 
-void post_move(object exit) {
-  object env;
-
-  env = environment(this_player());
-
-  write(env->long());
-
+void post_leave(object exit) {
   return;
+}
+
+int pre_arrive(object exit) {
+  return 1;
+}
+
+void post_arrive(object exit) {
 }
 
 int pre_action(object action) {

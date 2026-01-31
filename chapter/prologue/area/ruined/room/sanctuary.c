@@ -8,7 +8,7 @@ void create() {
 
   add_exit("south", "room228");
   add_exit("up", "lounge");
-  add_exit("down", "/chapter/prologue/area/ruined/room/portal");
+  add_exit("down", "portal");
 }
 
 void init() {
@@ -19,4 +19,12 @@ int do_foo() {
   write("foo!\n");
 
   return 1;
+}
+
+int pre_leave(object exit) {
+  if(!(exit->use_word() == "south")) return 1;
+
+  write("The way is shut. It was made by those who are Dead, and the Dead keep it, until the time comes. The way is shut.\n");
+
+  return 0;
 }
