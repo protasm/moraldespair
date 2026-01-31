@@ -10,6 +10,7 @@
 #define LINK_RESULT_OUTCOME "outcome"
 #define LINK_RESULT_MESSAGE "message"
 #define LINK_RESULT_REDIRECT "redirect"
+#define LINK_RESULT_INTERMEDIATE "intermediate"
 #define LINK_RESULT_MUTATIONS "mutations"
 
 #endif

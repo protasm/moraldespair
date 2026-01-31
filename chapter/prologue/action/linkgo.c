@@ -13,7 +13,7 @@ void create() {
 }
 
 int main(string arg) {
-  object player, location, link;
+  object player, location, link, intermediate;
   mapping directions;
   mapping result;
   string direction, message;
@@ -91,15 +91,27 @@ int main(string arg) {
 
   result = link->traverse(player, location);
   message = result[LINK_RESULT_MESSAGE];
+  outcome = result[LINK_RESULT_OUTCOME];
+
+  if (outcome == LINK_OUTCOME_ALLOW_REDIRECT) {
+    intermediate = result[LINK_RESULT_INTERMEDIATE];
+
+    if (objectp(intermediate))
+      write(intermediate->long() + "\n");
+
+    if (stringp(message) && message != "")
+      write(message + "\n");
+
+    if (function_exists("show_location", player))
+      player->show_location();
+
+    return 1;
+  }
 
   if (stringp(message) && message != "")
     write(message + "\n");
 
-  outcome = result[LINK_RESULT_OUTCOME];
-
   if (outcome == LINK_OUTCOME_ALLOW ||
-      outcome == LINK_OUTCOME_ALLOW_REVERSE ||
-      outcome == LINK_OUTCOME_ALLOW_REDIRECT ||
       outcome == LINK_OUTCOME_ALLOW_MUTATE) {
     if (function_exists("show_location", player))
       player->show_location();

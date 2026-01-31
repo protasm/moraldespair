@@ -346,6 +346,7 @@ mapping traverse(object actor, object origin) {
   if (result[LINK_RESULT_OUTCOME] == LINK_OUTCOME_ALLOW_REDIRECT) {
     string redirect;
 
+    result[LINK_RESULT_INTERMEDIATE] = destination;
     redirect = result[LINK_RESULT_REDIRECT];
 
     if (stringp(redirect))
