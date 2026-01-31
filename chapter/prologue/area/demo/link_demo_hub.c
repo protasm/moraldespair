@@ -1,25 +1,15 @@
 inherit "/chapter/prologue/std/link_room";
 
 void create() {
-  object link;
-  object gate;
+  object link, gate;
   string origin_id;
-  string room_path;
 
   ::create();
 
   short_desc = "Bare Antechamber";
-  room_path = base_name(this_object());
-  long_desc = room_path + "\n\n"
-              "This room demonstrates basic link exits. Use \"linkgo "
-              "<direction>\"\n"
-              "(for example, \"linkgo north\") to try north, west, down, "
-              "east,\n"
-              "or door.\n"
-              "The east link is gated so you can see the blocked traversal "
-              "message.";
+  long_desc = "This room demonstrates basic link exits. Use \"linkgo <direction>\" (for example, \"linkgo north\") to try north, west, down, east, or door. The east link is gated so you can see the blocked traversal message.";
 
-  link = add_link("north", "link_demo_clear");
+  add_link("north", "link_demo_clear");
   add_link("west", "link_demo_guard");
   add_link("down", "link_demo_redirect");
   add_link("door", "link_demo_loft");
@@ -32,6 +22,7 @@ void create() {
     gate->set_name("rusted grille");
     gate->set_closed_message("A rusted grille bars the passage.");
     gate->set_open(0);
+
     link->add_gate(origin_id, gate);
   }
 
