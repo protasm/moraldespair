@@ -22,7 +22,7 @@ void create() {
    */
   add_link("west", LINK_D->get_link(
     base_name(this_object()),
-    "/area/prison/cell"
+    "/chapter/prologue/area/demo/cell"
   ));
 }
 

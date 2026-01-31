@@ -32,20 +32,25 @@ inherit "/core/gate";
 #define SIDE_B 1
 
 void create() {
+  mapping state_side_A, state_side_B;
+
   ::create();
 
   set_name("door");
 
-  /* Initialize default door state */
-  side_state(SIDE_A)["open"]       = 0;
-  side_state(SIDE_A)["locked"]     = 0;
-  side_state(SIDE_A)["lock_id"]    = 0;
-  side_state(SIDE_A)["block_msg"]  = "The door is closed.";
+  state_side_A = side_state(SIDE_A);
+  state_side_B = side_state(SIDE_B);
 
-  side_state(SIDE_B)["open"]       = 0;
-  side_state(SIDE_B)["locked"]     = 0;
-  side_state(SIDE_B)["lock_id"]    = 0;
-  side_state(SIDE_B)["block_msg"]  = "The door is closed.";
+  /* Initialize default door state */
+  state_side_A["open"]       = 0;
+  state_side_A["locked"]     = 0;
+  state_side_A["lock_id"]    = 0;
+  state_side_A["block_msg"]  = "The door is closed.";
+
+  state_side_B["open"]       = 0;
+  state_side_B["locked"]     = 0;
+  state_side_B["lock_id"]    = 0;
+  state_side_B["block_msg"]  = "The door is closed.";
 }
 
 /* ------------------------------------------------------------ */
@@ -98,6 +103,7 @@ mapping attempt_pass(object actor, int side) {
 
 int open(int side, object actor) {
   mapping state = side_state(side);
+  mapping opp_state = side_state(opposite_side(side));
 
   if (state["open"])
     return 0;
@@ -106,19 +112,20 @@ int open(int side, object actor) {
     return 0;
 
   state["open"] = 1;
-  side_state(opposite_side(side))["open"] = 1;
+  opp_state["open"] = 1;
 
   return 1;
 }
 
 int close(int side, object actor) {
   mapping state = side_state(side);
+  mapping opp_state = side_state(opposite_side(side));
 
   if (!state["open"])
     return 0;
 
   state["open"] = 0;
-  side_state(opposite_side(side))["open"] = 0;
+  opp_state["open"] = 0;
 
   return 1;
 }
@@ -159,19 +166,27 @@ int unlock(int side, object actor, mixed key_id) {
  * ------------------------------------------------------------ */
 
 void set_lock_id(int side, mixed key_id) {
-  side_state(side)["lock_id"] = key_id;
+  mapping state = side_state(side);
+
+  state["lock_id"] = key_id;
 }
 
 void set_open_state(int side, int open) {
-  side_state(side)["open"] = open;
+  mapping state = side_state(side);
+
+  state["open"] = open;
 }
 
 void set_locked_state(int side, int locked) {
-  side_state(side)["locked"] = locked;
+  mapping state = side_state(side);
+
+  state["locked"] = locked;
 }
 
 void set_block_message(int side, string msg) {
-  side_state(side)["block_msg"] = msg;
+  mapping state = side_state(side);
+
+  state["block_msg"] = msg;
 }
 
 /* ------------------------------------------------------------ */
@@ -184,6 +199,7 @@ string examine(int side) {
   if (!state["open"]) {
     if (state["locked"])
       return "A closed, locked door.";
+
     return "A closed door.";
   }
 

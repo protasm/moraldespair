@@ -30,41 +30,42 @@ void create() {
    ****************************************************************/
   if (!LINK_D->query_link(
         "/chapter/prologue/area/demo/cell",
-        "/chapter/prologue/area/demo/guard_room")) {
+        "/chapter/prologue/area/demo/guardroom")) {
 
     door = new("/core/gate_door");
     door->set_name("iron cell door");
 
     /* Locked on guard-room side (SIDE_B = 1) */
-    //door->set_lock_id(1, "iron_key");
-    //door->set_locked_state(1, 1);
+    door->set_lock_id(1, "iron_key");
+    door->set_locked_state(1, 0);
 
-    //door->set_block_message(0,
-      //"You rattle the bars, but the iron door won't budge.");
-    //door->set_block_message(1,
-      //"The iron door is locked fast from this side.");
+    door->set_block_message(0,
+      "You rattle the bars, but the iron door won't budge.");
+    door->set_block_message(1,
+      "The iron door is locked fast from this side.");
 
-    //door->set_base_cost(1);
+    door->set_base_cost(1);
 
     //def = ([
-    //  "type"  : "/core/link",
-    //  "gates" : ({ door }),
+      //"type"  : "/core/link",
+      //"gates" : ({ door }),
+      //"gates" : ({ }),
     //]);
 
-    //LINK_D->define_link(
-    //  "/chapter/prologue/area/demo/cell",
-    //  "/chapter/prologue/area/demo/guard_room",
-    //  def
-    //);
+    LINK_D->define_link(
+      "/chapter/prologue/area/demo/cell",
+      "/chapter/prologue/area/demo/guardroom",
+      def
+    );
   }
 
   /*
    * Discover the link normally.
    * This is the correct long-term pattern.
    */
-  //add_link("east", LINK_D->get_link(
-  //  base_name(this_object()),
-  //  "/chapter/prologue/area/demo/guard_room"
-  //));
+  add_link("east", LINK_D->get_link(
+    base_name(this_object()),
+    "/chapter/prologue/area/demo/guardroom"
+  ));
 }
 
