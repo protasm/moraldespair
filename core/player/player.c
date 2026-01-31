@@ -29,6 +29,7 @@ void show_location() {
  ****************************************************************************/
 string process_input(string raw) {
   object command, location;
+  int used_exit;
   string input, verb, arg, command_path;
 
   if (!stringp(raw))
@@ -66,18 +67,21 @@ string process_input(string raw) {
     return "";
   }
 
-  if (!is_direction(verb))
-    return raw;
-
   location = environment(this_object());
 
   if (!objectp(location))
     return "";
 
-  if (function_exists("use_exit", location))
-    location->use_exit(verb);
+  if (function_exists("try_exit", location))
+    used_exit = location->try_exit(verb);
 
-  return "";
+  if (used_exit)
+    return "";
+
+  if (!is_direction(verb))
+    return raw;
+
+  return raw;
 }
 
 void catch_tell(string message) {
