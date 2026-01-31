@@ -32,6 +32,8 @@ int main(string arg) {
   if (arg == "")
     return 0;
 
+  arg = lower_case(arg);
+
   directions = ([
     "north" : "north",
     "south" : "south",
@@ -52,7 +54,9 @@ int main(string arg) {
     "se" : "southeast",
     "sw" : "southwest",
     "u" : "up",
-    "d" : "down"
+    "d" : "down",
+    "x" : "exit",
+    "c" : "city"
   ]);
 
   direction = directions[arg];

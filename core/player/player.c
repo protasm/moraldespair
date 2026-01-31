@@ -28,8 +28,7 @@ void show_location() {
  * Called automatically by the FluffOS driver for each line of user input.
  ****************************************************************************/
 string process_input(string raw) {
-  object command, location;
-  int used_exit;
+  object command;
   string input, verb, arg, command_path;
 
   if (!stringp(raw))
@@ -67,19 +66,14 @@ string process_input(string raw) {
     return "";
   }
 
-  location = environment(this_object());
+  command_path = "/chapter/prologue/action/linkgo";
 
-  if (!objectp(location))
-    return "";
+  if (file_size(command_path + ".c") >= 0) {
+    command = load_object(command_path);
 
-  if (function_exists("try_exit", location))
-    used_exit = location->try_exit(verb);
-
-  if (used_exit)
-    return "";
-
-  if (!is_direction(verb))
-    return raw;
+    if (command->main(input))
+      return "";
+  }
 
   return raw;
 }
