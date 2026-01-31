@@ -14,8 +14,44 @@ inherit "/core/command";
 
 #include <link.h>
 
+mapping direction_aliases;
+string *direction_words;
+string implied_prefix;
+
 void create() {
   ::create();
+
+  direction_words = ({
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "enter",
+    "exit"
+  });
+
+  direction_aliases = ([
+    "n" : "north",
+    "s" : "south",
+    "e" : "east",
+    "w" : "west",
+    "ne" : "northeast",
+    "nw" : "northwest",
+    "se" : "southeast",
+    "sw" : "southwest",
+    "u" : "up",
+    "d" : "down"
+  ]);
+
+  implied_prefix = "__implied__:";
 
   set_category("Movement");
   set_help_text(
@@ -27,45 +63,63 @@ void create() {
 int main(string arg) {
   object player, env, link;
   mapping result;
-  string msg;
+  string msg, normalized, implied_arg;
+  int implied;
 
   player = this_player();
 
-  if (!objectp(player)) {
-write("In go - no player\n");
+  if (!objectp(player))
     return 0;
-  }
 
   env = environment(player);
 
-  if (!objectp(env)) {
-write("In go - no env\n");
+  if (!objectp(env))
     return 0;
+
+  implied = 0;
+  implied_arg = "";
+
+  if (stringp(arg) && sscanf(arg, implied_prefix + "%s", implied_arg) == 1) {
+    implied = 1;
+    arg = implied_arg;
   }
 
-  arg = trim(arg);
+  if (!stringp(arg))
+    arg = "";
 
-write("arg is '" + arg + "'\n");
-  if (!stringp(arg) || arg == "") {
+  arg = lower_case(trim(arg));
+
+  if (arg == "") {
     write("Go where?\n");
 
     return 1;
   }
+
+  normalized = arg;
+
+  if (mapp(direction_aliases) && stringp(direction_aliases[normalized]))
+    normalized = direction_aliases[normalized];
+
+  if (implied && member_array(normalized, direction_words) == -1)
+    return 0;
 
   /*
    * Ask the room for the Link corresponding to this label.
    * Room is responsible only for affordance mapping.
    */
   if (!function_exists("query_link", env)) {
-    write("You cannot go anywhere from here.\n");
+    write("You can't go that way.\n");
 
     return 1;
   }
 
-  link = env->query_link(arg);
+  link = env->query_link(normalized);
 
-  if (!objectp(link))
-    return 0;
+  if (!objectp(link)) {
+    write("You can't go that way.\n");
+
+    return 1;
+  }
 
   /*
    * Delegate movement to the Link.
@@ -89,4 +143,3 @@ write("arg is '" + arg + "'\n");
 
   return 1;
 }
-

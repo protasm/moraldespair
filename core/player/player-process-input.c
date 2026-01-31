@@ -3,7 +3,7 @@
  ****************************************************************************/
 string process_input(string raw) {
   object command;
-  string input, verb, arg, command_path;
+  string input, verb, arg, command_path, implied_input;
 
   if (!stringp(raw))
     return "";
@@ -47,11 +47,12 @@ write("DEBUG: trying implied go '" + input + "'\n");
   if (file_size(command_path + ".c") >= 0) {
     command = load_object(command_path);
 
-    if (command->main(input))
+    implied_input = "__implied__:" + input;
+
+    if (command->main(implied_input))
       return "";
   }
 
 write("DEBUG: falling through\n");
   return raw;
 }
-
