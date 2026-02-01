@@ -52,7 +52,8 @@ void create() {
   _dir_claims    = ([]);
 
   link_files = ({
-    "/chapter/prologue/area/ruined/links.json"
+    "/chapter/prologue/area/ruined/links.json",
+    "/chapter/prologue/area/roadway/links.json"
   });
 
   i = 0;

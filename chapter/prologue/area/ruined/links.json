@@ -10,13 +10,30 @@
     },
     {
       "id": "entrance_room16",
-      "rooms": [
-        "entrance",
-        "/chapter/prologue/area/roadway/room16"
-      ],
       "dirs": {
         "entrance": "east",
         "/chapter/prologue/area/roadway/room16": "west"
+      }
+    },
+    {
+      "id": "entrance_room13",
+      "dirs": {
+        "entrance": "west",
+        "/chapter/prologue/area/roadway/room13": "east"
+      }
+    },
+    {
+      "id": "entrance_room30",
+      "dirs": {
+        "entrance": "north",
+        "/chapter/prologue/area/roadway/room30": "south"
+      }
+    },
+    {
+      "id": "entrance_room43",
+      "dirs": {
+        "entrance": "south",
+        "/chapter/prologue/area/roadway/room43": "north"
       }
     },
     {
