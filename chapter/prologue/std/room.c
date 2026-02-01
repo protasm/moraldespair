@@ -61,11 +61,24 @@ mapping _links;
  * This does NOT define topology.
  */
 void add_link(string label, object link) {
+  object existing;
+
   if (!stringp(label) || !objectp(link))
     return;
 
   if (!mapp(_links))
     _links = ([]);
+
+  existing = _links[label];
+
+  if (objectp(existing) && existing != link) {
+    write(
+      "ROOM: Link label collision for " + base_name(this_object()) + ".\n" +
+      "  Label '" + label + "' already assigned.\n"
+    );
+
+    return;
+  }
 
   _links[label] = link;
 }
@@ -89,4 +102,3 @@ string *query_link_labels() {
 
   return keys(_links);
 }
-

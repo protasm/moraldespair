@@ -38,6 +38,7 @@ mapping _links;            /* pair_key -> Link object */
 mapping _definitions;      /* pair_key -> definition mapping (immutable) */
 mapping _pair_by_id;       /* link_id  -> pair_key */
 mapping _links_by_room;    /* room_abs -> ({ pair_key, ... }) */
+mapping _dir_claims;       /* room_abs -> ([ dir_label : pair_key ]) */
 
 /* ------------------------------------------------------------ */
 
@@ -49,6 +50,7 @@ void create() {
   _definitions   = ([]);
   _pair_by_id    = ([]);
   _links_by_room = ([]);
+  _dir_claims    = ([]);
 
   link_files = ({
     "/chapter/prologue/area/ruined/links.json"
@@ -70,6 +72,36 @@ string _trim(string s) {
   if (!stringp(s)) return "";
 
   return trim(s);
+}
+
+string _definition_source(mapping definition) {
+  string source;
+
+  if (!mapp(definition))
+    return "unknown";
+
+  source = definition["source"];
+
+  if (!stringp(source) || _trim(source) == "")
+    return "unknown";
+
+  return _trim(source);
+}
+
+string _format_definition_ref(string key, mapping definition) {
+  string *eps;
+  string a, b, source;
+
+  eps = endpoints_from_key(key);
+
+  if (sizeof(eps) != 2)
+    return "unknown";
+
+  a = eps[0];
+  b = eps[1];
+  source = _definition_source(definition);
+
+  return a + " <-> " + b + " (defined in " + source + ")";
 }
 
 mixed parse_json(string raw) {
@@ -195,7 +227,8 @@ void index_pair_for_room(string room, string key) {
  * Once defined, cannot be redefined.
  */
 int define_link(string env_a, string env_b, mapping definition) {
-  string a, b, key, id;
+  string a, b, key, id, source;
+  mapping dirs;
 
   a = normalize_endpoint(env_a);
   b = normalize_endpoint(env_b);
@@ -203,11 +236,16 @@ int define_link(string env_a, string env_b, mapping definition) {
   if (a == "" || b == "") return 0;
 
   key = pair_key(a, b);
+  source = _definition_source(definition);
 
   if (_definitions[key]) {
     /* Do not silently redefine topology */
     /* Use your own logging/printf facility if preferred */
-    write("LINK_D: Attempt to redefine link " + key + "\n");
+    write(
+      "LINK_D: Duplicate link for endpoints " + a + " <-> " + b + ".\n" +
+      "  First: " + _format_definition_ref(key, _definitions[key]) + "\n" +
+      "  Duplicate from " + source + "\n"
+    );
 
     return 0;
   }
@@ -222,7 +260,13 @@ int define_link(string env_a, string env_b, mapping definition) {
 
     if (id != "") {
       if (_pair_by_id[id]) {
-        write("LINK_D: Duplicate link id '" + id + "'\n");
+        write(
+          "LINK_D: Duplicate link id '" + id + "'.\n" +
+          "  First: " +
+          _format_definition_ref(_pair_by_id[id], _definitions[_pair_by_id[id]]) +
+          "\n" +
+          "  Duplicate from " + source + "\n"
+        );
 
 	return 0;
       }
@@ -234,15 +278,57 @@ int define_link(string env_a, string env_b, mapping definition) {
 
   /* Normalize dirs mapping keys if present (must be absolute) */
   if (mapp(definition["dirs"])) {
-    mapping dirs = ([ ]);
+    dirs = ([ ]);
 
     foreach (mixed k, mixed v in definition["dirs"]) {
       if (!stringp(k) || !stringp(v)) continue;
+
+      if (_trim(v) == "") continue;
 
       dirs[ normalize_endpoint(k) ] = _trim(v);
     }
 
     definition["dirs"] = dirs;
+  }
+
+  /* Direction label collisions are hard errors (per endpoint) */
+  if (mapp(definition["dirs"])) {
+    mapping claims;
+
+    foreach (mixed k, mixed v in definition["dirs"]) {
+      string endpoint, label, existing_key;
+      mapping existing_def;
+      string existing_ref;
+
+      if (!stringp(k) || !stringp(v))
+        continue;
+
+      endpoint = normalize_endpoint(k);
+      label = _trim(v);
+
+      if (endpoint == "" || label == "")
+        continue;
+
+      claims = _dir_claims[endpoint];
+
+      if (!mapp(claims))
+        claims = ([ ]);
+
+      existing_key = claims[label];
+
+      if (stringp(existing_key) && existing_key != "") {
+        existing_def = _definitions[existing_key];
+        existing_ref = _format_definition_ref(existing_key, existing_def);
+
+        write(
+          "LINK_D: Direction label collision at " + endpoint + ".\n" +
+          "  Label '" + label + "' already claimed by " + existing_ref + "\n" +
+          "  Duplicate from " + source + "\n"
+        );
+
+        return 0;
+      }
+    }
   }
 
   /* Normalize one_way endpoints if present */
@@ -262,6 +348,32 @@ int define_link(string env_a, string env_b, mapping definition) {
   /* Index the pair against both endpoints (for discovery) */
   index_pair_for_room(a, key);
   index_pair_for_room(b, key);
+
+  /* Record direction label claims once accepted */
+  if (mapp(definition["dirs"])) {
+    mapping claims;
+
+    foreach (mixed k, mixed v in definition["dirs"]) {
+      string endpoint, label;
+
+      if (!stringp(k) || !stringp(v))
+        continue;
+
+      endpoint = normalize_endpoint(k);
+      label = _trim(v);
+
+      if (endpoint == "" || label == "")
+        continue;
+
+      claims = _dir_claims[endpoint];
+
+      if (!mapp(claims))
+        claims = ([ ]);
+
+      claims[label] = key;
+      _dir_claims[endpoint] = claims;
+    }
+  }
 
   return 1;
 }
@@ -340,6 +452,7 @@ int load_json(string file) {
     mixed rooms;
     string a_ref, b_ref, a, b;
     mapping dirs_in, dirs_abs;
+    string source;
 
     def = links_arr[i];
 
@@ -407,6 +520,11 @@ int load_json(string file) {
     /* Keep original def but normalize pieces we care about */
     if (mapp(dirs_abs))
       def["dirs"] = dirs_abs;
+
+    source = def["source"];
+
+    if (!stringp(source) || _trim(source) == "")
+      def["source"] = file + " link[" + i + "]";
 
     /* Normalize one_way if it references relative endpoints */
     if (mapp(def["one_way"])) {
