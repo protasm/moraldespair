@@ -298,6 +298,151 @@ object *query_gates() {
 }
 
 /* ------------------------------------------------------------ */
+/* Gate actions (nearest gate per endpoint)
+ * ------------------------------------------------------------ */
+
+object gate_for_endpoint(string endpoint_id) {
+  object *gs;
+  int idx;
+
+  if (!stringp(endpoint_id))
+    return 0;
+
+  gs = query_gates();
+
+  if (!sizeof(gs))
+    return 0;
+
+  idx = endpoint_index(endpoint_id);
+
+  if (idx < 0)
+    return 0;
+
+  if (idx == 0)
+    return gs[0];
+
+  return gs[sizeof(gs) - 1];
+}
+
+int gate_supports_action(object gate, string verb) {
+  if (!objectp(gate))
+    return 0;
+
+  if (!stringp(verb))
+    return 0;
+
+  if (verb == "open" || verb == "close")
+    return gate->supports_opening();
+
+  if (verb == "lock" || verb == "unlock")
+    return gate->supports_locking();
+
+  return 0;
+}
+
+int supports_link_action(string verb, object actor, string endpoint_id) {
+  return 0;
+}
+
+int perform_link_action(object actor, string verb, string args, string endpoint_id) {
+  return 0;
+}
+
+int supports_action(string verb, object actor, string endpoint_id) {
+  object gate;
+
+  if (!stringp(verb))
+    return 0;
+
+  if (supports_link_action(verb, actor, endpoint_id))
+    return 1;
+
+  gate = gate_for_endpoint(endpoint_id);
+
+  if (!objectp(gate))
+    return 0;
+
+  return gate_supports_action(gate, verb);
+}
+
+int perform_action(object actor, string verb, string args, string endpoint_id) {
+  object gate;
+  int endpoint_idx;
+  int side;
+  int ok;
+  string name;
+  string message;
+
+  if (!objectp(actor))
+    return 0;
+
+  if (!stringp(verb))
+    return 0;
+
+  if (supports_link_action(verb, actor, endpoint_id))
+    return perform_link_action(actor, verb, args, endpoint_id);
+
+  gate = gate_for_endpoint(endpoint_id);
+
+  if (!objectp(gate))
+    return 0;
+
+  if (!gate_supports_action(gate, verb))
+    return 0;
+
+  endpoint_idx = endpoint_index(endpoint_id);
+
+  if (endpoint_idx < 0)
+    return 0;
+
+  side = gate->side_facing_endpoint(endpoint_idx);
+
+  if (!stringp(args))
+    args = "";
+
+  if (verb == "open")
+    ok = gate->open(side, actor);
+  else if (verb == "close")
+    ok = gate->close(side, actor);
+  else if (verb == "lock")
+    ok = gate->lock(side, actor, args);
+  else if (verb == "unlock")
+    ok = gate->unlock(side, actor, args);
+  else
+    return 0;
+
+  name = gate->query_name();
+
+  if (!stringp(name) || name == "")
+    name = "gate";
+
+  if (ok) {
+    if (verb == "open")
+      message = "You open the " + name + ".\n";
+    else if (verb == "close")
+      message = "You close the " + name + ".\n";
+    else if (verb == "lock")
+      message = "You lock the " + name + ".\n";
+    else if (verb == "unlock")
+      message = "You unlock the " + name + ".\n";
+  } else {
+    if (verb == "open")
+      message = "It will not open.\n";
+    else if (verb == "close")
+      message = "It will not close.\n";
+    else if (verb == "lock")
+      message = "It will not lock.\n";
+    else if (verb == "unlock")
+      message = "It will not unlock.\n";
+  }
+
+  if (stringp(message) && message != "")
+    tell_object(actor, message);
+
+  return ok;
+}
+
+/* ------------------------------------------------------------ */
 /* Result helpers
  *
  * IMPORTANT: mutation and cost are orthogonal to outcome.
