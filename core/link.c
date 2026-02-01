@@ -53,6 +53,17 @@ void create() {
   return;
 }
 
+void show_actor_location(object actor) {
+  if (!objectp(actor))
+    return;
+
+  if (!userp(actor))
+    return;
+
+  if (function_exists("show_location", actor))
+    actor->show_location();
+}
+
 /* ------------------------------------------------------------ */
 /* Endpoints */
 /* ------------------------------------------------------------ */
@@ -663,6 +674,8 @@ mapping traverse(object actor, object origin) {
   if (enter_hook_result[LINK_RESULT_OUTCOME] == LINK_OUTCOME_ALLOW_REVERSE) {
     actor->move(origin_id);
 
+    show_actor_location(actor);
+
     return enter_hook_result;
   }
 
@@ -675,8 +688,12 @@ mapping traverse(object actor, object origin) {
     if (stringp(redirect) && redirect != "")
       actor->move(redirect);
 
+    show_actor_location(actor);
+
     return enter_hook_result;
   }
+
+  show_actor_location(actor);
 
   return enter_hook_result;
 } // mapping traverse(object actor, object origin)
