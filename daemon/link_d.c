@@ -19,7 +19,6 @@
  *        "links": [
  *          {
  *            "id": "cell_guardroom_basic",
- *            "rooms": ["cell", "guardroom"],
  *            "dirs": { "cell": "east", "guardroom": "west" }
  *          }
  *        ]
@@ -404,11 +403,12 @@ int define_link_id(string id, string env_a, string env_b, mapping definition) {
  *
  * Each link object may contain:
  *   id    : string (recommended)
- *   rooms : [a, b] (required)
- *   dirs  : { a: "east", b: "west" } (optional but recommended)
+ *   rooms : [a, b] (optional; inferred from dirs when omitted)
+ *   dirs  : { a: "east", b: "west" } (required for inference)
  *   type, gates, one_way, ... (optional)
  *
  * Relative room refs are resolved against area_prefix.
+ * If rooms are omitted, endpoints are inferred from dirs keys.
  */
 int load_json(string file) {
   string raw, prefix;
@@ -450,6 +450,7 @@ int load_json(string file) {
   for (i = 0; i < sizeof(links_arr); i++) {
     mapping def;
     mixed rooms;
+    string *dir_keys;
     string a_ref, b_ref, a, b;
     mapping dirs_in, dirs_abs;
     string source;
@@ -465,20 +466,25 @@ int load_json(string file) {
     }
 
     rooms = def["rooms"];
+    dirs_in = def["dirs"];
+    dir_keys = 0;
+    a_ref = "";
+    b_ref = "";
 
-    if (!pointerp(rooms) || sizeof(rooms) != 2) {
-      write("LINK_D: Link missing 'rooms' [a,b] in " + file + "\n");
+    if (pointerp(rooms) && sizeof(rooms) == 2) {
+      a_ref = rooms[0];
+      b_ref = rooms[1];
+    } else if (mapp(dirs_in)) {
+      dir_keys = keys(dirs_in);
 
-      ok = 0;
-
-      continue;
+      if (sizeof(dir_keys) == 2) {
+        a_ref = dir_keys[0];
+        b_ref = dir_keys[1];
+      }
     }
 
-    a_ref = rooms[0];
-    b_ref = rooms[1];
-
     if (!stringp(a_ref) || !stringp(b_ref)) {
-      write("LINK_D: Link rooms must be strings in " + file + "\n");
+      write("LINK_D: Link endpoints must be defined by 'rooms' or 'dirs' in " + file + "\n");
 
       ok = 0;
 
@@ -498,8 +504,6 @@ int load_json(string file) {
 
     /* Resolve dirs mapping keys the same way rooms resolve */
     dirs_abs = 0;
-    dirs_in = def["dirs"];
-
     if (mapp(dirs_in)) {
       dirs_abs = ([ ]);
 
