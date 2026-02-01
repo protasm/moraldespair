@@ -61,7 +61,7 @@ void show_actor_location(object actor) {
     return;
 
   if (function_exists("show_location", actor))
-    actor->show_location();
+    actor->show_location(0);
 }
 
 /* ------------------------------------------------------------ */
