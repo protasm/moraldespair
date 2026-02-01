@@ -20,7 +20,7 @@ int main(string arg) {
     return 0;
 
   if (function_exists("show_location", player)) {
-    player->show_location(0);
+    player->show_location(1);
 
     return 1;
   }
