@@ -19,12 +19,49 @@ int is_living() {
 }
 
 void show_location() {
-  object env = environment(this_object());
+  object env;
+  string short_desc, long_desc;
+  mapping exits;
+  string *dirs;
+  string divider;
 
-  if (env)
-    write(env->long() + "\n");
-  else
+  env = environment(this_object());
+
+  if (!objectp(env)) {
     write("You are nowhere.\n");
+
+    return;
+  }
+
+  divider = "---------+---------+---------+---------+---------+---------+---------+---------+";
+
+  short_desc = env->short();
+
+  if (stringp(short_desc) && short_desc != "")
+    write(short_desc + "\n");
+
+  write(divider + "\n");
+
+  long_desc = env->long();
+
+  if (stringp(long_desc) && long_desc != "") {
+    write(long_desc);
+
+    if (long_desc[<1] != '\n')
+      write("\n");
+  }
+
+  write("\n");
+
+  exits = LINK_D->links_by_direction_for_room(base_name(env));
+
+  if (mapp(exits) && sizeof(exits)) {
+    dirs = sort_array(keys(exits), 1);
+
+    write("Exits: " + implode(dirs, ", ") + "\n");
+  } else {
+    write("Exits: none\n");
+  }
 }
 
 void catch_tell(string message) {

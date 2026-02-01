@@ -69,6 +69,17 @@ void set_post_arrive(function func) {
   post_arrive_hook = func;
 }
 
+void show_player_location(object player) {
+  if (!objectp(player))
+    return;
+
+  if (!userp(player))
+    return;
+
+  if (function_exists("show_location", player))
+    player->show_location();
+}
+
 int run_pre_leave(object exit) {
   if (functionp(pre_leave_hook)) {
     if (!evaluate(pre_leave_hook, exit))
@@ -152,6 +163,8 @@ int use() {
     if (function_exists("post_arrive", dest_room))
       dest_room->post_arrive(this_object());
   }
+
+  show_player_location(player);
 
   return 1;
 }
