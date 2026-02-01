@@ -1,0 +1,1 @@
+void refresh_links();

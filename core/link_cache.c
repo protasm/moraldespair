@@ -2,6 +2,8 @@ inherit "/core/object";
 
 #include <globals.h>
 
+#include "link_cache.h"
+
 object room;
 string endpoint_id;
 object *links;
@@ -186,7 +188,7 @@ int handle_input(object actor, string verb, string arg) {
 
   // A single match means we can hand off directly to the link.
   if (pointerp(matches) && sizeof(matches) == 1) {
-    entry = matches[0];
+    entry = (mapping)matches[0];
     link = entry["link"];
 
     if (objectp(link) && function_exists("handle_action", link)) {
@@ -203,7 +205,7 @@ int handle_input(object actor, string verb, string arg) {
     gate_name = "";
 
     // Use the first match for a name hint, if available.
-    entry = matches[0];
+    entry = (mapping)matches[0];
     match = entry["match"];
 
     if (mapp(match) && stringp(match["name"]))
@@ -211,7 +213,7 @@ int handle_input(object actor, string verb, string arg) {
 
     // Find a direction label to help the player clarify.
     for (i = 0; i < sizeof(matches); i++) {
-      entry = matches[i];
+      entry = (mapping)matches[i];
       link = entry["link"];
 
       if (!objectp(link))
