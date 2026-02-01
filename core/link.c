@@ -22,6 +22,7 @@ string endpoint_b;
 
 /* Optional endpoint-specific direction labels (purely affordance/UI) */
 mapping endpoint_labels; /* endpoint_path -> label string */
+mapping link_meta;
 
 /* Ordered list of gates from A -> B */
 object *gates;
@@ -38,6 +39,7 @@ void create() {
   endpoint_b = "";
 
   endpoint_labels = ([]);
+  link_meta = ([]);
   gates = ({ });
 
   /* Default: bidirectional */
@@ -114,6 +116,51 @@ string query_direction_label(string endpoint) {
   return endpoint_labels[endpoint];
 }
 
+void set_dirs(mapping dirs) {
+  mapping normalized;
+
+  if (!mapp(dirs))
+    return;
+
+  normalized = ([ ]);
+
+  foreach (mixed k, mixed v in dirs) {
+    if (!stringp(k) || !stringp(v))
+      continue;
+
+    normalized[k] = v;
+  }
+
+  endpoint_labels = normalized;
+}
+
+mapping query_dirs() {
+  if (!mapp(endpoint_labels))
+    return ([ ]);
+
+  return endpoint_labels;
+}
+
+void set_meta(string key, mixed value) {
+  if (!stringp(key) || key == "")
+    return;
+
+  if (!mapp(link_meta))
+    link_meta = ([]);
+
+  link_meta[key] = value;
+}
+
+mixed query_meta(string key) {
+  if (!stringp(key) || key == "")
+    return 0;
+
+  if (!mapp(link_meta))
+    return 0;
+
+  return link_meta[key];
+}
+
 /* ------------------------------------------------------------ */
 /* Optional explicit directionality (may later be removed)
  * ------------------------------------------------------------ */
@@ -167,12 +214,12 @@ object *query_gates() {
 /* ------------------------------------------------------------ */
 /* Result helpers
  *
- * IMPORTANT: mutation/effects and cost are orthogonal to outcome.
+ * IMPORTANT: mutation and cost are orthogonal to outcome.
  * ------------------------------------------------------------ */
 
 mapping build_result(
   int outcome, string message, string redirect,
-  int cost, mixed effects
+  int cost, mixed mutations
 ) {
   mapping result;
 
@@ -188,8 +235,8 @@ mapping build_result(
   if (!undefinedp(cost) && intp(cost) && cost > 0)
     result[LINK_RESULT_COST] = cost;
 
-  if (!undefinedp(effects) && (pointerp(effects) || mapp(effects)))
-    result[LINK_RESULT_EFFECTS] = effects;
+  if (!undefinedp(mutations) && (pointerp(mutations) || mapp(mutations)))
+    result[LINK_RESULT_MUTATIONS] = mutations;
 
   return result;
 }
@@ -198,8 +245,8 @@ mapping allow_result() {
   return build_result(LINK_OUTCOME_ALLOW, "", "", 0, ({ }));
 }
 
-mapping deny_result(string message, int cost, mixed effects) {
-  return build_result(LINK_OUTCOME_DENY, message, "", cost, effects);
+mapping deny_result(string message, int cost, mixed mutations) {
+  return build_result(LINK_OUTCOME_DENY, message, "", cost, mutations);
 }
 
 int is_allowed_result(mapping result) {
@@ -216,11 +263,11 @@ int is_allowed_result(mapping result) {
 }
 
 /*
- * Merge cost/effects from src into dst (orthogonal accumulation).
+ * Merge cost/mutations from src into dst (orthogonal accumulation).
  */
 mapping merge_side_effects(mapping dst, mapping src) {
   int c1, c2;
-  mixed e1, e2;
+  mixed m1, m2;
 
   if (!mapp(dst)) dst = ([]);
   if (!mapp(src)) return dst;
@@ -232,16 +279,16 @@ mapping merge_side_effects(mapping dst, mapping src) {
   if (!intp(c2)) c2 = 0;
   if (c2 > 0) dst[LINK_RESULT_COST] = c1 + c2;
 
-  e1 = dst[LINK_RESULT_EFFECTS];
-  e2 = src[LINK_RESULT_EFFECTS];
+  m1 = dst[LINK_RESULT_MUTATIONS];
+  m2 = src[LINK_RESULT_MUTATIONS];
 
-  if (pointerp(e2) && sizeof(e2)) {
-    if (!pointerp(e1)) e1 = ({ });
-    dst[LINK_RESULT_EFFECTS] = e1 + e2;
-  } else if (mapp(e2) && sizeof(e2)) {
+  if (pointerp(m2) && sizeof(m2)) {
+    if (!pointerp(m1)) m1 = ({ });
+    dst[LINK_RESULT_MUTATIONS] = m1 + m2;
+  } else if (mapp(m2) && sizeof(m2)) {
     /* if you prefer mapping effects, merge shallowly */
-    if (!mapp(e1)) e1 = ([]);
-    dst[LINK_RESULT_EFFECTS] = e1 + e2;
+    if (!mapp(m1)) m1 = ([]);
+    dst[LINK_RESULT_MUTATIONS] = m1 + m2;
   }
 
   return dst;
@@ -288,18 +335,18 @@ mapping check_gates(object actor, string origin_id, string destination_id) {
       gate_side = gate->side_facing_endpoint(0); /* facing endpoint A */
       step = gate->attempt_pass(actor, gate_side);
 
-      /* accumulate cost/effects even if denied */
+      /* accumulate cost/mutations even if denied */
       if (mapp(step))
         agg = merge_side_effects(agg, ([
           LINK_RESULT_COST    : step["cost"],
-          LINK_RESULT_EFFECTS : step["effects"]
+          LINK_RESULT_MUTATIONS : step["effects"]
         ]));
 
       if (!mapp(step) || !step["allow"]) {
         return deny_result(step && step["message"] ? step["message"]
                                                   : "Something blocks your way.",
                            agg[LINK_RESULT_COST],
-                           agg[LINK_RESULT_EFFECTS]);
+                           agg[LINK_RESULT_MUTATIONS]);
       }
     }
   } else {
@@ -315,14 +362,14 @@ mapping check_gates(object actor, string origin_id, string destination_id) {
       if (mapp(step))
         agg = merge_side_effects(agg, ([
           LINK_RESULT_COST    : step["cost"],
-          LINK_RESULT_EFFECTS : step["effects"]
+          LINK_RESULT_MUTATIONS : step["effects"]
         ]));
 
       if (!mapp(step) || !step["allow"]) {
         return deny_result(step && step["message"] ? step["message"]
                                                   : "Something blocks your way.",
                            agg[LINK_RESULT_COST],
-                           agg[LINK_RESULT_EFFECTS]);
+                           agg[LINK_RESULT_MUTATIONS]);
       }
     }
   }
@@ -441,7 +488,7 @@ mapping traverse(object actor, object origin) {
   destination = resolve_destination(destination_id);
   if (!objectp(destination))
     return deny_result("The way opens into nothing.", exit_result[LINK_RESULT_COST],
-                       exit_result[LINK_RESULT_EFFECTS]);
+                       exit_result[LINK_RESULT_MUTATIONS]);
 
   /* 4) Destination veto (pre-entry) */
   enter_result = can_enter(actor, destination);
@@ -456,7 +503,7 @@ mapping traverse(object actor, object origin) {
   if (!moved)
     return deny_result("You cannot move that way.",
                        enter_result[LINK_RESULT_COST],
-                       enter_result[LINK_RESULT_EFFECTS]);
+                       enter_result[LINK_RESULT_MUTATIONS]);
 
   /* 6) Post-entry reaction (room/actor agency) */
   enter_hook_result = on_enter(actor, origin, destination);
@@ -482,4 +529,3 @@ mapping traverse(object actor, object origin) {
 
   return enter_hook_result;
 }
-

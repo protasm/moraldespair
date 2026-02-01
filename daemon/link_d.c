@@ -40,10 +40,24 @@ mapping _links_by_room;    /* room_abs -> ({ pair_key, ... }) */
 /* ------------------------------------------------------------ */
 
 void create() {
+  string *link_files;
+  int i;
+
   _links         = ([]);
   _definitions   = ([]);
   _pair_by_id    = ([]);
   _links_by_room = ([]);
+
+  link_files = ({
+    "/chapter/prologue/area/demo/links.json"
+  });
+
+  i = 0;
+
+  while (i < sizeof(link_files)) {
+    load_json(link_files[i]);
+    i += 1;
+  }
 }
 
 /* ------------------------------------------------------------ */
@@ -54,6 +68,23 @@ string do_trim(string s) {
   if (!stringp(s)) return "";
 
   return trim(s);
+}
+
+mixed parse_json(string raw) {
+  object parser;
+
+  if (!stringp(raw) || raw == "")
+    return 0;
+
+  parser = find_object("/std/json");
+
+  if (!objectp(parser))
+    parser = load_object("/std/json");
+
+  if (!objectp(parser))
+    return 0;
+
+  return parser->json_decode(raw);
 }
 
 /* Normalize absolute endpoint path */
@@ -277,7 +308,7 @@ int load_json(string file) {
     return 0;
   }
 
-  data = json_parse(raw);
+  data = parse_json(raw);
 
   if (!mapp(data)) {
     write("LINK_D: Invalid JSON in: " + file + "\n");
@@ -701,4 +732,3 @@ mapping query_definition_by_id(string id) {
 
   return _definitions[key];
 }
-

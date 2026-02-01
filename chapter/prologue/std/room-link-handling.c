@@ -40,7 +40,7 @@ void add_exit(string direction, string destination) {
 
   origin = base_name(this_object());
 
-  if (!LINK_D->query_link(origin, destination))
+  if (!LINK_D->has_definition(origin, destination))
     LINK_D->define_link(origin, destination, ([ ]));
 
   add_link(direction, LINK_D->get_link(origin, destination));

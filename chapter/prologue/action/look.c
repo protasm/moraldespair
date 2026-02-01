@@ -28,13 +28,13 @@ int main(string arg) {
   }
 
   /* Short */
-  short_desc = room->query_short();
+  short_desc = room->short();
 
   if (stringp(short_desc) && short_desc != "")
     write(short_desc + "\n");
 
   /* Long */
-  long_desc = room->query_long();
+  long_desc = room->long();
 
   if (stringp(long_desc) && long_desc != "")
     write(long_desc + "\n");
@@ -60,4 +60,3 @@ void render_exits(object player, mapping exits) {
 
   write( "Obvious exits: " + implode(dirs, ", ") + ".\n");
 }
-
