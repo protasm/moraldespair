@@ -2,9 +2,34 @@ object try_move(object player, string direction) {
   object origin, link;
   mapping exits, result;
   string msg;
+  mapping direction_aliases;
 
   if (!objectp(player))
     return 0;
+
+  if (!stringp(direction))
+    direction = "";
+
+  direction = lower_case(trim(direction));
+
+  if (direction == "")
+    return 0;
+
+  direction_aliases = ([
+    "n" : "north",
+    "s" : "south",
+    "e" : "east",
+    "w" : "west",
+    "ne" : "northeast",
+    "nw" : "northwest",
+    "se" : "southeast",
+    "sw" : "southwest",
+    "u" : "up",
+    "d" : "down"
+  ]);
+
+  if (mapp(direction_aliases) && stringp(direction_aliases[direction]))
+    direction = direction_aliases[direction];
 
   origin = environment(player);
 
@@ -49,4 +74,3 @@ object try_move(object player, string direction) {
 
   return environment(player);
 }
-

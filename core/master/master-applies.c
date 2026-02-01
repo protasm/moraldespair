@@ -19,10 +19,17 @@ string author_file(string file) {
 }
 
 string *epilog(int load_empty) {
-  return ({});
+  return ({
+    "/daemon/link_d"
+  });
 }
 
 void preload(string filename) {
+  if (!stringp(filename) || filename == "")
+    return;
+
+  load_object(filename);
+
   return;
 }
 
