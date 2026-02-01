@@ -12,11 +12,11 @@ void create() {
 
 int main(string arg) {
   string target, path, help_text, output;
-  string *files, *category_names, *commands;
+  string *files, *category_names, *commands, *prefixes;
   mapping categories;
   object command_object;
   string command, category;
-  int i;
+  int i, j, found;
 
   if (!stringp(arg))
     arg = "";
@@ -25,34 +25,42 @@ int main(string arg) {
 
   if (target == "") {
     categories = ([]);
-    files = get_dir(ACTION_PREFIX + "*.c");
+    prefixes = ({ COMMAND_PREFIX, ACTION_PREFIX });
 
-    if (!arrayp(files) || !sizeof(files)) {
+    for (i = 0; i < sizeof(prefixes); i++) {
+      files = get_dir(prefixes[i] + "*.c");
+
+      if (!arrayp(files) || !sizeof(files))
+        continue;
+
+      for (j = 0; j < sizeof(files); j++) {
+        command = files[j];
+
+        if (command[<2..] == ".c")
+          command = command[0..<3];
+
+        command_object = load_object(prefixes[i] + command);
+
+        if (!objectp(command_object))
+          continue;
+
+        category = command_object->query_category();
+
+        if (!stringp(category) || category == "")
+          category = "General";
+
+        if (!arrayp(categories[category]))
+          categories[category] = ({ });
+
+        if (member_array(command, categories[category]) == -1)
+          categories[category] += ({ command });
+      }
+    }
+
+    if (!sizeof(keys(categories))) {
       write("No commands are available.\n");
 
       return 1;
-    }
-
-    for (i = 0; i < sizeof(files); i++) {
-      command = files[i];
-
-      if (command[<2..] == ".c")
-        command = command[0..<3];
-
-      command_object = load_object(ACTION_PREFIX + command);
-
-      if (!objectp(command_object))
-        continue;
-
-      category = command_object->query_category();
-
-      if (!stringp(category) || category == "")
-        category = "General";
-
-      if (!arrayp(categories[category]))
-        categories[category] = ({ });
-
-      categories[category] += ({ command });
     }
 
     category_names = keys(categories);
@@ -78,17 +86,26 @@ int main(string arg) {
     return 1;
   }
 
-  path = ACTION_PREFIX + target;
+  prefixes = ({ COMMAND_PREFIX, ACTION_PREFIX });
+  found = 0;
 
-  if (file_size(path + ".c") < 0) {
-    write("No help is available for that command.\n");
+  for (i = 0; i < sizeof(prefixes); i++) {
+    path = prefixes[i] + target;
 
-    return 1;
+    if (file_size(path + ".c") < 0)
+      continue;
+
+    command_object = load_object(path);
+
+    if (!objectp(command_object))
+      continue;
+
+    found = 1;
+
+    break;
   }
 
-  command_object = load_object(path);
-
-  if (!objectp(command_object)) {
+  if (!found) {
     write("No help is available for that command.\n");
 
     return 1;
