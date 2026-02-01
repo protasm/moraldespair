@@ -1,0 +1,14 @@
+{
+  "area_prefix": "/chapter/prologue/area/demo/",
+  "links": [
+    {
+      "id": "cell_guardroom",
+      "rooms": ["cell", "guardroom"],
+      "dirs": {
+        "cell": "east",
+        "guardroom": "west"
+      }
+    }
+  ]
+}
+

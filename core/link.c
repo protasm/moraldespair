@@ -170,8 +170,10 @@ object *query_gates() {
  * IMPORTANT: mutation/effects and cost are orthogonal to outcome.
  * ------------------------------------------------------------ */
 
-mapping build_result(int outcome, string message, string redirect,
-                     int cost, mixed effects) {
+mapping build_result(
+  int outcome, string message, string redirect,
+  int cost, mixed effects
+) {
   mapping result;
 
   result = ([]);

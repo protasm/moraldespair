@@ -1,7 +1,6 @@
 int move(mixed dest) {
   // add code here to prevent disallowed moves (target is full, object
   // is immovable, etc.).
-write("Trying move to " + dest + "\n");
   move_object(dest);
 
   return 1;

@@ -1,54 +1,145 @@
-#include <globals.h>
-
 /*
  * LINK_D
  *
- * Central Link registrar and authority.
+ * Central link registry + resolver.
  *
- * - Owns all Link instances
- * - Ensures exactly one Link per endpoint pair
- * - Never loads environments
- * - Never allows Links to be redefined once registered
+ * Goals:
+ *  - Topology is defined externally (e.g., JSON area files, world scripts)
+ *  - Exactly one Link instance per unordered endpoint pair
+ *  - Link definitions are immutable once registered
+ *  - Never loads environments (no load_object / find_object required)
+ *  - Rooms DISCOVER links by asking LINK_D for their incident links
  *
- * Rooms may DISCOVER Links.
- * World/area code may DEFINE Links.
+ * What this daemon supports:
+ *  - Loading links from JSON files containing:
+ *      {
+ *        "area_prefix": "/chapter/prologue/area/demo/",
+ *        "links": [
+ *          {
+ *            "id": "cell_guardroom_basic",
+ *            "rooms": ["cell", "guardroom"],
+ *            "dirs": { "cell": "east", "guardroom": "west" }
+ *          }
+ *        ]
+ *      }
+ *  - Relative endpoints resolved against area_prefix; absolute endpoints unchanged
+ *  - Direction labels per endpoint (east/west/etc) stored as metadata in definition
+ *  - Index by room for fast "what links touch this room?"
+ *
+ * Notes:
+ *  - This daemon does NOT implement movement; it only provides link objects
+ *    + enough metadata to power movement/exits UI elsewhere.
+ *  - Gate logic is supported by named gate IDs (recommended), or gate objects.
  */
 
-mapping _links;        /* pair_key -> Link object */
-mapping _definitions;  /* pair_key -> definition mapping */
+mapping _links;            /* pair_key -> Link object */
+mapping _definitions;      /* pair_key -> definition mapping (immutable) */
+mapping _pair_by_id;       /* link_id  -> pair_key */
+mapping _links_by_room;    /* room_abs -> ({ pair_key, ... }) */
 
 /* ------------------------------------------------------------ */
 
 void create() {
-  _links = ([]);
-  _definitions = ([]);
+  _links         = ([]);
+  _definitions   = ([]);
+  _pair_by_id    = ([]);
+  _links_by_room = ([]);
 }
 
 /* ------------------------------------------------------------ */
 /* Utilities
  * ------------------------------------------------------------ */
 
+string do_trim(string s) {
+  if (!stringp(s)) return "";
+
+  return trim(s);
+}
+
+/* Normalize absolute endpoint path */
 string normalize_endpoint(string value) {
-  if (!stringp(value))
-    return "";
+  value = do_trim(value);
 
-  value = trim(value);
+  if (value == "") return "";
 
-  if (value == "")
-    return "";
+  /* No .c suffix in canonical endpoint IDs */
+  if (sizeof(value) > 2 && value[<2..<1] == ".c")
+    value = value[0..<3];
 
   if (value[0] != '/')
     value = "/" + value;
 
+  /* Collapse accidental double slashes (lightweight) */
+  while (strsrch(value, "//") != -1)
+    value = replace_string(value, "//", "/");
+
   return value;
 }
 
+/* Normalize area prefix (must be absolute directory) */
+string normalize_prefix(string prefix) {
+  prefix = normalize_endpoint(prefix);
+
+  if (prefix == "") return "";
+
+  /* Ensure trailing slash so "prefix + rel" is safe */
+  if (prefix[<1] != '/')
+    prefix += "/";
+
+  return prefix;
+}
+
+/* Resolve a possibly-relative endpoint using a prefix */
+string resolve_endpoint(string ref, string prefix) {
+  ref = do_trim(ref);
+
+  if (ref == "") return "";
+
+  /* Absolute passes through */
+  if (ref[0] == '/')
+    return normalize_endpoint(ref);
+
+  prefix = normalize_prefix(prefix);
+
+  if (prefix == "") return "";
+
+  return normalize_endpoint(prefix + ref);
+}
+
 /*
- * Order-independent key.
- * Link(A,B) == Link(B,A)
+ * Order-independent key: Link(A,B) == Link(B,A)
  */
 string pair_key(string a, string b) {
   return (a <= b) ? (a + "|" + b) : (b + "|" + a);
+}
+
+/* Parse endpoints back out of a pair key (for introspection) */
+string *endpoints_from_key(string key) {
+  int idx;
+
+  idx = strsrch(key, "|");
+
+  if (idx == -1) return ({ "", "" });
+
+  return ({ key[0..idx-1], key[idx+1..] });
+}
+
+/* Index maintenance: room -> pair keys */
+void index_pair_for_room(string room, string key) {
+  string *arr;
+
+  if (!stringp(room) || room == "" || !stringp(key) || key == "")
+    return;
+
+  arr = _links_by_room[room];
+
+  if (!pointerp(arr)) arr = ({ });
+
+  /* avoid duplicates */
+  if (member_array(key, arr) == -1)
+    arr += ({ key });
+
+  _links_by_room[room] = arr;
 }
 
 /* ------------------------------------------------------------ */
@@ -56,53 +147,266 @@ string pair_key(string a, string b) {
  * ------------------------------------------------------------ */
 
 /*
- * Register a Link definition.
+ * Define a link by endpoints (absolute).
  *
- * definition mapping may contain:
- *   "type"  : string (path to Link prefab/class)
- *   "gates" : array of gate objects or gate definitions
- *   "one_way" : optional mapping ([ from : to ])
+ * definition may contain:
+ *   "id"        : string (optional but recommended)
+ *   "type"      : string (path to link prefab/class, default /core/link)
+ *   "gates"     : ({ gateObjOrId, ... })   (recommended: ids)
+ *   "one_way"   : ([ "from": <endpoint>, "to": <endpoint> ])  (optional)
+ *   "dirs"      : ([ endpointAbs : "east", endpointAbs : "west" ]) (optional)
  *   other Link-specific config
  *
- * This does NOT instantiate the Link immediately.
+ * Once defined, cannot be redefined.
  */
 int define_link(string env_a, string env_b, mapping definition) {
-  string a, b, key;
+  string a, b, key, id;
 
   a = normalize_endpoint(env_a);
   b = normalize_endpoint(env_b);
 
-  if (a == "" || b == "")
-    return 0;
+  if (a == "" || b == "") return 0;
 
   key = pair_key(a, b);
 
   if (_definitions[key]) {
     /* Do not silently redefine topology */
-    write("Attempt to redefine link.");
+    /* Use your own logging/printf facility if preferred */
+    write("LINK_D: Attempt to redefine link " + key + "\n");
 
     return 0;
   }
 
-  _definitions[key] = definition || ([]);
+  if (!mapp(definition)) definition = ([]);
+
+  /* Normalize / validate link id uniqueness (if provided) */
+  id = definition["id"];
+
+  if (stringp(id)) {
+    id = do_trim(id);
+
+    if (id != "") {
+      if (_pair_by_id[id]) {
+        write("LINK_D: Duplicate link id '" + id + "'\n");
+
+	return 0;
+      }
+
+      _pair_by_id[id] = key;
+      definition["id"] = id;
+    }
+  }
+
+  /* Normalize dirs mapping keys if present (must be absolute) */
+  if (mapp(definition["dirs"])) {
+    mapping dirs = ([ ]);
+
+    foreach (mixed k, mixed v in definition["dirs"]) {
+      if (!stringp(k) || !stringp(v)) continue;
+
+      dirs[ normalize_endpoint(k) ] = do_trim(v);
+    }
+
+    definition["dirs"] = dirs;
+  }
+
+  /* Normalize one_way endpoints if present */
+  if (mapp(definition["one_way"])) {
+    mapping ow = definition["one_way"];
+    string from = normalize_endpoint(ow["from"]);
+    string to   = normalize_endpoint(ow["to"]);
+
+    if (from != "" && to != "")
+      definition["one_way"] = ([ "from": from, "to": to ]);
+    else
+      map_delete(definition, "one_way");
+  }
+
+  _definitions[key] = definition;
+
+  /* Index the pair against both endpoints (for discovery) */
+  index_pair_for_room(a, key);
+  index_pair_for_room(b, key);
 
   return 1;
+}
+
+/*
+ * Convenience: define link using an explicit id and definition.
+ * (Still immutable; endpoints are authoritative for uniqueness.)
+ */
+int define_link_id(string id, string env_a, string env_b, mapping definition) {
+  if (!mapp(definition)) definition = ([]);
+
+  if (stringp(id) && do_trim(id) != "")
+    definition["id"] = do_trim(id);
+
+  return define_link(env_a, env_b, definition);
+}
+
+/* ------------------------------------------------------------ */
+/* JSON loading (area-scoped)
+ * ------------------------------------------------------------ */
+
+/*
+ * Load and register links from a JSON file.
+ *
+ * Expected:
+ *   area_prefix : string (optional but recommended)
+ *   links       : array of link objects
+ *
+ * Each link object may contain:
+ *   id    : string (recommended)
+ *   rooms : [a, b] (required)
+ *   dirs  : { a: "east", b: "west" } (optional but recommended)
+ *   type, gates, one_way, ... (optional)
+ *
+ * Relative room refs are resolved against area_prefix.
+ */
+int load_json(string file) {
+  string raw, prefix;
+  mapping data;
+  mixed links_arr;
+  int i, ok;
+
+  raw = read_file(file);
+
+  if (!stringp(raw)) {
+    write("LINK_D: Unable to read JSON file: " + file + "\n");
+
+    return 0;
+  }
+
+  data = json_parse(raw);
+
+  if (!mapp(data)) {
+    write("LINK_D: Invalid JSON in: " + file + "\n");
+
+    return 0;
+  }
+
+  prefix = "";
+
+  if (stringp(data["area_prefix"]))
+    prefix = normalize_prefix(data["area_prefix"]);
+
+  links_arr = data["links"];
+
+  if (!pointerp(links_arr)) {
+    write("LINK_D: JSON missing 'links' array in: " + file + "\n");
+
+    return 0;
+  }
+
+  ok = 1;
+
+  for (i = 0; i < sizeof(links_arr); i++) {
+    mapping def;
+    mixed rooms;
+    string a_ref, b_ref, a, b;
+    mapping dirs_in, dirs_abs;
+
+    def = links_arr[i];
+
+    if (!mapp(def)) {
+      write("LINK_D: Malformed link entry (not mapping) in " + file + "\n");
+
+      ok = 0;
+
+      continue;
+    }
+
+    rooms = def["rooms"];
+
+    if (!pointerp(rooms) || sizeof(rooms) != 2) {
+      write("LINK_D: Link missing 'rooms' [a,b] in " + file + "\n");
+
+      ok = 0;
+
+      continue;
+    }
+
+    a_ref = rooms[0];
+    b_ref = rooms[1];
+
+    if (!stringp(a_ref) || !stringp(b_ref)) {
+      write("LINK_D: Link rooms must be strings in " + file + "\n");
+
+      ok = 0;
+
+      continue;
+    }
+
+    a = resolve_endpoint(a_ref, prefix);
+    b = resolve_endpoint(b_ref, prefix);
+
+    if (a == "" || b == "") {
+      write("LINK_D: Could not resolve endpoints in " + file + "\n");
+
+      ok = 0;
+
+      continue;
+    }
+
+    /* Resolve dirs mapping keys the same way rooms resolve */
+    dirs_abs = 0;
+    dirs_in = def["dirs"];
+
+    if (mapp(dirs_in)) {
+      dirs_abs = ([ ]);
+
+      foreach (mixed k, mixed v in dirs_in) {
+        string kref, kabs;
+
+	if (!stringp(k) || !stringp(v)) continue;
+
+	kref = k;
+        kabs = resolve_endpoint(kref, prefix);
+
+	if (kabs != "")
+          dirs_abs[kabs] = do_trim(v);
+      }
+    }
+
+    /* Build definition mapping for define_link */
+    /* Keep original def but normalize pieces we care about */
+    if (mapp(dirs_abs))
+      def["dirs"] = dirs_abs;
+
+    /* Normalize one_way if it references relative endpoints */
+    if (mapp(def["one_way"])) {
+      mapping ow = def["one_way"];
+      string from = "", to = "";
+
+      if (stringp(ow["from"])) from = resolve_endpoint(ow["from"], prefix);
+
+      if (stringp(ow["to"]))   to   = resolve_endpoint(ow["to"], prefix);
+
+      if (from != "" && to != "")
+        def["one_way"] = ([ "from": from, "to": to ]);
+      else
+        map_delete(def, "one_way");
+    }
+
+    if (!define_link(a, b, def)) {
+      ok = 0;
+      /* define_link already wrote a reason */
+    }
+  }
+
+  return ok;
 }
 
 /* ------------------------------------------------------------ */
 /* Link instantiation (lazy)
  * ------------------------------------------------------------ */
 
-/*
- * Internal: build a Link from its definition.
- * Called exactly once per endpoint pair.
- */
 object _instantiate_link(string a, string b, mapping def) {
   object link;
-  object gate;
+  mixed gate;
   int i;
 
-  if (stringp(def["type"]))
+  if (mapp(def) && stringp(def["type"]) && do_trim(def["type"]) != "")
     link = new(def["type"]);
   else
     link = new("/core/link");
@@ -110,20 +414,63 @@ object _instantiate_link(string a, string b, mapping def) {
   link->set_endpoints(a, b);
 
   /* Optional explicit directionality */
-  if (mapp(def["one_way"])) {
+  if (mapp(def) && mapp(def["one_way"])) {
     string from = normalize_endpoint(def["one_way"]["from"]);
     string to   = normalize_endpoint(def["one_way"]["to"]);
-    if (from && to)
+
+    if (from != "" && to != "")
       link->set_one_way(from, to);
   }
 
-  /* Gate stack (ordered A -> B) */
-  if (pointerp(def["gates"])) {
+  /*
+   * Gate stack
+   * Recommended: store gate IDs (strings) in def["gates"] and let the Link
+   * ask GATE_D when traversed. But we also accept actual gate objects.
+   */
+  if (mapp(def) && pointerp(def["gates"])) {
     for (i = 0; i < sizeof(def["gates"]); i++) {
       gate = def["gates"][i];
-      if (objectp(gate))
+
+      if (objectp(gate)) {
         link->add_gate(gate);
+
+	continue;
+      }
+
+      if (stringp(gate) && do_trim(gate) != "") {
+        /* Optional: Link can treat strings as gate IDs */
+        if (function_exists("add_gate_id", link))
+          link->add_gate_id(do_trim(gate));
+        else {
+          /* Fallback: store gate IDs on the link if it supports metadata */
+          if (function_exists("set_meta", link)) {
+            mixed ids = link->query_meta("gate_ids");
+
+	    if (!pointerp(ids)) ids = ({ });
+
+	    ids += ({ do_trim(gate) });
+
+	    link->set_meta("gate_ids", ids);
+          }
+        }
+      }
     }
+  }
+
+  /* Pass through "dirs" if the Link cares (optional) */
+  if (mapp(def) && mapp(def["dirs"])) {
+    if (function_exists("set_dirs", link))
+      link->set_dirs(def["dirs"]);
+    else if (function_exists("set_meta", link))
+      link->set_meta("dirs", def["dirs"]);
+  }
+
+  /* Pass link id if present */
+  if (mapp(def) && stringp(def["id"]) && do_trim(def["id"]) != "") {
+    if (function_exists("set_id", link))
+      link->set_id(do_trim(def["id"]));
+    else if (function_exists("set_meta", link))
+      link->set_meta("id", do_trim(def["id"]));
   }
 
   return link;
@@ -135,8 +482,7 @@ object _instantiate_link(string a, string b, mapping def) {
 
 /*
  * Get (or lazily create) the Link connecting two endpoints.
- *
- * This NEVER loads environments.
+ * Never loads environments.
  */
 object get_link(string env_a, string env_b) {
   string a, b, key;
@@ -146,21 +492,19 @@ object get_link(string env_a, string env_b) {
   a = normalize_endpoint(env_a);
   b = normalize_endpoint(env_b);
 
-  if (a == "" || b == "")
-    return 0;
+  if (a == "" || b == "") return 0;
 
   key = pair_key(a, b);
 
-  /* Already instantiated */
   link = _links[key];
-  if (objectp(link))
-    return link;
 
-  /* Definition required */
+  if (objectp(link)) return link;
+
   def = _definitions[key];
+
   if (!mapp(def)) {
-    /* Undefined topology is a hard error */
-    write("Undefined link requested.");
+    write("LINK_D: Undefined link requested: " + key + "\n");
+
     return 0;
   }
 
@@ -168,6 +512,29 @@ object get_link(string env_a, string env_b) {
   _links[key] = link;
 
   return link;
+}
+
+/* Get a link by its ID (instantiates if needed) */
+object get_link_by_id(string id) {
+  string key;
+  string *eps;
+
+  id = do_trim(id);
+
+  if (id == "") return 0;
+
+  key = _pair_by_id[id];
+
+  if (!stringp(key) || key == "") return 0;
+
+  /* already instantiated? */
+  if (objectp(_links[key])) return _links[key];
+
+  eps = endpoints_from_key(key);
+
+  if (sizeof(eps) != 2) return 0;
+
+  return get_link(eps[0], eps[1]);
 }
 
 /*
@@ -179,22 +546,159 @@ object query_link(string env_a, string env_b) {
   a = normalize_endpoint(env_a);
   b = normalize_endpoint(env_b);
 
-  if (a == "" || b == "")
-    return 0;
+  if (a == "" || b == "") return 0;
 
   key = pair_key(a, b);
+
   return _links[key];
+}
+
+/* Query whether a definition exists (no instantiation) */
+int has_definition(string env_a, string env_b) {
+  string a, b, key;
+
+  a = normalize_endpoint(env_a);
+  b = normalize_endpoint(env_b);
+
+  if (a == "" || b == "") return 0;
+
+  key = pair_key(a, b);
+
+  return mapp(_definitions[key]);
+}
+
+/* ------------------------------------------------------------ */
+/* Room-centric discovery
+ * ------------------------------------------------------------ */
+
+/*
+ * Return pair keys for links incident to a room.
+ * (Does not instantiate links.)
+ */
+string *defined_pairs_for_room(string room) {
+  room = normalize_endpoint(room);
+
+  if (room == "") return ({ });
+
+  return _links_by_room[room] || ({ });
+}
+
+/*
+ * Return instantiated Link objects incident to a room.
+ * (Instantiates any defined-but-not-instantiated links touching this room.)
+ */
+object *links_for_room(string room) {
+  string *keys;
+  object *out;
+  int i;
+
+  room = normalize_endpoint(room);
+
+  if (room == "") return ({ });
+
+  keys = _links_by_room[room] || ({ });
+  out = ({ });
+
+  for (i = 0; i < sizeof(keys); i++) {
+    string key = keys[i];
+    string *eps;
+
+    if (objectp(_links[key])) {
+      out += ({ _links[key] });
+
+      continue;
+    }
+
+    /* instantiate via endpoints */
+    eps = endpoints_from_key(key);
+
+    if (sizeof(eps) != 2) continue;
+
+    /* get_link will validate def exists */
+    if (get_link(eps[0], eps[1]))
+      out += ({ _links[key] });
+  }
+
+  return out;
+}
+
+/*
+ * Return mapping direction -> Link for a given room.
+ * Only includes links that provide a direction label for that room.
+ * (Instantiates incident links as needed.)
+ */
+mapping links_by_direction_for_room(string room) {
+  object *ls;
+  mapping out;
+  int i;
+
+  room = normalize_endpoint(room);
+  out = ([ ]);
+
+  ls = links_for_room(room);
+
+  for (i = 0; i < sizeof(ls); i++) {
+    object link = ls[i];
+    mapping dirs;
+    string dir;
+
+    /* Prefer Link API; fallback to metadata if present */
+    if (objectp(link) && function_exists("query_dirs", link))
+      dirs = link->query_dirs();
+    else if (objectp(link) && function_exists("query_meta", link))
+      dirs = link->query_meta("dirs");
+
+    if (!mapp(dirs)) continue;
+
+    dir = dirs[room];
+
+    if (!stringp(dir) || do_trim(dir) == "") continue;
+
+    out[do_trim(dir)] = link;
+  }
+
+  return out;
 }
 
 /* ------------------------------------------------------------ */
 /* Introspection / debugging
  * ------------------------------------------------------------ */
 
-string *defined_links() {
+string *defined_link_pairs() {
   return keys(_definitions);
 }
 
-string *instantiated_links() {
+string *instantiated_link_pairs() {
   return keys(_links);
+}
+
+string *defined_link_ids() {
+  return keys(_pair_by_id);
+}
+
+mapping query_definition(string env_a, string env_b) {
+  string a, b, key;
+
+  a = normalize_endpoint(env_a);
+  b = normalize_endpoint(env_b);
+
+  if (a == "" || b == "") return 0;
+
+  key = pair_key(a, b);
+
+  return _definitions[key];
+}
+
+mapping query_definition_by_id(string id) {
+  string key;
+  id = do_trim(id);
+
+  if (id == "") return 0;
+
+  key = _pair_by_id[id];
+
+  if (!stringp(key) || key == "") return 0;
+
+  return _definitions[key];
 }
 

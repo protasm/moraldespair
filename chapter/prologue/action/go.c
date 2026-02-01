@@ -62,6 +62,8 @@ int main(string arg) {
   string msg;
   int is_direction;
 
+  return MOVE_D->try_move(this_player(), arg) ? 1 : 0;
+
   player = this_player();
 
   if (!objectp(player))

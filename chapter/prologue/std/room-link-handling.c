@@ -35,3 +35,13 @@ string *query_link_labels() {
   return keys(_links);
 }
 
+void add_exit(string direction, string destination) {
+  string origin;
+
+  origin = base_name(this_object());
+
+  if (!LINK_D->query_link(origin, destination))
+    LINK_D->define_link(origin, destination, ([ ]));
+
+  add_link(direction, LINK_D->get_link(origin, destination));
+}

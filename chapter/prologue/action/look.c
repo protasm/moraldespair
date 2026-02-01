@@ -1,45 +1,6 @@
 inherit "/core/command";
 
-string format_brief_exits(mapping exits) {
-  mapping abbreviations;
-  string *labels, *keys;
-  int i;
-
-  if (!mapp(exits))
-    return "(Exits: none)";
-
-  keys = keys(exits);
-
-  if (!sizeof(keys))
-    return "(Exits: none)";
-
-  abbreviations = ([
-    "north" : "n",
-    "south" : "s",
-    "east" : "e",
-    "west" : "w",
-    "northeast" : "ne",
-    "northwest" : "nw",
-    "southeast" : "se",
-    "southwest" : "sw",
-    "up" : "u",
-    "down" : "d"
-  ]);
-
-  labels = allocate(sizeof(keys));
-  i = 0;
-
-  while (i < sizeof(keys)) {
-    if (stringp(abbreviations[keys[i]]))
-      labels[i] = abbreviations[keys[i]];
-    else
-      labels[i] = keys[i];
-
-    i += 1;
-  }
-
-  return "(Exits: " + implode(labels, " ") + ")";
-}
+void render_exits(object player, mapping exits);
 
 void create() {
   ::create();
@@ -53,82 +14,50 @@ void create() {
 }
 
 int main(string arg) {
-  object player, location;
-  string description, short_desc, divider, exit_line;
-  int brief;
+  object player, room;
+  string short_desc, long_desc;
+  mapping exits;
 
   player = this_player();
+  room = environment(player);
 
-  if (!objectp(player))
-    return 0;
-
-  location = environment(player);
-
-  if (!objectp(location)) {
-    write("There is nothing here.\n");
+  if (!objectp(room)) {
+    write("You are nowhere.\n");
 
     return 1;
   }
 
-  if (!stringp(arg))
-    arg = "";
+  /* Short */
+  short_desc = room->query_short();
 
-  arg = trim(arg);
+  if (stringp(short_desc) && short_desc != "")
+    write(short_desc + "\n");
 
-  short_desc = location->short();
+  /* Long */
+  long_desc = room->query_long();
 
-  if (arg == "") {
-    brief = player->query_brief();
+  if (stringp(long_desc) && long_desc != "")
+    write(long_desc + "\n");
 
-    if (brief) {
-      mapping exits;
+  /* Exits */
+  exits = LINK_D->links_by_direction_for_room(base_name(room));
 
-      if (!stringp(short_desc))
-        short_desc = "";
-
-      if (short_desc == "" || short_desc[<1] != '\n')
-        short_desc += "\n";
-
-      if (function_exists("dest_dir", location))
-        exits = location->dest_dir();
-      else
-        exits = ([]);
-
-      exit_line = format_brief_exits(exits) + "\n";
-
-      write(short_desc + exit_line);
-
-      return 1;
-    }
-  }
-
-  description = location->long(arg);
-
-  if (!stringp(description))
-    return 0;
-
-  if (!stringp(short_desc))
-    short_desc = "";
-
-  divider = "---------+---------+---------+---------+---------+---------+---------+---------+";
-
-  if (short_desc == "" || short_desc[<1] != '\n')
-    short_desc += "\n";
-
-  if (divider[<1] != '\n')
-    divider += "\n";
-
-  if (arg == "") {
-    if (stringp(description) && strlen(description) && description[<1] != '\n')
-      description += "\n";
-  }
-
-  description = short_desc + divider + description;
-
-  if (strlen(description) && description[<1] != '\n')
-    description += "\n";
-
-  write(description);
+  render_exits(player, exits);
 
   return 1;
 }
+
+void render_exits(object player, mapping exits) {
+  string *dirs;
+
+  if (!mapp(exits) || !sizeof(exits)) {
+    write("There are no obvious exits.\n");
+
+    return;
+  }
+
+  dirs = sort_array(keys(exits), 1);
+
+  write( "Obvious exits: " + implode(dirs, ", ") + ".\n");
+}
+

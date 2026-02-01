@@ -14,6 +14,7 @@
 #define ACCOUNT_D "/daemon/account_d"
 #define CHAPTER_D "/daemon/chapter_d"
 #define LINK_D "/daemon/link_d"
+#define MOVE_D "/daemon/move_d"
 
 #define WELCOME_FILE "/etc/welcome"
 #define MOTD_FILE "/etc/motd"
