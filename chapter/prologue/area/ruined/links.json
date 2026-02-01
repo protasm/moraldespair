@@ -2247,6 +2247,89 @@
         "room873": "down",
         "room874": "up"
       }
+    },
+    {
+      "id": "lounge_gate_foyer",
+      "rooms": [
+        "lounge",
+        "gate_foyer"
+      ],
+      "dirs": {
+        "lounge": "north",
+        "gate_foyer": "south"
+      }
+    },
+    {
+      "id": "lounge_latch_hall",
+      "type": "/chapter/prologue/area/ruined/link/sample_link",
+      "gates": [
+        "latch_one_side"
+      ],
+      "rooms": [
+        "lounge",
+        "latch_hall"
+      ],
+      "dirs": {
+        "lounge": "east",
+        "latch_hall": "west"
+      }
+    },
+    {
+      "id": "lounge_rubble_approach",
+      "rooms": [
+        "lounge",
+        "rubble_approach"
+      ],
+      "dirs": {
+        "lounge": "south",
+        "rubble_approach": "north"
+      }
+    },
+    {
+      "id": "gate_foyer_hatch_east",
+      "type": "/chapter/prologue/area/ruined/link/sample_link",
+      "gates": [
+        "hatch_basic"
+      ],
+      "rooms": [
+        "gate_foyer",
+        "hatch_east"
+      ],
+      "dirs": {
+        "gate_foyer": "east",
+        "hatch_east": "west"
+      }
+    },
+    {
+      "id": "gate_foyer_hatch_west",
+      "type": "/chapter/prologue/area/ruined/link/sample_link",
+      "gates": [
+        "hatch_basic"
+      ],
+      "rooms": [
+        "gate_foyer",
+        "hatch_west"
+      ],
+      "dirs": {
+        "gate_foyer": "west",
+        "hatch_west": "east"
+      }
+    },
+    {
+      "id": "rubble_approach_rubble_beyond",
+      "type": "/chapter/prologue/area/ruined/link/sample_link",
+      "gates": [
+        "rubble_door_near",
+        "rubble_door_far"
+      ],
+      "rooms": [
+        "rubble_approach",
+        "rubble_beyond"
+      ],
+      "dirs": {
+        "rubble_approach": "east",
+        "rubble_beyond": "west"
+      }
     }
   ]
 }

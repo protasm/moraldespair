@@ -4,7 +4,13 @@ void create() {
   ::create();
 
   short_desc = "Players' Lounge";
-  long_desc = "You stand in the hollowed remains of the lounge, a room that once buzzed with the gossip and fevered arguments of long-dead legends. Now, the only sound is the whistling of wind through the cracked, soot-stained windows that line the walls. A shimmering blue portal still flickers weakly in the center, its light pulsing like a dying heart.";
+  long_desc =
+    "This lounge is a staging area for link demos, and the text is\n"
+    "deliberately out of character so the commands are clear. North leads\n"
+    "to a foyer with two hatches that share a name, so use 'open east hatch'\n"
+    "or 'open west hatch' there. East shows a one-sided latch with 'lock\n"
+    "latch demo' and 'unlock latch demo', while south leads to two doors\n"
+    "around rubble that respond to 'open door 1' and 'open door 2'.";
 
   /*Obsolete Code = ignore, do not emulate
   add_exit("down", "sanctuary");
