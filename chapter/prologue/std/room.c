@@ -3,14 +3,21 @@ inherit "/core/object";
 #include "room.h"
 
 string short_desc, long_desc;
+object link_cache;
 
 void create() {
   ::create();
 
   short_desc = "";
   long_desc = "";
+  link_cache = 0;
 
   set_light(1);
+
+  link_cache = new("/core/link_cache");
+
+  if (objectp(link_cache))
+    link_cache->init_for_room(this_object());
 
   return;
 }
@@ -21,6 +28,10 @@ string short() {
 
 string long() {
   return long_desc;
+}
+
+object query_link_cache() {
+  return link_cache;
 }
 
 /*
