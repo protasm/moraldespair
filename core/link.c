@@ -84,7 +84,9 @@ string other_endpoint(string endpoint) {
     return "";
 
   if (endpoint == endpoint_a) return endpoint_b;
+
   if (endpoint == endpoint_b) return endpoint_a;
+
   return "";
 }
 
@@ -94,7 +96,9 @@ string other_endpoint(string endpoint) {
  */
 int endpoint_index(string endpoint) {
   if (endpoint == endpoint_a) return 0;
+
   if (endpoint == endpoint_b) return 1;
+
   return -1;
 }
 
@@ -208,6 +212,7 @@ void add_gate(object gate) {
 object *query_gates() {
   if (!pointerp(gates))
     return ({ });
+
   return gates;
 }
 
@@ -257,9 +262,11 @@ int is_allowed_result(mapping result) {
 
   outcome = result[LINK_RESULT_OUTCOME];
 
-  return (outcome == LINK_OUTCOME_ALLOW ||
-          outcome == LINK_OUTCOME_ALLOW_REVERSE ||
-          outcome == LINK_OUTCOME_ALLOW_REDIRECT);
+  return (
+    outcome == LINK_OUTCOME_ALLOW ||
+    outcome == LINK_OUTCOME_ALLOW_REVERSE ||
+    outcome == LINK_OUTCOME_ALLOW_REDIRECT
+  );
 }
 
 /*
@@ -270,13 +277,16 @@ mapping merge_side_effects(mapping dst, mapping src) {
   mixed m1, m2;
 
   if (!mapp(dst)) dst = ([]);
+
   if (!mapp(src)) return dst;
 
   c1 = dst[LINK_RESULT_COST];
   c2 = src[LINK_RESULT_COST];
 
   if (!intp(c1)) c1 = 0;
+
   if (!intp(c2)) c2 = 0;
+
   if (c2 > 0) dst[LINK_RESULT_COST] = c1 + c2;
 
   m1 = dst[LINK_RESULT_MUTATIONS];
@@ -284,10 +294,12 @@ mapping merge_side_effects(mapping dst, mapping src) {
 
   if (pointerp(m2) && sizeof(m2)) {
     if (!pointerp(m1)) m1 = ({ });
+
     dst[LINK_RESULT_MUTATIONS] = m1 + m2;
   } else if (mapp(m2) && sizeof(m2)) {
     /* if you prefer mapping effects, merge shallowly */
     if (!mapp(m1)) m1 = ([]);
+
     dst[LINK_RESULT_MUTATIONS] = m1 + m2;
   }
 
@@ -317,18 +329,21 @@ mapping check_gates(object actor, string origin_id, string destination_id) {
     return deny_result("Nothing may pass.", 0, ({ }));
 
   origin_idx = endpoint_index(origin_id);
+
   if (origin_idx < 0)
     return deny_result("The link refuses to align.", 0, ({ }));
 
   dir_ab = (origin_id == endpoint_a); /* moving from A to B if origin is A */
 
   gs = query_gates();
+
   if (!sizeof(gs))
     return agg;
 
   if (dir_ab) {
     for (i = 0; i < sizeof(gs); i++) {
       gate = gs[i];
+
       if (!objectp(gate))
         continue;
 
@@ -337,22 +352,27 @@ mapping check_gates(object actor, string origin_id, string destination_id) {
 
       /* accumulate cost/mutations even if denied */
       if (mapp(step))
-        agg = merge_side_effects(agg, ([
-          LINK_RESULT_COST    : step["cost"],
-          LINK_RESULT_MUTATIONS : step["effects"]
-        ]));
+        agg = merge_side_effects(
+          agg, ([
+            LINK_RESULT_COST    : step["cost"],
+            LINK_RESULT_MUTATIONS : step["effects"]
+          ])
+        );
 
-      if (!mapp(step) || !step["allow"]) {
-        return deny_result(step && step["message"] ? step["message"]
-                                                  : "Something blocks your way.",
-                           agg[LINK_RESULT_COST],
-                           agg[LINK_RESULT_MUTATIONS]);
-      }
+      if (!mapp(step) || !step["allow"])
+        return deny_result(
+          step && step["message"]
+            ? step["message"]
+            : "Something blocks your way.",
+          agg[LINK_RESULT_COST],
+          agg[LINK_RESULT_MUTATIONS]
+        );
     }
   } else {
     /* moving from B to A: traverse gates in reverse, using B-facing side */
     for (i = sizeof(gs) - 1; i >= 0; i--) {
       gate = gs[i];
+
       if (!objectp(gate))
         continue;
 
@@ -360,22 +380,26 @@ mapping check_gates(object actor, string origin_id, string destination_id) {
       step = gate->attempt_pass(actor, gate_side);
 
       if (mapp(step))
-        agg = merge_side_effects(agg, ([
-          LINK_RESULT_COST    : step["cost"],
-          LINK_RESULT_MUTATIONS : step["effects"]
-        ]));
+        agg = merge_side_effects(
+          agg, ([
+            LINK_RESULT_COST    : step["cost"],
+            LINK_RESULT_MUTATIONS : step["effects"]
+          ])
+        );
 
-      if (!mapp(step) || !step["allow"]) {
-        return deny_result(step && step["message"] ? step["message"]
-                                                  : "Something blocks your way.",
-                           agg[LINK_RESULT_COST],
-                           agg[LINK_RESULT_MUTATIONS]);
-      }
-    }
-  }
+      if (!mapp(step) || !step["allow"])
+        return deny_result(
+          step && step["message"]
+            ? step["message"]
+            : "Something blocks your way.",
+          agg[LINK_RESULT_COST],
+          agg[LINK_RESULT_MUTATIONS]
+        );
+    } //for
+  } //if-else
 
   return agg;
-}
+} //check_gates(actor, origin_id, destination_id)
 
 /* ------------------------------------------------------------ */
 /* Room hooks (agency belongs to room/actors)
@@ -395,8 +419,10 @@ mapping can_enter(object actor, object destination) {
 
     if (mapp(result)) {
       outcome = result[LINK_RESULT_OUTCOME];
+
       if (undefinedp(outcome))
         return allow_result();
+
       return result;
     }
   }
@@ -417,8 +443,10 @@ mapping on_enter(object actor, object origin, object destination) {
 
     if (mapp(result)) {
       outcome = result[LINK_RESULT_OUTCOME];
+
       if (undefinedp(outcome))
         return allow_result();
+
       return result;
     }
   }
@@ -437,6 +465,7 @@ object resolve_destination(string destination_id) {
     return 0;
 
   env = find_object(destination_id);
+
   if (!objectp(env))
     env = load_object(destination_id);
 
@@ -458,7 +487,7 @@ object resolve_destination(string destination_id) {
 mapping traverse(object actor, object origin) {
   string origin_id, destination_id;
   object destination;
-  mapping result, gate_result, exit_result, enter_result, enter_hook_result;
+  mapping gate_result, exit_result, enter_result, enter_hook_result;
   int moved;
 
   if (!objectp(actor) || !objectp(origin))
@@ -475,24 +504,31 @@ mapping traverse(object actor, object origin) {
 
   /* 1) Gates (topology) — no destination loading */
   gate_result = check_gates(actor, origin_id, destination_id);
+
   if (!is_allowed_result(gate_result))
     return gate_result;
 
   /* 2) Origin veto (optional, typically actor/room state) */
   exit_result = can_exit(actor, origin);
   exit_result = merge_side_effects(exit_result, gate_result);
+
   if (!is_allowed_result(exit_result))
     return exit_result;
 
   /* 3) Lazy-load destination only after gate+exit pass */
   destination = resolve_destination(destination_id);
+
   if (!objectp(destination))
-    return deny_result("The way opens into nothing.", exit_result[LINK_RESULT_COST],
-                       exit_result[LINK_RESULT_MUTATIONS]);
+    return deny_result(
+      "The way opens into nothing.",
+      exit_result[LINK_RESULT_COST],
+      exit_result[LINK_RESULT_MUTATIONS]
+    );
 
   /* 4) Destination veto (pre-entry) */
   enter_result = can_enter(actor, destination);
   enter_result = merge_side_effects(enter_result, exit_result);
+
   if (!is_allowed_result(enter_result))
     return enter_result;
 
@@ -500,10 +536,13 @@ mapping traverse(object actor, object origin) {
   on_exit(actor, origin, destination);
 
   moved = actor->move(destination_id);
+
   if (!moved)
-    return deny_result("You cannot move that way.",
-                       enter_result[LINK_RESULT_COST],
-                       enter_result[LINK_RESULT_MUTATIONS]);
+    return deny_result(
+      "You cannot move that way.",
+      enter_result[LINK_RESULT_COST],
+      enter_result[LINK_RESULT_MUTATIONS]
+    );
 
   /* 6) Post-entry reaction (room/actor agency) */
   enter_hook_result = on_enter(actor, origin, destination);
@@ -512,6 +551,7 @@ mapping traverse(object actor, object origin) {
   /* Handle REVERSE and REDIRECT spatially; preserve accumulated effects/cost */
   if (enter_hook_result[LINK_RESULT_OUTCOME] == LINK_OUTCOME_ALLOW_REVERSE) {
     actor->move(origin_id);
+
     return enter_hook_result;
   }
 
@@ -528,4 +568,4 @@ mapping traverse(object actor, object origin) {
   }
 
   return enter_hook_result;
-}
+} //traverse(actor, origin)

@@ -1,3 +1,5 @@
+#include "link_d.h"
+
 /*
  * LINK_D
  *
@@ -64,7 +66,7 @@ void create() {
 /* Utilities
  * ------------------------------------------------------------ */
 
-string do_trim(string s) {
+string _trim(string s) {
   if (!stringp(s)) return "";
 
   return trim(s);
@@ -89,7 +91,7 @@ mixed parse_json(string raw) {
 
 /* Normalize absolute endpoint path */
 string normalize_endpoint(string value) {
-  value = do_trim(value);
+  value = _trim(value);
 
   if (value == "") return "";
 
@@ -121,20 +123,22 @@ string normalize_prefix(string prefix) {
 }
 
 /* Resolve a possibly-relative endpoint using a prefix */
-string resolve_endpoint(string ref, string prefix) {
-  ref = do_trim(ref);
+string resolve_endpoint(string endpoint_ref, string prefix) {
+  string trimmed;
 
-  if (ref == "") return "";
+  trimmed = _trim(endpoint_ref);
+
+  if (trimmed == "") return "";
 
   /* Absolute passes through */
-  if (ref[0] == '/')
-    return normalize_endpoint(ref);
+  if (trimmed[0] == '/')
+    return normalize_endpoint(trimmed);
 
   prefix = normalize_prefix(prefix);
 
   if (prefix == "") return "";
 
-  return normalize_endpoint(prefix + ref);
+  return normalize_endpoint(prefix + trimmed);
 }
 
 /*
@@ -214,7 +218,7 @@ int define_link(string env_a, string env_b, mapping definition) {
   id = definition["id"];
 
   if (stringp(id)) {
-    id = do_trim(id);
+    id = _trim(id);
 
     if (id != "") {
       if (_pair_by_id[id]) {
@@ -235,7 +239,7 @@ int define_link(string env_a, string env_b, mapping definition) {
     foreach (mixed k, mixed v in definition["dirs"]) {
       if (!stringp(k) || !stringp(v)) continue;
 
-      dirs[ normalize_endpoint(k) ] = do_trim(v);
+      dirs[ normalize_endpoint(k) ] = _trim(v);
     }
 
     definition["dirs"] = dirs;
@@ -269,8 +273,8 @@ int define_link(string env_a, string env_b, mapping definition) {
 int define_link_id(string id, string env_a, string env_b, mapping definition) {
   if (!mapp(definition)) definition = ([]);
 
-  if (stringp(id) && do_trim(id) != "")
-    definition["id"] = do_trim(id);
+  if (stringp(id) && _trim(id) != "")
+    definition["id"] = _trim(id);
 
   return define_link(env_a, env_b, definition);
 }
@@ -395,7 +399,7 @@ int load_json(string file) {
         kabs = resolve_endpoint(kref, prefix);
 
 	if (kabs != "")
-          dirs_abs[kabs] = do_trim(v);
+          dirs_abs[kabs] = _trim(v);
       }
     }
 
@@ -437,7 +441,7 @@ object _instantiate_link(string a, string b, mapping def) {
   mixed gate;
   int i;
 
-  if (mapp(def) && stringp(def["type"]) && do_trim(def["type"]) != "")
+  if (mapp(def) && stringp(def["type"]) && _trim(def["type"]) != "")
     link = new(def["type"]);
   else
     link = new("/core/link");
@@ -468,10 +472,10 @@ object _instantiate_link(string a, string b, mapping def) {
 	continue;
       }
 
-      if (stringp(gate) && do_trim(gate) != "") {
+      if (stringp(gate) && _trim(gate) != "") {
         /* Optional: Link can treat strings as gate IDs */
         if (function_exists("add_gate_id", link))
-          link->add_gate_id(do_trim(gate));
+          link->add_gate_id(_trim(gate));
         else {
           /* Fallback: store gate IDs on the link if it supports metadata */
           if (function_exists("set_meta", link)) {
@@ -479,7 +483,7 @@ object _instantiate_link(string a, string b, mapping def) {
 
 	    if (!pointerp(ids)) ids = ({ });
 
-	    ids += ({ do_trim(gate) });
+	    ids += ({ _trim(gate) });
 
 	    link->set_meta("gate_ids", ids);
           }
@@ -497,11 +501,11 @@ object _instantiate_link(string a, string b, mapping def) {
   }
 
   /* Pass link id if present */
-  if (mapp(def) && stringp(def["id"]) && do_trim(def["id"]) != "") {
+  if (mapp(def) && stringp(def["id"]) && _trim(def["id"]) != "") {
     if (function_exists("set_id", link))
-      link->set_id(do_trim(def["id"]));
+      link->set_id(_trim(def["id"]));
     else if (function_exists("set_meta", link))
-      link->set_meta("id", do_trim(def["id"]));
+      link->set_meta("id", _trim(def["id"]));
   }
 
   return link;
@@ -550,7 +554,7 @@ object get_link_by_id(string id) {
   string key;
   string *eps;
 
-  id = do_trim(id);
+  id = _trim(id);
 
   if (id == "") return 0;
 
@@ -683,9 +687,9 @@ mapping links_by_direction_for_room(string room) {
 
     dir = dirs[room];
 
-    if (!stringp(dir) || do_trim(dir) == "") continue;
+    if (!stringp(dir) || _trim(dir) == "") continue;
 
-    out[do_trim(dir)] = link;
+    out[_trim(dir)] = link;
   }
 
   return out;
@@ -722,7 +726,8 @@ mapping query_definition(string env_a, string env_b) {
 
 mapping query_definition_by_id(string id) {
   string key;
-  id = do_trim(id);
+
+  id = _trim(id);
 
   if (id == "") return 0;
 

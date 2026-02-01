@@ -1,8 +1,6 @@
 inherit "/core/object";
 
 #include "room.h"
-#include <room-checks.c>
-#include "room-link-handling.c"
 
 string short_desc, long_desc;
 
@@ -23,5 +21,72 @@ string short() {
 
 string long() {
   return long_desc;
+}
+
+/*
+ * Pre- and Post- Movement and Action Hooks
+ */
+int pre_leave(object exit) {
+  return 1;
+}
+
+void post_leave(object exit) {
+  return;
+}
+
+int pre_arrive(object exit) {
+  return 1;
+}
+
+void post_arrive(object exit) {
+}
+
+int pre_action(object action) {
+  return 1;
+}
+
+void post_action(object action) {
+  return;
+}
+
+/*
+ * Link Handling
+ */
+
+/* Link affordances: label -> Link object */
+mapping _links;
+
+/*
+ * Register a Link affordance for this room.
+ * This does NOT define topology.
+ */
+void add_link(string label, object link) {
+  if (!stringp(label) || !objectp(link))
+    return;
+
+  if (!mapp(_links))
+    _links = ([]);
+
+  _links[label] = link;
+}
+
+/*
+ * Resolve a Link by label (used by movement commands).
+ */
+object query_link(string label) {
+  if (!mapp(_links))
+    return 0;
+
+  return _links[label];
+}
+
+/*
+ * Optional: expose available directions for display/debugging.
+ */
+string *query_link_labels() {
+  if (!mapp(_links))
+    return ({ });
+
+  return keys(_links);
 }
 
