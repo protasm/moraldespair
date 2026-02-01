@@ -2191,6 +2191,28 @@
       }
     },
     {
+      "id": "sanctuary_lounge",
+      "rooms": [
+        "sanctuary",
+        "lounge"
+      ],
+      "dirs": {
+        "sanctuary": "up",
+        "lounge": "down"
+      }
+    },
+    {
+      "id": "sanctuary_portal",
+      "rooms": [
+        "sanctuary",
+        "portal"
+      ],
+      "dirs": {
+        "sanctuary": "down",
+        "portal": "up"
+      }
+    },
+    {
       "id": "room230_room231",
       "rooms": [
         "room230",
