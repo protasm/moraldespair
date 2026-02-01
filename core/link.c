@@ -23,6 +23,8 @@ string endpoint_b;
 /* Optional endpoint-specific direction labels (purely affordance/UI) */
 mapping endpoint_labels; /* endpoint_path -> label string */
 mapping link_meta;
+mapping endpoint_appearances; /* endpoint_path -> description */
+string default_appearance;
 
 /* Ordered list of gates from A -> B */
 object *gates;
@@ -45,6 +47,8 @@ void create() {
 
   endpoint_labels = ([]);
   link_meta = ([]);
+  endpoint_appearances = ([]);
+  default_appearance = "It seems possible to go that way.";
   gates = ({ });
 
   /* Default: bidirectional */
@@ -196,6 +200,160 @@ mapping query_dirs() {
     return ([ ]);
 
   return endpoint_labels;
+}
+
+/* ------------------------------------------------------------ */
+/* Appearance */
+/* ------------------------------------------------------------ */
+
+void set_appearance(string description) {
+  if (!stringp(description))
+    return;
+
+  default_appearance = description;
+}
+
+void set_endpoint_appearance(string endpoint, string description) {
+  if (!stringp(endpoint) || !stringp(description))
+    return;
+
+  endpoint_appearances[endpoint] = description;
+}
+
+void set_appearances(mapping appearances) {
+  mapping normalized;
+
+  if (!mapp(appearances))
+    return;
+
+  normalized = ([ ]);
+
+  foreach (mixed k, mixed v in appearances) {
+    if (!stringp(k) || !stringp(v))
+      continue;
+
+    normalized[k] = v;
+  }
+
+  endpoint_appearances = normalized;
+}
+
+string query_appearance(string endpoint) {
+  string description;
+
+  description = "";
+
+  if (stringp(endpoint) && mapp(endpoint_appearances))
+    description = endpoint_appearances[endpoint];
+
+  if (!stringp(description) || description == "")
+    description = default_appearance;
+
+  return description;
+}
+
+string query_gate_status_line(string endpoint_id) {
+  object *gs;
+  int endpoint_idx;
+  int dir_ab;
+  int i;
+  object gate;
+  int side;
+  string name;
+  string status;
+  string *entries;
+
+  endpoint_idx = endpoint_index(endpoint_id);
+
+  if (endpoint_idx < 0)
+    return "";
+
+  gs = query_gates();
+
+  if (!pointerp(gs) || !sizeof(gs))
+    return "";
+
+  entries = ({ });
+  dir_ab = (endpoint_id == endpoint_a);
+
+  if (dir_ab) {
+    for (i = 0; i < sizeof(gs); i++) {
+      gate = gs[i];
+
+      if (!objectp(gate))
+        continue;
+
+      side = gate->side_facing_endpoint(endpoint_idx);
+      name = gate->query_name();
+
+      if (!stringp(name) || name == "")
+        name = "gate";
+
+      status = "";
+
+      if (function_exists("query_status", gate))
+        status = gate->query_status(side);
+
+      if (stringp(status))
+        status = trim(status);
+
+      if (stringp(status) && status != "")
+        entries += ({ name + " [" + status + "]" });
+      else
+        entries += ({ name });
+    }
+  } else {
+    for (i = sizeof(gs) - 1; i >= 0; i--) {
+      gate = gs[i];
+
+      if (!objectp(gate))
+        continue;
+
+      side = gate->side_facing_endpoint(endpoint_idx);
+      name = gate->query_name();
+
+      if (!stringp(name) || name == "")
+        name = "gate";
+
+      status = "";
+
+      if (function_exists("query_status", gate))
+        status = gate->query_status(side);
+
+      if (stringp(status))
+        status = trim(status);
+
+      if (stringp(status) && status != "")
+        entries += ({ name + " [" + status + "]" });
+      else
+        entries += ({ name });
+    }
+  }
+
+  if (!sizeof(entries))
+    return "";
+
+  return "Visible that way: " + implode(entries, "; ") + ".\n";
+}
+
+string describe_from_endpoint(string endpoint_id) {
+  string description;
+  string gate_line;
+
+  description = query_appearance(endpoint_id);
+
+  if (!stringp(description) || description == "")
+    description = default_appearance;
+
+  if (description[<1] != '\n')
+    description += "\n";
+
+  gate_line = query_gate_status_line(endpoint_id);
+
+  if (stringp(gate_line) && gate_line != "")
+    description += gate_line;
+
+  return description;
 }
 
 /*
