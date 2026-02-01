@@ -13,6 +13,17 @@
       }
     },
     {
+      "id": "entrance_room16",
+      "rooms": [
+        "entrance",
+        "/chapter/prologue/area/roadway/room16"
+      ],
+      "dirs": {
+        "entrance": "east",
+        "/chapter/prologue/area/roadway/room16": "west"
+      }
+    },
+    {
       "id": "room115_room116",
       "rooms": [
         "room115",

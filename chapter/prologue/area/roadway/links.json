@@ -145,6 +145,17 @@
       }
     },
     {
+      "id": "room16_entrance",
+      "rooms": [
+        "room16",
+        "/chapter/prologue/area/ruined/room/entrance"
+      ],
+      "dirs": {
+        "room16": "west",
+        "/chapter/prologue/area/ruined/room/entrance": "east"
+      }
+    },
+    {
       "id": "room17_room18",
       "rooms": [
         "room17",
