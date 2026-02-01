@@ -77,10 +77,14 @@ int main(string arg) {
 
   is_direction = (member_array(arg, direction_words) != -1);
 
-  if (!is_direction)
-    return 0;
+  if (is_direction) {
+    MOVE_D->try_move(player, arg);
 
-  MOVE_D->try_move(player, arg);
+    return 1;
+  }
 
-  return 1;
+  if (MOVE_D->try_move_label(player, arg))
+    return 1;
+
+  return 0;
 }
