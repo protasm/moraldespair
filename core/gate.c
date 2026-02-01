@@ -137,6 +137,14 @@ string *query_verbs(int side, object actor) {
 }
 
 /*
+ * Return a short status string for display when looking through a link.
+ * Subclasses should override with meaningful states.
+ */
+string query_status(int side) {
+  return "unknown";
+}
+
+/*
  * Handle an interaction verb. Returns a mapping with:
  *   handled : int (1 if verb recognized)
  *   success : int (1 if action succeeded)

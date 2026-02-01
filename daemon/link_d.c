@@ -291,6 +291,23 @@ int define_link(string env_a, string env_b, mapping definition) {
     definition["dirs"] = dirs;
   }
 
+  /* Normalize appearance mapping keys if present */
+  if (mapp(definition["appearances"])) {
+    mapping appearances;
+
+    appearances = ([ ]);
+
+    foreach (mixed k, mixed v in definition["appearances"]) {
+      if (!stringp(k) || !stringp(v)) continue;
+
+      if (_trim(v) == "") continue;
+
+      appearances[ normalize_endpoint(k) ] = _trim(v);
+    }
+
+    definition["appearances"] = appearances;
+  }
+
   /* Direction label collisions are hard errors (per endpoint) */
   if (mapp(definition["dirs"])) {
     mapping claims;
@@ -454,6 +471,7 @@ int load_json(string file) {
     string *dir_keys;
     string a_ref, b_ref, a, b;
     mapping dirs_in, dirs_abs;
+    mapping appearances_in, appearances_abs;
     string source;
 
     def = links_arr[i];
@@ -468,6 +486,7 @@ int load_json(string file) {
 
     rooms = def["rooms"];
     dirs_in = def["dirs"];
+    appearances_in = def["appearances"];
     dir_keys = 0;
     a_ref = "";
     b_ref = "";
@@ -521,10 +540,31 @@ int load_json(string file) {
       }
     }
 
+    /* Resolve appearance mapping keys the same way rooms resolve */
+    appearances_abs = 0;
+    if (mapp(appearances_in)) {
+      appearances_abs = ([ ]);
+
+      foreach (mixed k, mixed v in appearances_in) {
+        string kref, kabs;
+
+        if (!stringp(k) || !stringp(v)) continue;
+
+        kref = k;
+        kabs = resolve_endpoint(kref, prefix);
+
+        if (kabs != "")
+          appearances_abs[kabs] = _trim(v);
+      }
+    }
+
     /* Build definition mapping for define_link */
     /* Keep original def but normalize pieces we care about */
     if (mapp(dirs_abs))
       def["dirs"] = dirs_abs;
+
+    if (mapp(appearances_abs))
+      def["appearances"] = appearances_abs;
 
     source = def["source"];
 
@@ -621,6 +661,20 @@ object _instantiate_link(string a, string b, mapping def) {
       link->set_dirs(def["dirs"]);
     else if (function_exists("set_meta", link))
       link->set_meta("dirs", def["dirs"]);
+  }
+
+  if (mapp(def) && stringp(def["appearance"]) && _trim(def["appearance"]) != "") {
+    if (function_exists("set_appearance", link))
+      link->set_appearance(_trim(def["appearance"]));
+    else if (function_exists("set_meta", link))
+      link->set_meta("appearance", _trim(def["appearance"]));
+  }
+
+  if (mapp(def) && mapp(def["appearances"])) {
+    if (function_exists("set_appearances", link))
+      link->set_appearances(def["appearances"]);
+    else if (function_exists("set_meta", link))
+      link->set_meta("appearances", def["appearances"]);
   }
 
   /* Pass link id if present */

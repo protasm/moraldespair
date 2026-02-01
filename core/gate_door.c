@@ -284,3 +284,25 @@ string examine(int side) {
 
   return "An open doorway.";
 }
+
+string query_status(int side) {
+  mapping state;
+  string *parts;
+
+  state = side_state(side);
+  parts = ({ });
+
+  if (state["lock_id"]) {
+    if (state["locked"])
+      parts += ({ "locked" });
+    else
+      parts += ({ "unlocked" });
+  }
+
+  if (state["open"])
+    parts += ({ "open" });
+  else
+    parts += ({ "closed" });
+
+  return implode(parts, ", ");
+}

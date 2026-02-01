@@ -114,3 +114,9 @@ string examine(int side) {
   return "A wavering distortion hangs here, insubstantial and unreachable.";
 }
 
+string query_status(int side) {
+  if (side_state(side)["passable"])
+    return "active";
+
+  return "inactive";
+}
