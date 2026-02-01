@@ -2180,6 +2180,17 @@
       }
     },
     {
+      "id": "room228_sanctuary",
+      "rooms": [
+        "room228",
+        "sanctuary"
+      ],
+      "dirs": {
+        "room228": "north",
+        "sanctuary": "south"
+      }
+    },
+    {
       "id": "room230_room231",
       "rooms": [
         "room230",

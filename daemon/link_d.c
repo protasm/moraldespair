@@ -51,7 +51,7 @@ void create() {
   _links_by_room = ([]);
 
   link_files = ({
-    "/chapter/prologue/area/demo/links.json"
+    "/chapter/prologue/area/ruined/links.json"
   });
 
   i = 0;
