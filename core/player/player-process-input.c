@@ -3,18 +3,9 @@
  ****************************************************************************/
 string process_input(string raw) {
   object command;
-  object player, env, link;
-  object *links, *matches;
-  mapping dir_links;
-  mapping match;
-  mapping entry;
-  string verb, arg, command_path, endpoint_id;
-  string direction;
-  string remainder;
-  string example_dir;
-  string gate_name;
-  int i;
-  int handled;
+  object player, env;
+  object link_cache;
+  string verb, arg, command_path;
 
   // Ignore non-string input so command parsing does not explode.
   if (!stringp(raw))
@@ -78,108 +69,12 @@ string process_input(string raw) {
   env = environment(player);
 
   if (objectp(env)) {
-    // Resolve the current room and gather its links.
-    endpoint_id = base_name(env);
-    links = LINK_D->links_for_room(endpoint_id);
-    matches = ({ });
+    if (function_exists("query_link_cache", env))
+      link_cache = env->query_link_cache();
 
-    if (pointerp(links) && sizeof(links)) {
-      // If the command has an argument, try to treat it as a direction.
-      if (stringp(arg) && arg != "") {
-        direction = "";
-        remainder = "";
-
-        if (sscanf(arg, "%s %s", direction, remainder) != 2) {
-          direction = arg;
-          remainder = "";
-        }
-
-        // Normalize the direction token for lookup.
-        direction = lower_case(direction);
-        dir_links = LINK_D->links_by_direction_for_room(endpoint_id);
-
-        // When a direction is valid, narrow to that link and keep remainder.
-        if (mapp(dir_links) && objectp(dir_links[direction])) {
-          links = ({ dir_links[direction] });
-          arg = remainder;
-        }
-      }
-
-      // Ask each link if it wants to claim this verb+arg.
-      for (i = 0; i < sizeof(links); i++) {
-        link = links[i];
-
-        if (!objectp(link))
-          continue;
-
-        if (function_exists("query_action_match", link)) {
-          match = link->query_action_match(player, verb, arg, endpoint_id);
-
-          // Store both the link and its match metadata for later resolution.
-          if (mapp(match) && match["matched"])
-            matches += ({ ([ "link" : link, "match" : match ]) });
-        }
-      }
-    }
-
-    // A single match is authoritative; hand off to the link.
-    if (pointerp(matches) && sizeof(matches) == 1) {
-      entry = matches[0];
-      link = entry["link"];
-
-      if (objectp(link) && function_exists("handle_action", link)) {
-        handled = link->handle_action(player, verb, arg, endpoint_id);
-
-        // Successful handling ends input processing.
-        if (handled)
-          return "";
-      }
-    }
-
-    // Multiple matches need disambiguation by direction.
-    if (pointerp(matches) && sizeof(matches) > 1) {
-      example_dir = "";
-      gate_name = "";
-
-      // Use the first match's name to hint what the player meant.
-      entry = matches[0];
-      match = entry["match"];
-
-      if (mapp(match) && stringp(match["name"]))
-        gate_name = match["name"];
-
-      // Find a direction label to include in the prompt example.
-      for (i = 0; i < sizeof(matches); i++) {
-        entry = matches[i];
-        link = entry["link"];
-
-        if (!objectp(link))
-          continue;
-
-        if (function_exists("query_direction_label", link))
-          example_dir = link->query_direction_label(endpoint_id);
-
-        if (stringp(example_dir) && example_dir != "")
-          break;
-      }
-
-      // Tell the player how to disambiguate the target.
-      if (stringp(example_dir) && example_dir != "") {
-        if (stringp(gate_name) && gate_name != "")
-          write(
-            "Please specify a direction; for example, '" +
-            example_dir + " " + gate_name + "'.\n"
-          );
-        else
-          write(
-            "Please specify a direction; for example, '" +
-            example_dir + "'.\n"
-          );
-      } else {
-        write("Please specify a direction.\n");
-      }
-
-      return "";
+    if (objectp(link_cache) && function_exists("handle_input", link_cache)) {
+      if (link_cache->handle_input(player, verb, arg))
+        return "";
     }
   }
 
