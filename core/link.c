@@ -298,80 +298,330 @@ object *query_gates() {
 }
 
 /* ------------------------------------------------------------ */
-/* Gate actions (nearest gate per endpoint)
+/* Gate actions (reachable gate surfacing)
  * ------------------------------------------------------------ */
 
-object gate_for_endpoint(string endpoint_id) {
-  object *gs;
-  int idx;
-
-  if (!stringp(endpoint_id))
-    return 0;
-
-  gs = query_gates();
-
-  if (!sizeof(gs))
-    return 0;
-
-  idx = endpoint_index(endpoint_id);
-
-  if (idx < 0)
-    return 0;
-
-  if (idx == 0)
-    return gs[0];
-
-  return gs[sizeof(gs) - 1];
-}
-
-int gate_supports_action(object gate, string verb) {
-  if (!objectp(gate))
-    return 0;
-
-  if (!stringp(verb))
-    return 0;
-
-  if (verb == "open" || verb == "close")
-    return gate->supports_opening();
-
-  if (verb == "lock" || verb == "unlock")
-    return gate->supports_locking();
-
-  return 0;
-}
-
-int supports_link_action(string verb, object actor, string endpoint_id) {
-  return 0;
+string *query_link_verbs(object actor, string endpoint_id) {
+  return ({ });
 }
 
 int perform_link_action(object actor, string verb, string args, string endpoint_id) {
   return 0;
 }
 
-int supports_action(string verb, object actor, string endpoint_id) {
+mapping _build_action_groups(object actor, string endpoint_id) {
+  mapping groups;
+  object *gs;
+  int endpoint_idx;
+  int dir_ab;
+  int i;
   object gate;
+  int side;
+  string name;
+  string name_key;
+  string *verbs;
+  string verb;
+  string v;
+  mapping step;
+  int allow;
 
-  if (!stringp(verb))
-    return 0;
+  groups = ([ ]);
 
-  if (supports_link_action(verb, actor, endpoint_id))
-    return 1;
+  if (!objectp(actor))
+    return groups;
 
-  gate = gate_for_endpoint(endpoint_id);
+  endpoint_idx = endpoint_index(endpoint_id);
 
-  if (!objectp(gate))
-    return 0;
+  if (endpoint_idx < 0)
+    return groups;
 
-  return gate_supports_action(gate, verb);
+  gs = query_gates();
+
+  if (!pointerp(gs) || !sizeof(gs))
+    gs = ({ });
+
+  verbs = query_link_verbs(actor, endpoint_id);
+
+  if (pointerp(verbs)) {
+    for (i = 0; i < sizeof(verbs); i++) {
+      verb = verbs[i];
+
+      if (!stringp(verb) || trim(verb) == "")
+        continue;
+
+      verb = lower_case(trim(verb));
+
+      if (!mapp(groups[verb]))
+        groups[verb] = ([ ]);
+
+      if (!pointerp(groups[verb]["__link__"]))
+        groups[verb]["__link__"] = ({ });
+
+      groups[verb]["__link__"] += ({ ([
+        "gate" : 0,
+        "side" : -1,
+        "name" : "link"
+      ]) });
+    }
+  }
+
+  if (!sizeof(gs))
+    return groups;
+
+  dir_ab = (endpoint_id == endpoint_a);
+
+  if (dir_ab) {
+    for (i = 0; i < sizeof(gs); i++) {
+      gate = gs[i];
+
+      if (!objectp(gate))
+        continue;
+
+      side = gate->side_facing_endpoint(endpoint_idx);
+
+      if (function_exists("query_verbs", gate))
+        verbs = gate->query_verbs(side, actor);
+      else
+        verbs = ({ });
+
+      name = gate->query_name();
+
+      if (!stringp(name) || name == "")
+        name = "gate";
+
+      name_key = lower_case(trim(name));
+
+      if (name_key == "")
+        name_key = "gate";
+
+      if (pointerp(verbs)) {
+        foreach (v in verbs) {
+          verb = v;
+
+          if (!stringp(verb) || trim(verb) == "")
+            continue;
+
+          verb = lower_case(trim(verb));
+
+          if (!mapp(groups[verb]))
+            groups[verb] = ([ ]);
+
+          if (!pointerp(groups[verb][name_key]))
+            groups[verb][name_key] = ({ });
+
+          groups[verb][name_key] += ({ ([
+            "gate" : gate,
+            "side" : side,
+            "name" : name
+          ]) });
+        }
+      }
+
+      step = gate->attempt_pass(actor, side);
+      allow = (mapp(step) && step["allow"]);
+
+      if (!allow)
+        break;
+    }
+  } else {
+    for (i = sizeof(gs) - 1; i >= 0; i--) {
+      gate = gs[i];
+
+      if (!objectp(gate))
+        continue;
+
+      side = gate->side_facing_endpoint(endpoint_idx);
+
+      if (function_exists("query_verbs", gate))
+        verbs = gate->query_verbs(side, actor);
+      else
+        verbs = ({ });
+
+      name = gate->query_name();
+
+      if (!stringp(name) || name == "")
+        name = "gate";
+
+      name_key = lower_case(trim(name));
+
+      if (name_key == "")
+        name_key = "gate";
+
+      if (pointerp(verbs)) {
+        foreach (v in verbs) {
+          verb = v;
+
+          if (!stringp(verb) || trim(verb) == "")
+            continue;
+
+          verb = lower_case(trim(verb));
+
+          if (!mapp(groups[verb]))
+            groups[verb] = ([ ]);
+
+          if (!pointerp(groups[verb][name_key]))
+            groups[verb][name_key] = ({ });
+
+          groups[verb][name_key] += ({ ([
+            "gate" : gate,
+            "side" : side,
+            "name" : name
+          ]) });
+        }
+      }
+
+      step = gate->attempt_pass(actor, side);
+      allow = (mapp(step) && step["allow"]);
+
+      if (!allow)
+        break;
+    }
+  }
+
+  return groups;
 }
 
-int perform_action(object actor, string verb, string args, string endpoint_id) {
+mapping _match_action_args(string args, mapping verb_actions) {
+  mapping result;
+  string args_clean;
+  string args_lower;
+  string name_key;
+  string name_display;
+  string remainder;
+  int best_len;
+  int index;
+  int has_index;
+  string rest;
+  string candidate;
+  int len;
+
+  result = ([ "matched" : 0 ]);
+
+  if (!mapp(verb_actions))
+    return result;
+
+  if (!stringp(args))
+    args = "";
+
+  args_clean = trim(args);
+
+  if (args_clean == "") {
+    if (pointerp(verb_actions["__link__"])) {
+      result["matched"] = 1;
+      result["name_key"] = "__link__";
+      result["name"] = "link";
+      result["count"] = sizeof(verb_actions["__link__"]);
+      result["has_index"] = 0;
+      result["index"] = 0;
+      result["remainder"] = "";
+    }
+
+    return result;
+  }
+
+  args_lower = lower_case(args_clean);
+  best_len = -1;
+  name_key = "";
+  name_display = "";
+  remainder = "";
+
+  foreach (candidate in keys(verb_actions)) {
+    if (!stringp(candidate) || candidate == "" || candidate == "__link__")
+      continue;
+
+    len = strlen(candidate);
+
+    if (args_lower == candidate) {
+      if (len > best_len) {
+        name_key = candidate;
+        name_display = verb_actions[candidate][0]["name"];
+        remainder = "";
+        best_len = len;
+      }
+
+      continue;
+    }
+
+    if (strlen(args_lower) > len &&
+      args_lower[0..len-1] == candidate &&
+      args_lower[len] == ' ') {
+      if (len > best_len) {
+        name_key = candidate;
+        name_display = verb_actions[candidate][0]["name"];
+        remainder = trim(args_clean[len..]);
+        best_len = len;
+      }
+    }
+  }
+
+  if (best_len < 0)
+    return result;
+
+  has_index = 0;
+  index = 0;
+
+  if (remainder != "") {
+    if (sscanf(remainder, "%d %s", index, rest) == 2) {
+      has_index = 1;
+      remainder = trim(rest);
+    } else if (sscanf(remainder, "%d", index) == 1) {
+      has_index = 1;
+      remainder = "";
+    }
+  }
+
+  result["matched"] = 1;
+  result["name_key"] = name_key;
+  result["name"] = name_display;
+  result["has_index"] = has_index;
+  result["index"] = index;
+  result["remainder"] = remainder;
+
+  result["count"] = sizeof(verb_actions[name_key]);
+
+  if (has_index && (index < 1 || index > result["count"]))
+    result["index_out_of_range"] = 1;
+
+  return result;
+}
+
+mapping query_action_match(object actor, string verb, string args, string endpoint_id) {
+  mapping actions;
+  mapping verb_actions;
+  mapping match;
+
+  match = ([ "matched" : 0 ]);
+
+  if (!objectp(actor))
+    return match;
+
+  if (!stringp(verb))
+    return match;
+
+  verb = lower_case(verb);
+
+  actions = _build_action_groups(actor, endpoint_id);
+  verb_actions = actions[verb];
+
+  if (!mapp(verb_actions))
+    return match;
+
+  return _match_action_args(args, verb_actions);
+}
+
+int handle_action(object actor, string verb, string args, string endpoint_id) {
+  mapping actions;
+  mapping verb_actions;
+  mapping match;
+  mapping entry;
+  mapping response;
   object gate;
-  int endpoint_idx;
   int side;
+  int count;
+  int index;
   int ok;
   string name;
-  string message;
+  string remainder;
 
   if (!objectp(actor))
     return 0;
@@ -379,67 +629,63 @@ int perform_action(object actor, string verb, string args, string endpoint_id) {
   if (!stringp(verb))
     return 0;
 
-  if (supports_link_action(verb, actor, endpoint_id))
-    return perform_link_action(actor, verb, args, endpoint_id);
+  verb = lower_case(verb);
 
-  gate = gate_for_endpoint(endpoint_id);
+  actions = _build_action_groups(actor, endpoint_id);
+  verb_actions = actions[verb];
 
-  if (!objectp(gate))
+  if (!mapp(verb_actions))
     return 0;
 
-  if (!gate_supports_action(gate, verb))
+  match = _match_action_args(args, verb_actions);
+
+  if (!mapp(match) || !match["matched"])
     return 0;
 
-  endpoint_idx = endpoint_index(endpoint_id);
-
-  if (endpoint_idx < 0)
-    return 0;
-
-  side = gate->side_facing_endpoint(endpoint_idx);
-
-  if (!stringp(args))
-    args = "";
-
-  if (verb == "open")
-    ok = gate->open(side, actor);
-  else if (verb == "close")
-    ok = gate->close(side, actor);
-  else if (verb == "lock")
-    ok = gate->lock(side, actor, args);
-  else if (verb == "unlock")
-    ok = gate->unlock(side, actor, args);
-  else
-    return 0;
-
-  name = gate->query_name();
+  count = match["count"];
+  name = match["name"];
+  remainder = match["remainder"];
 
   if (!stringp(name) || name == "")
     name = "gate";
 
-  if (ok) {
-    if (verb == "open")
-      message = "You open the " + name + ".\n";
-    else if (verb == "close")
-      message = "You close the " + name + ".\n";
-    else if (verb == "lock")
-      message = "You lock the " + name + ".\n";
-    else if (verb == "unlock")
-      message = "You unlock the " + name + ".\n";
-  } else {
-    if (verb == "open")
-      message = "It will not open.\n";
-    else if (verb == "close")
-      message = "It will not close.\n";
-    else if (verb == "lock")
-      message = "It will not lock.\n";
-    else if (verb == "unlock")
-      message = "It will not unlock.\n";
+  if (match["name_key"] == "__link__") {
+    ok = perform_link_action(actor, verb, remainder, endpoint_id);
+
+    return ok;
   }
 
-  if (stringp(message) && message != "")
-    tell_object(actor, message);
+  if (match["index_out_of_range"] || (count > 1 && !match["has_index"])) {
+    write(
+      "Please specify which " + name +
+      "; for example, '" + name + " 1' or '" + name + " 2'.\n"
+    );
 
-  return ok;
+    return 1;
+  }
+
+  index = match["has_index"] ? match["index"] - 1 : 0;
+
+  entry = verb_actions[match["name_key"]][index];
+
+  if (!mapp(entry))
+    return 0;
+
+  gate = entry["gate"];
+  side = entry["side"];
+
+  if (!objectp(gate) || !function_exists("handle_action", gate))
+    return 0;
+
+  response = gate->handle_action(verb, actor, remainder, side);
+
+  if (!mapp(response) || !response["handled"])
+    return 0;
+
+  if (stringp(response["message"]) && response["message"] != "")
+    tell_object(actor, response["message"]);
+
+  return 1;
 }
 
 /* ------------------------------------------------------------ */

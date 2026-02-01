@@ -101,6 +101,85 @@ mapping attempt_pass(object actor, int side) {
 /* Door interaction verbs
  * ------------------------------------------------------------ */
 
+string *query_verbs(int side, object actor) {
+  string *verbs;
+
+  verbs = ({ });
+
+  if (supports_opening())
+    verbs += ({ "open", "close" });
+
+  if (supports_locking())
+    verbs += ({ "lock", "unlock" });
+
+  return verbs;
+}
+
+mapping handle_action(string verb, object actor, string args, int side) {
+  mapping result;
+  int ok;
+  string name;
+  string message;
+
+  result = ([
+    "handled" : 0,
+    "success" : 0
+  ]);
+
+  if (!stringp(verb))
+    return result;
+
+  verb = lower_case(verb);
+
+  if (verb == "open") {
+    ok = open(side, actor);
+    result["handled"] = 1;
+  } else if (verb == "close") {
+    ok = close(side, actor);
+    result["handled"] = 1;
+  } else if (verb == "lock") {
+    ok = lock(side, actor, args);
+    result["handled"] = 1;
+  } else if (verb == "unlock") {
+    ok = unlock(side, actor, args);
+    result["handled"] = 1;
+  } else {
+    return result;
+  }
+
+  result["success"] = ok;
+
+  name = query_name();
+
+  if (!stringp(name) || name == "")
+    name = "gate";
+
+  if (ok) {
+    if (verb == "open")
+      message = "You open the " + name + ".\n";
+    else if (verb == "close")
+      message = "You close the " + name + ".\n";
+    else if (verb == "lock")
+      message = "You lock the " + name + ".\n";
+    else if (verb == "unlock")
+      message = "You unlock the " + name + ".\n";
+  } else {
+    if (verb == "open")
+      message = "It will not open.\n";
+    else if (verb == "close")
+      message = "It will not close.\n";
+    else if (verb == "lock")
+      message = "It will not lock.\n";
+    else if (verb == "unlock")
+      message = "It will not unlock.\n";
+  }
+
+  if (stringp(message) && message != "")
+    result["message"] = message;
+
+  return result;
+}
+
 int open(int side, object actor) {
   mapping state = side_state(side);
   mapping opp_state = side_state(opposite_side(side));
@@ -205,4 +284,3 @@ string examine(int side) {
 
   return "An open doorway.";
 }
-
