@@ -32,6 +32,11 @@ mapping allowed_paths; /* origin_id -> dest_id (if present); empty means bidirec
 
 /* ------------------------------------------------------------ */
 
+/*
+ * void create()
+ * Initialize link state with empty endpoints, labels, metadata, gates, and
+ * default bidirectional paths.
+ */
 void create() {
   ::create();
 
@@ -52,6 +57,10 @@ void create() {
 /* Endpoints */
 /* ------------------------------------------------------------ */
 
+/*
+ * void set_endpoints(string first, string second)
+ * Define the two endpoints once, and seed default bidirectional routing.
+ */
 void set_endpoints(string first, string second) {
   if (!stringp(first) || !stringp(second))
     return;
@@ -69,9 +78,22 @@ void set_endpoints(string first, string second) {
   ]);
 }
 
+/*
+ * string query_endpoint_a()
+ * Return the endpoint A id, or "" if it has not been set.
+ */
 string query_endpoint_a() { return endpoint_a; }
+
+/*
+ * string query_endpoint_b()
+ * Return the endpoint B id, or "" if it has not been set.
+ */
 string query_endpoint_b() { return endpoint_b; }
 
+/*
+ * int is_endpoint(string endpoint)
+ * Report whether the provided id matches either endpoint.
+ */
 int is_endpoint(string endpoint) {
   if (!stringp(endpoint))
     return 0;
@@ -79,6 +101,10 @@ int is_endpoint(string endpoint) {
   return (endpoint == endpoint_a || endpoint == endpoint_b);
 }
 
+/*
+ * string other_endpoint(string endpoint)
+ * Return the opposite endpoint id, or "" if the input is not an endpoint.
+ */
 string other_endpoint(string endpoint) {
   if (!stringp(endpoint))
     return "";
@@ -91,8 +117,8 @@ string other_endpoint(string endpoint) {
 }
 
 /*
- * Return 0 if endpoint is not A/B.
- * Return SIDE index expected by /core/gate: 0 for A, 1 for B.
+ * int endpoint_index(string endpoint)
+ * Return the gate-facing side index (0 for A, 1 for B), or -1 if unknown.
  */
 int endpoint_index(string endpoint) {
   if (endpoint == endpoint_a) return 0;
@@ -106,6 +132,10 @@ int endpoint_index(string endpoint) {
 /* Labels (affordance only) */
 /* ------------------------------------------------------------ */
 
+/*
+ * void set_direction_label(string endpoint, string label)
+ * Store a user-facing direction label for a specific endpoint id.
+ */
 void set_direction_label(string endpoint, string label) {
   if (!stringp(endpoint) || !stringp(label))
     return;
@@ -113,6 +143,10 @@ void set_direction_label(string endpoint, string label) {
   endpoint_labels[endpoint] = label;
 }
 
+/*
+ * string query_direction_label(string endpoint)
+ * Return the direction label for an endpoint, or "" when none is set.
+ */
 string query_direction_label(string endpoint) {
   if (!stringp(endpoint))
     return "";
@@ -120,6 +154,10 @@ string query_direction_label(string endpoint) {
   return endpoint_labels[endpoint];
 }
 
+/*
+ * void set_dirs(mapping dirs)
+ * Replace direction labels with a normalized string->string mapping.
+ */
 void set_dirs(mapping dirs) {
   mapping normalized;
 
@@ -138,6 +176,10 @@ void set_dirs(mapping dirs) {
   endpoint_labels = normalized;
 }
 
+/*
+ * mapping query_dirs()
+ * Return the direction-label mapping, or an empty mapping when unset.
+ */
 mapping query_dirs() {
   if (!mapp(endpoint_labels))
     return ([ ]);
@@ -145,6 +187,10 @@ mapping query_dirs() {
   return endpoint_labels;
 }
 
+/*
+ * void set_meta(string key, mixed value)
+ * Store arbitrary metadata keyed by non-empty string.
+ */
 void set_meta(string key, mixed value) {
   if (!stringp(key) || key == "")
     return;
@@ -155,6 +201,10 @@ void set_meta(string key, mixed value) {
   link_meta[key] = value;
 }
 
+/*
+ * mixed query_meta(string key)
+ * Return metadata for the given key, or 0 when missing.
+ */
 mixed query_meta(string key) {
   if (!stringp(key) || key == "")
     return 0;
@@ -169,6 +219,10 @@ mixed query_meta(string key) {
 /* Optional explicit directionality (may later be removed)
  * ------------------------------------------------------------ */
 
+/*
+ * void set_bidirectional()
+ * Allow travel in both directions once endpoints are set.
+ */
 void set_bidirectional() {
   if (endpoint_a == "" || endpoint_b == "")
     return;
@@ -179,6 +233,10 @@ void set_bidirectional() {
   ]);
 }
 
+/*
+ * void set_one_way(string from_endpoint, string to_endpoint)
+ * Restrict travel to the specified direction only.
+ */
 void set_one_way(string from_endpoint, string to_endpoint) {
   if (!stringp(from_endpoint) || !stringp(to_endpoint))
     return;
@@ -186,6 +244,10 @@ void set_one_way(string from_endpoint, string to_endpoint) {
   allowed_paths = ([ from_endpoint : to_endpoint ]);
 }
 
+/*
+ * int allows_path(string origin_id, string destination_id)
+ * Report whether the origin->destination pairing is permitted.
+ */
 int allows_path(string origin_id, string destination_id) {
   /* If allowed_paths is not set, default to bidirectional */
   if (!mapp(allowed_paths) || !sizeof(allowed_paths))
@@ -198,6 +260,10 @@ int allows_path(string origin_id, string destination_id) {
 /* Gates (ordered A -> B)
  * ------------------------------------------------------------ */
 
+/*
+ * void add_gate(object gate)
+ * Append a gate to the ordered list and set a link back-reference if supported.
+ */
 void add_gate(object gate) {
   if (!objectp(gate))
     return;
@@ -209,6 +275,10 @@ void add_gate(object gate) {
     gate->set_link(this_object());
 }
 
+/*
+ * object *query_gates()
+ * Return the ordered gate list, or an empty array when none exist.
+ */
 object *query_gates() {
   if (!pointerp(gates))
     return ({ });
@@ -222,6 +292,11 @@ object *query_gates() {
  * IMPORTANT: mutation and cost are orthogonal to outcome.
  * ------------------------------------------------------------ */
 
+/*
+ * mapping build_result(int outcome, string message, string redirect, int cost,
+ *   mixed mutations)
+ * Assemble a standardized link result mapping from outcome data.
+ */
 mapping build_result(
   int outcome, string message, string redirect,
   int cost, mixed mutations
@@ -246,14 +321,26 @@ mapping build_result(
   return result;
 }
 
+/*
+ * mapping allow_result()
+ * Return a baseline allow result with no message, cost, or mutations.
+ */
 mapping allow_result() {
   return build_result(LINK_OUTCOME_ALLOW, "", "", 0, ({ }));
 }
 
+/*
+ * mapping deny_result(string message, int cost, mixed mutations)
+ * Return a denial result with optional message, cost, and mutations.
+ */
 mapping deny_result(string message, int cost, mixed mutations) {
   return build_result(LINK_OUTCOME_DENY, message, "", cost, mutations);
 }
 
+/*
+ * int is_allowed_result(mapping result)
+ * Report whether the result outcome represents an allowed traversal.
+ */
 int is_allowed_result(mapping result) {
   int outcome;
 
@@ -270,7 +357,8 @@ int is_allowed_result(mapping result) {
 }
 
 /*
- * Merge cost/mutations from src into dst (orthogonal accumulation).
+ * mapping merge_side_effects(mapping dst, mapping src)
+ * Merge cost and mutations from src into dst, returning the updated mapping.
  */
 mapping merge_side_effects(mapping dst, mapping src) {
   int c1, c2;
@@ -311,9 +399,8 @@ mapping merge_side_effects(mapping dst, mapping src) {
  * ------------------------------------------------------------ */
 
 /*
- * Evaluate gates sequentially. The gate API we drafted:
- *   mapping attempt_pass(object actor, int side)
- * where side is 0 for A-facing, 1 for B-facing (gate.c internal)
+ * mapping check_gates(object actor, string origin_id, string destination_id)
+ * Traverse gates in order, accumulating costs/mutations and returning a result.
  */
 mapping check_gates(object actor, string origin_id, string destination_id) {
   object *gs;
@@ -399,17 +486,25 @@ mapping check_gates(object actor, string origin_id, string destination_id) {
   } //if-else
 
   return agg;
-} //check_gates(actor, origin_id, destination_id)
+} // mapping check_gates(object actor, string origin_id, string destination_id)
 
 /* ------------------------------------------------------------ */
 /* Room hooks (agency belongs to room/actors)
  * ------------------------------------------------------------ */
 
+/*
+ * mapping can_exit(object actor, object origin)
+ * Hook for origin-side vetoes; returns an allow result by default.
+ */
 mapping can_exit(object actor, object origin) {
   /* Hook for future: origin->link_can_exit(actor, link) */
   return allow_result();
 }
 
+/*
+ * mapping can_enter(object actor, object destination)
+ * Query destination hook for pre-entry allowance, defaulting to allow.
+ */
 mapping can_enter(object actor, object destination) {
   mapping result;
   int outcome;
@@ -430,10 +525,18 @@ mapping can_enter(object actor, object destination) {
   return allow_result();
 }
 
+/*
+ * void on_exit(object actor, object origin, object destination)
+ * Post-exit hook for origin-side reactions; does not return a value.
+ */
 void on_exit(object actor, object origin, object destination) {
   return;
 }
 
+/*
+ * mapping on_enter(object actor, object origin, object destination)
+ * Post-entry hook for destination reactions, returning an updated result.
+ */
 mapping on_enter(object actor, object origin, object destination) {
   mapping result;
   int outcome;
@@ -458,6 +561,10 @@ mapping on_enter(object actor, object origin, object destination) {
 /* Lazy resolution helper
  * ------------------------------------------------------------ */
 
+/*
+ * object resolve_destination(string destination_id)
+ * Find or load the destination object for the given id.
+ */
 object resolve_destination(string destination_id) {
   object env;
 
@@ -484,6 +591,10 @@ object resolve_destination(string destination_id) {
  *
  ****************************************************************************/
 
+/*
+ * mapping traverse(object actor, object origin)
+ * Orchestrate traversal across gates and room hooks, returning the outcome.
+ */
 mapping traverse(object actor, object origin) {
   string origin_id, destination_id;
   object destination;
@@ -568,4 +679,4 @@ mapping traverse(object actor, object origin) {
   }
 
   return enter_hook_result;
-} //traverse(actor, origin)
+} // mapping traverse(object actor, object origin)
