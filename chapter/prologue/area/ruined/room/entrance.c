@@ -5,6 +5,7 @@ void create() {
 
   short_desc = "Ruined City";
   long_desc = "The ruins of a large city.";
+  /*
   dest_dir = ([
     "north":"/chapter/prologue/area/roadway/room30",
     "south":"/chapter/prologue/area/roadway/room43",
@@ -12,4 +13,6 @@ void create() {
     "east":"/chapter/prologue/area/roadway/room16",
     "city":"/chapter/prologue/area/ruined/room/room115",
   ]);
+
+  */
 }
