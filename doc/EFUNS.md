@@ -1,3 +1,5 @@
+This is a list of the efuns that FluffOS makes available, grouped by category.
+
 arrays/allocate
 arrays/arrayp
 arrays/element_of

@@ -1,3 +1,5 @@
+This is a list of the "applies" that FluffOS expects to find in the master object.
+
 author_file
 compile_object
 connect
