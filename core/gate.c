@@ -129,6 +129,32 @@ string examine(int side) {
 }
 
 /*
+ * Return a list of verbs supported by this gate from a given side.
+ * Subclasses should override and supply verbs appropriate to their nature.
+ */
+string *query_verbs(int side, object actor) {
+  return ({ });
+}
+
+/*
+ * Handle an interaction verb. Returns a mapping with:
+ *   handled : int (1 if verb recognized)
+ *   success : int (1 if action succeeded)
+ *   message : string (optional narration for actor)
+ *
+ * Subclasses should override and implement verb logic.
+ */
+mapping handle_action(string verb, object actor, string args, int side) {
+  mapping result;
+
+  result = ([
+    "handled" : 0
+  ]);
+
+  return result;
+}
+
+/*
  * Whether this gate supports being opened.
  */
 int supports_opening() {
