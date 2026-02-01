@@ -45,14 +45,10 @@ string abbreviate_exit(string direction) {
 
 void show_location(int force_verbose) {
   object env;
-  string short_desc, long_desc;
+  string short_desc, long_desc, divider;
   mapping exits;
-  string *dirs;
-  string divider;
-  string prompt;
-  string *abbr_dirs;
-  int brief;
-  int i;
+  string *dirs, *abbr_dirs;
+  int brief, i;
 
   env = environment(this_object());
 
@@ -81,13 +77,8 @@ void show_location(int force_verbose) {
         abbr_dirs += ({ abbreviate_exit(dirs[i]) });
 
       write("[Exits: " + implode(abbr_dirs, " ") + "]\n");
-    } else {
+    } else
       write("[Exits: none]\n");
-    }
-
-    prompt = rtrim(PLAYER_PROMPT);
-
-    write("[" + prompt + "]\n");
 
     return;
   }
