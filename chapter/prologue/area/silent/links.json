@@ -1,0 +1,1076 @@
+{
+  "area_prefix": "/chapter/prologue/area/silent/room",
+  "links": [
+    {
+      "id": "entrance_room286",
+      "dirs": {
+        "entrance": "city",
+        "room286": "exit"
+      }
+    },
+    {
+      "id": "room286_room287",
+      "dirs": {
+        "room286": "east",
+        "room287": "west"
+      }
+    },
+    {
+      "id": "room287_room288",
+      "dirs": {
+        "room287": "east",
+        "room288": "west"
+      }
+    },
+    {
+      "id": "room287_room330",
+      "dirs": {
+        "room287": "south",
+        "room330": "north"
+      }
+    },
+    {
+      "id": "room288_room289",
+      "dirs": {
+        "room288": "east",
+        "room289": "west"
+      }
+    },
+    {
+      "id": "room288_room367",
+      "dirs": {
+        "room288": "north",
+        "room367": "south"
+      }
+    },
+    {
+      "id": "room288_room368",
+      "dirs": {
+        "room288": "south",
+        "room368": "north"
+      }
+    },
+    {
+      "id": "room289_room290",
+      "dirs": {
+        "room289": "east",
+        "room290": "west"
+      }
+    },
+    {
+      "id": "room289_room366",
+      "dirs": {
+        "room289": "south",
+        "room366": "north"
+      }
+    },
+    {
+      "id": "room290_room291",
+      "dirs": {
+        "room290": "east",
+        "room291": "west"
+      }
+    },
+    {
+      "id": "room290_room299",
+      "dirs": {
+        "room290": "south",
+        "room299": "north"
+      }
+    },
+    {
+      "id": "room290_room369",
+      "dirs": {
+        "room290": "north",
+        "room369": "south"
+      }
+    },
+    {
+      "id": "room291_room292",
+      "dirs": {
+        "room291": "east",
+        "room292": "west"
+      }
+    },
+    {
+      "id": "room291_room298",
+      "dirs": {
+        "room291": "south",
+        "room298": "north"
+      }
+    },
+    {
+      "id": "room291_room370",
+      "dirs": {
+        "room291": "north",
+        "room370": "south"
+      }
+    },
+    {
+      "id": "room292_room293",
+      "dirs": {
+        "room292": "east",
+        "room293": "west"
+      }
+    },
+    {
+      "id": "room292_room383",
+      "dirs": {
+        "room292": "south",
+        "room383": "north"
+      }
+    },
+    {
+      "id": "room293_room294",
+      "dirs": {
+        "room293": "east",
+        "room294": "west"
+      }
+    },
+    {
+      "id": "room294_room295",
+      "dirs": {
+        "room294": "east",
+        "room295": "west"
+      }
+    },
+    {
+      "id": "room295_room296",
+      "dirs": {
+        "room295": "east",
+        "room296": "west"
+      }
+    },
+    {
+      "id": "room296_room297",
+      "dirs": {
+        "room296": "east",
+        "room297": "west"
+      }
+    },
+    {
+      "id": "room299_room300",
+      "dirs": {
+        "room299": "south",
+        "room300": "north"
+      }
+    },
+    {
+      "id": "room300_room301",
+      "dirs": {
+        "room300": "south",
+        "room301": "north"
+      }
+    },
+    {
+      "id": "room300_room302",
+      "dirs": {
+        "room300": "west",
+        "room302": "east"
+      }
+    },
+    {
+      "id": "room300_room385",
+      "dirs": {
+        "room300": "east",
+        "room385": "west"
+      }
+    },
+    {
+      "id": "room302_room303",
+      "dirs": {
+        "room302": "west",
+        "room303": "east"
+      }
+    },
+    {
+      "id": "room302_room392",
+      "dirs": {
+        "room302": "south",
+        "room392": "north"
+      }
+    },
+    {
+      "id": "room303_room304",
+      "dirs": {
+        "room303": "west",
+        "room304": "east"
+      }
+    },
+    {
+      "id": "room303_room329",
+      "dirs": {
+        "room303": "south",
+        "room329": "north"
+      }
+    },
+    {
+      "id": "room304_room305",
+      "dirs": {
+        "room304": "west",
+        "room305": "east"
+      }
+    },
+    {
+      "id": "room304_room330",
+      "dirs": {
+        "room304": "north",
+        "room330": "south"
+      }
+    },
+    {
+      "id": "room305_room306",
+      "dirs": {
+        "room305": "west",
+        "room306": "east"
+      }
+    },
+    {
+      "id": "room305_room393",
+      "dirs": {
+        "room305": "north",
+        "room393": "south"
+      }
+    },
+    {
+      "id": "room306_room307",
+      "dirs": {
+        "room306": "west",
+        "room307": "east"
+      }
+    },
+    {
+      "id": "room307_room308",
+      "dirs": {
+        "room307": "south",
+        "room308": "north"
+      }
+    },
+    {
+      "id": "room307_room331",
+      "dirs": {
+        "room307": "northwest",
+        "room331": "southeast"
+      }
+    },
+    {
+      "id": "room308_room309",
+      "dirs": {
+        "room308": "south",
+        "room309": "north"
+      }
+    },
+    {
+      "id": "room309_room310",
+      "dirs": {
+        "room309": "south",
+        "room310": "north"
+      }
+    },
+    {
+      "id": "room310_room311",
+      "dirs": {
+        "room310": "south",
+        "room311": "north"
+      }
+    },
+    {
+      "id": "room310_room355",
+      "dirs": {
+        "room310": "west",
+        "room355": "east"
+      }
+    },
+    {
+      "id": "room311_room312",
+      "dirs": {
+        "room311": "south",
+        "room312": "north"
+      }
+    },
+    {
+      "id": "room312_room313",
+      "dirs": {
+        "room312": "south",
+        "room313": "north"
+      }
+    },
+    {
+      "id": "room312_room354",
+      "dirs": {
+        "room312": "west",
+        "room354": "east"
+      }
+    },
+    {
+      "id": "room313_room314",
+      "dirs": {
+        "room313": "east",
+        "room314": "west"
+      }
+    },
+    {
+      "id": "room314_room315",
+      "dirs": {
+        "room314": "east",
+        "room315": "west"
+      }
+    },
+    {
+      "id": "room314_room322",
+      "dirs": {
+        "room314": "south",
+        "room322": "north"
+      }
+    },
+    {
+      "id": "room315_room316",
+      "dirs": {
+        "room315": "east",
+        "room316": "west"
+      }
+    },
+    {
+      "id": "room315_room320",
+      "dirs": {
+        "room315": "south",
+        "room320": "north"
+      }
+    },
+    {
+      "id": "room315_room321",
+      "dirs": {
+        "room315": "north",
+        "room321": "south"
+      }
+    },
+    {
+      "id": "room316_room317",
+      "dirs": {
+        "room316": "east",
+        "room317": "west"
+      }
+    },
+    {
+      "id": "room316_room318",
+      "dirs": {
+        "room316": "south",
+        "room318": "north"
+      }
+    },
+    {
+      "id": "room316_room319",
+      "dirs": {
+        "room316": "north",
+        "room319": "south"
+      }
+    },
+    {
+      "id": "room317_room323",
+      "dirs": {
+        "room317": "east",
+        "room323": "west"
+      }
+    },
+    {
+      "id": "room317_room333",
+      "dirs": {
+        "room317": "north",
+        "room333": "south"
+      }
+    },
+    {
+      "id": "room319_room926",
+      "dirs": {
+        "room319": "north",
+        "room926": "south"
+      }
+    },
+    {
+      "id": "room323_room324",
+      "dirs": {
+        "room323": "north",
+        "room324": "south"
+      }
+    },
+    {
+      "id": "room324_room325",
+      "dirs": {
+        "room324": "north",
+        "room325": "south"
+      }
+    },
+    {
+      "id": "room325_room326",
+      "dirs": {
+        "room325": "west",
+        "room326": "east"
+      }
+    },
+    {
+      "id": "room326_room327",
+      "dirs": {
+        "room326": "north",
+        "room327": "south"
+      }
+    },
+    {
+      "id": "room327_room328",
+      "dirs": {
+        "room327": "north",
+        "room328": "south"
+      }
+    },
+    {
+      "id": "room328_room329",
+      "dirs": {
+        "room328": "north",
+        "room329": "south"
+      }
+    },
+    {
+      "id": "room331_room332",
+      "dirs": {
+        "room331": "west",
+        "room332": "east"
+      }
+    },
+    {
+      "id": "room333_room920",
+      "dirs": {
+        "room333": "north",
+        "room920": "south"
+      }
+    },
+    {
+      "id": "room334_room335",
+      "dirs": {
+        "room334": "east",
+        "room335": "west"
+      }
+    },
+    {
+      "id": "room335_room336",
+      "dirs": {
+        "room335": "east",
+        "room336": "west"
+      }
+    },
+    {
+      "id": "room336_room337",
+      "dirs": {
+        "room336": "east",
+        "room337": "west"
+      }
+    },
+    {
+      "id": "room336_room602",
+      "dirs": {
+        "room336": "north",
+        "room602": "south"
+      }
+    },
+    {
+      "id": "room337_room338",
+      "dirs": {
+        "room337": "east",
+        "room338": "west"
+      }
+    },
+    {
+      "id": "room337_room603",
+      "dirs": {
+        "room337": "south",
+        "room603": "north"
+      }
+    },
+    {
+      "id": "room338_room339",
+      "dirs": {
+        "room338": "east",
+        "room339": "west"
+      }
+    },
+    {
+      "id": "room338_room604",
+      "dirs": {
+        "room338": "north",
+        "room604": "south"
+      }
+    },
+    {
+      "id": "room339_room340",
+      "dirs": {
+        "room339": "east",
+        "room340": "west"
+      }
+    },
+    {
+      "id": "room340_room341",
+      "dirs": {
+        "room340": "east",
+        "room341": "west"
+      }
+    },
+    {
+      "id": "room340_room343",
+      "dirs": {
+        "room340": "south",
+        "room343": "north"
+      }
+    },
+    {
+      "id": "room341_room342",
+      "dirs": {
+        "room341": "north",
+        "room342": "south"
+      }
+    },
+    {
+      "id": "room342_room350",
+      "dirs": {
+        "room342": "north",
+        "room350": "south"
+      }
+    },
+    {
+      "id": "room343_room344",
+      "dirs": {
+        "room343": "south",
+        "room344": "north"
+      }
+    },
+    {
+      "id": "room344_room345",
+      "dirs": {
+        "room344": "south",
+        "room345": "north"
+      }
+    },
+    {
+      "id": "room345_room346",
+      "dirs": {
+        "room345": "south",
+        "room346": "north"
+      }
+    },
+    {
+      "id": "room346_room347",
+      "dirs": {
+        "room346": "east",
+        "room347": "west"
+      }
+    },
+    {
+      "id": "room346_room348",
+      "dirs": {
+        "room346": "west",
+        "room348": "east"
+      }
+    },
+    {
+      "id": "room348_room349",
+      "dirs": {
+        "room348": "south",
+        "room349": "north"
+      }
+    },
+    {
+      "id": "room350_room351",
+      "dirs": {
+        "room350": "north",
+        "room351": "south"
+      }
+    },
+    {
+      "id": "room351_room352",
+      "dirs": {
+        "room351": "east",
+        "room352": "west"
+      }
+    },
+    {
+      "id": "room352_room353",
+      "dirs": {
+        "room352": "north",
+        "room353": "south"
+      }
+    },
+    {
+      "id": "room355_room356",
+      "dirs": {
+        "room355": "west",
+        "room356": "east"
+      }
+    },
+    {
+      "id": "room356_room357",
+      "dirs": {
+        "room356": "south",
+        "room357": "north"
+      }
+    },
+    {
+      "id": "room356_room361",
+      "dirs": {
+        "room356": "west",
+        "room361": "east"
+      }
+    },
+    {
+      "id": "room356_room362",
+      "dirs": {
+        "room356": "north",
+        "room362": "south"
+      }
+    },
+    {
+      "id": "room357_room358",
+      "dirs": {
+        "room357": "south",
+        "room358": "north"
+      }
+    },
+    {
+      "id": "room357_room360",
+      "dirs": {
+        "room357": "east",
+        "room360": "west"
+      }
+    },
+    {
+      "id": "room358_room359",
+      "dirs": {
+        "room358": "west",
+        "room359": "east"
+      }
+    },
+    {
+      "id": "room362_room363",
+      "dirs": {
+        "room362": "east",
+        "room363": "west"
+      }
+    },
+    {
+      "id": "room362_room364",
+      "dirs": {
+        "room362": "north",
+        "room364": "south"
+      }
+    },
+    {
+      "id": "room364_room365",
+      "dirs": {
+        "room364": "west",
+        "room365": "east"
+      }
+    },
+    {
+      "id": "room370_room371",
+      "dirs": {
+        "room370": "north",
+        "room371": "south"
+      }
+    },
+    {
+      "id": "room371_room372",
+      "dirs": {
+        "room371": "west",
+        "room372": "east"
+      }
+    },
+    {
+      "id": "room371_room373",
+      "dirs": {
+        "room371": "north",
+        "room373": "south"
+      }
+    },
+    {
+      "id": "room371_room378",
+      "dirs": {
+        "room371": "east",
+        "room378": "west"
+      }
+    },
+    {
+      "id": "room373_room374",
+      "dirs": {
+        "room373": "north",
+        "room374": "south"
+      }
+    },
+    {
+      "id": "room374_room375",
+      "dirs": {
+        "room374": "north",
+        "room375": "south"
+      }
+    },
+    {
+      "id": "room375_room376",
+      "dirs": {
+        "room375": "east",
+        "room376": "west"
+      }
+    },
+    {
+      "id": "room376_room377",
+      "dirs": {
+        "room376": "east",
+        "room377": "west"
+      }
+    },
+    {
+      "id": "room378_room379",
+      "dirs": {
+        "room378": "east",
+        "room379": "west"
+      }
+    },
+    {
+      "id": "room379_room380",
+      "dirs": {
+        "room379": "east",
+        "room380": "west"
+      }
+    },
+    {
+      "id": "room380_room381",
+      "dirs": {
+        "room380": "north",
+        "room381": "south"
+      }
+    },
+    {
+      "id": "room380_room382",
+      "dirs": {
+        "room380": "southeast",
+        "room382": "northwest"
+      }
+    },
+    {
+      "id": "room383_room384",
+      "dirs": {
+        "room383": "south",
+        "room384": "north"
+      }
+    },
+    {
+      "id": "room384_room385",
+      "dirs": {
+        "room384": "west",
+        "room385": "east"
+      }
+    },
+    {
+      "id": "room384_room386",
+      "dirs": {
+        "room384": "southeast",
+        "room386": "northwest"
+      }
+    },
+    {
+      "id": "room386_room387",
+      "dirs": {
+        "room386": "southeast",
+        "room387": "northwest"
+      }
+    },
+    {
+      "id": "room387_room388",
+      "dirs": {
+        "room387": "east",
+        "room388": "west"
+      }
+    },
+    {
+      "id": "room387_room527",
+      "dirs": {
+        "room387": "south",
+        "room527": "north"
+      }
+    },
+    {
+      "id": "room388_room389",
+      "dirs": {
+        "room388": "east",
+        "room389": "west"
+      }
+    },
+    {
+      "id": "room389_room390",
+      "dirs": {
+        "room389": "east",
+        "room390": "west"
+      }
+    },
+    {
+      "id": "room390_room391",
+      "dirs": {
+        "room390": "east",
+        "room391": "west"
+      }
+    },
+    {
+      "id": "room390_room904",
+      "dirs": {
+        "room390": "south",
+        "room904": "north"
+      }
+    },
+    {
+      "id": "room527_room528",
+      "dirs": {
+        "room527": "south",
+        "room528": "north"
+      }
+    },
+    {
+      "id": "room528_room894",
+      "dirs": {
+        "room528": "east",
+        "room894": "west"
+      }
+    },
+    {
+      "id": "room528_room896",
+      "dirs": {
+        "room528": "south",
+        "room896": "north"
+      }
+    },
+    {
+      "id": "room603_room915",
+      "dirs": {
+        "room603": "south",
+        "room915": "north"
+      }
+    },
+    {
+      "id": "room604_room907",
+      "dirs": {
+        "room604": "northeast",
+        "room907": "southwest"
+      }
+    },
+    {
+      "id": "room604_room910",
+      "dirs": {
+        "room604": "northwest",
+        "room910": "southeast"
+      }
+    },
+    {
+      "id": "room894_room895",
+      "dirs": {
+        "room894": "south",
+        "room895": "north"
+      }
+    },
+    {
+      "id": "room894_room903",
+      "dirs": {
+        "room894": "north",
+        "room903": "south"
+      }
+    },
+    {
+      "id": "room896_room897",
+      "dirs": {
+        "room896": "south",
+        "room897": "north"
+      }
+    },
+    {
+      "id": "room897_room898",
+      "dirs": {
+        "room897": "south",
+        "room898": "north"
+      }
+    },
+    {
+      "id": "room898_room899",
+      "dirs": {
+        "room898": "south",
+        "room899": "north"
+      }
+    },
+    {
+      "id": "room899_room900",
+      "dirs": {
+        "room899": "east",
+        "room900": "west"
+      }
+    },
+    {
+      "id": "room899_room902",
+      "dirs": {
+        "room899": "south",
+        "room902": "north"
+      }
+    },
+    {
+      "id": "room900_room901",
+      "dirs": {
+        "room900": "north",
+        "room901": "south"
+      }
+    },
+    {
+      "id": "room904_room905",
+      "dirs": {
+        "room904": "west",
+        "room905": "east"
+      }
+    },
+    {
+      "id": "room904_room906",
+      "dirs": {
+        "room904": "east",
+        "room906": "west"
+      }
+    },
+    {
+      "id": "room907_room908",
+      "dirs": {
+        "room907": "northwest",
+        "room908": "southeast"
+      }
+    },
+    {
+      "id": "room908_room909",
+      "dirs": {
+        "room908": "north",
+        "room909": "south"
+      }
+    },
+    {
+      "id": "room908_room910",
+      "dirs": {
+        "room908": "southwest",
+        "room910": "northeast"
+      }
+    },
+    {
+      "id": "room909_room911",
+      "dirs": {
+        "room909": "west",
+        "room911": "east"
+      }
+    },
+    {
+      "id": "room909_room912",
+      "dirs": {
+        "room909": "east",
+        "room912": "west"
+      }
+    },
+    {
+      "id": "room909_room914",
+      "dirs": {
+        "room909": "up",
+        "room914": "down"
+      }
+    },
+    {
+      "id": "room912_room913",
+      "dirs": {
+        "room912": "east",
+        "room913": "west"
+      }
+    },
+    {
+      "id": "room915_room916",
+      "dirs": {
+        "room915": "south",
+        "room916": "north"
+      }
+    },
+    {
+      "id": "room915_room918",
+      "dirs": {
+        "room915": "east",
+        "room918": "west"
+      }
+    },
+    {
+      "id": "room915_room919",
+      "dirs": {
+        "room915": "west",
+        "room919": "east"
+      }
+    },
+    {
+      "id": "room916_room917",
+      "dirs": {
+        "room916": "south",
+        "room917": "north"
+      }
+    },
+    {
+      "id": "room920_room921",
+      "dirs": {
+        "room920": "up",
+        "room921": "down"
+      }
+    },
+    {
+      "id": "room920_room923",
+      "dirs": {
+        "room920": "west",
+        "room923": "east"
+      }
+    },
+    {
+      "id": "room920_room924",
+      "dirs": {
+        "room920": "north",
+        "room924": "south"
+      }
+    },
+    {
+      "id": "room920_room925",
+      "dirs": {
+        "room920": "east",
+        "room925": "west"
+      }
+    },
+    {
+      "id": "room921_room922",
+      "dirs": {
+        "room921": "north",
+        "room922": "south"
+      }
+    },
+    {
+      "id": "room926_room927",
+      "dirs": {
+        "room926": "west",
+        "room927": "east"
+      }
+    },
+    {
+      "id": "room926_room928",
+      "dirs": {
+        "room926": "east",
+        "room928": "west"
+      }
+    },
+    {
+      "id": "room926_room929",
+      "dirs": {
+        "room926": "up",
+        "room929": "down"
+      }
+    },
+    {
+      "id": "room929_room930",
+      "dirs": {
+        "room929": "up",
+        "room930": "down"
+      }
+    }
+  ]
+}
