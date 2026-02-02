@@ -76,7 +76,7 @@ int main(string arg) {
   }
 
   if (function_exists("show_location", player)) {
-    player->show_location(1);
+    player->show_location(1, 1);
 
     return 1;
   }

@@ -574,7 +574,7 @@ void start_session(string player_name) {
 
   start_room = CHAPTER_D->resolve_player_start_room(player);
   player->move(start_room);
-  player->show_location(1);
+  player->show_location(1, 0);
 
   destruct(this_object());
 }

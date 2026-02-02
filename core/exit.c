@@ -77,7 +77,7 @@ void show_player_location(object player) {
     return;
 
   if (function_exists("show_location", player))
-    player->show_location(0);
+    player->show_location(0, 0);
 }
 
 int run_pre_leave(object exit) {
