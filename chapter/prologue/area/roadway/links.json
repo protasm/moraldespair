@@ -93,10 +93,10 @@
       }
     },
     {
-      "id": "room16_room17",
+      "id": "room13_entrance",
       "dirs": {
-        "room16": "east",
-        "room17": "west"
+        "room13": "east",
+        "/chapter/prologue/area/ruined/room/entrance": "west"
       }
     },
     {
@@ -104,6 +104,13 @@
       "dirs": {
         "room16": "west",
         "/chapter/prologue/area/ruined/room/entrance": "east"
+      }
+    },
+    {
+      "id": "room16_room17",
+      "dirs": {
+        "room16": "east",
+        "room17": "west"
       }
     },
     {
@@ -188,6 +195,13 @@
       "dirs": {
         "room28": "east",
         "room56": "west"
+      }
+    },
+    {
+      "id": "room30_entrance",
+      "dirs": {
+        "room30": "south",
+        "/chapter/prologue/area/ruined/room/entrance": "north"
       }
     },
     {
@@ -279,6 +293,13 @@
       "dirs": {
         "room42": "north",
         "room62": "south"
+      }
+    },
+    {
+      "id": "room43_entrance",
+      "dirs": {
+        "room43": "north",
+        "/chapter/prologue/area/ruined/room/entrance": "south"
       }
     },
     {

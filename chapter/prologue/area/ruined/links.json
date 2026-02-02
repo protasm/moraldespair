@@ -1,32 +1,11 @@
 {
-  "area_prefix": "/chapter/prologue/area/ruined/room/",
+  "area_prefix": "/chapter/prologue/area/ruined/room",
   "links": [
     {
       "id": "entrance_room115",
       "dirs": {
         "entrance": "city",
         "room115": "exit"
-      }
-    },
-    {
-      "id": "entrance_room13",
-      "dirs": {
-        "entrance": "west",
-        "/chapter/prologue/area/roadway/room13": "east"
-      }
-    },
-    {
-      "id": "entrance_room30",
-      "dirs": {
-        "entrance": "north",
-        "/chapter/prologue/area/roadway/room30": "south"
-      }
-    },
-    {
-      "id": "entrance_room43",
-      "dirs": {
-        "entrance": "south",
-        "/chapter/prologue/area/roadway/room43": "north"
       }
     },
     {

@@ -19,7 +19,7 @@
 #define WELCOME_FILE "/etc/welcome"
 #define MOTD_FILE "/etc/motd"
 
-#define START_ROOM "/chapter/prologue/area/sunken/entrance.c"
+#define START_ROOM "/chapter/prologue/area/ruined/room/sanctuary.c"
 
 #define COMMAND_PREFIX "/command/"
 #define ACTION_PREFIX "/chapter/prologue/action/"
