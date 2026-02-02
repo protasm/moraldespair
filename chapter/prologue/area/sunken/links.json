@@ -4,7 +4,7 @@
     {
       "id": "entrance_room1",
       "dirs": {
-        "entrance": "east",
+        "entrance": "city",
         "room1": "exit"
       }
     },
