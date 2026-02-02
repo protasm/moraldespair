@@ -35,24 +35,12 @@ object build_gate(string gate_id) {
     return gate;
   }
 
-  if (gate_id == "rubble_door_near") {
+  if (gate_id == "rubble_door") {
     gate = new("/core/gate_door");
 
     gate->set_name("door");
-    gate->set_block_message(SIDE_A, "The nearer door is closed.");
-    gate->set_block_message(SIDE_B, "The nearer door is closed.");
-    gate->set_open_state(SIDE_A, 0);
-    gate->set_open_state(SIDE_B, 0);
-
-    return gate;
-  }
-
-  if (gate_id == "rubble_door_far") {
-    gate = new("/core/gate_door");
-
-    gate->set_name("door");
-    gate->set_block_message(SIDE_A, "The farther door is closed.");
-    gate->set_block_message(SIDE_B, "The farther door is closed.");
+    gate->set_block_message(SIDE_A, "The door is closed.");
+    gate->set_block_message(SIDE_B, "The door is closed.");
     gate->set_open_state(SIDE_A, 0);
     gate->set_open_state(SIDE_B, 0);
 
