@@ -5,7 +5,6 @@ void create() {
 
   short_desc = "Gate Foyer";
   long_desc =
-    "This foyer exists to demonstrate directional disambiguation for gates\n"
-    "that share the same name. A hatch sits to the east and another to the\n"
-    "west; use 'open east hatch' or 'open west hatch' to be explicit.";
+    "The foyer is bare and quiet, its stone floor dulled by grit and age.\n"
+    "A hatch sits to the east and another to the west, identical and plain.";
 }

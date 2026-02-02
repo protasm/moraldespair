@@ -219,7 +219,8 @@ void index_pair_for_room(string room, string key) {
  * definition may contain:
  *   "id"        : string (optional but recommended)
  *   "type"      : string (path to link prefab/class, default /core/link)
- *   "gates"     : ({ gateObjOrId, ... })   (recommended: ids)
+ *   "gate"      : gateObjOrId  (recommended: id string)
+ *   "gates"     : ({ gateObjOrId, ... })   (legacy; first entry used)
  *   "one_way"   : ([ "from": <endpoint>, "to": <endpoint> ])  (optional)
  *   "dirs"      : ([ endpointAbs : "east", endpointAbs : "west" ]) (optional)
  *   other Link-specific config
@@ -423,7 +424,7 @@ int define_link_id(string id, string env_a, string env_b, mapping definition) {
  *   id    : string (recommended)
  *   rooms : [a, b] (optional; inferred from dirs when omitted)
  *   dirs  : { a: "east", b: "west" } (required for inference)
- *   type, gates, one_way, ... (optional)
+ *   type, gate, one_way, ... (optional)
  *
  * Relative room refs are resolved against area_prefix.
  * If rooms are omitted, endpoints are inferred from dirs keys.
@@ -602,7 +603,6 @@ int load_json(string file) {
 object _instantiate_link(string a, string b, mapping def) {
   object link;
   mixed gate;
-  int i;
 
   if (mapp(def) && stringp(def["type"]) && _trim(def["type"]) != "")
     link = new(def["type"]);
@@ -621,37 +621,36 @@ object _instantiate_link(string a, string b, mapping def) {
   }
 
   /*
-   * Gate stack
-   * Recommended: store gate IDs (strings) in def["gates"] and let the Link
+   * Gate (single)
+   * Recommended: store gate IDs (strings) in def["gate"] and let the Link
    * ask GATE_D when traversed. But we also accept actual gate objects.
    */
-  if (mapp(def) && pointerp(def["gates"])) {
-    for (i = 0; i < sizeof(def["gates"]); i++) {
-      gate = def["gates"][i];
+  gate = 0;
 
-      if (objectp(gate)) {
-        link->add_gate(gate);
+  if (mapp(def)) {
+    if (objectp(def["gate"]) || stringp(def["gate"]))
+      gate = def["gate"];
+    else if (pointerp(def["gates"]) && sizeof(def["gates"])) {
+      gate = def["gates"][0];
 
-	continue;
-      }
+      if (sizeof(def["gates"]) > 1)
+        write(
+          "LINK_D: Link " + a + " <-> " + b +
+          " defines multiple gates; using the first.\n"
+        );
+    }
+  }
 
-      if (stringp(gate) && _trim(gate) != "") {
-        /* Optional: Link can treat strings as gate IDs */
-        if (function_exists("add_gate_id", link))
-          link->add_gate_id(_trim(gate));
-        else {
-          /* Fallback: store gate IDs on the link if it supports metadata */
-          if (function_exists("set_meta", link)) {
-            mixed ids = link->query_meta("gate_ids");
-
-	    if (!pointerp(ids)) ids = ({ });
-
-	    ids += ({ _trim(gate) });
-
-	    link->set_meta("gate_ids", ids);
-          }
-        }
-      }
+  if (objectp(gate)) {
+    link->add_gate(gate);
+  } else if (stringp(gate) && _trim(gate) != "") {
+    /* Optional: Link can treat strings as gate IDs */
+    if (function_exists("add_gate_id", link))
+      link->add_gate_id(_trim(gate));
+    else {
+      /* Fallback: store gate ID on the link if it supports metadata */
+      if (function_exists("set_meta", link))
+        link->set_meta("gate_id", _trim(gate));
     }
   }
 

@@ -2262,9 +2262,7 @@
     {
       "id": "lounge_latch_hall",
       "type": "/chapter/prologue/area/ruined/link/sample_link",
-      "gates": [
-        "latch_one_side"
-      ],
+      "gate": "latch_one_side",
       "rooms": [
         "lounge",
         "latch_hall"
@@ -2288,9 +2286,7 @@
     {
       "id": "gate_foyer_hatch_east",
       "type": "/chapter/prologue/area/ruined/link/sample_link",
-      "gates": [
-        "hatch_basic"
-      ],
+      "gate": "hatch_basic",
       "rooms": [
         "gate_foyer",
         "hatch_east"
@@ -2303,9 +2299,7 @@
     {
       "id": "gate_foyer_hatch_west",
       "type": "/chapter/prologue/area/ruined/link/sample_link",
-      "gates": [
-        "hatch_basic"
-      ],
+      "gate": "hatch_basic",
       "rooms": [
         "gate_foyer",
         "hatch_west"
@@ -2318,10 +2312,7 @@
     {
       "id": "rubble_approach_rubble_beyond",
       "type": "/chapter/prologue/area/ruined/link/sample_link",
-      "gates": [
-        "rubble_door_near",
-        "rubble_door_far"
-      ],
+      "gate": "rubble_door",
       "rooms": [
         "rubble_approach",
         "rubble_beyond"

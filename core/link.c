@@ -6,7 +6,7 @@ inherit "/core/object";
  * Link: transient "between-space" connecting two endpoints.
  *
  * - Endpoints are strings (paths/IDs), resolved lazily.
- * - Gates are ordered between endpoint A and endpoint B.
+ * - Links may include a single Gate between endpoint A and endpoint B.
  * - Each gate is a /core/link_gate subclass with two sides.
  *
  * Narration:
@@ -26,17 +26,17 @@ mapping link_meta;
 mapping endpoint_appearances; /* endpoint_path -> description */
 string default_appearance;
 
-/* Ordered list of gates from A -> B */
-object *gates;
+/* Optional gate between endpoints */
+object gate;
 
-/* Optional explicit directionality shortcut (you may later rely purely on gates) */
+/* Optional explicit directionality shortcut (you may later rely purely on gate) */
 mapping allowed_paths; /* origin_id -> dest_id (if present); empty means bidirectional */
 
 /* ------------------------------------------------------------ */
 
 /*
  * void create()
- * Initialize link state with empty endpoints, labels, metadata, gates, and
+ * Initialize link state with empty endpoints, labels, metadata, gate, and
  * default bidirectional paths.
  */
 void create() {
@@ -49,7 +49,7 @@ void create() {
   link_meta = ([]);
   endpoint_appearances = ([]);
   default_appearance = "It seems possible to go that way.";
-  gates = ({ });
+  gate = 0;
 
   /* Default: bidirectional */
   allowed_paths = ([]);
@@ -253,87 +253,37 @@ string query_appearance(string endpoint) {
 }
 
 string query_gate_status_line(string endpoint_id) {
-  object *gs;
   int endpoint_idx;
-  int dir_ab;
-  int i;
-  object gate;
   int side;
   string name;
   string status;
-  string *entries;
 
   endpoint_idx = endpoint_index(endpoint_id);
 
   if (endpoint_idx < 0)
     return "";
 
-  gs = query_gates();
-
-  if (!pointerp(gs) || !sizeof(gs))
+  if (!objectp(gate))
     return "";
 
-  entries = ({ });
-  dir_ab = (endpoint_id == endpoint_a);
+  side = gate->side_facing_endpoint(endpoint_idx);
+  name = gate->query_name();
 
-  if (dir_ab) {
-    for (i = 0; i < sizeof(gs); i++) {
-      gate = gs[i];
+  if (!stringp(name) || name == "")
+    name = "gate";
 
-      if (!objectp(gate))
-        continue;
+  status = "";
 
-      side = gate->side_facing_endpoint(endpoint_idx);
-      name = gate->query_name();
+  if (function_exists("query_status", gate))
+    status = gate->query_status(side);
 
-      if (!stringp(name) || name == "")
-        name = "gate";
+  if (stringp(status))
+    status = trim(status);
 
-      status = "";
+  if (stringp(status) && status != "")
+    return "Visible that way: " + name + " [" + status + "].\n";
 
-      if (function_exists("query_status", gate))
-        status = gate->query_status(side);
-
-      if (stringp(status))
-        status = trim(status);
-
-      if (stringp(status) && status != "")
-        entries += ({ name + " [" + status + "]" });
-      else
-        entries += ({ name });
-    }
-  } else {
-    for (i = sizeof(gs) - 1; i >= 0; i--) {
-      gate = gs[i];
-
-      if (!objectp(gate))
-        continue;
-
-      side = gate->side_facing_endpoint(endpoint_idx);
-      name = gate->query_name();
-
-      if (!stringp(name) || name == "")
-        name = "gate";
-
-      status = "";
-
-      if (function_exists("query_status", gate))
-        status = gate->query_status(side);
-
-      if (stringp(status))
-        status = trim(status);
-
-      if (stringp(status) && status != "")
-        entries += ({ name + " [" + status + "]" });
-      else
-        entries += ({ name });
-    }
-  }
-
-  if (!sizeof(entries))
-    return "";
-
-  return "Visible that way: " + implode(entries, "; ") + ".\n";
+  return "Visible that way: " + name + ".\n";
 }
 
 string describe_from_endpoint(string endpoint_id) {
@@ -426,18 +376,18 @@ int allows_path(string origin_id, string destination_id) {
 }
 
 /* ------------------------------------------------------------ */
-/* Gates (ordered A -> B)
+/* Gate
  * ------------------------------------------------------------ */
 
 /*
- * void add_gate(object gate)
- * Append a gate to the ordered list and set a link back-reference if supported.
+ * void add_gate(object gate_obj)
+ * Replace any existing gate and set a link back-reference if supported.
  */
-void add_gate(object gate) {
-  if (!objectp(gate))
+void add_gate(object gate_obj) {
+  if (!objectp(gate_obj))
     return;
 
-  gates += ({ gate });
+  gate = gate_obj;
 
   /* Optional: if your gate objects want a backref, you can add set_link() later */
   if (function_exists("set_link", gate))
@@ -445,18 +395,29 @@ void add_gate(object gate) {
 }
 
 /*
+ * object query_gate()
+ * Return the gate object, or 0 when none exists.
+ */
+object query_gate() {
+  if (!objectp(gate))
+    return 0;
+
+  return gate;
+}
+
+/*
  * object *query_gates()
- * Return the ordered gate list, or an empty array when none exist.
+ * Return a single-element array for compatibility, or empty when none exist.
  */
 object *query_gates() {
-  if (!pointerp(gates))
+  if (!objectp(gate))
     return ({ });
 
-  return gates;
+  return ({ gate });
 }
 
 /* ------------------------------------------------------------ */
-/* Gate actions (reachable gate surfacing)
+/* Gate actions
  * ------------------------------------------------------------ */
 
 string *query_link_verbs(object actor, string endpoint_id) {
@@ -469,19 +430,14 @@ int perform_link_action(object actor, string verb, string args, string endpoint_
 
 mapping _build_action_groups(object actor, string endpoint_id) {
   mapping groups;
-  object *gs;
   int endpoint_idx;
-  int dir_ab;
-  int i;
-  object gate;
   int side;
   string name;
   string name_key;
   string *verbs;
   string verb;
   string v;
-  mapping step;
-  int allow;
+  int i;
 
   groups = ([ ]);
 
@@ -492,11 +448,6 @@ mapping _build_action_groups(object actor, string endpoint_id) {
 
   if (endpoint_idx < 0)
     return groups;
-
-  gs = query_gates();
-
-  if (!pointerp(gs) || !sizeof(gs))
-    gs = ({ });
 
   verbs = query_link_verbs(actor, endpoint_id);
 
@@ -523,116 +474,46 @@ mapping _build_action_groups(object actor, string endpoint_id) {
     }
   }
 
-  if (!sizeof(gs))
+  if (!objectp(gate))
     return groups;
 
-  dir_ab = (endpoint_id == endpoint_a);
+  side = gate->side_facing_endpoint(endpoint_idx);
 
-  if (dir_ab) {
-    for (i = 0; i < sizeof(gs); i++) {
-      gate = gs[i];
+  if (function_exists("query_verbs", gate))
+    verbs = gate->query_verbs(side, actor);
+  else
+    verbs = ({ });
 
-      if (!objectp(gate))
+  name = gate->query_name();
+
+  if (!stringp(name) || name == "")
+    name = "gate";
+
+  name_key = lower_case(trim(name));
+
+  if (name_key == "")
+    name_key = "gate";
+
+  if (pointerp(verbs)) {
+    foreach (v in verbs) {
+      verb = v;
+
+      if (!stringp(verb) || trim(verb) == "")
         continue;
 
-      side = gate->side_facing_endpoint(endpoint_idx);
+      verb = lower_case(trim(verb));
 
-      if (function_exists("query_verbs", gate))
-        verbs = gate->query_verbs(side, actor);
-      else
-        verbs = ({ });
+      if (!mapp(groups[verb]))
+        groups[verb] = ([ ]);
 
-      name = gate->query_name();
+      if (!pointerp(groups[verb][name_key]))
+        groups[verb][name_key] = ({ });
 
-      if (!stringp(name) || name == "")
-        name = "gate";
-
-      name_key = lower_case(trim(name));
-
-      if (name_key == "")
-        name_key = "gate";
-
-      if (pointerp(verbs)) {
-        foreach (v in verbs) {
-          verb = v;
-
-          if (!stringp(verb) || trim(verb) == "")
-            continue;
-
-          verb = lower_case(trim(verb));
-
-          if (!mapp(groups[verb]))
-            groups[verb] = ([ ]);
-
-          if (!pointerp(groups[verb][name_key]))
-            groups[verb][name_key] = ({ });
-
-          groups[verb][name_key] += ({ ([
-            "gate" : gate,
-            "side" : side,
-            "name" : name
-          ]) });
-        }
-      }
-
-      step = gate->attempt_pass(actor, side);
-      allow = (mapp(step) && step["allow"]);
-
-      if (!allow)
-        break;
-    }
-  } else {
-    for (i = sizeof(gs) - 1; i >= 0; i--) {
-      gate = gs[i];
-
-      if (!objectp(gate))
-        continue;
-
-      side = gate->side_facing_endpoint(endpoint_idx);
-
-      if (function_exists("query_verbs", gate))
-        verbs = gate->query_verbs(side, actor);
-      else
-        verbs = ({ });
-
-      name = gate->query_name();
-
-      if (!stringp(name) || name == "")
-        name = "gate";
-
-      name_key = lower_case(trim(name));
-
-      if (name_key == "")
-        name_key = "gate";
-
-      if (pointerp(verbs)) {
-        foreach (v in verbs) {
-          verb = v;
-
-          if (!stringp(verb) || trim(verb) == "")
-            continue;
-
-          verb = lower_case(trim(verb));
-
-          if (!mapp(groups[verb]))
-            groups[verb] = ([ ]);
-
-          if (!pointerp(groups[verb][name_key]))
-            groups[verb][name_key] = ({ });
-
-          groups[verb][name_key] += ({ ([
-            "gate" : gate,
-            "side" : side,
-            "name" : name
-          ]) });
-        }
-      }
-
-      step = gate->attempt_pass(actor, side);
-      allow = (mapp(step) && step["allow"]);
-
-      if (!allow)
-        break;
+      groups[verb][name_key] += ({ ([
+        "gate" : gate,
+        "side" : side,
+        "name" : name
+      ]) });
     }
   }
 
@@ -647,9 +528,6 @@ mapping _match_action_args(string args, mapping verb_actions) {
   string name_display;
   string remainder;
   int best_len;
-  int index;
-  int has_index;
-  string rest;
   string candidate;
   int len;
 
@@ -668,9 +546,6 @@ mapping _match_action_args(string args, mapping verb_actions) {
       result["matched"] = 1;
       result["name_key"] = "__link__";
       result["name"] = "link";
-      result["count"] = sizeof(verb_actions["__link__"]);
-      result["has_index"] = 0;
-      result["index"] = 0;
       result["remainder"] = "";
     }
 
@@ -715,30 +590,10 @@ mapping _match_action_args(string args, mapping verb_actions) {
   if (best_len < 0)
     return result;
 
-  has_index = 0;
-  index = 0;
-
-  if (remainder != "") {
-    if (sscanf(remainder, "%d %s", index, rest) == 2) {
-      has_index = 1;
-      remainder = trim(rest);
-    } else if (sscanf(remainder, "%d", index) == 1) {
-      has_index = 1;
-      remainder = "";
-    }
-  }
-
   result["matched"] = 1;
   result["name_key"] = name_key;
   result["name"] = name_display;
-  result["has_index"] = has_index;
-  result["index"] = index;
   result["remainder"] = remainder;
-
-  result["count"] = sizeof(verb_actions[name_key]);
-
-  if (has_index && (index < 1 || index > result["count"]))
-    result["index_out_of_range"] = 1;
 
   return result;
 }
@@ -775,8 +630,6 @@ int handle_action(object actor, string verb, string args, string endpoint_id) {
   mapping response;
   object gate;
   int side;
-  int count;
-  int index;
   int ok;
   string name;
   string remainder;
@@ -800,7 +653,6 @@ int handle_action(object actor, string verb, string args, string endpoint_id) {
   if (!mapp(match) || !match["matched"])
     return 0;
 
-  count = match["count"];
   name = match["name"];
   remainder = match["remainder"];
 
@@ -813,18 +665,7 @@ int handle_action(object actor, string verb, string args, string endpoint_id) {
     return ok;
   }
 
-  if (match["index_out_of_range"] || (count > 1 && !match["has_index"])) {
-    write(
-      "Please specify which " + name +
-      "; for example, '" + name + " 1' or '" + name + " 2'.\n"
-    );
-
-    return 1;
-  }
-
-  index = match["has_index"] ? match["index"] - 1 : 0;
-
-  entry = verb_actions[match["name_key"]][index];
+  entry = verb_actions[match["name_key"]][0];
 
   if (!mapp(entry))
     return 0;
@@ -955,19 +796,24 @@ mapping merge_side_effects(mapping dst, mapping src) {
 }
 
 /* ------------------------------------------------------------ */
-/* Gate traversal (ordered)
+/* Link and gate traversal
  * ------------------------------------------------------------ */
 
 /*
+ * mapping check_link(object actor, string origin_id, string destination_id)
+ * Hook for link-level traversal rules. Default allows passage.
+ */
+mapping check_link(object actor, string origin_id, string destination_id) {
+  return allow_result();
+}
+
+/*
  * mapping check_gates(object actor, string origin_id, string destination_id)
- * Traverse gates in order, accumulating costs/mutations and returning a result.
+ * Query the single gate, accumulating costs/mutations and returning a result.
  */
 mapping check_gates(object actor, string origin_id, string destination_id) {
-  object *gs;
-  int origin_idx, i;
-  int dir_ab; /* 1 if moving A->B, 0 if moving B->A */
+  int origin_idx;
   mapping agg, step;
-  object gate;
   int gate_side;
 
   agg = allow_result();
@@ -980,70 +826,28 @@ mapping check_gates(object actor, string origin_id, string destination_id) {
   if (origin_idx < 0)
     return deny_result("The link refuses to align.", 0, ({ }));
 
-  dir_ab = (origin_id == endpoint_a); /* moving from A to B if origin is A */
-
-  gs = query_gates();
-
-  if (!sizeof(gs))
+  if (!objectp(gate))
     return agg;
 
-  if (dir_ab) {
-    for (i = 0; i < sizeof(gs); i++) {
-      gate = gs[i];
+  gate_side = gate->side_facing_endpoint(origin_idx);
+  step = gate->attempt_pass(actor, gate_side);
 
-      if (!objectp(gate))
-        continue;
+  if (mapp(step))
+    agg = merge_side_effects(
+      agg, ([
+        LINK_RESULT_COST    : step["cost"],
+        LINK_RESULT_MUTATIONS : step["effects"]
+      ])
+    );
 
-      gate_side = gate->side_facing_endpoint(0); /* facing endpoint A */
-      step = gate->attempt_pass(actor, gate_side);
-
-      /* accumulate cost/mutations even if denied */
-      if (mapp(step))
-        agg = merge_side_effects(
-          agg, ([
-            LINK_RESULT_COST    : step["cost"],
-            LINK_RESULT_MUTATIONS : step["effects"]
-          ])
-        );
-
-      if (!mapp(step) || !step["allow"])
-        return deny_result(
-          step && step["message"]
-            ? step["message"]
-            : "Something blocks your way.",
-          agg[LINK_RESULT_COST],
-          agg[LINK_RESULT_MUTATIONS]
-        );
-    }
-  } else {
-    /* moving from B to A: traverse gates in reverse, using B-facing side */
-    for (i = sizeof(gs) - 1; i >= 0; i--) {
-      gate = gs[i];
-
-      if (!objectp(gate))
-        continue;
-
-      gate_side = gate->side_facing_endpoint(1); /* facing endpoint B */
-      step = gate->attempt_pass(actor, gate_side);
-
-      if (mapp(step))
-        agg = merge_side_effects(
-          agg, ([
-            LINK_RESULT_COST    : step["cost"],
-            LINK_RESULT_MUTATIONS : step["effects"]
-          ])
-        );
-
-      if (!mapp(step) || !step["allow"])
-        return deny_result(
-          step && step["message"]
-            ? step["message"]
-            : "Something blocks your way.",
-          agg[LINK_RESULT_COST],
-          agg[LINK_RESULT_MUTATIONS]
-        );
-    } //for
-  } //if-else
+  if (!mapp(step) || !step["allow"])
+    return deny_result(
+      step && step["message"]
+        ? step["message"]
+        : "Something blocks your way.",
+      agg[LINK_RESULT_COST],
+      agg[LINK_RESULT_MUTATIONS]
+    );
 
   return agg;
 } // mapping check_gates(object actor, string origin_id, string destination_id)
@@ -1143,7 +947,7 @@ object resolve_destination(string destination_id) {
  *
  * Ownership & Narration Rules
  * ---------------------------
- * Links own topology (ordered gates, directionality, traversal cost).
+ * Links own topology (gate, directionality, traversal cost).
  * Gates narrate topology-level interactions (blocked passage, etc.).
  *
  * Rooms and actors own local state and agency (guards, hazards).
@@ -1153,12 +957,12 @@ object resolve_destination(string destination_id) {
 
 /*
  * mapping traverse(object actor, object origin)
- * Orchestrate traversal across gates and room hooks, returning the outcome.
+ * Orchestrate traversal across gate and room hooks, returning the outcome.
  */
 mapping traverse(object actor, object origin) {
   string origin_id, destination_id;
   object destination;
-  mapping gate_result, exit_result, enter_result, enter_hook_result;
+  mapping link_result, gate_result, exit_result, enter_result, enter_hook_result;
   int moved;
 
   if (!objectp(actor) || !objectp(origin))
@@ -1173,20 +977,27 @@ mapping traverse(object actor, object origin) {
   if (!allows_path(origin_id, destination_id))
     return deny_result("The link does not run that way.", 0, ({ }));
 
-  /* 1) Gates (topology) — no destination loading */
+  /* 1) Link-level traversal rules */
+  link_result = check_link(actor, origin_id, destination_id);
+
+  if (!is_allowed_result(link_result))
+    return link_result;
+
+  /* 2) Gate (topology) — no destination loading */
   gate_result = check_gates(actor, origin_id, destination_id);
+  gate_result = merge_side_effects(gate_result, link_result);
 
   if (!is_allowed_result(gate_result))
     return gate_result;
 
-  /* 2) Origin veto (optional, typically actor/room state) */
+  /* 3) Origin veto (optional, typically actor/room state) */
   exit_result = can_exit(actor, origin);
   exit_result = merge_side_effects(exit_result, gate_result);
 
   if (!is_allowed_result(exit_result))
     return exit_result;
 
-  /* 3) Lazy-load destination only after gate+exit pass */
+  /* 4) Lazy-load destination only after gate+exit pass */
   destination = resolve_destination(destination_id);
 
   if (!objectp(destination))
@@ -1196,14 +1007,14 @@ mapping traverse(object actor, object origin) {
       exit_result[LINK_RESULT_MUTATIONS]
     );
 
-  /* 4) Destination veto (pre-entry) */
+  /* 5) Destination veto (pre-entry) */
   enter_result = can_enter(actor, destination);
   enter_result = merge_side_effects(enter_result, exit_result);
 
   if (!is_allowed_result(enter_result))
     return enter_result;
 
-  /* 5) Move */
+  /* 6) Move */
   on_exit(actor, origin, destination);
 
   moved = actor->move(destination_id);
@@ -1215,7 +1026,7 @@ mapping traverse(object actor, object origin) {
       enter_result[LINK_RESULT_MUTATIONS]
     );
 
-  /* 6) Post-entry reaction (room/actor agency) */
+  /* 7) Post-entry reaction (room/actor agency) */
   enter_hook_result = on_enter(actor, origin, destination);
   enter_hook_result = merge_side_effects(enter_hook_result, enter_result);
 
