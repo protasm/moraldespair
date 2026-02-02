@@ -5,6 +5,7 @@ void create() {
 
   short_desc = "Sunken City";
   long_desc = "Once a city, now swallowed by the desert.";
+  /*
   dest_dir = ({
     "chapter/prologue/area/roadway/room1", "east",
     "room/wilderness_room#K27", "north",
@@ -12,4 +13,5 @@ void create() {
     "room/wilderness_room#J28", "west",
     "chapter/prologue/area/sunken/room1", "city",
   });
+  */
 }
