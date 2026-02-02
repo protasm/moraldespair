@@ -5,9 +5,11 @@ void create() {
 
   short_desc = "Wind-Scoured Reach";
   long_desc = "The way pinches tight, then opens again into scattered foundations. Ash and grit collect in corners, damped by occasional trickles.";
+  /*
   dest_dir = ({
     "chapter/prologue/area/sunken/room79", "west",
   });
+  */
 
   set_light(1);
 }
