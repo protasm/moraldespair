@@ -2,6 +2,13 @@
   "area_prefix": "/chapter/prologue/area/roadway",
   "links": [
     {
+      "id": "room1_entrance",
+      "dirs": {
+        "room1": "west",
+        "/chapter/prologue/area/sunken/entrance": "east"
+      }
+    },
+    {
       "id": "room1_room2",
       "dirs": {
         "room1": "east",
@@ -90,6 +97,13 @@
       "dirs": {
         "room16": "east",
         "room17": "west"
+      }
+    },
+    {
+      "id": "room16_entrance",
+      "dirs": {
+        "room16": "west",
+        "/chapter/prologue/area/ruined/room/entrance": "east"
       }
     },
     {
