@@ -12,8 +12,4 @@ void create() {
     "room/wilderness_room#J28", "west",
     "chapter/prologue/area/sunken/room1", "city",
   });
-
-  add_exit_alias("c", "city");
-
-  set_light(1);
 }

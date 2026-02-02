@@ -11,8 +11,4 @@ void create() {
     "chapter/prologue/area/sunken/room56", "west",
     "chapter/prologue/area/sunken/entrance", "exit",
   });
-
-  add_exit_alias("x", "exit");
-
-  set_light(1);
 }

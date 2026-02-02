@@ -11,8 +11,4 @@ void create() {
     "north" : "/chapter/prologue/area/refuge/room236",
     "exit" : "/chapter/prologue/area/refuge/entrance",
   ]);
-
-  add_exit_alias("x", "exit");
-
-  set_light(1);
 }

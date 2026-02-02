@@ -394,6 +394,13 @@
       }
     },
     {
+      "id": "room61_entrance",
+      "dirs": {
+        "room61": "east",
+        "/chapter/prologue/area/silent/entrance": "west"
+      }
+    },
+    {
       "id": "room62_room63",
       "dirs": {
         "room62": "north",

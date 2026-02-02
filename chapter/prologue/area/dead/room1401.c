@@ -11,8 +11,4 @@ void create() {
     "west" : "/chapter/prologue/area/dead/room1635",
     "exit" : "/chapter/prologue/area/dead/entrance",
   ]);
-
-  add_exit_alias("x", "exit");
-
-  set_light(1);
 }

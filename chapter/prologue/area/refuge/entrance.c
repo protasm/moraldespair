@@ -12,8 +12,4 @@ void create() {
     "east" : "/room/wilderness_room#Z7",
     "city" : "/chapter/prologue/area/refuge/room235",
   ]);
-
-  add_exit_alias("c", "city");
-
-  set_light(1);
 }
