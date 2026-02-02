@@ -43,9 +43,9 @@ string abbreviate_exit(string direction) {
   return direction;
 }
 
-void show_location(int force_verbose) {
+void show_location(int force_verbose, int show_path) {
   object env;
-  string short_desc, long_desc, divider;
+  string short_desc, long_desc, divider, room_path, header;
   mapping exits;
   string *dirs, *abbr_dirs;
   int brief, i;
@@ -86,9 +86,19 @@ void show_location(int force_verbose) {
   divider = "---------+---------+---------+---------+---------+---------+---------+---------+";
 
   short_desc = env->short();
+  room_path = base_name(env);
+  header = short_desc;
 
-  if (stringp(short_desc) && short_desc != "")
-    write(short_desc + "\n");
+  if (show_path && stringp(short_desc) && short_desc != "" &&
+    stringp(room_path) && room_path != "")
+    header = short_desc + " (" + room_path + ")";
+
+  if (stringp(header) && header != "") {
+    if (show_path)
+      write("\n");
+
+    write(header + "\n");
+  }
 
   write(divider + "\n");
 
