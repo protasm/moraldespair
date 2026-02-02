@@ -54,6 +54,7 @@ void create() {
   link_files = ({
     "/chapter/prologue/area/ruined/links.json",
     "/chapter/prologue/area/silent/links.json",
+    "/chapter/prologue/area/sunken/links.json",
     "/chapter/prologue/area/roadway/links.json"
   });
 
