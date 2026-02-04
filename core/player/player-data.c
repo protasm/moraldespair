@@ -300,6 +300,26 @@ int query_last_played() {
   return player_data["last_played"];
 }
 
+int query_is_wizard() {
+  mapping player_data;
+  int is_wizard;
+
+  player_data = load_player_data();
+
+  if (!mapp(player_data))
+    return 0;
+
+  is_wizard = player_data["is_wizard"];
+
+  if (!intp(is_wizard))
+    return 0;
+
+  if (is_wizard == 1)
+    return 1;
+
+  return 0;
+}
+
 int set_last_played(int last_played) {
   mapping player_data;
 
