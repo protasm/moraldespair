@@ -18,7 +18,7 @@
  *        "area_prefix": "/chapter/prologue/area/demo/",
  *        "links": [
  *          {
- *            "dirs": { "cell": "east", "guardroom": "west" }
+ *            "link": { "cell": "east", "guardroom": "west" }
  *          }
  *        ]
  *      }
@@ -220,7 +220,7 @@ void index_pair_for_room(string room, string key) {
  *   "gate"      : gateObjOrId  (recommended: id string)
  *   "gates"     : ({ gateObjOrId, ... })   (legacy; first entry used)
  *   "one_way"   : ([ "from": <endpoint>, "to": <endpoint> ])  (optional)
- *   "dirs"      : ([ endpointAbs : "east", endpointAbs : "west" ]) (optional)
+ *   "link"      : ([ endpointAbs : "east", endpointAbs : "west" ]) (optional)
  *   other Link-specific config
  *
  * Once defined, cannot be redefined.
@@ -252,10 +252,10 @@ int define_link(string env_a, string env_b, mapping definition) {
   if (!mapp(definition)) definition = ([]);
 
   /* Normalize dirs mapping keys if present (must be absolute) */
-  if (mapp(definition["dirs"])) {
+  if (mapp(definition["link"])) {
     dirs = ([ ]);
 
-    foreach (mixed k, mixed v in definition["dirs"]) {
+    foreach (mixed k, mixed v in definition["link"]) {
       if (!stringp(k) || !stringp(v)) continue;
 
       if (_trim(v) == "") continue;
@@ -263,7 +263,7 @@ int define_link(string env_a, string env_b, mapping definition) {
       dirs[ normalize_endpoint(k) ] = _trim(v);
     }
 
-    definition["dirs"] = dirs;
+    definition["link"] = dirs;
   }
 
   /* Normalize appearance mapping keys if present */
@@ -284,10 +284,10 @@ int define_link(string env_a, string env_b, mapping definition) {
   }
 
   /* Direction label collisions are hard errors (per endpoint) */
-  if (mapp(definition["dirs"])) {
+  if (mapp(definition["link"])) {
     mapping claims;
 
-    foreach (mixed k, mixed v in definition["dirs"]) {
+    foreach (mixed k, mixed v in definition["link"]) {
       string endpoint, label, existing_key;
       mapping existing_def;
       string existing_ref;
@@ -342,10 +342,10 @@ int define_link(string env_a, string env_b, mapping definition) {
   index_pair_for_room(b, key);
 
   /* Record direction label claims once accepted */
-  if (mapp(definition["dirs"])) {
+  if (mapp(definition["link"])) {
     mapping claims;
 
-    foreach (mixed k, mixed v in definition["dirs"]) {
+    foreach (mixed k, mixed v in definition["link"]) {
       string endpoint, label;
 
       if (!stringp(k) || !stringp(v))
@@ -446,7 +446,7 @@ int load_json(string file) {
     }
 
     rooms = def["rooms"];
-    dirs_in = def["dirs"];
+    dirs_in = def["link"];
     appearances_in = def["appearances"];
     dir_keys = 0;
     a_ref = "";
@@ -522,7 +522,7 @@ int load_json(string file) {
     /* Build definition mapping for define_link */
     /* Keep original def but normalize pieces we care about */
     if (mapp(dirs_abs))
-      def["dirs"] = dirs_abs;
+      def["link"] = dirs_abs;
 
     if (mapp(appearances_abs))
       def["appearances"] = appearances_abs;
@@ -614,12 +614,12 @@ object _instantiate_link(string a, string b, mapping def) {
     }
   }
 
-  /* Pass through "dirs" if the Link cares (optional) */
-  if (mapp(def) && mapp(def["dirs"])) {
+  /* Pass through "link" if the Link cares (optional) */
+  if (mapp(def) && mapp(def["link"])) {
     if (function_exists("set_dirs", link))
-      link->set_dirs(def["dirs"]);
+      link->set_dirs(def["link"]);
     else if (function_exists("set_meta", link))
-      link->set_meta("dirs", def["dirs"]);
+      link->set_meta("link", def["link"]);
   }
 
   if (mapp(def) && stringp(def["appearance"]) && _trim(def["appearance"]) != "") {
@@ -786,7 +786,7 @@ mapping links_by_direction_for_room(string room) {
     if (objectp(link) && function_exists("query_dirs", link))
       dirs = link->query_dirs();
     else if (objectp(link) && function_exists("query_meta", link))
-      dirs = link->query_meta("dirs");
+      dirs = link->query_meta("link");
 
     if (!mapp(dirs)) continue;
 

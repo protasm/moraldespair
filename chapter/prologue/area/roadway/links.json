@@ -2,491 +2,427 @@
   "area_prefix": "/chapter/prologue/area/roadway",
   "links": [
     {
-      "id": "room1_entrance",
-      "dirs": {
+      "link": {
         "room1": "west",
         "/chapter/prologue/area/sunken/entrance": "east"
       }
     },
     {
-      "id": "room1_room2",
-      "dirs": {
+      "link": {
         "room1": "east",
         "room2": "west"
       }
     },
     {
-      "id": "room2_room3",
-      "dirs": {
+      "link": {
         "room2": "east",
         "room3": "west"
       }
     },
     {
-      "id": "room3_room4",
-      "dirs": {
+      "link": {
         "room3": "east",
         "room4": "west"
       }
     },
     {
-      "id": "room4_room5",
-      "dirs": {
+      "link": {
         "room4": "east",
         "room5": "west"
       }
     },
     {
-      "id": "room5_room6",
-      "dirs": {
+      "link": {
         "room5": "east",
         "room6": "west"
       }
     },
     {
-      "id": "room6_room7",
-      "dirs": {
+      "link": {
         "room6": "east",
         "room7": "west"
       }
     },
     {
-      "id": "room7_room8",
-      "dirs": {
+      "link": {
         "room7": "east",
         "room8": "west"
       }
     },
     {
-      "id": "room8_room9",
-      "dirs": {
+      "link": {
         "room8": "east",
         "room9": "west"
       }
     },
     {
-      "id": "room9_room10",
-      "dirs": {
+      "link": {
         "room9": "east",
         "room10": "west"
       }
     },
     {
-      "id": "room10_room11",
-      "dirs": {
+      "link": {
         "room10": "east",
         "room11": "west"
       }
     },
     {
-      "id": "room11_room12",
-      "dirs": {
+      "link": {
         "room11": "east",
         "room12": "west"
       }
     },
     {
-      "id": "room12_room13",
-      "dirs": {
+      "link": {
         "room12": "east",
         "room13": "west"
       }
     },
     {
-      "id": "room13_entrance",
-      "dirs": {
+      "link": {
         "room13": "east",
         "/chapter/prologue/area/ruined/room/entrance": "west"
       }
     },
     {
-      "id": "room16_entrance",
-      "dirs": {
+      "link": {
         "room16": "west",
         "/chapter/prologue/area/ruined/room/entrance": "east"
       }
     },
     {
-      "id": "room16_room17",
-      "dirs": {
+      "link": {
         "room16": "east",
         "room17": "west"
       }
     },
     {
-      "id": "room17_room18",
-      "dirs": {
+      "link": {
         "room17": "east",
         "room18": "west"
       }
     },
     {
-      "id": "room18_room19",
-      "dirs": {
+      "link": {
         "room18": "east",
         "room19": "west"
       }
     },
     {
-      "id": "room19_room20",
-      "dirs": {
+      "link": {
         "room19": "east",
         "room20": "west"
       }
     },
     {
-      "id": "room20_room21",
-      "dirs": {
+      "link": {
         "room20": "east",
         "room21": "west"
       }
     },
     {
-      "id": "room21_room22",
-      "dirs": {
+      "link": {
         "room21": "east",
         "room22": "west"
       }
     },
     {
-      "id": "room22_room23",
-      "dirs": {
+      "link": {
         "room22": "east",
         "room23": "west"
       }
     },
     {
-      "id": "room23_room24",
-      "dirs": {
+      "link": {
         "room23": "east",
         "room24": "west"
       }
     },
     {
-      "id": "room24_room25",
-      "dirs": {
+      "link": {
         "room24": "east",
         "room25": "west"
       }
     },
     {
-      "id": "room25_room26",
-      "dirs": {
+      "link": {
         "room25": "east",
         "room26": "west"
       }
     },
     {
-      "id": "room26_room27",
-      "dirs": {
+      "link": {
         "room26": "east",
         "room27": "west"
       }
     },
     {
-      "id": "room27_room28",
-      "dirs": {
+      "link": {
         "room27": "east",
         "room28": "west"
       }
     },
     {
-      "id": "room28_room56",
-      "dirs": {
+      "link": {
         "room28": "east",
         "room56": "west"
       }
     },
     {
-      "id": "room30_entrance",
-      "dirs": {
+      "link": {
         "room30": "south",
         "/chapter/prologue/area/ruined/room/entrance": "north"
       }
     },
     {
-      "id": "room30_room31",
-      "dirs": {
+      "link": {
         "room30": "north",
         "room31": "south"
       }
     },
     {
-      "id": "room31_room32",
-      "dirs": {
+      "link": {
         "room31": "north",
         "room32": "south"
       }
     },
     {
-      "id": "room32_room33",
-      "dirs": {
+      "link": {
         "room32": "north",
         "room33": "south"
       }
     },
     {
-      "id": "room33_room34",
-      "dirs": {
+      "link": {
         "room33": "north",
         "room34": "south"
       }
     },
     {
-      "id": "room34_room35",
-      "dirs": {
+      "link": {
         "room34": "north",
         "room35": "south"
       }
     },
     {
-      "id": "room35_room36",
-      "dirs": {
+      "link": {
         "room35": "north",
         "room36": "south"
       }
     },
     {
-      "id": "room36_room37",
-      "dirs": {
+      "link": {
         "room36": "north",
         "room37": "south"
       }
     },
     {
-      "id": "room37_room38",
-      "dirs": {
+      "link": {
         "room37": "north",
         "room38": "south"
       }
     },
     {
-      "id": "room38_room39",
-      "dirs": {
+      "link": {
         "room38": "north",
         "room39": "south"
       }
     },
     {
-      "id": "room39_room40",
-      "dirs": {
+      "link": {
         "room39": "north",
         "room40": "south"
       }
     },
     {
-      "id": "room40_room41",
-      "dirs": {
+      "link": {
         "room40": "north",
         "room41": "south"
       }
     },
     {
-      "id": "room41_room42",
-      "dirs": {
+      "link": {
         "room41": "north",
         "room42": "south"
       }
     },
     {
-      "id": "room42_room62",
-      "dirs": {
+      "link": {
         "room42": "north",
         "room62": "south"
       }
     },
     {
-      "id": "room43_entrance",
-      "dirs": {
+      "link": {
         "room43": "north",
         "/chapter/prologue/area/ruined/room/entrance": "south"
       }
     },
     {
-      "id": "room43_room44",
-      "dirs": {
+      "link": {
         "room43": "south",
         "room44": "north"
       }
     },
     {
-      "id": "room44_room45",
-      "dirs": {
+      "link": {
         "room44": "south",
         "room45": "north"
       }
     },
     {
-      "id": "room45_room46",
-      "dirs": {
+      "link": {
         "room45": "south",
         "room46": "north"
       }
     },
     {
-      "id": "room46_room47",
-      "dirs": {
+      "link": {
         "room46": "south",
         "room47": "north"
       }
     },
     {
-      "id": "room47_room48",
-      "dirs": {
+      "link": {
         "room47": "south",
         "room48": "north"
       }
     },
     {
-      "id": "room48_room49",
-      "dirs": {
+      "link": {
         "room48": "south",
         "room49": "north"
       }
     },
     {
-      "id": "room49_room50",
-      "dirs": {
+      "link": {
         "room49": "south",
         "room50": "north"
       }
     },
     {
-      "id": "room50_room51",
-      "dirs": {
+      "link": {
         "room50": "south",
         "room51": "north"
       }
     },
     {
-      "id": "room51_room52",
-      "dirs": {
+      "link": {
         "room51": "south",
         "room52": "north"
       }
     },
     {
-      "id": "room52_room53",
-      "dirs": {
+      "link": {
         "room52": "south",
         "room53": "north"
       }
     },
     {
-      "id": "room53_room54",
-      "dirs": {
+      "link": {
         "room53": "south",
         "room54": "north"
       }
     },
     {
-      "id": "room54_room55",
-      "dirs": {
+      "link": {
         "room54": "south",
         "room55": "north"
       }
     },
     {
-      "id": "room55_room69",
-      "dirs": {
+      "link": {
         "room55": "south",
         "room69": "north"
       }
     },
     {
-      "id": "room56_room57",
-      "dirs": {
+      "link": {
         "room56": "east",
         "room57": "west"
       }
     },
     {
-      "id": "room57_room58",
-      "dirs": {
+      "link": {
         "room57": "east",
         "room58": "west"
       }
     },
     {
-      "id": "room58_room59",
-      "dirs": {
+      "link": {
         "room58": "east",
         "room59": "west"
       }
     },
     {
-      "id": "room59_room60",
-      "dirs": {
+      "link": {
         "room59": "east",
         "room60": "west"
       }
     },
     {
-      "id": "room60_room61",
-      "dirs": {
+      "link": {
         "room60": "east",
         "room61": "west"
       }
     },
     {
-      "id": "room61_entrance",
-      "dirs": {
+      "link": {
         "room61": "east",
         "/chapter/prologue/area/silent/entrance": "west"
       }
     },
     {
-      "id": "room62_room63",
-      "dirs": {
+      "link": {
         "room62": "north",
         "room63": "south"
       }
     },
     {
-      "id": "room63_room64",
-      "dirs": {
+      "link": {
         "room63": "north",
         "room64": "south"
       }
     },
     {
-      "id": "room64_room65",
-      "dirs": {
+      "link": {
         "room64": "north",
         "room65": "south"
       }
     },
     {
-      "id": "room65_room66",
-      "dirs": {
+      "link": {
         "room65": "north",
         "room66": "south"
       }
     },
     {
-      "id": "room66_room67",
-      "dirs": {
+      "link": {
         "room66": "north",
         "room67": "south"
       }
     },
     {
-      "id": "room67_room68",
-      "dirs": {
+      "link": {
         "room67": "north",
         "room68": "south"
       }
     },
     {
-      "id": "room69_room70",
-      "dirs": {
+      "link": {
+        "room68": "north",
+        "/chapter/prologue/area/refuge/entrance": "south"
+      }
+    },
+    {
+      "link": {
         "room69": "south",
         "room70": "north"
       }
     },
     {
-      "id": "room70_room71",
-      "dirs": {
+      "link": {
         "room70": "south",
         "room71": "north"
       }
