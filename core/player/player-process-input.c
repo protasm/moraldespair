@@ -40,6 +40,19 @@ string process_input(string raw) {
       return raw;
   }
 
+  if (wizardp(this_object())) {
+    command_path = "/command/wizard/" + verb;
+
+    if (file_size(command_path + ".c") >= 0) {
+      command = load_object(command_path);
+
+      if (command->main(arg))
+        return "";
+      else
+        return raw;
+    }
+  }
+
   // Fall back to chapter-specific actions if core commands miss.
   command_path = "/chapter/prologue/action/" + verb;
 
