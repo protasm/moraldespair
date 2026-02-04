@@ -7,11 +7,12 @@ void create() {
   long_desc =
     "A side chamber sits empty except for scattered rubble. The plaster has peeled\n"
     "away in long, curling strips.\n";
+  /*
   dest_dir = ([
     "up" : "/chapter/prologue/area/refuge/room1158",
     "down" : "/chapter/prologue/area/refuge/room1156",
     "west" : "/chapter/prologue/area/refuge/room1154",
   ]);
-
-  set_light(1);
+  */
+set_light(1);
 }
