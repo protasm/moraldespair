@@ -18,7 +18,6 @@
  *        "area_prefix": "/chapter/prologue/area/demo/",
  *        "links": [
  *          {
- *            "id": "cell_guardroom_basic",
  *            "dirs": { "cell": "east", "guardroom": "west" }
  *          }
  *        ]
@@ -35,7 +34,6 @@
 
 mapping _links;            /* pair_key -> Link object */
 mapping _definitions;      /* pair_key -> definition mapping (immutable) */
-mapping _pair_by_id;       /* link_id  -> pair_key */
 mapping _links_by_room;    /* room_abs -> ({ pair_key, ... }) */
 mapping _dir_claims;       /* room_abs -> ([ dir_label : pair_key ]) */
 
@@ -47,7 +45,6 @@ void create() {
 
   _links         = ([]);
   _definitions   = ([]);
-  _pair_by_id    = ([]);
   _links_by_room = ([]);
   _dir_claims    = ([]);
 
@@ -219,7 +216,6 @@ void index_pair_for_room(string room, string key) {
  * Define a link by endpoints (absolute).
  *
  * definition may contain:
- *   "id"        : string (optional but recommended)
  *   "type"      : string (path to link prefab/class, default /core/link)
  *   "gate"      : gateObjOrId  (recommended: id string)
  *   "gates"     : ({ gateObjOrId, ... })   (legacy; first entry used)
@@ -230,7 +226,7 @@ void index_pair_for_room(string room, string key) {
  * Once defined, cannot be redefined.
  */
 int define_link(string env_a, string env_b, mapping definition) {
-  string a, b, key, id, source;
+  string a, b, key, source;
   mapping dirs;
 
   a = normalize_endpoint(env_a);
@@ -254,30 +250,6 @@ int define_link(string env_a, string env_b, mapping definition) {
   }
 
   if (!mapp(definition)) definition = ([]);
-
-  /* Normalize / validate link id uniqueness (if provided) */
-  id = definition["id"];
-
-  if (stringp(id)) {
-    id = _trim(id);
-
-    if (id != "") {
-      if (_pair_by_id[id]) {
-        write(
-          "LINK_D: Duplicate link id '" + id + "'.\n" +
-          "  First: " +
-          _format_definition_ref(_pair_by_id[id], _definitions[_pair_by_id[id]]) +
-          "\n" +
-          "  Duplicate from " + source + "\n"
-        );
-
-	return 0;
-      }
-
-      _pair_by_id[id] = key;
-      definition["id"] = id;
-    }
-  }
 
   /* Normalize dirs mapping keys if present (must be absolute) */
   if (mapp(definition["dirs"])) {
@@ -398,19 +370,6 @@ int define_link(string env_a, string env_b, mapping definition) {
   return 1;
 }
 
-/*
- * Convenience: define link using an explicit id and definition.
- * (Still immutable; endpoints are authoritative for uniqueness.)
- */
-int define_link_id(string id, string env_a, string env_b, mapping definition) {
-  if (!mapp(definition)) definition = ([]);
-
-  if (stringp(id) && _trim(id) != "")
-    definition["id"] = _trim(id);
-
-  return define_link(env_a, env_b, definition);
-}
-
 /* ------------------------------------------------------------ */
 /* JSON loading (area-scoped)
  * ------------------------------------------------------------ */
@@ -423,7 +382,6 @@ int define_link_id(string id, string env_a, string env_b, mapping definition) {
  *   links       : array of link objects
  *
  * Each link object may contain:
- *   id    : string (recommended)
  *   rooms : [a, b] (optional; inferred from dirs when omitted)
  *   dirs  : { a: "east", b: "west" } (required for inference)
  *   type, gate, one_way, ... (optional)
@@ -678,14 +636,6 @@ object _instantiate_link(string a, string b, mapping def) {
       link->set_meta("appearances", def["appearances"]);
   }
 
-  /* Pass link id if present */
-  if (mapp(def) && stringp(def["id"]) && _trim(def["id"]) != "") {
-    if (function_exists("set_id", link))
-      link->set_id(_trim(def["id"]));
-    else if (function_exists("set_meta", link))
-      link->set_meta("id", _trim(def["id"]));
-  }
-
   return link;
 }
 
@@ -725,29 +675,6 @@ object get_link(string env_a, string env_b) {
   _links[key] = link;
 
   return link;
-}
-
-/* Get a link by its ID (instantiates if needed) */
-object get_link_by_id(string id) {
-  string key;
-  string *eps;
-
-  id = _trim(id);
-
-  if (id == "") return 0;
-
-  key = _pair_by_id[id];
-
-  if (!stringp(key) || key == "") return 0;
-
-  /* already instantiated? */
-  if (objectp(_links[key])) return _links[key];
-
-  eps = endpoints_from_key(key);
-
-  if (sizeof(eps) != 2) return 0;
-
-  return get_link(eps[0], eps[1]);
 }
 
 /*
@@ -885,10 +812,6 @@ string *instantiated_link_pairs() {
   return keys(_links);
 }
 
-string *defined_link_ids() {
-  return keys(_pair_by_id);
-}
-
 mapping query_definition(string env_a, string env_b) {
   string a, b, key;
 
@@ -898,20 +821,6 @@ mapping query_definition(string env_a, string env_b) {
   if (a == "" || b == "") return 0;
 
   key = pair_key(a, b);
-
-  return _definitions[key];
-}
-
-mapping query_definition_by_id(string id) {
-  string key;
-
-  id = _trim(id);
-
-  if (id == "") return 0;
-
-  key = _pair_by_id[id];
-
-  if (!stringp(key) || key == "") return 0;
 
   return _definitions[key];
 }
