@@ -7,9 +7,10 @@ void create() {
   long_desc =
     "An unfinished structure lies open to the weather, its walls buckled. Bundles\n"
     "of warped timber rot along the edges.\n";
+  /*
   dest_dir = ([
     "south" : "/chapter/prologue/area/refuge/room276",
   ]);
-
-  set_light(1);
+  */
+set_light(1);
 }

@@ -7,11 +7,12 @@ void create() {
   long_desc =
     "Two streets intersect around a scatter of broken paving. A split wagon wheel\n"
     "rests in the gutter.\n";
+  /*
   dest_dir = ([
     "west" : "/chapter/prologue/area/refuge/room259",
     "east" : "/chapter/prologue/area/refuge/room281",
     "south" : "/chapter/prologue/area/refuge/room257",
   ]);
-
-  set_light(1);
+  */
+set_light(1);
 }
