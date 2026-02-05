@@ -225,7 +225,7 @@ void handle_username(string input) {
 
   if (ACCOUNT_D->account_exists(username)) {
     pending_username = username;
-    pending_display_name = ACCOUNT_D->query_display_name(username);
+    pending_display_name = ACCOUNT_D->display_name(username);
 
     prompt_existing_password();
 
@@ -257,7 +257,7 @@ void handle_email(string input) {
   /* TODO
   string existing;
 
-  existing = ACCOUNT_D->query_username_by_email(email);
+  existing = ACCOUNT_D->username_by_email(email);
 
   if (existing != "") {
     pending_existing_username = existing;
@@ -287,7 +287,7 @@ void handle_existing_email(string input) {
 
   if (response == "y" || response == "yes") {
     pending_username = pending_existing_username;
-    pending_display_name = ACCOUNT_D->query_display_name(pending_username);
+    pending_display_name = ACCOUNT_D->display_name(pending_username);
 
     prompt_existing_password();
 
@@ -478,7 +478,7 @@ void handle_password_existing(string input) {
   if (!stringp(input))
     input = "";
 
-  password_hash = ACCOUNT_D->query_password_hash(pending_username);
+  password_hash = ACCOUNT_D->password_hash(pending_username);
 
   if (password_hash == "") {
     write("Password incorrect.  Try again.\n");
@@ -512,7 +512,7 @@ void handle_player_choice(string input) {
     input = "";
 
   choice = normalize_value(input);
-  players = ACCOUNT_D->query_players(pending_username);
+  players = ACCOUNT_D->players(pending_username);
 
   for (i = 0; i < sizeof(players); i++)
     if (normalize_value(players[i]) == choice) {
@@ -531,7 +531,7 @@ void handle_player_choice(string input) {
 void prompt_player_selection() {
   string *players;
 
-  players = ACCOUNT_D->query_players(pending_username);
+  players = ACCOUNT_D->players(pending_username);
 
   if (sizeof(players) == 0) {
     prompt_player();
@@ -563,7 +563,7 @@ void start_session(string player_name) {
   player->set_account(account);
   player->set_name(player_name);
 
-  brief = player->query_brief();
+  brief = player->brief();
   player->set_brief(brief);
 
   ACCOUNT_D->record_player_login(pending_username, player_name);
@@ -575,6 +575,7 @@ void start_session(string player_name) {
   cat(MOTD_FILE, 1, 1);
 
   start_room = CHAPTER_D->resolve_player_start_room(player);
+
   player->move(start_room);
   player->show_location(1, 1);
 

@@ -17,8 +17,8 @@ int main(string arg) {
 
   active = this_player();
 
-  if (objectp(active) && function_exists("query_player", active))
-    player = active->query_player();
+  if (objectp(active) && function_exists("player", active))
+    player = active->player();
   else
     player = active;
 
@@ -31,7 +31,7 @@ int main(string arg) {
   email = trim(arg);
 
   if (email == "") {
-    email = player->query_account_email();
+    email = player->account_email();
 
     if (email == "")
       write("No email is set for this account.\n");

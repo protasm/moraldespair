@@ -8,6 +8,14 @@ void create() {
 
   enable_commands();
   set_heart_beat(1);
+
+  if (is_wizard()) {
+    write("Enabling wizard privileges...");
+
+    enable_wizard();
+
+    write(" done!\n");
+  }
 }
 
 void heart_beat() {

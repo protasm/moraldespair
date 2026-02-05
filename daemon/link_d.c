@@ -49,16 +49,18 @@ void create() {
   _dir_claims    = ([]);
 
   link_files = ({
+    "/chapter/prologue/area/roadway/links.json",
+    "/chapter/prologue/area/refuge/links.json",
     "/chapter/prologue/area/ruined/links.json",
     "/chapter/prologue/area/silent/links.json",
     "/chapter/prologue/area/sunken/links.json",
-    "/chapter/prologue/area/roadway/links.json",
   });
 
   i = 0;
 
   while (i < sizeof(link_files)) {
     load_json(link_files[i]);
+
     i += 1;
   }
 }
