@@ -18,6 +18,20 @@ int is_living() {
   return 1;
 }
 
+void check_wizard() {
+  int is_wizard;
+
+  is_wizard = query_is_wizard();
+
+  if (is_wizard) {
+    write("Enabling wizard commands...");
+
+    enable_wizard();
+
+    write(" done!\n");
+  }
+}
+
 string abbreviate_exit(string direction) {
   mapping abbreviations;
   string abbreviated;

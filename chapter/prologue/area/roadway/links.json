@@ -426,6 +426,12 @@
         "room70": "south",
         "room71": "north"
       }
+    },
+    {
+      "link": {
+        "room71": "south",
+        "/chapter/prologue/area/dead/entrance": "north"
+      }
     }
   ]
 }

@@ -552,7 +552,7 @@ void prompt_player_selection() {
 
 void start_session(string player_name) {
   object account, player;
-  int brief, is_wizard;
+  int brief;
   string start_room;
 
   account = new(ACCOUNT_OB);
@@ -566,14 +566,11 @@ void start_session(string player_name) {
   brief = player->query_brief();
   player->set_brief(brief);
 
-  is_wizard = player->query_is_wizard();
-
-  if (is_wizard == 1)
-    enable_wizard(player);
-
   ACCOUNT_D->record_player_login(pending_username, player_name);
 
   exec(player, this_object());
+
+  player->check_wizard();
 
   cat(MOTD_FILE, 1, 1);
 
