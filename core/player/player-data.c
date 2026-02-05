@@ -65,7 +65,7 @@ int save_player_data(mapping player_data) {
   return write_file(path, raw);
 }
 
-object query_player() {
+object player() {
   return player_object;
 }
 
@@ -75,7 +75,7 @@ void set_player(object player) {
   return;
 }
 
-object query_account() {
+object account() {
   return account_object;
 }
 
@@ -85,7 +85,7 @@ void set_account(object new_account) {
   return;
 }
 
-string query_name() {
+string name() {
   return player_name;
 }
 
@@ -95,7 +95,7 @@ void set_name(string new_name) {
   return;
 }
 
-string query_display_name() {
+string display_name() {
   mapping player_data;
 
   player_data = load_player_data();
@@ -106,7 +106,7 @@ string query_display_name() {
   return player_data["display_name"];
 }
 
-string query_current_chapter() {
+string current_chapter() {
   mapping player_data;
 
   player_data = load_player_data();
@@ -142,7 +142,7 @@ int set_current_chapter(string chapter_id) {
   return save_player_data(player_data);
 }
 
-string *query_unlocked_chapters() {
+string *unlocked_chapters() {
   mapping player_data;
   string *unlocked;
 
@@ -240,7 +240,7 @@ int set_display_name(string new_display_name) {
   return save_player_data(player_data);
 }
 
-int query_brief() {
+int brief() {
   mapping player_data;
 
   player_data = load_player_data();
@@ -289,7 +289,7 @@ int toggle_brief() {
   return player_data["brief"];
 }
 
-int query_last_played() {
+int last_played() {
   mapping player_data;
 
   player_data = load_player_data();
@@ -300,7 +300,7 @@ int query_last_played() {
   return player_data["last_played"];
 }
 
-int query_is_wizard() {
+int is_wizard() {
   mapping player_data;
   int is_wizard;
 
@@ -311,10 +311,7 @@ int query_is_wizard() {
 
   is_wizard = player_data["is_wizard"];
 
-  if (!intp(is_wizard))
-    return 0;
-
-  if (is_wizard == 1)
+  if (intp(is_wizard) && is_wizard == 1)
     return 1;
 
   return 0;
