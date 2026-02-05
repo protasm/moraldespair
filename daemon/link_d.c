@@ -49,6 +49,7 @@ void create() {
   _dir_claims    = ([]);
 
   link_files = ({
+    "/chapter/prologue/area/dead/links.json",
     "/chapter/prologue/area/ruined/links.json",
     "/chapter/prologue/area/silent/links.json",
     "/chapter/prologue/area/sunken/links.json",
