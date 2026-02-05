@@ -85,7 +85,7 @@ int chapter_exists(string id) {
   return 1;
 }
 
-string query_latest_chapter() {
+string latest_chapter() {
   if (!stringp(latest_chapter_id))
     return "";
 
@@ -103,7 +103,7 @@ string get_chapter_root(string id) {
   if (!objectp(chapter))
     return "";
 
-  return chapter->query_root();
+  return chapter->root();
 }
 
 string get_start_room(string id) {
@@ -117,7 +117,7 @@ string get_start_room(string id) {
   if (!objectp(chapter))
     return "";
 
-  return chapter->query_start_room();
+  return chapter->start_room();
 }
 
 int can_player_access(object player, string id) {
@@ -137,15 +137,15 @@ int can_player_access(object player, string id) {
   if (!objectp(player))
     return 0;
 
-  if (function_exists("query_unlocked_chapters", player)) {
-    unlocked = player->query_unlocked_chapters();
+  if (function_exists("unlocked_chapters", player)) {
+    unlocked = player->unlocked_chapters();
 
     if (member_array(normalized, unlocked) != -1)
       return 1;
   }
 
-  if (function_exists("query_current_chapter", player))
-    if (player->query_current_chapter() == normalized)
+  if (function_exists("current_chapter", player))
+    if (player->current_chapter() == normalized)
       return 1;
 
   return 0;
@@ -160,8 +160,8 @@ string resolve_player_chapter(object player) {
   if (!objectp(player))
     return resolved;
 
-  if (function_exists("query_current_chapter", player))
-    current = player->query_current_chapter();
+  if (function_exists("current_chapter", player))
+    current = player->current_chapter();
   else
     current = "";
 

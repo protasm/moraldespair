@@ -1,0 +1,24 @@
+./doc/CHAPTER_SYSTEM.md:updated = player->set_current_chapter(desired);
+./doc/CHAPTER_SYSTEM.md:player->move(start_room);
+./doc/CHAPTER_SYSTEM.md:player->show_location();
+./doc/CHAPTER_SYSTEM.md:  player->set_current_chapter(requested);
+./daemon/chapter_d.c:    unlocked = player->query_unlocked_chapters();
+./daemon/chapter_d.c:    if (player->query_current_chapter() == normalized)
+./daemon/chapter_d.c:    current = player->query_current_chapter();
+./daemon/chapter_d.c:      player->set_current_chapter(resolved);
+./core/player/player.c:#include "player-data.c"
+./core/player/player.c:#include "player-process-input.c"
+./core/login/login.c:  player->set_account(account);
+./core/login/login.c:  player->set_name(player_name);
+./core/login/login.c:  brief = player->query_brief();
+./core/login/login.c:  player->set_brief(brief);
+./core/login/login.c:  is_wizard = player->query_is_wizard();
+./core/login/login.c:  player->move(start_room);
+./core/login/login.c:  player->show_location(1, 1);
+./AGENTS.md:- Follow **PROSE.md** when writing or modifying any player-facing text
+./command/brief.c:  enabled = player->toggle_brief();
+./command/look.c:    player->show_location(1, 1);
+./command/wizard/teleport.c:  player->move(room);
+./command/wizard/teleport.c:    player->show_location(1, 1);
+./command/email.c:    email = player->account_email();
+./command/email.c:  saved = player->set_account_email(email);

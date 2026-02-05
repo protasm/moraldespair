@@ -40,6 +40,7 @@ string process_input(string raw) {
       return raw;
   }
 
+  // Look for wizard-only commands next.
   if (wizardp(this_object())) {
     command_path = "/command/wizard/" + verb;
 
