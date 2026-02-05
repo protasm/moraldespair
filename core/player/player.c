@@ -27,7 +27,11 @@ int is_living() {
 }
 
 void check_wizard() {
-  if (query_is_wizard()) {
+  int is_wizard;
+
+  is_wizard = is_wizard();
+
+  if (is_wizard) {
     write("Enabling wizard commands...");
 
     enable_wizard();
