@@ -20,8 +20,7 @@ string endpoint_id_for_room(object room) {
 object try_move_label(object player, string label) {
   object origin, link;
   mapping exits, result;
-  string msg, origin_id;
-  string *dirs;
+  string msg;
   mapping direction_aliases;
   int is_direction;
 
@@ -57,8 +56,7 @@ object try_move_label(object player, string label) {
   if (!objectp(origin))
     return 0;
 
-  origin_id = endpoint_id_for_room(origin);
-  exits = LINK_D->links_by_direction_for_room(origin_id);
+  exits = LINK_D->links_by_direction_for_room(endpoint_id_for_room(origin));
 
   if (!mapp(exits) || !objectp(exits[label])) {
     is_direction = (member_array(label, ({
@@ -78,18 +76,6 @@ object try_move_label(object player, string label) {
 
     if (is_direction)
       write("You can't go " + label + " from here.\n");
-
-    if (mapp(exits))
-      dirs = sort_array(keys(exits), 1);
-    else
-      dirs = ({ });
-
-    if (wizardp(player))
-      write(
-        "[room-debug] move lookup: origin=" + origin_id +
-        " requested=" + label +
-        " available=" + implode(dirs, ", ") + "\n"
-      );
 
     return 0;
   }

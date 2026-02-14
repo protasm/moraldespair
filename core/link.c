@@ -931,11 +931,31 @@ mapping on_enter(object actor, object origin, object destination) {
  */
 object resolve_destination(string destination_id) {
   object env;
+  object virtual_room;
+  string room_id;
+  string room_path;
 
   if (!stringp(destination_id) || destination_id == "")
     return 0;
 
+  room_id = "";
+  room_path = "";
+  virtual_room = 0;
   env = find_object(destination_id);
+
+  if (!objectp(env)) {
+    if (sscanf(destination_id, "/chapter/prologue/std/wilderness_room#%s", room_id) == 1)
+      virtual_room = "/chapter/prologue/std/vmaster"->compile_object(
+        "wilderness_room#" + room_id
+      );
+    else if (sscanf(destination_id, "/chapter/prologue/std/data_room#%s", room_path) == 1)
+      virtual_room = "/chapter/prologue/std/vmaster"->compile_object(
+        "data_room#" + room_path
+      );
+  }
+
+  if (!objectp(env))
+    env = virtual_room;
 
   if (!objectp(env))
     env = load_object(destination_id);
@@ -944,23 +964,8 @@ object resolve_destination(string destination_id) {
 }
 
 void show_resolution_debug(object actor, string text) {
-  object tp;
-
-  if (!objectp(actor))
+  if (!objectp(actor) || !stringp(text))
     return;
-
-  if (!wizardp(actor))
-    return;
-
-  if (!stringp(text) || text == "")
-    return;
-
-  tp = this_player();
-
-  if (objectp(tp) && tp == actor)
-    write("[room-debug] " + text + "\n");
-  else
-    message("info", "[room-debug] " + text + "\n", actor);
 
   return;
 }
