@@ -36,9 +36,9 @@ mapping _links;            /* pair_key -> Link object */
 mapping _definitions;      /* pair_key -> definition mapping (immutable) */
 mapping _links_by_room;    /* room_abs -> ({ pair_key, ... }) */
 mapping _dir_claims;       /* room_abs -> ([ dir_label : pair_key ]) */
-mapping _wilderness_chunk_files;    /* chunk_id -> JSON file path */
-mapping _wilderness_room_chunks;    /* wilderness endpoint -> ({ chunk_id, ... }) */
-mapping _loaded_wilderness_chunks;  /* chunk_id -> 1 */
+
+string pair_key(string a, string b);
+int define_link(string env_a, string env_b, mapping definition);
 
 /* ------------------------------------------------------------ */
 
@@ -50,16 +50,12 @@ void create() {
   _definitions   = ([]);
   _links_by_room = ([]);
   _dir_claims    = ([]);
-  _wilderness_chunk_files = ([]);
-  _wilderness_room_chunks = ([]);
-  _loaded_wilderness_chunks = ([]);
-
   link_files = ({
     "/chapter/prologue/area/dead/links.json",
     "/chapter/prologue/area/roadway/links.json",
-    "/chapter/prologue/area/roadway/wilderness_links.json",
+    "/chapter/prologue/area/wilderness/wilderness_links.json",
     "/chapter/prologue/area/refuge/links.json",
-    "/chapter/prologue/area/ruined/links.json",
+    "/chapter/prologue/area/ruined/ruined_links.json",
     "/chapter/prologue/area/silent/links.json",
     "/chapter/prologue/area/sunken/links.json",
   });
@@ -71,8 +67,7 @@ void create() {
 
     i += 1;
   }
-
-  _load_wilderness_chunk_manifest();
+  load_wilderness_room_links();
 }
 
 /* ------------------------------------------------------------ */
@@ -172,139 +167,193 @@ int _is_wilderness_endpoint(string endpoint) {
   return (strsrch(endpoint, "/chapter/prologue/std/wilderness_room#") == 0);
 }
 
-void _load_wilderness_chunk_manifest() {
-  string raw;
-  mapping data;
-  mapping chunk_files;
-  mapping room_chunks;
+string _opposite_direction(string dir) {
+  dir = _trim(dir);
 
-  if (sizeof(keys(_wilderness_chunk_files)))
-    return;
+  if (dir == "north") return "south";
+  if (dir == "south") return "north";
+  if (dir == "east") return "west";
+  if (dir == "west") return "east";
+  if (dir == "northeast") return "southwest";
+  if (dir == "northwest") return "southeast";
+  if (dir == "southeast") return "northwest";
+  if (dir == "southwest") return "northeast";
+  if (dir == "up") return "down";
+  if (dir == "down") return "up";
 
-  raw = read_json_file("/chapter/prologue/area/roadway/wilderness_chunk_manifest.json");
-
-  if (!stringp(raw))
-    return;
-
-  data = parse_json(raw);
-
-  if (!mapp(data))
-    return;
-
-  chunk_files = data["chunk_files"];
-
-  if (mapp(chunk_files)) {
-    foreach (mixed k, mixed v in chunk_files) {
-      string chunk_id, chunk_file;
-
-      if (!stringp(k) || !stringp(v))
-        continue;
-
-      chunk_id = _trim(k);
-      chunk_file = normalize_endpoint(v);
-
-      if (chunk_id == "" || chunk_file == "")
-        continue;
-
-      _wilderness_chunk_files[chunk_id] = chunk_file;
-    }
-  }
-
-  room_chunks = data["room_chunks"];
-
-  if (mapp(room_chunks)) {
-    foreach (mixed k, mixed v in room_chunks) {
-      string room_endpoint;
-      string *chunk_ids;
-      int i;
-
-      if (!stringp(k) || !pointerp(v))
-        continue;
-
-      room_endpoint = normalize_endpoint(k);
-
-      if (!_is_wilderness_endpoint(room_endpoint))
-        continue;
-
-      chunk_ids = ({ });
-      i = 0;
-
-      while (i < sizeof(v)) {
-        string chunk_id;
-
-        chunk_id = "";
-
-        if (stringp(v[i]))
-          chunk_id = _trim(v[i]);
-
-        if (chunk_id != "" && member_array(chunk_id, chunk_ids) == -1)
-          chunk_ids += ({ chunk_id });
-
-        i += 1;
-      }
-
-      if (sizeof(chunk_ids))
-        _wilderness_room_chunks[room_endpoint] = chunk_ids;
-    }
-  }
+  return "";
 }
 
-void _load_wilderness_chunk(string chunk_id) {
-  string chunk_file;
-  int ok;
+string _wilderness_endpoint_from_id(string room_id) {
+  room_id = _trim(room_id);
 
-  chunk_id = _trim(chunk_id);
+  if (room_id == "")
+    return "";
 
-  if (chunk_id == "")
-    return;
-
-  if (_loaded_wilderness_chunks[chunk_id])
-    return;
-
-  _load_wilderness_chunk_manifest();
-
-  chunk_file = _wilderness_chunk_files[chunk_id];
-
-  if (!stringp(chunk_file) || chunk_file == "")
-    return;
-
-  ok = load_json(chunk_file);
-
-  if (ok)
-    _loaded_wilderness_chunks[chunk_id] = 1;
-  else
-    write("LINK_D: Failed wilderness chunk load: " + chunk_id + " (" + chunk_file + ")\n");
+  return "/chapter/prologue/std/wilderness_room#" + room_id;
 }
 
-void _ensure_wilderness_for_room(string room) {
-  string room_endpoint;
-  string *chunk_ids;
-  int i;
+void load_wilderness_room_links() {
+  string *map_files;
+  string raw, source_file, from_id, to_ref, from_ep, to_ep, pair;
+  string from_dir, opposite_dir;
+  mapping data, room_entry, exits, pair_defs, def, rooms_by_file, room_ids;
+  mixed rooms;
+  int i, j;
 
-  room_endpoint = normalize_endpoint(room);
-
-  if (!_is_wilderness_endpoint(room_endpoint))
-    return;
-
-  _load_wilderness_chunk_manifest();
-
-  chunk_ids = _wilderness_room_chunks[room_endpoint];
-
-  if (!pointerp(chunk_ids))
-    return;
-
+  map_files = ({
+    "/chapter/prologue/area/wilderness/wilderness_nw.json",
+    "/chapter/prologue/area/wilderness/wilderness_sw.json",
+    "/chapter/prologue/area/wilderness/wilderness_ne.json",
+    "/chapter/prologue/area/wilderness/wilderness_se.json"
+  });
+  pair_defs = ([ ]);
+  rooms_by_file = ([ ]);
+  room_ids = ([ ]);
   i = 0;
 
-  while (i < sizeof(chunk_ids)) {
-    _load_wilderness_chunk(chunk_ids[i]);
+  /* Pass 1: parse files and collect all wilderness IDs. */
+  while (i < sizeof(map_files)) {
+    source_file = map_files[i];
+    raw = read_json_file(source_file);
+
+    if (!stringp(raw)) {
+      write("LINK_D: Unable to read wilderness map file: " + source_file + "\n");
+      i += 1;
+
+      continue;
+    }
+
+    data = parse_json(raw);
+
+    if (!mapp(data)) {
+      write("LINK_D: Invalid wilderness JSON in: " + source_file + "\n");
+      i += 1;
+
+      continue;
+    }
+
+    rooms = data["rooms"];
+
+    if (!pointerp(rooms)) {
+      write("LINK_D: Wilderness JSON missing rooms array in: " + source_file + "\n");
+      i += 1;
+
+      continue;
+    }
+    rooms_by_file[source_file] = rooms;
+
+    j = 0;
+
+    while (j < sizeof(rooms)) {
+      room_entry = rooms[j];
+
+      if (mapp(room_entry)) {
+        from_id = room_entry["id"];
+
+        if (stringp(from_id) && _trim(from_id) != "")
+          room_ids[_trim(from_id)] = 1;
+      }
+
+      j += 1;
+    }
 
     i += 1;
   }
-}
 
-void _ensure_wilderness_for_pair(string a, string b) {
-  _ensure_wilderness_for_room(a);
-  _ensure_wilderness_for_room(b);
+  /* Pass 2: build link definitions only for destinations that exist. */
+  i = 0;
+
+  while (i < sizeof(map_files)) {
+    source_file = map_files[i];
+    rooms = rooms_by_file[source_file];
+
+    if (!pointerp(rooms)) {
+      i += 1;
+
+      continue;
+    }
+
+    j = 0;
+
+    while (j < sizeof(rooms)) {
+      room_entry = rooms[j];
+
+      if (mapp(room_entry)) {
+        from_id = room_entry["id"];
+        exits = room_entry["exits"];
+
+        if (stringp(from_id) && mapp(exits)) {
+          from_id = _trim(from_id);
+          from_ep = _wilderness_endpoint_from_id(from_id);
+
+          foreach (mixed k, mixed v in exits) {
+            if (!stringp(k) || !stringp(v))
+              continue;
+
+            from_dir = _trim(k);
+            to_ref = _trim(v);
+
+            if (from_dir == "" || to_ref == "")
+              continue;
+
+            if (to_ref[0] == '/')
+              to_ep = normalize_endpoint(to_ref);
+            else {
+              if (!room_ids[to_ref])
+                continue;
+
+              to_ep = _wilderness_endpoint_from_id(to_ref);
+            }
+
+            if (to_ep == "")
+              continue;
+
+            pair = pair_key(from_ep, to_ep);
+            def = pair_defs[pair];
+
+            if (!mapp(def))
+              def = ([ ]);
+
+            if (!mapp(def["link"]))
+              def["link"] = ([ ]);
+
+            def["link"][from_ep] = from_dir;
+            opposite_dir = _opposite_direction(from_dir);
+
+            if (opposite_dir != "" && !stringp(def["link"][to_ep]))
+              def["link"][to_ep] = opposite_dir;
+
+            if (!stringp(def["source"]) || def["source"] == "")
+              def["source"] = source_file;
+
+            pair_defs[pair] = def;
+          }
+        }
+      }
+
+      j += 1;
+    }
+
+    i += 1;
+  }
+
+  foreach (mixed key, mixed link_def in pair_defs) {
+    string *eps;
+
+    if (!mapp(link_def))
+      continue;
+
+    if (_definitions[key])
+      continue;
+
+    eps = endpoints_from_key(key);
+
+    if (sizeof(eps) != 2)
+      continue;
+
+    define_link(eps[0], eps[1], link_def);
+  }
 }
 
 /* Normalize absolute endpoint path */
@@ -844,8 +893,6 @@ object get_link(string env_a, string env_b) {
 
   if (a == "" || b == "") return 0;
 
-  _ensure_wilderness_for_pair(a, b);
-
   key = pair_key(a, b);
 
   link = _links[key];
@@ -877,8 +924,6 @@ object link(string env_a, string env_b) {
 
   if (a == "" || b == "") return 0;
 
-  _ensure_wilderness_for_pair(a, b);
-
   key = pair_key(a, b);
 
   return _links[key];
@@ -892,8 +937,6 @@ int has_definition(string env_a, string env_b) {
   b = normalize_endpoint(env_b);
 
   if (a == "" || b == "") return 0;
-
-  _ensure_wilderness_for_pair(a, b);
 
   key = pair_key(a, b);
 
@@ -913,8 +956,6 @@ string *defined_pairs_for_room(string room) {
 
   if (room == "") return ({ });
 
-  _ensure_wilderness_for_room(room);
-
   return _links_by_room[room] || ({ });
 }
 
@@ -930,8 +971,6 @@ object *links_for_room(string room) {
   room = normalize_endpoint(room);
 
   if (room == "") return ({ });
-
-  _ensure_wilderness_for_room(room);
 
   keys = _links_by_room[room] || ({ });
   out = ({ });

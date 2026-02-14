@@ -931,23 +931,9 @@ mapping on_enter(object actor, object origin, object destination) {
  */
 object resolve_destination(string destination_id) {
   object env;
-  string room_id;
 
   if (!stringp(destination_id) || destination_id == "")
     return 0;
-
-  if (sscanf(destination_id, "/chapter/prologue/std/wilderness_room#%s", room_id) == 1) {
-    env = find_object(destination_id);
-
-    if (objectp(env))
-      return env;
-
-    env = "/chapter/prologue/std/vmaster"->compile_object(
-      "wilderness_room#" + room_id
-    );
-
-    return env;
-  }
 
   env = find_object(destination_id);
 
@@ -955,6 +941,25 @@ object resolve_destination(string destination_id) {
     env = load_object(destination_id);
 
   return env;
+}
+
+void show_resolution_debug(object actor, string text) {
+  object tp;
+
+  if (!objectp(actor))
+    return;
+
+  if (!stringp(text) || text == "")
+    return;
+
+  tp = this_player();
+
+  if (objectp(tp) && tp == actor)
+    write("[room-debug] " + text + "\n");
+  else
+    message("info", "[room-debug] " + text + "\n", actor);
+
+  return;
 }
 
 string endpoint_id_for_room(object room) {
@@ -992,9 +997,13 @@ string endpoint_id_for_room(object room) {
  */
 mapping traverse(object actor, object origin) {
   string origin_id, destination_id;
+  string resolved_name;
+  string debug_message;
   object destination;
+  object existing_destination;
   mixed destination_error, move_error;
   mapping link_result, gate_result, exit_result, enter_result, enter_hook_result;
+  int custom_exists;
   int moved;
 
   if (!objectp(actor) || !objectp(origin))
@@ -1012,63 +1021,117 @@ mapping traverse(object actor, object origin) {
   /* 1) Link-level traversal rules */
   link_result = check_link(actor, origin_id, destination_id);
 
-  if (!is_allowed_result(link_result))
+  if (!is_allowed_result(link_result)) {
+    debug_message = link_result[LINK_RESULT_MESSAGE];
+
+    if (!stringp(debug_message) || debug_message == "")
+      debug_message = "(none)";
+
+    show_resolution_debug(actor, "deny at check_link: " + debug_message);
     return link_result;
+  }
 
   /* 2) Gate (topology) — no destination loading */
   gate_result = check_gates(actor, origin_id, destination_id);
   gate_result = merge_side_effects(gate_result, link_result);
 
-  if (!is_allowed_result(gate_result))
+  if (!is_allowed_result(gate_result)) {
+    debug_message = gate_result[LINK_RESULT_MESSAGE];
+
+    if (!stringp(debug_message) || debug_message == "")
+      debug_message = "(none)";
+
+    show_resolution_debug(actor, "deny at gate check: " + debug_message);
     return gate_result;
+  }
 
   /* 3) Origin veto (optional, typically actor/room state) */
   exit_result = can_exit(actor, origin);
   exit_result = merge_side_effects(exit_result, gate_result);
 
-  if (!is_allowed_result(exit_result))
+  if (!is_allowed_result(exit_result)) {
+    debug_message = exit_result[LINK_RESULT_MESSAGE];
+
+    if (!stringp(debug_message) || debug_message == "")
+      debug_message = "(none)";
+
+    show_resolution_debug(actor, "deny at origin exit hook: " + debug_message);
     return exit_result;
+  }
 
   /* 4) Lazy-load destination only after gate+exit pass */
+  show_resolution_debug(
+    actor,
+    "resolving destination: from " + origin_id + " to " + destination_id
+  );
+  existing_destination = find_object(destination_id);
+  custom_exists = (file_size(destination_id + ".c") > -1);
+
+  if (objectp(existing_destination))
+    show_resolution_debug(actor, "destination already loaded: " + base_name(existing_destination));
+  else if (custom_exists)
+    show_resolution_debug(actor, "loading custom room object: " + destination_id + ".c");
+  else
+    show_resolution_debug(actor, "custom room not found; attempting virtual room resolution");
+
   destination_error = catch(destination = resolve_destination(destination_id));
-  if (destination_error)
+
+  if (destination_error) {
+    show_resolution_debug(actor, "deny at destination resolve: " + destination_error);
     return deny_result(
       "The way shudders and fails to open.",
       exit_result[LINK_RESULT_COST],
       exit_result[LINK_RESULT_MUTATIONS]
     );
+  }
 
-  if (!objectp(destination))
+  if (!objectp(destination)) {
+    show_resolution_debug(actor, "deny at destination resolve: object not created");
     return deny_result(
       "The way opens into nothing.",
       exit_result[LINK_RESULT_COST],
       exit_result[LINK_RESULT_MUTATIONS]
     );
+  }
+
+  resolved_name = base_name(destination);
+  show_resolution_debug(actor, "resolved destination object: " + resolved_name);
 
   /* 5) Destination veto (pre-entry) */
   enter_result = can_enter(actor, destination);
   enter_result = merge_side_effects(enter_result, exit_result);
 
-  if (!is_allowed_result(enter_result))
+  if (!is_allowed_result(enter_result)) {
+    debug_message = enter_result[LINK_RESULT_MESSAGE];
+
+    if (!stringp(debug_message) || debug_message == "")
+      debug_message = "(none)";
+
+    show_resolution_debug(actor, "deny at destination enter hook: " + debug_message);
     return enter_result;
+  }
 
   /* 6) Move */
   on_exit(actor, origin, destination);
 
   move_error = catch(moved = actor->move(destination));
-  if (move_error)
+  if (move_error) {
+    show_resolution_debug(actor, "deny at actor->move: " + move_error);
     return deny_result(
       "You cannot move that way.",
       enter_result[LINK_RESULT_COST],
       enter_result[LINK_RESULT_MUTATIONS]
     );
+  }
 
-  if (!moved)
+  if (!moved) {
+    show_resolution_debug(actor, "deny at actor->move: move returned false");
     return deny_result(
       "You cannot move that way.",
       enter_result[LINK_RESULT_COST],
       enter_result[LINK_RESULT_MUTATIONS]
     );
+  }
 
   /* 7) Post-entry reaction (room/actor agency) */
   enter_hook_result = on_enter(actor, origin, destination);
