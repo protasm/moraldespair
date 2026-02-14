@@ -84,11 +84,12 @@ object try_move_label(object player, string label) {
     else
       dirs = ({ });
 
-    write(
-      "[room-debug] move lookup: origin=" + origin_id +
-      " requested=" + label +
-      " available=" + implode(dirs, ", ") + "\n"
-    );
+    if (wizardp(player))
+      write(
+        "[room-debug] move lookup: origin=" + origin_id +
+        " requested=" + label +
+        " available=" + implode(dirs, ", ") + "\n"
+      );
 
     return 0;
   }
