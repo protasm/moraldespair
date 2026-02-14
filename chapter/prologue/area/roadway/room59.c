@@ -12,5 +12,4 @@ void create() {
 //     "south":"/room/wilderness_room#AP29",
 //   ]);
 
-  set_light(1);
 }

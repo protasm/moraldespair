@@ -17,8 +17,8 @@ inherit "/core/object";
  * - Orthogonal to spatial outcome; any outcome may include effects/cost.
  */
 
-string endpoint_a;
-string endpoint_b;
+string endpoint_a_id;
+string endpoint_b_id;
 
 /* Optional endpoint-specific direction labels (purely affordance/UI) */
 mapping endpoint_labels; /* endpoint_path -> label string */
@@ -27,7 +27,7 @@ mapping endpoint_appearances; /* endpoint_path -> description */
 string default_appearance;
 
 /* Optional gate between endpoints */
-object gate;
+object link_gate;
 
 /* Optional explicit directionality shortcut (you may later rely purely on gate) */
 mapping allowed_paths; /* origin_id -> dest_id (if present); empty means bidirectional */
@@ -42,14 +42,14 @@ mapping allowed_paths; /* origin_id -> dest_id (if present); empty means bidirec
 void create() {
   ::create();
 
-  endpoint_a = "";
-  endpoint_b = "";
+  endpoint_a_id = "";
+  endpoint_b_id = "";
 
   endpoint_labels = ([]);
   link_meta = ([]);
   endpoint_appearances = ([]);
   default_appearance = "It seems possible to go that way.";
-  gate = 0;
+  link_gate = 0;
 
   /* Default: bidirectional */
   allowed_paths = ([]);
@@ -80,30 +80,30 @@ void set_endpoints(string first, string second) {
   if (!stringp(first) || !stringp(second))
     return;
 
-  if (endpoint_a != "" || endpoint_b != "")
+  if (endpoint_a_id != "" || endpoint_b_id != "")
     return;
 
-  endpoint_a = first;
-  endpoint_b = second;
+  endpoint_a_id = first;
+  endpoint_b_id = second;
 
   /* Default bidirectional unless explicitly constrained */
   allowed_paths = ([
-    endpoint_a : endpoint_b,
-    endpoint_b : endpoint_a
+    endpoint_a_id : endpoint_b_id,
+    endpoint_b_id : endpoint_a_id
   ]);
 }
 
 /*
- * string query_endpoint_a()
+ * string endpoint_a()
  * Return the endpoint A id, or "" if it has not been set.
  */
-string query_endpoint_a() { return endpoint_a; }
+string endpoint_a() { return endpoint_a_id; }
 
 /*
- * string query_endpoint_b()
+ * string endpoint_b()
  * Return the endpoint B id, or "" if it has not been set.
  */
-string query_endpoint_b() { return endpoint_b; }
+string endpoint_b() { return endpoint_b_id; }
 
 /*
  * int is_endpoint(string endpoint)
@@ -113,7 +113,7 @@ int is_endpoint(string endpoint) {
   if (!stringp(endpoint))
     return 0;
 
-  return (endpoint == endpoint_a || endpoint == endpoint_b);
+  return (endpoint == endpoint_a_id || endpoint == endpoint_b_id);
 }
 
 /*
@@ -124,9 +124,9 @@ string other_endpoint(string endpoint) {
   if (!stringp(endpoint))
     return "";
 
-  if (endpoint == endpoint_a) return endpoint_b;
+  if (endpoint == endpoint_a_id) return endpoint_b_id;
 
-  if (endpoint == endpoint_b) return endpoint_a;
+  if (endpoint == endpoint_b_id) return endpoint_a_id;
 
   return "";
 }
@@ -136,9 +136,9 @@ string other_endpoint(string endpoint) {
  * Return the gate-facing side index (0 for A, 1 for B), or -1 if unknown.
  */
 int endpoint_index(string endpoint) {
-  if (endpoint == endpoint_a) return 0;
+  if (endpoint == endpoint_a_id) return 0;
 
-  if (endpoint == endpoint_b) return 1;
+  if (endpoint == endpoint_b_id) return 1;
 
   return -1;
 }
@@ -159,10 +159,10 @@ void set_direction_label(string endpoint, string label) {
 }
 
 /*
- * string query_direction_label(string endpoint)
+ * string direction_label(string endpoint)
  * Return the direction label for an endpoint, or "" when none is set.
  */
-string query_direction_label(string endpoint) {
+string direction_label(string endpoint) {
   if (!stringp(endpoint))
     return "";
 
@@ -192,10 +192,10 @@ void set_dirs(mapping dirs) {
 }
 
 /*
- * mapping query_dirs()
+ * mapping dirs()
  * Return the direction-label mapping, or an empty mapping when unset.
  */
-mapping query_dirs() {
+mapping dirs() {
   if (!mapp(endpoint_labels))
     return ([ ]);
 
@@ -238,7 +238,7 @@ void set_appearances(mapping appearances) {
   endpoint_appearances = normalized;
 }
 
-string query_appearance(string endpoint) {
+string appearance(string endpoint) {
   string description;
 
   description = "";
@@ -252,7 +252,7 @@ string query_appearance(string endpoint) {
   return description;
 }
 
-string query_gate_status_line(string endpoint_id) {
+string gate_status_line(string endpoint_id) {
   int endpoint_idx;
   int side;
   string name;
@@ -263,19 +263,19 @@ string query_gate_status_line(string endpoint_id) {
   if (endpoint_idx < 0)
     return "";
 
-  if (!objectp(gate))
+  if (!objectp(link_gate))
     return "";
 
-  side = gate->side_facing_endpoint(endpoint_idx);
-  name = gate->query_name();
+  side = link_gate->side_facing_endpoint(endpoint_idx);
+  name = link_gate->name();
 
   if (!stringp(name) || name == "")
     name = "gate";
 
   status = "";
 
-  if (function_exists("query_status", gate))
-    status = gate->query_status(side);
+  if (function_exists("status", link_gate))
+    status = link_gate->status(side);
 
   if (stringp(status))
     status = trim(status);
@@ -290,7 +290,7 @@ string describe_from_endpoint(string endpoint_id) {
   string description;
   string gate_line;
 
-  description = query_appearance(endpoint_id);
+  description = appearance(endpoint_id);
 
   if (!stringp(description) || description == "")
     description = default_appearance;
@@ -298,7 +298,7 @@ string describe_from_endpoint(string endpoint_id) {
   if (description[<1] != '\n')
     description += "\n";
 
-  gate_line = query_gate_status_line(endpoint_id);
+  gate_line = gate_status_line(endpoint_id);
 
   if (stringp(gate_line) && gate_line != "")
     description += gate_line;
@@ -321,10 +321,10 @@ void set_meta(string key, mixed value) {
 }
 
 /*
- * mixed query_meta(string key)
+ * mixed meta(string key)
  * Return metadata for the given key, or 0 when missing.
  */
-mixed query_meta(string key) {
+mixed meta(string key) {
   if (!stringp(key) || key == "")
     return 0;
 
@@ -343,12 +343,12 @@ mixed query_meta(string key) {
  * Allow travel in both directions once endpoints are set.
  */
 void set_bidirectional() {
-  if (endpoint_a == "" || endpoint_b == "")
+  if (endpoint_a_id == "" || endpoint_b_id == "")
     return;
 
   allowed_paths = ([
-    endpoint_a : endpoint_b,
-    endpoint_b : endpoint_a
+    endpoint_a_id : endpoint_b_id,
+    endpoint_b_id : endpoint_a_id
   ]);
 }
 
@@ -387,40 +387,40 @@ void add_gate(object gate_obj) {
   if (!objectp(gate_obj))
     return;
 
-  gate = gate_obj;
+  link_gate = gate_obj;
 
   /* Optional: if your gate objects want a backref, you can add set_link() later */
-  if (function_exists("set_link", gate))
-    gate->set_link(this_object());
+  if (function_exists("set_link", link_gate))
+    link_gate->set_link(this_object());
 }
 
 /*
- * object query_gate()
+ * object gate()
  * Return the gate object, or 0 when none exists.
  */
-object query_gate() {
-  if (!objectp(gate))
+object gate() {
+  if (!objectp(link_gate))
     return 0;
 
-  return gate;
+  return link_gate;
 }
 
 /*
- * object *query_gates()
+ * object *gates()
  * Return a single-element array for compatibility, or empty when none exist.
  */
-object *query_gates() {
-  if (!objectp(gate))
+object *gates() {
+  if (!objectp(link_gate))
     return ({ });
 
-  return ({ gate });
+  return ({ link_gate });
 }
 
 /* ------------------------------------------------------------ */
 /* Gate actions
  * ------------------------------------------------------------ */
 
-string *query_link_verbs(object actor, string endpoint_id) {
+string *link_verbs(object actor, string endpoint_id) {
   return ({ });
 }
 
@@ -449,7 +449,7 @@ mapping _build_action_groups(object actor, string endpoint_id) {
   if (endpoint_idx < 0)
     return groups;
 
-  verbs = query_link_verbs(actor, endpoint_id);
+  verbs = link_verbs(actor, endpoint_id);
 
   if (pointerp(verbs)) {
     for (i = 0; i < sizeof(verbs); i++) {
@@ -474,17 +474,17 @@ mapping _build_action_groups(object actor, string endpoint_id) {
     }
   }
 
-  if (!objectp(gate))
+  if (!objectp(link_gate))
     return groups;
 
-  side = gate->side_facing_endpoint(endpoint_idx);
+  side = link_gate->side_facing_endpoint(endpoint_idx);
 
-  if (function_exists("query_verbs", gate))
-    verbs = gate->query_verbs(side, actor);
+  if (function_exists("verbs", link_gate))
+    verbs = link_gate->verbs(side, actor);
   else
     verbs = ({ });
 
-  name = gate->query_name();
+  name = link_gate->name();
 
   if (!stringp(name) || name == "")
     name = "gate";
@@ -510,7 +510,7 @@ mapping _build_action_groups(object actor, string endpoint_id) {
         groups[verb][name_key] = ({ });
 
       groups[verb][name_key] += ({ ([
-        "gate" : gate,
+        "gate" : link_gate,
         "side" : side,
         "name" : name
       ]) });
@@ -598,7 +598,7 @@ mapping _match_action_args(string args, mapping verb_actions) {
   return result;
 }
 
-mapping query_action_match(object actor, string verb, string args, string endpoint_id) {
+mapping action_match(object actor, string verb, string args, string endpoint_id) {
   mapping actions;
   mapping verb_actions;
   mapping match;
@@ -826,11 +826,11 @@ mapping check_gates(object actor, string origin_id, string destination_id) {
   if (origin_idx < 0)
     return deny_result("The link refuses to align.", 0, ({ }));
 
-  if (!objectp(gate))
+  if (!objectp(link_gate))
     return agg;
 
-  gate_side = gate->side_facing_endpoint(origin_idx);
-  step = gate->attempt_pass(actor, gate_side);
+  gate_side = link_gate->side_facing_endpoint(origin_idx);
+  step = link_gate->attempt_pass(actor, gate_side);
 
   if (mapp(step))
     agg = merge_side_effects(
@@ -943,6 +943,42 @@ object resolve_destination(string destination_id) {
   return env;
 }
 
+void show_resolution_debug(object actor, string text) {
+  object tp;
+
+  if (!objectp(actor))
+    return;
+
+  if (!stringp(text) || text == "")
+    return;
+
+  tp = this_player();
+
+  if (objectp(tp) && tp == actor)
+    write("[room-debug] " + text + "\n");
+  else
+    message("info", "[room-debug] " + text + "\n", actor);
+
+  return;
+}
+
+string endpoint_id_for_room(object room) {
+  string endpoint_id;
+
+  endpoint_id = "";
+
+  if (!objectp(room))
+    return endpoint_id;
+
+  if (function_exists("link_endpoint_id", room))
+    endpoint_id = room->link_endpoint_id();
+
+  if (!stringp(endpoint_id) || endpoint_id == "")
+    endpoint_id = base_name(room);
+
+  return endpoint_id;
+}
+
 /****************************************************************************
  *
  * Ownership & Narration Rules
@@ -961,14 +997,19 @@ object resolve_destination(string destination_id) {
  */
 mapping traverse(object actor, object origin) {
   string origin_id, destination_id;
+  string resolved_name;
+  string debug_message;
   object destination;
+  object existing_destination;
+  mixed destination_error, move_error;
   mapping link_result, gate_result, exit_result, enter_result, enter_hook_result;
+  int custom_exists;
   int moved;
 
   if (!objectp(actor) || !objectp(origin))
     return deny_result("The link refuses to open.", 0, ({ }));
 
-  origin_id = base_name(origin);
+  origin_id = endpoint_id_for_room(origin);
   destination_id = other_endpoint(origin_id);
 
   if (destination_id == "")
@@ -980,51 +1021,117 @@ mapping traverse(object actor, object origin) {
   /* 1) Link-level traversal rules */
   link_result = check_link(actor, origin_id, destination_id);
 
-  if (!is_allowed_result(link_result))
+  if (!is_allowed_result(link_result)) {
+    debug_message = link_result[LINK_RESULT_MESSAGE];
+
+    if (!stringp(debug_message) || debug_message == "")
+      debug_message = "(none)";
+
+    show_resolution_debug(actor, "deny at check_link: " + debug_message);
     return link_result;
+  }
 
   /* 2) Gate (topology) — no destination loading */
   gate_result = check_gates(actor, origin_id, destination_id);
   gate_result = merge_side_effects(gate_result, link_result);
 
-  if (!is_allowed_result(gate_result))
+  if (!is_allowed_result(gate_result)) {
+    debug_message = gate_result[LINK_RESULT_MESSAGE];
+
+    if (!stringp(debug_message) || debug_message == "")
+      debug_message = "(none)";
+
+    show_resolution_debug(actor, "deny at gate check: " + debug_message);
     return gate_result;
+  }
 
   /* 3) Origin veto (optional, typically actor/room state) */
   exit_result = can_exit(actor, origin);
   exit_result = merge_side_effects(exit_result, gate_result);
 
-  if (!is_allowed_result(exit_result))
+  if (!is_allowed_result(exit_result)) {
+    debug_message = exit_result[LINK_RESULT_MESSAGE];
+
+    if (!stringp(debug_message) || debug_message == "")
+      debug_message = "(none)";
+
+    show_resolution_debug(actor, "deny at origin exit hook: " + debug_message);
     return exit_result;
+  }
 
   /* 4) Lazy-load destination only after gate+exit pass */
-  destination = resolve_destination(destination_id);
+  show_resolution_debug(
+    actor,
+    "resolving destination: from " + origin_id + " to " + destination_id
+  );
+  existing_destination = find_object(destination_id);
+  custom_exists = (file_size(destination_id + ".c") > -1);
 
-  if (!objectp(destination))
+  if (objectp(existing_destination))
+    show_resolution_debug(actor, "destination already loaded: " + base_name(existing_destination));
+  else if (custom_exists)
+    show_resolution_debug(actor, "loading custom room object: " + destination_id + ".c");
+  else
+    show_resolution_debug(actor, "custom room not found; attempting virtual room resolution");
+
+  destination_error = catch(destination = resolve_destination(destination_id));
+
+  if (destination_error) {
+    show_resolution_debug(actor, "deny at destination resolve: " + destination_error);
+    return deny_result(
+      "The way shudders and fails to open.",
+      exit_result[LINK_RESULT_COST],
+      exit_result[LINK_RESULT_MUTATIONS]
+    );
+  }
+
+  if (!objectp(destination)) {
+    show_resolution_debug(actor, "deny at destination resolve: object not created");
     return deny_result(
       "The way opens into nothing.",
       exit_result[LINK_RESULT_COST],
       exit_result[LINK_RESULT_MUTATIONS]
     );
+  }
+
+  resolved_name = base_name(destination);
+  show_resolution_debug(actor, "resolved destination object: " + resolved_name);
 
   /* 5) Destination veto (pre-entry) */
   enter_result = can_enter(actor, destination);
   enter_result = merge_side_effects(enter_result, exit_result);
 
-  if (!is_allowed_result(enter_result))
+  if (!is_allowed_result(enter_result)) {
+    debug_message = enter_result[LINK_RESULT_MESSAGE];
+
+    if (!stringp(debug_message) || debug_message == "")
+      debug_message = "(none)";
+
+    show_resolution_debug(actor, "deny at destination enter hook: " + debug_message);
     return enter_result;
+  }
 
   /* 6) Move */
   on_exit(actor, origin, destination);
 
-  moved = actor->move(destination_id);
-
-  if (!moved)
+  move_error = catch(moved = actor->move(destination));
+  if (move_error) {
+    show_resolution_debug(actor, "deny at actor->move: " + move_error);
     return deny_result(
       "You cannot move that way.",
       enter_result[LINK_RESULT_COST],
       enter_result[LINK_RESULT_MUTATIONS]
     );
+  }
+
+  if (!moved) {
+    show_resolution_debug(actor, "deny at actor->move: move returned false");
+    return deny_result(
+      "You cannot move that way.",
+      enter_result[LINK_RESULT_COST],
+      enter_result[LINK_RESULT_MUTATIONS]
+    );
+  }
 
   /* 7) Post-entry reaction (room/actor agency) */
   enter_hook_result = on_enter(actor, origin, destination);

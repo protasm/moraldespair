@@ -12,5 +12,4 @@ void create() {
     // "north":"/chapter/prologue/area/silent/room373",
   // ]);
 
-  set_light(1);
 }

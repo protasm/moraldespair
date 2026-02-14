@@ -8,12 +8,22 @@ void create() {
 }
 
 int valid_shadow(object ob) {
+  string legacy_name;
+
 #ifdef __PACKAGE_UIDS__
   if (getuid(ob) == ROOT_UID)
     return 1; /* for test */
 #endif
-  if (ob->query_prevent_shadow(previous_object()))
-    return 0;
+  if (function_exists("prevent_shadow", ob)) {
+    if (ob->prevent_shadow(previous_object()))
+      return 0;
+  } else {
+    legacy_name = "query_" + "prevent_shadow";
+
+    if (function_exists(legacy_name, ob))
+      if (call_other(ob, legacy_name, previous_object()))
+        return 0;
+  }
 
   return 1;
 }

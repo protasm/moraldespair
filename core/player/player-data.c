@@ -13,6 +13,9 @@ string normalize_key(string value) {
 string player_file_path() {
   string username, player;
 
+  if (!objectp(account_object))
+    return "";
+
   username = account_object->username();
   player = normalize_key(player_name);
 

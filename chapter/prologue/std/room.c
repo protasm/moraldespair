@@ -3,21 +3,21 @@ inherit "/core/object";
 #include "room.h"
 
 string short_desc, long_desc;
-object link_cache;
+object room_link_cache;
 
 void create() {
   ::create();
 
   short_desc = "";
   long_desc = "";
-  link_cache = 0;
+  room_link_cache = 0;
 
   set_light(1);
 
-  link_cache = new("/core/link_cache");
+  room_link_cache = new("/core/link_cache");
 
-  if (objectp(link_cache))
-    link_cache->init_for_room(this_object());
+  if (objectp(room_link_cache))
+    room_link_cache->init_for_room(this_object());
 
   return;
 }
@@ -30,8 +30,8 @@ string long() {
   return long_desc;
 }
 
-object query_link_cache() {
-  return link_cache;
+object link_cache() {
+  return room_link_cache;
 }
 
 /*
@@ -97,7 +97,7 @@ void add_link(string label, object link) {
 /*
  * Resolve a Link by label (used by movement commands).
  */
-object query_link(string label) {
+object link(string label) {
   if (!mapp(_links))
     return 0;
 
@@ -107,7 +107,7 @@ object query_link(string label) {
 /*
  * Optional: expose available directions for display/debugging.
  */
-string *query_link_labels() {
+string *link_labels() {
   if (!mapp(_links))
     return ({ });
 

@@ -16,5 +16,5 @@ string format_display_name(string value);
 int is_valid_email(string email);
 int is_valid_username(string name);
 int is_valid_password(string password);
-int contains_profanity(string value);
+int contains_reserved(string value);
 string make_salt();

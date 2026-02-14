@@ -8,44 +8,168 @@
 mapping rooms_by_id;
 mapping terrain_by_code;
 int loaded, room_count;
+int map_json_size, terrain_json_size, rooms_array_count, terrain_code_count;
+string last_load_error;
 
-string read_wilderness_file(string file) {
-  string contents, chunk;
-  int line, line_count;
+void log_preload_status(mixed load_error) {
+  string message;
+  string preload_result;
+  string catch_error_text;
 
-  if (!stringp(file)) {
-    return 0;
+  preload_result = "success";
+  catch_error_text = "0";
+
+  if (load_error) {
+    preload_result = "failure";
+    catch_error_text = save_variable(load_error);
   }
 
-  contents = "";
+  message = "wilderness_d preload\n";
+  message += sprintf("result=%s\n", preload_result);
+  message += "map_json_files=/chapter/prologue/area/wilderness/wilderness_nw.json,"
+    + "/chapter/prologue/area/wilderness/wilderness_sw.json,"
+    + "/chapter/prologue/area/wilderness/wilderness_ne.json,"
+    + "/chapter/prologue/area/wilderness/wilderness_se.json\n";
+  message += "terrain_json=/chapter/prologue/area/wilderness/wilderness_terrain.json\n";
+  message += sprintf("map_json_size=%d\n", map_json_size);
+  message += sprintf("terrain_json_size=%d\n", terrain_json_size);
+  message += sprintf("rooms_array_count=%d\n", rooms_array_count);
+  message += sprintf("room_count=%d\n", room_count);
+  message += sprintf("terrain_code_count=%d\n", terrain_code_count);
+  message += sprintf("last_load_error=%O\n", last_load_error);
+  message += sprintf("catch_error=%s\n", catch_error_text);
+  message += "---\n";
+
+  write_file("/log/wilderness_preload", message);
+
+  return;
+}
+
+mixed parse_json(string raw) {
+  object parser;
+
+  if (!stringp(raw) || raw == "")
+    return 0;
+
+  parser = find_object("/std/json");
+
+  if (!objectp(parser))
+    parser = load_object("/std/json");
+
+  if (!objectp(parser))
+    return 0;
+
+  return parser->json_decode(raw);
+}
+
+string read_wilderness_file(string file) {
+  string chunk, contents;
+  string *chunks;
+  int size, offset, chunk_size, read_size;
+  int line, line_count;
+  mixed read_error;
+
+  if (!stringp(file))
+    return 0;
+
+  size = file_size(file);
+
+  if (size <= 0)
+    return 0;
+
+  chunks = ({ });
   line = 1;
-  line_count = 500;
+  line_count = 200;
+  chunk_size = 2048;
+  offset = 0;
+  read_size = 0;
+  read_error = 0;
 
+  /*
+   * Prefer line-based reads to avoid per-call byte transfer limits.
+   * If a driver still fails here, fall back to small adaptive byte reads.
+   */
   while (1) {
-    chunk = read_file(file, line, line_count);
+    read_error = catch(chunk = read_file(file, line, line_count));
 
-    if (!chunk) {
+    if (read_error) {
+      last_load_error = "read_file failed for " + file + ": " + read_error;
+      chunks = ({ });
+
       break;
     }
 
-    contents += chunk;
+    if (!stringp(chunk) || chunk == "")
+      break;
+
+    chunks += ({ chunk });
     line += line_count;
   }
 
-  if (contents == "") {
-    return 0;
+  if (!sizeof(chunks)) {
+    while (offset < size) {
+      read_size = chunk_size;
+
+      if (offset + read_size > size)
+        read_size = size - offset;
+
+      read_error = catch(chunk = read_bytes(file, offset, read_size));
+
+      if (read_error) {
+        if (chunk_size <= 64) {
+          last_load_error = "read_bytes failed for " + file + ": " + read_error;
+
+          break;
+        }
+
+        chunk_size = chunk_size / 2;
+
+        if (chunk_size < 64)
+          chunk_size = 64;
+
+        continue;
+      }
+
+      if (!stringp(chunk) || chunk == "")
+        break;
+
+      chunks += ({ chunk });
+      offset += strlen(chunk);
+    }
   }
+
+  if (!sizeof(chunks))
+    return 0;
+
+  contents = implode(chunks, "");
+
+  if (!stringp(contents) || contents == "")
+    return 0;
 
   return contents;
 }
 
 void create() {
   string map_json;
+  mixed load_error;
 
-  map_json = "/chapter/prologue/wilderness.json";
+  map_json = "/chapter/prologue/area/wilderness/wilderness_nw.json";
+  last_load_error = 0;
 
   /* Preloaded at startup so player movement never parses JSON. */
-  reload_wilderness(map_json);
+  load_error = catch(reload_wilderness(map_json));
+
+  if (load_error) {
+    last_load_error = "" + load_error;
+    rooms_by_id = ([]);
+    terrain_by_code = ([]);
+    loaded = 1;
+    room_count = 0;
+    rooms_array_count = 0;
+    terrain_code_count = 0;
+  }
+
+  log_preload_status(load_error);
 
   return;
 }
@@ -55,6 +179,11 @@ void reload_wilderness(string map_json) {
   terrain_by_code = ([]);
   loaded = 0;
   room_count = 0;
+  map_json_size = 0;
+  terrain_json_size = 0;
+  rooms_array_count = 0;
+  terrain_code_count = 0;
+  last_load_error = 0;
 
   load_wilderness(map_json);
 
@@ -62,13 +191,16 @@ void reload_wilderness(string map_json) {
 }
 
 void load_wilderness(string map_json) {
-  mixed data, rooms;
-  mapping terrain;
+  mixed data, terrain_data, rooms;
+  mixed load_error;
+  mapping terrain, room_data;
   mapping room;
-  string contents, room_id;
-  int size, i;
+  string contents, terrain_contents, room_id, terrain_json;
+  string *map_json_files;
+  string map_file;
+  int size, i, file_rooms_count;
 
-  if (!mappingp(rooms_by_id))
+  if (!mapp(rooms_by_id))
     rooms_by_id = ([]);
 
   if (loaded) return;
@@ -79,123 +211,184 @@ void load_wilderness(string map_json) {
     return;
   }
 
-  size = file_size(map_json);
+  map_json_files = ({
+    "/chapter/prologue/area/wilderness/wilderness_nw.json",
+    "/chapter/prologue/area/wilderness/wilderness_sw.json",
+    "/chapter/prologue/area/wilderness/wilderness_ne.json",
+    "/chapter/prologue/area/wilderness/wilderness_se.json"
+  });
+  map_json_size = 0;
+  rooms_array_count = 0;
 
-  if (size <= 0) {
-    loaded = 1;
+  terrain_json = "/chapter/prologue/area/wilderness/wilderness_terrain.json";
+  terrain_json_size = file_size(terrain_json);
+  terrain_contents = read_wilderness_file(terrain_json);
 
-    return;
+  if (stringp(terrain_contents) && terrain_contents != "") {
+    load_error = catch(terrain_data = parse_json(terrain_contents));
+
+    if (!load_error && mapp(terrain_data))
+      terrain = terrain_data;
+    else if (load_error)
+      last_load_error = "wilderness_terrain.json parse failed: " + load_error;
   }
 
-  contents = read_wilderness_file(map_json);
-
-  if (!contents) {
-    loaded = 1;
-
-    return;
-  }
-
-  data = json_parse(contents);
-
-  if (!mappingp(data)) {
-    loaded = 1;
-
-    return;
-  }
-
-  terrain = data["terrain"];
-
-  if (mappingp(terrain)) {
+  if (mapp(terrain)) {
     terrain_by_code = terrain;
+    terrain_code_count = sizeof(keys(terrain_by_code));
   }
+  if (!mapp(terrain_by_code))
+    terrain_by_code = ([]);
 
-  rooms = data["rooms"];
-
-  if (!pointerp(rooms)) {
-    loaded = 1;
-
-    return;
-  }
-
-  /* Normalize room data for O(1) lookup and future overlay layers. */
   i = 0;
 
-  while (i < sizeof(rooms)) {
-    room = rooms[i];
+  while (i < sizeof(map_json_files)) {
+    map_file = map_json_files[i];
+    size = file_size(map_file);
+    map_json_size += size;
 
-    if (mappingp(room)) {
-      room_id = room["id"];
+    if (size <= 0) {
+      last_load_error = map_file + " missing or empty.";
+      loaded = 1;
 
-      if (stringp(room_id)) {
-        rooms_by_id[room_id] = room;
-        room_count += 1;
+      return;
+    }
+
+    contents = read_wilderness_file(map_file);
+
+    if (!stringp(contents) || contents == "") {
+      last_load_error = map_file + " could not be read.";
+      loaded = 1;
+
+      return;
+    }
+
+    load_error = catch(data = parse_json(contents));
+
+    if (load_error) {
+      last_load_error = map_file + " parse failed: " + load_error;
+      loaded = 1;
+
+      return;
+    }
+
+    if (!mapp(data)) {
+      last_load_error = map_file + " parse returned non-mapping.";
+      loaded = 1;
+
+      return;
+    }
+
+    rooms = data["rooms"];
+
+    if (!pointerp(rooms)) {
+      last_load_error = map_file + " rooms missing or non-array.";
+      loaded = 1;
+
+      return;
+    }
+
+    file_rooms_count = sizeof(rooms);
+    rooms_array_count += file_rooms_count;
+
+    /* Normalize room data for O(1) lookup and future overlay layers. */
+    room_id = 0;
+    room_data = 0;
+    room = 0;
+    file_rooms_count = 0;
+    file_rooms_count = sizeof(rooms);
+
+    while (file_rooms_count > 0) {
+      file_rooms_count -= 1;
+      room_data = rooms[file_rooms_count];
+
+      if (mapp(room_data)) {
+        room_id = room_data["id"];
+
+        if (stringp(room_id)) {
+          rooms_by_id[room_id] = room_data;
+        }
       }
     }
 
     i += 1;
   }
 
+  room_count = sizeof(keys(rooms_by_id));
+
   loaded = 1;
 
   return;
 }
 
-mapping query_room(string room_id) {
-  mapping room;
+mapping debug_status() {
+  return ([
+    "loaded" : loaded,
+    "room_count" : room_count,
+    "map_json_size" : map_json_size,
+    "terrain_json_size" : terrain_json_size,
+    "rooms_array_count" : rooms_array_count,
+    "terrain_code_count" : terrain_code_count,
+    "last_load_error" : last_load_error
+  ]);
+}
+
+mapping room(string room_id) {
+  mapping room_data;
 
   if (!room_id) return 0;
 
-  if (!mappingp(rooms_by_id)) {
+  if (!mapp(rooms_by_id)) {
     rooms_by_id = ([]);
     loaded = 0;
   }
 
-  room = rooms_by_id[room_id];
+  room_data = rooms_by_id[room_id];
 
-  if (!mappingp(room)) return 0;
+  if (!mapp(room_data)) return 0;
 
-  return room;
+  return room_data;
 }
 
-mapping query_exits(string room_id) {
-  mapping room, exits;
+mapping exits(string room_id) {
+  mapping room_data, exits;
 
-  room = query_room(room_id);
+  room_data = room(room_id);
 
-  if (!room) return ([]);
+  if (!room_data) return ([]);
 
-  exits = room["exits"];
+  exits = room_data["exits"];
 
-  if (!mappingp(exits)) return ([]);
+  if (!mapp(exits)) return ([]);
 
   return exits;
 }
 
-string query_terrain(string room_id) {
-  mapping room;
-  string terrain;
+string terrain(string room_id) {
+  mapping room_data;
+  string terrain_code;
 
-  room = query_room(room_id);
+  room_data = room(room_id);
 
-  if (!room) return 0;
+  if (!room_data) return 0;
 
-  terrain = room["terrain"];
+  terrain_code = room_data["terrain"];
 
-  if (!stringp(terrain)) return 0;
+  if (!stringp(terrain_code)) return 0;
 
-  return terrain;
+  return terrain_code;
 }
 
-mapping query_terrain_info(string terrain_code) {
+mapping terrain_info(string terrain_code) {
   mapping terrain;
 
   if (!stringp(terrain_code)) return 0;
 
-  if (!mappingp(terrain_by_code)) return 0;
+  if (!mapp(terrain_by_code)) return 0;
 
   terrain = terrain_by_code[terrain_code];
 
-  if (!mappingp(terrain)) return 0;
+  if (!mapp(terrain)) return 0;
 
   return terrain;
 }
@@ -203,7 +396,7 @@ mapping query_terrain_info(string terrain_code) {
 int room_exists(string room_id) {
   if (!stringp(room_id)) return 0;
 
-  if (mappingp(rooms_by_id[room_id])) return 1;
+  if (mapp(rooms_by_id[room_id])) return 1;
 
   return 0;
 }

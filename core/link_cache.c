@@ -4,10 +4,27 @@ inherit "/core/object";
 
 #include "link_cache.h"
 
-object room;
-string endpoint_id;
+object cached_room;
+string cached_endpoint_id;
 object *links;
 mapping links_by_direction;
+
+string endpoint_id_for_room(object room) {
+  string endpoint_id;
+
+  endpoint_id = "";
+
+  if (!objectp(room))
+    return endpoint_id;
+
+  if (function_exists("link_endpoint_id", room))
+    endpoint_id = room->link_endpoint_id();
+
+  if (!stringp(endpoint_id) || endpoint_id == "")
+    endpoint_id = base_name(room);
+
+  return endpoint_id;
+}
 
 /*
  * void create()
@@ -19,10 +36,10 @@ void create() {
   ::create();
 
   // No room is bound until init_for_room is called.
-  room = 0;
+  cached_room = 0;
 
   // Endpoint id is the base_name of the bound room.
-  endpoint_id = "";
+  cached_endpoint_id = "";
 
   // Cached link list and direction mapping start empty.
   links = ({ });
@@ -43,8 +60,8 @@ void init_for_room(object target) {
     return;
 
   // Store the room and its endpoint id for link lookups.
-  room = target;
-  endpoint_id = base_name(target);
+  cached_room = target;
+  cached_endpoint_id = endpoint_id_for_room(target);
 
   // Build the initial link cache for this room.
   refresh_links();
@@ -60,7 +77,7 @@ void init_for_room(object target) {
  */
 void refresh_links() {
   // If no endpoint is set, reset cached data.
-  if (!stringp(endpoint_id) || endpoint_id == "") {
+  if (!stringp(cached_endpoint_id) || cached_endpoint_id == "") {
     links = ({ });
     links_by_direction = ([ ]);
 
@@ -68,14 +85,14 @@ void refresh_links() {
   }
 
   // Get all links that touch this endpoint.
-  links = LINK_D->links_for_room(endpoint_id);
+  links = LINK_D->links_for_room(cached_endpoint_id);
 
   // Normalize missing or invalid results.
   if (!pointerp(links))
     links = ({ });
 
   // Build direction -> link mapping for direction disambiguation.
-  links_by_direction = LINK_D->links_by_direction_for_room(endpoint_id);
+  links_by_direction = LINK_D->links_by_direction_for_room(cached_endpoint_id);
 
   // Normalize missing or invalid results.
   if (!mapp(links_by_direction))
@@ -85,23 +102,23 @@ void refresh_links() {
 }
 
 /*
- * object query_room()
+ * object room()
  * Return the room object this cache is bound to.
  * Inputs: none.
  * Outputs: room object or 0.
  */
-object query_room() {
-  return room;
+object room() {
+  return cached_room;
 }
 
 /*
- * string query_endpoint_id()
+ * string endpoint_id()
  * Return the base_name id of the bound room.
  * Inputs: none.
  * Outputs: endpoint id string or "".
  */
-string query_endpoint_id() {
-  return endpoint_id;
+string endpoint_id() {
+  return cached_endpoint_id;
 }
 
 /*
@@ -135,7 +152,7 @@ int handle_input(object actor, string verb, string arg) {
   if (!stringp(verb) || verb == "")
     return 0;
 
-  if (!stringp(endpoint_id) || endpoint_id == "")
+  if (!stringp(cached_endpoint_id) || cached_endpoint_id == "")
     return 0;
 
   // No cached links means nothing to handle.
@@ -178,8 +195,8 @@ int handle_input(object actor, string verb, string arg) {
     if (!objectp(link))
       continue;
 
-    if (function_exists("query_action_match", link)) {
-      match = link->query_action_match(actor, verb, arg, endpoint_id);
+    if (function_exists("action_match", link)) {
+      match = link->action_match(actor, verb, arg, cached_endpoint_id);
 
       if (mapp(match) && match["matched"])
         matches += ({ ([ "link" : link, "match" : match ]) });
@@ -192,7 +209,7 @@ int handle_input(object actor, string verb, string arg) {
     link = entry["link"];
 
     if (objectp(link) && function_exists("handle_action", link)) {
-      handled = link->handle_action(actor, verb, arg, endpoint_id);
+      handled = link->handle_action(actor, verb, arg, cached_endpoint_id);
 
       if (handled)
         return 1;
@@ -219,8 +236,8 @@ int handle_input(object actor, string verb, string arg) {
       if (!objectp(link))
         continue;
 
-      if (function_exists("query_direction_label", link))
-        example_dir = link->query_direction_label(endpoint_id);
+      if (function_exists("direction_label", link))
+        example_dir = link->direction_label(cached_endpoint_id);
 
       if (stringp(example_dir) && example_dir != "")
         break;

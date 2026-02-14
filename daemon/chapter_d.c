@@ -20,7 +20,10 @@ string normalize_path(string path) {
     return "";
 
   if (path[0] != '/')
-    return "/" + path;
+    path = "/" + path;
+
+  if (sizeof(path) > 2 && path[<2..<1] == ".c")
+    path = path[0..<3];
 
   return path;
 }

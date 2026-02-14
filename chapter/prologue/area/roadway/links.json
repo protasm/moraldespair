@@ -82,13 +82,13 @@
     {
       "link": {
         "room13": "east",
-        "/chapter/prologue/area/ruined/room/entrance": "west"
+        "/chapter/prologue/area/ruined/entrance": "west"
       }
     },
     {
       "link": {
         "room16": "west",
-        "/chapter/prologue/area/ruined/room/entrance": "east"
+        "/chapter/prologue/area/ruined/entrance": "east"
       }
     },
     {
@@ -172,7 +172,7 @@
     {
       "link": {
         "room30": "south",
-        "/chapter/prologue/area/ruined/room/entrance": "north"
+        "/chapter/prologue/area/ruined/entrance": "north"
       }
     },
     {
@@ -256,7 +256,7 @@
     {
       "link": {
         "room43": "north",
-        "/chapter/prologue/area/ruined/room/entrance": "south"
+        "/chapter/prologue/area/ruined/entrance": "south"
       }
     },
     {

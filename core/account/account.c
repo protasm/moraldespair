@@ -2,14 +2,14 @@
 
 #include "account.h"
 
-string username;
+string account_username;
 
 string username() {
-  return username;
+  return account_username;
 }
 
 void set_username(string new_username) {
-  username = normalize_key(new_username);
+  account_username = normalize_key(new_username);
 }
 
 string normalize_key(string value) {
@@ -20,10 +20,10 @@ string normalize_key(string value) {
 }
 
 string account_file_path() {
-  if (username == "")
+  if (account_username == "")
     return "";
 
-  return "/a/" + username + "/account.o";
+  return "/a/" + account_username + "/account.o";
 }
 
 mapping load_account_data() {
@@ -87,7 +87,7 @@ int handle_command(string verb, string arg) {
   return handled;
 }
 
-string query_email() {
+string email() {
   mapping account;
 
   account = load_account_data();
@@ -120,15 +120,24 @@ int set_email(string new_email) {
   return save_account_data(account);
 }
 
-string query_password_hash() {
+string password_hash() {
   mapping account;
+  string hash_value;
 
   account = load_account_data();
 
   if (!mapp(account))
     return "";
 
-  return account["password_hash"];
+  hash_value = account["password_hash"];
+
+  if (!stringp(hash_value) || hash_value == "")
+    hash_value = account["password"];
+
+  if (!stringp(hash_value))
+    return "";
+
+  return hash_value;
 }
 
 int set_password_hash(string new_hash) {
@@ -147,7 +156,7 @@ int set_password_hash(string new_hash) {
   return save_account_data(account);
 }
 
-string *query_players() {
+string *players() {
   mapping account;
   string *players;
 
@@ -185,7 +194,7 @@ int set_players(string *players) {
   return save_account_data(account);
 }
 
-int query_last_login() {
+int last_login() {
   mapping account;
 
   account = load_account_data();

@@ -13,5 +13,4 @@ void create() {
     "west" : "/chapter/prologue/area/refuge/room270",
   ]);
   */
-set_light(1);
 }

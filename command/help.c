@@ -47,7 +47,7 @@ int main(string arg) {
         if (!objectp(command_object))
           continue;
 
-        category = command_object->query_category();
+        category = command_object->category();
 
         if (!stringp(category) || category == "")
           category = "General";
@@ -117,7 +117,7 @@ int main(string arg) {
     return 1;
   }
 
-  help_text = command_object->query_help_text();
+  help_text = command_object->help_text();
 
   if (!stringp(help_text) || help_text == "")
     help_text = "No help text is available for this command.\n";

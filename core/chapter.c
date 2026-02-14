@@ -14,7 +14,7 @@ void set_title(string title) {
   return;
 }
 
-string query_title() {
+string title() {
   return chapter_title;
 }
 
@@ -27,7 +27,7 @@ void set_description(string description) {
   return;
 }
 
-string query_description() {
+string description() {
   return chapter_description;
 }
 
@@ -40,7 +40,7 @@ void set_root(string root) {
   return;
 }
 
-string query_root() {
+string root() {
   return chapter_root;
 }
 
@@ -53,6 +53,6 @@ void set_start_room(string room) {
   return;
 }
 
-string query_start_room() {
+string start_room() {
   return chapter_start_room;
 }

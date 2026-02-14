@@ -22,7 +22,7 @@ int main(string arg) {
   list = users();
 
   for (j = 0; j < sizeof(list); j++) {
-    name = (string)list[j]->query_name();
+    name = (string)list[j]->name();
 
     if (in_edit(this_player()))
       name += "*";

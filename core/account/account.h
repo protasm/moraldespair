@@ -1,4 +1,10 @@
 int handle_command(string verb, string arg);
-string query_email();
+string email();
 int set_email(string new_email);
+string password_hash();
+int set_password_hash(string new_hash);
+string *players();
+int set_players(string *players);
+int last_login();
+int set_last_login(int last_login);
 string normalize_key(string value);

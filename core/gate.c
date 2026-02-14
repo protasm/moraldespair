@@ -58,7 +58,7 @@ void set_name(string name) {
   _name = name;
 }
 
-string query_name() {
+string name() {
   return _name;
 }
 
@@ -66,7 +66,7 @@ void set_base_cost(int cost) {
   _base_cost = cost;
 }
 
-int query_base_cost() {
+int base_cost() {
   return _base_cost;
 }
 
@@ -132,7 +132,7 @@ string examine(int side) {
  * Return a list of verbs supported by this gate from a given side.
  * Subclasses should override and supply verbs appropriate to their nature.
  */
-string *query_verbs(int side, object actor) {
+string *verbs(int side, object actor) {
   return ({ });
 }
 
@@ -140,7 +140,7 @@ string *query_verbs(int side, object actor) {
  * Return a short status string for display when looking through a link.
  * Subclasses should override with meaningful states.
  */
-string query_status(int side) {
+string status(int side) {
   return "unknown";
 }
 

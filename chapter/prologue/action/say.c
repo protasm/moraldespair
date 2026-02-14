@@ -13,7 +13,7 @@ void create() {
 
 int main(string arg) {
   say(
-    (string)previous_object()->query_name()
+    (string)previous_object()->name()
     + " says: " +  arg + "\n"
   );
 

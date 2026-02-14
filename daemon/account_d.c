@@ -122,7 +122,7 @@ int account_exists(string username) {
   return file_size(path) > 0;
 }
 
-string query_username_by_email(string email) {
+string username_by_email(string email) {
   string *names;
   string dir;
   string path;
@@ -160,8 +160,9 @@ string query_username_by_email(string email) {
   return "";
 }
 
-string query_password_hash(string username) {
+string password_hash(string username) {
   mapping account;
+  string hash_value;
 
   username = normalize_key(username);
   account = load_data(account_file(username));
@@ -169,11 +170,20 @@ string query_password_hash(string username) {
   if (!mapp(account))
     return "";
 
-  return account["password_hash"];
+  hash_value = account["password_hash"];
+
+  if (!stringp(hash_value) || hash_value == "")
+    hash_value = account["password"];
+
+  if (!stringp(hash_value))
+    return "";
+
+  return hash_value;
 }
 
-string query_display_name(string username) {
+string display_name(string username) {
   mapping account;
+  string display;
 
   username = normalize_key(username);
   account = load_data(account_file(username));
@@ -181,12 +191,17 @@ string query_display_name(string username) {
   if (!mapp(account))
     return "";
 
-  return account["display_name"];
+  display = account["display_name"];
+
+  if (!stringp(display))
+    return "";
+
+  return display;
 }
 
-string *query_players(string username) {
+string *players(string username) {
   mapping account;
-  string *players;
+  string *player_list;
 
   username = normalize_key(username);
   account = load_data(account_file(username));
@@ -194,28 +209,28 @@ string *query_players(string username) {
   if (!mapp(account))
     return ({});
 
-  players = account["players"];
+  player_list = account["players"];
 
-  if (!pointerp(players)) {
-    players = account["avatars"];
+  if (!pointerp(player_list)) {
+    player_list = account["avatars"];
 
-    if (!pointerp(players))
+    if (!pointerp(player_list))
       return ({});
   }
 
-  return players;
+  return player_list;
 }
 
 int player_exists(string username, string player_name) {
-  string *players;
+  string *player_list;
   string normalized;
   int i;
 
-  players = query_players(username);
+  player_list = players(username);
   normalized = normalize_key(player_name);
 
-  for (i = 0; i < sizeof(players); i++) {
-    if (normalize_key(players[i]) == normalized)
+  for (i = 0; i < sizeof(player_list); i++) {
+    if (normalize_key(player_list[i]) == normalized)
       return 1;
   }
 
@@ -291,7 +306,7 @@ int add_player(string username, string player_name) {
   player["display_name"] = player_name;
   player["brief"] = 0;
   player["last_played"] = 0;
-  default_chapter = CHAPTER_D->query_latest_chapter();
+  default_chapter = CHAPTER_D->latest_chapter();
 
   if (default_chapter != "") {
     player["current_chapter"] = default_chapter;

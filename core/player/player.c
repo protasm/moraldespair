@@ -27,17 +27,34 @@ int is_living() {
 }
 
 void check_wizard() {
-  int is_wizard;
+  int has_wizard_access;
 
-  is_wizard = is_wizard();
+  has_wizard_access = is_wizard();
 
-  if (is_wizard) {
+  if (has_wizard_access) {
     write("Enabling wizard commands...");
 
     enable_wizard();
 
     write(" done!\n");
   }
+}
+
+string endpoint_id_for_room(object room) {
+  string endpoint_id;
+
+  endpoint_id = "";
+
+  if (!objectp(room))
+    return endpoint_id;
+
+  if (function_exists("link_endpoint_id", room))
+    endpoint_id = room->link_endpoint_id();
+
+  if (!stringp(endpoint_id) || endpoint_id == "")
+    endpoint_id = base_name(room);
+
+  return endpoint_id;
 }
 
 string abbreviate_exit(string direction) {
@@ -67,10 +84,10 @@ string abbreviate_exit(string direction) {
 
 void show_location(int force_verbose, int show_path) {
   object env;
-  string short_desc, long_desc, divider, room_path, header;
+  string short_desc, long_desc, divider, room_path, header, room_endpoint_id;
   mapping exits;
   string *dirs, *abbr_dirs;
-  int brief, i;
+  int brief_state, i;
 
   env = environment(this_object());
 
@@ -81,15 +98,17 @@ void show_location(int force_verbose, int show_path) {
   }
 
   if (!force_verbose)
-    brief = query_brief();
+    brief_state = brief();
 
-  if (brief) {
+  room_endpoint_id = endpoint_id_for_room(env);
+
+  if (brief_state) {
     short_desc = env->short();
 
     if (stringp(short_desc) && short_desc != "")
       write(short_desc + "\n");
 
-    exits = LINK_D->links_by_direction_for_room(base_name(env));
+    exits = LINK_D->links_by_direction_for_room(room_endpoint_id);
 
     if (mapp(exits) && sizeof(exits)) {
       dirs = sort_array(keys(exits), 1);
@@ -108,7 +127,7 @@ void show_location(int force_verbose, int show_path) {
   divider = "---------+---------+---------+---------+---------+---------+---------+---------+";
 
   short_desc = env->short();
-  room_path = base_name(env);
+  room_path = room_endpoint_id;
   header = short_desc;
 
   if (show_path && stringp(short_desc) && short_desc != "" &&
@@ -135,7 +154,7 @@ void show_location(int force_verbose, int show_path) {
 
   write("\n");
 
-  exits = LINK_D->links_by_direction_for_room(base_name(env));
+  exits = LINK_D->links_by_direction_for_room(room_endpoint_id);
 
   if (mapp(exits) && sizeof(exits)) {
     dirs = sort_array(keys(exits), 1);
@@ -191,10 +210,6 @@ void receive_ed(string message) {
 }
 
 void receive_environ(string message) {
-  return;
-}
-
-void receive_message(string clazz, string message) {
   return;
 }
 

@@ -75,7 +75,7 @@ mapping attempt_pass(object actor, int side) {
   if (!state["open"]) {
     return ([
       "allow"   : 0,
-      "cost"    : query_base_cost(),
+      "cost"    : base_cost(),
       "effects" : ({ }),
       "message" : state["block_msg"] || "The door is closed.",
     ]);
@@ -84,7 +84,7 @@ mapping attempt_pass(object actor, int side) {
   if (state["locked"]) {
     return ([
       "allow"   : 0,
-      "cost"    : query_base_cost(),
+      "cost"    : base_cost(),
       "effects" : ({ }),
       "message" : "The door is locked.",
     ]);
@@ -92,7 +92,7 @@ mapping attempt_pass(object actor, int side) {
 
   return ([
     "allow"   : 1,
-    "cost"    : query_base_cost(),
+    "cost"    : base_cost(),
     "effects" : ({ }),
   ]);
 }
@@ -101,7 +101,7 @@ mapping attempt_pass(object actor, int side) {
 /* Door interaction verbs
  * ------------------------------------------------------------ */
 
-string *query_verbs(int side, object actor) {
+string *verbs(int side, object actor) {
   string *verbs;
 
   verbs = ({ });
@@ -118,7 +118,7 @@ string *query_verbs(int side, object actor) {
 mapping handle_action(string verb, object actor, string args, int side) {
   mapping result;
   int ok;
-  string name;
+  string gate_name;
   string message;
 
   result = ([
@@ -149,20 +149,20 @@ mapping handle_action(string verb, object actor, string args, int side) {
 
   result["success"] = ok;
 
-  name = query_name();
+  gate_name = name();
 
-  if (!stringp(name) || name == "")
-    name = "gate";
+  if (!stringp(gate_name) || gate_name == "")
+    gate_name = "gate";
 
   if (ok) {
     if (verb == "open")
-      message = "You open the " + name + ".\n";
+      message = "You open the " + gate_name + ".\n";
     else if (verb == "close")
-      message = "You close the " + name + ".\n";
+      message = "You close the " + gate_name + ".\n";
     else if (verb == "lock")
-      message = "You lock the " + name + ".\n";
+      message = "You lock the " + gate_name + ".\n";
     else if (verb == "unlock")
-      message = "You unlock the " + name + ".\n";
+      message = "You unlock the " + gate_name + ".\n";
   } else {
     if (verb == "open")
       message = "It will not open.\n";
@@ -285,7 +285,7 @@ string examine(int side) {
   return "An open doorway.";
 }
 
-string query_status(int side) {
+string status(int side) {
   mapping state;
   string *parts;
 

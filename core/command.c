@@ -17,7 +17,7 @@ void set_property(string name, string value) {
   properties[name] = value;
 }
 
-string query_property(string name) {
+string property(string name) {
   if (!stringp(name))
     return "";
 
@@ -34,8 +34,8 @@ void set_category(string value) {
   set_property("category", value);
 }
 
-string query_category() {
-  return query_property("category");
+string category() {
+  return property("category");
 }
 
 void set_help_text(string value) {
@@ -45,6 +45,6 @@ void set_help_text(string value) {
   set_property("help-text", value);
 }
 
-string query_help_text() {
-  return query_property("help-text");
+string help_text() {
+  return property("help-text");
 }

@@ -83,8 +83,8 @@ string process_input(string raw) {
   env = environment(player);
 
   if (objectp(env)) {
-    if (function_exists("query_link_cache", env))
-      link_cache = env->query_link_cache();
+    if (function_exists("link_cache", env))
+      link_cache = env->link_cache();
 
     if (objectp(link_cache) && function_exists("handle_input", link_cache)) {
       if (link_cache->handle_input(player, verb, arg))

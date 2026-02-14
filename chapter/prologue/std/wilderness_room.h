@@ -1,7 +1,6 @@
 void set_room_id(string id);
-string query_room_id();
-string query_terrain();
+string room_id();
+string terrain();
+string link_endpoint_id();
 void set_exits();
 void set_descriptions();
-int sort_dirs(string a, string b);
-

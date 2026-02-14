@@ -1,0 +1,1 @@
+/* Companion header file. */
