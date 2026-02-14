@@ -30,7 +30,7 @@ int is_member(mixed container, mixed item) {
   return result;
 }
 
-string *query_directions() {
+string *directions() {
   return ({
     "north","south","east","west",
     "northeast", "northwest", "southeast", "southwest",
@@ -41,8 +41,7 @@ string *query_directions() {
 int is_direction(string str) {
   int result;
 
-  result = is_member(query_directions(), str);
+  result = is_member(directions(), str);
 
   return result;
 }
-

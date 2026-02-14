@@ -9,15 +9,33 @@ mapping rooms_by_id;
 mapping terrain_by_code;
 int loaded, room_count;
 
+mixed parse_json(string raw) {
+  object parser;
+
+  if (!stringp(raw) || raw == "")
+    return 0;
+
+  parser = find_object("/std/json");
+
+  if (!objectp(parser))
+    parser = load_object("/std/json");
+
+  if (!objectp(parser))
+    return 0;
+
+  return parser->json_decode(raw);
+}
+
 string read_wilderness_file(string file) {
-  string contents, chunk;
+  string chunk, contents;
+  string *chunks;
   int line, line_count;
 
   if (!stringp(file)) {
     return 0;
   }
 
-  contents = "";
+  chunks = ({ });
   line = 1;
   line_count = 500;
 
@@ -28,11 +46,17 @@ string read_wilderness_file(string file) {
       break;
     }
 
-    contents += chunk;
+    chunks += ({ chunk });
     line += line_count;
   }
 
-  if (contents == "") {
+  if (!sizeof(chunks)) {
+    return 0;
+  }
+
+  contents = implode(chunks, "");
+
+  if (!stringp(contents) || contents == "") {
     return 0;
   }
 
@@ -41,11 +65,19 @@ string read_wilderness_file(string file) {
 
 void create() {
   string map_json;
+  mixed load_error;
 
   map_json = "/chapter/prologue/wilderness.json";
 
   /* Preloaded at startup so player movement never parses JSON. */
-  reload_wilderness(map_json);
+  load_error = catch(reload_wilderness(map_json));
+
+  if (load_error) {
+    rooms_by_id = ([]);
+    terrain_by_code = ([]);
+    loaded = 1;
+    room_count = 0;
+  }
 
   return;
 }
@@ -68,7 +100,7 @@ void load_wilderness(string map_json) {
   string contents, room_id;
   int size, i;
 
-  if (!mappingp(rooms_by_id))
+  if (!mapp(rooms_by_id))
     rooms_by_id = ([]);
 
   if (loaded) return;
@@ -95,9 +127,9 @@ void load_wilderness(string map_json) {
     return;
   }
 
-  data = json_parse(contents);
+  data = parse_json(contents);
 
-  if (!mappingp(data)) {
+  if (!mapp(data)) {
     loaded = 1;
 
     return;
@@ -105,7 +137,7 @@ void load_wilderness(string map_json) {
 
   terrain = data["terrain"];
 
-  if (mappingp(terrain)) {
+  if (mapp(terrain)) {
     terrain_by_code = terrain;
   }
 
@@ -123,7 +155,7 @@ void load_wilderness(string map_json) {
   while (i < sizeof(rooms)) {
     room = rooms[i];
 
-    if (mappingp(room)) {
+    if (mapp(room)) {
       room_id = room["id"];
 
       if (stringp(room_id)) {
@@ -140,62 +172,62 @@ void load_wilderness(string map_json) {
   return;
 }
 
-mapping query_room(string room_id) {
-  mapping room;
+mapping room(string room_id) {
+  mapping room_data;
 
   if (!room_id) return 0;
 
-  if (!mappingp(rooms_by_id)) {
+  if (!mapp(rooms_by_id)) {
     rooms_by_id = ([]);
     loaded = 0;
   }
 
-  room = rooms_by_id[room_id];
+  room_data = rooms_by_id[room_id];
 
-  if (!mappingp(room)) return 0;
+  if (!mapp(room_data)) return 0;
 
-  return room;
+  return room_data;
 }
 
-mapping query_exits(string room_id) {
-  mapping room, exits;
+mapping exits(string room_id) {
+  mapping room_data, exits;
 
-  room = query_room(room_id);
+  room_data = room(room_id);
 
-  if (!room) return ([]);
+  if (!room_data) return ([]);
 
-  exits = room["exits"];
+  exits = room_data["exits"];
 
-  if (!mappingp(exits)) return ([]);
+  if (!mapp(exits)) return ([]);
 
   return exits;
 }
 
-string query_terrain(string room_id) {
-  mapping room;
-  string terrain;
+string terrain(string room_id) {
+  mapping room_data;
+  string terrain_code;
 
-  room = query_room(room_id);
+  room_data = room(room_id);
 
-  if (!room) return 0;
+  if (!room_data) return 0;
 
-  terrain = room["terrain"];
+  terrain_code = room_data["terrain"];
 
-  if (!stringp(terrain)) return 0;
+  if (!stringp(terrain_code)) return 0;
 
-  return terrain;
+  return terrain_code;
 }
 
-mapping query_terrain_info(string terrain_code) {
+mapping terrain_info(string terrain_code) {
   mapping terrain;
 
   if (!stringp(terrain_code)) return 0;
 
-  if (!mappingp(terrain_by_code)) return 0;
+  if (!mapp(terrain_by_code)) return 0;
 
   terrain = terrain_by_code[terrain_code];
 
-  if (!mappingp(terrain)) return 0;
+  if (!mapp(terrain)) return 0;
 
   return terrain;
 }
@@ -203,7 +235,7 @@ mapping query_terrain_info(string terrain_code) {
 int room_exists(string room_id) {
   if (!stringp(room_id)) return 0;
 
-  if (mappingp(rooms_by_id[room_id])) return 1;
+  if (mapp(rooms_by_id[room_id])) return 1;
 
   return 0;
 }

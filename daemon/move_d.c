@@ -1,7 +1,26 @@
+#include "/daemon/move_d.h"
+
+string endpoint_id_for_room(object room) {
+  string endpoint_id;
+
+  endpoint_id = "";
+
+  if (!objectp(room))
+    return endpoint_id;
+
+  if (function_exists("link_endpoint_id", room))
+    endpoint_id = room->link_endpoint_id();
+
+  if (!stringp(endpoint_id) || endpoint_id == "")
+    endpoint_id = base_name(room);
+
+  return endpoint_id;
+}
+
 object try_move_label(object player, string label) {
   object origin, link;
   mapping exits, result;
-  string msg;
+  string msg, origin_id;
   mapping direction_aliases;
   int is_direction;
 
@@ -37,7 +56,8 @@ object try_move_label(object player, string label) {
   if (!objectp(origin))
     return 0;
 
-  exits = LINK_D->links_by_direction_for_room(base_name(origin));
+  origin_id = endpoint_id_for_room(origin);
+  exits = LINK_D->links_by_direction_for_room(origin_id);
 
   if (!mapp(exits) || !objectp(exits[label])) {
     is_direction = (member_array(label, ({

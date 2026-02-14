@@ -17,7 +17,10 @@ void logon() {
 }
 
 void clear_pending() {
+  pending_username = "";
   pending_display_name = "";
+  pending_email = "";
+  pending_password = "";
   pending_existing_username = "";
 }
 
@@ -568,7 +571,12 @@ void start_session(string player_name) {
 
   ACCOUNT_D->record_player_login(pending_username, player_name);
 
-  exec(player, this_object());
+  if (!exec(player, this_object())) {
+    write("Connection transfer failed. Please reconnect.\n");
+    destruct(player);
+    destruct(account);
+    return;
+  }
 
   player->check_wizard();
 
@@ -576,7 +584,17 @@ void start_session(string player_name) {
 
   start_room = CHAPTER_D->resolve_player_start_room(player);
 
+  if (!stringp(start_room) || start_room == "")
+    start_room = START_ROOM;
+
+  if (sizeof(start_room) > 2 && start_room[<2..<1] == ".c")
+    start_room = start_room[0..<3];
+
   player->move(start_room);
+
+  if (!objectp(environment(player)))
+    player->move(START_ROOM);
+
   player->show_location(1, 1);
 
   destruct(this_object());

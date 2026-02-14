@@ -1,4 +1,6 @@
 #define LOG_DIR "/log"
+/* Set to 1 to log master error_handler payloads to /log/runtime. */
+#define ENABLE_RUNTIME_ERROR_LOG 0
 
 #define ROOT_UID "ROOT"
 #define BACKBONE_UID "BACKBONE"
@@ -19,7 +21,7 @@
 #define WELCOME_FILE "/etc/welcome"
 #define MOTD_FILE "/etc/motd"
 
-#define START_ROOM "/chapter/prologue/area/ruined/room/sanctuary.c"
+#define START_ROOM "/chapter/prologue/area/ruined/room/sanctuary"
 
 #define COMMAND_PREFIX "/command/"
 #define ACTION_PREFIX "/chapter/prologue/action/"

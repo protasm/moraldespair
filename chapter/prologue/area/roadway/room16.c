@@ -12,5 +12,4 @@ void create() {
 //     "south":"/chapter/prologue/std/wilderness_room#Z29",
 //   ]);
 
-  set_light(1);
 }

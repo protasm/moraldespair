@@ -12,5 +12,4 @@ void create() {
   ]);
   */
 
-  set_light(1);
 }

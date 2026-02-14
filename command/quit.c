@@ -15,7 +15,7 @@ int main(string arg) {
   write("Bye.\n");
 
   say(
-    (string)previous_object()->query_name()
+    (string)previous_object()->name()
     + " leaves this reality.\n"
   );
 

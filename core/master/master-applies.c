@@ -20,15 +20,21 @@ string author_file(string file) {
 
 string *epilog(int load_empty) {
   return ({
-    "/daemon/link_d"
+    "/daemon/link_d",
+    "/daemon/wilderness_d"
   });
 }
 
 void preload(string filename) {
+  mixed load_error;
+
   if (!stringp(filename) || filename == "")
     return;
 
-  load_object(filename);
+  load_error = catch(load_object(filename));
+
+  if (load_error)
+    write_file("/log/compile", filename + ": preload failed: " + load_error);
 
   return;
 }
@@ -65,6 +71,13 @@ void crash(string crash_message, object command_giver, object current_object) {
 }
 
 void error_handler(mapping error, int caught) {
+#if ENABLE_RUNTIME_ERROR_LOG
+  string line;
+
+  line = ctime(time()) + " caught=" + caught + " " + save_variable(error) + "\n";
+  write_file("/log/runtime", line);
+#endif
+
   return;
 }
 

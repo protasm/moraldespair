@@ -58,8 +58,8 @@ int main(string arg) {
       if (objectp(link)) {
         if (function_exists("describe_from_endpoint", link))
           description = link->describe_from_endpoint(base_name(env));
-        else if (function_exists("query_appearance", link))
-          description = link->query_appearance(base_name(env));
+        else if (function_exists("appearance", link))
+          description = link->appearance(base_name(env));
 
         if (!stringp(description) || description == "")
           description = "It seems possible to go that way.\n";

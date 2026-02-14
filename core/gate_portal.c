@@ -71,7 +71,7 @@ mapping attempt_pass(object actor, int side) {
   if (!state["passable"]) {
     return ([
       "allow"   : 0,
-      "cost"    : query_base_cost(),
+      "cost"    : base_cost(),
       "effects" : ({ }),
       "message" : state["block_msg"],
     ]);
@@ -79,7 +79,7 @@ mapping attempt_pass(object actor, int side) {
 
   return ([
     "allow"   : 1,
-    "cost"    : query_base_cost(),
+    "cost"    : base_cost(),
     "effects" : ({ }),
   ]);
 }
@@ -114,7 +114,7 @@ string examine(int side) {
   return "A wavering distortion hangs here, insubstantial and unreachable.";
 }
 
-string query_status(int side) {
+string status(int side) {
   if (side_state(side)["passable"])
     return "active";
 
