@@ -594,10 +594,12 @@ void start_session(string player_name) {
 
   has_custom_room_file = (file_size(start_room + ".c") > -1);
 
-  if (has_custom_room_file)
-    write("[room-debug] login spawn: loading custom room " + start_room + ".c\n");
-  else
-    write("[room-debug] login spawn: custom room not found, trying virtual resolution for " + start_room + "\n");
+  if (wizardp(player)) {
+    if (has_custom_room_file)
+      write("[room-debug] login spawn: loading custom room " + start_room + ".c\n");
+    else
+      write("[room-debug] login spawn: custom room not found, trying virtual resolution for " + start_room + "\n");
+  }
 
   player->move(start_room);
 
@@ -606,7 +608,9 @@ void start_session(string player_name) {
 
   if (objectp(environment(player))) {
     resolved_room = base_name(environment(player));
-    write("[room-debug] login spawn: resolved room object " + resolved_room + "\n");
+
+    if (wizardp(player))
+      write("[room-debug] login spawn: resolved room object " + resolved_room + "\n");
   }
 
   player->show_location(1, 1);

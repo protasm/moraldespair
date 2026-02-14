@@ -949,6 +949,9 @@ void show_resolution_debug(object actor, string text) {
   if (!objectp(actor))
     return;
 
+  if (!wizardp(actor))
+    return;
+
   if (!stringp(text) || text == "")
     return;
 
