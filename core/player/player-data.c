@@ -217,7 +217,22 @@ void set_account(object new_account) {
  *   string result from name.
  */
 string name() {
-  return player_name;
+  mapping player_data;
+  string shown_name;
+
+  shown_name = "";
+  player_data = load_player_data();
+
+  if (mapp(player_data))
+    shown_name = player_data["display_name"];
+
+  if (!stringp(shown_name) || shown_name == "")
+    shown_name = player_name;
+
+  if (!stringp(shown_name) || shown_name == "")
+    return "";
+
+  return capitalize(shown_name);
 }
 
 /* Method Summary:
