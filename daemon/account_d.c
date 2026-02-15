@@ -226,6 +226,58 @@ string *players(string username) {
   return player_list;
 }
 
+string last_played_player(string username) {
+  string *player_list;
+  string player_name;
+  string player_path;
+  mapping player_data;
+  string latest_player;
+  int latest_played;
+  int played_at;
+  int i;
+
+  username = normalize_key(username);
+
+  if (username == "")
+    return "";
+
+  player_list = players(username);
+
+  if (!pointerp(player_list) || sizeof(player_list) == 0)
+    return "";
+
+  latest_player = "";
+  latest_played = 0;
+
+  for (i = 0; i < sizeof(player_list); i++) {
+    player_name = player_list[i];
+    player_path = player_file(username, player_name);
+
+    if (player_path == "")
+      continue;
+
+    player_data = load_data(player_path);
+
+    if (!mapp(player_data))
+      continue;
+
+    played_at = player_data["last_played"];
+
+    if (!intp(played_at))
+      played_at = 0;
+
+    if (played_at <= 0)
+      continue;
+
+    if (played_at > latest_played) {
+      latest_played = played_at;
+      latest_player = player_name;
+    }
+  }
+
+  return latest_player;
+}
+
 int max_players_per_account() {
   return 3;
 }

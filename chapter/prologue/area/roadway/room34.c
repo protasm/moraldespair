@@ -8,8 +8,8 @@ void create() {
 //   dest_dir = ([
 //     "south":"/chapter/prologue/area/roadway/room33",
 //     "north":"/chapter/prologue/area/roadway/room35",
-//     "west":"/room/wilderness_room#X23",
-//     "east":"/room/wilderness_room#Z23",
+//     "west":"/room/wild_room#X23",
+//     "east":"/room/wild_room#Z23",
 //   ]);
 
 }

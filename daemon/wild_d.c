@@ -1,7 +1,7 @@
-#include "/daemon/wilderness_d.h"
+#include "/daemon/wild_d.h"
 
 /*
- * Wilderness data is JSON-backed but normalized into a room-id mapping.
+ * Wild data is JSON-backed but normalized into a room-id mapping.
  * This keeps virtual room lookups fast and predictable as the map grows
  * while leaving room for future overlay layers keyed by the same ids.
  */
@@ -24,13 +24,13 @@ void log_preload_status(mixed load_error) {
     catch_error_text = save_variable(load_error);
   }
 
-  message = "wilderness_d preload\n";
+  message = "wild_d preload\n";
   message += sprintf("result=%s\n", preload_result);
-  message += "map_json_files=/chapter/prologue/area/wilderness/wilderness_nw.json,"
-    + "/chapter/prologue/area/wilderness/wilderness_sw.json,"
-    + "/chapter/prologue/area/wilderness/wilderness_ne.json,"
-    + "/chapter/prologue/area/wilderness/wilderness_se.json\n";
-  message += "terrain_json=/chapter/prologue/area/wilderness/wilderness_terrain.json\n";
+  message += "map_json_files=/chapter/prologue/wild/wild_nw.json,"
+    + "/chapter/prologue/wild/wild_sw.json,"
+    + "/chapter/prologue/wild/wild_ne.json,"
+    + "/chapter/prologue/wild/wild_se.json\n";
+  message += "terrain_json=/chapter/prologue/wild/wild_terrain.json\n";
   message += sprintf("map_json_size=%d\n", map_json_size);
   message += sprintf("terrain_json_size=%d\n", terrain_json_size);
   message += sprintf("rooms_array_count=%d\n", rooms_array_count);
@@ -40,7 +40,7 @@ void log_preload_status(mixed load_error) {
   message += sprintf("catch_error=%s\n", catch_error_text);
   message += "---\n";
 
-  write_file("/log/wilderness_preload", message);
+  write_file("/log/wild_preload", message);
 
   return;
 }
@@ -62,7 +62,7 @@ mixed parse_json(string raw) {
   return parser->json_decode(raw);
 }
 
-string read_wilderness_file(string file) {
+string read_wild_file(string file) {
   string chunk, contents;
   string *chunks;
   int size, offset, chunk_size, read_size;
@@ -153,11 +153,11 @@ void create() {
   string map_json;
   mixed load_error;
 
-  map_json = "/chapter/prologue/area/wilderness/wilderness_nw.json";
+  map_json = "/chapter/prologue/wild/wild_nw.json";
   last_load_error = 0;
 
   /* Preloaded at startup so player movement never parses JSON. */
-  load_error = catch(reload_wilderness(map_json));
+  load_error = catch(reload_wild(map_json));
 
   if (load_error) {
     last_load_error = "" + load_error;
@@ -174,7 +174,7 @@ void create() {
   return;
 }
 
-void reload_wilderness(string map_json) {
+void reload_wild(string map_json) {
   rooms_by_id = ([]);
   terrain_by_code = ([]);
   loaded = 0;
@@ -185,12 +185,12 @@ void reload_wilderness(string map_json) {
   terrain_code_count = 0;
   last_load_error = 0;
 
-  load_wilderness(map_json);
+  load_wild(map_json);
 
   return;
 }
 
-void load_wilderness(string map_json) {
+void load_wild(string map_json) {
   mixed data, terrain_data, rooms;
   mixed load_error;
   mapping terrain, room_data;
@@ -212,17 +212,17 @@ void load_wilderness(string map_json) {
   }
 
   map_json_files = ({
-    "/chapter/prologue/area/wilderness/wilderness_nw.json",
-    "/chapter/prologue/area/wilderness/wilderness_sw.json",
-    "/chapter/prologue/area/wilderness/wilderness_ne.json",
-    "/chapter/prologue/area/wilderness/wilderness_se.json"
+    "/chapter/prologue/wild/wild_nw.json",
+    "/chapter/prologue/wild/wild_sw.json",
+    "/chapter/prologue/wild/wild_ne.json",
+    "/chapter/prologue/wild/wild_se.json"
   });
   map_json_size = 0;
   rooms_array_count = 0;
 
-  terrain_json = "/chapter/prologue/area/wilderness/wilderness_terrain.json";
+  terrain_json = "/chapter/prologue/wild/wild_terrain.json";
   terrain_json_size = file_size(terrain_json);
-  terrain_contents = read_wilderness_file(terrain_json);
+  terrain_contents = read_wild_file(terrain_json);
 
   if (stringp(terrain_contents) && terrain_contents != "") {
     load_error = catch(terrain_data = parse_json(terrain_contents));
@@ -230,7 +230,7 @@ void load_wilderness(string map_json) {
     if (!load_error && mapp(terrain_data))
       terrain = terrain_data;
     else if (load_error)
-      last_load_error = "wilderness_terrain.json parse failed: " + load_error;
+      last_load_error = "wild_terrain.json parse failed: " + load_error;
   }
 
   if (mapp(terrain)) {
@@ -254,7 +254,7 @@ void load_wilderness(string map_json) {
       return;
     }
 
-    contents = read_wilderness_file(map_file);
+    contents = read_wild_file(map_file);
 
     if (!stringp(contents) || contents == "") {
       last_load_error = map_file + " could not be read.";

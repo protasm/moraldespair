@@ -102,8 +102,35 @@ int should_scan_json_file(string file) {
   return 1;
 }
 
+string wild_room_prefix_from_json_file(string json_file) {
+  string normalized_file;
+  string *parts;
+
+  normalized_file = normalize_path(json_file);
+
+  if (normalized_file == "")
+    return "";
+
+  parts = explode(normalized_file, "/");
+
+  if (sizeof(parts) < 5)
+    return "";
+
+  if (parts[1] != "chapter")
+    return "";
+
+  if (parts[3] != "wild")
+    return "";
+
+  if (!stringp(parts[2]) || parts[2] == "")
+    return "";
+
+  return "/chapter/" + parts[2] + "/wild/wild_room#";
+}
+
 void index_room_entry(string json_file, mapping json_root, mapping room_entry) {
   string room_id, room_file, source_dir, room_path;
+  string wild_prefix;
   mapping paths_by_id;
   string template;
 
@@ -120,9 +147,13 @@ void index_room_entry(string json_file, mapping json_root, mapping room_entry) {
     room_path = normalize_path(room_file);
   else if (stringp(source_dir) && source_dir != "" && stringp(room_id) && room_id != "")
     room_path = normalize_path(source_dir + "/" + room_id);
-  else if (strsrch(json_file, "/area/wilderness/") != -1 &&
-           stringp(room_id) && room_id != "")
-    room_path = "/chapter/prologue/area/wilderness/wilderness_room#" + room_id;
+  else if (strsrch(json_file, "/wild/") != -1 &&
+           stringp(room_id) && room_id != "") {
+    wild_prefix = wild_room_prefix_from_json_file(json_file);
+
+    if (wild_prefix != "")
+      room_path = wild_prefix + room_id;
+  }
 
   if (room_path == "")
     return;
@@ -131,10 +162,10 @@ void index_room_entry(string json_file, mapping json_root, mapping room_entry) {
     return;
 
   room_data_by_path[room_path] = room_entry;
-  template = "data_room";
+  template = "area_room";
 
-  if (strsrch(room_path, "/chapter/prologue/area/wilderness/wilderness_room#") == 0)
-    template = "wilderness_room";
+  if (strsrch(room_path, "/wild/wild_room#") != -1)
+    template = "wild_room";
 
   virtual_specs_by_path[room_path] = ([
     "template" : template,
@@ -203,6 +234,7 @@ void load_room_data() {
   string *chapter_dirs;
   string *area_dirs;
   string *area_json_files;
+  string *wild_json_files;
   string *map_json_files;
   string chapter_dir;
   string area_dir;
@@ -253,6 +285,21 @@ void load_room_data() {
         }
 
         j += 1;
+      }
+    }
+
+    wild_json_files = get_dir(chapter_dir + "/wild/*.json");
+
+    if (pointerp(wild_json_files)) {
+      k = 0;
+
+      while (k < sizeof(wild_json_files)) {
+        json_file = join_path(chapter_dir + "/wild", wild_json_files[k]);
+
+        if (should_scan_json_file(json_file))
+          load_room_json(json_file);
+
+        k += 1;
       }
     }
 

@@ -18,6 +18,9 @@ void handle_input(string input) {
   if (!stringp(input))
     input = "";
 
+  if (require_nonempty_input(input))
+    return;
+
   account_name = normalized(query_session()->query_session_value("account_name"));
   password = query_session()->query_session_value("temp_password");
 

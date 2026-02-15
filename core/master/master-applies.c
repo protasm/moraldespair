@@ -21,7 +21,7 @@ string author_file(string file) {
 string *epilog(int load_empty) {
   return ({
     "/daemon/link_d",
-    "/daemon/wilderness_d",
+    "/daemon/wild_d",
     "/daemon/room_data_d"
   });
 }
@@ -62,12 +62,51 @@ string normalize_path(string path) {
   return path;
 }
 
+void wizard_virtual_debug(string message) {
+  object *online_users;
+  object user;
+  string line;
+  int is_wizard_user;
+  int i;
+
+  if (!stringp(message) || message == "")
+    return;
+
+  line = ctime(time()) + " " + message + "\n";
+  write_file("/log/virtual_room_debug", line);
+
+  online_users = users();
+
+  if (!pointerp(online_users))
+    return;
+
+  for (i = 0; i < sizeof(online_users); i++) {
+    user = online_users[i];
+
+    if (!objectp(user))
+      continue;
+
+    is_wizard_user = 0;
+
+    if (wizardp(user))
+      is_wizard_user = 1;
+    else if (function_exists("is_wizard", user) && user->is_wizard())
+      is_wizard_user = 1;
+
+    if (!is_wizard_user)
+      continue;
+
+    tell_object(user, "[virtual-debug] " + message + "\n");
+  }
+
+  return;
+}
+
 object compile_object(string pathname) {
   object room;
   object room_data_daemon;
   mapping resolved_spec;
   string normalized_path;
-  string custom_path;
   string virtual_path;
   string template;
   string room_id;
@@ -80,18 +119,19 @@ object compile_object(string pathname) {
   if (normalized_path == "")
     return 0;
 
+  wizard_virtual_debug("master compile_object request: " + normalized_path);
+
   room_id = "";
 
-  if (sscanf(normalized_path, "/chapter/prologue/area/wilderness/wilderness_room#%s", room_id) == 1) {
-    room = "/chapter/prologue/std/vmaster"->compile_object(
-      "wilderness_room#" + room_id
-    );
-
-    return room;
-  }
-
   if (file_size(normalized_path + ".c") > 0) {
+    wizard_virtual_debug("master compile_object concrete load: " + normalized_path);
+
     room = load_object(normalized_path);
+
+    if (objectp(room))
+      wizard_virtual_debug("master compile_object concrete loaded: " + file_name(room));
+    else
+      wizard_virtual_debug("master compile_object concrete failed: " + normalized_path);
 
     return room;
   }
@@ -101,41 +141,64 @@ object compile_object(string pathname) {
   if (!objectp(room_data_daemon))
     room_data_daemon = load_object("/daemon/room_data_d");
 
-  if (!objectp(room_data_daemon))
+  if (!objectp(room_data_daemon)) {
+    wizard_virtual_debug("master compile_object room_data_d unavailable");
     return 0;
+  }
 
-  resolved_spec = room_data_daemon->resolve_room_request(normalized_path);
+  resolved_spec = room_data_daemon->virtual_spec(normalized_path);
 
-  if (!mapp(resolved_spec))
+  if (!mapp(resolved_spec)) {
+    wizard_virtual_debug(
+      "master compile_object no virtual spec for: " + normalized_path
+    );
     return 0;
-
-  custom_path = resolved_spec["custom_path"];
-
-  if (stringp(custom_path) && custom_path != "" &&
-      file_size(custom_path + ".c") > 0) {
-    room = load_object(custom_path);
-
-    return room;
   }
 
   virtual_path = resolved_spec["path"];
   template = resolved_spec["template"];
   room_id = resolved_spec["id"];
 
-  if (!stringp(virtual_path) || virtual_path == "")
-    return 0;
-
-  if (stringp(template) && template == "wilderness_room" && stringp(room_id)) {
-    room = "/chapter/prologue/std/vmaster"->compile_object(
-      "wilderness_room#" + room_id
+  if (!stringp(virtual_path) || virtual_path == "") {
+    wizard_virtual_debug(
+      "master compile_object missing virtual path for: " + normalized_path
     );
+    return 0;
+  }
+
+  if (stringp(template) && template == "wild_room" && stringp(room_id)) {
+    wizard_virtual_debug(
+      "master compile_object virtual wild via spec: room_id=" + room_id
+    );
+
+    room = "/chapter/prologue/std/vmaster"->compile_object(
+      "wild_room_path#" + virtual_path
+    );
+
+    if (objectp(room))
+      wizard_virtual_debug(
+        "master compile_object virtual wild created: " + file_name(room)
+      );
+    else
+      wizard_virtual_debug(
+        "master compile_object virtual wild failed: room_id=" + room_id
+      );
 
     return room;
   }
 
-  room = "/chapter/prologue/std/vmaster"->compile_object(
-    "data_room#" + virtual_path
+  wizard_virtual_debug(
+    "master compile_object virtual area_room via spec: path=" + virtual_path
   );
+
+  room = "/chapter/prologue/std/vmaster"->compile_object(
+    "area_room#" + virtual_path
+  );
+
+  if (objectp(room))
+    wizard_virtual_debug("master compile_object area_room created: " + file_name(room));
+  else
+    wizard_virtual_debug("master compile_object area_room failed: path=" + virtual_path);
 
   return room;
 }

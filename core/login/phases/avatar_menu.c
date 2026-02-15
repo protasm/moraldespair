@@ -5,34 +5,88 @@ inherit "/core/login/phases/base_phase";
 void show_menu() {
   string account_name;
   string *avatars;
-  int slots_remaining;
+  string avatar_name;
+  string last_played_avatar;
+  int max_slots;
   int i;
 
   account_name = normalized(query_session()->query_session_value("account_name"));
   avatars = ACCOUNT_D->players(account_name);
-  slots_remaining = ACCOUNT_D->player_slots_remaining(account_name);
+  last_played_avatar = ACCOUNT_D->last_played_player(account_name);
+  max_slots = 3;
 
   if (!pointerp(avatars))
     avatars = ({});
 
-  if (sizeof(avatars) == 0 && slots_remaining <= 0) {
-    write_line("No avatars are available on this account.");
-    query_session()->advance_phase("/core/login/phases/get_account_name");
+  write_line("Avatars:");
+
+  for (i = 0; i < max_slots; i++) {
+    if (i < sizeof(avatars)) {
+      avatar_name = avatars[i];
+
+      if (avatar_name == last_played_avatar)
+        write_line("  " + (i + 1) + ") " + avatar_name + " (*)");
+      else
+        write_line("  " + (i + 1) + ") " + avatar_name);
+    } else
+      write_line("  " + (i + 1) + ") [create new avatar]");
+  }
+
+  if (last_played_avatar != "")
+    prompt_line("Select slot number, or Enter for (*):");
+  else
+    prompt_line("Select slot number:");
+
+  return;
+}
+
+void register_invalid_selection() {
+  int invalid_attempts;
+
+  invalid_attempts = query_session()->query_session_value("avatar_invalid_selection_attempts");
+
+  if (!intp(invalid_attempts))
+    invalid_attempts = 0;
+
+  invalid_attempts += 1;
+  query_session()->set_session_value("avatar_invalid_selection_attempts", invalid_attempts);
+
+  if (invalid_attempts >= 3) {
+    query_session()->disconnect_session(
+      "Too many invalid avatar selections.\n"
+      "Disconnecting for now. Please reconnect when ready."
+    );
+  } else {
+    write_line("That is not a valid avatar slot.");
+    show_menu();
+  }
+
+  return;
+}
+
+void select_avatar_by_slot(int selected_index, string *avatars) {
+  int slots_remaining;
+
+  slots_remaining = ACCOUNT_D->player_slots_remaining(
+    normalized(query_session()->query_session_value("account_name"))
+  );
+
+  query_session()->set_session_value("avatar_invalid_selection_attempts", 0);
+
+  if (selected_index <= sizeof(avatars)) {
+    query_session()->set_session_value("selected_avatar_id",
+      avatars[selected_index - 1]);
+    query_session()->enter_game(avatars[selected_index - 1]);
     return;
   }
 
-  write_line("Avatars:");
+  if (slots_remaining > 0) {
+    query_session()->push_phase("/core/login/phases/character_creation");
+    return;
+  }
 
-  for (i = 0; i < sizeof(avatars); i++)
-    write_line("  " + (i + 1) + ") " + avatars[i]);
-
-  if (slots_remaining > 0)
-    write_line("  c) Create new avatar");
-
-  if (slots_remaining > 0)
-    prompt_line("Select avatar by number/name, or type 'c' to create:");
-  else
-    prompt_line("Select avatar by number or name:");
+  write_line("This account has no open avatar slots.");
+  show_menu();
 
   return;
 }
@@ -47,53 +101,42 @@ void handle_input(string input) {
   string account_name;
   string choice;
   string *avatars;
-  int slots_remaining;
+  string last_played_avatar;
   int selected_index;
-  int i;
+  int max_slots;
 
   account_name = normalized(query_session()->query_session_value("account_name"));
   choice = normalized(input);
   avatars = ACCOUNT_D->players(account_name);
-  slots_remaining = ACCOUNT_D->player_slots_remaining(account_name);
+  last_played_avatar = ACCOUNT_D->last_played_player(account_name);
+  max_slots = 3;
 
   if (!pointerp(avatars))
     avatars = ({});
 
   if (choice == "") {
-    show_menu();
+    if (last_played_avatar != "") {
+      query_session()->set_session_value("avatar_invalid_selection_attempts", 0);
+      query_session()->set_session_value("selected_avatar_id", last_played_avatar);
+      query_session()->enter_game(last_played_avatar);
+      return;
+    }
+  }
+
+  if (require_nonempty_input(choice))
+    return;
+
+  if (sscanf(choice, "%d", selected_index) != 1) {
+    register_invalid_selection();
     return;
   }
 
-  if (choice == "c" || choice == "create" || choice == "new") {
-    if (slots_remaining > 0) {
-      query_session()->push_phase("/core/login/phases/character_creation");
-      return;
-    }
-
-    write_line("This account has no open avatar slots.");
-    show_menu();
+  if (selected_index < 1 || selected_index > max_slots) {
+    register_invalid_selection();
     return;
   }
 
-  if (sscanf(choice, "%d", selected_index) == 1) {
-    if (selected_index >= 1 && selected_index <= sizeof(avatars)) {
-      query_session()->set_session_value("selected_avatar_id",
-        avatars[selected_index - 1]);
-      query_session()->enter_game(avatars[selected_index - 1]);
-      return;
-    }
-  }
-
-  for (i = 0; i < sizeof(avatars); i++) {
-    if (normalized(avatars[i]) == choice) {
-      query_session()->set_session_value("selected_avatar_id", avatars[i]);
-      query_session()->enter_game(avatars[i]);
-      return;
-    }
-  }
-
-  write_line("That avatar is not on this account.");
-  show_menu();
+  select_avatar_by_slot(selected_index, avatars);
 
   return;
 }

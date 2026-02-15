@@ -1,0 +1,134 @@
+{
+  "lf": {
+    "short": "Light Forest",
+    "long": [
+      "Thin trunks stand with wide gaps between them. Dry needles soften the ground.",
+      "Scattered trees leave the sky mostly open. Wind brushes through low brush.",
+      "Light forest stretches in broken patches. Fallen twigs crack underfoot.",
+      "Young trees rise among open lanes. The air smells of bark and dust.",
+      "Sparse growth leaves long sightlines ahead. Needles and leaves drift in shallow drifts."
+    ],
+    "traverse_cost": 1,
+    "traverse_failure": "The light forest that way is too tangled to press through right now."
+  },
+  "p": {
+    "short": "Open Plain",
+    "long": [
+      "A flat plain runs out in every direction. Wind moves through short grass.",
+      "Open ground lies wide and exposed. The horizon sits hard and distant.",
+      "Low grass bends in uneven waves. Nothing breaks the breadth of the plain.",
+      "The plain stretches with little shelter. Dust lifts and settles in thin sheets.",
+      "Broad, open land rolls only slightly. A steady wind presses across it."
+    ],
+    "traverse_cost": 1,
+    "traverse_failure": "The open plain in that direction is too exposed to cross right now."
+  },
+  "f": {
+    "short": "Forest",
+    "long": [
+      "Trees crowd together here, their limbs tangled above. The understory is thin and uneven.",
+      "The forest closes in with close trunks and narrow lanes. Branches scrape in the wind.",
+      "Heavy growth narrows the way ahead. Rooted ground rises and dips without warning.",
+      "Dark trunks stand in tight ranks. Fallen wood and brush break the floor.",
+      "Forest shade gathers beneath a thick canopy. The path through it is uncertain."
+    ],
+    "traverse_cost": 1,
+    "traverse_failure": "The forest in that direction is too close and heavy to force through right now."
+  },
+  "df": {
+    "short": "Deep Forest",
+    "long": [
+      "Dense growth closes on every side. The canopy keeps most light out.",
+      "Deep forest presses in with heavy trunks and dark understory. Movement feels tight and slow.",
+      "Little light reaches the ground here. Tangled roots and brush choke the way forward.",
+      "Thick canopy and close growth turn this stretch dim and close. The air hangs still.",
+      "The deep forest feels old and crowded. Every step must be forced through brush and root."
+    ],
+    "traverse_cost": 1,
+    "traverse_failure": "The deep forest in that direction is too dense and dim to navigate right now."
+  },
+  "w": {
+    "short": "Open Water",
+    "long": [
+      "Dark water spreads without a clear edge. Low ripples drift across the surface.",
+      "Open water lies broad and cold. Small waves slap in restless rhythm.",
+      "The surface rolls in long, low lines. There is no stable footing ahead.",
+      "Water stretches outward under a dull sky. The current shifts without warning.",
+      "A broad sheet of water occupies this ground. The surface moves with quiet force."
+    ],
+    "traverse_cost": -1,
+    "traverse_failure": "A body of open water blocks that direction."
+  },
+  "d": {
+    "short": "Desert",
+    "long": [
+      "Pale sand runs out in hard waves. The air hangs dry and still.",
+      "Dry ground opens into bands of sand and stone. Heat sits close to the surface.",
+      "Wind has carved shallow ridges through loose sand. Bare patches of hard earth break through.",
+      "Desert flats stretch under thin light. Dust gathers in low hollows.",
+      "Sand and cracked soil share this wide span. Little relief appears ahead."
+    ],
+    "traverse_cost": 1,
+    "traverse_failure": "The desert in that direction is too harsh to cross right now."
+  },
+  "h": {
+    "short": "Low Hills",
+    "long": [
+      "Low hills roll in broken lines. Stone shows through thin soil.",
+      "Rounded rises and shallow dips shape the land. Loose rock shifts underfoot.",
+      "Hills rise and fall in short intervals. Wind catches on exposed stone.",
+      "The ground tilts in a chain of low ridges. Sparse grass clings to thin earth.",
+      "Uneven hills interrupt the horizon here. Rock and dirt trade places with each step."
+    ],
+    "traverse_cost": 1,
+    "traverse_failure": "The hills that way are too broken to climb through right now."
+  },
+  "m": {
+    "short": "Marsh",
+    "long": [
+      "Wet ground shifts beneath reeds and grass. Shallow pools glint between mud.",
+      "Marsh water lies in broken patches. Each step threatens to sink and slide.",
+      "Soft mud and pooled water spread through the reeds. The ground gives under weight.",
+      "The marsh stretches in slick channels and hummocks. Movement is careful and slow.",
+      "Waterlogged earth and reeds fill this low ground. Footing is uncertain at every step."
+    ],
+    "traverse_cost": 1,
+    "traverse_failure": "The marsh in that direction is too difficult to manage at the moment."
+  },
+  "s": {
+    "short": "Swamp",
+    "long": [
+      "Dark water sits beneath heavy growth. Rotting trunks lean over still pools.",
+      "Thick swamp growth crowds the water's edge. Mud and roots pull at each step.",
+      "Stagnant water and tangled roots fill this stretch. The air is heavy and close.",
+      "Rot and standing water define the swamp here. Progress would be slow and exhausting.",
+      "Swamp water threads between dense growth and fallen timber. The ground is treacherous."
+    ],
+    "traverse_cost": 1,
+    "traverse_failure": "The swamp that way is too treacherous to push through right now."
+  },
+  "b": {
+    "short": "Barrens",
+    "long": [
+      "Bare earth stretches wide with little sign of growth. Scattered stones lie exposed.",
+      "The barrens open in dry, stripped ground. Wind drags dust along the surface.",
+      "Hard soil and scattered rock dominate this quiet span. Little cover remains.",
+      "Thin, exhausted earth extends ahead. Occasional stone breaks the flatness.",
+      "The land here is stark and bare. Dry wind moves across exposed ground."
+    ],
+    "traverse_cost": 1,
+    "traverse_failure": "The barrens in that direction are too punishing to cross right now."
+  },
+  "default": {
+    "short": "The Wild",
+    "long": [
+      "The land lies quiet and open. No clear paths remain.",
+      "Broken ground stretches ahead in silence. Nothing marks a safe way through.",
+      "Wild, empty terrain surrounds this place. The way onward is uncertain.",
+      "Open wildland extends in rough lines. Wind crosses it without interruption.",
+      "The terrain here is worn and unsettled. Travel demands patience and care."
+    ],
+    "traverse_cost": 1,
+    "traverse_failure": "That terrain in that direction is not passable right now."
+  }
+}

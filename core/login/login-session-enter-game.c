@@ -5,9 +5,37 @@ string normalize_value(string value) {
   return lower_case(trim(value));
 }
 
+void wizard_virtual_debug(object player, string message) {
+  string line;
+  int is_wizard_player;
+
+  if (!objectp(player))
+    return;
+
+  if (!stringp(message) || message == "")
+    return;
+
+  is_wizard_player = 0;
+
+  if (wizardp(player))
+    is_wizard_player = 1;
+  else if (function_exists("is_wizard", player) && player->is_wizard())
+    is_wizard_player = 1;
+
+  if (!is_wizard_player)
+    return;
+
+  line = ctime(time()) + " login enter_game " + message + "\n";
+  write_file("/log/virtual_room_debug", line);
+  tell_object(player, "[virtual-debug] " + message + "\n");
+
+  return;
+}
+
 void enter_game(string avatar_name) {
   object account;
   object player;
+  object current_room;
   int brief;
   string account_name;
   string start_room;
@@ -50,10 +78,21 @@ void enter_game(string avatar_name) {
   if (sizeof(start_room) > 2 && start_room[<2..<1] == ".c")
     start_room = start_room[0..<3];
 
-  player->move(start_room);
+  wizard_virtual_debug(player, "initial start_room resolved: " + start_room);
 
-  if (!objectp(environment(player)))
+  player->move(start_room);
+  current_room = environment(player);
+
+  if (!objectp(current_room)) {
+    wizard_virtual_debug(player, "initial move failed, fallback to START_ROOM");
     player->move(START_ROOM);
+    current_room = environment(player);
+  }
+
+  if (objectp(current_room))
+    wizard_virtual_debug(player, "spawned in room object: " + file_name(current_room));
+  else
+    wizard_virtual_debug(player, "spawn failed: no room environment after fallback");
 
   player->show_location(1, 1);
 

@@ -170,3 +170,82 @@ string make_salt() {
 
   return salt;
 }
+
+int require_nonempty_input(string input) {
+  object current_session;
+  string value;
+  int empty_attempts;
+
+  current_session = query_session();
+
+  if (!objectp(current_session))
+    return 1;
+
+  value = cleaned(input);
+
+  if (value != "") {
+    current_session->set_session_value("required_empty_input_count", 0);
+    return 0;
+  }
+
+  empty_attempts = current_session->query_session_value("required_empty_input_count");
+
+  if (!intp(empty_attempts))
+    empty_attempts = 0;
+
+  empty_attempts += 1;
+  current_session->set_session_value("required_empty_input_count", empty_attempts);
+
+  if (empty_attempts >= 3) {
+    current_session->disconnect_session(
+      "No input was received after three attempts.\n"
+      "Disconnecting for now. Please reconnect when ready."
+    );
+    return 1;
+  }
+
+  begin_phase();
+
+  return 1;
+}
+
+int register_password_failure() {
+  object current_session;
+  int password_failures;
+
+  current_session = query_session();
+
+  if (!objectp(current_session))
+    return 1;
+
+  password_failures = current_session->query_session_value("password_failure_count");
+
+  if (!intp(password_failures))
+    password_failures = 0;
+
+  password_failures += 1;
+  current_session->set_session_value("password_failure_count", password_failures);
+
+  if (password_failures >= 3) {
+    current_session->disconnect_session(
+      "Too many invalid password attempts.\n"
+      "Disconnecting for now. Please reconnect when ready."
+    );
+    return 1;
+  }
+
+  return 0;
+}
+
+void clear_password_failures() {
+  object current_session;
+
+  current_session = query_session();
+
+  if (!objectp(current_session))
+    return;
+
+  current_session->set_session_value("password_failure_count", 0);
+
+  return;
+}

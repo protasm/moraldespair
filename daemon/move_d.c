@@ -1,4 +1,5 @@
 #include "/daemon/move_d.h"
+#include <link.h>
 
 string endpoint_id_for_room(object room) {
   string endpoint_id;
@@ -93,6 +94,8 @@ object try_move_label(object player, string label) {
 
     if (!stringp(msg) || msg == "")
       msg = "You cannot go that way.\n";
+    else if (msg[<1] != '\n')
+      msg += "\n";
 
     write(msg);
 

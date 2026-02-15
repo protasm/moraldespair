@@ -13,10 +13,8 @@ void handle_input(string input) {
 
   account_name = normalized(input);
 
-  if (account_name == "") {
-    begin_phase();
+  if (require_nonempty_input(input))
     return;
-  }
 
   if (contains_reserved(account_name)) {
     write_line("That account name is not allowed.");

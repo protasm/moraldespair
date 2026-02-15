@@ -185,3 +185,12 @@ void receive_input(string input) {
 
   return;
 }
+
+void disconnect_session(string message) {
+  if (stringp(message) && message != "")
+    session_write(message);
+
+  destruct(this_object());
+
+  return;
+}

@@ -6,5 +6,6 @@ void ensure_account_root();
 void ensure_account_dir(string username);
 mapping load_data(string path);
 int save_data(string path, mapping data);
+string last_played_player(string username);
 int max_players_per_account();
 int player_slots_remaining(string username);

@@ -53,7 +53,7 @@ void create() {
   link_files = ({
     "/chapter/prologue/area/dead/links.json",
     "/chapter/prologue/area/roadway/links.json",
-    "/chapter/prologue/area/wilderness/wilderness_links.json",
+    "/chapter/prologue/wild/wild_links.json",
     "/chapter/prologue/area/refuge/links.json",
     "/chapter/prologue/area/ruined/ruined_links.json",
     "/chapter/prologue/area/silent/links.json",
@@ -67,7 +67,7 @@ void create() {
 
     i += 1;
   }
-  load_wilderness_room_links();
+  load_wild_room_links();
 }
 
 /* ------------------------------------------------------------ */
@@ -160,11 +160,11 @@ string read_json_file(string file) {
   return contents;
 }
 
-int _is_wilderness_endpoint(string endpoint) {
+int _is_wild_endpoint(string endpoint) {
   if (!stringp(endpoint) || endpoint == "")
     return 0;
 
-  return (strsrch(endpoint, "/chapter/prologue/area/wilderness/wilderness_room#") == 0);
+  return (strsrch(endpoint, "/chapter/prologue/wild/wild_room#") == 0);
 }
 
 string _opposite_direction(string dir) {
@@ -184,16 +184,16 @@ string _opposite_direction(string dir) {
   return "";
 }
 
-string _wilderness_endpoint_from_id(string room_id) {
+string _wild_endpoint_from_id(string room_id) {
   room_id = _trim(room_id);
 
   if (room_id == "")
     return "";
 
-  return "/chapter/prologue/area/wilderness/wilderness_room#" + room_id;
+  return "/chapter/prologue/wild/wild_room#" + room_id;
 }
 
-void load_wilderness_room_links() {
+void load_wild_room_links() {
   string *map_files;
   string raw, source_file, from_id, to_ref, from_ep, to_ep, pair;
   string from_dir, opposite_dir;
@@ -202,23 +202,23 @@ void load_wilderness_room_links() {
   int i, j;
 
   map_files = ({
-    "/chapter/prologue/area/wilderness/wilderness_nw.json",
-    "/chapter/prologue/area/wilderness/wilderness_sw.json",
-    "/chapter/prologue/area/wilderness/wilderness_ne.json",
-    "/chapter/prologue/area/wilderness/wilderness_se.json"
+    "/chapter/prologue/wild/wild_nw.json",
+    "/chapter/prologue/wild/wild_sw.json",
+    "/chapter/prologue/wild/wild_ne.json",
+    "/chapter/prologue/wild/wild_se.json"
   });
   pair_defs = ([ ]);
   rooms_by_file = ([ ]);
   room_ids = ([ ]);
   i = 0;
 
-  /* Pass 1: parse files and collect all wilderness IDs. */
+  /* Pass 1: parse files and collect all Wild IDs. */
   while (i < sizeof(map_files)) {
     source_file = map_files[i];
     raw = read_json_file(source_file);
 
     if (!stringp(raw)) {
-      write("LINK_D: Unable to read wilderness map file: " + source_file + "\n");
+      write("LINK_D: Unable to read wild map file: " + source_file + "\n");
       i += 1;
 
       continue;
@@ -227,7 +227,7 @@ void load_wilderness_room_links() {
     data = parse_json(raw);
 
     if (!mapp(data)) {
-      write("LINK_D: Invalid wilderness JSON in: " + source_file + "\n");
+      write("LINK_D: Invalid wild JSON in: " + source_file + "\n");
       i += 1;
 
       continue;
@@ -236,7 +236,7 @@ void load_wilderness_room_links() {
     rooms = data["rooms"];
 
     if (!pointerp(rooms)) {
-      write("LINK_D: Wilderness JSON missing rooms array in: " + source_file + "\n");
+      write("LINK_D: Wild JSON missing rooms array in: " + source_file + "\n");
       i += 1;
 
       continue;
@@ -285,7 +285,7 @@ void load_wilderness_room_links() {
 
         if (stringp(from_id) && mapp(exits)) {
           from_id = _trim(from_id);
-          from_ep = _wilderness_endpoint_from_id(from_id);
+          from_ep = _wild_endpoint_from_id(from_id);
 
           foreach (mixed k, mixed v in exits) {
             if (!stringp(k) || !stringp(v))
@@ -303,7 +303,7 @@ void load_wilderness_room_links() {
               if (!room_ids[to_ref])
                 continue;
 
-              to_ep = _wilderness_endpoint_from_id(to_ref);
+              to_ep = _wild_endpoint_from_id(to_ref);
             }
 
             if (to_ep == "")

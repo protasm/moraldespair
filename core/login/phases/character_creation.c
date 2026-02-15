@@ -29,10 +29,8 @@ void handle_input(string input) {
     return;
   }
 
-  if (avatar_name == "") {
-    begin_phase();
+  if (require_nonempty_input(input))
     return;
-  }
 
   if (contains_reserved(avatar_name)) {
     write_line("That avatar name is not allowed.");
