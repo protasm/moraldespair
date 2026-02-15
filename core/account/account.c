@@ -1,17 +1,68 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/account/account.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - #include <globals.h>
+ *   - #include "account.h"
+ */
+
 #include <globals.h>
 
 #include "account.h"
 
 string account_username;
 
+/* Method Summary:
+ * Purpose:
+ *   Handles username for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for username.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from username.
+ */
 string username() {
   return account_username;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_username for this object.
+ * Parameters:
+ *   - string new_username
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_username.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_username.
+ */
 void set_username(string new_username) {
   account_username = normalize_key(new_username);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles normalize_key for this object.
+ * Parameters:
+ *   - string value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for normalize_key.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from normalize_key.
+ */
 string normalize_key(string value) {
   if (!stringp(value))
     return "";
@@ -19,6 +70,19 @@ string normalize_key(string value) {
   return lower_case(trim(value));
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles account_file_path for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for account_file_path.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from account_file_path.
+ */
 string account_file_path() {
   if (account_username == "")
     return "";
@@ -26,6 +90,19 @@ string account_file_path() {
   return "/a/" + account_username + "/account.o";
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles load_account_data for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for load_account_data.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from load_account_data.
+ */
 mapping load_account_data() {
   mapping account;
   string path, raw;
@@ -51,6 +128,19 @@ mapping load_account_data() {
   return account;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles save_account_data for this object.
+ * Parameters:
+ *   - mapping account
+ * Approach:
+ *   Validates inputs and executes explicit local logic for save_account_data.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from save_account_data.
+ */
 int save_account_data(mapping account) {
   string path, raw;
 
@@ -69,6 +159,19 @@ int save_account_data(mapping account) {
   return write_file(path, raw);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles handle_command for this object.
+ * Parameters:
+ *   - string verb, string arg
+ * Approach:
+ *   Validates inputs and executes explicit local logic for handle_command.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from handle_command.
+ */
 int handle_command(string verb, string arg) {
   string command_path;
   object command_object;
@@ -87,6 +190,19 @@ int handle_command(string verb, string arg) {
   return handled;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles email for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for email.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from email.
+ */
 string email() {
   mapping account;
 
@@ -98,6 +214,19 @@ string email() {
   return account["email"];
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_email for this object.
+ * Parameters:
+ *   - string new_email
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_email.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from set_email.
+ */
 int set_email(string new_email) {
   mapping account;
   string normalized;
@@ -120,6 +249,19 @@ int set_email(string new_email) {
   return save_account_data(account);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles password_hash for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for password_hash.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from password_hash.
+ */
 string password_hash() {
   mapping account;
   string hash_value;
@@ -140,6 +282,19 @@ string password_hash() {
   return hash_value;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_password_hash for this object.
+ * Parameters:
+ *   - string new_hash
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_password_hash.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from set_password_hash.
+ */
 int set_password_hash(string new_hash) {
   mapping account;
 
@@ -156,6 +311,19 @@ int set_password_hash(string new_hash) {
   return save_account_data(account);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles players for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for players.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from players.
+ */
 string *players() {
   mapping account;
   string *players;
@@ -177,6 +345,19 @@ string *players() {
   return players;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_players for this object.
+ * Parameters:
+ *   - string *players
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_players.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from set_players.
+ */
 int set_players(string *players) {
   mapping account;
 
@@ -194,6 +375,19 @@ int set_players(string *players) {
   return save_account_data(account);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles last_login for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for last_login.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from last_login.
+ */
 int last_login() {
   mapping account;
 
@@ -205,6 +399,19 @@ int last_login() {
   return account["last_login"];
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_last_login for this object.
+ * Parameters:
+ *   - int last_login
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_last_login.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from set_last_login.
+ */
 int set_last_login(int last_login) {
   mapping account;
 

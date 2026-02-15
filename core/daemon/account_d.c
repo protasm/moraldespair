@@ -1,14 +1,52 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/daemon/account_d.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - #include "/core/daemon/account_d.h"
+ *   - #include <globals.h>
+ */
+
 #include "/core/daemon/account_d.h"
 #include <globals.h>
 
 string account_root;
 
+/* Method Summary:
+ * Purpose:
+ *   Handles create for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for create.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from create.
+ */
 void create() {
   account_root = "/a";
 
   ensure_account_root();
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles normalize_key for this object.
+ * Parameters:
+ *   - string value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for normalize_key.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from normalize_key.
+ */
 string normalize_key(string value) {
   if (!stringp(value))
     return "";
@@ -16,6 +54,19 @@ string normalize_key(string value) {
   return lower_case(trim(value));
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles account_dir for this object.
+ * Parameters:
+ *   - string username
+ * Approach:
+ *   Validates inputs and executes explicit local logic for account_dir.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from account_dir.
+ */
 string account_dir(string username) {
   username = normalize_key(username);
 
@@ -25,6 +76,19 @@ string account_dir(string username) {
   return account_root + "/" + username;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles account_file for this object.
+ * Parameters:
+ *   - string username
+ * Approach:
+ *   Validates inputs and executes explicit local logic for account_file.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from account_file.
+ */
 string account_file(string username) {
   string dir;
 
@@ -36,6 +100,19 @@ string account_file(string username) {
   return dir + "/account.o";
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles player_file for this object.
+ * Parameters:
+ *   - string username, string player_name
+ * Approach:
+ *   Validates inputs and executes explicit local logic for player_file.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from player_file.
+ */
 string player_file(string username, string player_name) {
   string dir;
   string normalized;
@@ -49,11 +126,37 @@ string player_file(string username, string player_name) {
   return dir + "/" + normalized + ".o";
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles ensure_account_root for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for ensure_account_root.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from ensure_account_root.
+ */
 void ensure_account_root() {
   if (file_size(account_root) != -2)
     mkdir(account_root);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles ensure_account_dir for this object.
+ * Parameters:
+ *   - string username
+ * Approach:
+ *   Validates inputs and executes explicit local logic for ensure_account_dir.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from ensure_account_dir.
+ */
 void ensure_account_dir(string username) {
   string dir;
 
@@ -67,6 +170,19 @@ void ensure_account_dir(string username) {
     mkdir(dir);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles load_data for this object.
+ * Parameters:
+ *   - string path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for load_data.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from load_data.
+ */
 mapping load_data(string path) {
   mapping data;
   string raw;
@@ -90,6 +206,19 @@ mapping load_data(string path) {
   return data;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles save_data for this object.
+ * Parameters:
+ *   - string path, mapping data
+ * Approach:
+ *   Validates inputs and executes explicit local logic for save_data.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from save_data.
+ */
 int save_data(string path, mapping data) {
   string raw;
 
@@ -106,6 +235,19 @@ int save_data(string path, mapping data) {
   return write_file(path, raw);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles account_exists for this object.
+ * Parameters:
+ *   - string username
+ * Approach:
+ *   Validates inputs and executes explicit local logic for account_exists.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from account_exists.
+ */
 int account_exists(string username) {
   string path;
 
@@ -122,6 +264,19 @@ int account_exists(string username) {
   return file_size(path) > 0;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles username_by_email for this object.
+ * Parameters:
+ *   - string email
+ * Approach:
+ *   Validates inputs and executes explicit local logic for username_by_email.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from username_by_email.
+ */
 string username_by_email(string email) {
   string *names;
   string dir;
@@ -165,6 +320,19 @@ string username_by_email(string email) {
   return "";
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles password_hash for this object.
+ * Parameters:
+ *   - string username
+ * Approach:
+ *   Validates inputs and executes explicit local logic for password_hash.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from password_hash.
+ */
 string password_hash(string username) {
   mapping account;
   string hash_value;
@@ -186,6 +354,19 @@ string password_hash(string username) {
   return hash_value;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles display_name for this object.
+ * Parameters:
+ *   - string username
+ * Approach:
+ *   Validates inputs and executes explicit local logic for display_name.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from display_name.
+ */
 string display_name(string username) {
   mapping account;
   string display;
@@ -204,6 +385,19 @@ string display_name(string username) {
   return display;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles players for this object.
+ * Parameters:
+ *   - string username
+ * Approach:
+ *   Validates inputs and executes explicit local logic for players.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from players.
+ */
 string *players(string username) {
   mapping account;
   string *player_list;
@@ -226,6 +420,19 @@ string *players(string username) {
   return player_list;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles last_played_player for this object.
+ * Parameters:
+ *   - string username
+ * Approach:
+ *   Validates inputs and executes explicit local logic for last_played_player.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from last_played_player.
+ */
 string last_played_player(string username) {
   string *player_list;
   string player_name;
@@ -278,10 +485,36 @@ string last_played_player(string username) {
   return latest_player;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles max_players_per_account for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for max_players_per_account.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from max_players_per_account.
+ */
 int max_players_per_account() {
   return 3;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles player_slots_remaining for this object.
+ * Parameters:
+ *   - string username
+ * Approach:
+ *   Validates inputs and executes explicit local logic for player_slots_remaining.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from player_slots_remaining.
+ */
 int player_slots_remaining(string username) {
   string *player_list;
   int remaining;
@@ -295,6 +528,19 @@ int player_slots_remaining(string username) {
   return remaining;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles player_exists for this object.
+ * Parameters:
+ *   - string username, string player_name
+ * Approach:
+ *   Validates inputs and executes explicit local logic for player_exists.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from player_exists.
+ */
 int player_exists(string username, string player_name) {
   string *player_list;
   string normalized;
@@ -311,6 +557,19 @@ int player_exists(string username, string player_name) {
   return 0;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles create_account for this object.
+ * Parameters:
+ *   - string username, string display_name, string email,
+ * Approach:
+ *   Validates inputs and executes explicit local logic for create_account.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from create_account.
+ */
 int create_account(string username, string display_name, string email,
                    string password_hash) {
   mapping account;
@@ -348,6 +607,19 @@ int create_account(string username, string display_name, string email,
   return saved;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles add_player for this object.
+ * Parameters:
+ *   - string username, string player_name
+ * Approach:
+ *   Validates inputs and executes explicit local logic for add_player.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from add_player.
+ */
 int add_player(string username, string player_name) {
   mapping account;
   string *players;
@@ -411,6 +683,19 @@ int add_player(string username, string player_name) {
   return save_data(path, player);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles record_login for this object.
+ * Parameters:
+ *   - string username
+ * Approach:
+ *   Validates inputs and executes explicit local logic for record_login.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from record_login.
+ */
 void record_login(string username) {
   mapping account;
 
@@ -427,6 +712,19 @@ void record_login(string username) {
   save_data(account_file(username), account);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles record_player_login for this object.
+ * Parameters:
+ *   - string username, string player_name
+ * Approach:
+ *   Validates inputs and executes explicit local logic for record_player_login.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from record_player_login.
+ */
 void record_player_login(string username, string player_name) {
   mapping player;
   string path;

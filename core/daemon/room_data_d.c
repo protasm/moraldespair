@@ -1,3 +1,14 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/daemon/room_data_d.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - none
+ */
+
 mapping room_data_by_path;
 mapping virtual_specs_by_path;
 mapping room_paths_by_source_dir;
@@ -6,6 +17,19 @@ int loaded, room_count, json_file_count;
 string *json_files_loaded;
 string last_load_error;
 
+/* Method Summary:
+ * Purpose:
+ *   Handles normalize_path for this object.
+ * Parameters:
+ *   - string path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for normalize_path.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from normalize_path.
+ */
 string normalize_path(string path) {
   if (!stringp(path) || path == "")
     return "";
@@ -22,6 +46,19 @@ string normalize_path(string path) {
   return path;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles join_path for this object.
+ * Parameters:
+ *   - string base, string entry
+ * Approach:
+ *   Validates inputs and executes explicit local logic for join_path.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from join_path.
+ */
 string join_path(string base, string entry) {
   if (!stringp(entry) || entry == "")
     return "";
@@ -35,6 +72,19 @@ string join_path(string base, string entry) {
   return normalize_path(base + "/" + entry);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles parse_json for this object.
+ * Parameters:
+ *   - string raw
+ * Approach:
+ *   Validates inputs and executes explicit local logic for parse_json.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mixed result from parse_json.
+ */
 mixed parse_json(string raw) {
   object parser;
 
@@ -52,6 +102,19 @@ mixed parse_json(string raw) {
   return parser->json_decode(raw);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles read_json_file for this object.
+ * Parameters:
+ *   - string file
+ * Approach:
+ *   Validates inputs and executes explicit local logic for read_json_file.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from read_json_file.
+ */
 string read_json_file(string file) {
   string chunk, contents;
   string *chunks;
@@ -85,6 +148,19 @@ string read_json_file(string file) {
   return contents;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles area_dir_from_json_file for this object.
+ * Parameters:
+ *   - string json_file
+ * Approach:
+ *   Validates inputs and executes explicit local logic for area_dir_from_json_file.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from area_dir_from_json_file.
+ */
 string area_dir_from_json_file(string json_file) {
   string normalized_file;
   string remaining_path;
@@ -125,6 +201,19 @@ string area_dir_from_json_file(string json_file) {
   return "/chapter/" + chapter_name + "/area/" + area_name;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles sub_area_dirs_from_json for this object.
+ * Parameters:
+ *   - string area_dir
+ * Approach:
+ *   Validates inputs and executes explicit local logic for sub_area_dirs_from_json.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from sub_area_dirs_from_json.
+ */
 string *sub_area_dirs_from_json(string area_dir) {
   string subareas_file;
   string subareas_raw;
@@ -183,6 +272,19 @@ string *sub_area_dirs_from_json(string area_dir) {
   return sub_dirs;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles legacy_room_json_files for this object.
+ * Parameters:
+ *   - string area_dir
+ * Approach:
+ *   Validates inputs and executes explicit local logic for legacy_room_json_files.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from legacy_room_json_files.
+ */
 string *legacy_room_json_files(string area_dir) {
   string *entries;
   string *json_files;
@@ -247,6 +349,19 @@ string *legacy_room_json_files(string area_dir) {
   return json_files;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles collect_area_room_json_files for this object.
+ * Parameters:
+ *   - string area_dir, mapping visited_dirs
+ * Approach:
+ *   Validates inputs and executes explicit local logic for collect_area_room_json_files.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from collect_area_room_json_files.
+ */
 string *collect_area_room_json_files(string area_dir, mapping visited_dirs) {
   string rooms_file;
   string *json_files;
@@ -289,6 +404,19 @@ string *collect_area_room_json_files(string area_dir, mapping visited_dirs) {
   return json_files;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles chapter_dir_from_area_dir for this object.
+ * Parameters:
+ *   - string area_dir
+ * Approach:
+ *   Validates inputs and executes explicit local logic for chapter_dir_from_area_dir.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from chapter_dir_from_area_dir.
+ */
 string chapter_dir_from_area_dir(string area_dir) {
   string chapter_name;
   string area_name;
@@ -310,6 +438,19 @@ string chapter_dir_from_area_dir(string area_dir) {
   return "/chapter/" + chapter_name;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles terrain_catalog_for_area_dir for this object.
+ * Parameters:
+ *   - string area_dir
+ * Approach:
+ *   Validates inputs and executes explicit local logic for terrain_catalog_for_area_dir.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from terrain_catalog_for_area_dir.
+ */
 mapping terrain_catalog_for_area_dir(string area_dir) {
   mapping terrain_catalog;
   mixed parsed_json;
@@ -348,8 +489,23 @@ mapping terrain_catalog_for_area_dir(string area_dir) {
   return terrain_catalog;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles index_room_entry for this object.
+ * Parameters:
+ *   - string json_file, mapping json_root, mapping room_entry
+ * Approach:
+ *   Validates inputs and executes explicit local logic for index_room_entry.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from index_room_entry.
+ */
 void index_room_entry(string json_file, mapping json_root, mapping room_entry) {
   string room_id, room_file, source_dir, source_root, room_path, area_dir, terrain_code;
+  string explicit_short;
+  mixed explicit_long;
   mapping paths_by_id;
   mapping indexed_room_data;
   mapping terrain_catalog;
@@ -361,11 +517,19 @@ void index_room_entry(string json_file, mapping json_root, mapping room_entry) {
   indexed_room_data = copy(room_entry);
   room_id = room_entry["id"];
   room_file = room_entry["file"];
+  explicit_short = "";
+  explicit_long = 0;
   source_dir = json_root["source_dir"];
   source_dir = normalize_path(source_dir);
   source_root = "";
   room_path = "";
   area_dir = area_dir_from_json_file(json_file);
+
+  if (stringp(room_entry["short"]) && room_entry["short"] != "")
+    explicit_short = room_entry["short"];
+
+  if (stringp(room_entry["long"]) || pointerp(room_entry["long"]))
+    explicit_long = room_entry["long"];
 
   if (stringp(room_file) && room_file != "")
     room_path = normalize_path(room_file);
@@ -420,6 +584,12 @@ void index_room_entry(string json_file, mapping json_root, mapping room_entry) {
 
   room_data_by_path[room_path] = indexed_room_data;
 
+  if (stringp(explicit_short) && explicit_short != "")
+    room_data_by_path[room_path]["_explicit_short"] = explicit_short;
+
+  if (stringp(explicit_long) || pointerp(explicit_long))
+    room_data_by_path[room_path]["_explicit_long"] = explicit_long;
+
   virtual_specs_by_path[room_path] = ([
     "template" : "vroom",
     "id" : room_id,
@@ -443,6 +613,19 @@ void index_room_entry(string json_file, mapping json_root, mapping room_entry) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles load_room_json for this object.
+ * Parameters:
+ *   - string json_file
+ * Approach:
+ *   Validates inputs and executes explicit local logic for load_room_json.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from load_room_json.
+ */
 void load_room_json(string json_file) {
   mixed parsed_json;
   mixed rooms;
@@ -483,6 +666,19 @@ void load_room_json(string json_file) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles load_room_data for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for load_room_data.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from load_room_data.
+ */
 void load_room_data() {
   string *chapter_dirs;
   string *area_dirs;
@@ -576,6 +772,19 @@ void load_room_data() {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles create for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for create.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from create.
+ */
 void create() {
   loaded = 0;
 
@@ -584,6 +793,19 @@ void create() {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles reload_room_data for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for reload_room_data.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from reload_room_data.
+ */
 void reload_room_data() {
   loaded = 0;
 
@@ -592,6 +814,19 @@ void reload_room_data() {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles room_exists for this object.
+ * Parameters:
+ *   - string room_path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for room_exists.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from room_exists.
+ */
 int room_exists(string room_path) {
   room_path = normalize_path(room_path);
 
@@ -604,6 +839,19 @@ int room_exists(string room_path) {
   return 0;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles room_data for this object.
+ * Parameters:
+ *   - string room_path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for room_data.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from room_data.
+ */
 mapping room_data(string room_path) {
   mapping room;
 
@@ -620,6 +868,19 @@ mapping room_data(string room_path) {
   return room;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles virtual_spec for this object.
+ * Parameters:
+ *   - string room_path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for virtual_spec.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from virtual_spec.
+ */
 mapping virtual_spec(string room_path) {
   mapping spec;
 
@@ -636,6 +897,19 @@ mapping virtual_spec(string room_path) {
   return spec;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles resolve_room_request for this object.
+ * Parameters:
+ *   - string requested_path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for resolve_room_request.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from resolve_room_request.
+ */
 mapping resolve_room_request(string requested_path) {
   string normalized_path;
   string area_source_dir;
@@ -700,6 +974,19 @@ mapping resolve_room_request(string requested_path) {
   return spec;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles debug_status for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for debug_status.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from debug_status.
+ */
 mapping debug_status() {
   return ([
     "loaded" : loaded,

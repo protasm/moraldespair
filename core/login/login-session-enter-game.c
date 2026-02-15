@@ -1,3 +1,27 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/login/login-session-enter-game.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - none
+ */
+
+/* Method Summary:
+ * Purpose:
+ *   Handles normalize_value for this object.
+ * Parameters:
+ *   - string value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for normalize_value.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from normalize_value.
+ */
 string normalize_value(string value) {
   if (!stringp(value))
     return "";
@@ -5,6 +29,19 @@ string normalize_value(string value) {
   return lower_case(trim(value));
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles wizard_virtual_debug for this object.
+ * Parameters:
+ *   - object player, string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for wizard_virtual_debug.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from wizard_virtual_debug.
+ */
 void wizard_virtual_debug(object player, string message) {
   string line;
   int is_wizard_player;
@@ -32,6 +69,19 @@ void wizard_virtual_debug(object player, string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles enter_game for this object.
+ * Parameters:
+ *   - string avatar_name
+ * Approach:
+ *   Validates inputs and executes explicit local logic for enter_game.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from enter_game.
+ */
 void enter_game(string avatar_name) {
   object account;
   object player;

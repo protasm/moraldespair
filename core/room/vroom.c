@@ -1,3 +1,16 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/room/vroom.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - inherit "/core/room/room";
+ *   - #include "/core/link/link.h"
+ *   - #include "vroom.h"
+ */
+
 #define ROOM_DATA_D "/core/daemon/room_data_d"
 
 inherit "/core/room/room";
@@ -7,6 +20,19 @@ inherit "/core/room/room";
 
 string room_path;
 
+/* Method Summary:
+ * Purpose:
+ *   Handles room_data for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for room_data.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from room_data.
+ */
 mapping room_data() {
   object room_data_daemon;
   mapping room_details;
@@ -30,6 +56,19 @@ mapping room_data() {
   return room_details;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_descriptions for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_descriptions.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_descriptions.
+ */
 void set_descriptions() {
   mapping room_details;
   mixed long_data;
@@ -46,8 +85,8 @@ void set_descriptions() {
   long_index = 0;
 
   if (mapp(room_details)) {
-    short_name = room_details["short"];
-    long_data = room_details["long"];
+    short_name = room_details["_explicit_short"];
+    long_data = room_details["_explicit_long"];
 
     if (pointerp(long_data)) {
       long_options = long_data;
@@ -63,16 +102,29 @@ void set_descriptions() {
   if (stringp(short_name) && short_name != "")
     short_desc = short_name;
   else
-    short_desc = "Ruins";
+    short_desc = "";
 
   if (stringp(long_name) && long_name != "")
     long_desc = long_name;
   else
-    long_desc = "The remains here are silent and abandoned.";
+    long_desc = "";
 
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles create for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for create.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from create.
+ */
 void create() {
   ::create();
 
@@ -82,6 +134,19 @@ void create() {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_room_path for this object.
+ * Parameters:
+ *   - string path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_room_path.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_room_path.
+ */
 void set_room_path(string path) {
   object cache;
 
@@ -96,10 +161,36 @@ void set_room_path(string path) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles room_id for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for room_id.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from room_id.
+ */
 string room_id() {
   return room_path;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles link_can_enter for this object.
+ * Parameters:
+ *   - object actor, object link
+ * Approach:
+ *   Validates inputs and executes explicit local logic for link_can_enter.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from link_can_enter.
+ */
 mapping link_can_enter(object actor, object link) {
   mapping room_details;
   string traverse_failure;
@@ -147,6 +238,19 @@ mapping link_can_enter(object actor, object link) {
   ]);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles link_endpoint_id for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for link_endpoint_id.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from link_endpoint_id.
+ */
 string link_endpoint_id() {
   if (!stringp(room_path) || room_path == "")
     return base_name(this_object());

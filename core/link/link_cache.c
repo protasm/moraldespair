@@ -1,3 +1,16 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/link/link_cache.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - inherit "/core/object/object";
+ *   - #include <globals.h>
+ *   - #include "link_cache.h"
+ */
+
 inherit "/core/object/object";
 
 #include <globals.h>
@@ -9,6 +22,19 @@ string cached_endpoint_id;
 object *links;
 mapping links_by_direction;
 
+/* Method Summary:
+ * Purpose:
+ *   Handles endpoint_id_for_room for this object.
+ * Parameters:
+ *   - object room
+ * Approach:
+ *   Validates inputs and executes explicit local logic for endpoint_id_for_room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from endpoint_id_for_room.
+ */
 string endpoint_id_for_room(object room) {
   string endpoint_id;
 
@@ -32,6 +58,19 @@ string endpoint_id_for_room(object room) {
  * Inputs: none.
  * Outputs: none.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles create for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for create.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from create.
+ */
 void create() {
   ::create();
 
@@ -54,6 +93,19 @@ void create() {
  * Inputs: target (room object).
  * Outputs: none.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles init_for_room for this object.
+ * Parameters:
+ *   - object target
+ * Approach:
+ *   Validates inputs and executes explicit local logic for init_for_room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from init_for_room.
+ */
 void init_for_room(object target) {
   // Guard against invalid room objects.
   if (!objectp(target))
@@ -74,6 +126,19 @@ void init_for_room(object target) {
  * Query LINK_D for links touching the cached endpoint and store them locally.
  * Inputs: none.
  * Outputs: none.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles refresh_links for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for refresh_links.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from refresh_links.
  */
 void refresh_links() {
   // If no endpoint is set, reset cached data.
@@ -107,6 +172,19 @@ void refresh_links() {
  * Inputs: none.
  * Outputs: room object or 0.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles room for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from room.
+ */
 object room() {
   return cached_room;
 }
@@ -116,6 +194,19 @@ object room() {
  * Return the base_name id of the bound room.
  * Inputs: none.
  * Outputs: endpoint id string or "".
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles endpoint_id for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for endpoint_id.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from endpoint_id.
  */
 string endpoint_id() {
   return cached_endpoint_id;
@@ -131,6 +222,19 @@ string endpoint_id() {
  * Outputs:
  *   1 if a link handled the input (or a disambiguation prompt was shown),
  *   0 if the cache did not handle the input.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles handle_input for this object.
+ * Parameters:
+ *   - object actor, string verb, string arg
+ * Approach:
+ *   Validates inputs and executes explicit local logic for handle_input.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from handle_input.
  */
 int handle_input(object actor, string verb, string arg) {
   object *matches;

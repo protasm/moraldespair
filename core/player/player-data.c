@@ -1,8 +1,32 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/player/player-data.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - #include <globals.h>
+ */
+
 #include <globals.h>
 
 string player_name;
 object player_object, account_object;
 
+/* Method Summary:
+ * Purpose:
+ *   Handles normalize_key for this object.
+ * Parameters:
+ *   - string value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for normalize_key.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from normalize_key.
+ */
 string normalize_key(string value) {
   if (!stringp(value))
     return "";
@@ -10,6 +34,19 @@ string normalize_key(string value) {
   return lower_case(trim(value));
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles player_file_path for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for player_file_path.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from player_file_path.
+ */
 string player_file_path() {
   string username, player;
 
@@ -25,6 +62,19 @@ string player_file_path() {
   return "/a/" + username + "/" + player + ".o";
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles load_player_data for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for load_player_data.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from load_player_data.
+ */
 mapping load_player_data() {
   mapping player_data;
   string path, raw;
@@ -50,6 +100,19 @@ mapping load_player_data() {
   return player_data;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles save_player_data for this object.
+ * Parameters:
+ *   - mapping player_data
+ * Approach:
+ *   Validates inputs and executes explicit local logic for save_player_data.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from save_player_data.
+ */
 int save_player_data(mapping player_data) {
   string path, raw;
 
@@ -68,36 +131,127 @@ int save_player_data(mapping player_data) {
   return write_file(path, raw);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles player for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for player.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from player.
+ */
 object player() {
   return player_object;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_player for this object.
+ * Parameters:
+ *   - object player
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_player.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_player.
+ */
 void set_player(object player) {
   player_object = player;
 
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles account for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for account.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from account.
+ */
 object account() {
   return account_object;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_account for this object.
+ * Parameters:
+ *   - object new_account
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_account.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_account.
+ */
 void set_account(object new_account) {
   account_object = new_account;
 
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles name for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for name.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from name.
+ */
 string name() {
   return player_name;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_name for this object.
+ * Parameters:
+ *   - string new_name
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_name.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_name.
+ */
 void set_name(string new_name) {
   player_name = normalize_key(new_name);
 
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles display_name for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for display_name.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from display_name.
+ */
 string display_name() {
   mapping player_data;
 
@@ -109,6 +263,19 @@ string display_name() {
   return player_data["display_name"];
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles current_chapter for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for current_chapter.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from current_chapter.
+ */
 string current_chapter() {
   mapping player_data;
 
@@ -123,6 +290,19 @@ string current_chapter() {
   return player_data["current_chapter"];
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_current_chapter for this object.
+ * Parameters:
+ *   - string chapter_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_current_chapter.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from set_current_chapter.
+ */
 int set_current_chapter(string chapter_id) {
   mapping player_data;
   string normalized;
@@ -145,6 +325,19 @@ int set_current_chapter(string chapter_id) {
   return save_player_data(player_data);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles unlocked_chapters for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for unlocked_chapters.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from unlocked_chapters.
+ */
 string *unlocked_chapters() {
   mapping player_data;
   string *unlocked;
@@ -162,6 +355,19 @@ string *unlocked_chapters() {
   return unlocked;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_unlocked_chapters for this object.
+ * Parameters:
+ *   - string *chapter_ids
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_unlocked_chapters.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from set_unlocked_chapters.
+ */
 int set_unlocked_chapters(string *chapter_ids) {
   mapping player_data;
   string *normalized;
@@ -196,6 +402,19 @@ int set_unlocked_chapters(string *chapter_ids) {
   return save_player_data(player_data);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles unlock_chapter for this object.
+ * Parameters:
+ *   - string chapter_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for unlock_chapter.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from unlock_chapter.
+ */
 int unlock_chapter(string chapter_id) {
   mapping player_data;
   string normalized;
@@ -227,6 +446,19 @@ int unlock_chapter(string chapter_id) {
   return save_player_data(player_data);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_display_name for this object.
+ * Parameters:
+ *   - string new_display_name
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_display_name.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from set_display_name.
+ */
 int set_display_name(string new_display_name) {
   mapping player_data;
 
@@ -243,6 +475,19 @@ int set_display_name(string new_display_name) {
   return save_player_data(player_data);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles brief for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for brief.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from brief.
+ */
 int brief() {
   mapping player_data;
 
@@ -254,6 +499,19 @@ int brief() {
   return player_data["brief"];
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_brief for this object.
+ * Parameters:
+ *   - int state
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_brief.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from set_brief.
+ */
 int set_brief(int state) {
   mapping player_data;
 
@@ -270,6 +528,19 @@ int set_brief(int state) {
   return save_player_data(player_data);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles toggle_brief for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for toggle_brief.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from toggle_brief.
+ */
 int toggle_brief() {
   mapping player_data;
   int brief;
@@ -292,6 +563,19 @@ int toggle_brief() {
   return player_data["brief"];
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles last_played for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for last_played.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from last_played.
+ */
 int last_played() {
   mapping player_data;
 
@@ -303,6 +587,19 @@ int last_played() {
   return player_data["last_played"];
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles is_wizard for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for is_wizard.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from is_wizard.
+ */
 int is_wizard() {
   mapping player_data;
   int is_wizard;
@@ -320,6 +617,19 @@ int is_wizard() {
   return 0;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_last_played for this object.
+ * Parameters:
+ *   - int last_played
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_last_played.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from set_last_played.
+ */
 int set_last_played(int last_played) {
   mapping player_data;
 

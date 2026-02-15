@@ -1,6 +1,30 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/player/player-process-input.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - none
+ */
+
 /****************************************************************************
  * Called automatically by the FluffOS driver for each line of user input.
  ****************************************************************************/
+/* Method Summary:
+ * Purpose:
+ *   Handles process_input for this object.
+ * Parameters:
+ *   - string raw
+ * Approach:
+ *   Validates inputs and executes explicit local logic for process_input.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from process_input.
+ */
 string process_input(string raw) {
   object command;
   object player, env;

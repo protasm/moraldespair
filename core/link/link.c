@@ -1,3 +1,15 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/link/link.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - inherit "/core/object/object";
+ *   - #include "/core/link/link.h"
+ */
+
 inherit "/core/object/object";
 
 #include "/core/link/link.h"
@@ -39,6 +51,19 @@ mapping allowed_paths; /* origin_id -> dest_id (if present); empty means bidirec
  * Initialize link state with empty endpoints, labels, metadata, gate, and
  * default bidirectional paths.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles create for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for create.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from create.
+ */
 void create() {
   ::create();
 
@@ -57,6 +82,19 @@ void create() {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles show_actor_location for this object.
+ * Parameters:
+ *   - object actor
+ * Approach:
+ *   Validates inputs and executes explicit local logic for show_actor_location.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from show_actor_location.
+ */
 void show_actor_location(object actor) {
   if (!objectp(actor))
     return;
@@ -75,6 +113,19 @@ void show_actor_location(object actor) {
 /*
  * void set_endpoints(string first, string second)
  * Define the two endpoints once, and seed default bidirectional routing.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles set_endpoints for this object.
+ * Parameters:
+ *   - string first, string second
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_endpoints.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_endpoints.
  */
 void set_endpoints(string first, string second) {
   if (!stringp(first) || !stringp(second))
@@ -97,17 +148,56 @@ void set_endpoints(string first, string second) {
  * string endpoint_a()
  * Return the endpoint A id, or "" if it has not been set.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles endpoint_a for this object.
+ * Parameters:
+ *   - ) { return endpoint_a_id; }
+ * Approach:
+ *   Validates inputs and executes explicit local logic for endpoint_a.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from endpoint_a.
+ */
 string endpoint_a() { return endpoint_a_id; }
 
 /*
  * string endpoint_b()
  * Return the endpoint B id, or "" if it has not been set.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles endpoint_b for this object.
+ * Parameters:
+ *   - ) { return endpoint_b_id; }
+ * Approach:
+ *   Validates inputs and executes explicit local logic for endpoint_b.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from endpoint_b.
+ */
 string endpoint_b() { return endpoint_b_id; }
 
 /*
  * int is_endpoint(string endpoint)
  * Report whether the provided id matches either endpoint.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles is_endpoint for this object.
+ * Parameters:
+ *   - string endpoint
+ * Approach:
+ *   Validates inputs and executes explicit local logic for is_endpoint.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from is_endpoint.
  */
 int is_endpoint(string endpoint) {
   if (!stringp(endpoint))
@@ -119,6 +209,19 @@ int is_endpoint(string endpoint) {
 /*
  * string other_endpoint(string endpoint)
  * Return the opposite endpoint id, or "" if the input is not an endpoint.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles other_endpoint for this object.
+ * Parameters:
+ *   - string endpoint
+ * Approach:
+ *   Validates inputs and executes explicit local logic for other_endpoint.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from other_endpoint.
  */
 string other_endpoint(string endpoint) {
   if (!stringp(endpoint))
@@ -134,6 +237,19 @@ string other_endpoint(string endpoint) {
 /*
  * int endpoint_index(string endpoint)
  * Return the gate-facing side index (0 for A, 1 for B), or -1 if unknown.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles endpoint_index for this object.
+ * Parameters:
+ *   - string endpoint
+ * Approach:
+ *   Validates inputs and executes explicit local logic for endpoint_index.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from endpoint_index.
  */
 int endpoint_index(string endpoint) {
   if (endpoint == endpoint_a_id) return 0;
@@ -151,6 +267,19 @@ int endpoint_index(string endpoint) {
  * void set_direction_label(string endpoint, string label)
  * Store a user-facing direction label for a specific endpoint id.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles set_direction_label for this object.
+ * Parameters:
+ *   - string endpoint, string label
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_direction_label.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_direction_label.
+ */
 void set_direction_label(string endpoint, string label) {
   if (!stringp(endpoint) || !stringp(label))
     return;
@@ -162,6 +291,19 @@ void set_direction_label(string endpoint, string label) {
  * string direction_label(string endpoint)
  * Return the direction label for an endpoint, or "" when none is set.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles direction_label for this object.
+ * Parameters:
+ *   - string endpoint
+ * Approach:
+ *   Validates inputs and executes explicit local logic for direction_label.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from direction_label.
+ */
 string direction_label(string endpoint) {
   if (!stringp(endpoint))
     return "";
@@ -172,6 +314,19 @@ string direction_label(string endpoint) {
 /*
  * void set_dirs(mapping dirs)
  * Replace direction labels with a normalized string->string mapping.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles set_dirs for this object.
+ * Parameters:
+ *   - mapping dirs
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_dirs.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_dirs.
  */
 void set_dirs(mapping dirs) {
   mapping normalized;
@@ -195,6 +350,19 @@ void set_dirs(mapping dirs) {
  * mapping dirs()
  * Return the direction-label mapping, or an empty mapping when unset.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles dirs for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for dirs.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from dirs.
+ */
 mapping dirs() {
   if (!mapp(endpoint_labels))
     return ([ ]);
@@ -206,6 +374,19 @@ mapping dirs() {
 /* Appearance */
 /* ------------------------------------------------------------ */
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_appearance for this object.
+ * Parameters:
+ *   - string description
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_appearance.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_appearance.
+ */
 void set_appearance(string description) {
   if (!stringp(description))
     return;
@@ -213,6 +394,19 @@ void set_appearance(string description) {
   default_appearance = description;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_endpoint_appearance for this object.
+ * Parameters:
+ *   - string endpoint, string description
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_endpoint_appearance.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_endpoint_appearance.
+ */
 void set_endpoint_appearance(string endpoint, string description) {
   if (!stringp(endpoint) || !stringp(description))
     return;
@@ -220,6 +414,19 @@ void set_endpoint_appearance(string endpoint, string description) {
   endpoint_appearances[endpoint] = description;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_appearances for this object.
+ * Parameters:
+ *   - mapping appearances
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_appearances.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_appearances.
+ */
 void set_appearances(mapping appearances) {
   mapping normalized;
 
@@ -238,6 +445,19 @@ void set_appearances(mapping appearances) {
   endpoint_appearances = normalized;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles appearance for this object.
+ * Parameters:
+ *   - string endpoint
+ * Approach:
+ *   Validates inputs and executes explicit local logic for appearance.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from appearance.
+ */
 string appearance(string endpoint) {
   string description;
 
@@ -252,6 +472,19 @@ string appearance(string endpoint) {
   return description;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles gate_status_line for this object.
+ * Parameters:
+ *   - string endpoint_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for gate_status_line.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from gate_status_line.
+ */
 string gate_status_line(string endpoint_id) {
   int endpoint_idx;
   int side;
@@ -286,6 +519,19 @@ string gate_status_line(string endpoint_id) {
   return "Visible that way: " + name + ".\n";
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles describe_from_endpoint for this object.
+ * Parameters:
+ *   - string endpoint_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for describe_from_endpoint.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from describe_from_endpoint.
+ */
 string describe_from_endpoint(string endpoint_id) {
   string description;
   string gate_line;
@@ -310,6 +556,19 @@ string describe_from_endpoint(string endpoint_id) {
  * void set_meta(string key, mixed value)
  * Store arbitrary metadata keyed by non-empty string.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles set_meta for this object.
+ * Parameters:
+ *   - string key, mixed value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_meta.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_meta.
+ */
 void set_meta(string key, mixed value) {
   if (!stringp(key) || key == "")
     return;
@@ -323,6 +582,19 @@ void set_meta(string key, mixed value) {
 /*
  * mixed meta(string key)
  * Return metadata for the given key, or 0 when missing.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles meta for this object.
+ * Parameters:
+ *   - string key
+ * Approach:
+ *   Validates inputs and executes explicit local logic for meta.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mixed result from meta.
  */
 mixed meta(string key) {
   if (!stringp(key) || key == "")
@@ -342,6 +614,19 @@ mixed meta(string key) {
  * void set_bidirectional()
  * Allow travel in both directions once endpoints are set.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles set_bidirectional for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_bidirectional.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_bidirectional.
+ */
 void set_bidirectional() {
   if (endpoint_a_id == "" || endpoint_b_id == "")
     return;
@@ -356,6 +641,19 @@ void set_bidirectional() {
  * void set_one_way(string from_endpoint, string to_endpoint)
  * Restrict travel to the specified direction only.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles set_one_way for this object.
+ * Parameters:
+ *   - string from_endpoint, string to_endpoint
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_one_way.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_one_way.
+ */
 void set_one_way(string from_endpoint, string to_endpoint) {
   if (!stringp(from_endpoint) || !stringp(to_endpoint))
     return;
@@ -366,6 +664,19 @@ void set_one_way(string from_endpoint, string to_endpoint) {
 /*
  * int allows_path(string origin_id, string destination_id)
  * Report whether the origin->destination pairing is permitted.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles allows_path for this object.
+ * Parameters:
+ *   - string origin_id, string destination_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for allows_path.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from allows_path.
  */
 int allows_path(string origin_id, string destination_id) {
   /* If allowed_paths is not set, default to bidirectional */
@@ -383,6 +694,19 @@ int allows_path(string origin_id, string destination_id) {
  * void add_gate(object gate_obj)
  * Replace any existing gate and set a link back-reference if supported.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles add_gate for this object.
+ * Parameters:
+ *   - object gate_obj
+ * Approach:
+ *   Validates inputs and executes explicit local logic for add_gate.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from add_gate.
+ */
 void add_gate(object gate_obj) {
   if (!objectp(gate_obj))
     return;
@@ -398,6 +722,19 @@ void add_gate(object gate_obj) {
  * object gate()
  * Return the gate object, or 0 when none exists.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles gate for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for gate.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from gate.
+ */
 object gate() {
   if (!objectp(link_gate))
     return 0;
@@ -408,6 +745,19 @@ object gate() {
 /*
  * object *gates()
  * Return a single-element array for compatibility, or empty when none exist.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles gates for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for gates.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from gates.
  */
 object *gates() {
   if (!objectp(link_gate))
@@ -420,14 +770,53 @@ object *gates() {
 /* Gate actions
  * ------------------------------------------------------------ */
 
+/* Method Summary:
+ * Purpose:
+ *   Handles link_verbs for this object.
+ * Parameters:
+ *   - object actor, string endpoint_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for link_verbs.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from link_verbs.
+ */
 string *link_verbs(object actor, string endpoint_id) {
   return ({ });
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles perform_link_action for this object.
+ * Parameters:
+ *   - object actor, string verb, string args, string endpoint_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for perform_link_action.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from perform_link_action.
+ */
 int perform_link_action(object actor, string verb, string args, string endpoint_id) {
   return 0;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles _build_action_groups for this object.
+ * Parameters:
+ *   - object actor, string endpoint_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for _build_action_groups.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from _build_action_groups.
+ */
 mapping _build_action_groups(object actor, string endpoint_id) {
   mapping groups;
   int endpoint_idx;
@@ -520,6 +909,19 @@ mapping _build_action_groups(object actor, string endpoint_id) {
   return groups;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles _match_action_args for this object.
+ * Parameters:
+ *   - string args, mapping verb_actions
+ * Approach:
+ *   Validates inputs and executes explicit local logic for _match_action_args.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from _match_action_args.
+ */
 mapping _match_action_args(string args, mapping verb_actions) {
   mapping result;
   string args_clean;
@@ -598,6 +1000,19 @@ mapping _match_action_args(string args, mapping verb_actions) {
   return result;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles action_match for this object.
+ * Parameters:
+ *   - object actor, string verb, string args, string endpoint_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for action_match.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from action_match.
+ */
 mapping action_match(object actor, string verb, string args, string endpoint_id) {
   mapping actions;
   mapping verb_actions;
@@ -622,6 +1037,19 @@ mapping action_match(object actor, string verb, string args, string endpoint_id)
   return _match_action_args(args, verb_actions);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles handle_action for this object.
+ * Parameters:
+ *   - object actor, string verb, string args, string endpoint_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for handle_action.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from handle_action.
+ */
 int handle_action(object actor, string verb, string args, string endpoint_id) {
   mapping actions;
   mapping verb_actions;
@@ -698,6 +1126,19 @@ int handle_action(object actor, string verb, string args, string endpoint_id) {
  *   mixed mutations)
  * Assemble a standardized link result mapping from outcome data.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles build_result for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for build_result.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from build_result.
+ */
 mapping build_result(
   int outcome, string message, string redirect,
   int cost, mixed mutations
@@ -726,6 +1167,19 @@ mapping build_result(
  * mapping allow_result()
  * Return a baseline allow result with no message, cost, or mutations.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles allow_result for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for allow_result.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from allow_result.
+ */
 mapping allow_result() {
   return build_result(LINK_OUTCOME_ALLOW, "", "", 0, ({ }));
 }
@@ -734,6 +1188,19 @@ mapping allow_result() {
  * mapping deny_result(string message, int cost, mixed mutations)
  * Return a denial result with optional message, cost, and mutations.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles deny_result for this object.
+ * Parameters:
+ *   - string message, int cost, mixed mutations
+ * Approach:
+ *   Validates inputs and executes explicit local logic for deny_result.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from deny_result.
+ */
 mapping deny_result(string message, int cost, mixed mutations) {
   return build_result(LINK_OUTCOME_DENY, message, "", cost, mutations);
 }
@@ -741,6 +1208,19 @@ mapping deny_result(string message, int cost, mixed mutations) {
 /*
  * int is_allowed_result(mapping result)
  * Report whether the result outcome represents an allowed traversal.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles is_allowed_result for this object.
+ * Parameters:
+ *   - mapping result
+ * Approach:
+ *   Validates inputs and executes explicit local logic for is_allowed_result.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from is_allowed_result.
  */
 int is_allowed_result(mapping result) {
   int outcome;
@@ -760,6 +1240,19 @@ int is_allowed_result(mapping result) {
 /*
  * mapping merge_side_effects(mapping dst, mapping src)
  * Merge cost and mutations from src into dst, returning the updated mapping.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles merge_side_effects for this object.
+ * Parameters:
+ *   - mapping dst, mapping src
+ * Approach:
+ *   Validates inputs and executes explicit local logic for merge_side_effects.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from merge_side_effects.
  */
 mapping merge_side_effects(mapping dst, mapping src) {
   int c1, c2;
@@ -803,6 +1296,19 @@ mapping merge_side_effects(mapping dst, mapping src) {
  * mapping check_link(object actor, string origin_id, string destination_id)
  * Hook for link-level traversal rules. Default allows passage.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles check_link for this object.
+ * Parameters:
+ *   - object actor, string origin_id, string destination_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for check_link.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from check_link.
+ */
 mapping check_link(object actor, string origin_id, string destination_id) {
   return allow_result();
 }
@@ -810,6 +1316,19 @@ mapping check_link(object actor, string origin_id, string destination_id) {
 /*
  * mapping check_gates(object actor, string origin_id, string destination_id)
  * Query the single gate, accumulating costs/mutations and returning a result.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles check_gates for this object.
+ * Parameters:
+ *   - object actor, string origin_id, string destination_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for check_gates.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from check_gates.
  */
 mapping check_gates(object actor, string origin_id, string destination_id) {
   int origin_idx;
@@ -860,6 +1379,19 @@ mapping check_gates(object actor, string origin_id, string destination_id) {
  * mapping can_exit(object actor, object origin)
  * Hook for origin-side vetoes; returns an allow result by default.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles can_exit for this object.
+ * Parameters:
+ *   - object actor, object origin
+ * Approach:
+ *   Validates inputs and executes explicit local logic for can_exit.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from can_exit.
+ */
 mapping can_exit(object actor, object origin) {
   /* Hook for future: origin->link_can_exit(actor, link) */
   return allow_result();
@@ -868,6 +1400,19 @@ mapping can_exit(object actor, object origin) {
 /*
  * mapping can_enter(object actor, object destination)
  * Query destination hook for pre-entry allowance, defaulting to allow.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles can_enter for this object.
+ * Parameters:
+ *   - object actor, object destination
+ * Approach:
+ *   Validates inputs and executes explicit local logic for can_enter.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from can_enter.
  */
 mapping can_enter(object actor, object destination) {
   mapping result;
@@ -893,6 +1438,19 @@ mapping can_enter(object actor, object destination) {
  * void on_exit(object actor, object origin, object destination)
  * Post-exit hook for origin-side reactions; does not return a value.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles on_exit for this object.
+ * Parameters:
+ *   - object actor, object origin, object destination
+ * Approach:
+ *   Validates inputs and executes explicit local logic for on_exit.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from on_exit.
+ */
 void on_exit(object actor, object origin, object destination) {
   return;
 }
@@ -900,6 +1458,19 @@ void on_exit(object actor, object origin, object destination) {
 /*
  * mapping on_enter(object actor, object origin, object destination)
  * Post-entry hook for destination reactions, returning an updated result.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles on_enter for this object.
+ * Parameters:
+ *   - object actor, object origin, object destination
+ * Approach:
+ *   Validates inputs and executes explicit local logic for on_enter.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from on_enter.
  */
 mapping on_enter(object actor, object origin, object destination) {
   mapping result;
@@ -928,6 +1499,19 @@ mapping on_enter(object actor, object origin, object destination) {
 /*
  * object resolve_destination(string destination_id)
  * Find or load the destination object for the given id.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles resolve_destination for this object.
+ * Parameters:
+ *   - string destination_id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for resolve_destination.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from resolve_destination.
  */
 object resolve_destination(string destination_id) {
   object env;
@@ -988,6 +1572,19 @@ object resolve_destination(string destination_id) {
   return env;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles show_resolution_debug for this object.
+ * Parameters:
+ *   - object actor, string text
+ * Approach:
+ *   Validates inputs and executes explicit local logic for show_resolution_debug.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from show_resolution_debug.
+ */
 void show_resolution_debug(object actor, string text) {
   int is_wizard_user;
 
@@ -1010,6 +1607,19 @@ void show_resolution_debug(object actor, string text) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles endpoint_id_for_room for this object.
+ * Parameters:
+ *   - object room
+ * Approach:
+ *   Validates inputs and executes explicit local logic for endpoint_id_for_room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from endpoint_id_for_room.
+ */
 string endpoint_id_for_room(object room) {
   string endpoint_id;
 
@@ -1042,6 +1652,19 @@ string endpoint_id_for_room(object room) {
 /*
  * mapping traverse(object actor, object origin)
  * Orchestrate traversal across gate and room hooks, returning the outcome.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles traverse for this object.
+ * Parameters:
+ *   - object actor, object origin
+ * Approach:
+ *   Validates inputs and executes explicit local logic for traverse.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from traverse.
  */
 mapping traverse(object actor, object origin) {
   string origin_id, destination_id;

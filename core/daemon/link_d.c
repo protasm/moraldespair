@@ -1,3 +1,14 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/daemon/link_d.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - #include "link_d.h"
+ */
+
 #include "link_d.h"
 
 /*
@@ -44,6 +55,19 @@ int load_json(string file);
 
 /* ------------------------------------------------------------ */
 
+/* Method Summary:
+ * Purpose:
+ *   Handles create for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for create.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from create.
+ */
 void create() {
   string *chapter_dirs;
   string *area_dirs;
@@ -103,12 +127,38 @@ void create() {
 /* Utilities
  * ------------------------------------------------------------ */
 
+/* Method Summary:
+ * Purpose:
+ *   Handles _trim for this object.
+ * Parameters:
+ *   - string s
+ * Approach:
+ *   Validates inputs and executes explicit local logic for _trim.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from _trim.
+ */
 string _trim(string s) {
   if (!stringp(s)) return "";
 
   return trim(s);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles _definition_source for this object.
+ * Parameters:
+ *   - mapping definition
+ * Approach:
+ *   Validates inputs and executes explicit local logic for _definition_source.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from _definition_source.
+ */
 string _definition_source(mapping definition) {
   string source;
 
@@ -123,6 +173,19 @@ string _definition_source(mapping definition) {
   return _trim(source);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles _format_definition_ref for this object.
+ * Parameters:
+ *   - string key, mapping definition
+ * Approach:
+ *   Validates inputs and executes explicit local logic for _format_definition_ref.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from _format_definition_ref.
+ */
 string _format_definition_ref(string key, mapping definition) {
   string *eps;
   string a, b, source;
@@ -139,6 +202,19 @@ string _format_definition_ref(string key, mapping definition) {
   return a + " <-> " + b + " (defined in " + source + ")";
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles parse_json for this object.
+ * Parameters:
+ *   - string raw
+ * Approach:
+ *   Validates inputs and executes explicit local logic for parse_json.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mixed result from parse_json.
+ */
 mixed parse_json(string raw) {
   object parser;
 
@@ -156,6 +232,19 @@ mixed parse_json(string raw) {
   return parser->json_decode(raw);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles read_json_file for this object.
+ * Parameters:
+ *   - string file
+ * Approach:
+ *   Validates inputs and executes explicit local logic for read_json_file.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from read_json_file.
+ */
 string read_json_file(string file) {
   string chunk, contents;
   string *chunks;
@@ -189,6 +278,19 @@ string read_json_file(string file) {
   return contents;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles join_path for this object.
+ * Parameters:
+ *   - string base, string entry
+ * Approach:
+ *   Validates inputs and executes explicit local logic for join_path.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from join_path.
+ */
 string join_path(string base, string entry) {
   if (!stringp(entry) || entry == "")
     return "";
@@ -202,6 +304,19 @@ string join_path(string base, string entry) {
   return normalize_endpoint(base + "/" + entry);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles sub_area_dirs_from_json for this object.
+ * Parameters:
+ *   - string area_dir
+ * Approach:
+ *   Validates inputs and executes explicit local logic for sub_area_dirs_from_json.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from sub_area_dirs_from_json.
+ */
 string *sub_area_dirs_from_json(string area_dir) {
   string subareas_file;
   string subareas_raw;
@@ -260,6 +375,19 @@ string *sub_area_dirs_from_json(string area_dir) {
   return sub_dirs;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles collect_area_link_files for this object.
+ * Parameters:
+ *   - string area_dir, mapping visited_dirs
+ * Approach:
+ *   Validates inputs and executes explicit local logic for collect_area_link_files.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from collect_area_link_files.
+ */
 string *collect_area_link_files(string area_dir, mapping visited_dirs) {
   string links_file;
   string *link_files;
@@ -296,6 +424,19 @@ string *collect_area_link_files(string area_dir, mapping visited_dirs) {
   return link_files;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles _opposite_direction for this object.
+ * Parameters:
+ *   - string dir
+ * Approach:
+ *   Validates inputs and executes explicit local logic for _opposite_direction.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from _opposite_direction.
+ */
 string _opposite_direction(string dir) {
   dir = _trim(dir);
 
@@ -314,6 +455,19 @@ string _opposite_direction(string dir) {
 }
 
 /* Normalize absolute endpoint path */
+/* Method Summary:
+ * Purpose:
+ *   Handles normalize_endpoint for this object.
+ * Parameters:
+ *   - string value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for normalize_endpoint.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from normalize_endpoint.
+ */
 string normalize_endpoint(string value) {
   value = _trim(value);
 
@@ -334,6 +488,19 @@ string normalize_endpoint(string value) {
 }
 
 /* Normalize area prefix (must be absolute directory) */
+/* Method Summary:
+ * Purpose:
+ *   Handles normalize_prefix for this object.
+ * Parameters:
+ *   - string prefix
+ * Approach:
+ *   Validates inputs and executes explicit local logic for normalize_prefix.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from normalize_prefix.
+ */
 string normalize_prefix(string prefix) {
   prefix = normalize_endpoint(prefix);
 
@@ -347,6 +514,19 @@ string normalize_prefix(string prefix) {
 }
 
 /* Resolve a possibly-relative endpoint using a prefix */
+/* Method Summary:
+ * Purpose:
+ *   Handles resolve_endpoint for this object.
+ * Parameters:
+ *   - string endpoint_ref, string prefix
+ * Approach:
+ *   Validates inputs and executes explicit local logic for resolve_endpoint.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from resolve_endpoint.
+ */
 string resolve_endpoint(string endpoint_ref, string prefix) {
   string trimmed;
 
@@ -368,11 +548,37 @@ string resolve_endpoint(string endpoint_ref, string prefix) {
 /*
  * Order-independent key: Link(A,B) == Link(B,A)
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles pair_key for this object.
+ * Parameters:
+ *   - string a, string b
+ * Approach:
+ *   Validates inputs and executes explicit local logic for pair_key.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from pair_key.
+ */
 string pair_key(string a, string b) {
   return (a <= b) ? (a + "|" + b) : (b + "|" + a);
 }
 
 /* Parse endpoints back out of a pair key (for introspection) */
+/* Method Summary:
+ * Purpose:
+ *   Handles endpoints_from_key for this object.
+ * Parameters:
+ *   - string key
+ * Approach:
+ *   Validates inputs and executes explicit local logic for endpoints_from_key.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from endpoints_from_key.
+ */
 string *endpoints_from_key(string key) {
   int idx;
 
@@ -384,6 +590,19 @@ string *endpoints_from_key(string key) {
 }
 
 /* Index maintenance: room -> pair keys */
+/* Method Summary:
+ * Purpose:
+ *   Handles index_pair_for_room for this object.
+ * Parameters:
+ *   - string room, string key
+ * Approach:
+ *   Validates inputs and executes explicit local logic for index_pair_for_room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from index_pair_for_room.
+ */
 void index_pair_for_room(string room, string key) {
   string *arr;
 
@@ -417,6 +636,19 @@ void index_pair_for_room(string room, string key) {
  *   other Link-specific config
  *
  * Once defined, cannot be redefined.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles define_link for this object.
+ * Parameters:
+ *   - string env_a, string env_b, mapping definition
+ * Approach:
+ *   Validates inputs and executes explicit local logic for define_link.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from define_link.
  */
 int define_link(string env_a, string env_b, mapping definition) {
   string a, b, key, source;
@@ -581,6 +813,19 @@ int define_link(string env_a, string env_b, mapping definition) {
  *
  * Relative room refs are resolved against area_prefix.
  * If rooms are omitted, endpoints are inferred from dirs keys.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles load_json for this object.
+ * Parameters:
+ *   - string file
+ * Approach:
+ *   Validates inputs and executes explicit local logic for load_json.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from load_json.
  */
 int load_json(string file) {
   string raw, prefix;
@@ -753,6 +998,19 @@ int load_json(string file) {
 /* Link instantiation (lazy)
  * ------------------------------------------------------------ */
 
+/* Method Summary:
+ * Purpose:
+ *   Handles _instantiate_link for this object.
+ * Parameters:
+ *   - string a, string b, mapping def
+ * Approach:
+ *   Validates inputs and executes explicit local logic for _instantiate_link.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from _instantiate_link.
+ */
 object _instantiate_link(string a, string b, mapping def) {
   object link;
   mixed gate;
@@ -840,6 +1098,19 @@ object _instantiate_link(string a, string b, mapping def) {
  * Get (or lazily create) the Link connecting two endpoints.
  * Never loads environments.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles get_link for this object.
+ * Parameters:
+ *   - string env_a, string env_b
+ * Approach:
+ *   Validates inputs and executes explicit local logic for get_link.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from get_link.
+ */
 object get_link(string env_a, string env_b) {
   string a, b, key;
   object link;
@@ -873,6 +1144,19 @@ object get_link(string env_a, string env_b) {
 /*
  * Query without instantiating.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles link for this object.
+ * Parameters:
+ *   - string env_a, string env_b
+ * Approach:
+ *   Validates inputs and executes explicit local logic for link.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from link.
+ */
 object link(string env_a, string env_b) {
   string a, b, key;
 
@@ -887,6 +1171,19 @@ object link(string env_a, string env_b) {
 }
 
 /* Query whether a definition exists (no instantiation) */
+/* Method Summary:
+ * Purpose:
+ *   Handles has_definition for this object.
+ * Parameters:
+ *   - string env_a, string env_b
+ * Approach:
+ *   Validates inputs and executes explicit local logic for has_definition.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from has_definition.
+ */
 int has_definition(string env_a, string env_b) {
   string a, b, key;
 
@@ -908,6 +1205,19 @@ int has_definition(string env_a, string env_b) {
  * Return pair keys for links incident to a room.
  * (Does not instantiate links.)
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles defined_pairs_for_room for this object.
+ * Parameters:
+ *   - string room
+ * Approach:
+ *   Validates inputs and executes explicit local logic for defined_pairs_for_room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from defined_pairs_for_room.
+ */
 string *defined_pairs_for_room(string room) {
   room = normalize_endpoint(room);
 
@@ -919,6 +1229,19 @@ string *defined_pairs_for_room(string room) {
 /*
  * Return instantiated Link objects incident to a room.
  * (Instantiates any defined-but-not-instantiated links touching this room.)
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles links_for_room for this object.
+ * Parameters:
+ *   - string room
+ * Approach:
+ *   Validates inputs and executes explicit local logic for links_for_room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from links_for_room.
  */
 object *links_for_room(string room) {
   string *keys;
@@ -960,6 +1283,19 @@ object *links_for_room(string room) {
  * Only includes links that provide a direction label for that room.
  * (Instantiates incident links as needed.)
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles links_by_direction_for_room for this object.
+ * Parameters:
+ *   - string room
+ * Approach:
+ *   Validates inputs and executes explicit local logic for links_by_direction_for_room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from links_by_direction_for_room.
+ */
 mapping links_by_direction_for_room(string room) {
   object *ls;
   mapping out;
@@ -997,14 +1333,53 @@ mapping links_by_direction_for_room(string room) {
 /* Introspection / debugging
  * ------------------------------------------------------------ */
 
+/* Method Summary:
+ * Purpose:
+ *   Handles defined_link_pairs for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for defined_link_pairs.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from defined_link_pairs.
+ */
 string *defined_link_pairs() {
   return keys(_definitions);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles instantiated_link_pairs for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for instantiated_link_pairs.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from instantiated_link_pairs.
+ */
 string *instantiated_link_pairs() {
   return keys(_links);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles definition for this object.
+ * Parameters:
+ *   - string env_a, string env_b
+ * Approach:
+ *   Validates inputs and executes explicit local logic for definition.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from definition.
+ */
 mapping definition(string env_a, string env_b) {
   string a, b, key;
 

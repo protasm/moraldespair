@@ -74,3 +74,54 @@
 
 #endif /* _LINK_H */
 
+
+/* Alphabetized forward declarations for core/link/link.c */
+
+/* Alphabetized forward declarations (ctags) for core/link/link.c */
+mapping _build_action_groups(object actor, string endpoint_id);
+mapping _match_action_args(string args, mapping verb_actions);
+mapping action_match(object actor, string verb, string args, string endpoint_id);
+void add_gate(object gate_obj);
+mapping allow_result();
+int allows_path(string origin_id, string destination_id);
+string appearance(string endpoint);
+mapping build_result(;
+mapping can_enter(object actor, object destination);
+mapping can_exit(object actor, object origin);
+mapping check_gates(object actor, string origin_id, string destination_id);
+mapping check_link(object actor, string origin_id, string destination_id);
+void create();
+mapping deny_result(string message, int cost, mixed mutations);
+string describe_from_endpoint(string endpoint_id);
+string direction_label(string endpoint);
+mapping dirs();
+string endpoint_a() { return endpoint_a_id; };
+string endpoint_b() { return endpoint_b_id; };
+string endpoint_id_for_room(object room);
+int endpoint_index(string endpoint);
+object gate();
+string gate_status_line(string endpoint_id);
+object *gates();
+int handle_action(object actor, string verb, string args, string endpoint_id);
+int is_allowed_result(mapping result);
+int is_endpoint(string endpoint);
+string *link_verbs(object actor, string endpoint_id);
+mapping merge_side_effects(mapping dst, mapping src);
+mixed meta(string key);
+mapping on_enter(object actor, object origin, object destination);
+void on_exit(object actor, object origin, object destination);
+string other_endpoint(string endpoint);
+int perform_link_action(object actor, string verb, string args, string endpoint_id);
+object resolve_destination(string destination_id);
+void set_appearance(string description);
+void set_appearances(mapping appearances);
+void set_bidirectional();
+void set_direction_label(string endpoint, string label);
+void set_dirs(mapping dirs);
+void set_endpoint_appearance(string endpoint, string description);
+void set_endpoints(string first, string second);
+void set_meta(string key, mixed value);
+void set_one_way(string from_endpoint, string to_endpoint);
+void show_actor_location(object actor);
+void show_resolution_debug(object actor, string text);
+mapping traverse(object actor, object origin);

@@ -1,6 +1,31 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/daemon/move_d.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - #include "/core/daemon/move_d.h"
+ *   - #include "/core/link/link.h"
+ */
+
 #include "/core/daemon/move_d.h"
 #include "/core/link/link.h"
 
+/* Method Summary:
+ * Purpose:
+ *   Handles endpoint_id_for_room for this object.
+ * Parameters:
+ *   - object room
+ * Approach:
+ *   Validates inputs and executes explicit local logic for endpoint_id_for_room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from endpoint_id_for_room.
+ */
 string endpoint_id_for_room(object room) {
   string endpoint_id;
 
@@ -18,6 +43,19 @@ string endpoint_id_for_room(object room) {
   return endpoint_id;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles try_move_label for this object.
+ * Parameters:
+ *   - object player, string label
+ * Approach:
+ *   Validates inputs and executes explicit local logic for try_move_label.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from try_move_label.
+ */
 object try_move_label(object player, string label) {
   object origin, link;
   mapping exits, result;
@@ -114,6 +152,19 @@ object try_move_label(object player, string label) {
   return environment(player);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles try_move for this object.
+ * Parameters:
+ *   - object player, string direction
+ * Approach:
+ *   Validates inputs and executes explicit local logic for try_move.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from try_move.
+ */
 object try_move(object player, string direction) {
   return try_move_label(player, direction);
 }

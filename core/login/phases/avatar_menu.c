@@ -1,7 +1,32 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/login/phases/avatar_menu.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - inherit "/core/login/phases/base_phase";
+ *   - #include <globals.h>
+ */
+
 inherit "/core/login/phases/base_phase";
 
 #include <globals.h>
 
+/* Method Summary:
+ * Purpose:
+ *   Handles show_menu for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for show_menu.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from show_menu.
+ */
 void show_menu() {
   string account_name;
   string *avatars;
@@ -40,6 +65,19 @@ void show_menu() {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles register_invalid_selection for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for register_invalid_selection.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from register_invalid_selection.
+ */
 void register_invalid_selection() {
   int invalid_attempts;
 
@@ -64,6 +102,19 @@ void register_invalid_selection() {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles select_avatar_by_slot for this object.
+ * Parameters:
+ *   - int selected_index, string *avatars
+ * Approach:
+ *   Validates inputs and executes explicit local logic for select_avatar_by_slot.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from select_avatar_by_slot.
+ */
 void select_avatar_by_slot(int selected_index, string *avatars) {
   int slots_remaining;
 
@@ -91,12 +142,38 @@ void select_avatar_by_slot(int selected_index, string *avatars) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles begin_phase for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for begin_phase.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from begin_phase.
+ */
 void begin_phase() {
   show_menu();
 
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles handle_input for this object.
+ * Parameters:
+ *   - string input
+ * Approach:
+ *   Validates inputs and executes explicit local logic for handle_input.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from handle_input.
+ */
 void handle_input(string input) {
   string account_name;
   string choice;

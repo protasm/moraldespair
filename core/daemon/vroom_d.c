@@ -1,7 +1,31 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/daemon/vroom_d.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - #include "vroom_d.h"
+ */
+
 #define VROOM_TEMPLATE "/core/room/vroom"
 
 #include "vroom_d.h"
 
+/* Method Summary:
+ * Purpose:
+ *   Handles wizard_virtual_debug for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for wizard_virtual_debug.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from wizard_virtual_debug.
+ */
 void wizard_virtual_debug(string message) {
   object *online_users;
   object user;
@@ -44,6 +68,19 @@ void wizard_virtual_debug(string message) {
 
 /*
  * Virtual object handler for rooms.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles compile_object for this object.
+ * Parameters:
+ *   - string filename
+ * Approach:
+ *   Validates inputs and executes explicit local logic for compile_object.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from compile_object.
  */
 object compile_object(string filename) {
   object room;

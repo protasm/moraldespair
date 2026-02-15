@@ -1,8 +1,34 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/player/player.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - inherit "/core/object/object";
+ *   - #include "player-data.c"
+ *   - #include "player-process-input.c"
+ */
+
 inherit "/core/object/object";
 
 #include "player-data.c"
 #include "player-process-input.c"
 
+/* Method Summary:
+ * Purpose:
+ *   Handles create for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for create.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from create.
+ */
 void create() {
   ::create();
 
@@ -18,14 +44,53 @@ void create() {
   }
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles heart_beat for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for heart_beat.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from heart_beat.
+ */
 void heart_beat() {
   ::heart_beat();
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles is_living for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for is_living.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from is_living.
+ */
 int is_living() {
   return 1;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles check_wizard for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for check_wizard.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from check_wizard.
+ */
 void check_wizard() {
   int has_wizard_access;
 
@@ -40,6 +105,19 @@ void check_wizard() {
   }
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles endpoint_id_for_room for this object.
+ * Parameters:
+ *   - object room
+ * Approach:
+ *   Validates inputs and executes explicit local logic for endpoint_id_for_room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from endpoint_id_for_room.
+ */
 string endpoint_id_for_room(object room) {
   string endpoint_id;
 
@@ -57,6 +135,19 @@ string endpoint_id_for_room(object room) {
   return endpoint_id;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles abbreviate_exit for this object.
+ * Parameters:
+ *   - string direction
+ * Approach:
+ *   Validates inputs and executes explicit local logic for abbreviate_exit.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from abbreviate_exit.
+ */
 string abbreviate_exit(string direction) {
   mapping abbreviations;
   string abbreviated;
@@ -82,6 +173,19 @@ string abbreviate_exit(string direction) {
   return direction;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles show_location for this object.
+ * Parameters:
+ *   - int force_verbose, int show_path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for show_location.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from show_location.
+ */
 void show_location(int force_verbose, int show_path) {
   object env;
   string short_desc, long_desc, divider, room_path, room_endpoint_id;
@@ -170,80 +274,327 @@ void show_location(int force_verbose, int show_path) {
   }
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles catch_tell for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for catch_tell.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from catch_tell.
+ */
 void catch_tell(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles gmcp for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for gmcp.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from gmcp.
+ */
 void gmcp(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles gmcp_enable for this object.
+ * Parameters:
+ *   - int enabled
+ * Approach:
+ *   Validates inputs and executes explicit local logic for gmcp_enable.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from gmcp_enable.
+ */
 void gmcp_enable(int enabled) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles logon for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for logon.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from logon.
+ */
 void logon() {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles msdp for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for msdp.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from msdp.
+ */
 void msdp(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles msdp_enable for this object.
+ * Parameters:
+ *   - int enabled
+ * Approach:
+ *   Validates inputs and executes explicit local logic for msdp_enable.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from msdp_enable.
+ */
 void msdp_enable(int enabled) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles msp_enable for this object.
+ * Parameters:
+ *   - int enabled
+ * Approach:
+ *   Validates inputs and executes explicit local logic for msp_enable.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from msp_enable.
+ */
 void msp_enable(int enabled) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles mxp_enable for this object.
+ * Parameters:
+ *   - int enabled
+ * Approach:
+ *   Validates inputs and executes explicit local logic for mxp_enable.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from mxp_enable.
+ */
 void mxp_enable(int enabled) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles mxp_tag for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for mxp_tag.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from mxp_tag.
+ */
 void mxp_tag(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles net_dead for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for net_dead.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from net_dead.
+ */
 void net_dead() {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles receive_ed for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for receive_ed.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from receive_ed.
+ */
 void receive_ed(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles receive_environ for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for receive_environ.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from receive_environ.
+ */
 void receive_environ(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles receive_snoop for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for receive_snoop.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from receive_snoop.
+ */
 void receive_snoop(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles telnet_suboption for this object.
+ * Parameters:
+ *   - int option, string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for telnet_suboption.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from telnet_suboption.
+ */
 void telnet_suboption(int option, string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles terminal_colour_replace for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for terminal_colour_replace.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from terminal_colour_replace.
+ */
 void terminal_colour_replace(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles terminal_type for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for terminal_type.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from terminal_type.
+ */
 void terminal_type(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles window_size for this object.
+ * Parameters:
+ *   - int width, int height
+ * Approach:
+ *   Validates inputs and executes explicit local logic for window_size.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from window_size.
+ */
 void window_size(int width, int height) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles write_prompt for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for write_prompt.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from write_prompt.
+ */
 void write_prompt() {
   write(PLAYER_PROMPT);
 
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles zmp for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for zmp.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from zmp.
+ */
 void zmp(string message) {
   return;
 }

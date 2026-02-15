@@ -1,5 +1,29 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/mfun/text-handling.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - #include "text-handling.h"
+ */
+
 #include "text-handling.h"
 
+/* Method Summary:
+ * Purpose:
+ *   Handles string wrap_line for this object.
+ * Parameters:
+ *   - string line
+ * Approach:
+ *   Validates inputs and executes explicit local logic for string wrap_line.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   private result from string wrap_line.
+ */
 private string wrap_line(string line) {
   string *tokens, *chunks;
   string current, token, character;
@@ -81,6 +105,19 @@ private string wrap_line(string line) {
 }
 
 //override
+/* Method Summary:
+ * Purpose:
+ *   Handles write for this object.
+ * Parameters:
+ *   - mixed str
+ * Approach:
+ *   Validates inputs and executes explicit local logic for write.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from write.
+ */
 void write(mixed str) {
   string *lines, *wrapped_lines;
   string line, wrapped_line, current, character;

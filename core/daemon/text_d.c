@@ -1,4 +1,15 @@
 /*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/daemon/text_d.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - #include "/core/daemon/text_d.h"
+ */
+
+/*
  * text_d.c
  *
  * Utility daemon for formatting arbitrary text into wrapped paragraphs.
@@ -7,12 +18,38 @@
 
 #include "/core/daemon/text_d.h"
 
+/* Method Summary:
+ * Purpose:
+ *   Handles is_space for this object.
+ * Parameters:
+ *   - int c
+ * Approach:
+ *   Validates inputs and executes explicit local logic for is_space.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from is_space.
+ */
 int is_space(int c) {
   if (c <= 32) return 1;
 
   return 0;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles replace_string for this object.
+ * Parameters:
+ *   - string input, string search, string replacement
+ * Approach:
+ *   Validates inputs and executes explicit local logic for replace_string.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from replace_string.
+ */
 string replace_string(string input, string search, string replacement) {
   string *parts;
 
@@ -33,6 +70,19 @@ string replace_string(string input, string search, string replacement) {
   return implode(parts, replacement);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles trim_whitespace for this object.
+ * Parameters:
+ *   - string text
+ * Approach:
+ *   Validates inputs and executes explicit local logic for trim_whitespace.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from trim_whitespace.
+ */
 string trim_whitespace(string text) {
   int start, end, length;
 
@@ -59,6 +109,19 @@ string trim_whitespace(string text) {
   return text[start..end];
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles split_words for this object.
+ * Parameters:
+ *   - string text
+ * Approach:
+ *   Validates inputs and executes explicit local logic for split_words.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from split_words.
+ */
 string *split_words(string text) {
   string *words;
   string trimmed, current;
@@ -90,6 +153,19 @@ string *split_words(string text) {
   return words;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles format_paragraph for this object.
+ * Parameters:
+ *   - string text, int max_width
+ * Approach:
+ *   Validates inputs and executes explicit local logic for format_paragraph.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from format_paragraph.
+ */
 string format_paragraph(string text, int max_width) {
   string *words;
   string output, line, word;
@@ -137,6 +213,19 @@ string format_paragraph(string text, int max_width) {
 
 /*
  * Preserve paragraph breaks while normalizing whitespace into wrapped lines.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles format_text for this object.
+ * Parameters:
+ *   - string input, int max_width
+ * Approach:
+ *   Validates inputs and executes explicit local logic for format_text.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from format_text.
  */
 string format_text(string input, int max_width) {
   string normalized, paragraph, output, formatted, line, trimmed;
@@ -198,6 +287,19 @@ string format_text(string input, int max_width) {
   return output;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles create for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for create.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from create.
+ */
 void create() {
   return;
 }

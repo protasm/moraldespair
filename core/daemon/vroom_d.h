@@ -5,3 +5,9 @@ void wizard_virtual_debug(string message);
 object compile_object(string filename);
 
 #endif
+
+/* Alphabetized forward declarations for core/daemon/vroom_d.c */
+
+/* Alphabetized forward declarations (ctags) for core/daemon/vroom_d.c */
+object compile_object(string filename);
+void wizard_virtual_debug(string message);

@@ -1,0 +1,278 @@
+{
+  "area": "The Road",
+  "source_dir": "/chapter/prologue/area/road",
+  "rooms": [
+    {
+      "id": "room1",
+      "terrain": "road"
+    },
+    {
+      "id": "room2",
+      "terrain": "road"
+    },
+    {
+      "id": "room3",
+      "terrain": "road"
+    },
+    {
+      "id": "room4",
+      "terrain": "road"
+    },
+    {
+      "id": "room5",
+      "terrain": "road"
+    },
+    {
+      "id": "room6",
+      "terrain": "road"
+    },
+    {
+      "id": "room7",
+      "terrain": "road"
+    },
+    {
+      "id": "room8",
+      "terrain": "road"
+    },
+    {
+      "id": "room9",
+      "terrain": "road"
+    },
+    {
+      "id": "room10",
+      "terrain": "road"
+    },
+    {
+      "id": "room11",
+      "terrain": "road"
+    },
+    {
+      "id": "room12",
+      "terrain": "road"
+    },
+    {
+      "id": "room13",
+      "terrain": "road"
+    },
+    {
+      "id": "room16",
+      "terrain": "road"
+    },
+    {
+      "id": "room17",
+      "terrain": "road"
+    },
+    {
+      "id": "room18",
+      "terrain": "road"
+    },
+    {
+      "id": "room19",
+      "terrain": "road"
+    },
+    {
+      "id": "room20",
+      "terrain": "road"
+    },
+    {
+      "id": "room21",
+      "terrain": "road"
+    },
+    {
+      "id": "room22",
+      "terrain": "road"
+    },
+    {
+      "id": "room23",
+      "terrain": "road"
+    },
+    {
+      "id": "room24",
+      "terrain": "road"
+    },
+    {
+      "id": "room25",
+      "terrain": "road"
+    },
+    {
+      "id": "room26",
+      "terrain": "road"
+    },
+    {
+      "id": "room27",
+      "terrain": "road"
+    },
+    {
+      "id": "room28",
+      "terrain": "road"
+    },
+    {
+      "id": "room30",
+      "terrain": "road"
+    },
+    {
+      "id": "room31",
+      "terrain": "road"
+    },
+    {
+      "id": "room32",
+      "terrain": "road"
+    },
+    {
+      "id": "room33",
+      "terrain": "road"
+    },
+    {
+      "id": "room34",
+      "terrain": "road"
+    },
+    {
+      "id": "room35",
+      "terrain": "road"
+    },
+    {
+      "id": "room36",
+      "terrain": "road"
+    },
+    {
+      "id": "room37",
+      "terrain": "road"
+    },
+    {
+      "id": "room38",
+      "terrain": "road"
+    },
+    {
+      "id": "room39",
+      "terrain": "road"
+    },
+    {
+      "id": "room40",
+      "terrain": "road"
+    },
+    {
+      "id": "room41",
+      "terrain": "road"
+    },
+    {
+      "id": "room42",
+      "terrain": "road"
+    },
+    {
+      "id": "room43",
+      "terrain": "road"
+    },
+    {
+      "id": "room44",
+      "terrain": "road"
+    },
+    {
+      "id": "room45",
+      "terrain": "road"
+    },
+    {
+      "id": "room46",
+      "terrain": "road"
+    },
+    {
+      "id": "room47",
+      "terrain": "road"
+    },
+    {
+      "id": "room48",
+      "terrain": "road"
+    },
+    {
+      "id": "room49",
+      "terrain": "road"
+    },
+    {
+      "id": "room50",
+      "terrain": "road"
+    },
+    {
+      "id": "room51",
+      "terrain": "road"
+    },
+    {
+      "id": "room52",
+      "terrain": "road"
+    },
+    {
+      "id": "room53",
+      "terrain": "road"
+    },
+    {
+      "id": "room54",
+      "terrain": "road"
+    },
+    {
+      "id": "room55",
+      "terrain": "road"
+    },
+    {
+      "id": "room56",
+      "terrain": "road"
+    },
+    {
+      "id": "room57",
+      "terrain": "road"
+    },
+    {
+      "id": "room58",
+      "terrain": "road"
+    },
+    {
+      "id": "room59",
+      "terrain": "road"
+    },
+    {
+      "id": "room60",
+      "terrain": "road"
+    },
+    {
+      "id": "room61",
+      "terrain": "road"
+    },
+    {
+      "id": "room62",
+      "terrain": "road"
+    },
+    {
+      "id": "room63",
+      "terrain": "road"
+    },
+    {
+      "id": "room64",
+      "terrain": "road"
+    },
+    {
+      "id": "room65",
+      "terrain": "road"
+    },
+    {
+      "id": "room66",
+      "terrain": "road"
+    },
+    {
+      "id": "room67",
+      "terrain": "road"
+    },
+    {
+      "id": "room68",
+      "terrain": "road"
+    },
+    {
+      "id": "room69",
+      "terrain": "road"
+    },
+    {
+      "id": "room70",
+      "terrain": "road"
+    },
+    {
+      "id": "room71",
+      "terrain": "road"
+    }
+  ]
+}

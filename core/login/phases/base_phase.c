@@ -1,17 +1,67 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/login/phases/base_phase.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - inherit "/core/object/object";
+ */
+
 inherit "/core/object/object";
 
 object session;
 
+/* Method Summary:
+ * Purpose:
+ *   Handles set_session for this object.
+ * Parameters:
+ *   - object new_session
+ * Approach:
+ *   Validates inputs and executes explicit local logic for set_session.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from set_session.
+ */
 void set_session(object new_session) {
   session = new_session;
 
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles query_session for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for query_session.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from query_session.
+ */
 object query_session() {
   return session;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles begin_phase for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for begin_phase.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from begin_phase.
+ */
 void begin_phase() {
   if (!objectp(session))
     return;
@@ -21,6 +71,19 @@ void begin_phase() {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles handle_input for this object.
+ * Parameters:
+ *   - string input
+ * Approach:
+ *   Validates inputs and executes explicit local logic for handle_input.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from handle_input.
+ */
 void handle_input(string input) {
   if (!objectp(session))
     return;
@@ -30,6 +93,19 @@ void handle_input(string input) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles write_line for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for write_line.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from write_line.
+ */
 void write_line(string message) {
   if (!objectp(session))
     return;
@@ -39,6 +115,19 @@ void write_line(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles prompt_line for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for prompt_line.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from prompt_line.
+ */
 void prompt_line(string message) {
   if (!objectp(session))
     return;
@@ -49,6 +138,19 @@ void prompt_line(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles prompt_secret for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for prompt_secret.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from prompt_secret.
+ */
 void prompt_secret(string message) {
   if (!objectp(session))
     return;
@@ -59,6 +161,19 @@ void prompt_secret(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles cleaned for this object.
+ * Parameters:
+ *   - string value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for cleaned.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from cleaned.
+ */
 string cleaned(string value) {
   if (!stringp(value))
     return "";
@@ -66,6 +181,19 @@ string cleaned(string value) {
   return trim(value);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles normalized for this object.
+ * Parameters:
+ *   - string value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for normalized.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from normalized.
+ */
 string normalized(string value) {
   if (!stringp(value))
     return "";
@@ -73,6 +201,19 @@ string normalized(string value) {
   return lower_case(trim(value));
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles display_name for this object.
+ * Parameters:
+ *   - string value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for display_name.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from display_name.
+ */
 string display_name(string value) {
   value = normalized(value);
 
@@ -82,6 +223,19 @@ string display_name(string value) {
   return capitalize(value);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles is_valid_name for this object.
+ * Parameters:
+ *   - string value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for is_valid_name.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from is_valid_name.
+ */
 int is_valid_name(string value) {
   string *matches;
   int length;
@@ -103,6 +257,19 @@ int is_valid_name(string value) {
   return 1;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles is_valid_password for this object.
+ * Parameters:
+ *   - string password
+ * Approach:
+ *   Validates inputs and executes explicit local logic for is_valid_password.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from is_valid_password.
+ */
 int is_valid_password(string password) {
   string *matches;
   int length;
@@ -138,6 +305,19 @@ int is_valid_password(string password) {
   return 1;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles contains_reserved for this object.
+ * Parameters:
+ *   - string value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for contains_reserved.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from contains_reserved.
+ */
 int contains_reserved(string value) {
   string lowered;
   string *terms;
@@ -157,6 +337,19 @@ int contains_reserved(string value) {
   return 0;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles make_salt for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for make_salt.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from make_salt.
+ */
 string make_salt() {
   string chars;
   string salt;
@@ -171,6 +364,19 @@ string make_salt() {
   return salt;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles require_nonempty_input for this object.
+ * Parameters:
+ *   - string input
+ * Approach:
+ *   Validates inputs and executes explicit local logic for require_nonempty_input.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from require_nonempty_input.
+ */
 int require_nonempty_input(string input) {
   object current_session;
   string value;
@@ -209,6 +415,19 @@ int require_nonempty_input(string input) {
   return 1;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles register_password_failure for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for register_password_failure.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from register_password_failure.
+ */
 int register_password_failure() {
   object current_session;
   int password_failures;
@@ -237,6 +456,19 @@ int register_password_failure() {
   return 0;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles clear_password_failures for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for clear_password_failures.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from clear_password_failures.
+ */
 void clear_password_failures() {
   object current_session;
 

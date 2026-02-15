@@ -1,3 +1,16 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/room/room.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - inherit "/core/object/object";
+ *   - #include "room.h"
+ *   - #include "/core/link/link.h"
+ */
+
 inherit "/core/object/object";
 
 #include "room.h"
@@ -6,6 +19,19 @@ inherit "/core/object/object";
 string short_desc, long_desc;
 object room_link_cache;
 
+/* Method Summary:
+ * Purpose:
+ *   Handles create for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for create.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from create.
+ */
 void create() {
   ::create();
 
@@ -23,14 +49,162 @@ void create() {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles room_id_value for this object.
+ * Parameters:
+ *   - mapping room_details
+ * Approach:
+ *   Validates inputs and executes explicit local logic for room_id_value.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from room_id_value.
+ */
+string room_id_value(mapping room_details) {
+  string room_id;
+
+  room_id = "";
+
+  if (mapp(room_details))
+    room_id = room_details["id"];
+
+  if (stringp(room_id) && room_id != "")
+    return room_id;
+
+  if (function_exists("room_id", this_object()))
+    room_id = this_object()->room_id();
+
+  if (!stringp(room_id) || room_id == "")
+    return "";
+
+  return room_id;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles terrain_long_value for this object.
+ * Parameters:
+ *   - mapping room_details
+ * Approach:
+ *   Validates inputs and executes explicit local logic for terrain_long_value.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from terrain_long_value.
+ */
+string terrain_long_value(mapping room_details) {
+  mixed long_value;
+  string *long_options;
+  int long_index;
+
+  if (!mapp(room_details))
+    return "";
+
+  long_value = room_details["long"];
+
+  if (stringp(long_value) && long_value != "")
+    return long_value;
+
+  if (!pointerp(long_value))
+    return "";
+
+  long_options = long_value;
+
+  if (!sizeof(long_options))
+    return "";
+
+  long_index = random(sizeof(long_options));
+  long_value = long_options[long_index];
+
+  if (!stringp(long_value) || long_value == "")
+    return "";
+
+  return long_value;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles short for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for short.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from short.
+ */
 string short() {
-  return short_desc;
+  mapping room_details;
+  string terrain_short;
+  string room_id;
+
+  if (stringp(short_desc) && short_desc != "")
+    return short_desc;
+
+  room_details = terrain_room_data();
+  terrain_short = "";
+
+  if (mapp(room_details))
+    terrain_short = room_details["short"];
+
+  if (stringp(terrain_short) && terrain_short != "")
+    return terrain_short;
+
+  room_id = room_id_value(room_details);
+
+  if (stringp(room_id) && room_id != "")
+    return room_id;
+
+  return "Undefined";
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles long for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for long.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from long.
+ */
 string long() {
-  return long_desc;
+  mapping room_details;
+  string terrain_long;
+
+  if (stringp(long_desc) && long_desc != "")
+    return long_desc;
+
+  room_details = terrain_room_data();
+  terrain_long = terrain_long_value(room_details);
+
+  if (stringp(terrain_long) && terrain_long != "")
+    return terrain_long;
+
+  return "Undefined";
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles link_cache for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for link_cache.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from link_cache.
+ */
 object link_cache() {
   return room_link_cache;
 }
@@ -38,29 +212,120 @@ object link_cache() {
 /*
  * Pre- and Post- Movement and Action Hooks
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles pre_leave for this object.
+ * Parameters:
+ *   - object exit
+ * Approach:
+ *   Validates inputs and executes explicit local logic for pre_leave.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from pre_leave.
+ */
 int pre_leave(object exit) {
   return 1;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles post_leave for this object.
+ * Parameters:
+ *   - object exit
+ * Approach:
+ *   Validates inputs and executes explicit local logic for post_leave.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from post_leave.
+ */
 void post_leave(object exit) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles pre_arrive for this object.
+ * Parameters:
+ *   - object exit
+ * Approach:
+ *   Validates inputs and executes explicit local logic for pre_arrive.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from pre_arrive.
+ */
 int pre_arrive(object exit) {
   return 1;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles post_arrive for this object.
+ * Parameters:
+ *   - object exit
+ * Approach:
+ *   Validates inputs and executes explicit local logic for post_arrive.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from post_arrive.
+ */
 void post_arrive(object exit) {
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles pre_action for this object.
+ * Parameters:
+ *   - object action
+ * Approach:
+ *   Validates inputs and executes explicit local logic for pre_action.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from pre_action.
+ */
 int pre_action(object action) {
   return 1;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles post_action for this object.
+ * Parameters:
+ *   - object action
+ * Approach:
+ *   Validates inputs and executes explicit local logic for post_action.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from post_action.
+ */
 void post_action(object action) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles terrain_room_data for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for terrain_room_data.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from terrain_room_data.
+ */
 mapping terrain_room_data() {
   object room_data_daemon;
   mapping room_details;
@@ -91,6 +356,19 @@ mapping terrain_room_data() {
   return room_details;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles link_can_enter for this object.
+ * Parameters:
+ *   - object actor, object link
+ * Approach:
+ *   Validates inputs and executes explicit local logic for link_can_enter.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from link_can_enter.
+ */
 mapping link_can_enter(object actor, object link) {
   mapping room_details;
   string traverse_failure;
@@ -149,6 +427,19 @@ mapping _links;
  * Register a Link affordance for this room.
  * This does NOT define topology.
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles add_link for this object.
+ * Parameters:
+ *   - string label, object link
+ * Approach:
+ *   Validates inputs and executes explicit local logic for add_link.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from add_link.
+ */
 void add_link(string label, object link) {
   object existing;
 
@@ -175,6 +466,19 @@ void add_link(string label, object link) {
 /*
  * Resolve a Link by label (used by movement commands).
  */
+/* Method Summary:
+ * Purpose:
+ *   Handles link for this object.
+ * Parameters:
+ *   - string label
+ * Approach:
+ *   Validates inputs and executes explicit local logic for link.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from link.
+ */
 object link(string label) {
   if (!mapp(_links))
     return 0;
@@ -184,6 +488,19 @@ object link(string label) {
 
 /*
  * Optional: expose available directions for display/debugging.
+ */
+/* Method Summary:
+ * Purpose:
+ *   Handles link_labels for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for link_labels.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from link_labels.
  */
 string *link_labels() {
   if (!mapp(_links))

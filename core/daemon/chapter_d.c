@@ -1,3 +1,15 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/daemon/chapter_d.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - #include <globals.h>
+ *   - #include "chapter_d.h"
+ */
+
 #include <globals.h>
 
 #include "chapter_d.h"
@@ -5,6 +17,19 @@
 mapping chapter_registry;
 string latest_chapter_id;
 
+/* Method Summary:
+ * Purpose:
+ *   Handles normalize_id for this object.
+ * Parameters:
+ *   - string value
+ * Approach:
+ *   Validates inputs and executes explicit local logic for normalize_id.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from normalize_id.
+ */
 string normalize_id(string value) {
   if (!stringp(value))
     return "";
@@ -12,6 +37,19 @@ string normalize_id(string value) {
   return lower_case(trim(value));
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles normalize_path for this object.
+ * Parameters:
+ *   - string path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for normalize_path.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from normalize_path.
+ */
 string normalize_path(string path) {
   if (!stringp(path))
     return "";
@@ -28,6 +66,19 @@ string normalize_path(string path) {
   return path;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles register_chapter for this object.
+ * Parameters:
+ *   - string id, string title, string description,
+ * Approach:
+ *   Validates inputs and executes explicit local logic for register_chapter.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from register_chapter.
+ */
 void register_chapter(string id, string title, string description,
                       string root, string start_room) {
   object chapter;
@@ -43,7 +94,7 @@ void register_chapter(string id, string title, string description,
   if (chapter_exists(normalized))
     return;
 
-  chapter = new("/core/chapter");
+  chapter = new("/core/chapter/chapter");
 
   if (!objectp(chapter))
     return;
@@ -59,6 +110,19 @@ void register_chapter(string id, string title, string description,
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles create for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for create.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from create.
+ */
 void create() {
   chapter_registry = ([]);
   /* The daemon owns the global notion of "latest" for refactor safety. */
@@ -73,6 +137,19 @@ void create() {
   );
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles chapter_exists for this object.
+ * Parameters:
+ *   - string id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for chapter_exists.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from chapter_exists.
+ */
 int chapter_exists(string id) {
   id = normalize_id(id);
 
@@ -88,6 +165,19 @@ int chapter_exists(string id) {
   return 1;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles latest_chapter for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for latest_chapter.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from latest_chapter.
+ */
 string latest_chapter() {
   if (!stringp(latest_chapter_id))
     return "";
@@ -95,6 +185,19 @@ string latest_chapter() {
   return latest_chapter_id;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles get_chapter_root for this object.
+ * Parameters:
+ *   - string id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for get_chapter_root.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from get_chapter_root.
+ */
 string get_chapter_root(string id) {
   object chapter;
 
@@ -109,6 +212,19 @@ string get_chapter_root(string id) {
   return chapter->root();
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles get_start_room for this object.
+ * Parameters:
+ *   - string id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for get_start_room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from get_start_room.
+ */
 string get_start_room(string id) {
   object chapter;
 
@@ -123,6 +239,19 @@ string get_start_room(string id) {
   return chapter->start_room();
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles can_player_access for this object.
+ * Parameters:
+ *   - object player, string id
+ * Approach:
+ *   Validates inputs and executes explicit local logic for can_player_access.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from can_player_access.
+ */
 int can_player_access(object player, string id) {
   string normalized;
   string *unlocked;
@@ -154,6 +283,19 @@ int can_player_access(object player, string id) {
   return 0;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles resolve_player_chapter for this object.
+ * Parameters:
+ *   - object player
+ * Approach:
+ *   Validates inputs and executes explicit local logic for resolve_player_chapter.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from resolve_player_chapter.
+ */
 string resolve_player_chapter(object player) {
   string current, resolved;
 
@@ -182,6 +324,19 @@ string resolve_player_chapter(object player) {
   return "";
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles resolve_player_start_room for this object.
+ * Parameters:
+ *   - object player
+ * Approach:
+ *   Validates inputs and executes explicit local logic for resolve_player_start_room.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from resolve_player_start_room.
+ */
 string resolve_player_start_room(object player) {
   string chapter_id, start_room;
 

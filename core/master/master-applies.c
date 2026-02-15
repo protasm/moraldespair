@@ -1,23 +1,112 @@
+/*
+ * Master Summary:
+ * Purpose:
+ *   Implements the object behavior defined in core/master/master-applies.c.
+ * Approach:
+ *   Uses explicit LPC methods with straightforward control flow so
+ *   behavior stays predictable, debuggable, and easy to evolve.
+ * Dependencies:
+ *   - none
+ */
+
+/* Method Summary:
+ * Purpose:
+ *   Handles get_root_uid for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for get_root_uid.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from get_root_uid.
+ */
 string get_root_uid() {
   return ROOT_UID;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles get_bb_uid for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for get_bb_uid.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from get_bb_uid.
+ */
 string get_bb_uid() {
   return BACKBONE_UID;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles creator_file for this object.
+ * Parameters:
+ *   - string filename
+ * Approach:
+ *   Validates inputs and executes explicit local logic for creator_file.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from creator_file.
+ */
 string creator_file(string filename) {
   return get_root_uid();
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles domain_file for this object.
+ * Parameters:
+ *   - string file
+ * Approach:
+ *   Validates inputs and executes explicit local logic for domain_file.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from domain_file.
+ */
 string domain_file(string file) {
   return get_bb_uid();
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles author_file for this object.
+ * Parameters:
+ *   - string file
+ * Approach:
+ *   Validates inputs and executes explicit local logic for author_file.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from author_file.
+ */
 string author_file(string file) {
   return get_root_uid();
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles epilog for this object.
+ * Parameters:
+ *   - int load_empty
+ * Approach:
+ *   Validates inputs and executes explicit local logic for epilog.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from epilog.
+ */
 string *epilog(int load_empty) {
   return ({
     "/core/daemon/link_d",
@@ -25,6 +114,19 @@ string *epilog(int load_empty) {
   });
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles preload for this object.
+ * Parameters:
+ *   - string filename
+ * Approach:
+ *   Validates inputs and executes explicit local logic for preload.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from preload.
+ */
 void preload(string filename) {
   mixed load_error;
 
@@ -39,12 +141,38 @@ void preload(string filename) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles log_error for this object.
+ * Parameters:
+ *   - string file, string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for log_error.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from log_error.
+ */
 void log_error(string file, string message) {
   write_file("/log/compile", file + ": " + message);
 
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles normalize_path for this object.
+ * Parameters:
+ *   - string path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for normalize_path.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from normalize_path.
+ */
 string normalize_path(string path) {
   if (!stringp(path) || path == "")
     return "";
@@ -61,6 +189,19 @@ string normalize_path(string path) {
   return path;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles wizard_virtual_debug for this object.
+ * Parameters:
+ *   - string message
+ * Approach:
+ *   Validates inputs and executes explicit local logic for wizard_virtual_debug.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from wizard_virtual_debug.
+ */
 void wizard_virtual_debug(string message) {
   object *online_users;
   object user;
@@ -101,6 +242,19 @@ void wizard_virtual_debug(string message) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles compile_object for this object.
+ * Parameters:
+ *   - string pathname
+ * Approach:
+ *   Validates inputs and executes explicit local logic for compile_object.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from compile_object.
+ */
 object compile_object(string pathname) {
   object room;
   object room_data_daemon;
@@ -200,14 +354,53 @@ object compile_object(string pathname) {
   return room;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles connect for this object.
+ * Parameters:
+ *   - int port
+ * Approach:
+ *   Validates inputs and executes explicit local logic for connect.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   object result from connect.
+ */
 object connect(int port) {
   return new(LOGIN_OB);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles crash for this object.
+ * Parameters:
+ *   - string crash_message, object command_giver, object current_object
+ * Approach:
+ *   Validates inputs and executes explicit local logic for crash.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from crash.
+ */
 void crash(string crash_message, object command_giver, object current_object) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles error_handler for this object.
+ * Parameters:
+ *   - mapping error, int caught
+ * Approach:
+ *   Validates inputs and executes explicit local logic for error_handler.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from error_handler.
+ */
 void error_handler(mapping error, int caught) {
 #if ENABLE_RUNTIME_ERROR_LOG
   string line;
@@ -219,26 +412,104 @@ void error_handler(mapping error, int caught) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles flag for this object.
+ * Parameters:
+ *   - string flag_name
+ * Approach:
+ *   Validates inputs and executes explicit local logic for flag.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from flag.
+ */
 void flag(string flag_name) {
   return;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles get_include_path for this object.
+ * Parameters:
+ *   - string object_path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for get_include_path.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mixed result from get_include_path.
+ */
 mixed get_include_path(string object_path) {
   return ({ "/include" });
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles get_mud_stats for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Validates inputs and executes explicit local logic for get_mud_stats.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   mapping result from get_mud_stats.
+ */
 mapping get_mud_stats() {
   return ([]);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles get_save_file_name for this object.
+ * Parameters:
+ *   - string original_file_name, object who
+ * Approach:
+ *   Validates inputs and executes explicit local logic for get_save_file_name.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from get_save_file_name.
+ */
 string get_save_file_name(string original_file_name, object who) {
   return original_file_name;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles make_path_absolute for this object.
+ * Parameters:
+ *   - string rel_path
+ * Approach:
+ *   Validates inputs and executes explicit local logic for make_path_absolute.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from make_path_absolute.
+ */
 string make_path_absolute(string rel_path) {
   return rel_path;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles object_name for this object.
+ * Parameters:
+ *   - object ob
+ * Approach:
+ *   Validates inputs and executes explicit local logic for object_name.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from object_name.
+ */
 string object_name(object ob) {
   if (!objectp(ob))
     return 0;
@@ -246,18 +517,70 @@ string object_name(object ob) {
   return file_name(ob);
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles string parser_error_message for this object.
+ * Parameters:
+ *   - int error_type, object ob, mixed args...
+ * Approach:
+ *   Validates inputs and executes explicit local logic for string parser_error_message.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   varargs result from string parser_error_message.
+ */
 varargs string parser_error_message(int error_type, object ob, mixed args...) {
   return 0;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles privs_file for this object.
+ * Parameters:
+ *   - string filename
+ * Approach:
+ *   Validates inputs and executes explicit local logic for privs_file.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from privs_file.
+ */
 string privs_file(string filename) {
   return get_root_uid();
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles retrieve_ed_setup for this object.
+ * Parameters:
+ *   - object user
+ * Approach:
+ *   Validates inputs and executes explicit local logic for retrieve_ed_setup.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from retrieve_ed_setup.
+ */
 int retrieve_ed_setup(object user) {
   return 0;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles save_ed_setup for this object.
+ * Parameters:
+ *   - object user, int config
+ * Approach:
+ *   Validates inputs and executes explicit local logic for save_ed_setup.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from save_ed_setup.
+ */
 int save_ed_setup(object user, int config) {
   return 0;
 }
