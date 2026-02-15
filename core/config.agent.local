@@ -1,0 +1,81 @@
+###############################################################################
+#              Customizable runtime config file for FluffOS                   #
+###############################################################################
+# NOTE: All paths specified here are relative to the mudlib directory except  #
+#       for mudlib directory, and binary directory.                           #
+# Lines beginning with a # or a newline are ignored.                          #
+###############################################################################
+
+# name of this mud
+name : Moral Despair (Agent Sandbox)
+
+# Restrict IP binding to localhost for sandbox safety.
+mud ip : 127.0.0.1
+
+# agent-only ports (kept separate from config.local defaults)
+port number : 4303
+external_port_2: websocket 4304
+external_port_3: websocket 4305
+external_port_3_tls: cert=etc/cert.pem key=etc/key.pem
+external_port_4: telnet 4306
+external_port_4_tls: cert=etc/cert.pem key=etc/key.pem
+
+websocket http dir : fluffos/build/bin/www
+
+# absolute pathname of mudlib
+mudlib directory : /Users/jonathan/Projects/moraldespair
+
+# debug.log and author/domain stats are stored here
+log directory : /log
+
+# the directories which are searched by #include <...>
+include directories : /include
+
+# the file which defines the master object
+master file : /core/master/master.c
+
+# the file where all global simulated efuns are defined.
+simulated efun file : /core/mfun/mfun.c
+
+# alternate debug log file to avoid conflict with config.local runs
+debug log file : debug.agent
+
+global include file : <globals.h>
+default fail message : What?
+default error message :
+time to clean up : 1200
+time to reset : 1800
+time to swap : 600
+maximum bits in a bitfield : 1200
+maximum local variables : 30
+maximum call depth : 30
+maximum evaluation cost : 300000000
+maximum array size : 15000
+maximum buffer size : 400000
+maximum mapping size : 15000
+inherit chain size : 30
+maximum string length : 200000
+maximum read file size : 200000
+maximum byte transfer : 10000
+hash table size : 7001
+object table size : 1501
+living hash table size : 256
+gametick msec : 100
+heartbeat interval msec : 1000
+sane explode string : 1
+reversible explode string : 0
+sane sorting : 1
+warn tab : 0
+wombles : 0
+call other type check : 0
+call other warn : 0
+mudlib error handler : 1
+no resets : 0
+lazy resets : 0
+randomized resets : 1
+no ansi : 1
+strip before process input: 1
+this_player in call_out : 1
+trace : 1
+trace code : 0
+trace lpc execution context : 0

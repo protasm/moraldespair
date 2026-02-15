@@ -1,4 +1,5 @@
 {
+  "area": "The Wild",
   "source_dir": "/chapter/prologue/area/wild/sw",
   "rooms": [
     {
@@ -2305,6 +2306,5 @@
       "id": "-1_-24",
       "terrain": "p"
     }
-  ],
-  "area": "The Wild"
+  ]
 }

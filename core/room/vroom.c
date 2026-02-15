@@ -74,12 +74,15 @@ void set_descriptions() {
   mixed long_data;
   string *long_options;
   string short_name, long_name;
+  string terrain_short, terrain_long;
   int long_index;
 
   room_details = room_data();
 
   short_name = 0;
   long_name = 0;
+  terrain_short = 0;
+  terrain_long = 0;
   long_data = 0;
   long_options = ({ });
   long_index = 0;
@@ -87,6 +90,8 @@ void set_descriptions() {
   if (mapp(room_details)) {
     short_name = room_details["_explicit_short"];
     long_data = room_details["_explicit_long"];
+    terrain_short = room_details["short"];
+    terrain_long = terrain_long_value(room_details);
 
     if (pointerp(long_data)) {
       long_options = long_data;
@@ -101,11 +106,15 @@ void set_descriptions() {
 
   if (stringp(short_name) && short_name != "")
     short_desc = short_name;
+  else if (stringp(terrain_short) && terrain_short != "")
+    short_desc = terrain_short;
   else
     short_desc = "";
 
   if (stringp(long_name) && long_name != "")
     long_desc = long_name;
+  else if (stringp(terrain_long) && terrain_long != "")
+    long_desc = terrain_long;
   else
     long_desc = "";
 

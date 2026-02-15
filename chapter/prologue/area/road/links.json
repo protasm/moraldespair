@@ -106,12 +106,12 @@
     {
       "link": {
         "room18": "east",
-        "room19": "west"
+        "/chapter/prologue/area/road/room19": "west"
       }
     },
     {
       "link": {
-        "room19": "east",
+        "/chapter/prologue/area/road/room19": "east",
         "room20": "west"
       }
     },
@@ -627,13 +627,13 @@
     },
     {
       "link": {
-        "room19": "north",
+        "/chapter/prologue/area/road/room19": "north",
         "/chapter/prologue/area/wild/ne/4_1": "south"
       }
     },
     {
       "link": {
-        "room19": "south",
+        "/chapter/prologue/area/road/room19": "south",
         "/chapter/prologue/area/wild/se/4_-1": "north"
       }
     },

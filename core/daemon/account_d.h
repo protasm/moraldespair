@@ -18,7 +18,8 @@ int account_exists(string username);
 string account_file(string username);
 int add_player(string username, string player_name);
 void create();
-int create_account(string username, string display_name, string email,;
+int create_account(string username, string display_name, string email,
+                   string password_hash);
 string display_name(string username);
 void ensure_account_dir(string username);
 void ensure_account_root();

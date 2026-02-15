@@ -85,7 +85,10 @@ void add_gate(object gate_obj);
 mapping allow_result();
 int allows_path(string origin_id, string destination_id);
 string appearance(string endpoint);
-mapping build_result(;
+mapping build_result(
+  int outcome, string message, string redirect,
+  int cost, mixed mutations
+);
 mapping can_enter(object actor, object destination);
 mapping can_exit(object actor, object origin);
 mapping check_gates(object actor, string origin_id, string destination_id);
@@ -95,8 +98,8 @@ mapping deny_result(string message, int cost, mixed mutations);
 string describe_from_endpoint(string endpoint_id);
 string direction_label(string endpoint);
 mapping dirs();
-string endpoint_a() { return endpoint_a_id; };
-string endpoint_b() { return endpoint_b_id; };
+string endpoint_a();
+string endpoint_b();
 string endpoint_id_for_room(object room);
 int endpoint_index(string endpoint);
 object gate();

@@ -153,12 +153,18 @@ string short() {
     terrain_short = room_details["short"];
 
   if (stringp(terrain_short) && terrain_short != "")
-    return terrain_short;
+    short_desc = terrain_short;
+
+  if (stringp(short_desc) && short_desc != "")
+    return short_desc;
 
   room_id = room_id_value(room_details);
 
   if (stringp(room_id) && room_id != "")
-    return room_id;
+    short_desc = room_id;
+
+  if (stringp(short_desc) && short_desc != "")
+    return short_desc;
 
   return "Undefined";
 }
@@ -187,7 +193,10 @@ string long() {
   terrain_long = terrain_long_value(room_details);
 
   if (stringp(terrain_long) && terrain_long != "")
-    return terrain_long;
+    long_desc = terrain_long;
+
+  if (stringp(long_desc) && long_desc != "")
+    return long_desc;
 
   return "Undefined";
 }

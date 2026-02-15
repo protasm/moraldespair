@@ -21,6 +21,7 @@ string get_start_room(string id);
 string latest_chapter();
 string normalize_id(string value);
 string normalize_path(string path);
-void register_chapter(string id, string title, string description,;
+void register_chapter(string id, string title, string description,
+                      string root, string start_room);
 string resolve_player_chapter(object player);
 string resolve_player_start_room(object player);
