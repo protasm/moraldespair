@@ -1,6 +1,7 @@
 mapping room_data_by_path;
 mapping virtual_specs_by_path;
 mapping room_paths_by_source_dir;
+mapping terrain_catalog_by_area_dir;
 int loaded, room_count, json_file_count;
 string *json_files_loaded;
 string last_load_error;
@@ -102,58 +103,106 @@ int should_scan_json_file(string file) {
   return 1;
 }
 
-string wild_room_prefix_from_json_file(string json_file) {
+string area_dir_from_json_file(string json_file) {
   string normalized_file;
-  string *parts;
+  string chapter_name;
+  string area_name;
+  string trailing;
 
   normalized_file = normalize_path(json_file);
 
   if (normalized_file == "")
     return "";
 
-  parts = explode(normalized_file, "/");
+  chapter_name = "";
+  area_name = "";
+  trailing = "";
 
-  if (sizeof(parts) < 5)
+  if (sscanf(normalized_file, "/chapter/%s/area/%s/%s", chapter_name, area_name, trailing) != 3)
     return "";
 
-  if (parts[1] != "chapter")
+  if (!stringp(chapter_name) || chapter_name == "")
     return "";
 
-  if (parts[3] != "wild")
+  if (!stringp(area_name) || area_name == "")
     return "";
 
-  if (!stringp(parts[2]) || parts[2] == "")
-    return "";
+  return "/chapter/" + chapter_name + "/area/" + area_name;
+}
 
-  return "/chapter/" + parts[2] + "/wild/wild_room#";
+mapping terrain_catalog_for_area_dir(string area_dir) {
+  mapping terrain_catalog;
+  mixed parsed_json;
+  string *parts;
+  string area_name;
+  string terrain_file;
+  string terrain_contents;
+
+  area_dir = normalize_path(area_dir);
+
+  if (area_dir == "")
+    return 0;
+
+  terrain_catalog = terrain_catalog_by_area_dir[area_dir];
+
+  if (mapp(terrain_catalog))
+    return terrain_catalog;
+
+  parts = explode(area_dir, "/");
+
+  if (!pointerp(parts) || sizeof(parts) < 1)
+    return 0;
+
+  area_name = parts[<1];
+
+  if (!stringp(area_name) || area_name == "")
+    return 0;
+
+  terrain_file = area_dir + "/" + area_name + "_terrain.json";
+
+  if (file_size(terrain_file) <= 0)
+    return 0;
+
+  terrain_contents = read_json_file(terrain_file);
+
+  if (!stringp(terrain_contents) || terrain_contents == "")
+    return 0;
+
+  parsed_json = parse_json(terrain_contents);
+
+  if (!mapp(parsed_json))
+    return 0;
+
+  terrain_catalog = parsed_json;
+  terrain_catalog_by_area_dir[area_dir] = terrain_catalog;
+
+  return terrain_catalog;
 }
 
 void index_room_entry(string json_file, mapping json_root, mapping room_entry) {
-  string room_id, room_file, source_dir, room_path;
-  string wild_prefix;
+  string room_id, room_file, source_dir, room_path, area_dir, terrain_code;
   mapping paths_by_id;
-  string template;
+  mapping indexed_room_data;
+  mapping terrain_catalog;
+  mapping terrain_info;
 
   if (!mapp(room_entry))
     return;
 
+  indexed_room_data = copy(room_entry);
   room_id = room_entry["id"];
   room_file = room_entry["file"];
   source_dir = json_root["source_dir"];
   source_dir = normalize_path(source_dir);
   room_path = "";
+  area_dir = area_dir_from_json_file(json_file);
 
   if (stringp(room_file) && room_file != "")
     room_path = normalize_path(room_file);
   else if (stringp(source_dir) && source_dir != "" && stringp(room_id) && room_id != "")
     room_path = normalize_path(source_dir + "/" + room_id);
-  else if (strsrch(json_file, "/wild/") != -1 &&
-           stringp(room_id) && room_id != "") {
-    wild_prefix = wild_room_prefix_from_json_file(json_file);
-
-    if (wild_prefix != "")
-      room_path = wild_prefix + room_id;
-  }
+  else if (stringp(area_dir) && area_dir != "" && stringp(room_id) && room_id != "")
+    room_path = normalize_path(area_dir + "/room/" + room_id);
 
   if (room_path == "")
     return;
@@ -161,14 +210,42 @@ void index_room_entry(string json_file, mapping json_root, mapping room_entry) {
   if (mapp(room_data_by_path[room_path]))
     return;
 
-  room_data_by_path[room_path] = room_entry;
-  template = "area_room";
+  terrain_code = indexed_room_data["terrain"];
 
-  if (strsrch(room_path, "/wild/wild_room#") != -1)
-    template = "wild_room";
+  if (stringp(terrain_code) && terrain_code != "" &&
+      stringp(area_dir) && area_dir != "") {
+    terrain_catalog = terrain_catalog_for_area_dir(area_dir);
+
+    if (mapp(terrain_catalog))
+      terrain_info = terrain_catalog[terrain_code];
+
+    if (!mapp(terrain_info) && mapp(terrain_catalog))
+      terrain_info = terrain_catalog["default"];
+
+    if (mapp(terrain_info)) {
+      if (!stringp(indexed_room_data["short"]) && stringp(terrain_info["short"]))
+        indexed_room_data["short"] = terrain_info["short"];
+
+      if (!stringp(indexed_room_data["long"]) &&
+          !pointerp(indexed_room_data["long"])) {
+        if (pointerp(terrain_info["long"]) || stringp(terrain_info["long"]))
+          indexed_room_data["long"] = terrain_info["long"];
+      }
+
+      if (!intp(indexed_room_data["traverse_cost"]) &&
+          intp(terrain_info["traverse_cost"]))
+        indexed_room_data["traverse_cost"] = terrain_info["traverse_cost"];
+
+      if (!stringp(indexed_room_data["traverse_failure"]) &&
+          stringp(terrain_info["traverse_failure"]))
+        indexed_room_data["traverse_failure"] = terrain_info["traverse_failure"];
+    }
+  }
+
+  room_data_by_path[room_path] = indexed_room_data;
 
   virtual_specs_by_path[room_path] = ([
-    "template" : template,
+    "template" : "area_room",
     "id" : room_id,
     "path" : room_path,
     "source_json" : json_file
@@ -234,7 +311,6 @@ void load_room_data() {
   string *chapter_dirs;
   string *area_dirs;
   string *area_json_files;
-  string *wild_json_files;
   string *map_json_files;
   string chapter_dir;
   string area_dir;
@@ -244,6 +320,7 @@ void load_room_data() {
   room_data_by_path = ([]);
   virtual_specs_by_path = ([]);
   room_paths_by_source_dir = ([]);
+  terrain_catalog_by_area_dir = ([]);
   json_files_loaded = ({ });
   room_count = 0;
   json_file_count = 0;
@@ -285,21 +362,6 @@ void load_room_data() {
         }
 
         j += 1;
-      }
-    }
-
-    wild_json_files = get_dir(chapter_dir + "/wild/*.json");
-
-    if (pointerp(wild_json_files)) {
-      k = 0;
-
-      while (k < sizeof(wild_json_files)) {
-        json_file = join_path(chapter_dir + "/wild", wild_json_files[k]);
-
-        if (should_scan_json_file(json_file))
-          load_room_json(json_file);
-
-        k += 1;
       }
     }
 

@@ -21,7 +21,6 @@ string author_file(string file) {
 string *epilog(int load_empty) {
   return ({
     "/daemon/link_d",
-    "/daemon/wild_d",
     "/daemon/room_data_d"
   });
 }
@@ -108,8 +107,6 @@ object compile_object(string pathname) {
   mapping resolved_spec;
   string normalized_path;
   string virtual_path;
-  string template;
-  string room_id;
 
   if (!stringp(pathname))
     return 0;
@@ -120,8 +117,6 @@ object compile_object(string pathname) {
     return 0;
 
   wizard_virtual_debug("master compile_object request: " + normalized_path);
-
-  room_id = "";
 
   if (file_size(normalized_path + ".c") > 0) {
     wizard_virtual_debug("master compile_object concrete load: " + normalized_path);
@@ -156,35 +151,12 @@ object compile_object(string pathname) {
   }
 
   virtual_path = resolved_spec["path"];
-  template = resolved_spec["template"];
-  room_id = resolved_spec["id"];
 
   if (!stringp(virtual_path) || virtual_path == "") {
     wizard_virtual_debug(
       "master compile_object missing virtual path for: " + normalized_path
     );
     return 0;
-  }
-
-  if (stringp(template) && template == "wild_room" && stringp(room_id)) {
-    wizard_virtual_debug(
-      "master compile_object virtual wild via spec: room_id=" + room_id
-    );
-
-    room = "/chapter/prologue/std/vmaster"->compile_object(
-      "wild_room_path#" + virtual_path
-    );
-
-    if (objectp(room))
-      wizard_virtual_debug(
-        "master compile_object virtual wild created: " + file_name(room)
-      );
-    else
-      wizard_virtual_debug(
-        "master compile_object virtual wild failed: room_id=" + room_id
-      );
-
-    return room;
   }
 
   wizard_virtual_debug(

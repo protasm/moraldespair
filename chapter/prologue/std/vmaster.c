@@ -1,4 +1,3 @@
-#define WILD_ROOM_TEMPLATE "/core/room/wild_room"
 #define AREA_ROOM_TEMPLATE "/core/room/area_room"
 
 string normalize_room_path(string room_path) {
@@ -58,52 +57,7 @@ void wizard_virtual_debug(string message) {
  */
 object compile_object(string filename) {
   object room;
-  string id, room_path, base_id;
-
-  id = "";
-
-  if (sscanf(filename, "wild_room_path#%s", room_path) == 1) {
-    wizard_virtual_debug("vmaster compile wild by path request: " + filename);
-    room_path = normalize_room_path(room_path);
-
-    room = clone_object(WILD_ROOM_TEMPLATE);
-
-    if (!objectp(room)) {
-      wizard_virtual_debug("vmaster wild path clone failed: " + room_path);
-      return 0;
-    }
-
-    if (function_exists("set_room_path", room))
-      room->set_room_path(room_path);
-    else {
-      if (sscanf(room_path, "%s#%s", base_id, id) == 2)
-        room->set_room_id(id);
-    }
-
-    wizard_virtual_debug("vmaster wild path clone created: " + file_name(room));
-
-    return room;
-  }
-
-  if (sscanf(filename, "wild_room#%s", id) == 1) {
-    wizard_virtual_debug("vmaster compile wild request: " + filename);
-
-    if (sscanf(id, "%s.c", base_id) == 1)
-      id = base_id;
-
-    room = clone_object(WILD_ROOM_TEMPLATE);
-
-    if (!objectp(room)) {
-      wizard_virtual_debug("vmaster wild clone failed: id=" + id);
-      return 0;
-    }
-
-    room->set_room_id(id);
-
-    wizard_virtual_debug("vmaster wild clone created: " + file_name(room));
-
-    return room;
-  }
+  string room_path, base_id;
 
   room_path = "";
 

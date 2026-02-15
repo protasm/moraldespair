@@ -53,7 +53,7 @@ void create() {
   link_files = ({
     "/chapter/prologue/area/dead/links.json",
     "/chapter/prologue/area/roadway/links.json",
-    "/chapter/prologue/wild/wild_links.json",
+    "/chapter/prologue/area/wild/wild_links.json",
     "/chapter/prologue/area/refuge/links.json",
     "/chapter/prologue/area/ruined/ruined_links.json",
     "/chapter/prologue/area/silent/links.json",
@@ -67,7 +67,7 @@ void create() {
 
     i += 1;
   }
-  load_wild_room_links();
+  load_wild_links();
 }
 
 /* ------------------------------------------------------------ */
@@ -164,7 +164,7 @@ int _is_wild_endpoint(string endpoint) {
   if (!stringp(endpoint) || endpoint == "")
     return 0;
 
-  return (strsrch(endpoint, "/chapter/prologue/wild/wild_room#") == 0);
+  return (strsrch(endpoint, "/chapter/prologue/area/wild/room/") == 0);
 }
 
 string _opposite_direction(string dir) {
@@ -190,10 +190,10 @@ string _wild_endpoint_from_id(string room_id) {
   if (room_id == "")
     return "";
 
-  return "/chapter/prologue/wild/wild_room#" + room_id;
+  return "/chapter/prologue/area/wild/room/" + room_id;
 }
 
-void load_wild_room_links() {
+void load_wild_links() {
   string *map_files;
   string raw, source_file, from_id, to_ref, from_ep, to_ep, pair;
   string from_dir, opposite_dir;
@@ -202,10 +202,10 @@ void load_wild_room_links() {
   int i, j;
 
   map_files = ({
-    "/chapter/prologue/wild/wild_nw.json",
-    "/chapter/prologue/wild/wild_sw.json",
-    "/chapter/prologue/wild/wild_ne.json",
-    "/chapter/prologue/wild/wild_se.json"
+    "/chapter/prologue/area/wild/wild_nw.json",
+    "/chapter/prologue/area/wild/wild_sw.json",
+    "/chapter/prologue/area/wild/wild_ne.json",
+    "/chapter/prologue/area/wild/wild_se.json"
   });
   pair_defs = ([ ]);
   rooms_by_file = ([ ]);

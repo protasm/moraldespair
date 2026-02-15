@@ -931,6 +931,9 @@ mapping on_enter(object actor, object origin, object destination) {
  */
 object resolve_destination(string destination_id) {
   object env;
+  object room_data_daemon;
+  mapping resolved_spec;
+  string virtual_path;
 
   if (!stringp(destination_id) || destination_id == "")
     return 0;
@@ -939,6 +942,31 @@ object resolve_destination(string destination_id) {
 
   if (!objectp(env))
     catch(env = load_object(destination_id));
+
+  /*
+   * Keep strict same-path resolution for virtual rooms if load_object() does
+   * not dispatch on this driver for the requested absolute virtual id.
+   */
+  if (!objectp(env)) {
+    room_data_daemon = find_object("/daemon/room_data_d");
+
+    if (!objectp(room_data_daemon))
+      room_data_daemon = load_object("/daemon/room_data_d");
+
+    if (objectp(room_data_daemon))
+      resolved_spec = room_data_daemon->virtual_spec(destination_id);
+
+    if (mapp(resolved_spec)) {
+      virtual_path = resolved_spec["path"];
+
+      if (stringp(virtual_path) && virtual_path != "")
+        catch(
+          env = "/chapter/prologue/std/vmaster"->compile_object(
+            "area_room#" + virtual_path
+          )
+        );
+    }
+  }
 
   return env;
 }

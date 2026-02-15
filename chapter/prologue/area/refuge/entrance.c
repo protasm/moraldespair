@@ -8,9 +8,9 @@ void create() {
   /*
   dest_dir = ([
     "south" : "/chapter/prologue/area/roadway/room68",
-    "north" : "/room/wild_room#Y6",
-    "west" : "/room/wild_room#X7",
-    "east" : "/room/wild_room#Z7",
+    "north" : "/chapter/prologue/area/wild/room/Y6",
+    "west" : "/chapter/prologue/area/wild/room/X7",
+    "east" : "/chapter/prologue/area/wild/room/Z7",
     "city" : "/chapter/prologue/area/refuge/room235",
   ]);
   */
