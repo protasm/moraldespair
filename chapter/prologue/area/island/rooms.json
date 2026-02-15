@@ -1,0 +1,780 @@
+{
+  "area": "Island",
+  "source_dir": "/chapter/prologue/area/island",
+  "rooms": [
+    {
+      "id": "room605",
+      "short": "Ocean before Beachhead",
+      "long": "White foam churns over a fractured shoreline where the ocean meets the\nland. To the north, a desolate beachhead stretches toward the interior of\na silent island. A small, waterlogged boat drifts aimlessly in the surf,\nits wood bleached white by years of salt and sun.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room606",
+      "short": "A sandy beachhead",
+      "long": "Shattered timber from a fallen pier litters the shoreline, half-buried in\nshifting sands. To the north, the silent spires of a vacant city loom over\nthe dunes like jagged teeth against a stagnant twilight. The rotted ribs\nof a great yacht emerge from the surf to the east, stripped of all glory.\nOnly the rhythmic thundering of the western falls breaks the heavy silence.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room607",
+      "short": "A narrow path between the dunes",
+      "long": "High, shifting mounds of sand wall in this narrow corridor. To the north,\ntwo salt-pitted stone pillars stand like skeletal sentinels marking a\nforgotten threshold. The path leads south toward the sound of the surf\nand north toward the looming city silhouette.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room608",
+      "short": "A Dune Path",
+      "long": "Sand gives way to jagged stone as the path climbs toward the city's\nouter perimeter. To the north, the monolithic gate towers cast long,\nimmobile shadows over the shifting ground. The air is thinner here,\ncarrying only the scent of dry dust and ancient, sun-baked rock.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room609",
+      "short": "The City Gate",
+      "long": "Two monolithic pillars rise into the stagnant sky, their stone faces\npitted by centuries of salt and wind. Hollow cavities, once serving as\nwatch-posts, stare like empty eye sockets to the east and west. Faded\nrunes are carved deep into the rock, though only the word 'Welcome'\nremains legible. To the north, a brick-paved street stretches between\nrows of cold, metallic torches.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room610",
+      "short": "Intersection of Silver Street and Balin Road",
+      "long": "Polished stone meets weathered brick at this silent junction. To the\nnorth, the pale length of Silver Street stretches toward the hollow\nshells of distant temples. Four massive metallic torches stand at the\ncorners, their frames blackened and cold. The bustling crowds are long\ngone, leaving only the wind to whistle through the empty thoroughfares.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room611",
+      "short": "Silver Street",
+      "long": "Smooth, pale stone lines this wide thoroughfare under a stagnant sky.\nDead metallic torches stand in silent intervals, their glow long since\nextinguished. To the east, an ornate building rises toward the heavens\nwith twin, crumbling spires. Opposite the spires, a nameless storefront\nstares onto the street with a vacant, open doorway.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room612",
+      "short": "Silver Street",
+      "long": "The pale stones of the street remain eerily clear of debris, as if the\ncity itself refuses to decay. To the west, a massive, cold furnace marks\nthe remains of a foundry. The eastern storefront, once smelling of grain\nand yeast, now exhales only the scent of damp flour and rot. Northward,\nthe shadows of monumental structures loom over the cooling metal torches.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room613",
+      "short": "Silver Street",
+      "long": "The pale street-stones lead toward a wide, patterned plaza to the north.\nRow upon row of glass-domed torches stand like sightless eyes, their\ninner fires long since spent. To the east, the sharp, medicinal tang of\nevaporated spirits lingers in the air. A low wall to the west overlooks\na choked canal where black, motionless water reflects only the gray sky.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room614",
+      "short": "A Grand Plaza",
+      "long": "Intricate brickwork spreads across this vast expanse, forming faded\ncrests and silver crosses that bleed into the surrounding stone. In the\ncenter, a gnarled tree erupts from a raised circular dais, its roots\ncracking the masonry in a slow, silent conquest. A forest of metallic\ntorches stands frozen around the perimeter, their glass housings clouded\nby time. To the north, the path climbs toward a high, shadowed hill.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room615",
+      "short": "Silver Street",
+      "long": "The street-stones here possess a cold, unnatural sheen, untouched by\ndust or debris. To the south lies the sprawling emptiness of the grand\nplaza. Row upon row of metallic torches line the path, their glass\ndomes emitting a sharp, static hum that vibrates in the stagnant air.\nA pale blue luminescence spills from a storefront to the west, while\nto the east, the dark canal laps silently against the street's edge.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room616",
+      "short": "Silver Street",
+      "long": "The street stretches north and south, caught in a cold, unwavering light.\nTo the east, the muffled roar of the hidden canal vibrates through the\nwalls of a derelict shop. A massive, ornate structure dominates the\nwestern view, its smooth facade offering no entry. To the south, the\ndistant glow of the plaza is a dim, dying amber against the gray horizon.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room617",
+      "short": "Silver Street",
+      "long": "A sterile, white radiance bathes this section of the street, emanating\nfrom metallic torches that hum with ancient power. To the west, the\nimposing facade of a temple-like structure bears a weathered sign: 'The\nHall of Mazarbul'. An iron fence to the east cordons off a vacant, dust-\nchoked lot. The pale road continues its path north and south, cutting\na clean line through the silent, surrounding ruins.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room618",
+      "short": "Silver Street",
+      "long": "The pavement here is fractured and charred, leading toward the jagged\nbase of a mountain to the north. To the east, the walls of a blackened\nstructure still radiate a dull, rhythmic heat, pulsing like a dying\nember. Opposite this warmth stands a silent arena, its entrance yawning\nopen beneath a fixed 'Closed' sign. Thick plumes of steam rise from the\nnorthern rocks, veiling the path where the silver road finally dissolves\ninto stone and dust.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room619",
+      "short": "End of Silver Street",
+      "long": "The pale stones of Silver Street terminate at the jagged base of a\nmountainous peak. Thick, rhythmic plumes of soot and dull flame rise\nfrom the summit, casting a heavy shroud over the valley. Along the high\nridges, dark silhouettes of orcish sentinels remain motionless against\nthe gray sky, their gaze fixed eternally upon the vacant streets below.\nA silent storefront stands to the east, while a stone facade blocks the\nview to the west.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room620",
+      "short": "Island smeltery",
+      "long": "A heavy chill hangs in the air of this cavernous smeltery, where the\ngreat furnaces once roared. To the west, the street's gray light spills\nacross a layer of fine ash covering the service counter. A small, soot-\nstained sign remains fixed to the stone wall, its lettering faded into\nobscurity. To the east, a doorway leads into the shadows of a silent\nbackroom, stripped of the rhythmic hammers that once defined this space.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room621",
+      "short": "Repair Shop",
+      "long": "Iron tools lie scattered across heavy stone workbenches, coated in a\nthick, undisturbed layer of grit. A large wooden sign hangs crookedly\nfrom the wall, its painted instructions peeling away like dead skin.\nThe cheerful whistling that once filled the air has been replaced by\na hollow, oppressive silence. To the west, the dim archway leads back\ninto the cold expanse of the main smeltery.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room622",
+      "short": "A Bloody Arena.",
+      "long": "A Bloody Arena..\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room623",
+      "short": "Western Part of Beach",
+      "long": "Western Part of Beach.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room624",
+      "short": "East of the waterfall",
+      "long": "East of the waterfall.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room625",
+      "short": "The base of a waterfall",
+      "long": "The base of a waterfall.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room626",
+      "short": "Ruins",
+      "long": "Ruins.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room627",
+      "short": "Eastern Beach",
+      "long": "Eastern Beach.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room628",
+      "short": "A valley between two large dunes",
+      "long": "A valley between two large dunes.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room629",
+      "short": "A desert plain",
+      "long": "A desert plain.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room630",
+      "short": "A dead end",
+      "long": "A dead end.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room631",
+      "short": "Guard Room",
+      "long": "Guard Room.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room632",
+      "short": "Armoury",
+      "long": "Armoury.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room633",
+      "short": "Elderoak's Quarters",
+      "long": "Elderoak's Quarters.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room634",
+      "short": "A guard house",
+      "long": "A guard house.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room635",
+      "short": "Balin Road",
+      "long": "Balin Road.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room636",
+      "short": "Balin Road",
+      "long": "Balin Road.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room637",
+      "short": "West End of Balin Road",
+      "long": "West End of Balin Road.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room638",
+      "short": "Tunnel Under Canal",
+      "long": "Tunnel Under Canal.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room639",
+      "short": "South End of Highland Avenue",
+      "long": "South End of Highland Avenue.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room640",
+      "short": "Highland Avenue",
+      "long": "Highland Avenue.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room641",
+      "short": "Highland Avenue",
+      "long": "Highland Avenue.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room642",
+      "short": "Highland Avenue",
+      "long": "Highland Avenue.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room643",
+      "short": "Highland Avenue",
+      "long": "Highland Avenue.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room644",
+      "short": "Highland Avenue",
+      "long": "Highland Avenue.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room645",
+      "short": "Dwarven Hut",
+      "long": "Dwarven Hut.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room646",
+      "short": "You trundle past the facade and arrive on a beautiful street.",
+      "long": "You trundle past the facade and arrive on a beautiful street..\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room647",
+      "short": "Gnome Hut",
+      "long": "Gnome Hut.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room648",
+      "short": "Highland Avenue",
+      "long": "Highland Avenue.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room649",
+      "short": "Dwarven Home",
+      "long": "Dwarven Home.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room650",
+      "short": "Highland Avenue",
+      "long": "Highland Avenue.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room651",
+      "short": "Dwarven Shack",
+      "long": "Dwarven Shack.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room652",
+      "short": "Highland Avenue",
+      "long": "Highland Avenue.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room653",
+      "short": "Dwarven Home",
+      "long": "Dwarven Home.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room654",
+      "short": "Highland Avenue",
+      "long": "Highland Avenue.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room655",
+      "short": "House of Balin",
+      "long": "House of Balin.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room656",
+      "short": "Dwarven Home",
+      "long": "Dwarven Home.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room657",
+      "short": "Keep Of Alcibiades",
+      "long": "Keep Of Alcibiades.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room658",
+      "short": "Study",
+      "long": "Study.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room659",
+      "short": "Bedroom:",
+      "long": "Bedroom:.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room660",
+      "short": "Balin Road",
+      "long": "Balin Road.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room661",
+      "short": "Balin Road",
+      "long": "Balin Road.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room662",
+      "short": "Balin Road",
+      "long": "Balin Road.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room663",
+      "short": "Balin Road",
+      "long": "Balin Road.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room664",
+      "short": "Balin Road",
+      "long": "Balin Road.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room665",
+      "short": "East End of Balin Road",
+      "long": "East End of Balin Road.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room666",
+      "short": "Arched Gates",
+      "long": "Arched Gates.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room667",
+      "short": "Guild/Shop Space for rent",
+      "long": "Guild/Shop Space for rent.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room668",
+      "short": "Island Historical Society",
+      "long": "Island Historical Society.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room669",
+      "short": "Office",
+      "long": "Office.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room670",
+      "short": "Elven Mercantile",
+      "long": "Elven Mercantile.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room671",
+      "short": "Temple Shop",
+      "long": "Temple Shop.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room672",
+      "short": "Temple Plaza",
+      "long": "Temple Plaza.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room673",
+      "short": "Seed Shop",
+      "long": "Seed Shop.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room674",
+      "short": "City Pastry Shop",
+      "long": "City Pastry Shop.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room675",
+      "short": "Soylent Green",
+      "long": "Soylent Green.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room676",
+      "short": "Mariner's Revenge",
+      "long": "Mariner's Revenge.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room677",
+      "short": "Gate House",
+      "long": "Gate House.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room678",
+      "short": "Gate House",
+      "long": "Gate House.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room679",
+      "short": "Foyer",
+      "long": "Foyer.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room680",
+      "short": "Hallway",
+      "long": "Hallway.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room681",
+      "short": "Audience Hall",
+      "long": "Audience Hall.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room682",
+      "short": "Council Chamber",
+      "long": "Council Chamber.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room683",
+      "short": "Trophy Room",
+      "long": "Trophy Room.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room684",
+      "short": "Hallway",
+      "long": "Hallway.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room685",
+      "short": "Lady Roland's Bedroom",
+      "long": "Lady Roland's Bedroom.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room686",
+      "short": "RIIS",
+      "long": "RIIS.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room687",
+      "short": "Crack of Doom",
+      "long": "Crack of Doom.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room688",
+      "short": "Rhian's Potion Shop",
+      "long": "Rhian's Potion Shop.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room689",
+      "short": "Alchemist Shop",
+      "long": "Alchemist Shop.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room690",
+      "short": "Entrance to the Hall of Records",
+      "long": "Entrance to the Hall of Records.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room691",
+      "short": "Power System Generator",
+      "long": "Power System Generator.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room692",
+      "short": "Power System Internals",
+      "long": "Power System Internals.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room693",
+      "short": "Entryway",
+      "long": "Entryway.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room694",
+      "short": "South Corridor",
+      "long": "South Corridor.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room695",
+      "short": "Guard Post",
+      "long": "Guard Post.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room696",
+      "short": "North Corridor",
+      "long": "North Corridor.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room697",
+      "short": "Guard Room",
+      "long": "Guard Room.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room698",
+      "short": "West Harem",
+      "long": "West Harem.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room699",
+      "short": "East Harem",
+      "long": "East Harem.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room700",
+      "short": "Bedchamber",
+      "long": "Bedchamber.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room701",
+      "short": "Entryway",
+      "long": "Entryway.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room702",
+      "short": "Turkish Bath",
+      "long": "Turkish Bath.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room703",
+      "short": "Turkish Bath",
+      "long": "Turkish Bath.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room704",
+      "short": "Turkish Bath",
+      "long": "Turkish Bath.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room705",
+      "short": "South Entryway",
+      "long": "South Entryway.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room706",
+      "short": "Turkish Bath",
+      "long": "Turkish Bath.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room707",
+      "short": "Turkish Bath",
+      "long": "Turkish Bath.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room708",
+      "short": "Turkish Bath",
+      "long": "Turkish Bath.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room709",
+      "short": "Turkish Bath",
+      "long": "Turkish Bath.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room710",
+      "short": "Turkish Bath",
+      "long": "Turkish Bath.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room711",
+      "short": "The hermit says: Is there anything you would like to talk about?",
+      "long": "The hermit says: Is there anything you would like to talk about?.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room712",
+      "short": "Hermit's Chamber",
+      "long": "Hermit's Chamber.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room713",
+      "short": "Temple",
+      "long": "Temple.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room714",
+      "short": "Central Chamber",
+      "long": "Central Chamber.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room715",
+      "short": "Eastern Chamber",
+      "long": "Eastern Chamber.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room716",
+      "short": "You feel a STRONG urge to read the Sanctuary board... You are responsible",
+      "long": "You feel a STRONG urge to read the Sanctuary board... You are responsible.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room717",
+      "short": "Poison Shop",
+      "long": "Poison Shop.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room718",
+      "short": "Taxidermist",
+      "long": "Taxidermist.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room719",
+      "short": "Weaver's",
+      "long": "Weaver's.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room720",
+      "short": "Foyer of House of Ill Repute",
+      "long": "Foyer of House of Ill Repute.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room721",
+      "short": "Balin Road Pub",
+      "long": "Balin Road Pub.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room722",
+      "short": "Wheelwright",
+      "long": "Wheelwright.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room723",
+      "short": "Crowded Thoroughfare",
+      "long": "Crowded Thoroughfare.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room724",
+      "short": "Archway of Servitude",
+      "long": "Archway of Servitude.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room725",
+      "short": "Bazaar Crossroad",
+      "long": "Bazaar Crossroad.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room726",
+      "short": "Western District",
+      "long": "Western District.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room727",
+      "short": "Western District",
+      "long": "Western District.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room728",
+      "short": "Western slave bazaar",
+      "long": "Western slave bazaar.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room729",
+      "short": "Eastern District",
+      "long": "Eastern District.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room730",
+      "short": "Eastern District",
+      "long": "Eastern District.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room731",
+      "short": "Eastern slave bazaar",
+      "long": "Eastern slave bazaar.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room732",
+      "short": "Central slave bazaar",
+      "long": "Central slave bazaar.\n",
+      "terrain": "area"
+    },
+    {
+      "id": "room733",
+      "short": "Administrative hallway",
+      "long": "Administrative hallway.\n",
+      "terrain": "area"
+    }
+  ]
+}

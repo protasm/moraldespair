@@ -117,6 +117,51 @@ string direction_for_link_from_room(object room, object link) {
 
 /* Method Summary:
  * Purpose:
+ *   Handles format_arrival_direction for this object.
+ * Parameters:
+ *   - string direction
+ * Approach:
+ *   Validates inputs and executes explicit local logic for
+ *   format_arrival_direction.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from format_arrival_direction.
+ */
+string format_arrival_direction(string direction) {
+  string normalized;
+
+  if (!stringp(direction) || direction == "")
+    return "";
+
+  normalized = lower_case(trim(direction));
+
+  if (member_array(normalized, ({
+    "n",
+    "s",
+    "e",
+    "w",
+    "ne",
+    "nw",
+    "se",
+    "sw",
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest"
+  })) != -1)
+    return "the " + normalized;
+
+  return direction;
+}
+
+/* Method Summary:
+ * Purpose:
  *   Handles announce_departure for this object.
  * Parameters:
  *   - object player, object origin, string direction
@@ -183,6 +228,7 @@ void announce_departure(object player, object origin, string direction) {
  */
 void announce_arrival(object player, object destination, string direction) {
   string actor_name;
+  string formatted_direction;
   string line;
   object *listeners;
   object listener;
@@ -195,9 +241,10 @@ void announce_arrival(object player, object destination, string direction) {
     return;
 
   actor_name = actor_name_for_message(player);
+  formatted_direction = format_arrival_direction(direction);
 
-  if (stringp(direction) && direction != "")
-    line = actor_name + " arrives from " + direction + ".\n";
+  if (stringp(formatted_direction) && formatted_direction != "")
+    line = actor_name + " arrives from " + formatted_direction + ".\n";
   else
     line = actor_name + " arrives.\n";
 

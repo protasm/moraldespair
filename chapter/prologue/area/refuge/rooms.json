@@ -1,0 +1,678 @@
+{
+  "area": "Defiled City",
+  "source_dir": "/chapter/prologue/area/refuge",
+  "rooms": [
+    {
+      "id": "entrance",
+      "short": "Defiled City",
+      "long": "The defiled remains of a final refuge.",
+      "terrain": "area"
+    },
+    {
+      "id": "room235",
+      "short": "Outer Gate",
+      "long": "A low arch of stone stands ahead, its carved face worn smooth by rain. Broken cobbles and weeded ruts mark the road leading toward the silent city.",
+      "terrain": "area"
+    },
+    {
+      "id": "room236",
+      "short": "Gate Arch",
+      "long": "The vaulting of the gatehouse is blackened with soot and age, and the portcullis is long gone. Light spills through gaps above where beams have fallen.",
+      "terrain": "area"
+    },
+    {
+      "id": "room237",
+      "short": "South Road",
+      "long": "The old thoroughfare begins in cracked stone and scattered gravel. A line of shutterless facades leans inward, their plaster peeled away.",
+      "terrain": "area"
+    },
+    {
+      "id": "room238",
+      "short": "Quiet Street",
+      "long": "A narrow street of pale stone stretches between blank walls. Rusted iron brackets jut where balconies once hung.",
+      "terrain": "area"
+    },
+    {
+      "id": "room239",
+      "short": "Stone Crossing",
+      "long": "Two streets meet in a small square of cracked paving. An empty fountain base sits crooked against the curb.",
+      "terrain": "area"
+    },
+    {
+      "id": "room240",
+      "short": "North Street",
+      "long": "The road widens here, its center sunk and filled with damp leaves. A fallen signboard lies half-buried in the grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room241",
+      "short": "Broken Row",
+      "long": "Low buildings crowd the street, their doorways gaping and dark. Rainwater gathers in the ruts where carts once passed.",
+      "terrain": "area"
+    },
+    {
+      "id": "room242",
+      "short": "Inner Gate",
+      "long": "A second gate rises ahead, its guardwalk broken and open to the sky. Weed-choked steps lead through the arch.",
+      "terrain": "area"
+    },
+    {
+      "id": "room243",
+      "short": "Silent Row",
+      "long": "Paving stones are missing in patches, leaving uneven earth. A stretch of wrought iron railing clings to one wall, bent inward.",
+      "terrain": "area"
+    },
+    {
+      "id": "room244",
+      "short": "Lane Crossing",
+      "long": "A side lane cuts west toward narrower houses. The corner stones are chipped and slick with lichen.",
+      "terrain": "area"
+    },
+    {
+      "id": "room245",
+      "short": "Narrow Lane",
+      "long": "The lane pinches between tall, close walls of mottled stone. A ribbon of ivy trails down from a broken cornice.",
+      "terrain": "area"
+    },
+    {
+      "id": "room246",
+      "short": "Shaded Lane",
+      "long": "The street stays in shadow beneath overhanging roofs. Damp plaster flakes from the walls in thin curls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room247",
+      "short": "Lane End",
+      "long": "The lane narrows to a bend where the stones are nearly buried. A collapsed stoop leaves a shallow pit of rubble.",
+      "terrain": "area"
+    },
+    {
+      "id": "room248",
+      "short": "Halfbuilt Court",
+      "long": "Unfinished walls stand in a rough square, their mortar crumbled into dust. Timber scaffolds lie splintered across the ground.",
+      "terrain": "area"
+    },
+    {
+      "id": "room249",
+      "short": "Old Armory",
+      "long": "A stout stone building squats behind a collapsed lintel. Rusted hooks and empty racks line the interior walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room250",
+      "short": "East Crossing",
+      "long": "The street opens to a small intersection marked by worn corner stones. Broken shutters hang from a nearby window frame.",
+      "terrain": "area"
+    },
+    {
+      "id": "room251",
+      "short": "North Road",
+      "long": "A broad band of stone runs between mute facades. Drifts of grit and leaves gather along the curb.",
+      "terrain": "area"
+    },
+    {
+      "id": "room252",
+      "short": "Pale Road",
+      "long": "The paving here is pale and smoothed by time. A cracked column base lies beside a doorway.",
+      "terrain": "area"
+    },
+    {
+      "id": "room253",
+      "short": "Dusty Way",
+      "long": "Dust lies thick in the seams between stones. A sagging awning frame still clings to a wall.",
+      "terrain": "area"
+    },
+    {
+      "id": "room254",
+      "short": "Iron Walk",
+      "long": "Old iron rails bracket the street, many bent or missing. The road is scarred by shallow ruts.",
+      "terrain": "area"
+    },
+    {
+      "id": "room255",
+      "short": "Quiet Square",
+      "long": "The street widens into a square of mottled stone. A dry basin sits at the center, its rim chipped and stained.",
+      "terrain": "area"
+    },
+    {
+      "id": "room256",
+      "short": "Lonely Row",
+      "long": "Shuttered storefronts line the way, their thresholds choked with weeds. The stone is slick where rainwater pools.",
+      "terrain": "area"
+    },
+    {
+      "id": "room257",
+      "short": "Faded Row",
+      "long": "Faded plaster clings to the walls in torn patches. A thin vine threads across a cracked arch.",
+      "terrain": "area"
+    },
+    {
+      "id": "room258",
+      "short": "Market Crossing",
+      "long": "Two streets intersect around a scatter of broken paving. A split wagon wheel rests in the gutter.",
+      "terrain": "area"
+    },
+    {
+      "id": "room259",
+      "short": "North Passage",
+      "long": "The street tightens, squeezed by leaning masonry. Loose slate tiles litter the edges of the road.",
+      "terrain": "area"
+    },
+    {
+      "id": "room260",
+      "short": "West Crossing",
+      "long": "The intersection is marked by a low stone post worn smooth. Thin grass pushes up through the central joints.",
+      "terrain": "area"
+    },
+    {
+      "id": "room261",
+      "short": "Stone Lane",
+      "long": "A straight lane runs east and west through close-set houses. The walls show traces of pale paint and old murals.",
+      "terrain": "area"
+    },
+    {
+      "id": "room262",
+      "short": "Dusty Lane",
+      "long": "The lane is littered with fragments of tile and brick. A broken archway opens into a hollowed shop.",
+      "terrain": "area"
+    },
+    {
+      "id": "room263",
+      "short": "West Lane",
+      "long": "The street ends at a tumbled wall where stones have slid down. A narrow alley slips away beside the ruin.",
+      "terrain": "area"
+    },
+    {
+      "id": "room264",
+      "short": "North Run",
+      "long": "The road here is uneven, with stones heaved by roots. A bent streetlamp rises from a base of cracked stone.",
+      "terrain": "area"
+    },
+    {
+      "id": "room265",
+      "short": "Upper Gate",
+      "long": "A high arch leads toward the inner rise of the city. The guard slots are empty, their stone edges crumbled.",
+      "terrain": "area"
+    },
+    {
+      "id": "room266",
+      "short": "High Road",
+      "long": "The road climbs slightly, flanked by taller facades. Broken balcony ironwork hangs over the street.",
+      "terrain": "area"
+    },
+    {
+      "id": "room267",
+      "short": "Barrack Crossing",
+      "long": "Two roads meet before a line of long, low buildings. Their doorways gape, dark and silent.",
+      "terrain": "area"
+    },
+    {
+      "id": "room268",
+      "short": "Barrack Road",
+      "long": "Long stone halls march along the street, their roofs partly fallen. Rusted nails and timbers lie in heaps.",
+      "terrain": "area"
+    },
+    {
+      "id": "room269",
+      "short": "Sentry Street",
+      "long": "The street is broader here, with a strip of packed earth between stones. A toppled post leans against a wall.",
+      "terrain": "area"
+    },
+    {
+      "id": "room270",
+      "short": "Long Street",
+      "long": "The road runs straight between crumbling barracks. Wind has pushed leaves into slow drifts.",
+      "terrain": "area"
+    },
+    {
+      "id": "room271",
+      "short": "West Barracks",
+      "long": "The row of barracks breaks down into broken foundations. A sagging gate frame stands without doors.",
+      "terrain": "area"
+    },
+    {
+      "id": "room272",
+      "short": "Ruin Lot",
+      "long": "A pit of rubble and half-set stone marks an abandoned build. Weeds knot around a snapped beam.",
+      "terrain": "area"
+    },
+    {
+      "id": "room273",
+      "short": "North Spur",
+      "long": "The road narrows as the surrounding walls thin. A fragment of mosaic tile glints among the dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room274",
+      "short": "Town Arch",
+      "long": "The town gate's stone throat opens above, its portcullis long vanished. Rain has carved dark trails down the blocks.",
+      "terrain": "area"
+    },
+    {
+      "id": "room275",
+      "short": "Gate Approach",
+      "long": "Broken paving leads up to the archway, scattered with fallen masonry. The flanking towers stand cracked and hollow.",
+      "terrain": "area"
+    },
+    {
+      "id": "room276",
+      "short": "Barrack Way",
+      "long": "The street is lined with long foundations and collapsed roofs. Rusted iron hoops lie in the dirt.",
+      "terrain": "area"
+    },
+    {
+      "id": "room277",
+      "short": "Soldier Row",
+      "long": "The buildings here are little more than low walls. Grass grows thick where floors once lay.",
+      "terrain": "area"
+    },
+    {
+      "id": "room278",
+      "short": "Empty Street",
+      "long": "A wide track of stone holds pooled rainwater. A shattered doorway arches into darkness.",
+      "terrain": "area"
+    },
+    {
+      "id": "room279",
+      "short": "Quiet Way",
+      "long": "The stone is cracked and uneven, with weeds in the seams. A line of iron pegs runs along one wall.",
+      "terrain": "area"
+    },
+    {
+      "id": "room280",
+      "short": "East Barracks",
+      "long": "The road ends near a heap of collapsed roof tiles. A rusted bell frame tilts in the rubble.",
+      "terrain": "area"
+    },
+    {
+      "id": "room281",
+      "short": "Stone Row",
+      "long": "The lane is straight and silent, edged by worn thresholds. A chipped well cap sits off to one side.",
+      "terrain": "area"
+    },
+    {
+      "id": "room282",
+      "short": "Narrow Gap",
+      "long": "A tight passage squeezes between two leaning walls. The stone here is smooth with wear and damp.",
+      "terrain": "area"
+    },
+    {
+      "id": "room283",
+      "short": "Back Lane",
+      "long": "A small lane winds between cramped houses. Broken shutters lie in the weeds.",
+      "terrain": "area"
+    },
+    {
+      "id": "room284",
+      "short": "Brick Lane",
+      "long": "The lane is edged by low brickwork and crumbling steps. A faded tile pattern lingers in the dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room285",
+      "short": "East Lane",
+      "long": "The lane opens toward a wider street, its stones chipped and uneven. A sagging lintel hangs over a dark doorway.",
+      "terrain": "area"
+    },
+    {
+      "id": "room413",
+      "short": "Empty Club",
+      "long": "A small hall opens here with a low stage and a cracked rail. Tattered curtains hang in strips along the back wall.",
+      "terrain": "area"
+    },
+    {
+      "id": "room414",
+      "short": "Lamp Street",
+      "long": "The street bends past a row of battered lamp posts and narrow doors. Faded plaster still carries traces of painted vines.",
+      "terrain": "area"
+    },
+    {
+      "id": "room415",
+      "short": "Quiet Salon",
+      "long": "A wide room holds a chipped dance floor and a sagging balcony. Dust coats the rail where hands once rested.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1135",
+      "short": "West Post",
+      "long": "A small guard nook overlooks the outer road, its slit windows broken and widened by time. Dusty stone benches remain where sentries once rested.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1136",
+      "short": "Guard Stair",
+      "long": "A tight stairwell spirals upward through the west tower, its steps worn into shallow cups. The air carries the scent of damp stone and old ash.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1137",
+      "short": "Upper Landing",
+      "long": "The landing opens onto two dark passages with flaked plaster. A fallen torch bracket lies on the floor.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1138",
+      "short": "High Passage",
+      "long": "This passage runs along the upper wall, with gaps where the parapet has crumbled. Wind slips through the open stonework.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1139",
+      "short": "West Stair",
+      "long": "A steep stair climbs the western spire, the inner wall scarred by old tool marks. Loose rubble gathers in the corners.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1140",
+      "short": "West Roof",
+      "long": "The roof is bare to the sky, ringed by a broken parapet. Pooled rainwater glints in shallow basins.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1141",
+      "short": "West Steps",
+      "long": "Broad steps descend through the gatehouse, cracked and uneven. A strip of faded tile clings to the wall.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1142",
+      "short": "Ruined Hall",
+      "long": "A long chamber lies open and empty, its ceiling partially collapsed. Soot stains the stone where braziers once burned.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1143",
+      "short": "Empty Lounge",
+      "long": "Wide windows face the street, their frames hanging loose and bare. Bits of colored plaster remain on the walls, muted by age.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1144",
+      "short": "Silent Hall",
+      "long": "Long tables are gone, but their scars remain in the floor. A hearth stands cold beneath a chipped mantle.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1145",
+      "short": "Barracks",
+      "long": "Low bunks have collapsed into heaps of wood and straw. The air carries a trace of old straw and dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1146",
+      "short": "Upper Passage",
+      "long": "A narrow passage runs along the inner wall, lit by a broken slit. Fine grit lies under fallen plaster.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1147",
+      "short": "Promenade",
+      "long": "A broad walk runs along the inner wall, its stone railing cracked and low. Ornate ironwork curves still cling to a few posts.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1148",
+      "short": "East Steps",
+      "long": "Stone steps climb within the eastern tower, their edges worn thin. A trickle of water runs down one wall.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1149",
+      "short": "Stair Base",
+      "long": "The base of the eastern stairwell is ringed with fallen tiles. The doorway to the yard stands doorless and warped.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1150",
+      "short": "Stone Avenue",
+      "long": "A wide street runs between elegant facades, their arches chipped and open. Wrought iron balconies sag above the broken paving.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1151",
+      "short": "East Stair",
+      "long": "The stairwell narrows as it rises, with crumbling plaster exposing rough stone. Iron nails protrude where a railing once stood.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1152",
+      "short": "East Roof",
+      "long": "The roof of the eastern spire is open to the weather, its parapet broken. A lone flagpole lies across the stones.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1153",
+      "short": "Upper Room",
+      "long": "A small chamber holds a cracked basin and a warped doorway. The walls are stained by long-dry smoke.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1154",
+      "short": "East Post",
+      "long": "A guard niche watches the road through a broken arrow slit. The ledge is slick with damp and moss.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1155",
+      "short": "Side Room",
+      "long": "A side chamber sits empty except for scattered rubble. The plaster has peeled away in long, curling strips.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1156",
+      "short": "Armoury",
+      "long": "Hooks and empty racks line the walls of this small armoury. The floor is strewn with rust flakes and rot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1157",
+      "short": "West Avenue",
+      "long": "The broad street narrows toward the western gate, its paving cracked. Shuttered archways watch over the quiet way.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1158",
+      "short": "Inner Stair",
+      "long": "A stone stair rises along a battered wall, its steps chipped and damp. A broken lantern hook hangs above the landing.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1159",
+      "short": "Upper Cell",
+      "long": "This cramped room has a narrow slit for light and a floor of cracked stone. Water stains run down the corners.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1160",
+      "short": "Small Chamber",
+      "long": "A small chamber opens off the stair, bare and silent. A broken latch hangs from the doorframe.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1161",
+      "short": "Broken Chamber",
+      "long": "The chamber is broad but empty, with a roof caved in at one end. Charred beams lie across the floor.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1162",
+      "short": "High Landing",
+      "long": "The landing connects two stairwells, its stone worn smooth. A length of collapsed railing rests against the wall.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1163",
+      "short": "Outer Stair",
+      "long": "The stairwell winds downward in the west wall, slick with damp. Chips of limestone litter the treads.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1168",
+      "short": "Inner Yard",
+      "long": "The bailey is an open court of broken stone and patches of grass. A low well curb sits dry near the center.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1185",
+      "short": "Broad Street",
+      "long": "A wide street runs beneath faded facades with ornate iron balconies. Many of the balconies have collapsed, leaving jagged anchors.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1186",
+      "short": "Arcade Row",
+      "long": "Shallow arcades line the street, their arches chipped and stained. Bits of colored tile still cling to the lower walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1187",
+      "short": "Shuttered Street",
+      "long": "Tall shutters hang open or lie broken along the street. A few carved lintels remain, softened by weather.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1188",
+      "short": "Stone Avenue",
+      "long": "The avenue is paved in broad stones worn smooth by time. A row of bent iron lamps leans over the gutter.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1189",
+      "short": "East Avenue",
+      "long": "The street widens near a cluster of fallen columns and brick. Dried vines lace across the cracked masonry.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1190",
+      "short": "Silent Taproom",
+      "long": "A low room opens onto the street, its counter broken and bare. Stained glass fragments glimmer in the dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1191",
+      "short": "Empty Bistro",
+      "long": "Small tables have rotted away, leaving only rusted hooks in the floor. A decorative mirror hangs cracked above a cold hearth.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1192",
+      "short": "Caved Chamber",
+      "long": "A heavy collapse has split this chamber, exposing the sky. Slabs of stone lie piled in the center.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1193",
+      "short": "Ruin Passage",
+      "long": "A narrow passage runs through broken walls, half open to the air. Rubble mounds force the path to one side.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1194",
+      "short": "Rubble Yard",
+      "long": "This open yard is choked with split stone and mortar dust. A collapsed crane frame lies among the weeds.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1195",
+      "short": "Broken Bridge",
+      "long": "The drawbridge sags at its chains, its planks split and dark. A dry moat lies beneath, scattered with fallen stone.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1196",
+      "short": "Halfbuilt Hall",
+      "long": "Half-raised walls stand in a rectangle, their courses uneven and cracked. Old scaffolding poles lie snapped across the ground.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1197",
+      "short": "Sealed Entry",
+      "long": "A narrow entryway is blocked by a fallen lintel and drifted rubble. Faded plaster still shows hints of old paint.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1198",
+      "short": "Tight Passage",
+      "long": "A narrow passage squeezes between two thick walls of stone. The floor is polished smooth where many feet once passed.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1199",
+      "short": "Old Smithy",
+      "long": "A low shack of stone holds a cold forge and a broken anvil. Rust flakes glitter across the hearth.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1200",
+      "short": "Broken Works",
+      "long": "An unfinished structure lies open to the weather, its walls buckled. Bundles of warped timber rot along the edges.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1201",
+      "short": "Stone Pit",
+      "long": "A shallow pit is filled with shattered blocks and silt. A toppled winch frame rests against the wall.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1202",
+      "short": "Abandoned Works",
+      "long": "Loose courses of stone mark the outline of a forgotten build. Wind has piled grit against a fallen beam.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1204",
+      "short": "Quiet Hall",
+      "long": "A wide chamber opens in the keep, its floor swept bare by wind. A carved niche stands empty above a cracked ledge.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1326",
+      "short": "Old Guild",
+      "long": "A once-grand hall stands here, its pillars chipped and dim. Faded motifs curl along the walls like ghosts of paint.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1327",
+      "short": "Ruined Stables",
+      "long": "Low stalls line the walls, their timber slats collapsed and gray. A trough sits dry beneath a broken window.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1328",
+      "short": "East Lane",
+      "long": "The lane opens toward the outer wall, its paving split and worn. A heap of fallen bricks blocks one old doorway.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1329",
+      "short": "Stone Doors",
+      "long": "Two heavy doors hang ajar, their iron hinges rusted thick. A draft moves through the cracked threshold.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1330",
+      "short": "Faded Salon",
+      "long": "A quiet room holds a few toppled chairs and a cracked mosaic floor. The walls are stained with old smoke and damp.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1331",
+      "short": "Rose Altar",
+      "long": "A small altar of stone stands against the wall, its carvings softened. Dried petals lie scattered in the dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1332",
+      "short": "South Statuary",
+      "long": "Broken statues lean against the south wall, their faces worn blank. Fragments of marble litter the floor.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1333",
+      "short": "North Statuary",
+      "long": "The remains of carved figures crowd the north wall in silent rows. Lichen spreads across their fractured bases.",
+      "terrain": "area"
+    }
+  ]
+}

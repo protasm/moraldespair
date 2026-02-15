@@ -52,8 +52,8 @@ int main(string arg) {
   write("Bye.\n");
 
   say(
-    (string)previous_object()->name()
-    + " leaves this reality.\n"
+    "<" + (string)previous_object()->name()
+    + " leaves this reality.>\n"
   );
 
   previous_object()->remove();

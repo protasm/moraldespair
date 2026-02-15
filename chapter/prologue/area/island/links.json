@@ -1,0 +1,815 @@
+{
+  "area_prefix": "/chapter/prologue/area/island",
+  "links": [
+    {
+      "link": {
+        "room605": "north",
+        "room606": "south"
+      }
+    },
+    {
+      "link": {
+        "room606": "north",
+        "room607": "south"
+      }
+    },
+    {
+      "link": {
+        "room606": "west",
+        "room623": "east"
+      }
+    },
+    {
+      "link": {
+        "room606": "east",
+        "room626": "west"
+      }
+    },
+    {
+      "link": {
+        "room607": "north",
+        "room608": "south"
+      }
+    },
+    {
+      "link": {
+        "room607": "east",
+        "room628": "west"
+      }
+    },
+    {
+      "link": {
+        "room608": "north",
+        "room609": "south"
+      }
+    },
+    {
+      "link": {
+        "room609": "north",
+        "room610": "south"
+      }
+    },
+    {
+      "link": {
+        "room609": "west",
+        "room631": "east"
+      }
+    },
+    {
+      "link": {
+        "room609": "east",
+        "room634": "west"
+      }
+    },
+    {
+      "link": {
+        "room610": "north",
+        "room611": "south"
+      }
+    },
+    {
+      "link": {
+        "room610": "west",
+        "room635": "east"
+      }
+    },
+    {
+      "link": {
+        "room610": "east",
+        "room660": "west"
+      }
+    },
+    {
+      "link": {
+        "room611": "north",
+        "room612": "south"
+      }
+    },
+    {
+      "link": {
+        "room611": "east",
+        "room713": "west"
+      }
+    },
+    {
+      "link": {
+        "room612": "north",
+        "room613": "south"
+      }
+    },
+    {
+      "link": {
+        "room612": "west"
+      },
+      "one_way": {
+        "from": "room612",
+        "to": "room642"
+      }
+    },
+    {
+      "link": {
+        "room612": "east",
+        "room674": "west"
+      }
+    },
+    {
+      "link": {
+        "room613": "north",
+        "room614": "south"
+      }
+    },
+    {
+      "link": {
+        "room613": "west",
+        "room675": "east"
+      }
+    },
+    {
+      "link": {
+        "room613": "east",
+        "room676": "west"
+      }
+    },
+    {
+      "link": {
+        "room614": "north",
+        "room615": "south"
+      }
+    },
+    {
+      "link": {
+        "room614": "east",
+        "room677": "west"
+      }
+    },
+    {
+      "link": {
+        "room614": "west",
+        "room678": "east"
+      }
+    },
+    {
+      "link": {
+        "room615": "north",
+        "room616": "south"
+      }
+    },
+    {
+      "link": {
+        "room615": "west",
+        "room688": "east"
+      }
+    },
+    {
+      "link": {
+        "room616": "north",
+        "room617": "south"
+      }
+    },
+    {
+      "link": {
+        "room616": "east",
+        "room689": "west"
+      }
+    },
+    {
+      "link": {
+        "room617": "north",
+        "room618": "south"
+      }
+    },
+    {
+      "link": {
+        "room617": "west",
+        "room690": "east"
+      }
+    },
+    {
+      "link": {
+        "room618": "north",
+        "room619": "south"
+      }
+    },
+    {
+      "link": {
+        "room618": "west"
+      },
+      "one_way": {
+        "from": "room618",
+        "to": "room622"
+      }
+    },
+    {
+      "link": {
+        "room618": "east",
+        "room691": "west"
+      }
+    },
+    {
+      "link": {
+        "room619": "east",
+        "room620": "west"
+      }
+    },
+    {
+      "link": {
+        "room620": "east",
+        "room621": "west"
+      }
+    },
+    {
+      "link": {
+        "room623": "west",
+        "room624": "east"
+      }
+    },
+    {
+      "link": {
+        "room624": "west",
+        "room625": "east"
+      }
+    },
+    {
+      "link": {
+        "room626": "east",
+        "room627": "west"
+      }
+    },
+    {
+      "link": {
+        "room628": "east",
+        "room629": "west"
+      }
+    },
+    {
+      "link": {
+        "room629": "north",
+        "room630": "south"
+      }
+    },
+    {
+      "link": {
+        "room631": "west",
+        "room632": "east"
+      }
+    },
+    {
+      "link": {
+        "room632": "west",
+        "room633": "east"
+      }
+    },
+    {
+      "link": {
+        "room635": "west",
+        "room636": "east"
+      }
+    },
+    {
+      "link": {
+        "room635": "south",
+        "room717": "north"
+      }
+    },
+    {
+      "link": {
+        "room635": "northeast",
+        "room718": "southwest"
+      }
+    },
+    {
+      "link": {
+        "room635": "northwest",
+        "room719": "southeast"
+      }
+    },
+    {
+      "link": {
+        "room636": "west",
+        "room637": "east"
+      }
+    },
+    {
+      "link": {
+        "room636": "southeast",
+        "room721": "northwest"
+      }
+    },
+    {
+      "link": {
+        "room636": "southwest",
+        "room722": "northeast"
+      }
+    },
+    {
+      "link": {
+        "room637": "west",
+        "room638": "east"
+      }
+    },
+    {
+      "link": {
+        "room637": "northeast",
+        "room720": "southwest"
+      }
+    },
+    {
+      "link": {
+        "room637": "south",
+        "room723": "north"
+      }
+    },
+    {
+      "link": {
+        "room638": "west",
+        "room639": "east"
+      }
+    },
+    {
+      "link": {
+        "room639": "west",
+        "room640": "east"
+      }
+    },
+    {
+      "link": {
+        "room640": "north",
+        "room641": "south"
+      }
+    },
+    {
+      "link": {
+        "room640": "south",
+        "room657": "north"
+      }
+    },
+    {
+      "link": {
+        "room641": "north",
+        "room642": "south"
+      }
+    },
+    {
+      "link": {
+        "room642": "west",
+        "room643": "east"
+      }
+    },
+    {
+      "link": {
+        "room643": "north",
+        "room644": "south"
+      }
+    },
+    {
+      "link": {
+        "room643": "south",
+        "room647": "north"
+      }
+    },
+    {
+      "link": {
+        "room644": "north",
+        "room645": "south"
+      }
+    },
+    {
+      "link": {
+        "room644": "west",
+        "room646": "east"
+      }
+    },
+    {
+      "link": {
+        "room644": "east",
+        "room648": "west"
+      }
+    },
+    {
+      "link": {
+        "room648": "east",
+        "room649": "west"
+      }
+    },
+    {
+      "link": {
+        "room648": "north",
+        "room650": "south"
+      }
+    },
+    {
+      "link": {
+        "room648": "south",
+        "room651": "north"
+      }
+    },
+    {
+      "link": {
+        "room650": "west",
+        "room652": "east"
+      }
+    },
+    {
+      "link": {
+        "room652": "west",
+        "room653": "east"
+      }
+    },
+    {
+      "link": {
+        "room652": "north",
+        "room654": "south"
+      }
+    },
+    {
+      "link": {
+        "room653": "south",
+        "room656": "north"
+      }
+    },
+    {
+      "link": {
+        "room654": "north",
+        "room655": "south"
+      }
+    },
+    {
+      "link": {
+        "room655": "west",
+        "room712": "east"
+      }
+    },
+    {
+      "link": {
+        "room657": "east",
+        "room658": "west"
+      }
+    },
+    {
+      "link": {
+        "room657": "west",
+        "room659": "east"
+      }
+    },
+    {
+      "link": {
+        "room660": "east",
+        "room661": "west"
+      }
+    },
+    {
+      "link": {
+        "room661": "east",
+        "room662": "west"
+      }
+    },
+    {
+      "link": {
+        "room661": "south",
+        "room673": "north"
+      }
+    },
+    {
+      "link": {
+        "room662": "east",
+        "room663": "west"
+      }
+    },
+    {
+      "link": {
+        "room662": "north",
+        "room672": "south"
+      }
+    },
+    {
+      "link": {
+        "room663": "east",
+        "room664": "west"
+      }
+    },
+    {
+      "link": {
+        "room663": "south",
+        "room670": "north"
+      }
+    },
+    {
+      "link": {
+        "room663": "north",
+        "room671": "south"
+      }
+    },
+    {
+      "link": {
+        "room664": "east",
+        "room665": "west"
+      }
+    },
+    {
+      "link": {
+        "room664": "south",
+        "room667": "north"
+      }
+    },
+    {
+      "link": {
+        "room664": "north",
+        "room668": "south"
+      }
+    },
+    {
+      "link": {
+        "room665": "south",
+        "room666": "north"
+      }
+    },
+    {
+      "link": {
+        "room668": "north",
+        "room669": "south"
+      }
+    },
+    {
+      "link": {
+        "room671": "west",
+        "room672": "east"
+      }
+    },
+    {
+      "link": {
+        "room672": "west",
+        "room715": "east"
+      }
+    },
+    {
+      "link": {
+        "room676": "north",
+        "room677": "south"
+      }
+    },
+    {
+      "link": {
+        "room677": "north",
+        "room686": "south"
+      }
+    },
+    {
+      "link": {
+        "room677": "east",
+        "room693": "west"
+      }
+    },
+    {
+      "link": {
+        "room678": "west",
+        "room679": "east"
+      }
+    },
+    {
+      "link": {
+        "room679": "north",
+        "room680": "south"
+      }
+    },
+    {
+      "link": {
+        "room679": "south",
+        "room684": "north"
+      }
+    },
+    {
+      "link": {
+        "room680": "north",
+        "room681": "south"
+      }
+    },
+    {
+      "link": {
+        "room681": "west",
+        "room682": "east"
+      }
+    },
+    {
+      "link": {
+        "room682": "west",
+        "room683": "east"
+      }
+    },
+    {
+      "link": {
+        "room684": "south",
+        "room685": "north"
+      }
+    },
+    {
+      "link": {
+        "room686": "down",
+        "room687": "up"
+      }
+    },
+    {
+      "link": {
+        "room691": "east",
+        "room692": "west"
+      }
+    },
+    {
+      "link": {
+        "room693": "south",
+        "room694": "north"
+      }
+    },
+    {
+      "link": {
+        "room693": "north",
+        "room696": "south"
+      }
+    },
+    {
+      "link": {
+        "room694": "south",
+        "room695": "north"
+      }
+    },
+    {
+      "link": {
+        "room696": "north",
+        "room697": "south"
+      }
+    },
+    {
+      "link": {
+        "room697": "east",
+        "room698": "west"
+      }
+    },
+    {
+      "link": {
+        "room698": "east",
+        "room699": "west"
+      }
+    },
+    {
+      "link": {
+        "room699": "east",
+        "room700": "west"
+      }
+    },
+    {
+      "link": {
+        "room700": "east",
+        "room701": "west"
+      }
+    },
+    {
+      "link": {
+        "room701": "south",
+        "room702": "north"
+      }
+    },
+    {
+      "link": {
+        "room702": "south",
+        "room703": "north"
+      }
+    },
+    {
+      "link": {
+        "room702": "east",
+        "room708": "west"
+      }
+    },
+    {
+      "link": {
+        "room703": "south",
+        "room704": "north"
+      }
+    },
+    {
+      "link": {
+        "room703": "east",
+        "room707": "west"
+      }
+    },
+    {
+      "link": {
+        "room704": "south",
+        "room705": "north"
+      }
+    },
+    {
+      "link": {
+        "room704": "east",
+        "room706": "west"
+      }
+    },
+    {
+      "link": {
+        "room706": "north",
+        "room707": "south"
+      }
+    },
+    {
+      "link": {
+        "room706": "south",
+        "room710": "north"
+      }
+    },
+    {
+      "link": {
+        "room707": "north",
+        "room708": "south"
+      }
+    },
+    {
+      "link": {
+        "room708": "north",
+        "room709": "south"
+      }
+    },
+    {
+      "link": {
+        "room713": "east",
+        "room714": "west"
+      }
+    },
+    {
+      "link": {
+        "room713": "north",
+        "room716": "south"
+      }
+    },
+    {
+      "link": {
+        "room714": "east",
+        "room715": "west"
+      }
+    },
+    {
+      "link": {
+        "room723": "south",
+        "room724": "north"
+      }
+    },
+    {
+      "link": {
+        "room724": "south",
+        "room725": "north"
+      }
+    },
+    {
+      "link": {
+        "room725": "west",
+        "room726": "east"
+      }
+    },
+    {
+      "link": {
+        "room725": "east",
+        "room729": "west"
+      }
+    },
+    {
+      "link": {
+        "room726": "south",
+        "room727": "north"
+      }
+    },
+    {
+      "link": {
+        "room727": "south",
+        "room728": "north"
+      }
+    },
+    {
+      "link": {
+        "room728": "east",
+        "room732": "west"
+      }
+    },
+    {
+      "link": {
+        "room729": "south",
+        "room730": "north"
+      }
+    },
+    {
+      "link": {
+        "room730": "south",
+        "room731": "north"
+      }
+    },
+    {
+      "link": {
+        "room731": "west",
+        "room732": "east"
+      }
+    },
+    {
+      "link": {
+        "room732": "south",
+        "room733": "north"
+      }
+    }
+  ]
+}

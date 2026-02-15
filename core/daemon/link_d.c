@@ -75,7 +75,9 @@ void create() {
   mapping visited_dirs;
   mapping loaded_files;
   string chapter_dir;
+  string area_root;
   string area_dir;
+  string root_links_file;
   string link_file;
   int i, j, k;
 
@@ -94,6 +96,14 @@ void create() {
 
   while (i < sizeof(chapter_dirs)) {
     chapter_dir = normalize_endpoint("/chapter/" + chapter_dirs[i]);
+    area_root = normalize_endpoint(chapter_dir + "/area");
+    root_links_file = join_path(area_root, "links.json");
+
+    if (file_size(root_links_file) > 0 && !loaded_files[root_links_file]) {
+      loaded_files[root_links_file] = 1;
+      load_json(root_links_file);
+    }
+
     area_dirs = get_dir(chapter_dir + "/area/*");
 
     if (pointerp(area_dirs)) {
@@ -393,12 +403,22 @@ string *collect_area_link_files(string area_dir, mapping visited_dirs) {
   string *link_files;
   string *sub_dirs;
   string sub_dir;
+  string lower_area;
   int i;
 
   area_dir = normalize_endpoint(area_dir);
 
   if (area_dir == "")
     return ({ });
+
+  lower_area = lower_case(area_dir);
+
+  if (sizeof(lower_area) >= 10 && lower_area[<9..] == "/links.json") {
+    if (file_size(area_dir) > 0)
+      return ({ area_dir });
+
+    return ({ });
+  }
 
   if (mapp(visited_dirs) && visited_dirs[area_dir])
     return ({ });

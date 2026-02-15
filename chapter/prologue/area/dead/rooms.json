@@ -1,0 +1,954 @@
+{
+  "area": "City of the Dead",
+  "source_dir": "/chapter/prologue/area/dead",
+  "rooms": [
+    {
+      "id": "entrance",
+      "short": "City of the Dead",
+      "long": "A city overtaken by the dead.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1401",
+      "short": "Broken Bleached Crossing",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way opens into a broad break where several ruined lines meet in silence. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1402",
+      "short": "Cracked Crossing",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way opens into a broad break where several ruined lines meet in silence. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1403",
+      "short": "Bleached Crossing",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way opens into a broad break where several ruined lines meet in silence. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1404",
+      "short": "Mossy Bleached Crossing",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way opens into a broad break where several ruined lines meet in silence. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1405",
+      "short": "Choked Split Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1406",
+      "short": "Bleached Crossing",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way opens into a broad break where several ruined lines meet in silence. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1407",
+      "short": "Charred Bleached Narrow Way",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1408",
+      "short": "Rubble Split Way",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1409",
+      "short": "Bleached Split Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1410",
+      "short": "Jagged Bleached Narrow Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1411",
+      "short": "Ashen Narrow Way",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1412",
+      "short": "Bleached Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1413",
+      "short": "Sagging Bleached Narrow Way",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1414",
+      "short": "Eroded Narrow Way",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1415",
+      "short": "Bleached Narrow Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1416",
+      "short": "Shattered Bleached Narrow Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1417",
+      "short": "Lichen Narrow Way",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1418",
+      "short": "Bleached Split Way",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1419",
+      "short": "Pitted Bleached Narrow Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1420",
+      "short": "Stained Narrow Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1421",
+      "short": "Bleached Narrow Way",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1422",
+      "short": "Seamed Bleached Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1423",
+      "short": "Leaning Narrow Way",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1424",
+      "short": "Bleached Narrow Way",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1425",
+      "short": "Silted Bleached Narrow Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1426",
+      "short": "Slick Narrow Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1427",
+      "short": "Bleached Narrow Way",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1428",
+      "short": "Ruined Bleached Narrow Way",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1429",
+      "short": "Spalled Narrow Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1430",
+      "short": "Bleached Narrow Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1431",
+      "short": "Split Bleached Narrow Way",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Fragments of arches and lintels hang at odd angles, cut and burned through. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1432",
+      "short": "Bleached Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Fragments of arches and lintels hang at odd angles, cut and burned through. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1433",
+      "short": "Bleached Narrow Way",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Fragments of arches and lintels hang at odd angles, cut and burned through. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1434",
+      "short": "Smeared Bleached Split Way",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Fragments of arches and lintels hang at odd angles, cut and burned through. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1435",
+      "short": "Worn Narrow Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Fragments of arches and lintels hang at odd angles, cut and burned through. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1436",
+      "short": "Faded Narrow Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Fragments of arches and lintels hang at odd angles, cut and burned through. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1437",
+      "short": "Cracked Faded Narrow Way",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Fragments of arches and lintels hang at odd angles, cut and burned through. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1438",
+      "short": "Sundered Narrow Way",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Fragments of arches and lintels hang at odd angles, cut and burned through. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1439",
+      "short": "Faded Choked End",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Fragments of arches and lintels hang at odd angles, cut and burned through. A collapsed heap chokes the line, the passage left to cave in. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1448",
+      "short": "Choked Faded Narrow Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Fragments of arches and lintels hang at odd angles, cut and burned through. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1507",
+      "short": "Scorched Choked End",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. The remains of pillars stand jagged, split and fused by old force. A collapsed heap chokes the line, the passage left to cave in. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1508",
+      "short": "Faded Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. The remains of pillars stand jagged, split and fused by old force. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1509",
+      "short": "Rubble Faded Split Way",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. The remains of pillars stand jagged, split and fused by old force. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1510",
+      "short": "Collapsed Split Way",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. The remains of pillars stand jagged, split and fused by old force. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1511",
+      "short": "Faded Split Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. The remains of pillars stand jagged, split and fused by old force. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1512",
+      "short": "Ashen Faded Narrow Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. The remains of pillars stand jagged, split and fused by old force. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1513",
+      "short": "Blasted Narrow Way",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. The remains of pillars stand jagged, split and fused by old force. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1514",
+      "short": "Faded Split Way",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. The remains of pillars stand jagged, split and fused by old force. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1515",
+      "short": "Eroded Faded Narrow Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. The remains of pillars stand jagged, split and fused by old force. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1516",
+      "short": "Splintered Split Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. The remains of pillars stand jagged, split and fused by old force. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1517",
+      "short": "Faded Narrow Way",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1518",
+      "short": "Lichen Faded Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1519",
+      "short": "Gritted Choked End",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. A collapsed heap chokes the line, the passage left to cave in. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1520",
+      "short": "Faded Narrow Way",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1521",
+      "short": "Stained Faded Narrow Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1522",
+      "short": "Fractured Narrow Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1523",
+      "short": "Faded Narrow Way",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1524",
+      "short": "Leaning Faded Narrow Way",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1525",
+      "short": "Hollow Split Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1526",
+      "short": "Faded Narrow Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1527",
+      "short": "Slick Faded Narrow Way",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. The stonework is torn open, exposing fill and roots, with scorch marks in the cracks. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1528",
+      "short": "Fallen Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. The stonework is torn open, exposing fill and roots, with scorch marks in the cracks. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1529",
+      "short": "Faded Narrow Way",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. The stonework is torn open, exposing fill and roots, with scorch marks in the cracks. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1530",
+      "short": "Spalled Faded Narrow Way",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. The stonework is torn open, exposing fill and roots, with scorch marks in the cracks. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1531",
+      "short": "Dusted Narrow Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. The stonework is torn open, exposing fill and roots, with scorch marks in the cracks. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1532",
+      "short": "Faded Narrow Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. The stonework is torn open, exposing fill and roots, with scorch marks in the cracks. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1533",
+      "short": "Bleached Faded Split Way",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. The stonework is torn open, exposing fill and roots, with scorch marks in the cracks. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1534",
+      "short": "Dulled Narrow Way",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. The stonework is torn open, exposing fill and roots, with scorch marks in the cracks. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1535",
+      "short": "Faded Narrow Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. The stonework is torn open, exposing fill and roots, with scorch marks in the cracks. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1536",
+      "short": "Worn Faded Narrow Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. The stonework is torn open, exposing fill and roots, with scorch marks in the cracks. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1537",
+      "short": "Broken Narrow Way",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Chunks of wall have been scooped away, leaving raw ribs of stone. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1538",
+      "short": "Sunk Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Chunks of wall have been scooped away, leaving raw ribs of stone. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1539",
+      "short": "Sundered Sunk Narrow Way",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Chunks of wall have been scooped away, leaving raw ribs of stone. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1540",
+      "short": "Mossy Narrow Way",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Chunks of wall have been scooped away, leaving raw ribs of stone. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1541",
+      "short": "Sunk Narrow Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Chunks of wall have been scooped away, leaving raw ribs of stone. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1542",
+      "short": "Scorched Sunk Split Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Chunks of wall have been scooped away, leaving raw ribs of stone. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1543",
+      "short": "Charred Narrow Way",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Chunks of wall have been scooped away, leaving raw ribs of stone. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1544",
+      "short": "Sunk Narrow Way",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Chunks of wall have been scooped away, leaving raw ribs of stone. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1545",
+      "short": "Collapsed Sunk Narrow Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Chunks of wall have been scooped away, leaving raw ribs of stone. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1546",
+      "short": "Jagged Split Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Chunks of wall have been scooped away, leaving raw ribs of stone. The path splits around a heap of fallen blocks, offering lines gone to ruin. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1547",
+      "short": "Sunk Narrow Way",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Masonry slumps inward, its edges scored and melted in places. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1548",
+      "short": "Blasted Sunk Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Masonry slumps inward, its edges scored and melted in places. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1549",
+      "short": "Sagging Narrow Way",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Masonry slumps inward, its edges scored and melted in places. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1550",
+      "short": "Sunk Narrow Way",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Masonry slumps inward, its edges scored and melted in places. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1551",
+      "short": "Splintered Sunk Narrow Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Masonry slumps inward, its edges scored and melted in places. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1552",
+      "short": "Shattered Narrow Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Masonry slumps inward, its edges scored and melted in places. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1553",
+      "short": "Sunk Narrow Way",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Masonry slumps inward, its edges scored and melted in places. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1554",
+      "short": "Gritted Sunk Narrow Way",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Masonry slumps inward, its edges scored and melted in places. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1555",
+      "short": "Pitted Narrow Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Masonry slumps inward, its edges scored and melted in places. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1556",
+      "short": "Sunk Narrow Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Masonry slumps inward, its edges scored and melted in places. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1557",
+      "short": "Fractured Sunk Narrow Way",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Jagged ribs of stone show cuts and pitting, some edges glassed by heat. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1558",
+      "short": "Seamed Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Jagged ribs of stone show cuts and pitting, some edges glassed by heat. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1559",
+      "short": "Sunk Narrow Way",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Jagged ribs of stone show cuts and pitting, some edges glassed by heat. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1560",
+      "short": "Hollow Sunk Narrow Way",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Jagged ribs of stone show cuts and pitting, some edges glassed by heat. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1561",
+      "short": "Silted Narrow Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Jagged ribs of stone show cuts and pitting, some edges glassed by heat. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1562",
+      "short": "Sunk Narrow Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Jagged ribs of stone show cuts and pitting, some edges glassed by heat. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1563",
+      "short": "Fallen Sunk Narrow Way",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Jagged ribs of stone show cuts and pitting, some edges glassed by heat. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1564",
+      "short": "Ruined Narrow Way",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Jagged ribs of stone show cuts and pitting, some edges glassed by heat. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1565",
+      "short": "Sunk Narrow Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Jagged ribs of stone show cuts and pitting, some edges glassed by heat. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1566",
+      "short": "Dusted Sunk Narrow Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Jagged ribs of stone show cuts and pitting, some edges glassed by heat. The way runs on in a narrow line, hemmed by broken walls left to weather. Moss and pale mold cling to the damp pockets, and nothing moves except drifting grit.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1567",
+      "short": "Split Narrow Way",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1568",
+      "short": "Sunk Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1569",
+      "short": "Dulled Sunk Broken Bend",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The passage angles hard here, squeezed between stone left to lean and settle. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1570",
+      "short": "Smeared Narrow Way",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1571",
+      "short": "Sunk Narrow Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1572",
+      "short": "Broken Cold Narrow Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1573",
+      "short": "Cracked Narrow Way",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1574",
+      "short": "Cold Narrow Way",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1575",
+      "short": "Mossy Cold Narrow Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1576",
+      "short": "Choked Narrow Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Walls to either side are chewed by blasts and blade scars, their faces peeled away. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1577",
+      "short": "Cold Narrow Way",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1578",
+      "short": "Charred Cold Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1579",
+      "short": "Rubble Crossing",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way opens into a broad break where several ruined lines meet in silence. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1580",
+      "short": "Cold Narrow Way",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1581",
+      "short": "Jagged Cold Narrow Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1582",
+      "short": "Ashen Narrow Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1583",
+      "short": "Cold Broken Bend",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The passage angles hard here, squeezed between stone left to lean and settle. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1584",
+      "short": "Sagging Cold Crossing",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way opens into a broad break where several ruined lines meet in silence. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1585",
+      "short": "Eroded Narrow Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1586",
+      "short": "Cold Choked End",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Leaning walls show long cuts and scorch trails, as if steel and heat worried them for hours. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1587",
+      "short": "Shattered Cold Choked End",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Blackened streaks and gouges run along the masonry, breaking any clean line. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1588",
+      "short": "Lichen Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1589",
+      "short": "Cold Split Way",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Blackened streaks and gouges run along the masonry, breaking any clean line. The path splits around a heap of fallen blocks, offering lines gone to ruin. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1590",
+      "short": "Pitted Cold Broken Bend",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Blackened streaks and gouges run along the masonry, breaking any clean line. The passage angles hard here, squeezed between stone left to lean and settle. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1591",
+      "short": "Stained Narrow Way",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1592",
+      "short": "Cold Narrow Way",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1593",
+      "short": "Seamed Cold Broken Bend",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Blackened streaks and gouges run along the masonry, breaking any clean line. The passage angles hard here, squeezed between stone left to lean and settle. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1594",
+      "short": "Leaning Broken Bend",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Blackened streaks and gouges run along the masonry, breaking any clean line. The passage angles hard here, squeezed between stone left to lean and settle. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1595",
+      "short": "Cold Narrow Way",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Blackened streaks and gouges run along the masonry, breaking any clean line. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1596",
+      "short": "Silted Cold Broken Bend",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Blackened streaks and gouges run along the masonry, breaking any clean line. The passage angles hard here, squeezed between stone left to lean and settle. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1597",
+      "short": "Slick Split Way",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Fragments of arches and lintels hang at odd angles, cut and burned through. The path splits around a heap of fallen blocks, offering lines gone to ruin. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1598",
+      "short": "Cold Split Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Fragments of arches and lintels hang at odd angles, cut and burned through. The path splits around a heap of fallen blocks, offering lines gone to ruin. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1599",
+      "short": "Ruined Cold Choked End",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Fragments of arches and lintels hang at odd angles, cut and burned through. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1600",
+      "short": "Spalled Crossing",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Fragments of arches and lintels hang at odd angles, cut and burned through. The way opens into a broad break where several ruined lines meet in silence. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1601",
+      "short": "Cold Choked End",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Fragments of arches and lintels hang at odd angles, cut and burned through. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1602",
+      "short": "Split Cold Broken Bend",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Fragments of arches and lintels hang at odd angles, cut and burned through. The passage angles hard here, squeezed between stone left to lean and settle. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1603",
+      "short": "Bleached Broken Bend",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Fragments of arches and lintels hang at odd angles, cut and burned through. The passage angles hard here, squeezed between stone left to lean and settle. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1604",
+      "short": "Cold Choked End",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. Fragments of arches and lintels hang at odd angles, cut and burned through. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1605",
+      "short": "Smeared Cold Choked End",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. Fragments of arches and lintels hang at odd angles, cut and burned through. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1621",
+      "short": "Worn Choked End",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. Fragments of arches and lintels hang at odd angles, cut and burned through. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1622",
+      "short": "Silted Choked End",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. The remains of pillars stand jagged, split and fused by old force. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1623",
+      "short": "Cracked Silted Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. The remains of pillars stand jagged, split and fused by old force. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1624",
+      "short": "Sundered Choked End",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. The remains of pillars stand jagged, split and fused by old force. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1625",
+      "short": "Silted Choked End",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. The remains of pillars stand jagged, split and fused by old force. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1626",
+      "short": "Choked Silted Choked End",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. The remains of pillars stand jagged, split and fused by old force. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1627",
+      "short": "Scorched Broken Bend",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. The remains of pillars stand jagged, split and fused by old force. The passage angles hard here, squeezed between stone left to lean and settle. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1628",
+      "short": "Silted Broken Bend",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. The remains of pillars stand jagged, split and fused by old force. The passage angles hard here, squeezed between stone left to lean and settle. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1629",
+      "short": "Rubble Silted Choked End",
+      "long": "Split slabs tilt against each other, their edges worn to chalk. The remains of pillars stand jagged, split and fused by old force. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1630",
+      "short": "Collapsed Choked End",
+      "long": "Pitted stone stretches ahead, littered with chips and fragments. The remains of pillars stand jagged, split and fused by old force. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1631",
+      "short": "Silted Narrow Way",
+      "long": "Grit and broken tiles lie in drifts, the ground uneven and tired. The remains of pillars stand jagged, split and fused by old force. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1632",
+      "short": "Ashen Silted Choked End",
+      "long": "Stone underfoot is split into plates, with grit and ash packed into the seams. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1633",
+      "short": "Blasted Narrow Way",
+      "long": "The ground is a mosaic of cracked slabs and loose grit, dulled by age. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. The way runs on in a narrow line, hemmed by broken walls left to weather. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1634",
+      "short": "Silted Choked End",
+      "long": "Broken paving lies in uneven ridges, with fine dust caked between. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1635",
+      "short": "Eroded Silted Choked End",
+      "long": "The floor is a churn of fractured stone and rubble, pressed flat by time. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1636",
+      "short": "Splintered Choked End",
+      "long": "Rubble and crushed mortar blanket the surface, slick in places with old damp. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1637",
+      "short": "Silted Choked End",
+      "long": "The surface dips and rises where blocks have settled, leaving sharp lips and hollows. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1653",
+      "short": "Lichen Silted Choked End",
+      "long": "Loose stones shift underfoot, buried in silt and powdered mortar. Carved blocks are shattered and glazed in places, a mix of chisel scars and burn pits. A collapsed heap chokes the line, the passage left to cave in. Thin lichen mats the shaded edges, and the air tastes of wet dust.",
+      "terrain": "area"
+    }
+  ]
+}

@@ -10,13 +10,13 @@ Before performing **any task**, agents **must read and internalize** the documen
 
 ## Required Reading (In Order)
 
-1. **OVERVIEW.md**  
+1. **/doc/OVERVIEW.md**  
    This document defines:
    - The identity and goals of the project
    - The relationship to the legacy MUD *Moral Decay*
    - The phased development model and constraints, which are mandatory unless explicitly overridden
 
-2. **CODE-STYLE.md**  
+2. **/doc/CODE-STYLE.md**  
    This document defines:
    - LPC formatting and style conventions
    - File organization patterns
@@ -25,7 +25,7 @@ Before performing **any task**, agents **must read and internalize** the documen
 
    Agents should assume that **CODE-STYLE.md is authoritative**, even if other files appear inconsistent.
 
-3. **PROSE.md**  
+3. **/doc/PROSE.md**  
    This document defines:
    - Room naming rules
    - Room description length and structure
@@ -34,13 +34,13 @@ Before performing **any task**, agents **must read and internalize** the documen
 
    Prose is treated as a **first-class system** in this project. Agents must not generate descriptive text that violates these constraints.
 
-4. **EFUNS.md**  
+4. **/doc/EFUNS.md**  
    This document defines:
    - a list of efuns available in Fluffos.
 
    Only use an efun if it appears in this list; do not assume the existence of any other efuns.
 
-5. **PHASE1.md**  
+5. **/doc/PHASE1.md**  
    This document defines:
    - Guidance as how to transform rooms and descriptions to appear "aged" and "abandoned".
 

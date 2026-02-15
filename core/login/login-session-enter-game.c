@@ -75,6 +75,7 @@ void announce_player_entry(object player) {
   object online_user;
   string player_name;
   string line;
+  string self_line;
   int i;
 
   if (!objectp(player))
@@ -85,7 +86,9 @@ void announce_player_entry(object player) {
   if (!stringp(player_name) || player_name == "")
     return;
 
-  line = player_name + " leaves reality and falls into Moral Despair.\n";
+  line = "<" + player_name + " leaves reality and falls into Moral "
+    + "Despair.>\n";
+  self_line = line + "\n";
   online_users = users();
 
   if (!pointerp(online_users))
@@ -97,7 +100,10 @@ void announce_player_entry(object player) {
     if (!objectp(online_user))
       continue;
 
-    tell_object(online_user, line);
+    if (online_user == player)
+      tell_object(online_user, self_line);
+    else
+      tell_object(online_user, line);
   }
 
   return;

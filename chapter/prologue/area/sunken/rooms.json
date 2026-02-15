@@ -1,0 +1,996 @@
+{
+  "area": "Sunken City",
+  "source_dir": "/chapter/prologue/area/sunken",
+  "rooms": [
+    {
+      "id": "entrance",
+      "short": "Sunken City",
+      "long": "Once a city, now swallowed by the desert.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1",
+      "short": "Sand-Choked Lane",
+      "long": "A wide run of cracked stone stretches north and south, its center scoured to dust. Soot stains cling to the stone, and the air tastes of old smoke. No footprints remain; only layered grit records the years.",
+      "terrain": "area"
+    },
+    {
+      "id": "room2",
+      "short": "Tumbled Slope",
+      "long": "A short rise of uneven paving leads to a wind-carved platform. Rust-red streaks mark where metal once lay, now long gone. The ground bears the weight of repeated collapse.",
+      "terrain": "area"
+    },
+    {
+      "id": "room3",
+      "short": "Collapsed Approach",
+      "long": "A straight corridor of paving is split by collapsed slabs and sinkholes. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room4",
+      "short": "Leaning Way",
+      "long": "Two aligned walls hint at a corridor now filled with drifted sand. Loose stones shift with each step, exposing darker layers below.",
+      "terrain": "area"
+    },
+    {
+      "id": "room5",
+      "short": "Sunken Span",
+      "long": "A gap between toppled arches forms a narrow throat in the route. Soot stains cling to the stone, and the air tastes of old smoke.",
+      "terrain": "area"
+    },
+    {
+      "id": "room6",
+      "short": "Cracked Drop",
+      "long": "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.",
+      "terrain": "area"
+    },
+    {
+      "id": "room7",
+      "short": "Shattered Cut",
+      "long": "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room8",
+      "short": "Collapsed Approach",
+      "long": "A straight corridor of paving is split by collapsed slabs and sinkholes. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room9",
+      "short": "Leaning Way",
+      "long": "Two aligned walls hint at a corridor now filled with drifted sand. Loose stones shift with each step, exposing darker layers below.",
+      "terrain": "area"
+    },
+    {
+      "id": "room10",
+      "short": "Ash-Streaked Crossing",
+      "long": "A narrow lane bends between broken walls, the ground uneven and gritty. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room11",
+      "short": "Dusty Stretch",
+      "long": "The path angles around a heap of fallen blocks, forcing a slow turn. Hollow window frames stare out, their ledges buried in dust. The wind slides through with a dry hiss.",
+      "terrain": "area"
+    },
+    {
+      "id": "room12",
+      "short": "Burned Run",
+      "long": "A crooked passage threads between leaning fragments of masonry. Loose stones shift with each step, exposing darker layers below. The place feels picked clean, stripped of timber and metal.",
+      "terrain": "area"
+    },
+    {
+      "id": "room13",
+      "short": "Wind-Scoured Reach",
+      "long": "The way pinches tight, then opens again into scattered foundations. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room14",
+      "short": "Rubble-Strewn Walk",
+      "long": "An open stretch of hard-packed grit marks a crossing of several lines. Splintered tiles crunch underfoot, mixed with crushed brick.",
+      "terrain": "area"
+    },
+    {
+      "id": "room15",
+      "short": "Broken Passage",
+      "long": "A long strip of stonework drifts under dunes, only a spine still visible. Fire- blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room16",
+      "short": "Dusty Stretch",
+      "long": "The path angles around a heap of fallen blocks, forcing a slow turn. Hollow window frames stare out, their ledges buried in dust. The wind slides through with a dry hiss.",
+      "terrain": "area"
+    },
+    {
+      "id": "room17",
+      "short": "Pitted Turn",
+      "long": "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room18",
+      "short": "Sunken Span",
+      "long": "A gap between toppled arches forms a narrow throat in the route. Soot stains cling to the stone, and the air tastes of old smoke.",
+      "terrain": "area"
+    },
+    {
+      "id": "room19",
+      "short": "Bleached Bend",
+      "long": "Broken steps climb to a terrace of shattered stone, then fall away. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room20",
+      "short": "Shattered Cut",
+      "long": "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room21",
+      "short": "Leaning Way",
+      "long": "Two aligned walls hint at a corridor now filled with drifted sand. Loose stones shift with each step, exposing darker layers below.",
+      "terrain": "area"
+    },
+    {
+      "id": "room22",
+      "short": "Eroded Rise",
+      "long": "A jagged seam in the paving marks the line of a sunken run. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room23",
+      "short": "Hollow Gap",
+      "long": "A stub of wall creates a blind corner before the way slips onward. Splintered tiles crunch underfoot, mixed with crushed brick. The silence presses close between the broken walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room24",
+      "short": "Faded Corridor",
+      "long": "A shallow slope of debris leads down into a widened passage. Fire-blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room25",
+      "short": "Scarred Hollow",
+      "long": "The route skirts a collapsed chamber, its edge cut clean by fire. Hollow window frames stare out, their ledges buried in dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room26",
+      "short": "Drifted Platform",
+      "long": "Scattered piers suggest a once-long span, now broken into bays. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room27",
+      "short": "Sand-Choked Lane",
+      "long": "A wide run of cracked stone stretches north and south, its center scoured to dust. Soot stains cling to the stone, and the air tastes of old smoke. No footprints remain; only layered grit records the years.",
+      "terrain": "area"
+    },
+    {
+      "id": "room28",
+      "short": "Ash-Streaked Crossing",
+      "long": "A narrow lane bends between broken walls, the ground uneven and gritty. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room29",
+      "short": "Cracked Drop",
+      "long": "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.",
+      "terrain": "area"
+    },
+    {
+      "id": "room30",
+      "short": "Burned Run",
+      "long": "A crooked passage threads between leaning fragments of masonry. Loose stones shift with each step, exposing darker layers below. The place feels picked clean, stripped of timber and metal.",
+      "terrain": "area"
+    },
+    {
+      "id": "room31",
+      "short": "Wind-Scoured Reach",
+      "long": "The way pinches tight, then opens again into scattered foundations. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room32",
+      "short": "Rubble-Strewn Walk",
+      "long": "An open stretch of hard-packed grit marks a crossing of several lines. Splintered tiles crunch underfoot, mixed with crushed brick.",
+      "terrain": "area"
+    },
+    {
+      "id": "room33",
+      "short": "Broken Passage",
+      "long": "A long strip of stonework drifts under dunes, only a spine still visible. Fire- blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room34",
+      "short": "Dusty Stretch",
+      "long": "The path angles around a heap of fallen blocks, forcing a slow turn. Hollow window frames stare out, their ledges buried in dust. The wind slides through with a dry hiss.",
+      "terrain": "area"
+    },
+    {
+      "id": "room35",
+      "short": "Pitted Turn",
+      "long": "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room36",
+      "short": "Sunken Span",
+      "long": "A gap between toppled arches forms a narrow throat in the route. Soot stains cling to the stone, and the air tastes of old smoke.",
+      "terrain": "area"
+    },
+    {
+      "id": "room37",
+      "short": "Bleached Bend",
+      "long": "Broken steps climb to a terrace of shattered stone, then fall away. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room38",
+      "short": "Tumbled Slope",
+      "long": "A short rise of uneven paving leads to a wind-carved platform. Rust-red streaks mark where metal once lay, now long gone. The ground bears the weight of repeated collapse.",
+      "terrain": "area"
+    },
+    {
+      "id": "room39",
+      "short": "Shattered Cut",
+      "long": "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room40",
+      "short": "Eroded Rise",
+      "long": "A jagged seam in the paving marks the line of a sunken run. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room41",
+      "short": "Hollow Gap",
+      "long": "A stub of wall creates a blind corner before the way slips onward. Splintered tiles crunch underfoot, mixed with crushed brick. The silence presses close between the broken walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room42",
+      "short": "Faded Corridor",
+      "long": "A shallow slope of debris leads down into a widened passage. Fire-blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room43",
+      "short": "Ash-Streaked Crossing",
+      "long": "A narrow lane bends between broken walls, the ground uneven and gritty. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room44",
+      "short": "Burned Run",
+      "long": "A crooked passage threads between leaning fragments of masonry. Loose stones shift with each step, exposing darker layers below. The place feels picked clean, stripped of timber and metal.",
+      "terrain": "area"
+    },
+    {
+      "id": "room45",
+      "short": "Wind-Scoured Reach",
+      "long": "The way pinches tight, then opens again into scattered foundations. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room46",
+      "short": "Rubble-Strewn Walk",
+      "long": "An open stretch of hard-packed grit marks a crossing of several lines. Splintered tiles crunch underfoot, mixed with crushed brick.",
+      "terrain": "area"
+    },
+    {
+      "id": "room47",
+      "short": "Broken Passage",
+      "long": "A long strip of stonework drifts under dunes, only a spine still visible. Fire- blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room48",
+      "short": "Dusty Stretch",
+      "long": "The path angles around a heap of fallen blocks, forcing a slow turn. Hollow window frames stare out, their ledges buried in dust. The wind slides through with a dry hiss.",
+      "terrain": "area"
+    },
+    {
+      "id": "room49",
+      "short": "Pitted Turn",
+      "long": "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room50",
+      "short": "Bleached Bend",
+      "long": "Broken steps climb to a terrace of shattered stone, then fall away. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room51",
+      "short": "Shattered Cut",
+      "long": "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room52",
+      "short": "Leaning Way",
+      "long": "Two aligned walls hint at a corridor now filled with drifted sand. Loose stones shift with each step, exposing darker layers below.",
+      "terrain": "area"
+    },
+    {
+      "id": "room53",
+      "short": "Eroded Rise",
+      "long": "A jagged seam in the paving marks the line of a sunken run. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room54",
+      "short": "Hollow Gap",
+      "long": "A stub of wall creates a blind corner before the way slips onward. Splintered tiles crunch underfoot, mixed with crushed brick. The silence presses close between the broken walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room55",
+      "short": "Faded Corridor",
+      "long": "A shallow slope of debris leads down into a widened passage. Fire-blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room56",
+      "short": "Scarred Hollow",
+      "long": "The route skirts a collapsed chamber, its edge cut clean by fire. Hollow window frames stare out, their ledges buried in dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room57",
+      "short": "Drifted Platform",
+      "long": "Scattered piers suggest a once-long span, now broken into bays. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room58",
+      "short": "Sand-Choked Lane",
+      "long": "A wide run of cracked stone stretches north and south, its center scoured to dust. Soot stains cling to the stone, and the air tastes of old smoke. No footprints remain; only layered grit records the years.",
+      "terrain": "area"
+    },
+    {
+      "id": "room59",
+      "short": "Ash-Streaked Crossing",
+      "long": "A narrow lane bends between broken walls, the ground uneven and gritty. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room60",
+      "short": "Collapsed Approach",
+      "long": "A straight corridor of paving is split by collapsed slabs and sinkholes. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room61",
+      "short": "Burned Run",
+      "long": "A crooked passage threads between leaning fragments of masonry. Loose stones shift with each step, exposing darker layers below. The place feels picked clean, stripped of timber and metal.",
+      "terrain": "area"
+    },
+    {
+      "id": "room62",
+      "short": "Wind-Scoured Reach",
+      "long": "The way pinches tight, then opens again into scattered foundations. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room63",
+      "short": "Rubble-Strewn Walk",
+      "long": "An open stretch of hard-packed grit marks a crossing of several lines. Splintered tiles crunch underfoot, mixed with crushed brick.",
+      "terrain": "area"
+    },
+    {
+      "id": "room64",
+      "short": "Broken Passage",
+      "long": "A long strip of stonework drifts under dunes, only a spine still visible. Fire- blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room65",
+      "short": "Dusty Stretch",
+      "long": "The path angles around a heap of fallen blocks, forcing a slow turn. Hollow window frames stare out, their ledges buried in dust. The wind slides through with a dry hiss.",
+      "terrain": "area"
+    },
+    {
+      "id": "room66",
+      "short": "Pitted Turn",
+      "long": "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room67",
+      "short": "Sunken Span",
+      "long": "A gap between toppled arches forms a narrow throat in the route. Soot stains cling to the stone, and the air tastes of old smoke.",
+      "terrain": "area"
+    },
+    {
+      "id": "room68",
+      "short": "Bleached Bend",
+      "long": "Broken steps climb to a terrace of shattered stone, then fall away. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room69",
+      "short": "Tumbled Slope",
+      "long": "A short rise of uneven paving leads to a wind-carved platform. Rust-red streaks mark where metal once lay, now long gone. The ground bears the weight of repeated collapse.",
+      "terrain": "area"
+    },
+    {
+      "id": "room70",
+      "short": "Leaning Way",
+      "long": "Two aligned walls hint at a corridor now filled with drifted sand. Loose stones shift with each step, exposing darker layers below.",
+      "terrain": "area"
+    },
+    {
+      "id": "room71",
+      "short": "Eroded Rise",
+      "long": "A jagged seam in the paving marks the line of a sunken run. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room72",
+      "short": "Hollow Gap",
+      "long": "A stub of wall creates a blind corner before the way slips onward. Splintered tiles crunch underfoot, mixed with crushed brick. The silence presses close between the broken walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room73",
+      "short": "Faded Corridor",
+      "long": "A shallow slope of debris leads down into a widened passage. Fire-blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room74",
+      "short": "Scarred Hollow",
+      "long": "The route skirts a collapsed chamber, its edge cut clean by fire. Hollow window frames stare out, their ledges buried in dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room75",
+      "short": "Drifted Platform",
+      "long": "Scattered piers suggest a once-long span, now broken into bays. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room76",
+      "short": "Sand-Choked Lane",
+      "long": "A wide run of cracked stone stretches north and south, its center scoured to dust. Soot stains cling to the stone, and the air tastes of old smoke. No footprints remain; only layered grit records the years.",
+      "terrain": "area"
+    },
+    {
+      "id": "room78",
+      "short": "Ash-Streaked Crossing",
+      "long": "A narrow lane bends between broken walls, the ground uneven and gritty. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room79",
+      "short": "Cracked Drop",
+      "long": "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.",
+      "terrain": "area"
+    },
+    {
+      "id": "room80",
+      "short": "Burned Run",
+      "long": "A crooked passage threads between leaning fragments of masonry. Loose stones shift with each step, exposing darker layers below. The place feels picked clean, stripped of timber and metal.",
+      "terrain": "area"
+    },
+    {
+      "id": "room81",
+      "short": "Wind-Scoured Reach",
+      "long": "The way pinches tight, then opens again into scattered foundations. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room82",
+      "short": "Rubble-Strewn Walk",
+      "long": "An open stretch of hard-packed grit marks a crossing of several lines. Splintered tiles crunch underfoot, mixed with crushed brick.",
+      "terrain": "area"
+    },
+    {
+      "id": "room83",
+      "short": "Broken Passage",
+      "long": "A long strip of stonework drifts under dunes, only a spine still visible. Fire- blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room84",
+      "short": "Dusty Stretch",
+      "long": "The path angles around a heap of fallen blocks, forcing a slow turn. Hollow window frames stare out, their ledges buried in dust. The wind slides through with a dry hiss.",
+      "terrain": "area"
+    },
+    {
+      "id": "room85",
+      "short": "Pitted Turn",
+      "long": "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room86",
+      "short": "Sunken Span",
+      "long": "A gap between toppled arches forms a narrow throat in the route. Soot stains cling to the stone, and the air tastes of old smoke.",
+      "terrain": "area"
+    },
+    {
+      "id": "room87",
+      "short": "Bleached Bend",
+      "long": "Broken steps climb to a terrace of shattered stone, then fall away. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room88",
+      "short": "Tumbled Slope",
+      "long": "A short rise of uneven paving leads to a wind-carved platform. Rust-red streaks mark where metal once lay, now long gone. The ground bears the weight of repeated collapse.",
+      "terrain": "area"
+    },
+    {
+      "id": "room89",
+      "short": "Shattered Cut",
+      "long": "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room90",
+      "short": "Eroded Rise",
+      "long": "A jagged seam in the paving marks the line of a sunken run. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room91",
+      "short": "Hollow Gap",
+      "long": "A stub of wall creates a blind corner before the way slips onward. Splintered tiles crunch underfoot, mixed with crushed brick. The silence presses close between the broken walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room92",
+      "short": "Faded Corridor",
+      "long": "A shallow slope of debris leads down into a widened passage. Fire-blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room93",
+      "short": "Scarred Hollow",
+      "long": "The route skirts a collapsed chamber, its edge cut clean by fire. Hollow window frames stare out, their ledges buried in dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room94",
+      "short": "Drifted Platform",
+      "long": "Scattered piers suggest a once-long span, now broken into bays. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room95",
+      "short": "Sand-Choked Lane",
+      "long": "A wide run of cracked stone stretches north and south, its center scoured to dust. Soot stains cling to the stone, and the air tastes of old smoke. No footprints remain; only layered grit records the years.",
+      "terrain": "area"
+    },
+    {
+      "id": "room96",
+      "short": "Ash-Streaked Crossing",
+      "long": "A narrow lane bends between broken walls, the ground uneven and gritty. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room97",
+      "short": "Pitted Turn",
+      "long": "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room98",
+      "short": "Faded Corridor",
+      "long": "A shallow slope of debris leads down into a widened passage. Fire-blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room99",
+      "short": "Drifted Platform",
+      "long": "Scattered piers suggest a once-long span, now broken into bays. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room100",
+      "short": "Cracked Drop",
+      "long": "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.",
+      "terrain": "area"
+    },
+    {
+      "id": "room101",
+      "short": "Collapsed Approach",
+      "long": "A straight corridor of paving is split by collapsed slabs and sinkholes. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room102",
+      "short": "Dusty Stretch",
+      "long": "The path angles around a heap of fallen blocks, forcing a slow turn. Hollow window frames stare out, their ledges buried in dust. The wind slides through with a dry hiss.",
+      "terrain": "area"
+    },
+    {
+      "id": "room103",
+      "short": "Pitted Turn",
+      "long": "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room104",
+      "short": "Hollow Gap",
+      "long": "A stub of wall creates a blind corner before the way slips onward. Splintered tiles crunch underfoot, mixed with crushed brick. The silence presses close between the broken walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room105",
+      "short": "Faded Corridor",
+      "long": "A shallow slope of debris leads down into a widened passage. Fire-blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room106",
+      "short": "Scarred Hollow",
+      "long": "The route skirts a collapsed chamber, its edge cut clean by fire. Hollow window frames stare out, their ledges buried in dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room107",
+      "short": "Drifted Platform",
+      "long": "Scattered piers suggest a once-long span, now broken into bays. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room108",
+      "short": "Sand-Choked Lane",
+      "long": "A wide run of cracked stone stretches north and south, its center scoured to dust. Soot stains cling to the stone, and the air tastes of old smoke. No footprints remain; only layered grit records the years.",
+      "terrain": "area"
+    },
+    {
+      "id": "room109",
+      "short": "Ash-Streaked Crossing",
+      "long": "A narrow lane bends between broken walls, the ground uneven and gritty. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room110",
+      "short": "Pitted Turn",
+      "long": "A low basin of ash and grit sits where the ground once stood higher. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room111",
+      "short": "Sunken Span",
+      "long": "A gap between toppled arches forms a narrow throat in the route. Soot stains cling to the stone, and the air tastes of old smoke.",
+      "terrain": "area"
+    },
+    {
+      "id": "room112",
+      "short": "Bleached Bend",
+      "long": "Broken steps climb to a terrace of shattered stone, then fall away. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room113",
+      "short": "Faded Corridor",
+      "long": "A shallow slope of debris leads down into a widened passage. Fire-blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room114",
+      "short": "Collapsed Approach",
+      "long": "A straight corridor of paving is split by collapsed slabs and sinkholes. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room427",
+      "short": "Scarred Hollow",
+      "long": "The route skirts a collapsed chamber, its edge cut clean by fire. Hollow window frames stare out, their ledges buried in dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room428",
+      "short": "Drifted Platform",
+      "long": "Scattered piers suggest a once-long span, now broken into bays. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room429",
+      "short": "Sand-Choked Lane",
+      "long": "A wide run of cracked stone stretches north and south, its center scoured to dust. Soot stains cling to the stone, and the air tastes of old smoke. No footprints remain; only layered grit records the years.",
+      "terrain": "area"
+    },
+    {
+      "id": "room430",
+      "short": "Cracked Drop",
+      "long": "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.",
+      "terrain": "area"
+    },
+    {
+      "id": "room431",
+      "short": "Collapsed Approach",
+      "long": "A straight corridor of paving is split by collapsed slabs and sinkholes. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room505",
+      "short": "Tumbled Slope",
+      "long": "A short rise of uneven paving leads to a wind-carved platform. Rust-red streaks mark where metal once lay, now long gone. The ground bears the weight of repeated collapse.",
+      "terrain": "area"
+    },
+    {
+      "id": "room963",
+      "short": "Cracked Drop",
+      "long": "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.",
+      "terrain": "area"
+    },
+    {
+      "id": "room964",
+      "short": "Collapsed Approach",
+      "long": "A straight corridor of paving is split by collapsed slabs and sinkholes. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room965",
+      "short": "Burned Run",
+      "long": "A crooked passage threads between leaning fragments of masonry. Loose stones shift with each step, exposing darker layers below. The place feels picked clean, stripped of timber and metal.",
+      "terrain": "area"
+    },
+    {
+      "id": "room966",
+      "short": "Wind-Scoured Reach",
+      "long": "The way pinches tight, then opens again into scattered foundations. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room967",
+      "short": "Rubble-Strewn Walk",
+      "long": "An open stretch of hard-packed grit marks a crossing of several lines. Splintered tiles crunch underfoot, mixed with crushed brick.",
+      "terrain": "area"
+    },
+    {
+      "id": "room968",
+      "short": "Broken Passage",
+      "long": "A long strip of stonework drifts under dunes, only a spine still visible. Fire- blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room969",
+      "short": "Dusty Stretch",
+      "long": "The path angles around a heap of fallen blocks, forcing a slow turn. Hollow window frames stare out, their ledges buried in dust. The wind slides through with a dry hiss.",
+      "terrain": "area"
+    },
+    {
+      "id": "room970",
+      "short": "Sunken Span",
+      "long": "A gap between toppled arches forms a narrow throat in the route. Soot stains cling to the stone, and the air tastes of old smoke.",
+      "terrain": "area"
+    },
+    {
+      "id": "room971",
+      "short": "Bleached Bend",
+      "long": "Broken steps climb to a terrace of shattered stone, then fall away. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room972",
+      "short": "Tumbled Slope",
+      "long": "A short rise of uneven paving leads to a wind-carved platform. Rust-red streaks mark where metal once lay, now long gone. The ground bears the weight of repeated collapse.",
+      "terrain": "area"
+    },
+    {
+      "id": "room973",
+      "short": "Shattered Cut",
+      "long": "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room974",
+      "short": "Leaning Way",
+      "long": "Two aligned walls hint at a corridor now filled with drifted sand. Loose stones shift with each step, exposing darker layers below.",
+      "terrain": "area"
+    },
+    {
+      "id": "room975",
+      "short": "Eroded Rise",
+      "long": "A jagged seam in the paving marks the line of a sunken run. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room976",
+      "short": "Hollow Gap",
+      "long": "A stub of wall creates a blind corner before the way slips onward. Splintered tiles crunch underfoot, mixed with crushed brick. The silence presses close between the broken walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room986",
+      "short": "Scarred Hollow",
+      "long": "The route skirts a collapsed chamber, its edge cut clean by fire. Hollow window frames stare out, their ledges buried in dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room996",
+      "short": "Sand-Choked Lane",
+      "long": "A wide run of cracked stone stretches north and south, its center scoured to dust. Soot stains cling to the stone, and the air tastes of old smoke. No footprints remain; only layered grit records the years.",
+      "terrain": "area"
+    },
+    {
+      "id": "room997",
+      "short": "Ash-Streaked Crossing",
+      "long": "A narrow lane bends between broken walls, the ground uneven and gritty. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room998",
+      "short": "Cracked Drop",
+      "long": "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.",
+      "terrain": "area"
+    },
+    {
+      "id": "room999",
+      "short": "Collapsed Approach",
+      "long": "A straight corridor of paving is split by collapsed slabs and sinkholes. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1015",
+      "short": "Burned Run",
+      "long": "A crooked passage threads between leaning fragments of masonry. Loose stones shift with each step, exposing darker layers below. The place feels picked clean, stripped of timber and metal.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1016",
+      "short": "Wind-Scoured Reach",
+      "long": "The way pinches tight, then opens again into scattered foundations. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1017",
+      "short": "Rubble-Strewn Walk",
+      "long": "An open stretch of hard-packed grit marks a crossing of several lines. Splintered tiles crunch underfoot, mixed with crushed brick.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1019",
+      "short": "Broken Passage",
+      "long": "A long strip of stonework drifts under dunes, only a spine still visible. Fire- blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1030",
+      "short": "Sunken Span",
+      "long": "A gap between toppled arches forms a narrow throat in the route. Soot stains cling to the stone, and the air tastes of old smoke.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1031",
+      "short": "Bleached Bend",
+      "long": "Broken steps climb to a terrace of shattered stone, then fall away. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1032",
+      "short": "Tumbled Slope",
+      "long": "A short rise of uneven paving leads to a wind-carved platform. Rust-red streaks mark where metal once lay, now long gone. The ground bears the weight of repeated collapse.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1033",
+      "short": "Shattered Cut",
+      "long": "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1034",
+      "short": "Leaning Way",
+      "long": "Two aligned walls hint at a corridor now filled with drifted sand. Loose stones shift with each step, exposing darker layers below.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1035",
+      "short": "Eroded Rise",
+      "long": "A jagged seam in the paving marks the line of a sunken run. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1093",
+      "short": "Cracked Drop",
+      "long": "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1094",
+      "short": "Collapsed Approach",
+      "long": "A straight corridor of paving is split by collapsed slabs and sinkholes. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1095",
+      "short": "Burned Run",
+      "long": "A crooked passage threads between leaning fragments of masonry. Loose stones shift with each step, exposing darker layers below. The place feels picked clean, stripped of timber and metal.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1096",
+      "short": "Wind-Scoured Reach",
+      "long": "The way pinches tight, then opens again into scattered foundations. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1097",
+      "short": "Rubble-Strewn Walk",
+      "long": "An open stretch of hard-packed grit marks a crossing of several lines. Splintered tiles crunch underfoot, mixed with crushed brick.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1098",
+      "short": "Broken Passage",
+      "long": "A long strip of stonework drifts under dunes, only a spine still visible. Fire- blackened patches run along the base of the walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1125",
+      "short": "Tumbled Slope",
+      "long": "A short rise of uneven paving leads to a wind-carved platform. Rust-red streaks mark where metal once lay, now long gone. The ground bears the weight of repeated collapse.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1126",
+      "short": "Shattered Cut",
+      "long": "The ground levels out into a broad, empty spread of fractured flagstone. Small pits and cracks show where repeated blows split the surface.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1127",
+      "short": "Leaning Way",
+      "long": "Two aligned walls hint at a corridor now filled with drifted sand. Loose stones shift with each step, exposing darker layers below.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1128",
+      "short": "Eroded Rise",
+      "long": "A jagged seam in the paving marks the line of a sunken run. Ash and grit collect in corners, damped by occasional trickles.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1129",
+      "short": "Hollow Gap",
+      "long": "A stub of wall creates a blind corner before the way slips onward. Splintered tiles crunch underfoot, mixed with crushed brick. The silence presses close between the broken walls.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1130",
+      "short": "Scarred Hollow",
+      "long": "The route skirts a collapsed chamber, its edge cut clean by fire. Hollow window frames stare out, their ledges buried in dust.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1131",
+      "short": "Drifted Platform",
+      "long": "Scattered piers suggest a once-long span, now broken into bays. Wind has piled sand against one side, leaving the other scoured bare.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1132",
+      "short": "Sand-Choked Lane",
+      "long": "A wide run of cracked stone stretches north and south, its center scoured to dust. Soot stains cling to the stone, and the air tastes of old smoke. No footprints remain; only layered grit records the years.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1133",
+      "short": "Ash-Streaked Crossing",
+      "long": "A narrow lane bends between broken walls, the ground uneven and gritty. Char marks stripe the walls, and fine ash mixes with grit underfoot.",
+      "terrain": "area"
+    },
+    {
+      "id": "room1134",
+      "short": "Cracked Drop",
+      "long": "The space broadens into a shallow, rubble-filled bowl where paths meet. Rust-red streaks mark where metal once lay, now long gone.",
+      "terrain": "area"
+    }
+  ]
+}
