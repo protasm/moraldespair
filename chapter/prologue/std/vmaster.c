@@ -6,9 +6,7 @@
  */
 object compile_object(string filename) {
   object room;
-  string id;
-  string room_path;
-  string base_id;
+  string id, room_path, base_id;
 
   id = "";
 
