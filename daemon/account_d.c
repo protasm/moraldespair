@@ -153,8 +153,13 @@ string username_by_email(string email) {
     if (!mapp(account))
       continue;
 
-    if (account["email"] == normalized)
-      return account["username"];
+    if (account["email"] == normalized) {
+      if (stringp(account["account_name"]) && account["account_name"] != "")
+        return account["account_name"];
+
+      if (stringp(account["username"]))
+        return account["username"];
+    }
   }
 
   return "";
@@ -221,6 +226,23 @@ string *players(string username) {
   return player_list;
 }
 
+int max_players_per_account() {
+  return 3;
+}
+
+int player_slots_remaining(string username) {
+  string *player_list;
+  int remaining;
+
+  player_list = players(username);
+  remaining = max_players_per_account() - sizeof(player_list);
+
+  if (remaining < 0)
+    remaining = 0;
+
+  return remaining;
+}
+
 int player_exists(string username, string player_name) {
   string *player_list;
   string normalized;
@@ -240,19 +262,27 @@ int player_exists(string username, string player_name) {
 int create_account(string username, string display_name, string email,
                    string password_hash) {
   mapping account;
+  string account_name;
   int saved;
 
-  username = normalize_key(username);
+  account_name = normalize_key(username);
+
+  if (!stringp(email))
+    email = "";
+
   email = normalize_key(email);
 
-  if (username == "" || email == "")
+  if (account_name == "")
     return 0;
 
-  if (account_exists(username))
+  if (account_exists(account_name))
     return 0;
+
+  if (!stringp(display_name) || display_name == "")
+    display_name = capitalize(account_name);
 
   account = ([]);
-  account["username"] = username;
+  account["account_name"] = account_name;
   account["display_name"] = display_name;
   account["email"] = email;
   account["password_hash"] = password_hash;
@@ -260,8 +290,8 @@ int create_account(string username, string display_name, string email,
   account["avatars"] = ({});
   account["last_login"] = 0;
 
-  ensure_account_dir(username);
-  saved = save_data(account_file(username), account);
+  ensure_account_dir(account_name);
+  saved = save_data(account_file(account_name), account);
 
   return saved;
 }
@@ -272,9 +302,15 @@ int add_player(string username, string player_name) {
   mapping player;
   string path;
   string default_chapter;
+  int slots_remaining;
   int saved;
 
   if (!account_exists(username))
+    return 0;
+
+  slots_remaining = player_slots_remaining(username);
+
+  if (slots_remaining <= 0)
     return 0;
 
   if (player_exists(username, player_name))

@@ -40,6 +40,13 @@ string format_display_name(string value) {
   return capitalize(value);
 }
 
+string slot_label(int count) {
+  if (count == 1)
+    return "slot";
+
+  return "slots";
+}
+
 void prompt_username() {
   write_prompt("(Type \"create\" to create a new account.)");
 
@@ -85,21 +92,49 @@ void prompt_new_password() {
 }
 
 void prompt_player() {
-  write("Finally, let's add a player name to your account.\n");
-  write_prompt("What would you like to name your first player?");
+  string *players;
+  int slots_remaining;
+
+  players = ACCOUNT_D->players(pending_username);
+  slots_remaining = ACCOUNT_D->player_slots_remaining(pending_username);
+
+  if (slots_remaining <= 0) {
+    write("Your account has no open character slots.\n");
+
+    prompt_player_selection();
+
+    return;
+  }
+
+  if (sizeof(players) == 0)
+    write("Let's add your first character to this account.\n");
+  else {
+    write("You can create " + slots_remaining + " more " +
+      slot_label(slots_remaining) + ".\n");
+    write("Type \"back\" to return to character selection.\n");
+  }
+
+  write_prompt("What would you like to name this character?");
 
   input_to("handle_new_player");
 }
 
-void prompt_player_choice(string *players) {
+void prompt_player_choice(string *players, int slots_remaining) {
   int i;
 
-  write("Which player would you like to use?\n");
+  write("Choose a character:\n");
 
   for (i = 0; i < sizeof(players); i++)
-    write("  - " + players[i] + "\n");
+    write("  " + (i + 1) + ") " + players[i] + "\n");
 
-  write_prompt("");
+  if (slots_remaining > 0)
+    write("  c) Create new character (" + slots_remaining + " " +
+      slot_label(slots_remaining) + " open)\n");
+
+  if (slots_remaining > 0)
+    write_prompt("Type a number, a character name, or \"c\" to create.");
+  else
+    write_prompt("Type a number or character name.");
 
   input_to("handle_player_choice");
 }
@@ -415,19 +450,37 @@ void create_account() {
 
   write("Account created - we're in business!\n");
 
-  prompt_player();
+  prompt_player_selection();
 }
 
 void handle_new_player(string input) {
   string raw, display;
+  string normalized;
+  int slots_remaining;
 
   if (!stringp(input))
     input = "";
 
   raw = trim(input);
+  normalized = normalize_value(raw);
+  slots_remaining = ACCOUNT_D->player_slots_remaining(pending_username);
 
   if (raw == "") {
     prompt_player();
+
+    return;
+  }
+
+  if (normalized == "back") {
+    prompt_player_selection();
+
+    return;
+  }
+
+  if (slots_remaining <= 0) {
+    write("That account already has the maximum number of characters.\n");
+
+    prompt_player_selection();
 
     return;
   }
@@ -450,7 +503,6 @@ void handle_new_player(string input) {
 
   display = format_display_name(raw);
 
-  /* TODO
   if (ACCOUNT_D->player_exists(pending_username, display)) {
     write("That player already exists on your account.  Try again?\n");
 
@@ -458,7 +510,6 @@ void handle_new_player(string input) {
 
     return;
   }
-  */
 
   if (!ACCOUNT_D->add_player(pending_username, display)) {
     write("Something went wrong while creating your player.\n");
@@ -509,6 +560,8 @@ void handle_password_existing(string input) {
 void handle_player_choice(string input) {
   string choice;
   string *players;
+  int slots_remaining;
+  int selected_index;
   int i;
 
   if (!stringp(input))
@@ -516,6 +569,37 @@ void handle_player_choice(string input) {
 
   choice = normalize_value(input);
   players = ACCOUNT_D->players(pending_username);
+  slots_remaining = ACCOUNT_D->player_slots_remaining(pending_username);
+
+  if (choice == "") {
+    prompt_player_choice(players, slots_remaining);
+
+    return;
+  }
+
+  if (choice == "c" || choice == "create" || choice == "new") {
+    if (slots_remaining > 0) {
+      prompt_player();
+
+      return;
+    }
+
+    write("Your account has no open character slots.\n");
+
+    prompt_player_choice(players, slots_remaining);
+
+    return;
+  }
+
+  if (sscanf(choice, "%d", selected_index) == 1) {
+    if (selected_index >= 1 && selected_index <= sizeof(players)) {
+      write("Connecting as " + players[selected_index - 1] + "....\n");
+
+      start_session(players[selected_index - 1]);
+
+      return;
+    }
+  }
 
   for (i = 0; i < sizeof(players); i++)
     if (normalize_value(players[i]) == choice) {
@@ -528,29 +612,32 @@ void handle_player_choice(string input) {
 
   write("Sorry, that player isn't on your account.  Try again.\n");
 
-  prompt_player_choice(players);
+  prompt_player_choice(players, slots_remaining);
 }
 
 void prompt_player_selection() {
   string *players;
+  int slots_remaining;
 
   players = ACCOUNT_D->players(pending_username);
+  slots_remaining = ACCOUNT_D->player_slots_remaining(pending_username);
 
   if (sizeof(players) == 0) {
+    if (slots_remaining <= 0) {
+      write("No characters are available for this account.\n");
+      write("Please contact an administrator.\n");
+
+      prompt_username();
+
+      return;
+    }
+
     prompt_player();
 
     return;
   }
 
-  if (sizeof(players) == 1) {
-    write("Connecting as " + players[0] + "....\n");
-
-    start_session(players[0]);
-
-    return;
-  }
-
-  prompt_player_choice(players);
+  prompt_player_choice(players, slots_remaining);
 }
 
 void start_session(string player_name) {

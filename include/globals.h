@@ -8,7 +8,7 @@
 #define BASE_OB "/core/object"
 #define MFUN_OB "/core/mfun/mfun"
 
-#define LOGIN_OB "/core/login/login"
+#define LOGIN_OB "/core/login/login_session"
 #define ACCOUNT_OB "/core/account/account"
 #define PLAYER_OB "/core/player/player"
 #define VOID_OB "/core/void"

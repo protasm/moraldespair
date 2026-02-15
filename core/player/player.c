@@ -84,10 +84,11 @@ string abbreviate_exit(string direction) {
 
 void show_location(int force_verbose, int show_path) {
   object env;
-  string short_desc, long_desc, divider, room_path, header, room_endpoint_id;
+  string short_desc, long_desc, divider, room_path, room_endpoint_id;
   mapping exits;
   string *dirs, *abbr_dirs;
   int brief_state, i;
+  int show_wizard_path;
 
   env = environment(this_object());
 
@@ -128,18 +129,22 @@ void show_location(int force_verbose, int show_path) {
 
   short_desc = env->short();
   room_path = room_endpoint_id;
-  header = short_desc;
+  show_wizard_path = 0;
 
-  if (show_path && stringp(short_desc) && short_desc != "" &&
+  if (show_path && wizardp(this_object()) &&
+    stringp(short_desc) && short_desc != "" &&
     stringp(room_path) && room_path != "")
-    header = short_desc + " (" + room_path + ")";
+    show_wizard_path = 1;
 
-  if (stringp(header) && header != "") {
-    if (show_path)
+  if (stringp(short_desc) && short_desc != "") {
+    if (show_wizard_path)
       write("\n");
 
-    write(header + "\n");
+    write(short_desc + "\n");
   }
+
+  if (show_wizard_path)
+    write("(" + room_path + ")\n");
 
   write(divider + "\n");
 
