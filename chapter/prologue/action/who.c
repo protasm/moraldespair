@@ -13,27 +13,48 @@ void create() {
 
 int main(string arg) {
   object *list;
+  object user;
   int j;
+  int idle_minutes;
   string name;
+  string status;
 
-  printf("%-25s idle\n", "name (*edit, +input)");
-  printf("--------------------      ----\n");
+  printf("%-25s status\n", "name (*edit, +input)");
+  printf("--------------------      ----------\n");
 
   list = users();
 
   for (j = 0; j < sizeof(list); j++) {
-    name = (string)list[j]->name();
+    user = list[j];
+    name = "";
+    status = "";
 
-    if (in_edit(this_player()))
+    if (!objectp(user))
+      continue;
+
+    if (function_exists("name", user))
+      name = user->name();
+
+    if (!stringp(name) || name == "")
+      name = "(unknown)";
+
+    if (in_edit(user))
       name += "*";
 
-    if (in_input(this_player()))
+    if (in_input(user))
       name += "+";
 
+    if (function_exists("query_session_data", user))
+      status = "Logging In";
+    else {
+      idle_minutes = query_idle(user) / 60;
+      status = "" + idle_minutes;
+    }
+
     printf(
-      "%-25s %4d\n",
+      "%-25s %s\n",
       name,
-      query_idle(this_player()) / 60
+      status
     );
   }
 

@@ -59,6 +59,52 @@ void wizard_virtual_debug(object player, string message) {
 
 /* Method Summary:
  * Purpose:
+ *   Handles announce_player_entry for this object.
+ * Parameters:
+ *   - object player
+ * Approach:
+ *   Validates inputs and executes explicit local logic for announce_player_entry.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from announce_player_entry.
+ */
+void announce_player_entry(object player) {
+  object *online_users;
+  object online_user;
+  string player_name;
+  string line;
+  int i;
+
+  if (!objectp(player))
+    return;
+
+  player_name = player->name();
+
+  if (!stringp(player_name) || player_name == "")
+    return;
+
+  line = player_name + " leaves reality and falls into Moral Despair.\n";
+  online_users = users();
+
+  if (!pointerp(online_users))
+    return;
+
+  for (i = 0; i < sizeof(online_users); i++) {
+    online_user = online_users[i];
+
+    if (!objectp(online_user))
+      continue;
+
+    tell_object(online_user, line);
+  }
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
  *   Handles enter_game for this object.
  * Parameters:
  *   - string avatar_name
@@ -131,6 +177,9 @@ void enter_game(string avatar_name) {
     wizard_virtual_debug(player, "spawned in room object: " + file_name(current_room));
   else
     wizard_virtual_debug(player, "spawn failed: no room environment after fallback");
+
+  if (objectp(current_room))
+    announce_player_entry(player);
 
   player->show_location(1, 1);
 
