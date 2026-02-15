@@ -1,5 +1,5 @@
-#include "/daemon/move_d.h"
-#include <link.h>
+#include "/core/daemon/move_d.h"
+#include "/core/link/link.h"
 
 string endpoint_id_for_room(object room) {
   string endpoint_id;

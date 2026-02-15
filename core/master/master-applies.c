@@ -20,8 +20,8 @@ string author_file(string file) {
 
 string *epilog(int load_empty) {
   return ({
-    "/daemon/link_d",
-    "/daemon/room_data_d"
+    "/core/daemon/link_d",
+    "/core/daemon/room_data_d"
   });
 }
 
@@ -132,10 +132,10 @@ object compile_object(string pathname) {
     return room;
   }
 
-  room_data_daemon = find_object("/daemon/room_data_d");
+  room_data_daemon = find_object("/core/daemon/room_data_d");
 
   if (!objectp(room_data_daemon))
-    room_data_daemon = load_object("/daemon/room_data_d");
+    room_data_daemon = load_object("/core/daemon/room_data_d");
 
   if (!objectp(room_data_daemon)) {
     wizard_virtual_debug("master compile_object room_data_d unavailable");
@@ -188,7 +188,7 @@ object compile_object(string pathname) {
     "master compile_object virtual vroom via spec: path=" + virtual_path
   );
 
-  room = "/daemon/vroom_d"->compile_object(
+  room = "/core/daemon/vroom_d"->compile_object(
     "vroom#" + virtual_path
   );
 

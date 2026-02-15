@@ -5,7 +5,7 @@
  * The daemon stores no state and can be called safely from anywhere.
  */
 
-#include "/daemon/text_d.h"
+#include "/core/daemon/text_d.h"
 
 int is_space(int c) {
   if (c <= 32) return 1;

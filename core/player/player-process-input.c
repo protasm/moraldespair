@@ -28,7 +28,7 @@ string process_input(string raw) {
   verb = lower_case(verb);
 
   // Look for core command implementations first.
-  command_path = "/command/" + verb;
+  command_path = "/core/command/" + verb;
 
   if (file_size(command_path + ".c") >= 0) {
     command = load_object(command_path);
@@ -42,7 +42,7 @@ string process_input(string raw) {
 
   // Look for wizard-only commands next.
   if (wizardp(this_object())) {
-    command_path = "/command/wizard/" + verb;
+    command_path = "/core/command/wizard/" + verb;
 
     if (file_size(command_path + ".c") >= 0) {
       command = load_object(command_path);

@@ -29,6 +29,8 @@ void session_write(string message) {
 }
 
 void request_phase_input(int no_echo) {
+  write(PLAYER_PROMPT);
+
   if (no_echo)
     input_to("receive_input", 1);
   else

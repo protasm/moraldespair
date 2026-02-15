@@ -409,7 +409,7 @@ void index_pair_for_room(string room, string key) {
  * Define a link by endpoints (absolute).
  *
  * definition may contain:
- *   "type"      : string (path to link prefab/class, default /core/link)
+ *   "type"      : string (path to link prefab/class, default /core/link/link)
  *   "gate"      : gateObjOrId  (recommended: id string)
  *   "gates"     : ({ gateObjOrId, ... })   (legacy; first entry used)
  *   "one_way"   : ([ "from": <endpoint>, "to": <endpoint> ])  (optional)
@@ -760,7 +760,7 @@ object _instantiate_link(string a, string b, mapping def) {
   if (mapp(def) && stringp(def["type"]) && _trim(def["type"]) != "")
     link = new(def["type"]);
   else
-    link = new("/core/link");
+    link = new("/core/link/link");
 
   link->set_endpoints(a, b);
 

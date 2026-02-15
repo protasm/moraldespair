@@ -9,7 +9,7 @@
  *
  * No exits. No doors. No room logic.
  */
-inherit "/core/command";
+inherit "/core/command/command";
 
 mapping direction_aliases;
 string *direction_words;

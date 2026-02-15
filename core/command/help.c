@@ -1,4 +1,4 @@
-inherit "/core/command";
+inherit "/core/command/command";
 
 void create() {
   ::create();
@@ -28,7 +28,7 @@ int main(string arg) {
     prefixes = ({ COMMAND_PREFIX, ACTION_PREFIX });
 
     if (wizardp(this_player()))
-      prefixes += ({ "/command/wizard/" });
+      prefixes += ({ "/core/command/wizard/" });
 
     for (i = 0; i < sizeof(prefixes); i++) {
       files = get_dir(prefixes[i] + "*.c");
@@ -92,7 +92,7 @@ int main(string arg) {
   prefixes = ({ COMMAND_PREFIX, ACTION_PREFIX });
 
   if (wizardp(this_player()))
-    prefixes += ({ "/command/wizard/" });
+    prefixes += ({ "/core/command/wizard/" });
   found = 0;
 
   for (i = 0; i < sizeof(prefixes); i++) {

@@ -1,7 +1,7 @@
-inherit "/core/object";
+inherit "/core/object/object";
 
 #include "room.h"
-#include <link.h>
+#include "/core/link/link.h"
 
 string short_desc, long_desc;
 object room_link_cache;
@@ -15,7 +15,7 @@ void create() {
 
   set_light(1);
 
-  room_link_cache = new("/core/link_cache");
+  room_link_cache = new("/core/link/link_cache");
 
   if (objectp(room_link_cache))
     room_link_cache->init_for_room(this_object());
@@ -75,10 +75,10 @@ mapping terrain_room_data() {
       lookup_path = base_name(this_object());
   }
 
-  room_data_daemon = find_object("/daemon/room_data_d");
+  room_data_daemon = find_object("/core/daemon/room_data_d");
 
   if (!objectp(room_data_daemon))
-    room_data_daemon = load_object("/daemon/room_data_d");
+    room_data_daemon = load_object("/core/daemon/room_data_d");
 
   room_details = 0;
 

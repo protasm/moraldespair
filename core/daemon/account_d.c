@@ -1,4 +1,4 @@
-#include "/daemon/account_d.h"
+#include "/core/daemon/account_d.h"
 #include <globals.h>
 
 string account_root;

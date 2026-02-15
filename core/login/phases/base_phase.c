@@ -1,4 +1,4 @@
-inherit "/core/object";
+inherit "/core/object/object";
 
 object session;
 

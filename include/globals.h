@@ -5,7 +5,7 @@
 #define ROOT_UID "ROOT"
 #define BACKBONE_UID "BACKBONE"
 
-#define BASE_OB "/core/object"
+#define BASE_OB "/core/object/object"
 #define MFUN_OB "/core/mfun/mfun"
 
 #define LOGIN_OB "/core/login/login_session"
@@ -13,17 +13,17 @@
 #define PLAYER_OB "/core/player/player"
 #define VOID_OB "/core/void"
 
-#define ACCOUNT_D "/daemon/account_d"
-#define CHAPTER_D "/daemon/chapter_d"
-#define LINK_D "/daemon/link_d"
-#define MOVE_D "/daemon/move_d"
+#define ACCOUNT_D "/core/daemon/account_d"
+#define CHAPTER_D "/core/daemon/chapter_d"
+#define LINK_D "/core/daemon/link_d"
+#define MOVE_D "/core/daemon/move_d"
 
 #define WELCOME_FILE "/etc/welcome"
 #define MOTD_FILE "/etc/motd"
 
 #define START_ROOM "/chapter/prologue/area/ruined/sanctuary"
 
-#define COMMAND_PREFIX "/command/"
+#define COMMAND_PREFIX "/core/command/"
 #define ACTION_PREFIX "/chapter/prologue/action/"
 
 #define PLAYER_PROMPT "> "

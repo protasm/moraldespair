@@ -1,8 +1,8 @@
-#define ROOM_DATA_D "/daemon/room_data_d"
+#define ROOM_DATA_D "/core/daemon/room_data_d"
 
 inherit "/core/room/room";
 
-#include <link.h>
+#include "/core/link/link.h"
 #include "vroom.h"
 
 string room_path;

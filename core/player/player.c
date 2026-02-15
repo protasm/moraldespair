@@ -1,4 +1,4 @@
-inherit "/core/object";
+inherit "/core/object/object";
 
 #include "player-data.c"
 #include "player-process-input.c"

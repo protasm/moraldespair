@@ -1,6 +1,6 @@
-inherit "/core/object";
+inherit "/core/object/object";
 
-#include <link.h>
+#include "/core/link/link.h"
 
 /*
  * Link: transient "between-space" connecting two endpoints.
@@ -949,10 +949,10 @@ object resolve_destination(string destination_id) {
    * not dispatch on this driver for the requested absolute virtual id.
    */
   if (!objectp(env)) {
-    room_data_daemon = find_object("/daemon/room_data_d");
+    room_data_daemon = find_object("/core/daemon/room_data_d");
 
     if (!objectp(room_data_daemon))
-      room_data_daemon = load_object("/daemon/room_data_d");
+      room_data_daemon = load_object("/core/daemon/room_data_d");
 
     resolved_spec = 0;
 
@@ -978,7 +978,7 @@ object resolve_destination(string destination_id) {
 
       if (stringp(virtual_path) && virtual_path != "")
         catch(
-          env = "/daemon/vroom_d"->compile_object(
+          env = "/core/daemon/vroom_d"->compile_object(
             "vroom#" + virtual_path
           )
         );

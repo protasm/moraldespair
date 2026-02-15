@@ -1,4 +1,4 @@
-inherit "/core/object";
+inherit "/core/object/object";
 
 string chapter_title;
 string chapter_description;
