@@ -82,7 +82,7 @@ object compile_object(string pathname) {
 
   room_id = "";
 
-  if (sscanf(normalized_path, "/chapter/prologue/std/wilderness_room#%s", room_id) == 1) {
+  if (sscanf(normalized_path, "/chapter/prologue/area/wilderness/wilderness_room#%s", room_id) == 1) {
     room = "/chapter/prologue/std/vmaster"->compile_object(
       "wilderness_room#" + room_id
     );

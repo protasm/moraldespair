@@ -944,7 +944,7 @@ object resolve_destination(string destination_id) {
   env = find_object(destination_id);
 
   if (!objectp(env)) {
-    if (sscanf(destination_id, "/chapter/prologue/std/wilderness_room#%s", room_id) == 1)
+    if (sscanf(destination_id, "/chapter/prologue/area/wilderness/wilderness_room#%s", room_id) == 1)
       virtual_room = "/chapter/prologue/std/vmaster"->compile_object(
         "wilderness_room#" + room_id
       );

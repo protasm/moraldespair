@@ -122,7 +122,7 @@ void index_room_entry(string json_file, mapping json_root, mapping room_entry) {
     room_path = normalize_path(source_dir + "/" + room_id);
   else if (strsrch(json_file, "/area/wilderness/") != -1 &&
            stringp(room_id) && room_id != "")
-    room_path = "/chapter/prologue/std/wilderness_room#" + room_id;
+    room_path = "/chapter/prologue/area/wilderness/wilderness_room#" + room_id;
 
   if (room_path == "")
     return;
@@ -133,7 +133,7 @@ void index_room_entry(string json_file, mapping json_root, mapping room_entry) {
   room_data_by_path[room_path] = room_entry;
   template = "data_room";
 
-  if (strsrch(room_path, "/chapter/prologue/std/wilderness_room#") == 0)
+  if (strsrch(room_path, "/chapter/prologue/area/wilderness/wilderness_room#") == 0)
     template = "wilderness_room";
 
   virtual_specs_by_path[room_path] = ([

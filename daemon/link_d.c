@@ -164,7 +164,7 @@ int _is_wilderness_endpoint(string endpoint) {
   if (!stringp(endpoint) || endpoint == "")
     return 0;
 
-  return (strsrch(endpoint, "/chapter/prologue/std/wilderness_room#") == 0);
+  return (strsrch(endpoint, "/chapter/prologue/area/wilderness/wilderness_room#") == 0);
 }
 
 string _opposite_direction(string dir) {
@@ -190,7 +190,7 @@ string _wilderness_endpoint_from_id(string room_id) {
   if (room_id == "")
     return "";
 
-  return "/chapter/prologue/std/wilderness_room#" + room_id;
+  return "/chapter/prologue/area/wilderness/wilderness_room#" + room_id;
 }
 
 void load_wilderness_room_links() {

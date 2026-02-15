@@ -44,7 +44,7 @@ string link_endpoint_id() {
   endpoint_id = "";
 
   if (stringp(wilderness_room_id) && wilderness_room_id != "")
-    endpoint_id = "/chapter/prologue/std/wilderness_room#" + wilderness_room_id;
+    endpoint_id = "/chapter/prologue/area/wilderness/wilderness_room#" + wilderness_room_id;
   else
     endpoint_id = base_name(this_object());
 

@@ -1,4 +1,4 @@
-#define WILDERNESS_ROOM_TEMPLATE "/chapter/prologue/std/wilderness_room"
+#define WILDERNESS_ROOM_TEMPLATE "/chapter/prologue/area/wilderness/wilderness_room"
 #define DATA_ROOM_TEMPLATE "/chapter/prologue/std/data_room"
 
 /*
