@@ -188,10 +188,14 @@ string abbreviate_exit(string direction) {
  */
 void show_location(int force_verbose, int show_path) {
   object env;
+  object *contents;
+  object occupant;
   string short_desc, long_desc, divider, room_path, room_endpoint_id;
+  string occupant_name;
+  string *occupant_names;
   mapping exits;
   string *dirs, *abbr_dirs;
-  int brief_state, i;
+  int brief_state, i, j;
   int show_wizard_path;
 
   env = environment(this_object());
@@ -262,6 +266,36 @@ void show_location(int force_verbose, int show_path) {
   }
 
   write("\n");
+
+  contents = all_inventory(env);
+  occupant_names = ({ });
+
+  if (pointerp(contents) && sizeof(contents)) {
+    for (j = 0; j < sizeof(contents); j++) {
+      occupant = contents[j];
+
+      if (!objectp(occupant) || occupant == this_object())
+        continue;
+
+      if (!userp(occupant))
+        continue;
+
+      occupant_name = "";
+
+      if (function_exists("name", occupant))
+        occupant_name = occupant->name();
+
+      if (!stringp(occupant_name) || occupant_name == "")
+        continue;
+
+      occupant_names += ({ occupant_name });
+    }
+  }
+
+  if (sizeof(occupant_names)) {
+    occupant_names = sort_array(occupant_names, 1);
+    write("Also here: " + implode(occupant_names, ", ") + "\n\n");
+  }
 
   exits = LINK_D->links_by_direction_for_room(room_endpoint_id);
 
