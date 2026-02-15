@@ -202,6 +202,7 @@ string room_id() {
  */
 mapping link_can_enter(object actor, object link) {
   mapping room_details;
+  string terrain_code;
   string traverse_failure;
   string blocked_message;
   int traverse_cost;
@@ -222,6 +223,25 @@ mapping link_can_enter(object actor, object link) {
 
   if (!mapp(room_details))
     room_details = ([]);
+
+  terrain_code = room_details["terrain"];
+
+  if (stringp(terrain_code) && lower_case(terrain_code) == "w") {
+    traverse_failure = room_details["traverse_failure"];
+
+    if (stringp(traverse_failure) && traverse_failure != "")
+      blocked_message = traverse_failure;
+    else
+      blocked_message = "A body of open water blocks that direction.";
+
+    return ([
+      LINK_RESULT_OUTCOME : LINK_OUTCOME_DENY,
+      LINK_RESULT_MESSAGE : blocked_message,
+      LINK_RESULT_REDIRECT : "",
+      LINK_RESULT_COST : 0,
+      LINK_RESULT_MUTATIONS : ({ })
+    ]);
+  }
 
   traverse_cost = room_details["traverse_cost"];
 
