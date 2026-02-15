@@ -2,13 +2,13 @@
 
 inherit "/core/room/room";
 
+#include "wilderness_room.h"
+
 /*
  * Virtual wilderness room. It stores only a room id and queries the daemon
  * for all state, keeping room data centralized and easy to extend.
  */
 string wilderness_room_id, terrain_code;
-void set_descriptions();
-void set_exits();
 
 void create() {
   ::create();
