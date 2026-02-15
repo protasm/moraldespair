@@ -44,7 +44,6 @@ string normalize_value(string value) {
  */
 void wizard_virtual_debug(object player, string message) {
   string line;
-  int is_wizard_player;
 
   if (!objectp(player))
     return;
@@ -52,19 +51,8 @@ void wizard_virtual_debug(object player, string message) {
   if (!stringp(message) || message == "")
     return;
 
-  is_wizard_player = 0;
-
-  if (wizardp(player))
-    is_wizard_player = 1;
-  else if (function_exists("is_wizard", player) && player->is_wizard())
-    is_wizard_player = 1;
-
-  if (!is_wizard_player)
-    return;
-
   line = ctime(time()) + " login enter_game " + message + "\n";
   write_file("/log/virtual_room_debug", line);
-  tell_object(player, "[virtual-debug] " + message + "\n");
 
   return;
 }

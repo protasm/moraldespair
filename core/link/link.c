@@ -1586,23 +1586,20 @@ object resolve_destination(string destination_id) {
  *   void result from show_resolution_debug.
  */
 void show_resolution_debug(object actor, string text) {
-  int is_wizard_user;
+  string actor_name;
+  string line;
 
-  if (!objectp(actor) || !stringp(text))
+  if (!stringp(text) || text == "")
     return;
 
-  is_wizard_user = 0;
+  actor_name = "(no-actor)";
 
-  if (wizardp(actor))
-    is_wizard_user = 1;
-  else if (function_exists("is_wizard", actor) && actor->is_wizard())
-    is_wizard_user = 1;
+  if (objectp(actor))
+    actor_name = file_name(actor);
 
-  if (!is_wizard_user)
-    return;
+  line = ctime(time()) + " link " + actor_name + " " + text + "\n";
 
-  tell_object(actor, "[virtual-debug] link " + text + "\n");
-  write_file("/log/virtual_room_debug", ctime(time()) + " link " + text + "\n");
+  write_file("/log/virtual_room_debug", line);
 
   return;
 }
