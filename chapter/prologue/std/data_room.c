@@ -1,6 +1,6 @@
 #define ROOM_DATA_D "/daemon/room_data_d"
 
-inherit "/chapter/prologue/std/room";
+inherit "/core/room/room";
 
 string room_path;
 

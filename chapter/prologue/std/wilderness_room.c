@@ -1,6 +1,6 @@
 #define WILDERNESS_D "/daemon/wilderness_d"
 
-inherit "/chapter/prologue/std/room";
+inherit "/core/room/room";
 
 /*
  * Virtual wilderness room. It stores only a room id and queries the daemon
