@@ -1,0 +1,7504 @@
+{
+  "links": [
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_24": "north",
+        "/chapter/prologue/area/wild/room/1_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_25": "east",
+        "/chapter/prologue/area/wild/room/1_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_25": "east",
+        "/chapter/prologue/area/wild/room/2_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_24": "north",
+        "/chapter/prologue/area/wild/room/2_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_25": "east",
+        "/chapter/prologue/area/wild/room/3_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_24": "north",
+        "/chapter/prologue/area/wild/room/3_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_25": "east",
+        "/chapter/prologue/area/wild/room/4_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_24": "north",
+        "/chapter/prologue/area/wild/room/4_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_25": "east",
+        "/chapter/prologue/area/wild/room/5_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_24": "north",
+        "/chapter/prologue/area/wild/room/5_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_25": "east",
+        "/chapter/prologue/area/wild/room/6_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_24": "north",
+        "/chapter/prologue/area/wild/room/6_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_25": "east",
+        "/chapter/prologue/area/wild/room/7_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_24": "north",
+        "/chapter/prologue/area/wild/room/7_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_25": "east",
+        "/chapter/prologue/area/wild/room/8_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_24": "north",
+        "/chapter/prologue/area/wild/room/8_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_25": "east",
+        "/chapter/prologue/area/wild/room/9_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_24": "north",
+        "/chapter/prologue/area/wild/room/9_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_25": "west",
+        "/chapter/prologue/area/wild/room/9_25": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_24": "north",
+        "/chapter/prologue/area/wild/room/10_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_25": "east",
+        "/chapter/prologue/area/wild/room/11_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_24": "north",
+        "/chapter/prologue/area/wild/room/11_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_25": "east",
+        "/chapter/prologue/area/wild/room/12_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_24": "north",
+        "/chapter/prologue/area/wild/room/12_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_25": "east",
+        "/chapter/prologue/area/wild/room/13_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_24": "north",
+        "/chapter/prologue/area/wild/room/13_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_25": "east",
+        "/chapter/prologue/area/wild/room/14_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_24": "north",
+        "/chapter/prologue/area/wild/room/14_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_25": "east",
+        "/chapter/prologue/area/wild/room/15_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_24": "north",
+        "/chapter/prologue/area/wild/room/15_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_25": "east",
+        "/chapter/prologue/area/wild/room/16_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_24": "north",
+        "/chapter/prologue/area/wild/room/16_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_25": "east",
+        "/chapter/prologue/area/wild/room/17_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_24": "north",
+        "/chapter/prologue/area/wild/room/17_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_25": "east",
+        "/chapter/prologue/area/wild/room/18_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_24": "north",
+        "/chapter/prologue/area/wild/room/18_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_25": "east",
+        "/chapter/prologue/area/wild/room/19_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_24": "north",
+        "/chapter/prologue/area/wild/room/19_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_25": "east",
+        "/chapter/prologue/area/wild/room/20_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_24": "north",
+        "/chapter/prologue/area/wild/room/20_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_25": "east",
+        "/chapter/prologue/area/wild/room/21_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_24": "north",
+        "/chapter/prologue/area/wild/room/21_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_25": "east",
+        "/chapter/prologue/area/wild/room/22_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_24": "north",
+        "/chapter/prologue/area/wild/room/22_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_25": "east",
+        "/chapter/prologue/area/wild/room/23_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_24": "north",
+        "/chapter/prologue/area/wild/room/23_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_25": "east",
+        "/chapter/prologue/area/wild/room/24_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_24": "north",
+        "/chapter/prologue/area/wild/room/24_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_25": "east",
+        "/chapter/prologue/area/wild/room/25_25": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_24": "north",
+        "/chapter/prologue/area/wild/room/25_25": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_23": "north",
+        "/chapter/prologue/area/wild/room/1_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_24": "east",
+        "/chapter/prologue/area/wild/room/1_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_24": "east",
+        "/chapter/prologue/area/wild/room/2_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_23": "north",
+        "/chapter/prologue/area/wild/room/2_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_24": "east",
+        "/chapter/prologue/area/wild/room/3_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_23": "north",
+        "/chapter/prologue/area/wild/room/3_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_24": "east",
+        "/chapter/prologue/area/wild/room/4_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_23": "north",
+        "/chapter/prologue/area/wild/room/4_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_24": "east",
+        "/chapter/prologue/area/wild/room/5_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_23": "north",
+        "/chapter/prologue/area/wild/room/5_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_24": "east",
+        "/chapter/prologue/area/wild/room/6_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_23": "north",
+        "/chapter/prologue/area/wild/room/6_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_24": "east",
+        "/chapter/prologue/area/wild/room/7_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_23": "north",
+        "/chapter/prologue/area/wild/room/7_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_24": "east",
+        "/chapter/prologue/area/wild/room/8_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_23": "north",
+        "/chapter/prologue/area/wild/room/8_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_24": "east",
+        "/chapter/prologue/area/wild/room/9_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_23": "north",
+        "/chapter/prologue/area/wild/room/9_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_24": "west",
+        "/chapter/prologue/area/wild/room/9_24": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_23": "north",
+        "/chapter/prologue/area/wild/room/10_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_24": "east",
+        "/chapter/prologue/area/wild/room/11_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_23": "north",
+        "/chapter/prologue/area/wild/room/11_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_24": "east",
+        "/chapter/prologue/area/wild/room/12_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_23": "north",
+        "/chapter/prologue/area/wild/room/12_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_24": "east",
+        "/chapter/prologue/area/wild/room/13_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_23": "north",
+        "/chapter/prologue/area/wild/room/13_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_24": "east",
+        "/chapter/prologue/area/wild/room/14_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_23": "north",
+        "/chapter/prologue/area/wild/room/14_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_24": "east",
+        "/chapter/prologue/area/wild/room/15_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_23": "north",
+        "/chapter/prologue/area/wild/room/15_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_24": "east",
+        "/chapter/prologue/area/wild/room/16_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_23": "north",
+        "/chapter/prologue/area/wild/room/16_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_24": "east",
+        "/chapter/prologue/area/wild/room/17_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_23": "north",
+        "/chapter/prologue/area/wild/room/17_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_24": "east",
+        "/chapter/prologue/area/wild/room/18_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_23": "north",
+        "/chapter/prologue/area/wild/room/18_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_24": "east",
+        "/chapter/prologue/area/wild/room/19_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_23": "north",
+        "/chapter/prologue/area/wild/room/19_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_24": "east",
+        "/chapter/prologue/area/wild/room/20_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_23": "north",
+        "/chapter/prologue/area/wild/room/20_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_24": "east",
+        "/chapter/prologue/area/wild/room/21_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_23": "north",
+        "/chapter/prologue/area/wild/room/21_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_24": "east",
+        "/chapter/prologue/area/wild/room/22_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_23": "north",
+        "/chapter/prologue/area/wild/room/22_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_24": "east",
+        "/chapter/prologue/area/wild/room/23_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_23": "north",
+        "/chapter/prologue/area/wild/room/23_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_24": "east",
+        "/chapter/prologue/area/wild/room/24_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_23": "north",
+        "/chapter/prologue/area/wild/room/24_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_24": "east",
+        "/chapter/prologue/area/wild/room/25_24": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_23": "north",
+        "/chapter/prologue/area/wild/room/25_24": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_22": "north",
+        "/chapter/prologue/area/wild/room/1_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_23": "east",
+        "/chapter/prologue/area/wild/room/1_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_23": "east",
+        "/chapter/prologue/area/wild/room/2_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_22": "north",
+        "/chapter/prologue/area/wild/room/2_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_23": "east",
+        "/chapter/prologue/area/wild/room/3_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_22": "north",
+        "/chapter/prologue/area/wild/room/3_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_23": "east",
+        "/chapter/prologue/area/wild/room/4_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_22": "north",
+        "/chapter/prologue/area/wild/room/4_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_23": "east",
+        "/chapter/prologue/area/wild/room/5_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_22": "north",
+        "/chapter/prologue/area/wild/room/5_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_23": "east",
+        "/chapter/prologue/area/wild/room/6_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_22": "north",
+        "/chapter/prologue/area/wild/room/6_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_23": "east",
+        "/chapter/prologue/area/wild/room/7_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_22": "north",
+        "/chapter/prologue/area/wild/room/7_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_23": "east",
+        "/chapter/prologue/area/wild/room/8_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_22": "north",
+        "/chapter/prologue/area/wild/room/8_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_23": "east",
+        "/chapter/prologue/area/wild/room/9_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_22": "north",
+        "/chapter/prologue/area/wild/room/9_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_23": "west",
+        "/chapter/prologue/area/wild/room/9_23": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_22": "north",
+        "/chapter/prologue/area/wild/room/10_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_23": "east",
+        "/chapter/prologue/area/wild/room/11_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_22": "north",
+        "/chapter/prologue/area/wild/room/11_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_23": "east",
+        "/chapter/prologue/area/wild/room/12_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_22": "north",
+        "/chapter/prologue/area/wild/room/12_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_23": "east",
+        "/chapter/prologue/area/wild/room/13_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_22": "north",
+        "/chapter/prologue/area/wild/room/13_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_23": "east",
+        "/chapter/prologue/area/wild/room/14_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_22": "north",
+        "/chapter/prologue/area/wild/room/14_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_23": "east",
+        "/chapter/prologue/area/wild/room/15_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_22": "north",
+        "/chapter/prologue/area/wild/room/15_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_23": "east",
+        "/chapter/prologue/area/wild/room/16_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_22": "north",
+        "/chapter/prologue/area/wild/room/16_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_23": "east",
+        "/chapter/prologue/area/wild/room/17_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_22": "north",
+        "/chapter/prologue/area/wild/room/17_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_23": "east",
+        "/chapter/prologue/area/wild/room/18_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_22": "north",
+        "/chapter/prologue/area/wild/room/18_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_23": "east",
+        "/chapter/prologue/area/wild/room/19_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_22": "north",
+        "/chapter/prologue/area/wild/room/19_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_23": "east",
+        "/chapter/prologue/area/wild/room/20_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_22": "north",
+        "/chapter/prologue/area/wild/room/20_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_23": "east",
+        "/chapter/prologue/area/wild/room/21_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_22": "north",
+        "/chapter/prologue/area/wild/room/21_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_23": "east",
+        "/chapter/prologue/area/wild/room/22_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_22": "north",
+        "/chapter/prologue/area/wild/room/22_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_23": "east",
+        "/chapter/prologue/area/wild/room/23_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_22": "north",
+        "/chapter/prologue/area/wild/room/23_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_23": "east",
+        "/chapter/prologue/area/wild/room/24_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_22": "north",
+        "/chapter/prologue/area/wild/room/24_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_23": "east",
+        "/chapter/prologue/area/wild/room/25_23": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_22": "north",
+        "/chapter/prologue/area/wild/room/25_23": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_21": "north",
+        "/chapter/prologue/area/wild/room/1_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_22": "east",
+        "/chapter/prologue/area/wild/room/1_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_22": "east",
+        "/chapter/prologue/area/wild/room/2_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_21": "north",
+        "/chapter/prologue/area/wild/room/2_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_22": "east",
+        "/chapter/prologue/area/wild/room/3_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_21": "north",
+        "/chapter/prologue/area/wild/room/3_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_22": "east",
+        "/chapter/prologue/area/wild/room/4_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_21": "north",
+        "/chapter/prologue/area/wild/room/4_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_22": "east",
+        "/chapter/prologue/area/wild/room/5_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_21": "north",
+        "/chapter/prologue/area/wild/room/5_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_22": "east",
+        "/chapter/prologue/area/wild/room/6_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_21": "north",
+        "/chapter/prologue/area/wild/room/6_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_22": "east",
+        "/chapter/prologue/area/wild/room/7_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_21": "north",
+        "/chapter/prologue/area/wild/room/7_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_22": "east",
+        "/chapter/prologue/area/wild/room/8_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_21": "north",
+        "/chapter/prologue/area/wild/room/8_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_22": "east",
+        "/chapter/prologue/area/wild/room/9_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_21": "north",
+        "/chapter/prologue/area/wild/room/9_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_22": "west",
+        "/chapter/prologue/area/wild/room/9_22": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_21": "north",
+        "/chapter/prologue/area/wild/room/10_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_22": "east",
+        "/chapter/prologue/area/wild/room/11_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_21": "north",
+        "/chapter/prologue/area/wild/room/11_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_22": "east",
+        "/chapter/prologue/area/wild/room/12_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_21": "north",
+        "/chapter/prologue/area/wild/room/12_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_22": "east",
+        "/chapter/prologue/area/wild/room/13_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_21": "north",
+        "/chapter/prologue/area/wild/room/13_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_22": "east",
+        "/chapter/prologue/area/wild/room/14_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_21": "north",
+        "/chapter/prologue/area/wild/room/14_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_22": "east",
+        "/chapter/prologue/area/wild/room/15_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_21": "north",
+        "/chapter/prologue/area/wild/room/15_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_22": "east",
+        "/chapter/prologue/area/wild/room/16_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_21": "north",
+        "/chapter/prologue/area/wild/room/16_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_22": "east",
+        "/chapter/prologue/area/wild/room/17_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_21": "north",
+        "/chapter/prologue/area/wild/room/17_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_22": "east",
+        "/chapter/prologue/area/wild/room/18_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_21": "north",
+        "/chapter/prologue/area/wild/room/18_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_22": "east",
+        "/chapter/prologue/area/wild/room/19_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_21": "north",
+        "/chapter/prologue/area/wild/room/19_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_22": "east",
+        "/chapter/prologue/area/wild/room/20_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_21": "north",
+        "/chapter/prologue/area/wild/room/20_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_22": "east",
+        "/chapter/prologue/area/wild/room/21_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_21": "north",
+        "/chapter/prologue/area/wild/room/21_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_22": "east",
+        "/chapter/prologue/area/wild/room/22_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_21": "north",
+        "/chapter/prologue/area/wild/room/22_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_22": "east",
+        "/chapter/prologue/area/wild/room/23_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_21": "north",
+        "/chapter/prologue/area/wild/room/23_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_22": "east",
+        "/chapter/prologue/area/wild/room/24_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_21": "north",
+        "/chapter/prologue/area/wild/room/24_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_22": "east",
+        "/chapter/prologue/area/wild/room/25_22": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_21": "north",
+        "/chapter/prologue/area/wild/room/25_22": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_20": "north",
+        "/chapter/prologue/area/wild/room/1_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_21": "east",
+        "/chapter/prologue/area/wild/room/1_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_21": "east",
+        "/chapter/prologue/area/wild/room/2_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_20": "north",
+        "/chapter/prologue/area/wild/room/2_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_21": "east",
+        "/chapter/prologue/area/wild/room/3_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_20": "north",
+        "/chapter/prologue/area/wild/room/3_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_21": "east",
+        "/chapter/prologue/area/wild/room/4_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_20": "north",
+        "/chapter/prologue/area/wild/room/4_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_21": "east",
+        "/chapter/prologue/area/wild/room/5_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_20": "north",
+        "/chapter/prologue/area/wild/room/5_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_21": "east",
+        "/chapter/prologue/area/wild/room/6_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_20": "north",
+        "/chapter/prologue/area/wild/room/6_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_21": "east",
+        "/chapter/prologue/area/wild/room/7_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_20": "north",
+        "/chapter/prologue/area/wild/room/7_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_21": "east",
+        "/chapter/prologue/area/wild/room/8_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_20": "north",
+        "/chapter/prologue/area/wild/room/8_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_21": "east",
+        "/chapter/prologue/area/wild/room/9_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_20": "north",
+        "/chapter/prologue/area/wild/room/9_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_21": "west",
+        "/chapter/prologue/area/wild/room/9_21": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_20": "north",
+        "/chapter/prologue/area/wild/room/10_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_21": "east",
+        "/chapter/prologue/area/wild/room/11_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_20": "north",
+        "/chapter/prologue/area/wild/room/11_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_21": "east",
+        "/chapter/prologue/area/wild/room/12_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_20": "north",
+        "/chapter/prologue/area/wild/room/12_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_21": "east",
+        "/chapter/prologue/area/wild/room/13_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_20": "north",
+        "/chapter/prologue/area/wild/room/13_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_21": "east",
+        "/chapter/prologue/area/wild/room/14_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_20": "north",
+        "/chapter/prologue/area/wild/room/14_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_21": "east",
+        "/chapter/prologue/area/wild/room/15_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_20": "north",
+        "/chapter/prologue/area/wild/room/15_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_21": "east",
+        "/chapter/prologue/area/wild/room/16_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_20": "north",
+        "/chapter/prologue/area/wild/room/16_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_21": "east",
+        "/chapter/prologue/area/wild/room/17_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_20": "north",
+        "/chapter/prologue/area/wild/room/17_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_21": "east",
+        "/chapter/prologue/area/wild/room/18_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_20": "north",
+        "/chapter/prologue/area/wild/room/18_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_21": "east",
+        "/chapter/prologue/area/wild/room/19_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_20": "north",
+        "/chapter/prologue/area/wild/room/19_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_21": "east",
+        "/chapter/prologue/area/wild/room/20_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_20": "north",
+        "/chapter/prologue/area/wild/room/20_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_21": "east",
+        "/chapter/prologue/area/wild/room/21_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_20": "north",
+        "/chapter/prologue/area/wild/room/21_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_21": "east",
+        "/chapter/prologue/area/wild/room/22_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_20": "north",
+        "/chapter/prologue/area/wild/room/22_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_21": "east",
+        "/chapter/prologue/area/wild/room/23_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_20": "north",
+        "/chapter/prologue/area/wild/room/23_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_21": "east",
+        "/chapter/prologue/area/wild/room/24_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_20": "north",
+        "/chapter/prologue/area/wild/room/24_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_21": "east",
+        "/chapter/prologue/area/wild/room/25_21": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_20": "north",
+        "/chapter/prologue/area/wild/room/25_21": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_19": "north",
+        "/chapter/prologue/area/wild/room/1_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_20": "east",
+        "/chapter/prologue/area/wild/room/1_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_20": "east",
+        "/chapter/prologue/area/wild/room/2_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_19": "north",
+        "/chapter/prologue/area/wild/room/2_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_20": "east",
+        "/chapter/prologue/area/wild/room/3_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_19": "north",
+        "/chapter/prologue/area/wild/room/3_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_20": "east",
+        "/chapter/prologue/area/wild/room/4_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_19": "north",
+        "/chapter/prologue/area/wild/room/4_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_20": "east",
+        "/chapter/prologue/area/wild/room/5_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_19": "north",
+        "/chapter/prologue/area/wild/room/5_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_20": "east",
+        "/chapter/prologue/area/wild/room/6_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_19": "north",
+        "/chapter/prologue/area/wild/room/6_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_20": "east",
+        "/chapter/prologue/area/wild/room/7_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_19": "north",
+        "/chapter/prologue/area/wild/room/7_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_20": "east",
+        "/chapter/prologue/area/wild/room/8_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_19": "north",
+        "/chapter/prologue/area/wild/room/8_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_20": "east",
+        "/chapter/prologue/area/wild/room/9_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_19": "north",
+        "/chapter/prologue/area/wild/room/9_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_20": "west",
+        "/chapter/prologue/area/wild/room/9_20": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_19": "north",
+        "/chapter/prologue/area/wild/room/10_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_20": "east",
+        "/chapter/prologue/area/wild/room/11_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_19": "north",
+        "/chapter/prologue/area/wild/room/11_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_20": "east",
+        "/chapter/prologue/area/wild/room/12_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_19": "north",
+        "/chapter/prologue/area/wild/room/12_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_20": "east",
+        "/chapter/prologue/area/wild/room/13_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_19": "north",
+        "/chapter/prologue/area/wild/room/13_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_20": "east",
+        "/chapter/prologue/area/wild/room/14_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_19": "north",
+        "/chapter/prologue/area/wild/room/14_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_20": "east",
+        "/chapter/prologue/area/wild/room/15_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_19": "north",
+        "/chapter/prologue/area/wild/room/15_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_20": "east",
+        "/chapter/prologue/area/wild/room/16_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_19": "north",
+        "/chapter/prologue/area/wild/room/16_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_20": "east",
+        "/chapter/prologue/area/wild/room/17_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_19": "north",
+        "/chapter/prologue/area/wild/room/17_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_20": "east",
+        "/chapter/prologue/area/wild/room/18_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_19": "north",
+        "/chapter/prologue/area/wild/room/18_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_20": "east",
+        "/chapter/prologue/area/wild/room/19_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_19": "north",
+        "/chapter/prologue/area/wild/room/19_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_20": "east",
+        "/chapter/prologue/area/wild/room/20_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_19": "north",
+        "/chapter/prologue/area/wild/room/20_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_20": "east",
+        "/chapter/prologue/area/wild/room/21_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_19": "north",
+        "/chapter/prologue/area/wild/room/21_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_20": "east",
+        "/chapter/prologue/area/wild/room/22_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_19": "north",
+        "/chapter/prologue/area/wild/room/22_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_20": "east",
+        "/chapter/prologue/area/wild/room/23_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_19": "north",
+        "/chapter/prologue/area/wild/room/23_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_20": "east",
+        "/chapter/prologue/area/wild/room/24_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_19": "north",
+        "/chapter/prologue/area/wild/room/24_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_20": "east",
+        "/chapter/prologue/area/wild/room/25_20": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_19": "north",
+        "/chapter/prologue/area/wild/room/25_20": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_18": "north",
+        "/chapter/prologue/area/wild/room/1_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_19": "east",
+        "/chapter/prologue/area/wild/room/1_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_19": "east",
+        "/chapter/prologue/area/wild/room/2_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_18": "north",
+        "/chapter/prologue/area/wild/room/2_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_19": "east",
+        "/chapter/prologue/area/wild/room/3_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_18": "north",
+        "/chapter/prologue/area/wild/room/3_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_19": "east",
+        "/chapter/prologue/area/wild/room/4_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_18": "north",
+        "/chapter/prologue/area/wild/room/4_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_19": "east",
+        "/chapter/prologue/area/wild/room/5_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_18": "north",
+        "/chapter/prologue/area/wild/room/5_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_19": "east",
+        "/chapter/prologue/area/wild/room/6_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_18": "north",
+        "/chapter/prologue/area/wild/room/6_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_19": "east",
+        "/chapter/prologue/area/wild/room/7_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_18": "north",
+        "/chapter/prologue/area/wild/room/7_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_19": "east",
+        "/chapter/prologue/area/wild/room/8_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_18": "north",
+        "/chapter/prologue/area/wild/room/8_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_19": "east",
+        "/chapter/prologue/area/wild/room/9_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_18": "north",
+        "/chapter/prologue/area/wild/room/9_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_19": "west",
+        "/chapter/prologue/area/wild/room/9_19": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_18": "north",
+        "/chapter/prologue/area/wild/room/10_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_19": "east",
+        "/chapter/prologue/area/wild/room/11_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_18": "north",
+        "/chapter/prologue/area/wild/room/11_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_19": "east",
+        "/chapter/prologue/area/wild/room/12_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_18": "north",
+        "/chapter/prologue/area/wild/room/12_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_19": "east",
+        "/chapter/prologue/area/wild/room/13_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_18": "north",
+        "/chapter/prologue/area/wild/room/13_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_19": "east",
+        "/chapter/prologue/area/wild/room/14_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_18": "north",
+        "/chapter/prologue/area/wild/room/14_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_19": "east",
+        "/chapter/prologue/area/wild/room/15_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_18": "north",
+        "/chapter/prologue/area/wild/room/15_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_19": "east",
+        "/chapter/prologue/area/wild/room/16_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_18": "north",
+        "/chapter/prologue/area/wild/room/16_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_19": "east",
+        "/chapter/prologue/area/wild/room/17_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_18": "north",
+        "/chapter/prologue/area/wild/room/17_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_19": "east",
+        "/chapter/prologue/area/wild/room/18_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_18": "north",
+        "/chapter/prologue/area/wild/room/18_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_19": "east",
+        "/chapter/prologue/area/wild/room/19_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_18": "north",
+        "/chapter/prologue/area/wild/room/19_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_19": "east",
+        "/chapter/prologue/area/wild/room/20_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_18": "north",
+        "/chapter/prologue/area/wild/room/20_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_19": "east",
+        "/chapter/prologue/area/wild/room/21_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_18": "north",
+        "/chapter/prologue/area/wild/room/21_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_19": "east",
+        "/chapter/prologue/area/wild/room/22_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_18": "north",
+        "/chapter/prologue/area/wild/room/22_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_19": "east",
+        "/chapter/prologue/area/wild/room/23_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_18": "north",
+        "/chapter/prologue/area/wild/room/23_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_19": "east",
+        "/chapter/prologue/area/wild/room/24_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_18": "north",
+        "/chapter/prologue/area/wild/room/24_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_19": "east",
+        "/chapter/prologue/area/wild/room/25_19": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_18": "north",
+        "/chapter/prologue/area/wild/room/25_19": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_17": "north",
+        "/chapter/prologue/area/wild/room/1_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_18": "east",
+        "/chapter/prologue/area/wild/room/1_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_18": "east",
+        "/chapter/prologue/area/wild/room/2_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_17": "north",
+        "/chapter/prologue/area/wild/room/2_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_18": "east",
+        "/chapter/prologue/area/wild/room/3_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_17": "north",
+        "/chapter/prologue/area/wild/room/3_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_18": "east",
+        "/chapter/prologue/area/wild/room/4_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_17": "north",
+        "/chapter/prologue/area/wild/room/4_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_18": "east",
+        "/chapter/prologue/area/wild/room/5_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_17": "north",
+        "/chapter/prologue/area/wild/room/5_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_18": "east",
+        "/chapter/prologue/area/wild/room/6_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_17": "north",
+        "/chapter/prologue/area/wild/room/6_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_18": "east",
+        "/chapter/prologue/area/wild/room/7_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_17": "north",
+        "/chapter/prologue/area/wild/room/7_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_18": "east",
+        "/chapter/prologue/area/wild/room/8_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_17": "north",
+        "/chapter/prologue/area/wild/room/8_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_18": "east",
+        "/chapter/prologue/area/wild/room/9_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_17": "north",
+        "/chapter/prologue/area/wild/room/9_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_18": "west",
+        "/chapter/prologue/area/wild/room/9_18": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_17": "north",
+        "/chapter/prologue/area/wild/room/10_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_18": "east",
+        "/chapter/prologue/area/wild/room/11_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_17": "north",
+        "/chapter/prologue/area/wild/room/11_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_18": "east",
+        "/chapter/prologue/area/wild/room/12_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_17": "north",
+        "/chapter/prologue/area/wild/room/12_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_18": "east",
+        "/chapter/prologue/area/wild/room/13_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_17": "north",
+        "/chapter/prologue/area/wild/room/13_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_18": "east",
+        "/chapter/prologue/area/wild/room/14_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_17": "north",
+        "/chapter/prologue/area/wild/room/14_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_18": "east",
+        "/chapter/prologue/area/wild/room/15_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_17": "north",
+        "/chapter/prologue/area/wild/room/15_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_18": "east",
+        "/chapter/prologue/area/wild/room/16_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_17": "north",
+        "/chapter/prologue/area/wild/room/16_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_18": "east",
+        "/chapter/prologue/area/wild/room/17_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_17": "north",
+        "/chapter/prologue/area/wild/room/17_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_18": "east",
+        "/chapter/prologue/area/wild/room/18_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_17": "north",
+        "/chapter/prologue/area/wild/room/18_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_18": "east",
+        "/chapter/prologue/area/wild/room/19_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_17": "north",
+        "/chapter/prologue/area/wild/room/19_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_18": "east",
+        "/chapter/prologue/area/wild/room/20_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_17": "north",
+        "/chapter/prologue/area/wild/room/20_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_18": "east",
+        "/chapter/prologue/area/wild/room/21_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_17": "north",
+        "/chapter/prologue/area/wild/room/21_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_18": "east",
+        "/chapter/prologue/area/wild/room/22_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_17": "north",
+        "/chapter/prologue/area/wild/room/22_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_18": "east",
+        "/chapter/prologue/area/wild/room/23_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_17": "north",
+        "/chapter/prologue/area/wild/room/23_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_18": "east",
+        "/chapter/prologue/area/wild/room/24_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_17": "north",
+        "/chapter/prologue/area/wild/room/24_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_18": "east",
+        "/chapter/prologue/area/wild/room/25_18": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_17": "north",
+        "/chapter/prologue/area/wild/room/25_18": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_16": "north",
+        "/chapter/prologue/area/wild/room/1_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_17": "east",
+        "/chapter/prologue/area/wild/room/1_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_17": "east",
+        "/chapter/prologue/area/wild/room/2_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_16": "north",
+        "/chapter/prologue/area/wild/room/2_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_17": "east",
+        "/chapter/prologue/area/wild/room/3_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_16": "north",
+        "/chapter/prologue/area/wild/room/3_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_17": "east",
+        "/chapter/prologue/area/wild/room/4_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_16": "north",
+        "/chapter/prologue/area/wild/room/4_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_17": "east",
+        "/chapter/prologue/area/wild/room/5_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_16": "north",
+        "/chapter/prologue/area/wild/room/5_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_17": "east",
+        "/chapter/prologue/area/wild/room/6_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_16": "north",
+        "/chapter/prologue/area/wild/room/6_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_17": "east",
+        "/chapter/prologue/area/wild/room/7_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_16": "north",
+        "/chapter/prologue/area/wild/room/7_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_17": "east",
+        "/chapter/prologue/area/wild/room/8_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_16": "north",
+        "/chapter/prologue/area/wild/room/8_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_17": "east",
+        "/chapter/prologue/area/wild/room/9_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_16": "north",
+        "/chapter/prologue/area/wild/room/9_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_17": "west",
+        "/chapter/prologue/area/wild/room/9_17": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_16": "north",
+        "/chapter/prologue/area/wild/room/10_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_17": "east",
+        "/chapter/prologue/area/wild/room/11_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_16": "north",
+        "/chapter/prologue/area/wild/room/11_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_17": "east",
+        "/chapter/prologue/area/wild/room/12_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_16": "north",
+        "/chapter/prologue/area/wild/room/12_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_17": "east",
+        "/chapter/prologue/area/wild/room/13_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_16": "north",
+        "/chapter/prologue/area/wild/room/13_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_17": "east",
+        "/chapter/prologue/area/wild/room/14_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_16": "north",
+        "/chapter/prologue/area/wild/room/14_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_17": "east",
+        "/chapter/prologue/area/wild/room/15_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_16": "north",
+        "/chapter/prologue/area/wild/room/15_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_17": "east",
+        "/chapter/prologue/area/wild/room/16_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_16": "north",
+        "/chapter/prologue/area/wild/room/16_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_17": "east",
+        "/chapter/prologue/area/wild/room/17_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_16": "north",
+        "/chapter/prologue/area/wild/room/17_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_17": "east",
+        "/chapter/prologue/area/wild/room/18_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_16": "north",
+        "/chapter/prologue/area/wild/room/18_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_17": "east",
+        "/chapter/prologue/area/wild/room/19_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_16": "north",
+        "/chapter/prologue/area/wild/room/19_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_17": "east",
+        "/chapter/prologue/area/wild/room/20_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_16": "north",
+        "/chapter/prologue/area/wild/room/20_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_17": "east",
+        "/chapter/prologue/area/wild/room/21_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_16": "north",
+        "/chapter/prologue/area/wild/room/21_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_17": "east",
+        "/chapter/prologue/area/wild/room/22_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_16": "north",
+        "/chapter/prologue/area/wild/room/22_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_17": "east",
+        "/chapter/prologue/area/wild/room/23_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_16": "north",
+        "/chapter/prologue/area/wild/room/23_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_17": "east",
+        "/chapter/prologue/area/wild/room/24_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_16": "north",
+        "/chapter/prologue/area/wild/room/24_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_17": "east",
+        "/chapter/prologue/area/wild/room/25_17": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_16": "north",
+        "/chapter/prologue/area/wild/room/25_17": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_15": "north",
+        "/chapter/prologue/area/wild/room/1_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_16": "east",
+        "/chapter/prologue/area/wild/room/1_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_16": "east",
+        "/chapter/prologue/area/wild/room/2_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_15": "north",
+        "/chapter/prologue/area/wild/room/2_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_16": "east",
+        "/chapter/prologue/area/wild/room/3_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_15": "north",
+        "/chapter/prologue/area/wild/room/3_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_16": "east",
+        "/chapter/prologue/area/wild/room/4_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_15": "north",
+        "/chapter/prologue/area/wild/room/4_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_16": "east",
+        "/chapter/prologue/area/wild/room/5_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_15": "north",
+        "/chapter/prologue/area/wild/room/5_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_16": "east",
+        "/chapter/prologue/area/wild/room/6_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_15": "north",
+        "/chapter/prologue/area/wild/room/6_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_16": "east",
+        "/chapter/prologue/area/wild/room/7_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_15": "north",
+        "/chapter/prologue/area/wild/room/7_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_16": "east",
+        "/chapter/prologue/area/wild/room/8_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_15": "north",
+        "/chapter/prologue/area/wild/room/8_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_16": "east",
+        "/chapter/prologue/area/wild/room/9_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_15": "north",
+        "/chapter/prologue/area/wild/room/9_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_16": "west",
+        "/chapter/prologue/area/wild/room/9_16": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_15": "north",
+        "/chapter/prologue/area/wild/room/10_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_16": "east",
+        "/chapter/prologue/area/wild/room/11_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_15": "north",
+        "/chapter/prologue/area/wild/room/11_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_16": "east",
+        "/chapter/prologue/area/wild/room/12_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_15": "north",
+        "/chapter/prologue/area/wild/room/12_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_16": "east",
+        "/chapter/prologue/area/wild/room/13_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_15": "north",
+        "/chapter/prologue/area/wild/room/13_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_16": "east",
+        "/chapter/prologue/area/wild/room/14_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_15": "north",
+        "/chapter/prologue/area/wild/room/14_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_16": "east",
+        "/chapter/prologue/area/wild/room/15_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_15": "north",
+        "/chapter/prologue/area/wild/room/15_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_16": "east",
+        "/chapter/prologue/area/wild/room/16_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_15": "north",
+        "/chapter/prologue/area/wild/room/16_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_16": "east",
+        "/chapter/prologue/area/wild/room/17_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_15": "north",
+        "/chapter/prologue/area/wild/room/17_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_16": "east",
+        "/chapter/prologue/area/wild/room/18_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_15": "north",
+        "/chapter/prologue/area/wild/room/18_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_16": "east",
+        "/chapter/prologue/area/wild/room/19_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_15": "north",
+        "/chapter/prologue/area/wild/room/19_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_16": "east",
+        "/chapter/prologue/area/wild/room/20_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_15": "north",
+        "/chapter/prologue/area/wild/room/20_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_16": "east",
+        "/chapter/prologue/area/wild/room/21_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_15": "north",
+        "/chapter/prologue/area/wild/room/21_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_16": "east",
+        "/chapter/prologue/area/wild/room/22_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_15": "north",
+        "/chapter/prologue/area/wild/room/22_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_16": "east",
+        "/chapter/prologue/area/wild/room/23_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_15": "north",
+        "/chapter/prologue/area/wild/room/23_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_16": "east",
+        "/chapter/prologue/area/wild/room/24_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_15": "north",
+        "/chapter/prologue/area/wild/room/24_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_16": "east",
+        "/chapter/prologue/area/wild/room/25_16": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_15": "north",
+        "/chapter/prologue/area/wild/room/25_16": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_14": "north",
+        "/chapter/prologue/area/wild/room/1_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_15": "east",
+        "/chapter/prologue/area/wild/room/1_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_15": "east",
+        "/chapter/prologue/area/wild/room/2_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_14": "north",
+        "/chapter/prologue/area/wild/room/2_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_15": "east",
+        "/chapter/prologue/area/wild/room/3_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_14": "north",
+        "/chapter/prologue/area/wild/room/3_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_15": "east",
+        "/chapter/prologue/area/wild/room/4_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_14": "north",
+        "/chapter/prologue/area/wild/room/4_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_15": "east",
+        "/chapter/prologue/area/wild/room/5_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_14": "north",
+        "/chapter/prologue/area/wild/room/5_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_15": "east",
+        "/chapter/prologue/area/wild/room/6_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_14": "north",
+        "/chapter/prologue/area/wild/room/6_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_15": "east",
+        "/chapter/prologue/area/wild/room/7_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_14": "north",
+        "/chapter/prologue/area/wild/room/7_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_15": "east",
+        "/chapter/prologue/area/wild/room/8_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_14": "north",
+        "/chapter/prologue/area/wild/room/8_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_15": "east",
+        "/chapter/prologue/area/wild/room/9_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_14": "north",
+        "/chapter/prologue/area/wild/room/9_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_15": "west",
+        "/chapter/prologue/area/wild/room/9_15": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_14": "north",
+        "/chapter/prologue/area/wild/room/10_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_15": "east",
+        "/chapter/prologue/area/wild/room/11_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_14": "north",
+        "/chapter/prologue/area/wild/room/11_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_15": "east",
+        "/chapter/prologue/area/wild/room/12_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_14": "north",
+        "/chapter/prologue/area/wild/room/12_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_15": "east",
+        "/chapter/prologue/area/wild/room/13_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_14": "north",
+        "/chapter/prologue/area/wild/room/13_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_15": "east",
+        "/chapter/prologue/area/wild/room/14_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_14": "north",
+        "/chapter/prologue/area/wild/room/14_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_15": "east",
+        "/chapter/prologue/area/wild/room/15_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_14": "north",
+        "/chapter/prologue/area/wild/room/15_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_15": "east",
+        "/chapter/prologue/area/wild/room/16_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_14": "north",
+        "/chapter/prologue/area/wild/room/16_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_15": "east",
+        "/chapter/prologue/area/wild/room/17_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_14": "north",
+        "/chapter/prologue/area/wild/room/17_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_15": "east",
+        "/chapter/prologue/area/wild/room/18_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_14": "north",
+        "/chapter/prologue/area/wild/room/18_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_15": "east",
+        "/chapter/prologue/area/wild/room/19_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_14": "north",
+        "/chapter/prologue/area/wild/room/19_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_15": "east",
+        "/chapter/prologue/area/wild/room/20_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_14": "north",
+        "/chapter/prologue/area/wild/room/20_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_15": "east",
+        "/chapter/prologue/area/wild/room/21_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_14": "north",
+        "/chapter/prologue/area/wild/room/21_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_15": "east",
+        "/chapter/prologue/area/wild/room/22_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_14": "north",
+        "/chapter/prologue/area/wild/room/22_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_15": "east",
+        "/chapter/prologue/area/wild/room/23_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_14": "north",
+        "/chapter/prologue/area/wild/room/23_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_15": "east",
+        "/chapter/prologue/area/wild/room/24_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_14": "north",
+        "/chapter/prologue/area/wild/room/24_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_15": "east",
+        "/chapter/prologue/area/wild/room/25_15": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_14": "north",
+        "/chapter/prologue/area/wild/room/25_15": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_13": "north",
+        "/chapter/prologue/area/wild/room/1_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_14": "east",
+        "/chapter/prologue/area/wild/room/1_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_14": "east",
+        "/chapter/prologue/area/wild/room/2_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_13": "north",
+        "/chapter/prologue/area/wild/room/2_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_14": "east",
+        "/chapter/prologue/area/wild/room/3_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_13": "north",
+        "/chapter/prologue/area/wild/room/3_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_14": "east",
+        "/chapter/prologue/area/wild/room/4_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_13": "north",
+        "/chapter/prologue/area/wild/room/4_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_14": "east",
+        "/chapter/prologue/area/wild/room/5_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_13": "north",
+        "/chapter/prologue/area/wild/room/5_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_14": "east",
+        "/chapter/prologue/area/wild/room/6_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_13": "north",
+        "/chapter/prologue/area/wild/room/6_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_14": "east",
+        "/chapter/prologue/area/wild/room/7_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_13": "north",
+        "/chapter/prologue/area/wild/room/7_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_14": "east",
+        "/chapter/prologue/area/wild/room/8_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_13": "north",
+        "/chapter/prologue/area/wild/room/8_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_14": "east",
+        "/chapter/prologue/area/wild/room/9_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_13": "north",
+        "/chapter/prologue/area/wild/room/9_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_14": "west",
+        "/chapter/prologue/area/wild/room/9_14": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_13": "north",
+        "/chapter/prologue/area/wild/room/10_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_14": "east",
+        "/chapter/prologue/area/wild/room/11_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_13": "north",
+        "/chapter/prologue/area/wild/room/11_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_14": "east",
+        "/chapter/prologue/area/wild/room/12_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_13": "north",
+        "/chapter/prologue/area/wild/room/12_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_14": "east",
+        "/chapter/prologue/area/wild/room/13_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_13": "north",
+        "/chapter/prologue/area/wild/room/13_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_14": "east",
+        "/chapter/prologue/area/wild/room/14_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_13": "north",
+        "/chapter/prologue/area/wild/room/14_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_14": "east",
+        "/chapter/prologue/area/wild/room/15_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_13": "north",
+        "/chapter/prologue/area/wild/room/15_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_14": "east",
+        "/chapter/prologue/area/wild/room/16_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_13": "north",
+        "/chapter/prologue/area/wild/room/16_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_14": "east",
+        "/chapter/prologue/area/wild/room/17_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_13": "north",
+        "/chapter/prologue/area/wild/room/17_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_14": "east",
+        "/chapter/prologue/area/wild/room/18_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_13": "north",
+        "/chapter/prologue/area/wild/room/18_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_14": "east",
+        "/chapter/prologue/area/wild/room/19_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_13": "north",
+        "/chapter/prologue/area/wild/room/19_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_14": "east",
+        "/chapter/prologue/area/wild/room/20_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_13": "north",
+        "/chapter/prologue/area/wild/room/20_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_14": "east",
+        "/chapter/prologue/area/wild/room/21_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_13": "north",
+        "/chapter/prologue/area/wild/room/21_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_14": "east",
+        "/chapter/prologue/area/wild/room/22_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_13": "north",
+        "/chapter/prologue/area/wild/room/22_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_14": "east",
+        "/chapter/prologue/area/wild/room/23_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_13": "north",
+        "/chapter/prologue/area/wild/room/23_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_14": "east",
+        "/chapter/prologue/area/wild/room/24_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_13": "north",
+        "/chapter/prologue/area/wild/room/24_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_14": "east",
+        "/chapter/prologue/area/wild/room/25_14": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_13": "north",
+        "/chapter/prologue/area/wild/room/25_14": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_12": "north",
+        "/chapter/prologue/area/wild/room/1_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_13": "east",
+        "/chapter/prologue/area/wild/room/1_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_13": "east",
+        "/chapter/prologue/area/wild/room/2_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_12": "north",
+        "/chapter/prologue/area/wild/room/2_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_13": "east",
+        "/chapter/prologue/area/wild/room/3_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_12": "north",
+        "/chapter/prologue/area/wild/room/3_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_13": "east",
+        "/chapter/prologue/area/wild/room/4_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_12": "north",
+        "/chapter/prologue/area/wild/room/4_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_13": "east",
+        "/chapter/prologue/area/wild/room/5_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_12": "north",
+        "/chapter/prologue/area/wild/room/5_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_13": "east",
+        "/chapter/prologue/area/wild/room/6_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_12": "north",
+        "/chapter/prologue/area/wild/room/6_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_13": "east",
+        "/chapter/prologue/area/wild/room/7_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_12": "north",
+        "/chapter/prologue/area/wild/room/7_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_13": "east",
+        "/chapter/prologue/area/wild/room/8_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_12": "north",
+        "/chapter/prologue/area/wild/room/8_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_13": "east",
+        "/chapter/prologue/area/wild/room/9_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_12": "north",
+        "/chapter/prologue/area/wild/room/9_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_13": "west",
+        "/chapter/prologue/area/wild/room/9_13": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_12": "north",
+        "/chapter/prologue/area/wild/room/10_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_13": "east",
+        "/chapter/prologue/area/wild/room/11_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_12": "north",
+        "/chapter/prologue/area/wild/room/11_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_13": "east",
+        "/chapter/prologue/area/wild/room/12_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_12": "north",
+        "/chapter/prologue/area/wild/room/12_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_13": "east",
+        "/chapter/prologue/area/wild/room/13_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_12": "north",
+        "/chapter/prologue/area/wild/room/13_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_13": "east",
+        "/chapter/prologue/area/wild/room/14_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_12": "north",
+        "/chapter/prologue/area/wild/room/14_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_13": "east",
+        "/chapter/prologue/area/wild/room/15_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_12": "north",
+        "/chapter/prologue/area/wild/room/15_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_13": "east",
+        "/chapter/prologue/area/wild/room/16_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_12": "north",
+        "/chapter/prologue/area/wild/room/16_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_13": "east",
+        "/chapter/prologue/area/wild/room/17_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_12": "north",
+        "/chapter/prologue/area/wild/room/17_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_13": "east",
+        "/chapter/prologue/area/wild/room/18_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_12": "north",
+        "/chapter/prologue/area/wild/room/18_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_13": "east",
+        "/chapter/prologue/area/wild/room/19_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_12": "north",
+        "/chapter/prologue/area/wild/room/19_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_13": "east",
+        "/chapter/prologue/area/wild/room/20_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_12": "north",
+        "/chapter/prologue/area/wild/room/20_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_13": "east",
+        "/chapter/prologue/area/wild/room/21_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_12": "north",
+        "/chapter/prologue/area/wild/room/21_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_13": "east",
+        "/chapter/prologue/area/wild/room/22_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_12": "north",
+        "/chapter/prologue/area/wild/room/22_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_13": "east",
+        "/chapter/prologue/area/wild/room/23_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_12": "north",
+        "/chapter/prologue/area/wild/room/23_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_13": "east",
+        "/chapter/prologue/area/wild/room/24_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_12": "north",
+        "/chapter/prologue/area/wild/room/24_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_13": "east",
+        "/chapter/prologue/area/wild/room/25_13": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_12": "north",
+        "/chapter/prologue/area/wild/room/25_13": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_11": "north",
+        "/chapter/prologue/area/wild/room/1_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_12": "east",
+        "/chapter/prologue/area/wild/room/1_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_12": "east",
+        "/chapter/prologue/area/wild/room/2_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_11": "north",
+        "/chapter/prologue/area/wild/room/2_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_12": "east",
+        "/chapter/prologue/area/wild/room/3_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_11": "north",
+        "/chapter/prologue/area/wild/room/3_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_12": "east",
+        "/chapter/prologue/area/wild/room/4_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_11": "north",
+        "/chapter/prologue/area/wild/room/4_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_12": "east",
+        "/chapter/prologue/area/wild/room/5_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_11": "north",
+        "/chapter/prologue/area/wild/room/5_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_12": "east",
+        "/chapter/prologue/area/wild/room/6_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_11": "north",
+        "/chapter/prologue/area/wild/room/6_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_12": "east",
+        "/chapter/prologue/area/wild/room/7_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_11": "north",
+        "/chapter/prologue/area/wild/room/7_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_12": "east",
+        "/chapter/prologue/area/wild/room/8_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_11": "north",
+        "/chapter/prologue/area/wild/room/8_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_12": "east",
+        "/chapter/prologue/area/wild/room/9_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_11": "north",
+        "/chapter/prologue/area/wild/room/9_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_12": "west",
+        "/chapter/prologue/area/wild/room/9_12": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_11": "north",
+        "/chapter/prologue/area/wild/room/10_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_12": "east",
+        "/chapter/prologue/area/wild/room/11_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_11": "north",
+        "/chapter/prologue/area/wild/room/11_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_12": "east",
+        "/chapter/prologue/area/wild/room/12_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_11": "north",
+        "/chapter/prologue/area/wild/room/12_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_12": "east",
+        "/chapter/prologue/area/wild/room/13_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_11": "north",
+        "/chapter/prologue/area/wild/room/13_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_12": "east",
+        "/chapter/prologue/area/wild/room/14_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_11": "north",
+        "/chapter/prologue/area/wild/room/14_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_12": "east",
+        "/chapter/prologue/area/wild/room/15_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_11": "north",
+        "/chapter/prologue/area/wild/room/15_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_12": "east",
+        "/chapter/prologue/area/wild/room/16_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_11": "north",
+        "/chapter/prologue/area/wild/room/16_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_12": "east",
+        "/chapter/prologue/area/wild/room/17_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_11": "north",
+        "/chapter/prologue/area/wild/room/17_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_12": "east",
+        "/chapter/prologue/area/wild/room/18_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_11": "north",
+        "/chapter/prologue/area/wild/room/18_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_12": "east",
+        "/chapter/prologue/area/wild/room/19_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_11": "north",
+        "/chapter/prologue/area/wild/room/19_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_12": "east",
+        "/chapter/prologue/area/wild/room/20_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_11": "north",
+        "/chapter/prologue/area/wild/room/20_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_12": "east",
+        "/chapter/prologue/area/wild/room/21_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_11": "north",
+        "/chapter/prologue/area/wild/room/21_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_12": "east",
+        "/chapter/prologue/area/wild/room/22_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_11": "north",
+        "/chapter/prologue/area/wild/room/22_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_12": "east",
+        "/chapter/prologue/area/wild/room/23_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_11": "north",
+        "/chapter/prologue/area/wild/room/23_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_12": "east",
+        "/chapter/prologue/area/wild/room/24_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_11": "north",
+        "/chapter/prologue/area/wild/room/24_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_12": "east",
+        "/chapter/prologue/area/wild/room/25_12": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_11": "north",
+        "/chapter/prologue/area/wild/room/25_12": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_10": "north",
+        "/chapter/prologue/area/wild/room/1_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_11": "east",
+        "/chapter/prologue/area/wild/room/1_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_11": "east",
+        "/chapter/prologue/area/wild/room/2_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_10": "north",
+        "/chapter/prologue/area/wild/room/2_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_11": "east",
+        "/chapter/prologue/area/wild/room/3_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_10": "north",
+        "/chapter/prologue/area/wild/room/3_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_11": "east",
+        "/chapter/prologue/area/wild/room/4_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_10": "north",
+        "/chapter/prologue/area/wild/room/4_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_11": "east",
+        "/chapter/prologue/area/wild/room/5_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_10": "north",
+        "/chapter/prologue/area/wild/room/5_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_11": "east",
+        "/chapter/prologue/area/wild/room/6_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_10": "north",
+        "/chapter/prologue/area/wild/room/6_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_11": "east",
+        "/chapter/prologue/area/wild/room/7_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_10": "north",
+        "/chapter/prologue/area/wild/room/7_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_11": "east",
+        "/chapter/prologue/area/wild/room/8_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_10": "north",
+        "/chapter/prologue/area/wild/room/8_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_11": "east",
+        "/chapter/prologue/area/wild/room/9_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_10": "north",
+        "/chapter/prologue/area/wild/room/9_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_11": "west",
+        "/chapter/prologue/area/wild/room/9_11": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_10": "north",
+        "/chapter/prologue/area/wild/room/10_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_11": "east",
+        "/chapter/prologue/area/wild/room/11_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_10": "north",
+        "/chapter/prologue/area/wild/room/11_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_11": "east",
+        "/chapter/prologue/area/wild/room/12_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_10": "north",
+        "/chapter/prologue/area/wild/room/12_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_11": "east",
+        "/chapter/prologue/area/wild/room/13_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_10": "north",
+        "/chapter/prologue/area/wild/room/13_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_11": "east",
+        "/chapter/prologue/area/wild/room/14_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_10": "north",
+        "/chapter/prologue/area/wild/room/14_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_11": "east",
+        "/chapter/prologue/area/wild/room/15_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_10": "north",
+        "/chapter/prologue/area/wild/room/15_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_11": "east",
+        "/chapter/prologue/area/wild/room/16_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_10": "north",
+        "/chapter/prologue/area/wild/room/16_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_11": "east",
+        "/chapter/prologue/area/wild/room/17_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_10": "north",
+        "/chapter/prologue/area/wild/room/17_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_11": "east",
+        "/chapter/prologue/area/wild/room/18_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_10": "north",
+        "/chapter/prologue/area/wild/room/18_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_11": "east",
+        "/chapter/prologue/area/wild/room/19_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_10": "north",
+        "/chapter/prologue/area/wild/room/19_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_11": "east",
+        "/chapter/prologue/area/wild/room/20_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_10": "north",
+        "/chapter/prologue/area/wild/room/20_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_11": "east",
+        "/chapter/prologue/area/wild/room/21_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_10": "north",
+        "/chapter/prologue/area/wild/room/21_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_11": "east",
+        "/chapter/prologue/area/wild/room/22_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_10": "north",
+        "/chapter/prologue/area/wild/room/22_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_11": "east",
+        "/chapter/prologue/area/wild/room/23_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_10": "north",
+        "/chapter/prologue/area/wild/room/23_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_11": "east",
+        "/chapter/prologue/area/wild/room/24_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_10": "north",
+        "/chapter/prologue/area/wild/room/24_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_11": "east",
+        "/chapter/prologue/area/wild/room/25_11": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_10": "north",
+        "/chapter/prologue/area/wild/room/25_11": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_10": "south",
+        "/chapter/prologue/area/wild/room/1_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_10": "east",
+        "/chapter/prologue/area/wild/room/1_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_10": "east",
+        "/chapter/prologue/area/wild/room/2_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_10": "south",
+        "/chapter/prologue/area/wild/room/2_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_10": "east",
+        "/chapter/prologue/area/wild/room/3_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_10": "south",
+        "/chapter/prologue/area/wild/room/3_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_10": "east",
+        "/chapter/prologue/area/wild/room/4_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_10": "south",
+        "/chapter/prologue/area/wild/room/4_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_10": "east",
+        "/chapter/prologue/area/wild/room/5_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_10": "south",
+        "/chapter/prologue/area/wild/room/5_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_10": "east",
+        "/chapter/prologue/area/wild/room/6_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_10": "south",
+        "/chapter/prologue/area/wild/room/6_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_10": "east",
+        "/chapter/prologue/area/wild/room/7_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_10": "south",
+        "/chapter/prologue/area/wild/room/7_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_10": "east",
+        "/chapter/prologue/area/wild/room/8_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_10": "south",
+        "/chapter/prologue/area/wild/room/8_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_10": "east",
+        "/chapter/prologue/area/wild/room/9_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_10": "south",
+        "/chapter/prologue/area/wild/room/9_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_10": "west",
+        "/chapter/prologue/area/wild/room/9_10": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_10": "south",
+        "/chapter/prologue/area/wild/room/10_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_10": "east",
+        "/chapter/prologue/area/wild/room/11_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_10": "south",
+        "/chapter/prologue/area/wild/room/11_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_10": "east",
+        "/chapter/prologue/area/wild/room/12_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_10": "south",
+        "/chapter/prologue/area/wild/room/12_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_10": "east",
+        "/chapter/prologue/area/wild/room/13_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_10": "south",
+        "/chapter/prologue/area/wild/room/13_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_10": "east",
+        "/chapter/prologue/area/wild/room/14_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_10": "south",
+        "/chapter/prologue/area/wild/room/14_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_10": "east",
+        "/chapter/prologue/area/wild/room/15_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_10": "south",
+        "/chapter/prologue/area/wild/room/15_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_10": "east",
+        "/chapter/prologue/area/wild/room/16_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_10": "south",
+        "/chapter/prologue/area/wild/room/16_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_10": "east",
+        "/chapter/prologue/area/wild/room/17_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_10": "south",
+        "/chapter/prologue/area/wild/room/17_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_10": "east",
+        "/chapter/prologue/area/wild/room/18_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_10": "south",
+        "/chapter/prologue/area/wild/room/18_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_10": "east",
+        "/chapter/prologue/area/wild/room/19_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_10": "south",
+        "/chapter/prologue/area/wild/room/19_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_10": "east",
+        "/chapter/prologue/area/wild/room/20_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_10": "south",
+        "/chapter/prologue/area/wild/room/20_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_10": "east",
+        "/chapter/prologue/area/wild/room/21_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_10": "south",
+        "/chapter/prologue/area/wild/room/21_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_10": "east",
+        "/chapter/prologue/area/wild/room/22_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_10": "south",
+        "/chapter/prologue/area/wild/room/22_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_10": "east",
+        "/chapter/prologue/area/wild/room/23_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_10": "south",
+        "/chapter/prologue/area/wild/room/23_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_10": "east",
+        "/chapter/prologue/area/wild/room/24_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_10": "south",
+        "/chapter/prologue/area/wild/room/24_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_10": "east",
+        "/chapter/prologue/area/wild/room/25_10": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_10": "south",
+        "/chapter/prologue/area/wild/room/25_9": "north"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_8": "north",
+        "/chapter/prologue/area/wild/room/1_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_9": "east",
+        "/chapter/prologue/area/wild/room/1_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_9": "east",
+        "/chapter/prologue/area/wild/room/2_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_8": "north",
+        "/chapter/prologue/area/wild/room/2_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_9": "east",
+        "/chapter/prologue/area/wild/room/3_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_8": "north",
+        "/chapter/prologue/area/wild/room/3_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_9": "east",
+        "/chapter/prologue/area/wild/room/4_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_8": "north",
+        "/chapter/prologue/area/wild/room/4_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_9": "east",
+        "/chapter/prologue/area/wild/room/5_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_8": "north",
+        "/chapter/prologue/area/wild/room/5_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_9": "east",
+        "/chapter/prologue/area/wild/room/6_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_8": "north",
+        "/chapter/prologue/area/wild/room/6_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_9": "east",
+        "/chapter/prologue/area/wild/room/7_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_8": "north",
+        "/chapter/prologue/area/wild/room/7_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_9": "east",
+        "/chapter/prologue/area/wild/room/8_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_8": "north",
+        "/chapter/prologue/area/wild/room/8_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_9": "east",
+        "/chapter/prologue/area/wild/room/9_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_8": "north",
+        "/chapter/prologue/area/wild/room/9_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_9": "west",
+        "/chapter/prologue/area/wild/room/9_9": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_8": "north",
+        "/chapter/prologue/area/wild/room/10_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_9": "east",
+        "/chapter/prologue/area/wild/room/11_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_8": "north",
+        "/chapter/prologue/area/wild/room/11_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_9": "east",
+        "/chapter/prologue/area/wild/room/12_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_8": "north",
+        "/chapter/prologue/area/wild/room/12_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_9": "east",
+        "/chapter/prologue/area/wild/room/13_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_8": "north",
+        "/chapter/prologue/area/wild/room/13_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_9": "east",
+        "/chapter/prologue/area/wild/room/14_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_8": "north",
+        "/chapter/prologue/area/wild/room/14_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_9": "east",
+        "/chapter/prologue/area/wild/room/15_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_8": "north",
+        "/chapter/prologue/area/wild/room/15_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_9": "east",
+        "/chapter/prologue/area/wild/room/16_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_8": "north",
+        "/chapter/prologue/area/wild/room/16_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_9": "east",
+        "/chapter/prologue/area/wild/room/17_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_8": "north",
+        "/chapter/prologue/area/wild/room/17_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_9": "east",
+        "/chapter/prologue/area/wild/room/18_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_8": "north",
+        "/chapter/prologue/area/wild/room/18_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_9": "east",
+        "/chapter/prologue/area/wild/room/19_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_8": "north",
+        "/chapter/prologue/area/wild/room/19_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_9": "east",
+        "/chapter/prologue/area/wild/room/20_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_8": "north",
+        "/chapter/prologue/area/wild/room/20_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_9": "east",
+        "/chapter/prologue/area/wild/room/21_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_8": "north",
+        "/chapter/prologue/area/wild/room/21_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_9": "east",
+        "/chapter/prologue/area/wild/room/22_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_8": "north",
+        "/chapter/prologue/area/wild/room/22_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_9": "east",
+        "/chapter/prologue/area/wild/room/23_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_8": "north",
+        "/chapter/prologue/area/wild/room/23_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_9": "east",
+        "/chapter/prologue/area/wild/room/24_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_8": "north",
+        "/chapter/prologue/area/wild/room/24_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_9": "east",
+        "/chapter/prologue/area/wild/room/25_9": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_8": "north",
+        "/chapter/prologue/area/wild/room/25_9": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_7": "north",
+        "/chapter/prologue/area/wild/room/1_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_8": "east",
+        "/chapter/prologue/area/wild/room/1_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_8": "east",
+        "/chapter/prologue/area/wild/room/2_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_7": "north",
+        "/chapter/prologue/area/wild/room/2_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_8": "east",
+        "/chapter/prologue/area/wild/room/3_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_7": "north",
+        "/chapter/prologue/area/wild/room/3_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_8": "east",
+        "/chapter/prologue/area/wild/room/4_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_7": "north",
+        "/chapter/prologue/area/wild/room/4_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_8": "east",
+        "/chapter/prologue/area/wild/room/5_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_7": "north",
+        "/chapter/prologue/area/wild/room/5_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_8": "east",
+        "/chapter/prologue/area/wild/room/6_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_7": "north",
+        "/chapter/prologue/area/wild/room/6_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_8": "east",
+        "/chapter/prologue/area/wild/room/7_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_7": "north",
+        "/chapter/prologue/area/wild/room/7_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_8": "east",
+        "/chapter/prologue/area/wild/room/8_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_7": "north",
+        "/chapter/prologue/area/wild/room/8_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_8": "east",
+        "/chapter/prologue/area/wild/room/9_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_7": "north",
+        "/chapter/prologue/area/wild/room/9_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_8": "west",
+        "/chapter/prologue/area/wild/room/9_8": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_7": "north",
+        "/chapter/prologue/area/wild/room/10_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_8": "east",
+        "/chapter/prologue/area/wild/room/11_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_7": "north",
+        "/chapter/prologue/area/wild/room/11_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_8": "east",
+        "/chapter/prologue/area/wild/room/12_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_7": "north",
+        "/chapter/prologue/area/wild/room/12_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_8": "east",
+        "/chapter/prologue/area/wild/room/13_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_7": "north",
+        "/chapter/prologue/area/wild/room/13_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_8": "east",
+        "/chapter/prologue/area/wild/room/14_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_7": "north",
+        "/chapter/prologue/area/wild/room/14_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_8": "east",
+        "/chapter/prologue/area/wild/room/15_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_7": "north",
+        "/chapter/prologue/area/wild/room/15_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_8": "east",
+        "/chapter/prologue/area/wild/room/16_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_7": "north",
+        "/chapter/prologue/area/wild/room/16_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_8": "east",
+        "/chapter/prologue/area/wild/room/17_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_7": "north",
+        "/chapter/prologue/area/wild/room/17_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_8": "east",
+        "/chapter/prologue/area/wild/room/18_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_7": "north",
+        "/chapter/prologue/area/wild/room/18_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_8": "east",
+        "/chapter/prologue/area/wild/room/19_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_7": "north",
+        "/chapter/prologue/area/wild/room/19_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_8": "east",
+        "/chapter/prologue/area/wild/room/20_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_7": "north",
+        "/chapter/prologue/area/wild/room/20_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_8": "east",
+        "/chapter/prologue/area/wild/room/21_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_7": "north",
+        "/chapter/prologue/area/wild/room/21_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_8": "east",
+        "/chapter/prologue/area/wild/room/22_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_7": "north",
+        "/chapter/prologue/area/wild/room/22_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_8": "east",
+        "/chapter/prologue/area/wild/room/23_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_7": "north",
+        "/chapter/prologue/area/wild/room/23_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_8": "east",
+        "/chapter/prologue/area/wild/room/24_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_7": "north",
+        "/chapter/prologue/area/wild/room/24_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_8": "east",
+        "/chapter/prologue/area/wild/room/25_8": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_7": "north",
+        "/chapter/prologue/area/wild/room/25_8": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_6": "north",
+        "/chapter/prologue/area/wild/room/1_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_7": "east",
+        "/chapter/prologue/area/wild/room/1_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_7": "east",
+        "/chapter/prologue/area/wild/room/2_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_6": "north",
+        "/chapter/prologue/area/wild/room/2_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_7": "east",
+        "/chapter/prologue/area/wild/room/3_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_6": "north",
+        "/chapter/prologue/area/wild/room/3_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_7": "east",
+        "/chapter/prologue/area/wild/room/4_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_6": "north",
+        "/chapter/prologue/area/wild/room/4_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_7": "east",
+        "/chapter/prologue/area/wild/room/5_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_6": "north",
+        "/chapter/prologue/area/wild/room/5_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_7": "east",
+        "/chapter/prologue/area/wild/room/6_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_6": "north",
+        "/chapter/prologue/area/wild/room/6_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_7": "east",
+        "/chapter/prologue/area/wild/room/7_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_6": "north",
+        "/chapter/prologue/area/wild/room/7_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_7": "east",
+        "/chapter/prologue/area/wild/room/8_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_6": "north",
+        "/chapter/prologue/area/wild/room/8_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_7": "east",
+        "/chapter/prologue/area/wild/room/9_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_6": "north",
+        "/chapter/prologue/area/wild/room/9_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_7": "west",
+        "/chapter/prologue/area/wild/room/9_7": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_6": "north",
+        "/chapter/prologue/area/wild/room/10_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_7": "east",
+        "/chapter/prologue/area/wild/room/11_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_6": "north",
+        "/chapter/prologue/area/wild/room/11_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_7": "east",
+        "/chapter/prologue/area/wild/room/12_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_6": "north",
+        "/chapter/prologue/area/wild/room/12_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_7": "east",
+        "/chapter/prologue/area/wild/room/13_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_6": "north",
+        "/chapter/prologue/area/wild/room/13_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_7": "east",
+        "/chapter/prologue/area/wild/room/14_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_6": "north",
+        "/chapter/prologue/area/wild/room/14_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_7": "east",
+        "/chapter/prologue/area/wild/room/15_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_6": "north",
+        "/chapter/prologue/area/wild/room/15_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_7": "east",
+        "/chapter/prologue/area/wild/room/16_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_6": "north",
+        "/chapter/prologue/area/wild/room/16_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_7": "east",
+        "/chapter/prologue/area/wild/room/17_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_6": "north",
+        "/chapter/prologue/area/wild/room/17_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_7": "east",
+        "/chapter/prologue/area/wild/room/18_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_6": "north",
+        "/chapter/prologue/area/wild/room/18_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_7": "east",
+        "/chapter/prologue/area/wild/room/19_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_6": "north",
+        "/chapter/prologue/area/wild/room/19_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_7": "east",
+        "/chapter/prologue/area/wild/room/20_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_6": "north",
+        "/chapter/prologue/area/wild/room/20_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_7": "east",
+        "/chapter/prologue/area/wild/room/21_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_6": "north",
+        "/chapter/prologue/area/wild/room/21_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_7": "east",
+        "/chapter/prologue/area/wild/room/22_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_6": "north",
+        "/chapter/prologue/area/wild/room/22_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_7": "east",
+        "/chapter/prologue/area/wild/room/23_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_6": "north",
+        "/chapter/prologue/area/wild/room/23_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_7": "east",
+        "/chapter/prologue/area/wild/room/24_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_6": "north",
+        "/chapter/prologue/area/wild/room/24_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_7": "east",
+        "/chapter/prologue/area/wild/room/25_7": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_6": "north",
+        "/chapter/prologue/area/wild/room/25_7": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_5": "north",
+        "/chapter/prologue/area/wild/room/1_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_6": "east",
+        "/chapter/prologue/area/wild/room/1_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_6": "east",
+        "/chapter/prologue/area/wild/room/2_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_5": "north",
+        "/chapter/prologue/area/wild/room/2_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_6": "east",
+        "/chapter/prologue/area/wild/room/3_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_5": "north",
+        "/chapter/prologue/area/wild/room/3_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_6": "east",
+        "/chapter/prologue/area/wild/room/4_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_5": "north",
+        "/chapter/prologue/area/wild/room/4_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_6": "east",
+        "/chapter/prologue/area/wild/room/5_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_5": "north",
+        "/chapter/prologue/area/wild/room/5_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_6": "east",
+        "/chapter/prologue/area/wild/room/6_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_5": "north",
+        "/chapter/prologue/area/wild/room/6_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_6": "east",
+        "/chapter/prologue/area/wild/room/7_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_5": "north",
+        "/chapter/prologue/area/wild/room/7_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_6": "east",
+        "/chapter/prologue/area/wild/room/8_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_5": "north",
+        "/chapter/prologue/area/wild/room/8_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_6": "east",
+        "/chapter/prologue/area/wild/room/9_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_5": "north",
+        "/chapter/prologue/area/wild/room/9_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_6": "west",
+        "/chapter/prologue/area/wild/room/9_6": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_5": "north",
+        "/chapter/prologue/area/wild/room/10_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_6": "east",
+        "/chapter/prologue/area/wild/room/11_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_5": "north",
+        "/chapter/prologue/area/wild/room/11_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_6": "east",
+        "/chapter/prologue/area/wild/room/12_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_5": "north",
+        "/chapter/prologue/area/wild/room/12_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_6": "east",
+        "/chapter/prologue/area/wild/room/13_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_5": "north",
+        "/chapter/prologue/area/wild/room/13_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_6": "east",
+        "/chapter/prologue/area/wild/room/14_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_5": "north",
+        "/chapter/prologue/area/wild/room/14_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_6": "east",
+        "/chapter/prologue/area/wild/room/15_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_5": "north",
+        "/chapter/prologue/area/wild/room/15_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_6": "east",
+        "/chapter/prologue/area/wild/room/16_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_5": "north",
+        "/chapter/prologue/area/wild/room/16_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_6": "east",
+        "/chapter/prologue/area/wild/room/17_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_5": "north",
+        "/chapter/prologue/area/wild/room/17_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_6": "east",
+        "/chapter/prologue/area/wild/room/18_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_5": "north",
+        "/chapter/prologue/area/wild/room/18_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_6": "east",
+        "/chapter/prologue/area/wild/room/19_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_5": "north",
+        "/chapter/prologue/area/wild/room/19_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_6": "east",
+        "/chapter/prologue/area/wild/room/20_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_5": "north",
+        "/chapter/prologue/area/wild/room/20_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_6": "east",
+        "/chapter/prologue/area/wild/room/21_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_5": "north",
+        "/chapter/prologue/area/wild/room/21_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_6": "east",
+        "/chapter/prologue/area/wild/room/22_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_5": "north",
+        "/chapter/prologue/area/wild/room/22_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_6": "east",
+        "/chapter/prologue/area/wild/room/23_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_5": "north",
+        "/chapter/prologue/area/wild/room/23_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_6": "east",
+        "/chapter/prologue/area/wild/room/24_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_5": "north",
+        "/chapter/prologue/area/wild/room/24_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_6": "east",
+        "/chapter/prologue/area/wild/room/25_6": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_5": "north",
+        "/chapter/prologue/area/wild/room/25_6": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_4": "north",
+        "/chapter/prologue/area/wild/room/1_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_5": "east",
+        "/chapter/prologue/area/wild/room/1_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_5": "east",
+        "/chapter/prologue/area/wild/room/2_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_4": "north",
+        "/chapter/prologue/area/wild/room/2_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_5": "east",
+        "/chapter/prologue/area/wild/room/3_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_4": "north",
+        "/chapter/prologue/area/wild/room/3_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_5": "east",
+        "/chapter/prologue/area/wild/room/4_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_4": "north",
+        "/chapter/prologue/area/wild/room/4_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_5": "east",
+        "/chapter/prologue/area/wild/room/5_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_4": "north",
+        "/chapter/prologue/area/wild/room/5_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_5": "east",
+        "/chapter/prologue/area/wild/room/6_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_4": "north",
+        "/chapter/prologue/area/wild/room/6_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_5": "east",
+        "/chapter/prologue/area/wild/room/7_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_4": "north",
+        "/chapter/prologue/area/wild/room/7_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_5": "east",
+        "/chapter/prologue/area/wild/room/8_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_4": "north",
+        "/chapter/prologue/area/wild/room/8_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_5": "east",
+        "/chapter/prologue/area/wild/room/9_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_4": "north",
+        "/chapter/prologue/area/wild/room/9_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_5": "west",
+        "/chapter/prologue/area/wild/room/9_5": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_4": "north",
+        "/chapter/prologue/area/wild/room/10_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_5": "east",
+        "/chapter/prologue/area/wild/room/11_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_4": "north",
+        "/chapter/prologue/area/wild/room/11_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_5": "east",
+        "/chapter/prologue/area/wild/room/12_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_4": "north",
+        "/chapter/prologue/area/wild/room/12_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_5": "east",
+        "/chapter/prologue/area/wild/room/13_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_4": "north",
+        "/chapter/prologue/area/wild/room/13_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_5": "east",
+        "/chapter/prologue/area/wild/room/14_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_4": "north",
+        "/chapter/prologue/area/wild/room/14_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_5": "east",
+        "/chapter/prologue/area/wild/room/15_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_4": "north",
+        "/chapter/prologue/area/wild/room/15_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_5": "east",
+        "/chapter/prologue/area/wild/room/16_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_4": "north",
+        "/chapter/prologue/area/wild/room/16_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_5": "east",
+        "/chapter/prologue/area/wild/room/17_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_4": "north",
+        "/chapter/prologue/area/wild/room/17_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_5": "east",
+        "/chapter/prologue/area/wild/room/18_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_4": "north",
+        "/chapter/prologue/area/wild/room/18_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_5": "east",
+        "/chapter/prologue/area/wild/room/19_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_4": "north",
+        "/chapter/prologue/area/wild/room/19_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_5": "east",
+        "/chapter/prologue/area/wild/room/20_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_4": "north",
+        "/chapter/prologue/area/wild/room/20_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_5": "east",
+        "/chapter/prologue/area/wild/room/21_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_4": "north",
+        "/chapter/prologue/area/wild/room/21_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_5": "east",
+        "/chapter/prologue/area/wild/room/22_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_4": "north",
+        "/chapter/prologue/area/wild/room/22_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_5": "east",
+        "/chapter/prologue/area/wild/room/23_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_4": "north",
+        "/chapter/prologue/area/wild/room/23_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_5": "east",
+        "/chapter/prologue/area/wild/room/24_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_4": "north",
+        "/chapter/prologue/area/wild/room/24_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_5": "east",
+        "/chapter/prologue/area/wild/room/25_5": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_4": "north",
+        "/chapter/prologue/area/wild/room/25_5": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_3": "north",
+        "/chapter/prologue/area/wild/room/1_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_4": "east",
+        "/chapter/prologue/area/wild/room/1_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_4": "east",
+        "/chapter/prologue/area/wild/room/2_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_3": "north",
+        "/chapter/prologue/area/wild/room/2_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_4": "east",
+        "/chapter/prologue/area/wild/room/3_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_3": "north",
+        "/chapter/prologue/area/wild/room/3_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_4": "east",
+        "/chapter/prologue/area/wild/room/4_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_3": "north",
+        "/chapter/prologue/area/wild/room/4_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_4": "east",
+        "/chapter/prologue/area/wild/room/5_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_3": "north",
+        "/chapter/prologue/area/wild/room/5_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_4": "east",
+        "/chapter/prologue/area/wild/room/6_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_3": "north",
+        "/chapter/prologue/area/wild/room/6_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_4": "east",
+        "/chapter/prologue/area/wild/room/7_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_3": "north",
+        "/chapter/prologue/area/wild/room/7_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_4": "east",
+        "/chapter/prologue/area/wild/room/8_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_3": "north",
+        "/chapter/prologue/area/wild/room/8_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_4": "east",
+        "/chapter/prologue/area/wild/room/9_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_3": "north",
+        "/chapter/prologue/area/wild/room/9_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_4": "west",
+        "/chapter/prologue/area/wild/room/9_4": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_3": "north",
+        "/chapter/prologue/area/wild/room/10_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_4": "east",
+        "/chapter/prologue/area/wild/room/11_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_3": "north",
+        "/chapter/prologue/area/wild/room/11_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_4": "east",
+        "/chapter/prologue/area/wild/room/12_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_3": "north",
+        "/chapter/prologue/area/wild/room/12_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_4": "east",
+        "/chapter/prologue/area/wild/room/13_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_3": "north",
+        "/chapter/prologue/area/wild/room/13_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_4": "east",
+        "/chapter/prologue/area/wild/room/14_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_3": "north",
+        "/chapter/prologue/area/wild/room/14_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_4": "east",
+        "/chapter/prologue/area/wild/room/15_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_3": "north",
+        "/chapter/prologue/area/wild/room/15_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_4": "east",
+        "/chapter/prologue/area/wild/room/16_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_3": "north",
+        "/chapter/prologue/area/wild/room/16_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_4": "east",
+        "/chapter/prologue/area/wild/room/17_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_3": "north",
+        "/chapter/prologue/area/wild/room/17_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_4": "east",
+        "/chapter/prologue/area/wild/room/18_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_3": "north",
+        "/chapter/prologue/area/wild/room/18_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_4": "east",
+        "/chapter/prologue/area/wild/room/19_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_3": "north",
+        "/chapter/prologue/area/wild/room/19_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_4": "east",
+        "/chapter/prologue/area/wild/room/20_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_3": "north",
+        "/chapter/prologue/area/wild/room/20_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_4": "east",
+        "/chapter/prologue/area/wild/room/21_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_3": "north",
+        "/chapter/prologue/area/wild/room/21_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_4": "east",
+        "/chapter/prologue/area/wild/room/22_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_3": "north",
+        "/chapter/prologue/area/wild/room/22_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_4": "east",
+        "/chapter/prologue/area/wild/room/23_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_3": "north",
+        "/chapter/prologue/area/wild/room/23_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_4": "east",
+        "/chapter/prologue/area/wild/room/24_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_3": "north",
+        "/chapter/prologue/area/wild/room/24_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_4": "east",
+        "/chapter/prologue/area/wild/room/25_4": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_3": "north",
+        "/chapter/prologue/area/wild/room/25_4": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_2": "north",
+        "/chapter/prologue/area/wild/room/1_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_3": "east",
+        "/chapter/prologue/area/wild/room/1_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_3": "east",
+        "/chapter/prologue/area/wild/room/2_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_2": "north",
+        "/chapter/prologue/area/wild/room/2_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_3": "east",
+        "/chapter/prologue/area/wild/room/3_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_2": "north",
+        "/chapter/prologue/area/wild/room/3_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_3": "east",
+        "/chapter/prologue/area/wild/room/4_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_2": "north",
+        "/chapter/prologue/area/wild/room/4_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_3": "east",
+        "/chapter/prologue/area/wild/room/5_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_2": "north",
+        "/chapter/prologue/area/wild/room/5_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_3": "east",
+        "/chapter/prologue/area/wild/room/6_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_2": "north",
+        "/chapter/prologue/area/wild/room/6_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_3": "east",
+        "/chapter/prologue/area/wild/room/7_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_2": "north",
+        "/chapter/prologue/area/wild/room/7_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_3": "east",
+        "/chapter/prologue/area/wild/room/8_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_2": "north",
+        "/chapter/prologue/area/wild/room/8_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_3": "east",
+        "/chapter/prologue/area/wild/room/9_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_2": "north",
+        "/chapter/prologue/area/wild/room/9_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_3": "west",
+        "/chapter/prologue/area/wild/room/9_3": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_2": "north",
+        "/chapter/prologue/area/wild/room/10_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_3": "east",
+        "/chapter/prologue/area/wild/room/11_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_2": "north",
+        "/chapter/prologue/area/wild/room/11_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_3": "east",
+        "/chapter/prologue/area/wild/room/12_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_2": "north",
+        "/chapter/prologue/area/wild/room/12_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_3": "east",
+        "/chapter/prologue/area/wild/room/13_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_2": "north",
+        "/chapter/prologue/area/wild/room/13_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_3": "east",
+        "/chapter/prologue/area/wild/room/14_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_2": "north",
+        "/chapter/prologue/area/wild/room/14_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_3": "east",
+        "/chapter/prologue/area/wild/room/15_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_2": "north",
+        "/chapter/prologue/area/wild/room/15_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_3": "east",
+        "/chapter/prologue/area/wild/room/16_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_2": "north",
+        "/chapter/prologue/area/wild/room/16_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_3": "east",
+        "/chapter/prologue/area/wild/room/17_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_2": "north",
+        "/chapter/prologue/area/wild/room/17_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_3": "east",
+        "/chapter/prologue/area/wild/room/18_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_2": "north",
+        "/chapter/prologue/area/wild/room/18_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_3": "east",
+        "/chapter/prologue/area/wild/room/19_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_2": "north",
+        "/chapter/prologue/area/wild/room/19_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_3": "east",
+        "/chapter/prologue/area/wild/room/20_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_2": "north",
+        "/chapter/prologue/area/wild/room/20_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_3": "east",
+        "/chapter/prologue/area/wild/room/21_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_2": "north",
+        "/chapter/prologue/area/wild/room/21_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_3": "east",
+        "/chapter/prologue/area/wild/room/22_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_2": "north",
+        "/chapter/prologue/area/wild/room/22_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_3": "east",
+        "/chapter/prologue/area/wild/room/23_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_2": "north",
+        "/chapter/prologue/area/wild/room/23_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_3": "east",
+        "/chapter/prologue/area/wild/room/24_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_2": "north",
+        "/chapter/prologue/area/wild/room/24_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_3": "east",
+        "/chapter/prologue/area/wild/room/25_3": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_2": "north",
+        "/chapter/prologue/area/wild/room/25_3": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_1": "north",
+        "/chapter/prologue/area/wild/room/1_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_2": "east",
+        "/chapter/prologue/area/wild/room/1_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_2": "east",
+        "/chapter/prologue/area/wild/room/2_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_1": "north",
+        "/chapter/prologue/area/wild/room/2_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_2": "east",
+        "/chapter/prologue/area/wild/room/3_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_1": "north",
+        "/chapter/prologue/area/wild/room/3_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_2": "east",
+        "/chapter/prologue/area/wild/room/4_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_1": "north",
+        "/chapter/prologue/area/wild/room/4_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_2": "east",
+        "/chapter/prologue/area/wild/room/5_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_1": "north",
+        "/chapter/prologue/area/wild/room/5_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_2": "east",
+        "/chapter/prologue/area/wild/room/6_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_1": "north",
+        "/chapter/prologue/area/wild/room/6_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_2": "east",
+        "/chapter/prologue/area/wild/room/7_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_1": "north",
+        "/chapter/prologue/area/wild/room/7_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_2": "east",
+        "/chapter/prologue/area/wild/room/8_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_1": "north",
+        "/chapter/prologue/area/wild/room/8_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_2": "east",
+        "/chapter/prologue/area/wild/room/9_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_1": "north",
+        "/chapter/prologue/area/wild/room/9_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_2": "west",
+        "/chapter/prologue/area/wild/room/9_2": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_1": "north",
+        "/chapter/prologue/area/wild/room/10_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_2": "east",
+        "/chapter/prologue/area/wild/room/11_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_1": "north",
+        "/chapter/prologue/area/wild/room/11_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_2": "east",
+        "/chapter/prologue/area/wild/room/12_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_1": "north",
+        "/chapter/prologue/area/wild/room/12_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_2": "east",
+        "/chapter/prologue/area/wild/room/13_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_1": "north",
+        "/chapter/prologue/area/wild/room/13_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_2": "east",
+        "/chapter/prologue/area/wild/room/14_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_1": "north",
+        "/chapter/prologue/area/wild/room/14_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_2": "east",
+        "/chapter/prologue/area/wild/room/15_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_1": "north",
+        "/chapter/prologue/area/wild/room/15_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_2": "east",
+        "/chapter/prologue/area/wild/room/16_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_1": "north",
+        "/chapter/prologue/area/wild/room/16_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_2": "east",
+        "/chapter/prologue/area/wild/room/17_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_1": "north",
+        "/chapter/prologue/area/wild/room/17_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_2": "east",
+        "/chapter/prologue/area/wild/room/18_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_1": "north",
+        "/chapter/prologue/area/wild/room/18_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_2": "east",
+        "/chapter/prologue/area/wild/room/19_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_1": "north",
+        "/chapter/prologue/area/wild/room/19_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_2": "east",
+        "/chapter/prologue/area/wild/room/20_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_1": "north",
+        "/chapter/prologue/area/wild/room/20_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_2": "east",
+        "/chapter/prologue/area/wild/room/21_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_1": "north",
+        "/chapter/prologue/area/wild/room/21_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_2": "east",
+        "/chapter/prologue/area/wild/room/22_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_1": "north",
+        "/chapter/prologue/area/wild/room/22_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_2": "east",
+        "/chapter/prologue/area/wild/room/23_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_1": "north",
+        "/chapter/prologue/area/wild/room/23_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_2": "east",
+        "/chapter/prologue/area/wild/room/24_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_1": "north",
+        "/chapter/prologue/area/wild/room/24_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_2": "east",
+        "/chapter/prologue/area/wild/room/25_2": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_1": "north",
+        "/chapter/prologue/area/wild/room/25_2": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_0": "north",
+        "/chapter/prologue/area/wild/room/1_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/0_1": "east",
+        "/chapter/prologue/area/wild/room/1_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/1_1": "east",
+        "/chapter/prologue/area/wild/room/2_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_0": "north",
+        "/chapter/prologue/area/wild/room/2_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/2_1": "east",
+        "/chapter/prologue/area/wild/room/3_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_0": "north",
+        "/chapter/prologue/area/wild/room/3_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/3_1": "east",
+        "/chapter/prologue/area/wild/room/4_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_0": "north",
+        "/chapter/prologue/area/wild/room/4_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/4_1": "east",
+        "/chapter/prologue/area/wild/room/5_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_0": "north",
+        "/chapter/prologue/area/wild/room/5_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/5_1": "east",
+        "/chapter/prologue/area/wild/room/6_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_0": "north",
+        "/chapter/prologue/area/wild/room/6_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/6_1": "east",
+        "/chapter/prologue/area/wild/room/7_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_0": "north",
+        "/chapter/prologue/area/wild/room/7_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/7_1": "east",
+        "/chapter/prologue/area/wild/room/8_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_0": "north",
+        "/chapter/prologue/area/wild/room/8_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/8_1": "east",
+        "/chapter/prologue/area/wild/room/9_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/9_0": "north",
+        "/chapter/prologue/area/wild/room/9_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_1": "west",
+        "/chapter/prologue/area/wild/room/9_1": "east"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_0": "north",
+        "/chapter/prologue/area/wild/room/10_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/10_1": "east",
+        "/chapter/prologue/area/wild/room/11_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_0": "north",
+        "/chapter/prologue/area/wild/room/11_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/11_1": "east",
+        "/chapter/prologue/area/wild/room/12_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_0": "north",
+        "/chapter/prologue/area/wild/room/12_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/12_1": "east",
+        "/chapter/prologue/area/wild/room/13_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_0": "north",
+        "/chapter/prologue/area/wild/room/13_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/13_1": "east",
+        "/chapter/prologue/area/wild/room/14_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_0": "north",
+        "/chapter/prologue/area/wild/room/14_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/14_1": "east",
+        "/chapter/prologue/area/wild/room/15_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_0": "north",
+        "/chapter/prologue/area/wild/room/15_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/15_1": "east",
+        "/chapter/prologue/area/wild/room/16_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_0": "north",
+        "/chapter/prologue/area/wild/room/16_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/16_1": "east",
+        "/chapter/prologue/area/wild/room/17_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_0": "north",
+        "/chapter/prologue/area/wild/room/17_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/17_1": "east",
+        "/chapter/prologue/area/wild/room/18_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_0": "north",
+        "/chapter/prologue/area/wild/room/18_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/18_1": "east",
+        "/chapter/prologue/area/wild/room/19_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_0": "north",
+        "/chapter/prologue/area/wild/room/19_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/19_1": "east",
+        "/chapter/prologue/area/wild/room/20_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_0": "north",
+        "/chapter/prologue/area/wild/room/20_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/20_1": "east",
+        "/chapter/prologue/area/wild/room/21_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_0": "north",
+        "/chapter/prologue/area/wild/room/21_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/21_1": "east",
+        "/chapter/prologue/area/wild/room/22_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_0": "north",
+        "/chapter/prologue/area/wild/room/22_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/22_1": "east",
+        "/chapter/prologue/area/wild/room/23_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_0": "north",
+        "/chapter/prologue/area/wild/room/23_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/23_1": "east",
+        "/chapter/prologue/area/wild/room/24_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_0": "north",
+        "/chapter/prologue/area/wild/room/24_1": "south"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/24_1": "east",
+        "/chapter/prologue/area/wild/room/25_1": "west"
+      }
+    },
+    {
+      "link": {
+        "/chapter/prologue/area/wild/room/25_0": "north",
+        "/chapter/prologue/area/wild/room/25_1": "south"
+      }
+    }
+  ]
+}

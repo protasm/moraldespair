@@ -934,6 +934,7 @@ object resolve_destination(string destination_id) {
   object room_data_daemon;
   mapping resolved_spec;
   string virtual_path;
+  string custom_path;
 
   if (!stringp(destination_id) || destination_id == "")
     return 0;
@@ -953,16 +954,32 @@ object resolve_destination(string destination_id) {
     if (!objectp(room_data_daemon))
       room_data_daemon = load_object("/daemon/room_data_d");
 
-    if (objectp(room_data_daemon))
-      resolved_spec = room_data_daemon->virtual_spec(destination_id);
+    resolved_spec = 0;
+
+    if (objectp(room_data_daemon)) {
+      if (function_exists("resolve_room_request", room_data_daemon))
+        resolved_spec = room_data_daemon->resolve_room_request(destination_id);
+
+      if (!mapp(resolved_spec))
+        resolved_spec = room_data_daemon->virtual_spec(destination_id);
+    }
 
     if (mapp(resolved_spec)) {
+      custom_path = resolved_spec["custom_path"];
+
+      if (stringp(custom_path) && custom_path != "") {
+        catch(env = load_object(custom_path));
+
+        if (objectp(env))
+          return env;
+      }
+
       virtual_path = resolved_spec["path"];
 
       if (stringp(virtual_path) && virtual_path != "")
         catch(
-          env = "/chapter/prologue/std/vmaster"->compile_object(
-            "area_room#" + virtual_path
+          env = "/daemon/vroom_d"->compile_object(
+            "vroom#" + virtual_path
           )
         );
     }
@@ -972,8 +989,23 @@ object resolve_destination(string destination_id) {
 }
 
 void show_resolution_debug(object actor, string text) {
+  int is_wizard_user;
+
   if (!objectp(actor) || !stringp(text))
     return;
+
+  is_wizard_user = 0;
+
+  if (wizardp(actor))
+    is_wizard_user = 1;
+  else if (function_exists("is_wizard", actor) && actor->is_wizard())
+    is_wizard_user = 1;
+
+  if (!is_wizard_user)
+    return;
+
+  tell_object(actor, "[virtual-debug] link " + text + "\n");
+  write_file("/log/virtual_room_debug", ctime(time()) + " link " + text + "\n");
 
   return;
 }

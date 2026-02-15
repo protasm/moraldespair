@@ -1,0 +1,5956 @@
+{
+  "source_dir": "/chapter/prologue/area/wild/room",
+  "rooms": [
+    {
+      "id": "1_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "1_0",
+        "south": "1_-2",
+        "west": "0_-1",
+        "east": "2_-1"
+      }
+    },
+    {
+      "id": "2_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "2_0",
+        "south": "2_-2",
+        "west": "1_-1",
+        "east": "3_-1"
+      }
+    },
+    {
+      "id": "3_-1",
+      "terrain": "h",
+      "exits": {
+        "north": "3_0",
+        "south": "3_-2",
+        "west": "2_-1",
+        "east": "4_-1"
+      }
+    },
+    {
+      "id": "4_-1",
+      "terrain": "h",
+      "exits": {
+        "north": "4_0",
+        "south": "4_-2",
+        "west": "3_-1",
+        "east": "5_-1"
+      }
+    },
+    {
+      "id": "5_-1",
+      "terrain": "h",
+      "exits": {
+        "north": "5_0",
+        "south": "5_-2",
+        "west": "4_-1",
+        "east": "6_-1"
+      }
+    },
+    {
+      "id": "6_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "6_0",
+        "south": "6_-2",
+        "west": "5_-1",
+        "east": "7_-1"
+      }
+    },
+    {
+      "id": "7_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "7_0",
+        "south": "7_-2",
+        "west": "6_-1",
+        "east": "8_-1"
+      }
+    },
+    {
+      "id": "8_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "8_0",
+        "south": "8_-2",
+        "west": "7_-1",
+        "east": "9_-1"
+      }
+    },
+    {
+      "id": "9_-1",
+      "terrain": "b",
+      "exits": {
+        "north": "9_0",
+        "south": "9_-2",
+        "west": "8_-1",
+        "east": "10_-1"
+      }
+    },
+    {
+      "id": "10_-1",
+      "terrain": "b",
+      "exits": {
+        "north": "10_0",
+        "south": "10_-2",
+        "west": "9_-1",
+        "east": "11_-1"
+      }
+    },
+    {
+      "id": "11_-1",
+      "terrain": "b",
+      "exits": {
+        "north": "11_0",
+        "south": "11_-2",
+        "west": "10_-1",
+        "east": "12_-1"
+      }
+    },
+    {
+      "id": "12_-1",
+      "terrain": "b",
+      "exits": {
+        "north": "12_0",
+        "south": "12_-2",
+        "west": "11_-1",
+        "east": "13_-1"
+      }
+    },
+    {
+      "id": "13_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "13_0",
+        "south": "13_-2",
+        "west": "12_-1",
+        "east": "14_-1"
+      }
+    },
+    {
+      "id": "14_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "14_0",
+        "south": "14_-2",
+        "west": "13_-1",
+        "east": "15_-1"
+      }
+    },
+    {
+      "id": "15_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "15_0",
+        "south": "15_-2",
+        "west": "14_-1",
+        "east": "16_-1"
+      }
+    },
+    {
+      "id": "16_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "16_0",
+        "south": "16_-2",
+        "west": "15_-1",
+        "east": "17_-1"
+      }
+    },
+    {
+      "id": "17_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "17_0",
+        "south": "17_-2",
+        "west": "16_-1",
+        "east": "18_-1"
+      }
+    },
+    {
+      "id": "18_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "18_0",
+        "south": "18_-2",
+        "west": "17_-1",
+        "east": "19_-1"
+      }
+    },
+    {
+      "id": "19_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "19_0",
+        "south": "19_-2",
+        "west": "18_-1",
+        "east": "20_-1"
+      }
+    },
+    {
+      "id": "20_-1",
+      "terrain": "p",
+      "exits": {
+        "north": "20_0",
+        "south": "20_-2",
+        "west": "19_-1",
+        "east": "21_-1"
+      }
+    },
+    {
+      "id": "21_-1",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_0",
+        "south": "21_-2",
+        "west": "20_-1",
+        "east": "22_-1"
+      }
+    },
+    {
+      "id": "22_-1",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_0",
+        "south": "22_-2",
+        "west": "21_-1",
+        "east": "23_-1"
+      }
+    },
+    {
+      "id": "23_-1",
+      "terrain": "j",
+      "exits": {
+        "north": "23_0",
+        "south": "23_-2",
+        "west": "22_-1",
+        "east": "24_-1"
+      }
+    },
+    {
+      "id": "24_-1",
+      "terrain": "j",
+      "exits": {
+        "north": "24_0",
+        "south": "24_-2",
+        "west": "23_-1",
+        "east": "25_-1"
+      }
+    },
+    {
+      "id": "25_-1",
+      "terrain": "j",
+      "exits": {
+        "north": "25_0",
+        "south": "25_-2",
+        "west": "24_-1"
+      }
+    },
+    {
+      "id": "1_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-1",
+        "south": "1_-3",
+        "west": "0_-2",
+        "east": "2_-2"
+      }
+    },
+    {
+      "id": "2_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-1",
+        "south": "2_-3",
+        "west": "1_-2",
+        "east": "3_-2"
+      }
+    },
+    {
+      "id": "3_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "3_-1",
+        "south": "3_-3",
+        "west": "2_-2",
+        "east": "4_-2"
+      }
+    },
+    {
+      "id": "4_-2",
+      "terrain": "h",
+      "exits": {
+        "north": "4_-1",
+        "south": "4_-3",
+        "west": "3_-2",
+        "east": "5_-2"
+      }
+    },
+    {
+      "id": "5_-2",
+      "terrain": "h",
+      "exits": {
+        "north": "5_-1",
+        "south": "5_-3",
+        "west": "4_-2",
+        "east": "6_-2"
+      }
+    },
+    {
+      "id": "6_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "6_-1",
+        "south": "6_-3",
+        "west": "5_-2",
+        "east": "7_-2"
+      }
+    },
+    {
+      "id": "7_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "7_-1",
+        "south": "7_-3",
+        "west": "6_-2",
+        "east": "8_-2"
+      }
+    },
+    {
+      "id": "8_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "8_-1",
+        "south": "8_-3",
+        "west": "7_-2",
+        "east": "9_-2"
+      }
+    },
+    {
+      "id": "9_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "9_-1",
+        "south": "9_-3",
+        "west": "8_-2",
+        "east": "10_-2"
+      }
+    },
+    {
+      "id": "10_-2",
+      "terrain": "b",
+      "exits": {
+        "north": "10_-1",
+        "south": "10_-3",
+        "west": "9_-2",
+        "east": "11_-2"
+      }
+    },
+    {
+      "id": "11_-2",
+      "terrain": "b",
+      "exits": {
+        "north": "11_-1",
+        "south": "11_-3",
+        "west": "10_-2",
+        "east": "12_-2"
+      }
+    },
+    {
+      "id": "12_-2",
+      "terrain": "b",
+      "exits": {
+        "north": "12_-1",
+        "south": "12_-3",
+        "west": "11_-2",
+        "east": "13_-2"
+      }
+    },
+    {
+      "id": "13_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "13_-1",
+        "south": "13_-3",
+        "west": "12_-2",
+        "east": "14_-2"
+      }
+    },
+    {
+      "id": "14_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "14_-1",
+        "south": "14_-3",
+        "west": "13_-2",
+        "east": "15_-2"
+      }
+    },
+    {
+      "id": "15_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "15_-1",
+        "south": "15_-3",
+        "west": "14_-2",
+        "east": "16_-2"
+      }
+    },
+    {
+      "id": "16_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "16_-1",
+        "south": "16_-3",
+        "west": "15_-2",
+        "east": "17_-2"
+      }
+    },
+    {
+      "id": "17_-2",
+      "terrain": "Pylus",
+      "exits": {
+        "north": "17_-1",
+        "south": "17_-3",
+        "west": "16_-2",
+        "east": "18_-2"
+      }
+    },
+    {
+      "id": "18_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "18_-1",
+        "south": "18_-3",
+        "west": "17_-2",
+        "east": "19_-2"
+      }
+    },
+    {
+      "id": "19_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "19_-1",
+        "south": "19_-3",
+        "west": "18_-2",
+        "east": "20_-2"
+      }
+    },
+    {
+      "id": "20_-2",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-1",
+        "south": "20_-3",
+        "west": "19_-2",
+        "east": "21_-2"
+      }
+    },
+    {
+      "id": "21_-2",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-1",
+        "south": "21_-3",
+        "west": "20_-2",
+        "east": "22_-2"
+      }
+    },
+    {
+      "id": "22_-2",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-1",
+        "south": "22_-3",
+        "west": "21_-2",
+        "east": "23_-2"
+      }
+    },
+    {
+      "id": "23_-2",
+      "terrain": "s",
+      "exits": {
+        "north": "23_-1",
+        "south": "23_-3",
+        "west": "22_-2",
+        "east": "24_-2"
+      }
+    },
+    {
+      "id": "24_-2",
+      "terrain": "s",
+      "exits": {
+        "north": "24_-1",
+        "south": "24_-3",
+        "west": "23_-2",
+        "east": "25_-2"
+      }
+    },
+    {
+      "id": "25_-2",
+      "terrain": "s",
+      "exits": {
+        "north": "25_-1",
+        "south": "25_-3",
+        "west": "24_-2"
+      }
+    },
+    {
+      "id": "1_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-2",
+        "south": "1_-4",
+        "west": "0_-3",
+        "east": "2_-3"
+      }
+    },
+    {
+      "id": "2_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-2",
+        "south": "2_-4",
+        "west": "1_-3",
+        "east": "3_-3"
+      }
+    },
+    {
+      "id": "3_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "3_-2",
+        "south": "3_-4",
+        "west": "2_-3",
+        "east": "4_-3"
+      }
+    },
+    {
+      "id": "4_-3",
+      "terrain": "h",
+      "exits": {
+        "north": "4_-2",
+        "south": "4_-4",
+        "west": "3_-3",
+        "east": "5_-3"
+      }
+    },
+    {
+      "id": "5_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "5_-2",
+        "south": "5_-4",
+        "west": "4_-3",
+        "east": "6_-3"
+      }
+    },
+    {
+      "id": "6_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "6_-2",
+        "south": "6_-4",
+        "west": "5_-3",
+        "east": "7_-3"
+      }
+    },
+    {
+      "id": "7_-3",
+      "terrain": "b",
+      "exits": {
+        "north": "7_-2",
+        "south": "7_-4",
+        "west": "6_-3",
+        "east": "8_-3"
+      }
+    },
+    {
+      "id": "8_-3",
+      "terrain": "b",
+      "exits": {
+        "north": "8_-2",
+        "south": "8_-4",
+        "west": "7_-3",
+        "east": "9_-3"
+      }
+    },
+    {
+      "id": "9_-3",
+      "terrain": "b",
+      "exits": {
+        "north": "9_-2",
+        "south": "9_-4",
+        "west": "8_-3",
+        "east": "10_-3"
+      }
+    },
+    {
+      "id": "10_-3",
+      "terrain": "b",
+      "exits": {
+        "north": "10_-2",
+        "south": "10_-4",
+        "west": "9_-3",
+        "east": "11_-3"
+      }
+    },
+    {
+      "id": "11_-3",
+      "terrain": "b",
+      "exits": {
+        "north": "11_-2",
+        "south": "11_-4",
+        "west": "10_-3",
+        "east": "12_-3"
+      }
+    },
+    {
+      "id": "12_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "12_-2",
+        "south": "12_-4",
+        "west": "11_-3",
+        "east": "13_-3"
+      }
+    },
+    {
+      "id": "13_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "13_-2",
+        "south": "13_-4",
+        "west": "12_-3",
+        "east": "14_-3"
+      }
+    },
+    {
+      "id": "14_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "14_-2",
+        "south": "14_-4",
+        "west": "13_-3",
+        "east": "15_-3"
+      }
+    },
+    {
+      "id": "15_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "15_-2",
+        "south": "15_-4",
+        "west": "14_-3",
+        "east": "16_-3"
+      }
+    },
+    {
+      "id": "16_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "16_-2",
+        "south": "16_-4",
+        "west": "15_-3",
+        "east": "17_-3"
+      }
+    },
+    {
+      "id": "17_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "17_-2",
+        "south": "17_-4",
+        "west": "16_-3",
+        "east": "18_-3"
+      }
+    },
+    {
+      "id": "18_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "18_-2",
+        "south": "18_-4",
+        "west": "17_-3",
+        "east": "19_-3"
+      }
+    },
+    {
+      "id": "19_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "19_-2",
+        "south": "19_-4",
+        "west": "18_-3",
+        "east": "20_-3"
+      }
+    },
+    {
+      "id": "20_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-2",
+        "south": "20_-4",
+        "west": "19_-3",
+        "east": "21_-3"
+      }
+    },
+    {
+      "id": "21_-3",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-2",
+        "south": "21_-4",
+        "west": "20_-3",
+        "east": "22_-3"
+      }
+    },
+    {
+      "id": "22_-3",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-2",
+        "south": "22_-4",
+        "west": "21_-3",
+        "east": "23_-3"
+      }
+    },
+    {
+      "id": "23_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "23_-2",
+        "south": "23_-4",
+        "west": "22_-3",
+        "east": "24_-3"
+      }
+    },
+    {
+      "id": "24_-3",
+      "terrain": "s",
+      "exits": {
+        "north": "24_-2",
+        "south": "24_-4",
+        "west": "23_-3",
+        "east": "25_-3"
+      }
+    },
+    {
+      "id": "25_-3",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-2",
+        "south": "25_-4",
+        "west": "24_-3"
+      }
+    },
+    {
+      "id": "1_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-3",
+        "south": "1_-5",
+        "west": "0_-4",
+        "east": "2_-4"
+      }
+    },
+    {
+      "id": "2_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-3",
+        "south": "2_-5",
+        "west": "1_-4",
+        "east": "3_-4"
+      }
+    },
+    {
+      "id": "3_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "3_-3",
+        "south": "3_-5",
+        "west": "2_-4",
+        "east": "4_-4"
+      }
+    },
+    {
+      "id": "4_-4",
+      "terrain": "h",
+      "exits": {
+        "north": "4_-3",
+        "south": "4_-5",
+        "west": "3_-4",
+        "east": "5_-4"
+      }
+    },
+    {
+      "id": "5_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "5_-3",
+        "south": "5_-5",
+        "west": "4_-4",
+        "east": "6_-4"
+      }
+    },
+    {
+      "id": "6_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "6_-3",
+        "south": "6_-5",
+        "west": "5_-4",
+        "east": "7_-4"
+      }
+    },
+    {
+      "id": "7_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "7_-3",
+        "south": "7_-5",
+        "west": "6_-4",
+        "east": "8_-4"
+      }
+    },
+    {
+      "id": "8_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "8_-3",
+        "south": "8_-5",
+        "west": "7_-4",
+        "east": "9_-4"
+      }
+    },
+    {
+      "id": "9_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "9_-3",
+        "south": "9_-5",
+        "west": "8_-4",
+        "east": "10_-4"
+      }
+    },
+    {
+      "id": "10_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "10_-3",
+        "south": "10_-5",
+        "west": "9_-4",
+        "east": "11_-4"
+      }
+    },
+    {
+      "id": "11_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "11_-3",
+        "south": "11_-5",
+        "west": "10_-4",
+        "east": "12_-4"
+      }
+    },
+    {
+      "id": "12_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "12_-3",
+        "south": "12_-5",
+        "west": "11_-4",
+        "east": "13_-4"
+      }
+    },
+    {
+      "id": "13_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "13_-3",
+        "south": "13_-5",
+        "west": "12_-4",
+        "east": "14_-4"
+      }
+    },
+    {
+      "id": "14_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "14_-3",
+        "south": "14_-5",
+        "west": "13_-4",
+        "east": "15_-4"
+      }
+    },
+    {
+      "id": "15_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "15_-3",
+        "south": "15_-5",
+        "west": "14_-4",
+        "east": "16_-4"
+      }
+    },
+    {
+      "id": "16_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "16_-3",
+        "south": "16_-5",
+        "west": "15_-4",
+        "east": "17_-4"
+      }
+    },
+    {
+      "id": "17_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "17_-3",
+        "south": "17_-5",
+        "west": "16_-4",
+        "east": "18_-4"
+      }
+    },
+    {
+      "id": "18_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "18_-3",
+        "south": "18_-5",
+        "west": "17_-4",
+        "east": "19_-4"
+      }
+    },
+    {
+      "id": "19_-4",
+      "terrain": "foothills",
+      "exits": {
+        "north": "19_-3",
+        "south": "19_-5",
+        "west": "18_-4",
+        "east": "20_-4"
+      }
+    },
+    {
+      "id": "20_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-3",
+        "south": "20_-5",
+        "west": "19_-4",
+        "east": "21_-4"
+      }
+    },
+    {
+      "id": "21_-4",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-3",
+        "south": "21_-5",
+        "west": "20_-4",
+        "east": "22_-4"
+      }
+    },
+    {
+      "id": "22_-4",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-3",
+        "south": "22_-5",
+        "west": "21_-4",
+        "east": "23_-4"
+      }
+    },
+    {
+      "id": "23_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "23_-3",
+        "south": "23_-5",
+        "west": "22_-4",
+        "east": "24_-4"
+      }
+    },
+    {
+      "id": "24_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "24_-3",
+        "south": "24_-5",
+        "west": "23_-4",
+        "east": "25_-4"
+      }
+    },
+    {
+      "id": "25_-4",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-3",
+        "south": "25_-5",
+        "west": "24_-4"
+      }
+    },
+    {
+      "id": "1_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-4",
+        "south": "1_-6",
+        "west": "0_-5",
+        "east": "2_-5"
+      }
+    },
+    {
+      "id": "2_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-4",
+        "south": "2_-6",
+        "west": "1_-5",
+        "east": "3_-5"
+      }
+    },
+    {
+      "id": "3_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "3_-4",
+        "south": "3_-6",
+        "west": "2_-5",
+        "east": "4_-5"
+      }
+    },
+    {
+      "id": "4_-5",
+      "terrain": "h",
+      "exits": {
+        "north": "4_-4",
+        "south": "4_-6",
+        "west": "3_-5",
+        "east": "5_-5"
+      }
+    },
+    {
+      "id": "5_-5",
+      "terrain": "V Green",
+      "exits": {
+        "north": "5_-4",
+        "south": "5_-6",
+        "west": "4_-5",
+        "east": "6_-5"
+      }
+    },
+    {
+      "id": "6_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "6_-4",
+        "south": "6_-6",
+        "west": "5_-5",
+        "east": "7_-5"
+      }
+    },
+    {
+      "id": "7_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "7_-4",
+        "south": "7_-6",
+        "west": "6_-5",
+        "east": "8_-5"
+      }
+    },
+    {
+      "id": "8_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "8_-4",
+        "south": "8_-6",
+        "west": "7_-5",
+        "east": "9_-5"
+      }
+    },
+    {
+      "id": "9_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "9_-4",
+        "south": "9_-6",
+        "west": "8_-5",
+        "east": "10_-5"
+      }
+    },
+    {
+      "id": "10_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "10_-4",
+        "south": "10_-6",
+        "west": "9_-5",
+        "east": "11_-5"
+      }
+    },
+    {
+      "id": "11_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "11_-4",
+        "south": "11_-6",
+        "west": "10_-5",
+        "east": "12_-5"
+      }
+    },
+    {
+      "id": "12_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "12_-4",
+        "south": "12_-6",
+        "west": "11_-5",
+        "east": "13_-5"
+      }
+    },
+    {
+      "id": "13_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "13_-4",
+        "south": "13_-6",
+        "west": "12_-5",
+        "east": "14_-5"
+      }
+    },
+    {
+      "id": "14_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "14_-4",
+        "south": "14_-6",
+        "west": "13_-5",
+        "east": "15_-5"
+      }
+    },
+    {
+      "id": "15_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "15_-4",
+        "south": "15_-6",
+        "west": "14_-5",
+        "east": "16_-5"
+      }
+    },
+    {
+      "id": "16_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "16_-4",
+        "south": "16_-6",
+        "west": "15_-5",
+        "east": "17_-5"
+      }
+    },
+    {
+      "id": "17_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "17_-4",
+        "south": "17_-6",
+        "west": "16_-5",
+        "east": "18_-5"
+      }
+    },
+    {
+      "id": "18_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "18_-4",
+        "south": "18_-6",
+        "west": "17_-5",
+        "east": "19_-5"
+      }
+    },
+    {
+      "id": "19_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "19_-4",
+        "south": "19_-6",
+        "west": "18_-5",
+        "east": "20_-5"
+      }
+    },
+    {
+      "id": "20_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-4",
+        "south": "20_-6",
+        "west": "19_-5",
+        "east": "21_-5"
+      }
+    },
+    {
+      "id": "21_-5",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-4",
+        "south": "21_-6",
+        "west": "20_-5",
+        "east": "22_-5"
+      }
+    },
+    {
+      "id": "22_-5",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-4",
+        "south": "22_-6",
+        "west": "21_-5",
+        "east": "23_-5"
+      }
+    },
+    {
+      "id": "23_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "23_-4",
+        "south": "23_-6",
+        "west": "22_-5",
+        "east": "24_-5"
+      }
+    },
+    {
+      "id": "24_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "24_-4",
+        "south": "24_-6",
+        "west": "23_-5",
+        "east": "25_-5"
+      }
+    },
+    {
+      "id": "25_-5",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-4",
+        "south": "25_-6",
+        "west": "24_-5"
+      }
+    },
+    {
+      "id": "1_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-5",
+        "south": "1_-7",
+        "west": "0_-6",
+        "east": "2_-6"
+      }
+    },
+    {
+      "id": "2_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-5",
+        "south": "2_-7",
+        "west": "1_-6",
+        "east": "3_-6"
+      }
+    },
+    {
+      "id": "3_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "3_-5",
+        "south": "3_-7",
+        "west": "2_-6",
+        "east": "4_-6"
+      }
+    },
+    {
+      "id": "4_-6",
+      "terrain": "h",
+      "exits": {
+        "north": "4_-5",
+        "south": "4_-7",
+        "west": "3_-6",
+        "east": "5_-6"
+      }
+    },
+    {
+      "id": "5_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "5_-5",
+        "south": "5_-7",
+        "west": "4_-6",
+        "east": "6_-6"
+      }
+    },
+    {
+      "id": "6_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "6_-5",
+        "south": "6_-7",
+        "west": "5_-6",
+        "east": "7_-6"
+      }
+    },
+    {
+      "id": "7_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "7_-5",
+        "south": "7_-7",
+        "west": "6_-6",
+        "east": "8_-6"
+      }
+    },
+    {
+      "id": "8_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "8_-5",
+        "south": "8_-7",
+        "west": "7_-6",
+        "east": "9_-6"
+      }
+    },
+    {
+      "id": "9_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "9_-5",
+        "south": "9_-7",
+        "west": "8_-6",
+        "east": "10_-6"
+      }
+    },
+    {
+      "id": "10_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "10_-5",
+        "south": "10_-7",
+        "west": "9_-6",
+        "east": "11_-6"
+      }
+    },
+    {
+      "id": "11_-6",
+      "terrain": "lf",
+      "exits": {
+        "north": "11_-5",
+        "south": "11_-7",
+        "west": "10_-6",
+        "east": "12_-6"
+      }
+    },
+    {
+      "id": "12_-6",
+      "terrain": "lf",
+      "exits": {
+        "north": "12_-5",
+        "south": "12_-7",
+        "west": "11_-6",
+        "east": "13_-6"
+      }
+    },
+    {
+      "id": "13_-6",
+      "terrain": "lf",
+      "exits": {
+        "north": "13_-5",
+        "south": "13_-7",
+        "west": "12_-6",
+        "east": "14_-6"
+      }
+    },
+    {
+      "id": "14_-6",
+      "terrain": "f",
+      "exits": {
+        "north": "14_-5",
+        "south": "14_-7",
+        "west": "13_-6",
+        "east": "15_-6"
+      }
+    },
+    {
+      "id": "15_-6",
+      "terrain": "f",
+      "exits": {
+        "north": "15_-5",
+        "south": "15_-7",
+        "west": "14_-6",
+        "east": "16_-6"
+      }
+    },
+    {
+      "id": "16_-6",
+      "terrain": "f",
+      "exits": {
+        "north": "16_-5",
+        "south": "16_-7",
+        "west": "15_-6",
+        "east": "17_-6"
+      }
+    },
+    {
+      "id": "17_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "17_-5",
+        "south": "17_-7",
+        "west": "16_-6",
+        "east": "18_-6"
+      }
+    },
+    {
+      "id": "18_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "18_-5",
+        "south": "18_-7",
+        "west": "17_-6",
+        "east": "19_-6"
+      }
+    },
+    {
+      "id": "19_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "19_-5",
+        "south": "19_-7",
+        "west": "18_-6",
+        "east": "20_-6"
+      }
+    },
+    {
+      "id": "20_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-5",
+        "south": "20_-7",
+        "west": "19_-6",
+        "east": "21_-6"
+      }
+    },
+    {
+      "id": "21_-6",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-5",
+        "south": "21_-7",
+        "west": "20_-6",
+        "east": "22_-6"
+      }
+    },
+    {
+      "id": "22_-6",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-5",
+        "south": "22_-7",
+        "west": "21_-6",
+        "east": "23_-6"
+      }
+    },
+    {
+      "id": "23_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "23_-5",
+        "south": "23_-7",
+        "west": "22_-6",
+        "east": "24_-6"
+      }
+    },
+    {
+      "id": "24_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "24_-5",
+        "south": "24_-7",
+        "west": "23_-6",
+        "east": "25_-6"
+      }
+    },
+    {
+      "id": "25_-6",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-5",
+        "south": "25_-7",
+        "west": "24_-6"
+      }
+    },
+    {
+      "id": "1_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-6",
+        "south": "1_-8",
+        "west": "0_-7",
+        "east": "2_-7"
+      }
+    },
+    {
+      "id": "2_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-6",
+        "south": "2_-8",
+        "west": "1_-7",
+        "east": "3_-7"
+      }
+    },
+    {
+      "id": "3_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "3_-6",
+        "south": "3_-8",
+        "west": "2_-7",
+        "east": "4_-7"
+      }
+    },
+    {
+      "id": "4_-7",
+      "terrain": "lf",
+      "exits": {
+        "north": "4_-6",
+        "south": "4_-8",
+        "west": "3_-7",
+        "east": "5_-7"
+      }
+    },
+    {
+      "id": "5_-7",
+      "terrain": "lf",
+      "exits": {
+        "north": "5_-6",
+        "south": "5_-8",
+        "west": "4_-7",
+        "east": "6_-7"
+      }
+    },
+    {
+      "id": "6_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "6_-6",
+        "south": "6_-8",
+        "west": "5_-7",
+        "east": "7_-7"
+      }
+    },
+    {
+      "id": "7_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "7_-6",
+        "south": "7_-8",
+        "west": "6_-7",
+        "east": "8_-7"
+      }
+    },
+    {
+      "id": "8_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "8_-6",
+        "south": "8_-8",
+        "west": "7_-7",
+        "east": "9_-7"
+      }
+    },
+    {
+      "id": "9_-7",
+      "terrain": "f",
+      "exits": {
+        "north": "9_-6",
+        "south": "9_-8",
+        "west": "8_-7",
+        "east": "10_-7"
+      }
+    },
+    {
+      "id": "10_-7",
+      "terrain": "f",
+      "exits": {
+        "north": "10_-6",
+        "south": "10_-8",
+        "west": "9_-7",
+        "east": "11_-7"
+      }
+    },
+    {
+      "id": "11_-7",
+      "terrain": "lf",
+      "exits": {
+        "north": "11_-6",
+        "south": "11_-8",
+        "west": "10_-7",
+        "east": "12_-7"
+      }
+    },
+    {
+      "id": "12_-7",
+      "terrain": "f",
+      "exits": {
+        "north": "12_-6",
+        "south": "12_-8",
+        "west": "11_-7",
+        "east": "13_-7"
+      }
+    },
+    {
+      "id": "13_-7",
+      "terrain": "f",
+      "exits": {
+        "north": "13_-6",
+        "south": "13_-8",
+        "west": "12_-7",
+        "east": "14_-7"
+      }
+    },
+    {
+      "id": "14_-7",
+      "terrain": "f",
+      "exits": {
+        "north": "14_-6",
+        "south": "14_-8",
+        "west": "13_-7",
+        "east": "15_-7"
+      }
+    },
+    {
+      "id": "15_-7",
+      "terrain": "f",
+      "exits": {
+        "north": "15_-6",
+        "south": "15_-8",
+        "west": "14_-7",
+        "east": "16_-7"
+      }
+    },
+    {
+      "id": "16_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "16_-6",
+        "south": "16_-8",
+        "west": "15_-7",
+        "east": "17_-7"
+      }
+    },
+    {
+      "id": "17_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "17_-6",
+        "south": "17_-8",
+        "west": "16_-7",
+        "east": "18_-7"
+      }
+    },
+    {
+      "id": "18_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "18_-6",
+        "south": "18_-8",
+        "west": "17_-7",
+        "east": "19_-7"
+      }
+    },
+    {
+      "id": "19_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "19_-6",
+        "south": "19_-8",
+        "west": "18_-7",
+        "east": "20_-7"
+      }
+    },
+    {
+      "id": "20_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-6",
+        "south": "20_-8",
+        "west": "19_-7",
+        "east": "21_-7"
+      }
+    },
+    {
+      "id": "21_-7",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-6",
+        "south": "21_-8",
+        "west": "20_-7",
+        "east": "22_-7"
+      }
+    },
+    {
+      "id": "22_-7",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-6",
+        "south": "22_-8",
+        "west": "21_-7",
+        "east": "23_-7"
+      }
+    },
+    {
+      "id": "23_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "23_-6",
+        "south": "23_-8",
+        "west": "22_-7",
+        "east": "24_-7"
+      }
+    },
+    {
+      "id": "24_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "24_-6",
+        "south": "24_-8",
+        "west": "23_-7",
+        "east": "25_-7"
+      }
+    },
+    {
+      "id": "25_-7",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-6",
+        "south": "25_-8",
+        "west": "24_-7"
+      }
+    },
+    {
+      "id": "1_-8",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-7",
+        "south": "1_-9",
+        "west": "0_-8",
+        "east": "2_-8"
+      }
+    },
+    {
+      "id": "2_-8",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-7",
+        "south": "2_-9",
+        "west": "1_-8",
+        "east": "3_-8"
+      }
+    },
+    {
+      "id": "3_-8",
+      "terrain": "p",
+      "exits": {
+        "north": "3_-7",
+        "south": "3_-9",
+        "west": "2_-8",
+        "east": "4_-8"
+      }
+    },
+    {
+      "id": "4_-8",
+      "terrain": "lf",
+      "exits": {
+        "north": "4_-7",
+        "south": "4_-9",
+        "west": "3_-8",
+        "east": "5_-8"
+      }
+    },
+    {
+      "id": "5_-8",
+      "terrain": "lf",
+      "exits": {
+        "north": "5_-7",
+        "south": "5_-9",
+        "west": "4_-8",
+        "east": "6_-8"
+      }
+    },
+    {
+      "id": "6_-8",
+      "terrain": "lf",
+      "exits": {
+        "north": "6_-7",
+        "south": "6_-9",
+        "west": "5_-8",
+        "east": "7_-8"
+      }
+    },
+    {
+      "id": "7_-8",
+      "terrain": "f",
+      "exits": {
+        "north": "7_-7",
+        "south": "7_-9",
+        "west": "6_-8",
+        "east": "8_-8"
+      }
+    },
+    {
+      "id": "8_-8",
+      "terrain": "f",
+      "exits": {
+        "north": "8_-7",
+        "south": "8_-9",
+        "west": "7_-8",
+        "east": "9_-8"
+      }
+    },
+    {
+      "id": "9_-8",
+      "terrain": "f",
+      "exits": {
+        "north": "9_-7",
+        "south": "9_-9",
+        "west": "8_-8",
+        "east": "10_-8"
+      }
+    },
+    {
+      "id": "10_-8",
+      "terrain": "f",
+      "exits": {
+        "north": "10_-7",
+        "south": "10_-9",
+        "west": "9_-8",
+        "east": "11_-8"
+      }
+    },
+    {
+      "id": "11_-8",
+      "terrain": "lf",
+      "exits": {
+        "north": "11_-7",
+        "south": "11_-9",
+        "west": "10_-8",
+        "east": "12_-8"
+      }
+    },
+    {
+      "id": "12_-8",
+      "terrain": "f",
+      "exits": {
+        "north": "12_-7",
+        "south": "12_-9",
+        "west": "11_-8",
+        "east": "13_-8"
+      }
+    },
+    {
+      "id": "13_-8",
+      "terrain": "f",
+      "exits": {
+        "north": "13_-7",
+        "south": "13_-9",
+        "west": "12_-8",
+        "east": "14_-8"
+      }
+    },
+    {
+      "id": "14_-8",
+      "terrain": "f",
+      "exits": {
+        "north": "14_-7",
+        "south": "14_-9",
+        "west": "13_-8",
+        "east": "15_-8"
+      }
+    },
+    {
+      "id": "15_-8",
+      "terrain": "f",
+      "exits": {
+        "north": "15_-7",
+        "south": "15_-9",
+        "west": "14_-8",
+        "east": "16_-8"
+      }
+    },
+    {
+      "id": "16_-8",
+      "terrain": "lf",
+      "exits": {
+        "north": "16_-7",
+        "south": "16_-9",
+        "west": "15_-8",
+        "east": "17_-8"
+      }
+    },
+    {
+      "id": "17_-8",
+      "terrain": "p",
+      "exits": {
+        "north": "17_-7",
+        "south": "17_-9",
+        "west": "16_-8",
+        "east": "18_-8"
+      }
+    },
+    {
+      "id": "18_-8",
+      "terrain": "p",
+      "exits": {
+        "north": "18_-7",
+        "south": "18_-9",
+        "west": "17_-8",
+        "east": "19_-8"
+      }
+    },
+    {
+      "id": "19_-8",
+      "terrain": "p",
+      "exits": {
+        "north": "19_-7",
+        "south": "19_-9",
+        "west": "18_-8",
+        "east": "20_-8"
+      }
+    },
+    {
+      "id": "20_-8",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-7",
+        "south": "20_-9",
+        "west": "19_-8",
+        "east": "21_-8"
+      }
+    },
+    {
+      "id": "21_-8",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-7",
+        "south": "21_-9",
+        "west": "20_-8",
+        "east": "22_-8"
+      }
+    },
+    {
+      "id": "22_-8",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-7",
+        "south": "22_-9",
+        "west": "21_-8",
+        "east": "23_-8"
+      }
+    },
+    {
+      "id": "23_-8",
+      "terrain": "p",
+      "exits": {
+        "north": "23_-7",
+        "south": "23_-9",
+        "west": "22_-8",
+        "east": "24_-8"
+      }
+    },
+    {
+      "id": "24_-8",
+      "terrain": "p",
+      "exits": {
+        "north": "24_-7",
+        "south": "24_-9",
+        "west": "23_-8",
+        "east": "25_-8"
+      }
+    },
+    {
+      "id": "25_-8",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-7",
+        "south": "25_-9",
+        "west": "24_-8"
+      }
+    },
+    {
+      "id": "1_-9",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-8",
+        "south": "1_-10",
+        "west": "0_-9",
+        "east": "2_-9"
+      }
+    },
+    {
+      "id": "2_-9",
+      "terrain": "lf",
+      "exits": {
+        "north": "2_-8",
+        "south": "2_-10",
+        "west": "1_-9",
+        "east": "3_-9"
+      }
+    },
+    {
+      "id": "3_-9",
+      "terrain": "lf",
+      "exits": {
+        "north": "3_-8",
+        "south": "3_-10",
+        "west": "2_-9",
+        "east": "4_-9"
+      }
+    },
+    {
+      "id": "4_-9",
+      "terrain": "lf",
+      "exits": {
+        "north": "4_-8",
+        "south": "4_-10",
+        "west": "3_-9",
+        "east": "5_-9"
+      }
+    },
+    {
+      "id": "5_-9",
+      "terrain": "lf",
+      "exits": {
+        "north": "5_-8",
+        "south": "5_-10",
+        "west": "4_-9",
+        "east": "6_-9"
+      }
+    },
+    {
+      "id": "6_-9",
+      "terrain": "lf",
+      "exits": {
+        "north": "6_-8",
+        "south": "6_-10",
+        "west": "5_-9",
+        "east": "7_-9"
+      }
+    },
+    {
+      "id": "7_-9",
+      "terrain": "f",
+      "exits": {
+        "north": "7_-8",
+        "south": "7_-10",
+        "west": "6_-9",
+        "east": "8_-9"
+      }
+    },
+    {
+      "id": "8_-9",
+      "terrain": "f",
+      "exits": {
+        "north": "8_-8",
+        "south": "8_-10",
+        "west": "7_-9",
+        "east": "9_-9"
+      }
+    },
+    {
+      "id": "9_-9",
+      "terrain": "f",
+      "exits": {
+        "north": "9_-8",
+        "south": "9_-10",
+        "west": "8_-9",
+        "east": "10_-9"
+      }
+    },
+    {
+      "id": "10_-9",
+      "terrain": "f",
+      "exits": {
+        "north": "10_-8",
+        "south": "10_-10",
+        "west": "9_-9",
+        "east": "11_-9"
+      }
+    },
+    {
+      "id": "11_-9",
+      "terrain": "f",
+      "exits": {
+        "north": "11_-8",
+        "south": "11_-10",
+        "west": "10_-9",
+        "east": "12_-9"
+      }
+    },
+    {
+      "id": "12_-9",
+      "terrain": "f",
+      "exits": {
+        "north": "12_-8",
+        "south": "12_-10",
+        "west": "11_-9",
+        "east": "13_-9"
+      }
+    },
+    {
+      "id": "13_-9",
+      "terrain": "f",
+      "exits": {
+        "north": "13_-8",
+        "south": "13_-10",
+        "west": "12_-9",
+        "east": "14_-9"
+      }
+    },
+    {
+      "id": "14_-9",
+      "terrain": "df",
+      "exits": {
+        "north": "14_-8",
+        "south": "14_-10",
+        "west": "13_-9",
+        "east": "15_-9"
+      }
+    },
+    {
+      "id": "15_-9",
+      "terrain": "df",
+      "exits": {
+        "north": "15_-8",
+        "south": "15_-10",
+        "west": "14_-9",
+        "east": "16_-9"
+      }
+    },
+    {
+      "id": "16_-9",
+      "terrain": "f",
+      "exits": {
+        "north": "16_-8",
+        "south": "16_-10",
+        "west": "15_-9",
+        "east": "17_-9"
+      }
+    },
+    {
+      "id": "17_-9",
+      "terrain": "f",
+      "exits": {
+        "north": "17_-8",
+        "south": "17_-10",
+        "west": "16_-9",
+        "east": "18_-9"
+      }
+    },
+    {
+      "id": "18_-9",
+      "terrain": "f",
+      "exits": {
+        "north": "18_-8",
+        "south": "18_-10",
+        "west": "17_-9",
+        "east": "19_-9"
+      }
+    },
+    {
+      "id": "19_-9",
+      "terrain": "p",
+      "exits": {
+        "north": "19_-8",
+        "south": "19_-10",
+        "west": "18_-9",
+        "east": "20_-9"
+      }
+    },
+    {
+      "id": "20_-9",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-8",
+        "south": "20_-10",
+        "west": "19_-9",
+        "east": "21_-9"
+      }
+    },
+    {
+      "id": "21_-9",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-8",
+        "south": "21_-10",
+        "west": "20_-9",
+        "east": "22_-9"
+      }
+    },
+    {
+      "id": "22_-9",
+      "terrain": "h",
+      "exits": {
+        "north": "22_-8",
+        "south": "22_-10",
+        "west": "21_-9",
+        "east": "23_-9"
+      }
+    },
+    {
+      "id": "23_-9",
+      "terrain": "b",
+      "exits": {
+        "north": "23_-8",
+        "south": "23_-10",
+        "west": "22_-9",
+        "east": "24_-9"
+      }
+    },
+    {
+      "id": "24_-9",
+      "terrain": "p",
+      "exits": {
+        "north": "24_-8",
+        "south": "24_-10",
+        "west": "23_-9",
+        "east": "25_-9"
+      }
+    },
+    {
+      "id": "25_-9",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-8",
+        "south": "25_-10",
+        "west": "24_-9"
+      }
+    },
+    {
+      "id": "1_-10",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-9",
+        "south": "1_-11",
+        "west": "0_-10",
+        "east": "2_-10"
+      }
+    },
+    {
+      "id": "2_-10",
+      "terrain": "lf",
+      "exits": {
+        "north": "2_-9",
+        "south": "2_-11",
+        "west": "1_-10",
+        "east": "3_-10"
+      }
+    },
+    {
+      "id": "3_-10",
+      "terrain": "lf",
+      "exits": {
+        "north": "3_-9",
+        "south": "3_-11",
+        "west": "2_-10",
+        "east": "4_-10"
+      }
+    },
+    {
+      "id": "4_-10",
+      "terrain": "lf",
+      "exits": {
+        "north": "4_-9",
+        "south": "4_-11",
+        "west": "3_-10",
+        "east": "5_-10"
+      }
+    },
+    {
+      "id": "5_-10",
+      "terrain": "lf",
+      "exits": {
+        "north": "5_-9",
+        "south": "5_-11",
+        "west": "4_-10",
+        "east": "6_-10"
+      }
+    },
+    {
+      "id": "6_-10",
+      "terrain": "f",
+      "exits": {
+        "north": "6_-9",
+        "south": "6_-11",
+        "west": "5_-10",
+        "east": "7_-10"
+      }
+    },
+    {
+      "id": "7_-10",
+      "terrain": "f",
+      "exits": {
+        "north": "7_-9",
+        "south": "7_-11",
+        "west": "6_-10",
+        "east": "8_-10"
+      }
+    },
+    {
+      "id": "8_-10",
+      "terrain": "f",
+      "exits": {
+        "north": "8_-9",
+        "south": "8_-11",
+        "west": "7_-10",
+        "east": "9_-10"
+      }
+    },
+    {
+      "id": "9_-10",
+      "terrain": "f",
+      "exits": {
+        "north": "9_-9",
+        "south": "9_-11",
+        "west": "8_-10",
+        "east": "10_-10"
+      }
+    },
+    {
+      "id": "10_-10",
+      "terrain": "f",
+      "exits": {
+        "north": "10_-9",
+        "south": "10_-11",
+        "west": "9_-10",
+        "east": "11_-10"
+      }
+    },
+    {
+      "id": "11_-10",
+      "terrain": "f",
+      "exits": {
+        "north": "11_-9",
+        "south": "11_-11",
+        "west": "10_-10",
+        "east": "12_-10"
+      }
+    },
+    {
+      "id": "12_-10",
+      "terrain": "f",
+      "exits": {
+        "north": "12_-9",
+        "south": "12_-11",
+        "west": "11_-10",
+        "east": "13_-10"
+      }
+    },
+    {
+      "id": "13_-10",
+      "terrain": "f",
+      "exits": {
+        "north": "13_-9",
+        "south": "13_-11",
+        "west": "12_-10",
+        "east": "14_-10"
+      }
+    },
+    {
+      "id": "14_-10",
+      "terrain": "df",
+      "exits": {
+        "north": "14_-9",
+        "south": "14_-11",
+        "west": "13_-10",
+        "east": "15_-10"
+      }
+    },
+    {
+      "id": "15_-10",
+      "terrain": "df",
+      "exits": {
+        "north": "15_-9",
+        "south": "15_-11",
+        "west": "14_-10",
+        "east": "16_-10"
+      }
+    },
+    {
+      "id": "16_-10",
+      "terrain": "f",
+      "exits": {
+        "north": "16_-9",
+        "south": "16_-11",
+        "west": "15_-10",
+        "east": "17_-10"
+      }
+    },
+    {
+      "id": "17_-10",
+      "terrain": "f",
+      "exits": {
+        "north": "17_-9",
+        "south": "17_-11",
+        "west": "16_-10",
+        "east": "18_-10"
+      }
+    },
+    {
+      "id": "18_-10",
+      "terrain": "f",
+      "exits": {
+        "north": "18_-9",
+        "south": "18_-11",
+        "west": "17_-10",
+        "east": "19_-10"
+      }
+    },
+    {
+      "id": "19_-10",
+      "terrain": "p",
+      "exits": {
+        "north": "19_-9",
+        "south": "19_-11",
+        "west": "18_-10",
+        "east": "20_-10"
+      }
+    },
+    {
+      "id": "20_-10",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-9",
+        "south": "20_-11",
+        "west": "19_-10",
+        "east": "21_-10"
+      }
+    },
+    {
+      "id": "21_-10",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-9",
+        "south": "21_-11",
+        "west": "20_-10",
+        "east": "22_-10"
+      }
+    },
+    {
+      "id": "22_-10",
+      "terrain": "h",
+      "exits": {
+        "north": "22_-9",
+        "south": "22_-11",
+        "west": "21_-10",
+        "east": "23_-10"
+      }
+    },
+    {
+      "id": "23_-10",
+      "terrain": "b",
+      "exits": {
+        "north": "23_-9",
+        "south": "23_-11",
+        "west": "22_-10",
+        "east": "24_-10"
+      }
+    },
+    {
+      "id": "24_-10",
+      "terrain": "b",
+      "exits": {
+        "north": "24_-9",
+        "south": "24_-11",
+        "west": "23_-10",
+        "east": "25_-10"
+      }
+    },
+    {
+      "id": "25_-10",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-9",
+        "south": "25_-11",
+        "west": "24_-10"
+      }
+    },
+    {
+      "id": "1_-11",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-10",
+        "south": "1_-12",
+        "west": "0_-11",
+        "east": "2_-11"
+      }
+    },
+    {
+      "id": "2_-11",
+      "terrain": "lf",
+      "exits": {
+        "north": "2_-10",
+        "south": "2_-12",
+        "west": "1_-11",
+        "east": "3_-11"
+      }
+    },
+    {
+      "id": "3_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "3_-10",
+        "south": "3_-12",
+        "west": "2_-11",
+        "east": "4_-11"
+      }
+    },
+    {
+      "id": "4_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "4_-10",
+        "south": "4_-12",
+        "west": "3_-11",
+        "east": "5_-11"
+      }
+    },
+    {
+      "id": "5_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "5_-10",
+        "south": "5_-12",
+        "west": "4_-11",
+        "east": "6_-11"
+      }
+    },
+    {
+      "id": "6_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "6_-10",
+        "south": "6_-12",
+        "west": "5_-11",
+        "east": "7_-11"
+      }
+    },
+    {
+      "id": "7_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "7_-10",
+        "south": "7_-12",
+        "west": "6_-11",
+        "east": "8_-11"
+      }
+    },
+    {
+      "id": "8_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "8_-10",
+        "south": "8_-12",
+        "west": "7_-11",
+        "east": "9_-11"
+      }
+    },
+    {
+      "id": "9_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "9_-10",
+        "south": "9_-12",
+        "west": "8_-11",
+        "east": "10_-11"
+      }
+    },
+    {
+      "id": "10_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "10_-10",
+        "south": "10_-12",
+        "west": "9_-11",
+        "east": "11_-11"
+      }
+    },
+    {
+      "id": "11_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "11_-10",
+        "south": "11_-12",
+        "west": "10_-11",
+        "east": "12_-11"
+      }
+    },
+    {
+      "id": "12_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "12_-10",
+        "south": "12_-12",
+        "west": "11_-11",
+        "east": "13_-11"
+      }
+    },
+    {
+      "id": "13_-11",
+      "terrain": "forest",
+      "exits": {
+        "north": "13_-10",
+        "south": "13_-12",
+        "west": "12_-11",
+        "east": "14_-11"
+      }
+    },
+    {
+      "id": "14_-11",
+      "terrain": "df",
+      "exits": {
+        "north": "14_-10",
+        "south": "14_-12",
+        "west": "13_-11",
+        "east": "15_-11"
+      }
+    },
+    {
+      "id": "15_-11",
+      "terrain": "forest",
+      "exits": {
+        "north": "15_-10",
+        "south": "15_-12",
+        "west": "14_-11",
+        "east": "16_-11"
+      }
+    },
+    {
+      "id": "16_-11",
+      "terrain": "df",
+      "exits": {
+        "north": "16_-10",
+        "south": "16_-12",
+        "west": "15_-11",
+        "east": "17_-11"
+      }
+    },
+    {
+      "id": "17_-11",
+      "terrain": "df",
+      "exits": {
+        "north": "17_-10",
+        "south": "17_-12",
+        "west": "16_-11",
+        "east": "18_-11"
+      }
+    },
+    {
+      "id": "18_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "18_-10",
+        "south": "18_-12",
+        "west": "17_-11",
+        "east": "19_-11"
+      }
+    },
+    {
+      "id": "19_-11",
+      "terrain": "f",
+      "exits": {
+        "north": "19_-10",
+        "south": "19_-12",
+        "west": "18_-11",
+        "east": "20_-11"
+      }
+    },
+    {
+      "id": "20_-11",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-10",
+        "south": "20_-12",
+        "west": "19_-11",
+        "east": "21_-11"
+      }
+    },
+    {
+      "id": "21_-11",
+      "terrain": "h",
+      "exits": {
+        "north": "21_-10",
+        "south": "21_-12",
+        "west": "20_-11",
+        "east": "22_-11"
+      }
+    },
+    {
+      "id": "22_-11",
+      "terrain": "h",
+      "exits": {
+        "north": "22_-10",
+        "south": "22_-12",
+        "west": "21_-11",
+        "east": "23_-11"
+      }
+    },
+    {
+      "id": "23_-11",
+      "terrain": "b",
+      "exits": {
+        "north": "23_-10",
+        "south": "23_-12",
+        "west": "22_-11",
+        "east": "24_-11"
+      }
+    },
+    {
+      "id": "24_-11",
+      "terrain": "b",
+      "exits": {
+        "north": "24_-10",
+        "south": "24_-12",
+        "west": "23_-11",
+        "east": "25_-11"
+      }
+    },
+    {
+      "id": "25_-11",
+      "terrain": "b",
+      "exits": {
+        "north": "25_-10",
+        "south": "25_-12",
+        "west": "24_-11"
+      }
+    },
+    {
+      "id": "1_-12",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-11",
+        "south": "1_-13",
+        "west": "0_-12",
+        "east": "2_-12"
+      }
+    },
+    {
+      "id": "2_-12",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-11",
+        "south": "2_-13",
+        "west": "1_-12",
+        "east": "3_-12"
+      }
+    },
+    {
+      "id": "3_-12",
+      "terrain": "f",
+      "exits": {
+        "north": "3_-11",
+        "south": "3_-13",
+        "west": "2_-12",
+        "east": "4_-12"
+      }
+    },
+    {
+      "id": "4_-12",
+      "terrain": "f",
+      "exits": {
+        "north": "4_-11",
+        "south": "4_-13",
+        "west": "3_-12",
+        "east": "5_-12"
+      }
+    },
+    {
+      "id": "5_-12",
+      "terrain": "f",
+      "exits": {
+        "north": "5_-11",
+        "south": "5_-13",
+        "west": "4_-12",
+        "east": "6_-12"
+      }
+    },
+    {
+      "id": "6_-12",
+      "terrain": "f",
+      "exits": {
+        "north": "6_-11",
+        "south": "6_-13",
+        "west": "5_-12",
+        "east": "7_-12"
+      }
+    },
+    {
+      "id": "7_-12",
+      "terrain": "f",
+      "exits": {
+        "north": "7_-11",
+        "south": "7_-13",
+        "west": "6_-12",
+        "east": "8_-12"
+      }
+    },
+    {
+      "id": "8_-12",
+      "terrain": "f",
+      "exits": {
+        "north": "8_-11",
+        "south": "8_-13",
+        "west": "7_-12",
+        "east": "9_-12"
+      }
+    },
+    {
+      "id": "9_-12",
+      "terrain": "df",
+      "exits": {
+        "north": "9_-11",
+        "south": "9_-13",
+        "west": "8_-12",
+        "east": "10_-12"
+      }
+    },
+    {
+      "id": "10_-12",
+      "terrain": "df",
+      "exits": {
+        "north": "10_-11",
+        "south": "10_-13",
+        "west": "9_-12",
+        "east": "11_-12"
+      }
+    },
+    {
+      "id": "11_-12",
+      "terrain": "f",
+      "exits": {
+        "north": "11_-11",
+        "south": "11_-13",
+        "west": "10_-12",
+        "east": "12_-12"
+      }
+    },
+    {
+      "id": "12_-12",
+      "terrain": "df",
+      "exits": {
+        "north": "12_-11",
+        "south": "12_-13",
+        "west": "11_-12",
+        "east": "13_-12"
+      }
+    },
+    {
+      "id": "13_-12",
+      "terrain": "df",
+      "exits": {
+        "north": "13_-11",
+        "south": "13_-13",
+        "west": "12_-12",
+        "east": "14_-12"
+      }
+    },
+    {
+      "id": "14_-12",
+      "terrain": "df",
+      "exits": {
+        "north": "14_-11",
+        "south": "14_-13",
+        "west": "13_-12",
+        "east": "15_-12"
+      }
+    },
+    {
+      "id": "15_-12",
+      "terrain": "df",
+      "exits": {
+        "north": "15_-11",
+        "south": "15_-13",
+        "west": "14_-12",
+        "east": "16_-12"
+      }
+    },
+    {
+      "id": "16_-12",
+      "terrain": "f",
+      "exits": {
+        "north": "16_-11",
+        "south": "16_-13",
+        "west": "15_-12",
+        "east": "17_-12"
+      }
+    },
+    {
+      "id": "17_-12",
+      "terrain": "f",
+      "exits": {
+        "north": "17_-11",
+        "south": "17_-13",
+        "west": "16_-12",
+        "east": "18_-12"
+      }
+    },
+    {
+      "id": "18_-12",
+      "terrain": "p",
+      "exits": {
+        "north": "18_-11",
+        "south": "18_-13",
+        "west": "17_-12",
+        "east": "19_-12"
+      }
+    },
+    {
+      "id": "19_-12",
+      "terrain": "p",
+      "exits": {
+        "north": "19_-11",
+        "south": "19_-13",
+        "west": "18_-12",
+        "east": "20_-12"
+      }
+    },
+    {
+      "id": "20_-12",
+      "terrain": "lf",
+      "exits": {
+        "north": "20_-11",
+        "south": "20_-13",
+        "west": "19_-12",
+        "east": "21_-12"
+      }
+    },
+    {
+      "id": "21_-12",
+      "terrain": "h",
+      "exits": {
+        "north": "21_-11",
+        "south": "21_-13",
+        "west": "20_-12",
+        "east": "22_-12"
+      }
+    },
+    {
+      "id": "22_-12",
+      "terrain": "h",
+      "exits": {
+        "north": "22_-11",
+        "south": "22_-13",
+        "west": "21_-12",
+        "east": "23_-12"
+      }
+    },
+    {
+      "id": "23_-12",
+      "terrain": "h",
+      "exits": {
+        "north": "23_-11",
+        "south": "23_-13",
+        "west": "22_-12",
+        "east": "24_-12"
+      }
+    },
+    {
+      "id": "24_-12",
+      "terrain": "m",
+      "exits": {
+        "north": "24_-11",
+        "south": "24_-13",
+        "west": "23_-12",
+        "east": "25_-12"
+      }
+    },
+    {
+      "id": "25_-12",
+      "terrain": "m",
+      "exits": {
+        "north": "25_-11",
+        "south": "25_-13",
+        "west": "24_-12"
+      }
+    },
+    {
+      "id": "1_-13",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-12",
+        "south": "1_-14",
+        "west": "0_-13",
+        "east": "2_-13"
+      }
+    },
+    {
+      "id": "2_-13",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-12",
+        "south": "2_-14",
+        "west": "1_-13",
+        "east": "3_-13"
+      }
+    },
+    {
+      "id": "3_-13",
+      "terrain": "p",
+      "exits": {
+        "north": "3_-12",
+        "south": "3_-14",
+        "west": "2_-13",
+        "east": "4_-13"
+      }
+    },
+    {
+      "id": "4_-13",
+      "terrain": "f",
+      "exits": {
+        "north": "4_-12",
+        "south": "4_-14",
+        "west": "3_-13",
+        "east": "5_-13"
+      }
+    },
+    {
+      "id": "5_-13",
+      "terrain": "f",
+      "exits": {
+        "north": "5_-12",
+        "south": "5_-14",
+        "west": "4_-13",
+        "east": "6_-13"
+      }
+    },
+    {
+      "id": "6_-13",
+      "terrain": "df",
+      "exits": {
+        "north": "6_-12",
+        "south": "6_-14",
+        "west": "5_-13",
+        "east": "7_-13"
+      }
+    },
+    {
+      "id": "7_-13",
+      "terrain": "f",
+      "exits": {
+        "north": "7_-12",
+        "south": "7_-14",
+        "west": "6_-13",
+        "east": "8_-13"
+      }
+    },
+    {
+      "id": "8_-13",
+      "terrain": "df",
+      "exits": {
+        "north": "8_-12",
+        "south": "8_-14",
+        "west": "7_-13",
+        "east": "9_-13"
+      }
+    },
+    {
+      "id": "9_-13",
+      "terrain": "df",
+      "exits": {
+        "north": "9_-12",
+        "south": "9_-14",
+        "west": "8_-13",
+        "east": "10_-13"
+      }
+    },
+    {
+      "id": "10_-13",
+      "terrain": "df",
+      "exits": {
+        "north": "10_-12",
+        "south": "10_-14",
+        "west": "9_-13",
+        "east": "11_-13"
+      }
+    },
+    {
+      "id": "11_-13",
+      "terrain": "df",
+      "exits": {
+        "north": "11_-12",
+        "south": "11_-14",
+        "west": "10_-13",
+        "east": "12_-13"
+      }
+    },
+    {
+      "id": "12_-13",
+      "terrain": "df",
+      "exits": {
+        "north": "12_-12",
+        "south": "12_-14",
+        "west": "11_-13",
+        "east": "13_-13"
+      }
+    },
+    {
+      "id": "13_-13",
+      "terrain": "df",
+      "exits": {
+        "north": "13_-12",
+        "south": "13_-14",
+        "west": "12_-13",
+        "east": "14_-13"
+      }
+    },
+    {
+      "id": "14_-13",
+      "terrain": "df",
+      "exits": {
+        "north": "14_-12",
+        "south": "14_-14",
+        "west": "13_-13",
+        "east": "15_-13"
+      }
+    },
+    {
+      "id": "15_-13",
+      "terrain": "df",
+      "exits": {
+        "north": "15_-12",
+        "south": "15_-14",
+        "west": "14_-13",
+        "east": "16_-13"
+      }
+    },
+    {
+      "id": "16_-13",
+      "terrain": "f",
+      "exits": {
+        "north": "16_-12",
+        "south": "16_-14",
+        "west": "15_-13",
+        "east": "17_-13"
+      }
+    },
+    {
+      "id": "17_-13",
+      "terrain": "f",
+      "exits": {
+        "north": "17_-12",
+        "south": "17_-14",
+        "west": "16_-13",
+        "east": "18_-13"
+      }
+    },
+    {
+      "id": "18_-13",
+      "terrain": "lf",
+      "exits": {
+        "north": "18_-12",
+        "south": "18_-14",
+        "west": "17_-13",
+        "east": "19_-13"
+      }
+    },
+    {
+      "id": "19_-13",
+      "terrain": "lf",
+      "exits": {
+        "north": "19_-12",
+        "south": "19_-14",
+        "west": "18_-13",
+        "east": "20_-13"
+      }
+    },
+    {
+      "id": "20_-13",
+      "terrain": "lf",
+      "exits": {
+        "north": "20_-12",
+        "south": "20_-14",
+        "west": "19_-13",
+        "east": "21_-13"
+      }
+    },
+    {
+      "id": "21_-13",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-12",
+        "south": "21_-14",
+        "west": "20_-13",
+        "east": "22_-13"
+      }
+    },
+    {
+      "id": "22_-13",
+      "terrain": "h",
+      "exits": {
+        "north": "22_-12",
+        "south": "22_-14",
+        "west": "21_-13",
+        "east": "23_-13"
+      }
+    },
+    {
+      "id": "23_-13",
+      "terrain": "m",
+      "exits": {
+        "north": "23_-12",
+        "south": "23_-14",
+        "west": "22_-13",
+        "east": "24_-13"
+      }
+    },
+    {
+      "id": "24_-13",
+      "terrain": "m",
+      "exits": {
+        "north": "24_-12",
+        "south": "24_-14",
+        "west": "23_-13",
+        "east": "25_-13"
+      }
+    },
+    {
+      "id": "25_-13",
+      "terrain": "m",
+      "exits": {
+        "north": "25_-12",
+        "south": "25_-14",
+        "west": "24_-13"
+      }
+    },
+    {
+      "id": "1_-14",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-13",
+        "south": "1_-15",
+        "west": "0_-14",
+        "east": "2_-14"
+      }
+    },
+    {
+      "id": "2_-14",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-13",
+        "south": "2_-15",
+        "west": "1_-14",
+        "east": "3_-14"
+      }
+    },
+    {
+      "id": "3_-14",
+      "terrain": "f",
+      "exits": {
+        "north": "3_-13",
+        "south": "3_-15",
+        "west": "2_-14",
+        "east": "4_-14"
+      }
+    },
+    {
+      "id": "4_-14",
+      "terrain": "f",
+      "exits": {
+        "north": "4_-13",
+        "south": "4_-15",
+        "west": "3_-14",
+        "east": "5_-14"
+      }
+    },
+    {
+      "id": "5_-14",
+      "terrain": "f",
+      "exits": {
+        "north": "5_-13",
+        "south": "5_-15",
+        "west": "4_-14",
+        "east": "6_-14"
+      }
+    },
+    {
+      "id": "6_-14",
+      "terrain": "f",
+      "exits": {
+        "north": "6_-13",
+        "south": "6_-15",
+        "west": "5_-14",
+        "east": "7_-14"
+      }
+    },
+    {
+      "id": "7_-14",
+      "terrain": "f",
+      "exits": {
+        "north": "7_-13",
+        "south": "7_-15",
+        "west": "6_-14",
+        "east": "8_-14"
+      }
+    },
+    {
+      "id": "8_-14",
+      "terrain": "df",
+      "exits": {
+        "north": "8_-13",
+        "south": "8_-15",
+        "west": "7_-14",
+        "east": "9_-14"
+      }
+    },
+    {
+      "id": "9_-14",
+      "terrain": "df",
+      "exits": {
+        "north": "9_-13",
+        "south": "9_-15",
+        "west": "8_-14",
+        "east": "10_-14"
+      }
+    },
+    {
+      "id": "10_-14",
+      "terrain": "df",
+      "exits": {
+        "north": "10_-13",
+        "south": "10_-15",
+        "west": "9_-14",
+        "east": "11_-14"
+      }
+    },
+    {
+      "id": "11_-14",
+      "terrain": "df",
+      "exits": {
+        "north": "11_-13",
+        "south": "11_-15",
+        "west": "10_-14",
+        "east": "12_-14"
+      }
+    },
+    {
+      "id": "12_-14",
+      "terrain": "df",
+      "exits": {
+        "north": "12_-13",
+        "south": "12_-15",
+        "west": "11_-14",
+        "east": "13_-14"
+      }
+    },
+    {
+      "id": "13_-14",
+      "terrain": "df",
+      "exits": {
+        "north": "13_-13",
+        "south": "13_-15",
+        "west": "12_-14",
+        "east": "14_-14"
+      }
+    },
+    {
+      "id": "14_-14",
+      "terrain": "df",
+      "exits": {
+        "north": "14_-13",
+        "south": "14_-15",
+        "west": "13_-14",
+        "east": "15_-14"
+      }
+    },
+    {
+      "id": "15_-14",
+      "terrain": "f",
+      "exits": {
+        "north": "15_-13",
+        "south": "15_-15",
+        "west": "14_-14",
+        "east": "16_-14"
+      }
+    },
+    {
+      "id": "16_-14",
+      "terrain": "f",
+      "exits": {
+        "north": "16_-13",
+        "south": "16_-15",
+        "west": "15_-14",
+        "east": "17_-14"
+      }
+    },
+    {
+      "id": "17_-14",
+      "terrain": "f",
+      "exits": {
+        "north": "17_-13",
+        "south": "17_-15",
+        "west": "16_-14",
+        "east": "18_-14"
+      }
+    },
+    {
+      "id": "18_-14",
+      "terrain": "f",
+      "exits": {
+        "north": "18_-13",
+        "south": "18_-15",
+        "west": "17_-14",
+        "east": "19_-14"
+      }
+    },
+    {
+      "id": "19_-14",
+      "terrain": "lf",
+      "exits": {
+        "north": "19_-13",
+        "south": "19_-15",
+        "west": "18_-14",
+        "east": "20_-14"
+      }
+    },
+    {
+      "id": "20_-14",
+      "terrain": "lf",
+      "exits": {
+        "north": "20_-13",
+        "south": "20_-15",
+        "west": "19_-14",
+        "east": "21_-14"
+      }
+    },
+    {
+      "id": "21_-14",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-13",
+        "south": "21_-15",
+        "west": "20_-14",
+        "east": "22_-14"
+      }
+    },
+    {
+      "id": "22_-14",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-13",
+        "south": "22_-15",
+        "west": "21_-14",
+        "east": "23_-14"
+      }
+    },
+    {
+      "id": "23_-14",
+      "terrain": "m",
+      "exits": {
+        "north": "23_-13",
+        "south": "23_-15",
+        "west": "22_-14",
+        "east": "24_-14"
+      }
+    },
+    {
+      "id": "24_-14",
+      "terrain": "m",
+      "exits": {
+        "north": "24_-13",
+        "south": "24_-15",
+        "west": "23_-14",
+        "east": "25_-14"
+      }
+    },
+    {
+      "id": "25_-14",
+      "terrain": "m",
+      "exits": {
+        "north": "25_-13",
+        "south": "25_-15",
+        "west": "24_-14"
+      }
+    },
+    {
+      "id": "1_-15",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-14",
+        "south": "1_-16",
+        "west": "0_-15",
+        "east": "2_-15"
+      }
+    },
+    {
+      "id": "2_-15",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-14",
+        "south": "2_-16",
+        "west": "1_-15",
+        "east": "3_-15"
+      }
+    },
+    {
+      "id": "3_-15",
+      "terrain": "p",
+      "exits": {
+        "north": "3_-14",
+        "south": "3_-16",
+        "west": "2_-15",
+        "east": "4_-15"
+      }
+    },
+    {
+      "id": "4_-15",
+      "terrain": "df",
+      "exits": {
+        "north": "4_-14",
+        "south": "4_-16",
+        "west": "3_-15",
+        "east": "5_-15"
+      }
+    },
+    {
+      "id": "5_-15",
+      "terrain": "df",
+      "exits": {
+        "north": "5_-14",
+        "south": "5_-16",
+        "west": "4_-15",
+        "east": "6_-15"
+      }
+    },
+    {
+      "id": "6_-15",
+      "terrain": "df",
+      "exits": {
+        "north": "6_-14",
+        "south": "6_-16",
+        "west": "5_-15",
+        "east": "7_-15"
+      }
+    },
+    {
+      "id": "7_-15",
+      "terrain": "df",
+      "exits": {
+        "north": "7_-14",
+        "south": "7_-16",
+        "west": "6_-15",
+        "east": "8_-15"
+      }
+    },
+    {
+      "id": "8_-15",
+      "terrain": "df",
+      "exits": {
+        "north": "8_-14",
+        "south": "8_-16",
+        "west": "7_-15",
+        "east": "9_-15"
+      }
+    },
+    {
+      "id": "9_-15",
+      "terrain": "df",
+      "exits": {
+        "north": "9_-14",
+        "south": "9_-16",
+        "west": "8_-15",
+        "east": "10_-15"
+      }
+    },
+    {
+      "id": "10_-15",
+      "terrain": "df",
+      "exits": {
+        "north": "10_-14",
+        "south": "10_-16",
+        "west": "9_-15",
+        "east": "11_-15"
+      }
+    },
+    {
+      "id": "11_-15",
+      "terrain": "df",
+      "exits": {
+        "north": "11_-14",
+        "south": "11_-16",
+        "west": "10_-15",
+        "east": "12_-15"
+      }
+    },
+    {
+      "id": "12_-15",
+      "terrain": "df",
+      "exits": {
+        "north": "12_-14",
+        "south": "12_-16",
+        "west": "11_-15",
+        "east": "13_-15"
+      }
+    },
+    {
+      "id": "13_-15",
+      "terrain": "df",
+      "exits": {
+        "north": "13_-14",
+        "south": "13_-16",
+        "west": "12_-15",
+        "east": "14_-15"
+      }
+    },
+    {
+      "id": "14_-15",
+      "terrain": "df",
+      "exits": {
+        "north": "14_-14",
+        "south": "14_-16",
+        "west": "13_-15",
+        "east": "15_-15"
+      }
+    },
+    {
+      "id": "15_-15",
+      "terrain": "f",
+      "exits": {
+        "north": "15_-14",
+        "south": "15_-16",
+        "west": "14_-15",
+        "east": "16_-15"
+      }
+    },
+    {
+      "id": "16_-15",
+      "terrain": "f",
+      "exits": {
+        "north": "16_-14",
+        "south": "16_-16",
+        "west": "15_-15",
+        "east": "17_-15"
+      }
+    },
+    {
+      "id": "17_-15",
+      "terrain": "f",
+      "exits": {
+        "north": "17_-14",
+        "south": "17_-16",
+        "west": "16_-15",
+        "east": "18_-15"
+      }
+    },
+    {
+      "id": "18_-15",
+      "terrain": "lf",
+      "exits": {
+        "north": "18_-14",
+        "south": "18_-16",
+        "west": "17_-15",
+        "east": "19_-15"
+      }
+    },
+    {
+      "id": "19_-15",
+      "terrain": "lf",
+      "exits": {
+        "north": "19_-14",
+        "south": "19_-16",
+        "west": "18_-15",
+        "east": "20_-15"
+      }
+    },
+    {
+      "id": "20_-15",
+      "terrain": "f",
+      "exits": {
+        "north": "20_-14",
+        "south": "20_-16",
+        "west": "19_-15",
+        "east": "21_-15"
+      }
+    },
+    {
+      "id": "21_-15",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-14",
+        "south": "21_-16",
+        "west": "20_-15",
+        "east": "22_-15"
+      }
+    },
+    {
+      "id": "22_-15",
+      "terrain": "m",
+      "exits": {
+        "north": "22_-14",
+        "south": "22_-16",
+        "west": "21_-15",
+        "east": "23_-15"
+      }
+    },
+    {
+      "id": "23_-15",
+      "terrain": "m",
+      "exits": {
+        "north": "23_-14",
+        "south": "23_-16",
+        "west": "22_-15",
+        "east": "24_-15"
+      }
+    },
+    {
+      "id": "24_-15",
+      "terrain": "m",
+      "exits": {
+        "north": "24_-14",
+        "south": "24_-16",
+        "west": "23_-15",
+        "east": "25_-15"
+      }
+    },
+    {
+      "id": "25_-15",
+      "terrain": "m",
+      "exits": {
+        "north": "25_-14",
+        "south": "25_-16",
+        "west": "24_-15"
+      }
+    },
+    {
+      "id": "1_-16",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-15",
+        "south": "1_-17",
+        "west": "0_-16",
+        "east": "2_-16"
+      }
+    },
+    {
+      "id": "2_-16",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-15",
+        "south": "2_-17",
+        "west": "1_-16",
+        "east": "3_-16"
+      }
+    },
+    {
+      "id": "3_-16",
+      "terrain": "p",
+      "exits": {
+        "north": "3_-15",
+        "south": "3_-17",
+        "west": "2_-16",
+        "east": "4_-16"
+      }
+    },
+    {
+      "id": "4_-16",
+      "terrain": "h",
+      "exits": {
+        "north": "4_-15",
+        "south": "4_-17",
+        "west": "3_-16",
+        "east": "5_-16"
+      }
+    },
+    {
+      "id": "5_-16",
+      "terrain": "h",
+      "exits": {
+        "north": "5_-15",
+        "south": "5_-17",
+        "west": "4_-16",
+        "east": "6_-16"
+      }
+    },
+    {
+      "id": "6_-16",
+      "terrain": "f",
+      "exits": {
+        "north": "6_-15",
+        "south": "6_-17",
+        "west": "5_-16",
+        "east": "7_-16"
+      }
+    },
+    {
+      "id": "7_-16",
+      "terrain": "f",
+      "exits": {
+        "north": "7_-15",
+        "south": "7_-17",
+        "west": "6_-16",
+        "east": "8_-16"
+      }
+    },
+    {
+      "id": "8_-16",
+      "terrain": "df",
+      "exits": {
+        "north": "8_-15",
+        "south": "8_-17",
+        "west": "7_-16",
+        "east": "9_-16"
+      }
+    },
+    {
+      "id": "9_-16",
+      "terrain": "df",
+      "exits": {
+        "north": "9_-15",
+        "south": "9_-17",
+        "west": "8_-16",
+        "east": "10_-16"
+      }
+    },
+    {
+      "id": "10_-16",
+      "terrain": "df",
+      "exits": {
+        "north": "10_-15",
+        "south": "10_-17",
+        "west": "9_-16",
+        "east": "11_-16"
+      }
+    },
+    {
+      "id": "11_-16",
+      "terrain": "f",
+      "exits": {
+        "north": "11_-15",
+        "south": "11_-17",
+        "west": "10_-16",
+        "east": "12_-16"
+      }
+    },
+    {
+      "id": "12_-16",
+      "terrain": "df",
+      "exits": {
+        "north": "12_-15",
+        "south": "12_-17",
+        "west": "11_-16",
+        "east": "13_-16"
+      }
+    },
+    {
+      "id": "13_-16",
+      "terrain": "df",
+      "exits": {
+        "north": "13_-15",
+        "south": "13_-17",
+        "west": "12_-16",
+        "east": "14_-16"
+      }
+    },
+    {
+      "id": "14_-16",
+      "terrain": "df",
+      "exits": {
+        "north": "14_-15",
+        "south": "14_-17",
+        "west": "13_-16",
+        "east": "15_-16"
+      }
+    },
+    {
+      "id": "15_-16",
+      "terrain": "df",
+      "exits": {
+        "north": "15_-15",
+        "south": "15_-17",
+        "west": "14_-16",
+        "east": "16_-16"
+      }
+    },
+    {
+      "id": "16_-16",
+      "terrain": "lf",
+      "exits": {
+        "north": "16_-15",
+        "south": "16_-17",
+        "west": "15_-16",
+        "east": "17_-16"
+      }
+    },
+    {
+      "id": "17_-16",
+      "terrain": "lf",
+      "exits": {
+        "north": "17_-15",
+        "south": "17_-17",
+        "west": "16_-16",
+        "east": "18_-16"
+      }
+    },
+    {
+      "id": "18_-16",
+      "terrain": "f",
+      "exits": {
+        "north": "18_-15",
+        "south": "18_-17",
+        "west": "17_-16",
+        "east": "19_-16"
+      }
+    },
+    {
+      "id": "19_-16",
+      "terrain": "lf",
+      "exits": {
+        "north": "19_-15",
+        "south": "19_-17",
+        "west": "18_-16",
+        "east": "20_-16"
+      }
+    },
+    {
+      "id": "20_-16",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-15",
+        "south": "20_-17",
+        "west": "19_-16",
+        "east": "21_-16"
+      }
+    },
+    {
+      "id": "21_-16",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-15",
+        "south": "21_-17",
+        "west": "20_-16",
+        "east": "22_-16"
+      }
+    },
+    {
+      "id": "22_-16",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-15",
+        "south": "22_-17",
+        "west": "21_-16",
+        "east": "23_-16"
+      }
+    },
+    {
+      "id": "23_-16",
+      "terrain": "p",
+      "exits": {
+        "north": "23_-15",
+        "south": "23_-17",
+        "west": "22_-16",
+        "east": "24_-16"
+      }
+    },
+    {
+      "id": "24_-16",
+      "terrain": "p",
+      "exits": {
+        "north": "24_-15",
+        "south": "24_-17",
+        "west": "23_-16",
+        "east": "25_-16"
+      }
+    },
+    {
+      "id": "25_-16",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-15",
+        "south": "25_-17",
+        "west": "24_-16"
+      }
+    },
+    {
+      "id": "1_-17",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-16",
+        "south": "1_-18",
+        "west": "0_-17",
+        "east": "2_-17"
+      }
+    },
+    {
+      "id": "2_-17",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-16",
+        "south": "2_-18",
+        "west": "1_-17",
+        "east": "3_-17"
+      }
+    },
+    {
+      "id": "3_-17",
+      "terrain": "h",
+      "exits": {
+        "north": "3_-16",
+        "south": "3_-18",
+        "west": "2_-17",
+        "east": "4_-17"
+      }
+    },
+    {
+      "id": "4_-17",
+      "terrain": "h",
+      "exits": {
+        "north": "4_-16",
+        "south": "4_-18",
+        "west": "3_-17",
+        "east": "5_-17"
+      }
+    },
+    {
+      "id": "5_-17",
+      "terrain": "s",
+      "exits": {
+        "north": "5_-16",
+        "south": "5_-18",
+        "west": "4_-17",
+        "east": "6_-17"
+      }
+    },
+    {
+      "id": "6_-17",
+      "terrain": "lf",
+      "exits": {
+        "north": "6_-16",
+        "south": "6_-18",
+        "west": "5_-17",
+        "east": "7_-17"
+      }
+    },
+    {
+      "id": "7_-17",
+      "terrain": "f",
+      "exits": {
+        "north": "7_-16",
+        "south": "7_-18",
+        "west": "6_-17",
+        "east": "8_-17"
+      }
+    },
+    {
+      "id": "8_-17",
+      "terrain": "lf",
+      "exits": {
+        "north": "8_-16",
+        "south": "8_-18",
+        "west": "7_-17",
+        "east": "9_-17"
+      }
+    },
+    {
+      "id": "9_-17",
+      "terrain": "lf",
+      "exits": {
+        "north": "9_-16",
+        "south": "9_-18",
+        "west": "8_-17",
+        "east": "10_-17"
+      }
+    },
+    {
+      "id": "10_-17",
+      "terrain": "f",
+      "exits": {
+        "north": "10_-16",
+        "south": "10_-18",
+        "west": "9_-17",
+        "east": "11_-17"
+      }
+    },
+    {
+      "id": "11_-17",
+      "terrain": "lf",
+      "exits": {
+        "north": "11_-16",
+        "south": "11_-18",
+        "west": "10_-17",
+        "east": "12_-17"
+      }
+    },
+    {
+      "id": "12_-17",
+      "terrain": "f",
+      "exits": {
+        "north": "12_-16",
+        "south": "12_-18",
+        "west": "11_-17",
+        "east": "13_-17"
+      }
+    },
+    {
+      "id": "13_-17",
+      "terrain": "f",
+      "exits": {
+        "north": "13_-16",
+        "south": "13_-18",
+        "west": "12_-17",
+        "east": "14_-17"
+      }
+    },
+    {
+      "id": "14_-17",
+      "terrain": "f",
+      "exits": {
+        "north": "14_-16",
+        "south": "14_-18",
+        "west": "13_-17",
+        "east": "15_-17"
+      }
+    },
+    {
+      "id": "15_-17",
+      "terrain": "f",
+      "exits": {
+        "north": "15_-16",
+        "south": "15_-18",
+        "west": "14_-17",
+        "east": "16_-17"
+      }
+    },
+    {
+      "id": "16_-17",
+      "terrain": "f",
+      "exits": {
+        "north": "16_-16",
+        "south": "16_-18",
+        "west": "15_-17",
+        "east": "17_-17"
+      }
+    },
+    {
+      "id": "17_-17",
+      "terrain": "f",
+      "exits": {
+        "north": "17_-16",
+        "south": "17_-18",
+        "west": "16_-17",
+        "east": "18_-17"
+      }
+    },
+    {
+      "id": "18_-17",
+      "terrain": "f",
+      "exits": {
+        "north": "18_-16",
+        "south": "18_-18",
+        "west": "17_-17",
+        "east": "19_-17"
+      }
+    },
+    {
+      "id": "19_-17",
+      "terrain": "f",
+      "exits": {
+        "north": "19_-16",
+        "south": "19_-18",
+        "west": "18_-17",
+        "east": "20_-17"
+      }
+    },
+    {
+      "id": "20_-17",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-16",
+        "south": "20_-18",
+        "west": "19_-17",
+        "east": "21_-17"
+      }
+    },
+    {
+      "id": "21_-17",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-16",
+        "south": "21_-18",
+        "west": "20_-17",
+        "east": "22_-17"
+      }
+    },
+    {
+      "id": "22_-17",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-16",
+        "south": "22_-18",
+        "west": "21_-17",
+        "east": "23_-17"
+      }
+    },
+    {
+      "id": "23_-17",
+      "terrain": "p",
+      "exits": {
+        "north": "23_-16",
+        "south": "23_-18",
+        "west": "22_-17",
+        "east": "24_-17"
+      }
+    },
+    {
+      "id": "24_-17",
+      "terrain": "p",
+      "exits": {
+        "north": "24_-16",
+        "south": "24_-18",
+        "west": "23_-17",
+        "east": "25_-17"
+      }
+    },
+    {
+      "id": "25_-17",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-16",
+        "south": "25_-18",
+        "west": "24_-17"
+      }
+    },
+    {
+      "id": "1_-18",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-17",
+        "south": "1_-19",
+        "west": "0_-18",
+        "east": "2_-18"
+      }
+    },
+    {
+      "id": "2_-18",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-17",
+        "south": "2_-19",
+        "west": "1_-18",
+        "east": "3_-18"
+      }
+    },
+    {
+      "id": "3_-18",
+      "terrain": "p",
+      "exits": {
+        "north": "3_-17",
+        "south": "3_-19",
+        "west": "2_-18",
+        "east": "4_-18"
+      }
+    },
+    {
+      "id": "4_-18",
+      "terrain": "s",
+      "exits": {
+        "north": "4_-17",
+        "south": "4_-19",
+        "west": "3_-18",
+        "east": "5_-18"
+      }
+    },
+    {
+      "id": "5_-18",
+      "terrain": "s",
+      "exits": {
+        "north": "5_-17",
+        "south": "5_-19",
+        "west": "4_-18",
+        "east": "6_-18"
+      }
+    },
+    {
+      "id": "6_-18",
+      "terrain": "lf",
+      "exits": {
+        "north": "6_-17",
+        "south": "6_-19",
+        "west": "5_-18",
+        "east": "7_-18"
+      }
+    },
+    {
+      "id": "7_-18",
+      "terrain": "m",
+      "exits": {
+        "north": "7_-17",
+        "south": "7_-19",
+        "west": "6_-18",
+        "east": "8_-18"
+      }
+    },
+    {
+      "id": "8_-18",
+      "terrain": "lf",
+      "exits": {
+        "north": "8_-17",
+        "south": "8_-19",
+        "west": "7_-18",
+        "east": "9_-18"
+      }
+    },
+    {
+      "id": "9_-18",
+      "terrain": "lf",
+      "exits": {
+        "north": "9_-17",
+        "south": "9_-19",
+        "west": "8_-18",
+        "east": "10_-18"
+      }
+    },
+    {
+      "id": "10_-18",
+      "terrain": "lf",
+      "exits": {
+        "north": "10_-17",
+        "south": "10_-19",
+        "west": "9_-18",
+        "east": "11_-18"
+      }
+    },
+    {
+      "id": "11_-18",
+      "terrain": "lf",
+      "exits": {
+        "north": "11_-17",
+        "south": "11_-19",
+        "west": "10_-18",
+        "east": "12_-18"
+      }
+    },
+    {
+      "id": "12_-18",
+      "terrain": "f",
+      "exits": {
+        "north": "12_-17",
+        "south": "12_-19",
+        "west": "11_-18",
+        "east": "13_-18"
+      }
+    },
+    {
+      "id": "13_-18",
+      "terrain": "f",
+      "exits": {
+        "north": "13_-17",
+        "south": "13_-19",
+        "west": "12_-18",
+        "east": "14_-18"
+      }
+    },
+    {
+      "id": "14_-18",
+      "terrain": "f",
+      "exits": {
+        "north": "14_-17",
+        "south": "14_-19",
+        "west": "13_-18",
+        "east": "15_-18"
+      }
+    },
+    {
+      "id": "15_-18",
+      "terrain": "f",
+      "exits": {
+        "north": "15_-17",
+        "south": "15_-19",
+        "west": "14_-18",
+        "east": "16_-18"
+      }
+    },
+    {
+      "id": "16_-18",
+      "terrain": "f",
+      "exits": {
+        "north": "16_-17",
+        "south": "16_-19",
+        "west": "15_-18",
+        "east": "17_-18"
+      }
+    },
+    {
+      "id": "17_-18",
+      "terrain": "f",
+      "exits": {
+        "north": "17_-17",
+        "south": "17_-19",
+        "west": "16_-18",
+        "east": "18_-18"
+      }
+    },
+    {
+      "id": "18_-18",
+      "terrain": "f",
+      "exits": {
+        "north": "18_-17",
+        "south": "18_-19",
+        "west": "17_-18",
+        "east": "19_-18"
+      }
+    },
+    {
+      "id": "19_-18",
+      "terrain": "f",
+      "exits": {
+        "north": "19_-17",
+        "south": "19_-19",
+        "west": "18_-18",
+        "east": "20_-18"
+      }
+    },
+    {
+      "id": "20_-18",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-17",
+        "south": "20_-19",
+        "west": "19_-18",
+        "east": "21_-18"
+      }
+    },
+    {
+      "id": "21_-18",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-17",
+        "south": "21_-19",
+        "west": "20_-18",
+        "east": "22_-18"
+      }
+    },
+    {
+      "id": "22_-18",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-17",
+        "south": "22_-19",
+        "west": "21_-18",
+        "east": "23_-18"
+      }
+    },
+    {
+      "id": "23_-18",
+      "terrain": "p",
+      "exits": {
+        "north": "23_-17",
+        "south": "23_-19",
+        "west": "22_-18",
+        "east": "24_-18"
+      }
+    },
+    {
+      "id": "24_-18",
+      "terrain": "p",
+      "exits": {
+        "north": "24_-17",
+        "south": "24_-19",
+        "west": "23_-18",
+        "east": "25_-18"
+      }
+    },
+    {
+      "id": "25_-18",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-17",
+        "south": "25_-19",
+        "west": "24_-18"
+      }
+    },
+    {
+      "id": "1_-19",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-18",
+        "south": "1_-20",
+        "west": "0_-19",
+        "east": "2_-19"
+      }
+    },
+    {
+      "id": "2_-19",
+      "terrain": "s",
+      "exits": {
+        "north": "2_-18",
+        "south": "2_-20",
+        "west": "1_-19",
+        "east": "3_-19"
+      }
+    },
+    {
+      "id": "3_-19",
+      "terrain": "s",
+      "exits": {
+        "north": "3_-18",
+        "south": "3_-20",
+        "west": "2_-19",
+        "east": "4_-19"
+      }
+    },
+    {
+      "id": "4_-19",
+      "terrain": "s",
+      "exits": {
+        "north": "4_-18",
+        "south": "4_-20",
+        "west": "3_-19",
+        "east": "5_-19"
+      }
+    },
+    {
+      "id": "5_-19",
+      "terrain": "s",
+      "exits": {
+        "north": "5_-18",
+        "south": "5_-20",
+        "west": "4_-19",
+        "east": "6_-19"
+      }
+    },
+    {
+      "id": "6_-19",
+      "terrain": "m",
+      "exits": {
+        "north": "6_-18",
+        "south": "6_-20",
+        "west": "5_-19",
+        "east": "7_-19"
+      }
+    },
+    {
+      "id": "7_-19",
+      "terrain": "m",
+      "exits": {
+        "north": "7_-18",
+        "south": "7_-20",
+        "west": "6_-19",
+        "east": "8_-19"
+      }
+    },
+    {
+      "id": "8_-19",
+      "terrain": "m",
+      "exits": {
+        "north": "8_-18",
+        "south": "8_-20",
+        "west": "7_-19",
+        "east": "9_-19"
+      }
+    },
+    {
+      "id": "9_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "9_-18",
+        "south": "9_-20",
+        "west": "8_-19",
+        "east": "10_-19"
+      }
+    },
+    {
+      "id": "10_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "10_-18",
+        "south": "10_-20",
+        "west": "9_-19",
+        "east": "11_-19"
+      }
+    },
+    {
+      "id": "11_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "11_-18",
+        "south": "11_-20",
+        "west": "10_-19",
+        "east": "12_-19"
+      }
+    },
+    {
+      "id": "12_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "12_-18",
+        "south": "12_-20",
+        "west": "11_-19",
+        "east": "13_-19"
+      }
+    },
+    {
+      "id": "13_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "13_-18",
+        "south": "13_-20",
+        "west": "12_-19",
+        "east": "14_-19"
+      }
+    },
+    {
+      "id": "14_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "14_-18",
+        "south": "14_-20",
+        "west": "13_-19",
+        "east": "15_-19"
+      }
+    },
+    {
+      "id": "15_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "15_-18",
+        "south": "15_-20",
+        "west": "14_-19",
+        "east": "16_-19"
+      }
+    },
+    {
+      "id": "16_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "16_-18",
+        "south": "16_-20",
+        "west": "15_-19",
+        "east": "17_-19"
+      }
+    },
+    {
+      "id": "17_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "17_-18",
+        "south": "17_-20",
+        "west": "16_-19",
+        "east": "18_-19"
+      }
+    },
+    {
+      "id": "18_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "18_-18",
+        "south": "18_-20",
+        "west": "17_-19",
+        "east": "19_-19"
+      }
+    },
+    {
+      "id": "19_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "19_-18",
+        "south": "19_-20",
+        "west": "18_-19",
+        "east": "20_-19"
+      }
+    },
+    {
+      "id": "20_-19",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-18",
+        "south": "20_-20",
+        "west": "19_-19",
+        "east": "21_-19"
+      }
+    },
+    {
+      "id": "21_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-18",
+        "south": "21_-20",
+        "west": "20_-19",
+        "east": "22_-19"
+      }
+    },
+    {
+      "id": "22_-19",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-18",
+        "south": "22_-20",
+        "west": "21_-19",
+        "east": "23_-19"
+      }
+    },
+    {
+      "id": "23_-19",
+      "terrain": "p",
+      "exits": {
+        "north": "23_-18",
+        "south": "23_-20",
+        "west": "22_-19",
+        "east": "24_-19"
+      }
+    },
+    {
+      "id": "24_-19",
+      "terrain": "p",
+      "exits": {
+        "north": "24_-18",
+        "south": "24_-20",
+        "west": "23_-19",
+        "east": "25_-19"
+      }
+    },
+    {
+      "id": "25_-19",
+      "terrain": "p",
+      "exits": {
+        "north": "25_-18",
+        "south": "25_-20",
+        "west": "24_-19"
+      }
+    },
+    {
+      "id": "1_-20",
+      "terrain": "s",
+      "exits": {
+        "north": "1_-19",
+        "south": "1_-21",
+        "west": "0_-20",
+        "east": "2_-20"
+      }
+    },
+    {
+      "id": "2_-20",
+      "terrain": "s",
+      "exits": {
+        "north": "2_-19",
+        "south": "2_-21",
+        "west": "1_-20",
+        "east": "3_-20"
+      }
+    },
+    {
+      "id": "3_-20",
+      "terrain": "s",
+      "exits": {
+        "north": "3_-19",
+        "south": "3_-21",
+        "west": "2_-20",
+        "east": "4_-20"
+      }
+    },
+    {
+      "id": "4_-20",
+      "terrain": "s",
+      "exits": {
+        "north": "4_-19",
+        "south": "4_-21",
+        "west": "3_-20",
+        "east": "5_-20"
+      }
+    },
+    {
+      "id": "5_-20",
+      "terrain": "s",
+      "exits": {
+        "north": "5_-19",
+        "south": "5_-21",
+        "west": "4_-20",
+        "east": "6_-20"
+      }
+    },
+    {
+      "id": "6_-20",
+      "terrain": "s",
+      "exits": {
+        "north": "6_-19",
+        "south": "6_-21",
+        "west": "5_-20",
+        "east": "7_-20"
+      }
+    },
+    {
+      "id": "7_-20",
+      "terrain": "m",
+      "exits": {
+        "north": "7_-19",
+        "south": "7_-21",
+        "west": "6_-20",
+        "east": "8_-20"
+      }
+    },
+    {
+      "id": "8_-20",
+      "terrain": "m",
+      "exits": {
+        "north": "8_-19",
+        "south": "8_-21",
+        "west": "7_-20",
+        "east": "9_-20"
+      }
+    },
+    {
+      "id": "9_-20",
+      "terrain": "m",
+      "exits": {
+        "north": "9_-19",
+        "south": "9_-21",
+        "west": "8_-20",
+        "east": "10_-20"
+      }
+    },
+    {
+      "id": "10_-20",
+      "terrain": "m",
+      "exits": {
+        "north": "10_-19",
+        "south": "10_-21",
+        "west": "9_-20",
+        "east": "11_-20"
+      }
+    },
+    {
+      "id": "11_-20",
+      "terrain": "lf",
+      "exits": {
+        "north": "11_-19",
+        "south": "11_-21",
+        "west": "10_-20",
+        "east": "12_-20"
+      }
+    },
+    {
+      "id": "12_-20",
+      "terrain": "lf",
+      "exits": {
+        "north": "12_-19",
+        "south": "12_-21",
+        "west": "11_-20",
+        "east": "13_-20"
+      }
+    },
+    {
+      "id": "13_-20",
+      "terrain": "lf",
+      "exits": {
+        "north": "13_-19",
+        "south": "13_-21",
+        "west": "12_-20",
+        "east": "14_-20"
+      }
+    },
+    {
+      "id": "14_-20",
+      "terrain": "lf",
+      "exits": {
+        "north": "14_-19",
+        "south": "14_-21",
+        "west": "13_-20",
+        "east": "15_-20"
+      }
+    },
+    {
+      "id": "15_-20",
+      "terrain": "lf",
+      "exits": {
+        "north": "15_-19",
+        "south": "15_-21",
+        "west": "14_-20",
+        "east": "16_-20"
+      }
+    },
+    {
+      "id": "16_-20",
+      "terrain": "lf",
+      "exits": {
+        "north": "16_-19",
+        "south": "16_-21",
+        "west": "15_-20",
+        "east": "17_-20"
+      }
+    },
+    {
+      "id": "17_-20",
+      "terrain": "lf",
+      "exits": {
+        "north": "17_-19",
+        "south": "17_-21",
+        "west": "16_-20",
+        "east": "18_-20"
+      }
+    },
+    {
+      "id": "18_-20",
+      "terrain": "lf",
+      "exits": {
+        "north": "18_-19",
+        "south": "18_-21",
+        "west": "17_-20",
+        "east": "19_-20"
+      }
+    },
+    {
+      "id": "19_-20",
+      "terrain": "p",
+      "exits": {
+        "north": "19_-19",
+        "south": "19_-21",
+        "west": "18_-20",
+        "east": "20_-20"
+      }
+    },
+    {
+      "id": "20_-20",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-19",
+        "south": "20_-21",
+        "west": "19_-20",
+        "east": "21_-20"
+      }
+    },
+    {
+      "id": "21_-20",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-19",
+        "south": "21_-21",
+        "west": "20_-20",
+        "east": "22_-20"
+      }
+    },
+    {
+      "id": "22_-20",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-19",
+        "south": "22_-21",
+        "west": "21_-20",
+        "east": "23_-20"
+      }
+    },
+    {
+      "id": "23_-20",
+      "terrain": "m",
+      "exits": {
+        "north": "23_-19",
+        "south": "23_-21",
+        "west": "22_-20",
+        "east": "24_-20"
+      }
+    },
+    {
+      "id": "24_-20",
+      "terrain": "m",
+      "exits": {
+        "north": "24_-19",
+        "south": "24_-21",
+        "west": "23_-20",
+        "east": "25_-20"
+      }
+    },
+    {
+      "id": "25_-20",
+      "terrain": "m",
+      "exits": {
+        "north": "25_-19",
+        "south": "25_-21",
+        "west": "24_-20"
+      }
+    },
+    {
+      "id": "1_-21",
+      "terrain": "s",
+      "exits": {
+        "north": "1_-20",
+        "south": "1_-22",
+        "west": "0_-21",
+        "east": "2_-21"
+      }
+    },
+    {
+      "id": "2_-21",
+      "terrain": "s",
+      "exits": {
+        "north": "2_-20",
+        "south": "2_-22",
+        "west": "1_-21",
+        "east": "3_-21"
+      }
+    },
+    {
+      "id": "3_-21",
+      "terrain": "s",
+      "exits": {
+        "north": "3_-20",
+        "south": "3_-22",
+        "west": "2_-21",
+        "east": "4_-21"
+      }
+    },
+    {
+      "id": "4_-21",
+      "terrain": "s",
+      "exits": {
+        "north": "4_-20",
+        "south": "4_-22",
+        "west": "3_-21",
+        "east": "5_-21"
+      }
+    },
+    {
+      "id": "5_-21",
+      "terrain": "s",
+      "exits": {
+        "north": "5_-20",
+        "south": "5_-22",
+        "west": "4_-21",
+        "east": "6_-21"
+      }
+    },
+    {
+      "id": "6_-21",
+      "terrain": "s",
+      "exits": {
+        "north": "6_-20",
+        "south": "6_-22",
+        "west": "5_-21",
+        "east": "7_-21"
+      }
+    },
+    {
+      "id": "7_-21",
+      "terrain": "s",
+      "exits": {
+        "north": "7_-20",
+        "south": "7_-22",
+        "west": "6_-21",
+        "east": "8_-21"
+      }
+    },
+    {
+      "id": "8_-21",
+      "terrain": "m",
+      "exits": {
+        "north": "8_-20",
+        "south": "8_-22",
+        "west": "7_-21",
+        "east": "9_-21"
+      }
+    },
+    {
+      "id": "9_-21",
+      "terrain": "m",
+      "exits": {
+        "north": "9_-20",
+        "south": "9_-22",
+        "west": "8_-21",
+        "east": "10_-21"
+      }
+    },
+    {
+      "id": "10_-21",
+      "terrain": "m",
+      "exits": {
+        "north": "10_-20",
+        "south": "10_-22",
+        "west": "9_-21",
+        "east": "11_-21"
+      }
+    },
+    {
+      "id": "11_-21",
+      "terrain": "lf",
+      "exits": {
+        "north": "11_-20",
+        "south": "11_-22",
+        "west": "10_-21",
+        "east": "12_-21"
+      }
+    },
+    {
+      "id": "12_-21",
+      "terrain": "b",
+      "exits": {
+        "north": "12_-20",
+        "south": "12_-22",
+        "west": "11_-21",
+        "east": "13_-21"
+      }
+    },
+    {
+      "id": "13_-21",
+      "terrain": "b",
+      "exits": {
+        "north": "13_-20",
+        "south": "13_-22",
+        "west": "12_-21",
+        "east": "14_-21"
+      }
+    },
+    {
+      "id": "14_-21",
+      "terrain": "b",
+      "exits": {
+        "north": "14_-20",
+        "south": "14_-22",
+        "west": "13_-21",
+        "east": "15_-21"
+      }
+    },
+    {
+      "id": "15_-21",
+      "terrain": "lf",
+      "exits": {
+        "north": "15_-20",
+        "south": "15_-22",
+        "west": "14_-21",
+        "east": "16_-21"
+      }
+    },
+    {
+      "id": "16_-21",
+      "terrain": "b",
+      "exits": {
+        "north": "16_-20",
+        "south": "16_-22",
+        "west": "15_-21",
+        "east": "17_-21"
+      }
+    },
+    {
+      "id": "17_-21",
+      "terrain": "lf",
+      "exits": {
+        "north": "17_-20",
+        "south": "17_-22",
+        "west": "16_-21",
+        "east": "18_-21"
+      }
+    },
+    {
+      "id": "18_-21",
+      "terrain": "lf",
+      "exits": {
+        "north": "18_-20",
+        "south": "18_-22",
+        "west": "17_-21",
+        "east": "19_-21"
+      }
+    },
+    {
+      "id": "19_-21",
+      "terrain": "p",
+      "exits": {
+        "north": "19_-20",
+        "south": "19_-22",
+        "west": "18_-21",
+        "east": "20_-21"
+      }
+    },
+    {
+      "id": "20_-21",
+      "terrain": "p",
+      "exits": {
+        "north": "20_-20",
+        "south": "20_-22",
+        "west": "19_-21",
+        "east": "21_-21"
+      }
+    },
+    {
+      "id": "21_-21",
+      "terrain": "lf",
+      "exits": {
+        "north": "21_-20",
+        "south": "21_-22",
+        "west": "20_-21",
+        "east": "22_-21"
+      }
+    },
+    {
+      "id": "22_-21",
+      "terrain": "lf",
+      "exits": {
+        "north": "22_-20",
+        "south": "22_-22",
+        "west": "21_-21",
+        "east": "23_-21"
+      }
+    },
+    {
+      "id": "23_-21",
+      "terrain": "m",
+      "exits": {
+        "north": "23_-20",
+        "south": "23_-22",
+        "west": "22_-21",
+        "east": "24_-21"
+      }
+    },
+    {
+      "id": "24_-21",
+      "terrain": "m",
+      "exits": {
+        "north": "24_-20",
+        "south": "24_-22",
+        "west": "23_-21",
+        "east": "25_-21"
+      }
+    },
+    {
+      "id": "25_-21",
+      "terrain": "m",
+      "exits": {
+        "north": "25_-20",
+        "south": "25_-22",
+        "west": "24_-21"
+      }
+    },
+    {
+      "id": "1_-22",
+      "terrain": "s",
+      "exits": {
+        "north": "1_-21",
+        "south": "1_-23",
+        "west": "0_-22",
+        "east": "2_-22"
+      }
+    },
+    {
+      "id": "2_-22",
+      "terrain": "s",
+      "exits": {
+        "north": "2_-21",
+        "south": "2_-23",
+        "west": "1_-22",
+        "east": "3_-22"
+      }
+    },
+    {
+      "id": "3_-22",
+      "terrain": "s",
+      "exits": {
+        "north": "3_-21",
+        "south": "3_-23",
+        "west": "2_-22",
+        "east": "4_-22"
+      }
+    },
+    {
+      "id": "4_-22",
+      "terrain": "s",
+      "exits": {
+        "north": "4_-21",
+        "south": "4_-23",
+        "west": "3_-22",
+        "east": "5_-22"
+      }
+    },
+    {
+      "id": "5_-22",
+      "terrain": "s",
+      "exits": {
+        "north": "5_-21",
+        "south": "5_-23",
+        "west": "4_-22",
+        "east": "6_-22"
+      }
+    },
+    {
+      "id": "6_-22",
+      "terrain": "s",
+      "exits": {
+        "north": "6_-21",
+        "south": "6_-23",
+        "west": "5_-22",
+        "east": "7_-22"
+      }
+    },
+    {
+      "id": "7_-22",
+      "terrain": "s",
+      "exits": {
+        "north": "7_-21",
+        "south": "7_-23",
+        "west": "6_-22",
+        "east": "8_-22"
+      }
+    },
+    {
+      "id": "8_-22",
+      "terrain": "m",
+      "exits": {
+        "north": "8_-21",
+        "south": "8_-23",
+        "west": "7_-22",
+        "east": "9_-22"
+      }
+    },
+    {
+      "id": "9_-22",
+      "terrain": "m",
+      "exits": {
+        "north": "9_-21",
+        "south": "9_-23",
+        "west": "8_-22",
+        "east": "10_-22"
+      }
+    },
+    {
+      "id": "10_-22",
+      "terrain": "m",
+      "exits": {
+        "north": "10_-21",
+        "south": "10_-23",
+        "west": "9_-22",
+        "east": "11_-22"
+      }
+    },
+    {
+      "id": "11_-22",
+      "terrain": "lf",
+      "exits": {
+        "north": "11_-21",
+        "south": "11_-23",
+        "west": "10_-22",
+        "east": "12_-22"
+      }
+    },
+    {
+      "id": "12_-22",
+      "terrain": "b",
+      "exits": {
+        "north": "12_-21",
+        "south": "12_-23",
+        "west": "11_-22",
+        "east": "13_-22"
+      }
+    },
+    {
+      "id": "13_-22",
+      "terrain": "b",
+      "exits": {
+        "north": "13_-21",
+        "south": "13_-23",
+        "west": "12_-22",
+        "east": "14_-22"
+      }
+    },
+    {
+      "id": "14_-22",
+      "terrain": "b",
+      "exits": {
+        "north": "14_-21",
+        "south": "14_-23",
+        "west": "13_-22",
+        "east": "15_-22"
+      }
+    },
+    {
+      "id": "15_-22",
+      "terrain": "b",
+      "exits": {
+        "north": "15_-21",
+        "south": "15_-23",
+        "west": "14_-22",
+        "east": "16_-22"
+      }
+    },
+    {
+      "id": "16_-22",
+      "terrain": "b",
+      "exits": {
+        "north": "16_-21",
+        "south": "16_-23",
+        "west": "15_-22",
+        "east": "17_-22"
+      }
+    },
+    {
+      "id": "17_-22",
+      "terrain": "b",
+      "exits": {
+        "north": "17_-21",
+        "south": "17_-23",
+        "west": "16_-22",
+        "east": "18_-22"
+      }
+    },
+    {
+      "id": "18_-22",
+      "terrain": "lf",
+      "exits": {
+        "north": "18_-21",
+        "south": "18_-23",
+        "west": "17_-22",
+        "east": "19_-22"
+      }
+    },
+    {
+      "id": "19_-22",
+      "terrain": "b",
+      "exits": {
+        "north": "19_-21",
+        "south": "19_-23",
+        "west": "18_-22",
+        "east": "20_-22"
+      }
+    },
+    {
+      "id": "20_-22",
+      "terrain": "b",
+      "exits": {
+        "north": "20_-21",
+        "south": "20_-23",
+        "west": "19_-22",
+        "east": "21_-22"
+      }
+    },
+    {
+      "id": "21_-22",
+      "terrain": "b",
+      "exits": {
+        "north": "21_-21",
+        "south": "21_-23",
+        "west": "20_-22",
+        "east": "22_-22"
+      }
+    },
+    {
+      "id": "22_-22",
+      "terrain": "b",
+      "exits": {
+        "north": "22_-21",
+        "south": "22_-23",
+        "west": "21_-22",
+        "east": "23_-22"
+      }
+    },
+    {
+      "id": "23_-22",
+      "terrain": "m",
+      "exits": {
+        "north": "23_-21",
+        "south": "23_-23",
+        "west": "22_-22",
+        "east": "24_-22"
+      }
+    },
+    {
+      "id": "24_-22",
+      "terrain": "m",
+      "exits": {
+        "north": "24_-21",
+        "south": "24_-23",
+        "west": "23_-22",
+        "east": "25_-22"
+      }
+    },
+    {
+      "id": "25_-22",
+      "terrain": "w",
+      "exits": {
+        "north": "25_-21",
+        "south": "25_-23",
+        "west": "24_-22"
+      }
+    },
+    {
+      "id": "1_-23",
+      "terrain": "s",
+      "exits": {
+        "north": "1_-22",
+        "south": "1_-24",
+        "west": "0_-23",
+        "east": "2_-23"
+      }
+    },
+    {
+      "id": "2_-23",
+      "terrain": "s",
+      "exits": {
+        "north": "2_-22",
+        "south": "2_-24",
+        "west": "1_-23",
+        "east": "3_-23"
+      }
+    },
+    {
+      "id": "3_-23",
+      "terrain": "s",
+      "exits": {
+        "north": "3_-22",
+        "south": "3_-24",
+        "west": "2_-23",
+        "east": "4_-23"
+      }
+    },
+    {
+      "id": "4_-23",
+      "terrain": "s",
+      "exits": {
+        "north": "4_-22",
+        "south": "4_-24",
+        "west": "3_-23",
+        "east": "5_-23"
+      }
+    },
+    {
+      "id": "5_-23",
+      "terrain": "h",
+      "exits": {
+        "north": "5_-22",
+        "south": "5_-24",
+        "west": "4_-23",
+        "east": "6_-23"
+      }
+    },
+    {
+      "id": "6_-23",
+      "terrain": "h",
+      "exits": {
+        "north": "6_-22",
+        "south": "6_-24",
+        "west": "5_-23",
+        "east": "7_-23"
+      }
+    },
+    {
+      "id": "7_-23",
+      "terrain": "p",
+      "exits": {
+        "north": "7_-22",
+        "south": "7_-24",
+        "west": "6_-23",
+        "east": "8_-23"
+      }
+    },
+    {
+      "id": "8_-23",
+      "terrain": "m",
+      "exits": {
+        "north": "8_-22",
+        "south": "8_-24",
+        "west": "7_-23",
+        "east": "9_-23"
+      }
+    },
+    {
+      "id": "9_-23",
+      "terrain": "m",
+      "exits": {
+        "north": "9_-22",
+        "south": "9_-24",
+        "west": "8_-23",
+        "east": "10_-23"
+      }
+    },
+    {
+      "id": "10_-23",
+      "terrain": "m",
+      "exits": {
+        "north": "10_-22",
+        "south": "10_-24",
+        "west": "9_-23",
+        "east": "11_-23"
+      }
+    },
+    {
+      "id": "11_-23",
+      "terrain": "m",
+      "exits": {
+        "north": "11_-22",
+        "south": "11_-24",
+        "west": "10_-23",
+        "east": "12_-23"
+      }
+    },
+    {
+      "id": "12_-23",
+      "terrain": "m",
+      "exits": {
+        "north": "12_-22",
+        "south": "12_-24",
+        "west": "11_-23",
+        "east": "13_-23"
+      }
+    },
+    {
+      "id": "13_-23",
+      "terrain": "m",
+      "exits": {
+        "north": "13_-22",
+        "south": "13_-24",
+        "west": "12_-23",
+        "east": "14_-23"
+      }
+    },
+    {
+      "id": "14_-23",
+      "terrain": "m",
+      "exits": {
+        "north": "14_-22",
+        "south": "14_-24",
+        "west": "13_-23",
+        "east": "15_-23"
+      }
+    },
+    {
+      "id": "15_-23",
+      "terrain": "m",
+      "exits": {
+        "north": "15_-22",
+        "south": "15_-24",
+        "west": "14_-23",
+        "east": "16_-23"
+      }
+    },
+    {
+      "id": "16_-23",
+      "terrain": "b",
+      "exits": {
+        "north": "16_-22",
+        "south": "16_-24",
+        "west": "15_-23",
+        "east": "17_-23"
+      }
+    },
+    {
+      "id": "17_-23",
+      "terrain": "b",
+      "exits": {
+        "north": "17_-22",
+        "south": "17_-24",
+        "west": "16_-23",
+        "east": "18_-23"
+      }
+    },
+    {
+      "id": "18_-23",
+      "terrain": "b",
+      "exits": {
+        "north": "18_-22",
+        "south": "18_-24",
+        "west": "17_-23",
+        "east": "19_-23"
+      }
+    },
+    {
+      "id": "19_-23",
+      "terrain": "b",
+      "exits": {
+        "north": "19_-22",
+        "south": "19_-24",
+        "west": "18_-23",
+        "east": "20_-23"
+      }
+    },
+    {
+      "id": "20_-23",
+      "terrain": "b",
+      "exits": {
+        "north": "20_-22",
+        "south": "20_-24",
+        "west": "19_-23",
+        "east": "21_-23"
+      }
+    },
+    {
+      "id": "21_-23",
+      "terrain": "b",
+      "exits": {
+        "north": "21_-22",
+        "south": "21_-24",
+        "west": "20_-23",
+        "east": "22_-23"
+      }
+    },
+    {
+      "id": "22_-23",
+      "terrain": "b",
+      "exits": {
+        "north": "22_-22",
+        "south": "22_-24",
+        "west": "21_-23",
+        "east": "23_-23"
+      }
+    },
+    {
+      "id": "23_-23",
+      "terrain": "b",
+      "exits": {
+        "north": "23_-22",
+        "south": "23_-24",
+        "west": "22_-23",
+        "east": "24_-23"
+      }
+    },
+    {
+      "id": "24_-23",
+      "terrain": "w",
+      "exits": {
+        "north": "24_-22",
+        "south": "24_-24",
+        "west": "23_-23",
+        "east": "25_-23"
+      }
+    },
+    {
+      "id": "25_-23",
+      "terrain": "w",
+      "exits": {
+        "north": "25_-22",
+        "south": "25_-24",
+        "west": "24_-23"
+      }
+    },
+    {
+      "id": "1_-24",
+      "terrain": "p",
+      "exits": {
+        "north": "1_-23",
+        "west": "0_-24",
+        "east": "2_-24"
+      }
+    },
+    {
+      "id": "2_-24",
+      "terrain": "p",
+      "exits": {
+        "north": "2_-23",
+        "west": "1_-24",
+        "east": "3_-24"
+      }
+    },
+    {
+      "id": "3_-24",
+      "terrain": "h",
+      "exits": {
+        "north": "3_-23",
+        "west": "2_-24",
+        "east": "4_-24"
+      }
+    },
+    {
+      "id": "4_-24",
+      "terrain": "h",
+      "exits": {
+        "north": "4_-23",
+        "west": "3_-24",
+        "east": "5_-24"
+      }
+    },
+    {
+      "id": "5_-24",
+      "terrain": "h",
+      "exits": {
+        "north": "5_-23",
+        "west": "4_-24",
+        "east": "6_-24"
+      }
+    },
+    {
+      "id": "6_-24",
+      "terrain": "h",
+      "exits": {
+        "north": "6_-23",
+        "west": "5_-24",
+        "east": "7_-24"
+      }
+    },
+    {
+      "id": "7_-24",
+      "terrain": "p",
+      "exits": {
+        "north": "7_-23",
+        "west": "6_-24",
+        "east": "8_-24"
+      }
+    },
+    {
+      "id": "8_-24",
+      "terrain": "p",
+      "exits": {
+        "north": "8_-23",
+        "west": "7_-24",
+        "east": "9_-24"
+      }
+    },
+    {
+      "id": "9_-24",
+      "terrain": "p",
+      "exits": {
+        "north": "9_-23",
+        "west": "8_-24",
+        "east": "10_-24"
+      }
+    },
+    {
+      "id": "10_-24",
+      "terrain": "p",
+      "exits": {
+        "north": "10_-23",
+        "west": "9_-24",
+        "east": "11_-24"
+      }
+    },
+    {
+      "id": "11_-24",
+      "terrain": "m",
+      "exits": {
+        "north": "11_-23",
+        "west": "10_-24",
+        "east": "12_-24"
+      }
+    },
+    {
+      "id": "12_-24",
+      "terrain": "trail",
+      "exits": {
+        "north": "12_-23",
+        "west": "11_-24",
+        "east": "13_-24"
+      }
+    },
+    {
+      "id": "13_-24",
+      "terrain": "m",
+      "exits": {
+        "north": "13_-23",
+        "west": "12_-24",
+        "east": "14_-24"
+      }
+    },
+    {
+      "id": "14_-24",
+      "terrain": "m",
+      "exits": {
+        "north": "14_-23",
+        "west": "13_-24",
+        "east": "15_-24"
+      }
+    },
+    {
+      "id": "15_-24",
+      "terrain": "m",
+      "exits": {
+        "north": "15_-23",
+        "west": "14_-24",
+        "east": "16_-24"
+      }
+    },
+    {
+      "id": "16_-24",
+      "terrain": "b",
+      "exits": {
+        "north": "16_-23",
+        "west": "15_-24",
+        "east": "17_-24"
+      }
+    },
+    {
+      "id": "17_-24",
+      "terrain": "b",
+      "exits": {
+        "north": "17_-23",
+        "west": "16_-24",
+        "east": "18_-24"
+      }
+    },
+    {
+      "id": "18_-24",
+      "terrain": "b",
+      "exits": {
+        "north": "18_-23",
+        "west": "17_-24",
+        "east": "19_-24"
+      }
+    },
+    {
+      "id": "19_-24",
+      "terrain": "b",
+      "exits": {
+        "north": "19_-23",
+        "west": "18_-24",
+        "east": "20_-24"
+      }
+    },
+    {
+      "id": "20_-24",
+      "terrain": "b",
+      "exits": {
+        "north": "20_-23",
+        "west": "19_-24",
+        "east": "21_-24"
+      }
+    },
+    {
+      "id": "21_-24",
+      "terrain": "b",
+      "exits": {
+        "north": "21_-23",
+        "west": "20_-24",
+        "east": "22_-24"
+      }
+    },
+    {
+      "id": "22_-24",
+      "terrain": "b",
+      "exits": {
+        "north": "22_-23",
+        "west": "21_-24",
+        "east": "23_-24"
+      }
+    },
+    {
+      "id": "23_-24",
+      "terrain": "b",
+      "exits": {
+        "north": "23_-23",
+        "west": "22_-24",
+        "east": "24_-24"
+      }
+    },
+    {
+      "id": "24_-24",
+      "terrain": "b",
+      "exits": {
+        "north": "24_-23",
+        "west": "23_-24",
+        "east": "25_-24"
+      }
+    },
+    {
+      "id": "25_-24",
+      "terrain": "b",
+      "exits": {
+        "north": "25_-23",
+        "west": "24_-24"
+      }
+    }
+  ]
+}

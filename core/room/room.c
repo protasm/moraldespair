@@ -97,7 +97,16 @@ mapping link_can_enter(object actor, object link) {
   string blocked_message;
   int traverse_cost;
 
-  if (objectp(actor) && wizardp(actor))
+  if (!objectp(actor))
+    return ([ LINK_RESULT_OUTCOME : LINK_OUTCOME_ALLOW ]);
+
+  if (wizardp(actor))
+    return ([ LINK_RESULT_OUTCOME : LINK_OUTCOME_ALLOW ]);
+
+  if (function_exists("is_wizard", actor)) {
+    if (actor->is_wizard())
+      return ([ LINK_RESULT_OUTCOME : LINK_OUTCOME_ALLOW ]);
+  } else if (!userp(actor))
     return ([ LINK_RESULT_OUTCOME : LINK_OUTCOME_ALLOW ]);
 
   room_details = terrain_room_data();

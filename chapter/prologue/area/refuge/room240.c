@@ -5,7 +5,7 @@ void create() {
 
   short_desc = "North Street";
   long_desc =
-    "The roadway widens here, its center sunk and filled with damp leaves. A fallen\n"
+    "The road widens here, its center sunk and filled with damp leaves. A fallen\n"
     "signboard lies half-buried in the grit.\n";
   /*
   dest_dir = ([

@@ -7,7 +7,7 @@ void create() {
   long_desc = "A city overtaken by the dead.";
   /*
   dest_dir = ([
-    "north" : "/chapter/prologue/area/roadway/room71",
+    "north" : "/chapter/prologue/area/road/room71",
     "west" : "/chapter/prologue/area/wild/room/X45",
     "east" : "/chapter/prologue/area/wild/room/Z45",
     "south" : "/chapter/prologue/area/wild/room/Y46",

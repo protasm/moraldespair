@@ -5,7 +5,7 @@ void create() {
 
   short_desc = "Iron Walk";
   long_desc =
-    "Old iron rails bracket the street, many bent or missing. The roadway is\n"
+    "Old iron rails bracket the street, many bent or missing. The road is\n"
     "scarred by shallow ruts.\n";
   /*
   dest_dir = ([

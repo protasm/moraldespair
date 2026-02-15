@@ -1,20 +1,12 @@
 {
   "area": "Ruined City",
   "source_dir": "/chapter/prologue/area/ruined",
-  "room_count": 283,
-  "ignored_count": 2,
   "rooms": [
     {
       "id": "entrance",
       "short": "Ruined City",
       "long": "The ruins of a large city.",
-    "terrain": "area"
-    },
-    {
-      "id": "lounge",
-      "short": "Players' Lounge",
-      "long": "You stand in the hollowed remains of the lounge, a room that once buzzed with the gossip and fevered arguments of long-dead legends. Now, the only sound is the whistling of wind through the cracked, soot-stained windows that line the walls. A shimmering blue portal still flickers weakly in the center, its light pulsing like a dying heart as it leads upward.",
-    "terrain": "area"
+      "terrain": "area"
     },
     {
       "id": "portal",
@@ -109,7 +101,7 @@
     {
       "id": "room129",
       "short": "Westroad Ruins",
-      "long": "Westroad runs between low stone shells, their upper courses missing. Fallen blocks lie in the ruts, and a thin growth of grass softens the roadway.",
+      "long": "Westroad runs between low stone shells, their upper courses missing. Fallen blocks lie in the ruts, and a thin growth of grass softens the road.",
     "terrain": "area"
     },
     {
@@ -265,7 +257,7 @@
     {
       "id": "room155",
       "short": "South Road",
-      "long": "The roadway dips slightly, holding a thin skin of damp grit. A sagging doorway yawns nearby, black with soot.",
+      "long": "The road dips slightly, holding a thin skin of damp grit. A sagging doorway yawns nearby, black with soot.",
     "terrain": "area"
     },
     {
@@ -595,7 +587,7 @@
     {
       "id": "room210",
       "short": "East River Track",
-      "long": "Cracked stones and broken mortar leave the roadway ragged. A rusted chain lies half sunk in the silt.",
+      "long": "Cracked stones and broken mortar leave the road ragged. A rusted chain lies half sunk in the silt.",
     "terrain": "area"
     },
     {
@@ -1640,36 +1632,6 @@
       "id": "room857",
       "short": "Hollow Hall",
       "long": "A wide hall yawns under sagging beams, silent and ruined. Dust, mildew, and rot swallow splintered crates, hinting at bulk storage long abandoned.",
-    "terrain": "area"
-    },
-    {
-      "id": "room870",
-      "short": "In Rohan's bedroom",
-      "long": "In Rohan's bedroom",
-    "terrain": "area"
-    },
-    {
-      "id": "room871",
-      "short": "In Gwyneth's bedroom",
-      "long": "In Gwyneth's bedroom",
-    "terrain": "area"
-    },
-    {
-      "id": "room872",
-      "short": "In Vella's bedroom",
-      "long": "In Vella's bedroom",
-    "terrain": "area"
-    },
-    {
-      "id": "room873",
-      "short": "<> Aladrin escapes reality and falls into Moral Decay. <>",
-      "long": "<> Aladrin escapes reality and falls into Moral Decay. <>",
-    "terrain": "area"
-    },
-    {
-      "id": "room874",
-      "short": "Bottom floor of the silo",
-      "long": "Bottom floor of the silo",
     "terrain": "area"
     },
     {

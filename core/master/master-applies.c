@@ -107,6 +107,7 @@ object compile_object(string pathname) {
   mapping resolved_spec;
   string normalized_path;
   string virtual_path;
+  string custom_path;
 
   if (!stringp(pathname))
     return 0;
@@ -141,13 +142,37 @@ object compile_object(string pathname) {
     return 0;
   }
 
-  resolved_spec = room_data_daemon->virtual_spec(normalized_path);
+  resolved_spec = 0;
+
+  if (function_exists("resolve_room_request", room_data_daemon))
+    resolved_spec = room_data_daemon->resolve_room_request(normalized_path);
+
+  if (!mapp(resolved_spec))
+    resolved_spec = room_data_daemon->virtual_spec(normalized_path);
 
   if (!mapp(resolved_spec)) {
     wizard_virtual_debug(
       "master compile_object no virtual spec for: " + normalized_path
     );
     return 0;
+  }
+
+  custom_path = resolved_spec["custom_path"];
+
+  if (stringp(custom_path) && custom_path != "" && file_size(custom_path + ".c") > 0) {
+    wizard_virtual_debug(
+      "master compile_object custom override load: " + custom_path
+    );
+
+    room = load_object(custom_path);
+
+    if (objectp(room))
+      wizard_virtual_debug("master compile_object custom loaded: " + file_name(room));
+    else
+      wizard_virtual_debug("master compile_object custom failed: " + custom_path);
+
+    if (objectp(room))
+      return room;
   }
 
   virtual_path = resolved_spec["path"];
@@ -160,17 +185,17 @@ object compile_object(string pathname) {
   }
 
   wizard_virtual_debug(
-    "master compile_object virtual area_room via spec: path=" + virtual_path
+    "master compile_object virtual vroom via spec: path=" + virtual_path
   );
 
-  room = "/chapter/prologue/std/vmaster"->compile_object(
-    "area_room#" + virtual_path
+  room = "/daemon/vroom_d"->compile_object(
+    "vroom#" + virtual_path
   );
 
   if (objectp(room))
-    wizard_virtual_debug("master compile_object area_room created: " + file_name(room));
+    wizard_virtual_debug("master compile_object vroom created: " + file_name(room));
   else
-    wizard_virtual_debug("master compile_object area_room failed: path=" + virtual_path);
+    wizard_virtual_debug("master compile_object vroom failed: path=" + virtual_path);
 
   return room;
 }
