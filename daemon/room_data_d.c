@@ -1,7 +1,7 @@
 mapping room_data_by_path;
 mapping virtual_specs_by_path;
 mapping room_paths_by_source_dir;
-mapping terrain_catalog_by_area_dir;
+mapping terrain_catalog_by_chapter_dir;
 int loaded, room_count, json_file_count;
 string *json_files_loaded;
 string last_load_error;
@@ -130,35 +130,45 @@ string area_dir_from_json_file(string json_file) {
   return "/chapter/" + chapter_name + "/area/" + area_name;
 }
 
-mapping terrain_catalog_for_area_dir(string area_dir) {
-  mapping terrain_catalog;
-  mixed parsed_json;
-  string *parts;
+string chapter_dir_from_area_dir(string area_dir) {
+  string chapter_name;
   string area_name;
-  string terrain_file;
-  string terrain_contents;
 
   area_dir = normalize_path(area_dir);
 
   if (area_dir == "")
+    return "";
+
+  chapter_name = "";
+  area_name = "";
+
+  if (sscanf(area_dir, "/chapter/%s/area/%s", chapter_name, area_name) != 2)
+    return "";
+
+  if (!stringp(chapter_name) || chapter_name == "")
+    return "";
+
+  return "/chapter/" + chapter_name;
+}
+
+mapping terrain_catalog_for_area_dir(string area_dir) {
+  mapping terrain_catalog;
+  mixed parsed_json;
+  string chapter_dir;
+  string terrain_file;
+  string terrain_contents;
+
+  chapter_dir = chapter_dir_from_area_dir(area_dir);
+
+  if (chapter_dir == "")
     return 0;
 
-  terrain_catalog = terrain_catalog_by_area_dir[area_dir];
+  terrain_catalog = terrain_catalog_by_chapter_dir[chapter_dir];
 
   if (mapp(terrain_catalog))
     return terrain_catalog;
 
-  parts = explode(area_dir, "/");
-
-  if (!pointerp(parts) || sizeof(parts) < 1)
-    return 0;
-
-  area_name = parts[<1];
-
-  if (!stringp(area_name) || area_name == "")
-    return 0;
-
-  terrain_file = area_dir + "/" + area_name + "_terrain.json";
+  terrain_file = chapter_dir + "/std/terrain.json";
 
   if (file_size(terrain_file) <= 0)
     return 0;
@@ -174,7 +184,7 @@ mapping terrain_catalog_for_area_dir(string area_dir) {
     return 0;
 
   terrain_catalog = parsed_json;
-  terrain_catalog_by_area_dir[area_dir] = terrain_catalog;
+  terrain_catalog_by_chapter_dir[chapter_dir] = terrain_catalog;
 
   return terrain_catalog;
 }
@@ -320,7 +330,7 @@ void load_room_data() {
   room_data_by_path = ([]);
   virtual_specs_by_path = ([]);
   room_paths_by_source_dir = ([]);
-  terrain_catalog_by_area_dir = ([]);
+  terrain_catalog_by_chapter_dir = ([]);
   json_files_loaded = ({ });
   room_count = 0;
   json_file_count = 0;

@@ -55,7 +55,7 @@ void create() {
     "/chapter/prologue/area/roadway/links.json",
     "/chapter/prologue/area/wild/wild_links.json",
     "/chapter/prologue/area/refuge/links.json",
-    "/chapter/prologue/area/ruined/ruined_links.json",
+    "/chapter/prologue/area/ruined/links.json",
     "/chapter/prologue/area/silent/links.json",
     "/chapter/prologue/area/sunken/links.json",
   });

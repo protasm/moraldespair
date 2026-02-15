@@ -1,17 +1,5 @@
 #define AREA_ROOM_TEMPLATE "/core/room/area_room"
 
-string normalize_room_path(string room_path) {
-  string base_id;
-
-  if (!stringp(room_path) || room_path == "")
-    return "";
-
-  if (sscanf(room_path, "%s.c", base_id) == 1)
-    room_path = base_id;
-
-  return room_path;
-}
-
 void wizard_virtual_debug(string message) {
   object *online_users;
   object user;

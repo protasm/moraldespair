@@ -1,6 +1,7 @@
 inherit "/core/object";
 
 #include "room.h"
+#include <link.h>
 
 string short_desc, long_desc;
 object room_link_cache;
@@ -58,6 +59,74 @@ int pre_action(object action) {
 
 void post_action(object action) {
   return;
+}
+
+mapping terrain_room_data() {
+  object room_data_daemon;
+  mapping room_details;
+  string lookup_path;
+
+  lookup_path = base_name(this_object());
+
+  if (function_exists("link_endpoint_id", this_object())) {
+    lookup_path = this_object()->link_endpoint_id();
+
+    if (!stringp(lookup_path) || lookup_path == "")
+      lookup_path = base_name(this_object());
+  }
+
+  room_data_daemon = find_object("/daemon/room_data_d");
+
+  if (!objectp(room_data_daemon))
+    room_data_daemon = load_object("/daemon/room_data_d");
+
+  room_details = 0;
+
+  if (objectp(room_data_daemon))
+    room_details = room_data_daemon->room_data(lookup_path);
+
+  if (!mapp(room_details))
+    return 0;
+
+  return room_details;
+}
+
+mapping link_can_enter(object actor, object link) {
+  mapping room_details;
+  string traverse_failure;
+  string blocked_message;
+  int traverse_cost;
+
+  if (objectp(actor) && wizardp(actor))
+    return ([ LINK_RESULT_OUTCOME : LINK_OUTCOME_ALLOW ]);
+
+  room_details = terrain_room_data();
+
+  if (!mapp(room_details))
+    return ([ LINK_RESULT_OUTCOME : LINK_OUTCOME_ALLOW ]);
+
+  traverse_cost = room_details["traverse_cost"];
+
+  if (!intp(traverse_cost))
+    traverse_cost = 0;
+
+  if (traverse_cost >= 0)
+    return ([ LINK_RESULT_OUTCOME : LINK_OUTCOME_ALLOW ]);
+
+  traverse_failure = room_details["traverse_failure"];
+
+  if (stringp(traverse_failure) && traverse_failure != "")
+    blocked_message = traverse_failure;
+  else
+    blocked_message = "That terrain is not passable right now.";
+
+  return ([
+    LINK_RESULT_OUTCOME : LINK_OUTCOME_DENY,
+    LINK_RESULT_MESSAGE : blocked_message,
+    LINK_RESULT_REDIRECT : "",
+    LINK_RESULT_COST : 0,
+    LINK_RESULT_MUTATIONS : ({ })
+  ]);
 }
 
 /*
