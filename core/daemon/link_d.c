@@ -513,6 +513,109 @@ string normalize_prefix(string prefix) {
   return prefix;
 }
 
+/* Method Summary:
+ * Purpose:
+ *   Handles parent_dir_from_file for this object.
+ * Parameters:
+ *   - string file
+ * Approach:
+ *   Validates inputs and executes explicit local logic for parent_dir_from_file.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from parent_dir_from_file.
+ */
+string parent_dir_from_file(string file) {
+  string normalized_file;
+  string parent_dir;
+  string base_name;
+
+  normalized_file = normalize_endpoint(file);
+
+  if (normalized_file == "")
+    return "";
+
+  parent_dir = "";
+  base_name = "";
+
+  if (sscanf(normalized_file, "%s/%s", parent_dir, base_name) != 2)
+    return "";
+
+  parent_dir = normalize_endpoint(parent_dir);
+
+  return parent_dir;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles inferred_prefix_from_rooms_json for this object.
+ * Parameters:
+ *   - string link_file
+ * Approach:
+ *   Validates inputs and executes explicit local logic for inferred_prefix_from_rooms_json.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   string result from inferred_prefix_from_rooms_json.
+ */
+string inferred_prefix_from_rooms_json(string link_file) {
+  string parent_dir;
+  string source_file;
+  string legacy_rooms_file;
+  string area_name;
+  string *path_parts;
+  string json_raw;
+  mapping json_data;
+  string inferred_prefix;
+
+  parent_dir = parent_dir_from_file(link_file);
+
+  if (parent_dir == "")
+    return "";
+
+  source_file = join_path(parent_dir, "rooms.json");
+
+  if (file_size(source_file) <= 0) {
+    area_name = "";
+    path_parts = explode(parent_dir, "/");
+
+    if (pointerp(path_parts) && sizeof(path_parts))
+      area_name = path_parts[<1];
+
+    if (stringp(area_name) && area_name != "") {
+      legacy_rooms_file = join_path(parent_dir, area_name + ".json");
+
+      if (file_size(legacy_rooms_file) > 0)
+        source_file = legacy_rooms_file;
+    }
+  }
+
+  if (file_size(source_file) <= 0)
+    return "";
+
+  json_raw = read_json_file(source_file);
+
+  if (!stringp(json_raw) || json_raw == "")
+    return "";
+
+  json_data = parse_json(json_raw);
+
+  if (!mapp(json_data))
+    return "";
+
+  inferred_prefix = "";
+
+  if (stringp(json_data["source_dir"]))
+    inferred_prefix = normalize_prefix(json_data["source_dir"]);
+
+  if (inferred_prefix == "" && stringp(json_data["area_prefix"]))
+    inferred_prefix = normalize_prefix(json_data["area_prefix"]);
+
+  return inferred_prefix;
+}
+
 /* Resolve a possibly-relative endpoint using a prefix */
 /* Method Summary:
  * Purpose:
@@ -803,7 +906,7 @@ int define_link(string env_a, string env_b, mapping definition) {
  * Load and register links from a JSON file.
  *
  * Expected:
- *   area_prefix : string (optional but recommended)
+ *   area_prefix : string (optional)
  *   links       : array of link objects
  *
  * Each link object may contain:
@@ -812,6 +915,8 @@ int define_link(string env_a, string env_b, mapping definition) {
  *   type, gate, one_way, ... (optional)
  *
  * Relative room refs are resolved against area_prefix.
+ * If area_prefix is omitted, LINK_D attempts to infer it from sibling
+ * rooms.json source_dir (or legacy area-name JSON source_dir).
  * If rooms are omitted, endpoints are inferred from dirs keys.
  */
 /* Method Summary:
@@ -853,6 +958,9 @@ int load_json(string file) {
 
   if (stringp(data["area_prefix"]))
     prefix = normalize_prefix(data["area_prefix"]);
+
+  if (prefix == "")
+    prefix = inferred_prefix_from_rooms_json(file);
 
   links_arr = data["links"];
 
