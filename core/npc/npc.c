@@ -32,6 +32,11 @@ string *npc_path_memory;
 string *npc_fidget_texts;
 string npc_sensory_form;
 mapping npc_sensor_profile_override;
+int npc_combat_speed;
+int npc_combat_max_hp;
+mapping npc_combat_abilities;
+int npc_in_combat;
+string npc_combat_id;
 
 /* Method Summary:
  * Purpose:
@@ -63,6 +68,19 @@ void create() {
   npc_fidget_texts = ({ });
   npc_sensory_form = "humanoid";
   npc_sensor_profile_override = 0;
+  npc_combat_speed = 100;
+  npc_combat_max_hp = 25;
+  npc_combat_abilities = ([
+    1 : ([
+      "name" : "Strike",
+      "cooldown_turns" : 0,
+      "min_damage" : 3,
+      "max_damage" : 6,
+      "npc_line" : "%ACTOR% strikes."
+    ])
+  ]);
+  npc_in_combat = 0;
+  npc_combat_id = "";
 
   return;
 }
@@ -517,6 +535,221 @@ void set_level(int new_level) {
 
 /* Method Summary:
  * Purpose:
+ *   Handles combat_speed for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns speed used by turn-gauge combat scheduling.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   int result from combat_speed.
+ */
+int combat_speed() {
+  if (!intp(npc_combat_speed) || npc_combat_speed < 1)
+    npc_combat_speed = 1;
+
+  if (npc_combat_speed > 1000)
+    npc_combat_speed = 1000;
+
+  return npc_combat_speed;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles set_combat_speed for this object.
+ * Parameters:
+ *   - int new_speed
+ * Approach:
+ *   Stores turn-gauge speed while clamping to combat bounds.
+ * Side effects:
+ *   Mutates combat speed metadata.
+ * Returns:
+ *   void result from set_combat_speed.
+ */
+void set_combat_speed(int new_speed) {
+  if (!intp(new_speed))
+    return;
+
+  if (new_speed < 1)
+    new_speed = 1;
+
+  if (new_speed > 1000)
+    new_speed = 1000;
+
+  npc_combat_speed = new_speed;
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles combat_max_hp for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns max health used to initialize combat state.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   int result from combat_max_hp.
+ */
+int combat_max_hp() {
+  if (!intp(npc_combat_max_hp) || npc_combat_max_hp < 1)
+    npc_combat_max_hp = 1;
+
+  return npc_combat_max_hp;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles set_combat_max_hp for this object.
+ * Parameters:
+ *   - int new_max_hp
+ * Approach:
+ *   Stores combat max health with a defensive minimum of one.
+ * Side effects:
+ *   Mutates combat max health metadata.
+ * Returns:
+ *   void result from set_combat_max_hp.
+ */
+void set_combat_max_hp(int new_max_hp) {
+  if (!intp(new_max_hp))
+    return;
+
+  if (new_max_hp < 1)
+    new_max_hp = 1;
+
+  npc_combat_max_hp = new_max_hp;
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles combat_abilities for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns slot-keyed combat ability configuration.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   mapping result from combat_abilities.
+ */
+mapping combat_abilities() {
+  if (!mapp(npc_combat_abilities))
+    return ([]);
+
+  return copy(npc_combat_abilities);
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles set_combat_abilities for this object.
+ * Parameters:
+ *   - mapping abilities
+ * Approach:
+ *   Stores slot-keyed combat ability configuration.
+ * Side effects:
+ *   Mutates combat ability metadata.
+ * Returns:
+ *   void result from set_combat_abilities.
+ */
+void set_combat_abilities(mapping abilities) {
+  if (!mapp(abilities)) {
+    npc_combat_abilities = ([]);
+
+    return;
+  }
+
+  npc_combat_abilities = copy(abilities);
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles query_in_combat for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns transient combat participation state.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   int result from query_in_combat.
+ */
+int query_in_combat() {
+  return npc_in_combat;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles set_in_combat for this object.
+ * Parameters:
+ *   - int state
+ * Approach:
+ *   Stores transient combat participation state.
+ * Side effects:
+ *   Mutates runtime-only combat state.
+ * Returns:
+ *   void result from set_in_combat.
+ */
+void set_in_combat(int state) {
+  if (state)
+    npc_in_combat = 1;
+  else
+    npc_in_combat = 0;
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles query_combat_id for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns transient combat session identifier.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   string result from query_combat_id.
+ */
+string query_combat_id() {
+  if (!stringp(npc_combat_id))
+    return "";
+
+  return npc_combat_id;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles set_combat_id for this object.
+ * Parameters:
+ *   - string combat_id
+ * Approach:
+ *   Stores transient combat session identifier.
+ * Side effects:
+ *   Mutates runtime-only combat state.
+ * Returns:
+ *   void result from set_combat_id.
+ */
+void set_combat_id(string combat_id) {
+  if (!stringp(combat_id)) {
+    npc_combat_id = "";
+
+    return;
+  }
+
+  npc_combat_id = trim(combat_id);
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
  *   Handles name for this object.
  * Parameters:
  *   - none
@@ -901,6 +1134,12 @@ void mobility_tick() {
 
   if (!npc_mobility_enabled)
     return;
+
+  if (query_in_combat()) {
+    schedule_mobility_tick();
+
+    return;
+  }
 
   moved = attempt_random_move();
 

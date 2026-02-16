@@ -19,6 +19,9 @@ string avatar_sensory_form;
 mapping avatar_sensor_profile_override;
 mapping avatar_soul_emotes;
 string avatar_soul_emotes_file;
+int avatar_in_combat;
+string avatar_combat_id;
+int avatar_awaiting_combat_input;
 int ensure_player_level(mapping player_data);
 int query_level();
 int save_player_data(mapping player_data);
@@ -902,6 +905,193 @@ int set_level(int new_level) {
   player_data["level"] = normalized_level;
 
   return save_player_data(player_data);
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles combat_speed for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns base speed used by turn-gauge combat scheduling.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   int result from combat_speed.
+ */
+int combat_speed() {
+  return 101;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles combat_max_hp for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns base combat health used for fight runtime state.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   int result from combat_max_hp.
+ */
+int combat_max_hp() {
+  return 100;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles combat_abilities for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns slot-keyed ability definitions for combat resolution.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   mapping result from combat_abilities.
+ */
+mapping combat_abilities() {
+  return ([
+    1 : ([
+      "name" : "Punch",
+      "cooldown_turns" : 0,
+      "min_damage" : 8,
+      "max_damage" : 12,
+      "player_line" : "You punch %TARGET%."
+    ]),
+    2 : ([
+      "name" : "Kick",
+      "cooldown_turns" : 2,
+      "min_damage" : 12,
+      "max_damage" : 14,
+      "player_line" : "You kick hard into %TARGET%'s head."
+    ]),
+    3 : ([
+      "name" : "Charge",
+      "cooldown_turns" : 3,
+      "min_damage" : 18,
+      "max_damage" : 20,
+      "player_line" : "You charge forward and slam into %TARGET%."
+    ])
+  ]);
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles query_in_combat for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns transient combat participation state.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   int result from query_in_combat.
+ */
+int query_in_combat() {
+  return avatar_in_combat;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles set_in_combat for this object.
+ * Parameters:
+ *   - int state
+ * Approach:
+ *   Stores transient combat participation state.
+ * Side effects:
+ *   Mutates runtime-only combat state.
+ * Returns:
+ *   void result from set_in_combat.
+ */
+void set_in_combat(int state) {
+  if (state)
+    avatar_in_combat = 1;
+  else
+    avatar_in_combat = 0;
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles query_combat_id for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns the current combat session identifier.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   string result from query_combat_id.
+ */
+string query_combat_id() {
+  if (!stringp(avatar_combat_id))
+    return "";
+
+  return avatar_combat_id;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles set_combat_id for this object.
+ * Parameters:
+ *   - string combat_id
+ * Approach:
+ *   Stores transient combat session identifier.
+ * Side effects:
+ *   Mutates runtime-only combat state.
+ * Returns:
+ *   void result from set_combat_id.
+ */
+void set_combat_id(string combat_id) {
+  if (!stringp(combat_id)) {
+    avatar_combat_id = "";
+
+    return;
+  }
+
+  avatar_combat_id = trim(combat_id);
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles query_awaiting_combat_input for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns whether this avatar is currently waiting on combat input.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   int result from query_awaiting_combat_input.
+ */
+int query_awaiting_combat_input() {
+  return avatar_awaiting_combat_input;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles set_awaiting_combat_input for this object.
+ * Parameters:
+ *   - int state
+ * Approach:
+ *   Stores whether this avatar is currently waiting on combat input.
+ * Side effects:
+ *   Mutates runtime-only combat state.
+ * Returns:
+ *   void result from set_awaiting_combat_input.
+ */
+void set_awaiting_combat_input(int state) {
+  if (state)
+    avatar_awaiting_combat_input = 1;
+  else
+    avatar_awaiting_combat_input = 0;
+
+  return;
 }
 
 /* Method Summary:

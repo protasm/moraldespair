@@ -379,6 +379,7 @@ int handle_soul_input(string verb, string arg) {
  *   string result from process_input.
  */
 string process_input(string raw) {
+  object combat_daemon;
   object command;
   object avatar, env;
   object link_cache;
@@ -394,6 +395,21 @@ string process_input(string raw) {
   // Drop empty input lines early.
   if (raw == "")
     return "";
+
+  if (function_exists("query_in_combat", this_object())) {
+    if (this_object()->query_in_combat()) {
+      combat_daemon = find_object(COMBAT_D);
+
+      if (!objectp(combat_daemon))
+        combat_daemon = load_object(COMBAT_D);
+
+      if (objectp(combat_daemon) && function_exists("handle_input", combat_daemon)) {
+        combat_daemon->handle_input(this_object(), raw);
+
+        return "";
+      }
+    }
+  }
 
   // Split verb from argument, defaulting to empty arg.
   if (sscanf(raw, "%s %s", verb, arg) != 2) {

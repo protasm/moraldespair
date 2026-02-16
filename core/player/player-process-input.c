@@ -26,6 +26,7 @@
  *   string result from process_input.
  */
 string process_input(string raw) {
+  object combat_daemon;
   object command;
   object avatar_object;
   object env;
@@ -53,6 +54,21 @@ string process_input(string raw) {
     write("No avatar is active.\n");
 
     return "";
+  }
+
+  if (function_exists("query_in_combat", avatar_object)) {
+    if (avatar_object->query_in_combat()) {
+      combat_daemon = find_object(COMBAT_D);
+
+      if (!objectp(combat_daemon))
+        combat_daemon = load_object(COMBAT_D);
+
+      if (objectp(combat_daemon) && function_exists("handle_input", combat_daemon)) {
+        combat_daemon->handle_input(avatar_object, raw);
+
+        return "";
+      }
+    }
   }
 
   command_path = "/core/command/" + verb;

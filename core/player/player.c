@@ -13,6 +13,7 @@
 
 inherit "/core/object/object";
 
+#include <globals.h>
 #include "player-data.c"
 #include "player-process-input.c"
 
@@ -135,10 +136,24 @@ void show_location(int force_verbose, int show_path) {
  *   void result from deliver_experience.
  */
 void deliver_experience(mapping event) {
+  string source;
   string text;
+  int in_combat;
 
   if (!mapp(event))
     return;
+
+  in_combat = 0;
+
+  if (objectp(avatar_object) && function_exists("query_in_combat", avatar_object))
+    in_combat = avatar_object->query_in_combat();
+
+  if (in_combat) {
+    source = event["source"];
+
+    if (!stringp(source) || source != "combat")
+      return;
+  }
 
   text = event["text"];
 
@@ -188,5 +203,19 @@ void telnet_suboption(int option, string message) { return; }
 void terminal_colour_replace(string message) { return; }
 void terminal_type(string message) { return; }
 void window_size(int width, int height) { return; }
-void write_prompt() { write(PLAYER_PROMPT); return; }
+void write_prompt() {
+  if (objectp(avatar_object) && function_exists("query_in_combat", avatar_object)) {
+    if (avatar_object->query_in_combat())
+      return;
+  }
+
+  if (objectp(avatar_object) && function_exists("query_awaiting_combat_input", avatar_object)) {
+    if (avatar_object->query_awaiting_combat_input())
+      return;
+  }
+
+  write(PLAYER_PROMPT);
+
+  return;
+}
 void zmp(string message) { return; }

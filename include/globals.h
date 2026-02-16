@@ -17,6 +17,7 @@
 
 #define ACCOUNT_D "/core/daemon/account_d"
 #define CHAPTER_D "/core/daemon/chapter_d"
+#define COMBAT_D "/core/daemon/combat_d"
 #define LINK_D "/core/daemon/link_d"
 #define MOVE_D "/core/daemon/move_d"
 #define EXPERIENCE_D "/core/daemon/experience_d"

@@ -13,6 +13,7 @@
 
 inherit "/core/object/object";
 
+#include <globals.h>
 #include "avatar.h"
 #include "avatar-data.c"
 #include "avatar-process-input.c"
@@ -754,6 +755,9 @@ void window_size(int width, int height) {
  *   void result from write_prompt.
  */
 void write_prompt() {
+  if (query_awaiting_combat_input())
+    return;
+
   experience_text(PLAYER_PROMPT);
 
   return;

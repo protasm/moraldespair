@@ -50,6 +50,24 @@ void create() {
   add_id("grave");
 
   set_level(1);
+  set_combat_speed(125);
+  set_combat_max_hp(90);
+  set_combat_abilities(([
+    1 : ([
+      "name" : "Bite",
+      "cooldown_turns" : 0,
+      "min_damage" : 6,
+      "max_damage" : 9,
+      "npc_line" : "%ACTOR% lunges and bites."
+    ]),
+    2 : ([
+      "name" : "Tail Slap",
+      "cooldown_turns" : 2,
+      "min_damage" : 10,
+      "max_damage" : 14,
+      "npc_line" : "%ACTOR% whips its tail across your side."
+    ])
+  ]));
   set_fidget_texts(({
     "Grave Worm curls and uncurls in the damp grit.",
     "Grave Worm presses into the soil, then drags forward a handspan.",

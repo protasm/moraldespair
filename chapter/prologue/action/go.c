@@ -61,6 +61,14 @@ int main(string arg) {
   if (!is_avatar(avatar))
     return 0;
 
+  if (function_exists("query_in_combat", avatar)) {
+    if (avatar->query_in_combat()) {
+      avatar_experience(avatar, "You cannot move while in combat.\n");
+
+      return 1;
+    }
+  }
+
   if (!stringp(arg))
     arg = "";
 
