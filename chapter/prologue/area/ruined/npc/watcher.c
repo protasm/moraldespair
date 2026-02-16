@@ -10,6 +10,7 @@ void create() {
 
   set_name("Watcher");
   set_short("Watcher");
+  set_level(1000);
   set_long(
     "A gaunt figure wrapped in threadbare cloth stands beneath a cracked "
     + "archway. Its posture never shifts, and a pale mask hides whatever "

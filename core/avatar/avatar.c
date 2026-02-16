@@ -237,6 +237,110 @@ string abbreviate_exit(string direction) {
 
 /* Method Summary:
  * Purpose:
+ *   Handles show_room_occupants for this object.
+ * Parameters:
+ *   - object env, object observer, int separate_from_exits
+ * Approach:
+ *   Validates inputs and executes explicit local logic for show_room_occupants.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   int result from show_room_occupants.
+ */
+int show_room_occupants(object env, object observer, int separate_from_exits) {
+  object *contents;
+  object occupant;
+  string occupant_short;
+  string *player_names;
+  string *npc_names;
+  int j;
+  int show_occupant;
+  int npc_state;
+
+  if (!objectp(env))
+    return 0;
+
+  contents = all_inventory(env);
+  player_names = ({ });
+  npc_names = ({ });
+
+  if (pointerp(contents) && sizeof(contents)) {
+    for (j = 0; j < sizeof(contents); j++) {
+      occupant = contents[j];
+
+      if (!objectp(occupant) || occupant == this_object())
+        continue;
+
+      show_occupant = 0;
+      npc_state = 0;
+
+      if (is_connected_avatar(occupant))
+        show_occupant = 1;
+      else if (function_exists("is_npc", occupant)) {
+        npc_state = occupant->is_npc();
+
+        if (intp(npc_state) && npc_state)
+          show_occupant = 1;
+      }
+
+      if (!show_occupant)
+        continue;
+
+      occupant_short = "";
+
+      if (function_exists("short_for", occupant))
+        occupant_short = occupant->short_for(observer);
+
+      if (!stringp(occupant_short) || occupant_short == "")
+        if (function_exists("short", occupant))
+          occupant_short = occupant->short();
+
+      if (!stringp(occupant_short) || occupant_short == "") {
+        if (function_exists("name", occupant))
+          occupant_short = occupant->name();
+      }
+
+      if (!stringp(occupant_short) || occupant_short == "")
+        continue;
+
+      if (is_connected_avatar(occupant))
+        player_names += ({ occupant_short });
+      else
+        npc_names += ({ occupant_short });
+    }
+  }
+
+  if (sizeof(player_names)) {
+    if (separate_from_exits)
+      experience_text("\n");
+
+    player_names = sort_array(player_names, 1);
+    experience_text("Also here: " + implode(player_names, ", ") + "\n");
+    separate_from_exits = 0;
+  }
+
+  if (sizeof(npc_names)) {
+    if (separate_from_exits)
+      experience_text("\n");
+
+    npc_names = sort_array(npc_names, 1);
+
+    if (sizeof(player_names))
+      experience_text("\n");
+
+    for (j = 0; j < sizeof(npc_names); j++)
+      experience_text(npc_names[j] + "\n");
+  }
+
+  if (sizeof(player_names) || sizeof(npc_names))
+    return 1;
+
+  return 0;
+}
+
+/* Method Summary:
+ * Purpose:
  *   Handles show_location for this object.
  * Parameters:
  *   - int force_verbose, int show_path
@@ -250,20 +354,12 @@ string abbreviate_exit(string direction) {
  */
 void show_location(int force_verbose, int show_path) {
   object env;
-  object *contents;
-  object occupant;
   string short_desc, long_desc, room_path, room_endpoint_id;
-  string occupant_name;
-  string occupant_short;
-  string *player_names;
-  string *npc_names;
   mapping exits;
   string *dirs, *abbr_dirs;
-  int brief_state, i, j;
+  int brief_state, i;
   int show_wizard_path;
   int has_wizard_access;
-  int show_occupant;
-  int npc_state;
 
   env = environment(this_object());
 
@@ -296,6 +392,8 @@ void show_location(int force_verbose, int show_path) {
       experience_text("[Exits: " + implode(abbr_dirs, " ") + "]\n");
     } else
       experience_text("[Exits: none]\n");
+
+    show_room_occupants(env, this_object(), 1);
 
     return;
   }
@@ -337,70 +435,8 @@ void show_location(int force_verbose, int show_path) {
   }
 
   experience_text("\n");
-
-  contents = all_inventory(env);
-  player_names = ({ });
-  npc_names = ({ });
-
-  if (pointerp(contents) && sizeof(contents)) {
-    for (j = 0; j < sizeof(contents); j++) {
-      occupant = contents[j];
-
-      if (!objectp(occupant) || occupant == this_object())
-        continue;
-
-      show_occupant = 0;
-      npc_state = 0;
-
-      if (is_connected_avatar(occupant))
-        show_occupant = 1;
-      else if (function_exists("is_npc", occupant)) {
-        npc_state = occupant->is_npc();
-
-        if (intp(npc_state) && npc_state)
-          show_occupant = 1;
-      }
-
-      if (!show_occupant)
-        continue;
-
-      occupant_name = "";
-      occupant_short = "";
-
-      if (function_exists("name", occupant))
-        occupant_name = occupant->name();
-
-      if (!stringp(occupant_name) || occupant_name == "")
-        continue;
-
-      if (is_connected_avatar(occupant))
-        player_names += ({ occupant_name });
-      else {
-        if (function_exists("short", occupant))
-          occupant_short = occupant->short();
-
-        if (stringp(occupant_short) && occupant_short != "")
-          npc_names += ({ occupant_short });
-        else
-          npc_names += ({ occupant_name });
-      }
-    }
-  }
-
-  if (sizeof(player_names)) {
-    player_names = sort_array(player_names, 1);
-    experience_text("Also here: " + implode(player_names, ", ") + "\n");
-  }
-
-  if (sizeof(npc_names)) {
-    npc_names = sort_array(npc_names, 1);
-
-    for (j = 0; j < sizeof(npc_names); j++)
-      experience_text(npc_names[j] + "\n");
-  }
-
-  if (sizeof(player_names) || sizeof(npc_names))
-    experience_text("\n");
+  show_room_occupants(env, this_object(), 0);
+  experience_text("\n");
 
   exits = LINK_D->links_by_direction_for_room(room_endpoint_id);
 

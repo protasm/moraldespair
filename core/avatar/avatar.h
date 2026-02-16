@@ -29,6 +29,7 @@ string sensory_form();
 void set_sensory_profile(mapping profile_override);
 int set_sensory_form(string new_form);
 void show_location(int force_verbose, int show_path);
+int show_room_occupants(object env, object observer, int separate_from_exits);
 void telnet_suboption(int option, string message);
 void terminal_colour_replace(string message);
 void terminal_type(string message);

@@ -41,8 +41,16 @@ int main(string arg) {
     if (!objectp(avatar))
       continue;
 
-    if (function_exists("name", avatar))
-      name = avatar->name();
+    if (function_exists("short_for", avatar))
+      name = avatar->short_for(avatar_self);
+
+    if (!stringp(name) || name == "")
+      if (function_exists("short", avatar))
+        name = avatar->short();
+
+    if (!stringp(name) || name == "")
+      if (function_exists("name", avatar))
+        name = avatar->name();
 
     if (!stringp(name) || name == "")
       name = "(unknown)";

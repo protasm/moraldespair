@@ -664,6 +664,7 @@ int add_player(string username, string player_name) {
 
   avatar_data = ([]);
   avatar_data["display_name"] = player_name;
+  avatar_data["level"] = 1;
   avatar_data["brief"] = 0;
   avatar_data["last_played"] = 0;
   default_chapter = CHAPTER_D->latest_chapter();

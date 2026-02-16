@@ -58,6 +58,7 @@ int main(string arg) {
   string target;
   string target_short;
   string description;
+  int target_is_avatar;
   int target_is_npc;
   int used_long_description;
 
@@ -114,9 +115,13 @@ int main(string arg) {
 
       if (objectp(target_object)) {
         target_is_npc = 0;
+        target_is_avatar = 0;
         description = "";
         target_short = "";
         used_long_description = 0;
+
+        if (is_connected_avatar(target_object))
+          target_is_avatar = 1;
 
         if (function_exists("is_npc", target_object))
           target_is_npc = target_object->is_npc();
@@ -132,12 +137,20 @@ int main(string arg) {
         }
 
         if (!stringp(description) || description == "") {
-          if (function_exists("short", target_object))
+          if (function_exists("short_for", target_object))
+            description = target_object->short_for(avatar);
+
+          if ((!stringp(description) || description == "") &&
+            function_exists("short", target_object))
             description = target_object->short();
         }
 
-        if (target_is_npc && used_long_description) {
-          if (function_exists("short", target_object))
+        if (used_long_description && (target_is_npc || target_is_avatar)) {
+          if (function_exists("short_for", target_object))
+            target_short = target_object->short_for(avatar);
+
+          if ((!stringp(target_short) || target_short == "") &&
+            function_exists("short", target_object))
             target_short = target_object->short();
 
           if (stringp(target_short) && target_short != "")

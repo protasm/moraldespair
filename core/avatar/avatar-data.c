@@ -7,9 +7,11 @@
  *   behavior stays predictable, debuggable, and easy to evolve.
  * Dependencies:
  *   - #include <globals.h>
+ *   - #include "/core/mfun/level.c"
  */
 
 #include <globals.h>
+#include "/core/mfun/level.c"
 
 string player_name;
 object player_object, account_object;
@@ -17,6 +19,10 @@ string avatar_sensory_form;
 mapping avatar_sensor_profile_override;
 mapping avatar_soul_emotes;
 string avatar_soul_emotes_file;
+int ensure_player_level(mapping player_data);
+int query_level();
+int save_player_data(mapping player_data);
+string short_for(object observer);
 
 /* Method Summary:
  * Purpose:
@@ -246,6 +252,7 @@ string player_file_path() {
 mapping load_player_data() {
   mapping player_data;
   string path, raw;
+  int changed;
 
   path = player_file_path();
 
@@ -264,6 +271,11 @@ mapping load_player_data() {
 
   if (!mapp(player_data))
     return 0;
+
+  changed = ensure_player_level(player_data);
+
+  if (changed)
+    save_player_data(player_data);
 
   return player_data;
 }
@@ -297,6 +309,37 @@ int save_player_data(mapping player_data) {
   rm(path);
 
   return write_file(path, raw);
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles ensure_player_level for this object.
+ * Parameters:
+ *   - mapping player_data
+ * Approach:
+ *   Ensures avatar save data contains a normalized numeric level.
+ * Side effects:
+ *   May mutate provided player_data mapping.
+ * Returns:
+ *   int result from ensure_player_level.
+ */
+int ensure_player_level(mapping player_data) {
+  int current_level;
+  int normalized_level;
+
+  if (!mapp(player_data))
+    return 0;
+
+  current_level = player_data["level"];
+  normalized_level = normalize_level_value(current_level);
+
+  if (!intp(current_level) || current_level != normalized_level) {
+    player_data["level"] = normalized_level;
+
+    return 1;
+  }
+
+  return 0;
 }
 
 /* Method Summary:
@@ -420,6 +463,38 @@ void set_name(string new_name) {
   player_name = normalize_key(new_name);
 
   return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles short for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns avatar display label in "Name (level)" format.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   string result from short.
+ */
+string short() {
+  return short_for(this_player());
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles short_for for this object.
+ * Parameters:
+ *   - object observer
+ * Approach:
+ *   Returns observer-aware short label with masked or visible level.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   string result from short_for.
+ */
+string short_for(object observer) {
+  return level_name_label_for_observer(name(), query_level(), observer);
 }
 
 /* Method Summary:
@@ -767,6 +842,64 @@ int set_display_name(string new_display_name) {
     return 0;
 
   player_data["display_name"] = new_display_name;
+
+  return save_player_data(player_data);
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles query_level for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns persisted avatar level with a defensive minimum of 1.
+ * Side effects:
+ *   May repair and persist missing or invalid level save data.
+ * Returns:
+ *   int result from query_level.
+ */
+int query_level() {
+  mapping player_data;
+  int level;
+  int changed;
+
+  player_data = load_player_data();
+
+  if (!mapp(player_data))
+    return 1;
+
+  level = normalize_level_value(player_data["level"]);
+  changed = ensure_player_level(player_data);
+
+  if (changed)
+    save_player_data(player_data);
+
+  return level;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles set_level for this object.
+ * Parameters:
+ *   - int new_level
+ * Approach:
+ *   Persists avatar level while enforcing a minimum of 1.
+ * Side effects:
+ *   Updates avatar save data.
+ * Returns:
+ *   int result from set_level.
+ */
+int set_level(int new_level) {
+  mapping player_data;
+  int normalized_level;
+
+  player_data = load_player_data();
+
+  if (!mapp(player_data))
+    return 0;
+
+  normalized_level = normalize_level_value(new_level);
+  player_data["level"] = normalized_level;
 
   return save_player_data(player_data);
 }

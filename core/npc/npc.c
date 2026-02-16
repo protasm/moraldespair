@@ -8,12 +8,14 @@
  * Dependencies:
  *   - inherit "/core/object/object";
  *   - #include <globals.h>
+ *   - #include "/core/mfun/level.c"
  */
 
 inherit "/core/object/object";
 
 #include "npc.h"
 #include <globals.h>
+#include "/core/mfun/level.c"
 
 string npc_name;
 string npc_short;
@@ -490,8 +492,7 @@ void set_spawn_anchor(string anchor_id) {
  *   int result from query_level.
  */
 int query_level() {
-  if (!intp(npc_level) || npc_level < 1)
-    return 1;
+  npc_level = normalize_level_value(npc_level);
 
   return npc_level;
 }
@@ -509,13 +510,7 @@ int query_level() {
  *   void result from set_level.
  */
 void set_level(int new_level) {
-  if (!intp(new_level))
-    return;
-
-  if (new_level < 1)
-    new_level = 1;
-
-  npc_level = new_level;
+  npc_level = normalize_level_value(new_level);
 
   return;
 }
@@ -583,17 +578,30 @@ void set_name(string new_name) {
  *   string result from short.
  */
 string short() {
+  return short_for(this_player());
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles short_for for this object.
+ * Parameters:
+ *   - object observer
+ * Approach:
+ *   Returns observer-aware short label with masked or visible level.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   string result from short_for.
+ */
+string short_for(object observer) {
   string base_label;
-  int level;
 
   if (stringp(npc_short) && npc_short != "")
     base_label = npc_short;
   else
     base_label = name();
 
-  level = query_level();
-
-  return base_label + " (" + level + ")";
+  return level_name_label_for_observer(base_label, query_level(), observer);
 }
 
 /* Method Summary:

@@ -135,6 +135,9 @@ void enter_game(string selected_avatar_name) {
   brief = avatar->brief();
   avatar->set_brief(brief);
 
+  if (function_exists("query_level", avatar))
+    avatar->query_level();
+
   ACCOUNT_D->record_player_login(account_name, entry_avatar_name);
 
   if (!exec(player, this_object())) {

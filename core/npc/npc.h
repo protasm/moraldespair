@@ -45,3 +45,4 @@ int set_sensory_form(string new_form);
 void set_spawn_anchor(string anchor_id);
 void set_short(string new_short);
 string short();
+string short_for(object observer);
