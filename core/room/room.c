@@ -46,6 +46,28 @@ void create() {
   if (objectp(room_link_cache))
     room_link_cache->init_for_room(this_object());
 
+  ensure_room_npc_spawns();
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles init for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Refreshes idempotent room-bound NPC spawns on room interaction.
+ * Side effects:
+ *   May clone and move NPC objects into this room.
+ * Returns:
+ *   void result from init.
+ */
+void init() {
+  ::init();
+
+  ensure_room_npc_spawns();
+
   return;
 }
 
@@ -216,6 +238,170 @@ string long() {
  */
 object link_cache() {
   return room_link_cache;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles npc_spawn_anchor_id for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Returns stable anchor id for room-bound NPC spawn declarations.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   string result from npc_spawn_anchor_id.
+ */
+string npc_spawn_anchor_id() {
+  string anchor_id;
+
+  anchor_id = "";
+
+  if (function_exists("link_endpoint_id", this_object()))
+    anchor_id = this_object()->link_endpoint_id();
+
+  if (!stringp(anchor_id) || anchor_id == "")
+    anchor_id = base_name(this_object());
+
+  if (!stringp(anchor_id))
+    return "";
+
+  return anchor_id;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles ensure_npc_spawn_spec for this object.
+ * Parameters:
+ *   - mapping spawn_spec
+ * Approach:
+ *   Enforces one spawn rule idempotently for this room anchor.
+ * Side effects:
+ *   May create NPC clones and move them into this room.
+ * Returns:
+ *   void result from ensure_npc_spawn_spec.
+ */
+void ensure_npc_spawn_spec(mapping spawn_spec) {
+  string npc_path;
+  string anchor_id;
+  string child_anchor;
+  object *children_list;
+  object child;
+  object child_env;
+  object npc;
+  int active_count;
+  int desired_count;
+  int spawn_count;
+  int i;
+
+  if (!mapp(spawn_spec))
+    return;
+
+  npc_path = spawn_spec["path"];
+
+  if (!stringp(npc_path) || npc_path == "")
+    return;
+
+  desired_count = spawn_spec["count"];
+
+  if (!intp(desired_count) || desired_count < 1)
+    desired_count = 1;
+
+  anchor_id = npc_spawn_anchor_id();
+
+  if (!stringp(anchor_id) || anchor_id == "")
+    return;
+
+  children_list = children(npc_path);
+  active_count = 0;
+
+  if (pointerp(children_list) && sizeof(children_list)) {
+    for (i = 0; i < sizeof(children_list); i++) {
+      child = children_list[i];
+
+      if (!objectp(child))
+        continue;
+
+      child_env = environment(child);
+
+      if (!objectp(child_env))
+        continue;
+
+      if (!function_exists("query_spawn_anchor", child))
+        continue;
+
+      child_anchor = child->query_spawn_anchor();
+
+      if (!stringp(child_anchor) || child_anchor == "")
+        continue;
+
+      if (child_anchor != anchor_id)
+        continue;
+
+      active_count += 1;
+    }
+  }
+
+  spawn_count = desired_count - active_count;
+
+  if (spawn_count < 1)
+    return;
+
+  i = 0;
+
+  while (i < spawn_count) {
+    npc = new(npc_path);
+
+    if (objectp(npc)) {
+      if (function_exists("set_spawn_anchor", npc))
+        npc->set_spawn_anchor(anchor_id);
+
+      npc->move(this_object());
+    }
+
+    i += 1;
+  }
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles ensure_room_npc_spawns for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Applies all JSON-declared NPC spawn rules for this room.
+ * Side effects:
+ *   May create NPC clones and move them into this room.
+ * Returns:
+ *   void result from ensure_room_npc_spawns.
+ */
+void ensure_room_npc_spawns() {
+  mapping room_details;
+  mixed spawn_specs_data;
+  mapping spawn_spec;
+  int i;
+
+  room_details = terrain_room_data();
+
+  if (!mapp(room_details))
+    return;
+
+  spawn_specs_data = room_details["npc_spawns"];
+
+  if (!pointerp(spawn_specs_data))
+    return;
+
+  i = 0;
+
+  while (i < sizeof(spawn_specs_data)) {
+    spawn_spec = spawn_specs_data[i];
+    ensure_npc_spawn_spec(spawn_spec);
+    i += 1;
+  }
+
+  return;
 }
 
 /*
@@ -394,7 +580,7 @@ mapping link_can_enter(object actor, object link) {
   if (function_exists("is_wizard", actor)) {
     if (actor->is_wizard())
       return ([ LINK_RESULT_OUTCOME : LINK_OUTCOME_ALLOW ]);
-  } else if (!userp(actor))
+  } else if (!is_connected_avatar(actor))
     return ([ LINK_RESULT_OUTCOME : LINK_OUTCOME_ALLOW ]);
 
   room_details = terrain_room_data();

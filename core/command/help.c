@@ -51,9 +51,12 @@ int main(string arg) {
   string target, path, help_text, output;
   string *files, *category_names, *commands, *prefixes;
   mapping categories;
+  object avatar;
   object command_object;
   string command, category;
   int i, j, found;
+
+  avatar = current_avatar();
 
   if (!stringp(arg))
     arg = "";
@@ -64,7 +67,8 @@ int main(string arg) {
     categories = ([]);
     prefixes = ({ COMMAND_PREFIX, ACTION_PREFIX });
 
-    if (wizardp(this_player()))
+    if (is_avatar(avatar) && function_exists("is_wizard", avatar) &&
+      avatar->is_wizard())
       prefixes += ({ "/core/command/wizard/" });
 
     for (i = 0; i < sizeof(prefixes); i++) {
@@ -128,7 +132,8 @@ int main(string arg) {
 
   prefixes = ({ COMMAND_PREFIX, ACTION_PREFIX });
 
-  if (wizardp(this_player()))
+  if (is_avatar(avatar) && function_exists("is_wizard", avatar) &&
+    avatar->is_wizard())
     prefixes += ({ "/core/command/wizard/" });
   found = 0;
 

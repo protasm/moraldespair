@@ -7,10 +7,14 @@
  *   behavior stays predictable, debuggable, and easy to evolve.
  * Dependencies:
  *   - #include "file-handling.c"
+ *   - #include "identity.c"
+ *   - #include "target-resolution.c"
  *   - #include "text-handling.c"
  */
 
 #include "file-handling.c"
+#include "identity.c"
+#include "target-resolution.c"
 #include "text-handling.c"
 
 /****************************************************************************

@@ -214,9 +214,9 @@ string endpoint_id() {
 
 /*
  * int handle_input(object actor, string verb, string arg)
- * Attempt to match player input against cached links and handle it.
+ * Attempt to match avatar input against cached links and handle it.
  * Inputs:
- *   actor - the player object issuing the command.
+ *   actor - the avatar object issuing the command.
  *   verb  - the normalized verb string.
  *   arg   - the remaining argument string.
  * Outputs:

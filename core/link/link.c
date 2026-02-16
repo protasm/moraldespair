@@ -8,11 +8,13 @@
  * Dependencies:
  *   - inherit "/core/object/object";
  *   - #include "/core/link/link.h"
+ *   - #include <globals.h>
  */
 
 inherit "/core/object/object";
 
 #include "/core/link/link.h"
+#include <globals.h>
 
 /*
  * Link: transient "between-space" connecting two endpoints.
@@ -99,11 +101,35 @@ void show_actor_location(object actor) {
   if (!objectp(actor))
     return;
 
-  if (!userp(actor))
+  if (!is_connected_avatar(actor))
     return;
 
   if (function_exists("show_location", actor))
     actor->show_location(0, 1);
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles deliver_link_feedback for this object.
+ * Parameters:
+ *   - object actor, object room, string message, string verb
+ * Approach:
+ *   Routes gate/link response text through EXPERIENCE_D when available.
+ * Side effects:
+ *   Sends canonical actor-facing feedback events.
+ * Returns:
+ *   void result from deliver_link_feedback.
+ */
+void deliver_link_feedback(object actor, object room, string message, string verb) {
+  if (!objectp(actor))
+    return;
+
+  if (!stringp(message) || message == "")
+    return;
+
+  EXPERIENCE_D->emit_link_action_feedback(actor, room, message, verb);
+
+  return;
 }
 
 /* ------------------------------------------------------------ */
@@ -1057,6 +1083,7 @@ int handle_action(object actor, string verb, string args, string endpoint_id) {
   mapping entry;
   mapping response;
   object gate;
+  object room;
   int side;
   int ok;
   string name;
@@ -1109,8 +1136,10 @@ int handle_action(object actor, string verb, string args, string endpoint_id) {
   if (!mapp(response) || !response["handled"])
     return 0;
 
-  if (stringp(response["message"]) && response["message"] != "")
-    tell_object(actor, response["message"]);
+  if (stringp(response["message"]) && response["message"] != "") {
+    room = environment(actor);
+    deliver_link_feedback(actor, room, response["message"], verb);
+  }
 
   return 1;
 }

@@ -18,54 +18,60 @@
  * Parameters:
  *   - string raw
  * Approach:
- *   Validates inputs and executes explicit local logic for process_input.
+ *   Routes player input to command handlers using the controlled avatar as
+ *   the in-world actor.
  * Side effects:
- *   May mutate object state and may call collaborators or perform I/O
- *   depending on runtime conditions.
+ *   May trigger game actions and writes back to the interactive player.
  * Returns:
  *   string result from process_input.
  */
 string process_input(string raw) {
   object command;
-  object player, env;
+  object avatar_object;
+  object env;
   object link_cache;
   string verb, arg, command_path;
+  int avatar_is_wizard;
 
-  // Ignore non-string input so command parsing does not explode.
   if (!stringp(raw))
     return "";
 
-  // Normalize whitespace before any parsing.
   raw = trim(raw);
 
-  // Drop empty input lines early.
   if (raw == "")
     return "";
 
-  // Split verb from argument, defaulting to empty arg.
   if (sscanf(raw, "%s %s", verb, arg) != 2) {
     verb = raw;
     arg = "";
   }
 
-  // Commands are case-insensitive, keep the verb normalized.
   verb = lower_case(verb);
+  avatar_object = avatar();
 
-  // Look for core command implementations first.
+  if (!objectp(avatar_object)) {
+    write("No avatar is active.\n");
+
+    return "";
+  }
+
   command_path = "/core/command/" + verb;
 
   if (file_size(command_path + ".c") >= 0) {
     command = load_object(command_path);
 
-    // If the command handles the input, swallow the line.
     if (command->main(arg))
       return "";
     else
       return raw;
   }
 
-  // Look for wizard-only commands next.
-  if (wizardp(this_object())) {
+  avatar_is_wizard = 0;
+
+  if (function_exists("is_wizard", avatar_object))
+    avatar_is_wizard = avatar_object->is_wizard();
+
+  if (avatar_is_wizard || wizardp(avatar_object)) {
     command_path = "/core/command/wizard/" + verb;
 
     if (file_size(command_path + ".c") >= 0) {
@@ -78,44 +84,41 @@ string process_input(string raw) {
     }
   }
 
-  // Fall back to chapter-specific actions if core commands miss.
   command_path = "/chapter/prologue/action/" + verb;
 
   if (file_size(command_path + ".c") >= 0) {
     command = load_object(command_path);
 
-    // Let chapter actions decide whether the input is consumed.
     if (command->main(arg))
       return "";
     else
       return raw;
   }
 
-  // Try the "go" action as a last-resort movement handler.
   command_path = "/chapter/prologue/action/go";
 
   if (file_size(command_path + ".c") >= 0) {
     command = load_object(command_path);
 
-    // Pass the verb as the direction when "go" is the fallback.
     if (command->main(verb))
       return "";
   }
 
-  // Begin room-specific action matching.
-  player = this_object();
-  env = environment(player);
+  env = environment(avatar_object);
 
   if (objectp(env)) {
     if (function_exists("link_cache", env))
       link_cache = env->link_cache();
 
     if (objectp(link_cache) && function_exists("handle_input", link_cache)) {
-      if (link_cache->handle_input(player, verb, arg))
+      if (link_cache->handle_input(avatar_object, verb, arg))
         return "";
     }
   }
 
-  // Let unmatched input fall through to default driver handling.
+  if (function_exists("process_input", avatar_object))
+    if (avatar_object->process_input(raw) == "")
+      return "";
+
   return raw;
 }

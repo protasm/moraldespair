@@ -28,7 +28,10 @@ inherit "/core/login/phases/base_phase";
  *   void result from begin_phase.
  */
 void begin_phase() {
-  prompt_line("Enter account name, or type 'create' to make a new account:");
+  prompt_line(
+    "Enter account name, type 'create' to make a new account, "
+    "or 'guest' to play now:"
+  );
 
   return;
 }
@@ -58,6 +61,14 @@ void handle_input(string input) {
   if (account_name == "create") {
     query_session()->set_session_value("unknown_account_attempts", 0);
     query_session()->advance_phase("/core/login/phases/create_account_name");
+    return;
+  }
+
+  if (account_name == "guest") {
+    query_session()->set_session_value("unknown_account_attempts", 0);
+    query_session()->set_session_value("account_name", "guest");
+    query_session()->set_session_value("authenticated", 1);
+    query_session()->enter_guest_game();
     return;
   }
 

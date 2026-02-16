@@ -48,18 +48,25 @@ void create() {
  *   int result from main.
  */
 int main(string arg) {
-  object player, active;
+  object avatar;
+  object account;
   string email;
   int saved;
 
-  active = this_player();
+  avatar = current_avatar();
 
-  if (objectp(active) && function_exists("player", active))
-    player = active->player();
-  else
-    player = active;
+  if (!is_avatar(avatar))
+    return 0;
 
-  if (!objectp(player))
+  account = avatar_account(avatar);
+
+  if (!objectp(account))
+    return 0;
+
+  if (!function_exists("email", account))
+    return 0;
+
+  if (!function_exists("set_email", account))
     return 0;
 
   if (!stringp(arg))
@@ -68,7 +75,7 @@ int main(string arg) {
   email = trim(arg);
 
   if (email == "") {
-    email = player->account_email();
+    email = account->email();
 
     if (email == "")
       write("No email is set for this account.\n");
@@ -78,7 +85,7 @@ int main(string arg) {
     return 1;
   }
 
-  saved = player->set_account_email(email);
+  saved = account->set_email(email);
 
   if (!saved)
     write("Unable to update account email.\n");

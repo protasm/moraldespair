@@ -12,13 +12,13 @@ void create() {
 }
 
 int main(string arg) {
-  object player;
+  object avatar;
+  object env;
   string spoken_text;
-  string player_name;
 
-  player = this_player();
+  avatar = current_avatar();
 
-  if (!objectp(player))
+  if (!is_avatar(avatar))
     return 0;
 
   if (!stringp(arg))
@@ -27,21 +27,17 @@ int main(string arg) {
   spoken_text = trim(arg);
 
   if (spoken_text == "") {
-    write("Say what?\n");
+    avatar_experience(avatar, "Say what?\n");
     return 1;
   }
 
-  player_name = player->name();
+  avatar_experience(avatar, "You say, '" + spoken_text + "'\n");
+  env = environment(avatar);
 
-  if (!stringp(player_name) || player_name == "")
-    player_name = "Someone";
+  if (!objectp(env))
+    return 1;
 
-  write("You say, '" + spoken_text + "'\n");
-
-  say(
-    player_name + " says, '" + spoken_text + "'\n",
-    player
-  );
+  EXPERIENCE_D->emit_speech_event(avatar, env, spoken_text);
 
   return 1;
 }

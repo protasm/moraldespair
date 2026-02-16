@@ -107,31 +107,30 @@ private string wrap_line(string line) {
 //override
 /* Method Summary:
  * Purpose:
- *   Handles write for this object.
+ *   Handles wrap_text for this object.
  * Parameters:
- *   - mixed str
+ *   - string text
  * Approach:
- *   Validates inputs and executes explicit local logic for write.
+ *   Wraps text to 80 columns while preserving existing line boundaries.
  * Side effects:
- *   May mutate object state and may call collaborators or perform I/O
- *   depending on runtime conditions.
+ *   None.
  * Returns:
- *   void result from write.
+ *   string result from wrap_text.
  */
-void write(mixed str) {
+string wrap_text(string text) {
   string *lines, *wrapped_lines;
   string line, wrapped_line, current, character;
   int i, length;
 
-  if (!stringp(str))
-    return;
+  if (!stringp(text))
+    return "";
 
   lines = ({});
   current = "";
-  length = strlen(str);
+  length = strlen(text);
 
   for (i = 0; i < length; i++) {
-    character = str[i..i];
+    character = text[i..i];
 
     if (character == "\n") {
       lines += ({ current });
@@ -152,5 +151,26 @@ void write(mixed str) {
     wrapped_lines += ({ wrapped_line });
   }
 
-  efun::write(implode(wrapped_lines, "\n"));
+  return implode(wrapped_lines, "\n");
+}
+
+//override
+/* Method Summary:
+ * Purpose:
+ *   Handles write for this object.
+ * Parameters:
+ *   - mixed str
+ * Approach:
+ *   Validates inputs and executes explicit local logic for write.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from write.
+ */
+void write(mixed str) {
+  if (!stringp(str))
+    return;
+
+  efun::write(wrap_text(str));
 }

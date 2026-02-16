@@ -30,18 +30,36 @@
       "id": "room289",
       "short": "Rutted Street",
       "long": "Loose gravel and dirt bury the street's edge. Low foundations crouch in the\nweeds, their doorways open to the air.\n",
+      "npc_spawns": [
+        {
+          "path": "/chapter/prologue/area/silent/npc/grave_worm",
+          "count": 1
+        }
+      ],
       "terrain": "area"
     },
     {
       "id": "room290",
       "short": "Cracked Circle",
       "long": "A low ring of stone marks a circle at the center of the road. Whatever stood\nhere is gone, leaving only shattered plinths.\n",
+      "npc_spawns": [
+        {
+          "path": "/chapter/prologue/area/silent/npc/grave_worm",
+          "count": 1
+        }
+      ],
       "terrain": "area"
     },
     {
       "id": "room291",
       "short": "Rutted Street",
       "long": "Water has eaten shallow channels along the roadbed. Windblown dust gathers in\nthe ruts where traffic once passed.\n",
+      "npc_spawns": [
+        {
+          "path": "/chapter/prologue/area/silent/npc/grave_worm",
+          "count": 1
+        }
+      ],
       "terrain": "area"
     },
     {
@@ -90,6 +108,12 @@
       "id": "room299",
       "short": "Old Plaza",
       "long": "A small plaza opens between low buildings, its paving split by weeds. A dry\nfountain basin lies cracked at its center.\n",
+      "npc_spawns": [
+        {
+          "path": "/chapter/prologue/area/silent/npc/grave_worm",
+          "count": 1
+        }
+      ],
       "terrain": "area"
     },
     {
@@ -510,6 +534,12 @@
       "id": "room369",
       "short": "Silent Board",
       "long": "A weathered board stands against the wall, its notices long since torn away.\nRusted nails hold scraps of curled parchment.\n",
+      "npc_spawns": [
+        {
+          "path": "/chapter/prologue/area/silent/npc/grave_worm",
+          "count": 1
+        }
+      ],
       "terrain": "area"
     },
     {

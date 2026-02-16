@@ -623,7 +623,7 @@ int create_account(string username, string display_name, string email,
 int add_player(string username, string player_name) {
   mapping account;
   string *players;
-  mapping player;
+  mapping avatar_data;
   string path;
   string default_chapter;
   int slots_remaining;
@@ -662,15 +662,15 @@ int add_player(string username, string player_name) {
   if (!saved)
     return 0;
 
-  player = ([]);
-  player["display_name"] = player_name;
-  player["brief"] = 0;
-  player["last_played"] = 0;
+  avatar_data = ([]);
+  avatar_data["display_name"] = player_name;
+  avatar_data["brief"] = 0;
+  avatar_data["last_played"] = 0;
   default_chapter = CHAPTER_D->latest_chapter();
 
   if (default_chapter != "") {
-    player["current_chapter"] = default_chapter;
-    player["unlocked_chapters"] = ({ default_chapter });
+    avatar_data["current_chapter"] = default_chapter;
+    avatar_data["unlocked_chapters"] = ({ default_chapter });
   }
 
   path = player_file(username, player_name);
@@ -680,7 +680,7 @@ int add_player(string username, string player_name) {
 
   ensure_account_dir(username);
 
-  return save_data(path, player);
+  return save_data(path, avatar_data);
 }
 
 /* Method Summary:
@@ -726,19 +726,19 @@ void record_login(string username) {
  *   void result from record_player_login.
  */
 void record_player_login(string username, string player_name) {
-  mapping player;
+  mapping avatar_data;
   string path;
 
   if (!account_exists(username))
     return;
 
   path = player_file(username, player_name);
-  player = load_data(path);
+  avatar_data = load_data(path);
 
-  if (!mapp(player))
+  if (!mapp(avatar_data))
     return;
 
-  player["last_played"] = time();
+  avatar_data["last_played"] = time();
 
-  save_data(path, player);
+  save_data(path, avatar_data);
 }

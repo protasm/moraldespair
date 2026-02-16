@@ -48,15 +48,15 @@ void create() {
  *   int result from main.
  */
 int main(string arg) {
-  object player;
+  object avatar;
   int enabled;
 
-  player = this_player();
+  avatar = current_avatar();
 
-  if (!objectp(player))
+  if (!is_avatar(avatar))
     return 0;
 
-  enabled = player->toggle_brief();
+  enabled = avatar->toggle_brief();
 
   if (enabled)
     write("Brief mode enabled.\n");

@@ -162,6 +162,7 @@ void set_room_path(string path) {
   room_path = path;
 
   set_descriptions();
+  ensure_room_npc_spawns();
   cache = link_cache();
 
   if (objectp(cache) && function_exists("init_for_room", cache))
@@ -216,7 +217,7 @@ mapping link_can_enter(object actor, object link) {
   if (function_exists("is_wizard", actor)) {
     if (actor->is_wizard())
       return ([ LINK_RESULT_OUTCOME : LINK_OUTCOME_ALLOW ]);
-  } else if (!userp(actor))
+  } else if (!is_connected_avatar(actor))
     return ([ LINK_RESULT_OUTCOME : LINK_OUTCOME_ALLOW ]);
 
   room_details = room_data();

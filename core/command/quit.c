@@ -31,7 +31,7 @@ void create() {
   set_help_text(
     "Usage: quit\n"
     "Leave the game and end your current session.\n"
-    "Your character disappears from the world.\n"
+    "Your avatar disappears from the world.\n"
   );
 }
 
@@ -49,14 +49,28 @@ void create() {
  *   int result from main.
  */
 int main(string arg) {
-  write("Bye.\n");
+  object avatar;
+  object controller;
+  object env;
 
-  say(
-    "<" + (string)previous_object()->name()
-    + " leaves this reality.>\n"
-  );
+  avatar = current_avatar();
 
-  previous_object()->remove();
+  if (!is_avatar(avatar))
+    return 0;
+
+  avatar_experience(avatar, "Bye.\n");
+
+  env = environment(avatar);
+
+  if (objectp(env))
+    EXPERIENCE_D->emit_avatar_presence_departure(avatar, env);
+
+  controller = avatar_controller(avatar);
+
+  if (objectp(controller))
+    controller->remove();
+  else
+    avatar->remove();
 
   return 1;
 }

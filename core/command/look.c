@@ -49,17 +49,21 @@ void create() {
  *   int result from main.
  */
 int main(string arg) {
-  object player;
+  object avatar;
   object env;
   object link;
+  object target_object;
   mapping exits;
   mapping direction_aliases;
   string target;
+  string target_short;
   string description;
+  int target_is_npc;
+  int used_long_description;
 
-  player = this_player();
+  avatar = current_avatar();
 
-  if (!objectp(player))
+  if (!is_avatar(avatar))
     return 0;
 
   if (!stringp(arg))
@@ -84,7 +88,7 @@ int main(string arg) {
     if (mapp(direction_aliases) && stringp(direction_aliases[target]))
       target = direction_aliases[target];
 
-    env = environment(player);
+    env = environment(avatar);
 
     if (objectp(env)) {
       exits = LINK_D->links_by_direction_for_room(base_name(env));
@@ -101,24 +105,69 @@ int main(string arg) {
         if (!stringp(description) || description == "")
           description = "It seems possible to go that way.\n";
 
-        write(description);
+        avatar_experience(avatar, description);
+
+        return 1;
+      }
+
+      target_object = resolve_environment_target(avatar, target);
+
+      if (objectp(target_object)) {
+        target_is_npc = 0;
+        description = "";
+        target_short = "";
+        used_long_description = 0;
+
+        if (function_exists("is_npc", target_object))
+          target_is_npc = target_object->is_npc();
+
+        if (!intp(target_is_npc))
+          target_is_npc = 0;
+
+        if (function_exists("long", target_object)) {
+          description = target_object->long();
+
+          if (stringp(description) && description != "")
+            used_long_description = 1;
+        }
+
+        if (!stringp(description) || description == "") {
+          if (function_exists("short", target_object))
+            description = target_object->short();
+        }
+
+        if (target_is_npc && used_long_description) {
+          if (function_exists("short", target_object))
+            target_short = target_object->short();
+
+          if (stringp(target_short) && target_short != "")
+            description = target_short + "\n" + description;
+        }
+
+        if (!stringp(description) || description == "")
+          description = "You don't see anything unusual.\n";
+
+        if (description[<1] != '\n')
+          description += "\n";
+
+        avatar_experience(avatar, description);
 
         return 1;
       }
     }
 
-    write("You don't see that here.\n");
+    avatar_experience(avatar, "You don't see that here.\n");
 
     return 1;
   }
 
-  if (function_exists("show_location", player)) {
-    player->show_location(1, 1);
+  if (function_exists("show_location", avatar)) {
+    avatar->show_location(1, 1);
 
     return 1;
   }
 
-  write("You are nowhere.\n");
+  avatar_experience(avatar, "You are nowhere.\n");
 
   return 1;
 }

@@ -39,6 +39,12 @@
     },
     {
       "link": {
+        "/chapter/prologue/area/ruined/portal": "silent",
+        "/chapter/prologue/area/silent/entrance": "portal"
+      }
+    },
+    {
+      "link": {
         "/chapter/prologue/area/road/room61": "east",
         "/chapter/prologue/area/silent/entrance": "west"
       }

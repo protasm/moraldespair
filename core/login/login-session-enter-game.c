@@ -33,7 +33,7 @@ string normalize_value(string value) {
  * Purpose:
  *   Handles wizard_virtual_debug for this object.
  * Parameters:
- *   - object player, string message
+ *   - object avatar, string message
  * Approach:
  *   Validates inputs and executes explicit local logic for wizard_virtual_debug.
  * Side effects:
@@ -42,10 +42,10 @@ string normalize_value(string value) {
  * Returns:
  *   void result from wizard_virtual_debug.
  */
-void wizard_virtual_debug(object player, string message) {
+void wizard_virtual_debug(object avatar, string message) {
   string line;
 
-  if (!objectp(player))
+  if (!objectp(avatar))
     return;
 
   if (!stringp(message) || message == "")
@@ -59,52 +59,29 @@ void wizard_virtual_debug(object player, string message) {
 
 /* Method Summary:
  * Purpose:
- *   Handles announce_player_entry for this object.
+ *   Handles announce_avatar_entry for this object.
  * Parameters:
- *   - object player
+ *   - object avatar
  * Approach:
- *   Validates inputs and executes explicit local logic for announce_player_entry.
+ *   Validates inputs and executes explicit local logic for announce_avatar_entry.
  * Side effects:
  *   May mutate object state and may call collaborators or perform I/O
  *   depending on runtime conditions.
  * Returns:
- *   void result from announce_player_entry.
+ *   void result from announce_avatar_entry.
  */
-void announce_player_entry(object player) {
-  object *online_users;
-  object online_user;
-  string player_name;
-  string line;
-  string self_line;
-  int i;
+void announce_avatar_entry(object avatar) {
+  object room;
 
-  if (!objectp(player))
+  if (!objectp(avatar))
     return;
 
-  player_name = player->name();
+  room = environment(avatar);
 
-  if (!stringp(player_name) || player_name == "")
+  if (!objectp(room))
     return;
 
-  line = "<" + player_name + " leaves reality and falls into Moral "
-    + "Despair.>\n";
-  self_line = line + "\n";
-  online_users = users();
-
-  if (!pointerp(online_users))
-    return;
-
-  for (i = 0; i < sizeof(online_users); i++) {
-    online_user = online_users[i];
-
-    if (!objectp(online_user))
-      continue;
-
-    if (online_user == player)
-      tell_object(online_user, self_line);
-    else
-      tell_object(online_user, line);
-  }
+  EXPERIENCE_D->emit_avatar_presence_arrival(avatar, room);
 
   return;
 }
@@ -113,7 +90,7 @@ void announce_player_entry(object player) {
  * Purpose:
  *   Handles enter_game for this object.
  * Parameters:
- *   - string avatar_name
+ *   - string selected_avatar_name
  * Approach:
  *   Validates inputs and executes explicit local logic for enter_game.
  * Side effects:
@@ -122,37 +99,48 @@ void announce_player_entry(object player) {
  * Returns:
  *   void result from enter_game.
  */
-void enter_game(string avatar_name) {
+void enter_game(string selected_avatar_name) {
   object account;
   object player;
+  object avatar;
   object current_room;
   int brief;
+  string entry_avatar_name;
   string account_name;
   string start_room;
 
   account_name = normalize_value(session_data["account_name"]);
-  avatar_name = capitalize(normalize_value(avatar_name));
+  selected_avatar_name = capitalize(normalize_value(selected_avatar_name));
 
-  if (account_name == "" || avatar_name == "") {
+  if (account_name == "" || selected_avatar_name == "") {
     session_write("Unable to enter game.");
     return;
   }
 
   account = new(ACCOUNT_OB);
   player = new(PLAYER_OB);
+  avatar = new(AVATAR_OB);
 
   account->set_username(account_name);
   player->set_account(account);
-  player->set_name(avatar_name);
+  player->set_avatar(avatar);
+  avatar->set_account(account);
+  avatar->set_player(player);
+  avatar->set_name(selected_avatar_name);
+  entry_avatar_name = avatar_name(avatar);
 
-  brief = player->brief();
-  player->set_brief(brief);
+  if (!stringp(entry_avatar_name) || entry_avatar_name == "")
+    entry_avatar_name = selected_avatar_name;
 
-  ACCOUNT_D->record_player_login(account_name, avatar_name);
+  brief = avatar->brief();
+  avatar->set_brief(brief);
+
+  ACCOUNT_D->record_player_login(account_name, entry_avatar_name);
 
   if (!exec(player, this_object())) {
     session_write("Connection transfer failed. Please reconnect.");
     destruct(player);
+    destruct(avatar);
     destruct(account);
     return;
   }
@@ -160,7 +148,7 @@ void enter_game(string avatar_name) {
   player->check_wizard();
   cat(MOTD_FILE, 1, 1);
 
-  start_room = CHAPTER_D->resolve_player_start_room(player);
+  start_room = CHAPTER_D->resolve_avatar_start_room(avatar);
 
   if (!stringp(start_room) || start_room == "")
     start_room = START_ROOM;
@@ -168,24 +156,87 @@ void enter_game(string avatar_name) {
   if (sizeof(start_room) > 2 && start_room[<2..<1] == ".c")
     start_room = start_room[0..<3];
 
-  wizard_virtual_debug(player, "initial start_room resolved: " + start_room);
+  wizard_virtual_debug(avatar, "initial start_room resolved: " + start_room);
 
-  player->move(start_room);
-  current_room = environment(player);
+  avatar->move(start_room);
+  current_room = environment(avatar);
 
   if (!objectp(current_room)) {
-    wizard_virtual_debug(player, "initial move failed, fallback to START_ROOM");
-    player->move(START_ROOM);
-    current_room = environment(player);
+    wizard_virtual_debug(avatar, "initial move failed, fallback to START_ROOM");
+    avatar->move(START_ROOM);
+    current_room = environment(avatar);
   }
 
   if (objectp(current_room))
-    wizard_virtual_debug(player, "spawned in room object: " + file_name(current_room));
+    wizard_virtual_debug(avatar, "spawned in room object: " + file_name(current_room));
   else
-    wizard_virtual_debug(player, "spawn failed: no room environment after fallback");
+    wizard_virtual_debug(avatar, "spawn failed: no room environment after fallback");
 
   if (objectp(current_room))
-    announce_player_entry(player);
+    announce_avatar_entry(avatar);
+
+  player->show_location(1, 1);
+
+  destruct(this_object());
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles enter_guest_game for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Creates an ephemeral guest avatar and enters play without account auth.
+ * Side effects:
+ *   May mutate object state and may call collaborators or perform I/O
+ *   depending on runtime conditions.
+ * Returns:
+ *   void result from enter_guest_game.
+ */
+void enter_guest_game() {
+  object account;
+  object player;
+  object avatar;
+  object current_room;
+  string guest_name;
+  string account_name;
+
+  account_name = normalize_value(session_data["account_name"]);
+
+  if (account_name == "")
+    account_name = "guest";
+
+  guest_name = "Guest";
+
+  account = new(ACCOUNT_OB);
+  player = new(PLAYER_OB);
+  avatar = new(AVATAR_OB);
+
+  account->set_username(account_name);
+  player->set_account(account);
+  player->set_avatar(avatar);
+  avatar->set_account(account);
+  avatar->set_player(player);
+  avatar->set_name(guest_name);
+
+  if (!exec(player, this_object())) {
+    session_write("Connection transfer failed. Please reconnect.");
+    destruct(player);
+    destruct(avatar);
+    destruct(account);
+    return;
+  }
+
+  player->check_wizard();
+  cat(MOTD_FILE, 1, 1);
+
+  avatar->move(START_ROOM);
+  current_room = environment(avatar);
+
+  if (objectp(current_room))
+    announce_avatar_entry(avatar);
 
   player->show_location(1, 1);
 

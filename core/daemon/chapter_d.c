@@ -86,7 +86,7 @@ void register_chapter(string id, string title, string description,
 
   normalized = normalize_id(id);
 
-  /* We normalize IDs to keep saved player data stable and comparable. */
+  /* We normalize IDs to keep saved avatar data stable and comparable. */
   if (normalized == "")
     return;
 
@@ -241,18 +241,18 @@ string get_start_room(string id) {
 
 /* Method Summary:
  * Purpose:
- *   Handles can_player_access for this object.
+ *   Handles can_avatar_access for this object.
  * Parameters:
- *   - object player, string id
+ *   - object avatar, string id
  * Approach:
- *   Validates inputs and executes explicit local logic for can_player_access.
+ *   Validates inputs and executes explicit local logic for can_avatar_access.
  * Side effects:
  *   May mutate object state and may call collaborators or perform I/O
  *   depending on runtime conditions.
  * Returns:
- *   int result from can_player_access.
+ *   int result from can_avatar_access.
  */
-int can_player_access(object player, string id) {
+int can_avatar_access(object avatar, string id) {
   string normalized;
   string *unlocked;
 
@@ -266,18 +266,18 @@ int can_player_access(object player, string id) {
   if (normalized == latest_chapter_id)
     return 1;
 
-  if (!objectp(player))
+  if (!objectp(avatar))
     return 0;
 
-  if (function_exists("unlocked_chapters", player)) {
-    unlocked = player->unlocked_chapters();
+  if (function_exists("unlocked_chapters", avatar)) {
+    unlocked = avatar->unlocked_chapters();
 
     if (member_array(normalized, unlocked) != -1)
       return 1;
   }
 
-  if (function_exists("current_chapter", player))
-    if (player->current_chapter() == normalized)
+  if (function_exists("current_chapter", avatar))
+    if (avatar->current_chapter() == normalized)
       return 1;
 
   return 0;
@@ -285,38 +285,38 @@ int can_player_access(object player, string id) {
 
 /* Method Summary:
  * Purpose:
- *   Handles resolve_player_chapter for this object.
+ *   Handles resolve_avatar_chapter for this object.
  * Parameters:
- *   - object player
+ *   - object avatar
  * Approach:
- *   Validates inputs and executes explicit local logic for resolve_player_chapter.
+ *   Validates inputs and executes explicit local logic for resolve_avatar_chapter.
  * Side effects:
  *   May mutate object state and may call collaborators or perform I/O
  *   depending on runtime conditions.
  * Returns:
- *   string result from resolve_player_chapter.
+ *   string result from resolve_avatar_chapter.
  */
-string resolve_player_chapter(object player) {
+string resolve_avatar_chapter(object avatar) {
   string current, resolved;
 
   /* Default to the global chapter so empty saves still load cleanly. */
   resolved = latest_chapter_id;
 
-  if (!objectp(player))
+  if (!objectp(avatar))
     return resolved;
 
-  if (function_exists("current_chapter", player))
-    current = player->current_chapter();
+  if (function_exists("current_chapter", avatar))
+    current = avatar->current_chapter();
   else
     current = "";
 
-  if (chapter_exists(current) && can_player_access(player, current))
+  if (chapter_exists(current) && can_avatar_access(avatar, current))
     return current;
 
-  /* Keep the player save aligned with the daemon's source of truth. */
+  /* Keep the avatar save aligned with the daemon's source of truth. */
   if (chapter_exists(resolved)) {
-    if (function_exists("set_current_chapter", player))
-      player->set_current_chapter(resolved);
+    if (function_exists("set_current_chapter", avatar))
+      avatar->set_current_chapter(resolved);
 
     return resolved;
   }
@@ -326,25 +326,37 @@ string resolve_player_chapter(object player) {
 
 /* Method Summary:
  * Purpose:
- *   Handles resolve_player_start_room for this object.
+ *   Handles resolve_avatar_start_room for this object.
  * Parameters:
- *   - object player
+ *   - object avatar
  * Approach:
- *   Validates inputs and executes explicit local logic for resolve_player_start_room.
+ *   Validates inputs and executes explicit local logic for resolve_avatar_start_room.
  * Side effects:
  *   May mutate object state and may call collaborators or perform I/O
  *   depending on runtime conditions.
  * Returns:
- *   string result from resolve_player_start_room.
+ *   string result from resolve_avatar_start_room.
  */
-string resolve_player_start_room(object player) {
+string resolve_avatar_start_room(object avatar) {
   string chapter_id, start_room;
 
-  chapter_id = resolve_player_chapter(player);
+  chapter_id = resolve_avatar_chapter(avatar);
   start_room = get_start_room(chapter_id);
 
   if (start_room == "")
     start_room = START_ROOM;
 
   return start_room;
+}
+
+int can_player_access(object avatar, string id) {
+  return can_avatar_access(avatar, id);
+}
+
+string resolve_player_chapter(object avatar) {
+  return resolve_avatar_chapter(avatar);
+}
+
+string resolve_player_start_room(object avatar) {
+  return resolve_avatar_start_room(avatar);
 }

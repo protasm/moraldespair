@@ -48,14 +48,14 @@ void create() {
  *   int result from main.
  */
 int main(string arg) {
-  object player;
+  object avatar;
   object room;
   string target, path, filename;
   string *parts;
 
-  player = this_player();
+  avatar = current_avatar();
 
-  if (!objectp(player))
+  if (!is_avatar(avatar))
     return 0;
 
   if (!stringp(arg))
@@ -64,7 +64,7 @@ int main(string arg) {
   target = trim(arg);
 
   if (target == "") {
-    write("Usage: teleport <path>\n");
+    avatar_experience(avatar, "Usage: teleport <path>\n");
 
     return 1;
   }
@@ -75,7 +75,7 @@ int main(string arg) {
     path = path + ".c";
 
   if (file_size(path) < 0) {
-    write("No such room: " + path + "\n");
+    avatar_experience(avatar, "No such room: " + path + "\n");
 
     return 1;
   }
@@ -83,20 +83,20 @@ int main(string arg) {
   room = load_object(path);
 
   if (!objectp(room)) {
-    write("Unable to load room: " + path + "\n");
+    avatar_experience(avatar, "Unable to load room: " + path + "\n");
 
     return 1;
   }
 
-  player->move(room);
+  avatar->move(room);
 
   parts = explode(path, "/");
   filename = parts[sizeof(parts) - 1];
 
-  write("You have teleported to " + filename + ".\n");
+  avatar_experience(avatar, "You have teleported to " + filename + ".\n");
 
-  if (function_exists("show_location", player))
-    player->show_location(1, 1);
+  if (function_exists("show_location", avatar))
+    avatar->show_location(1, 1);
 
   return 1;
 }

@@ -6,57 +6,74 @@ void create() {
   set_category("General");
   set_help_text(
     "Usage: who\n"
-    "List connected players and their idle time.\n"
+    "List connected avatars and their idle time.\n"
     "Indicators show who is editing or entering input.\n"
   );
 }
 
 int main(string arg) {
+  object avatar_self;
   object *list;
-  object user;
+  object avatar;
+  object player;
   int j;
   int idle_minutes;
   string name;
   string status;
+  string line;
+  string output;
 
-  printf("%-25s status\n", "name (*edit, +input)");
-  printf("--------------------      ----------\n");
+  avatar_self = current_avatar();
 
-  list = users();
+  if (!is_avatar(avatar_self))
+    return 0;
+
+  output = sprintf("%-25s status\n", "name (*edit, +input)");
+  output += "--------------------      ----------\n";
+
+  list = connected_avatars();
 
   for (j = 0; j < sizeof(list); j++) {
-    user = list[j];
+    avatar = list[j];
     name = "";
     status = "";
 
-    if (!objectp(user))
+    if (!objectp(avatar))
       continue;
 
-    if (function_exists("name", user))
-      name = user->name();
+    if (function_exists("name", avatar))
+      name = avatar->name();
 
     if (!stringp(name) || name == "")
       name = "(unknown)";
 
-    if (in_edit(user))
+    player = avatar_controller(avatar);
+
+    if (!objectp(player))
+      continue;
+
+    if (in_edit(player))
       name += "*";
 
-    if (in_input(user))
+    if (in_input(player))
       name += "+";
 
-    if (function_exists("query_session_data", user))
+    if (function_exists("query_session_data", player))
       status = "Logging In";
     else {
-      idle_minutes = query_idle(user) / 60;
+      idle_minutes = query_idle(player) / 60;
       status = "" + idle_minutes;
     }
 
-    printf(
+    line = sprintf(
       "%-25s %s\n",
       name,
       status
     );
+    output += line;
   }
+
+  avatar_experience(avatar_self, output);
 
   return 1;
 }

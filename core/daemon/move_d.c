@@ -8,10 +8,12 @@
  * Dependencies:
  *   - #include "/core/daemon/move_d.h"
  *   - #include "/core/link/link.h"
+ *   - #include <globals.h>
  */
 
 #include "/core/daemon/move_d.h"
 #include "/core/link/link.h"
+#include <globals.h>
 
 /* Method Summary:
  * Purpose:
@@ -117,54 +119,9 @@ string direction_for_link_from_room(object room, object link) {
 
 /* Method Summary:
  * Purpose:
- *   Handles format_arrival_direction for this object.
- * Parameters:
- *   - string direction
- * Approach:
- *   Validates inputs and executes explicit local logic for
- *   format_arrival_direction.
- * Side effects:
- *   May mutate object state and may call collaborators or perform I/O
- *   depending on runtime conditions.
- * Returns:
- *   string result from format_arrival_direction.
- */
-string format_arrival_direction(string direction) {
-  string normalized;
-
-  if (!stringp(direction) || direction == "")
-    return "";
-
-  normalized = lower_case(trim(direction));
-
-  if (member_array(normalized, ({
-    "n",
-    "s",
-    "e",
-    "w",
-    "ne",
-    "nw",
-    "se",
-    "sw",
-    "north",
-    "south",
-    "east",
-    "west",
-    "northeast",
-    "northwest",
-    "southeast",
-    "southwest"
-  })) != -1)
-    return "the " + normalized;
-
-  return direction;
-}
-
-/* Method Summary:
- * Purpose:
  *   Handles announce_departure for this object.
  * Parameters:
- *   - object player, object origin, string direction
+ *   - object actor, object origin, string direction
  * Approach:
  *   Validates inputs and executes explicit local logic for announce_departure.
  * Side effects:
@@ -173,42 +130,11 @@ string format_arrival_direction(string direction) {
  * Returns:
  *   void result from announce_departure.
  */
-void announce_departure(object player, object origin, string direction) {
-  string actor_name;
-  string line;
-  object *listeners;
-  object listener;
-  int i;
-
-  if (!objectp(player) || !objectp(origin))
+void announce_departure(object actor, object origin, string direction) {
+  if (!objectp(actor) || !objectp(origin))
     return;
 
-  if (!userp(player))
-    return;
-
-  actor_name = actor_name_for_message(player);
-
-  if (stringp(direction) && direction != "")
-    line = actor_name + " leaves " + direction + ".\n";
-  else
-    line = actor_name + " leaves.\n";
-
-  listeners = all_inventory(origin);
-
-  if (!pointerp(listeners) || !sizeof(listeners))
-    return;
-
-  for (i = 0; i < sizeof(listeners); i++) {
-    listener = listeners[i];
-
-    if (!objectp(listener) || listener == player)
-      continue;
-
-    if (!userp(listener))
-      continue;
-
-    tell_object(listener, line);
-  }
+  EXPERIENCE_D->emit_movement_departure(actor, origin, direction);
 
   return;
 }
@@ -217,7 +143,7 @@ void announce_departure(object player, object origin, string direction) {
  * Purpose:
  *   Handles announce_arrival for this object.
  * Parameters:
- *   - object player, object destination, string direction
+ *   - object actor, object destination, string direction
  * Approach:
  *   Validates inputs and executes explicit local logic for announce_arrival.
  * Side effects:
@@ -226,43 +152,173 @@ void announce_departure(object player, object origin, string direction) {
  * Returns:
  *   void result from announce_arrival.
  */
-void announce_arrival(object player, object destination, string direction) {
-  string actor_name;
-  string formatted_direction;
-  string line;
-  object *listeners;
-  object listener;
+void announce_arrival(object actor, object destination, string direction) {
+  if (!objectp(actor) || !objectp(destination))
+    return;
+
+  EXPERIENCE_D->emit_movement_arrival(actor, destination, direction);
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles announce_transition for this object.
+ * Parameters:
+ *   - object actor, object origin, object destination, object link,
+ *     string departure_direction
+ * Approach:
+ *   Centralizes departure and arrival messaging for successful movement.
+ * Side effects:
+ *   Sends movement text to nearby connected avatars.
+ * Returns:
+ *   void result from announce_transition.
+ */
+void announce_transition(
+  object actor,
+  object origin,
+  object destination,
+  object link,
+  string departure_direction
+) {
+  string arrival_direction;
+
+  if (!objectp(actor) || !objectp(origin) || !objectp(destination))
+    return;
+
+  if (origin == destination)
+    return;
+
+  if (!stringp(departure_direction) || departure_direction == "")
+    departure_direction = direction_for_link_from_room(origin, link);
+
+  announce_departure(actor, origin, departure_direction);
+
+  arrival_direction = direction_for_link_from_room(destination, link);
+  announce_arrival(actor, destination, arrival_direction);
+
+  return;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles combat_amount_from_mutation for this object.
+ * Parameters:
+ *   - mapping mutation
+ * Approach:
+ *   Extracts normalized combat impact amount from one mutation payload.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   int result from combat_amount_from_mutation.
+ */
+int combat_amount_from_mutation(mapping mutation) {
+  int amount;
+
+  if (!mapp(mutation))
+    return 0;
+
+  amount = mutation["amount"];
+
+  if (!intp(amount))
+    amount = mutation["damage"];
+
+  if (!intp(amount))
+    amount = 0;
+
+  if (amount < 0)
+    amount = 0;
+
+  return amount;
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles emit_combat_events_from_mutations for this object.
+ * Parameters:
+ *   - object actor, object room, mixed mutations
+ * Approach:
+ *   Translates link mutation payloads into canonical combat-impact events.
+ * Side effects:
+ *   Emits combat experience to observers when damage-like mutations exist.
+ * Returns:
+ *   void result from emit_combat_events_from_mutations.
+ */
+void emit_combat_events_from_mutations(
+  object actor,
+  object room,
+  mixed mutations
+) {
+  mapping mutation;
+  mapping mutation_map;
+  mixed payload;
+  string mutation_type;
+  int amount;
   int i;
 
-  if (!objectp(player) || !objectp(destination))
+  if (!objectp(actor) || !objectp(room))
     return;
 
-  if (!userp(player))
+  if (pointerp(mutations)) {
+    for (i = 0; i < sizeof(mutations); i++) {
+      mutation = mutations[i];
+
+      if (!mapp(mutation))
+        continue;
+
+      mutation_type = mutation["type"];
+
+      if (!stringp(mutation_type))
+        continue;
+
+      mutation_type = lower_case(trim(mutation_type));
+
+      if (mutation_type != "damage" && mutation_type != "combat")
+        continue;
+
+      amount = combat_amount_from_mutation(mutation);
+      EXPERIENCE_D->emit_combat_impact(actor, actor, room, "suffers impact from", amount);
+    }
+
+    return;
+  }
+
+  if (!mapp(mutations))
     return;
 
-  actor_name = actor_name_for_message(player);
-  formatted_direction = format_arrival_direction(direction);
+  mutation_map = mutations;
 
-  if (stringp(formatted_direction) && formatted_direction != "")
-    line = actor_name + " arrives from " + formatted_direction + ".\n";
-  else
-    line = actor_name + " arrives.\n";
+  if (!undefinedp(mutation_map["damage"])) {
+    payload = mutation_map["damage"];
 
-  listeners = all_inventory(destination);
+    if (mapp(payload))
+      amount = combat_amount_from_mutation(payload);
+    else if (intp(payload))
+      amount = payload;
+    else
+      amount = 0;
 
-  if (!pointerp(listeners) || !sizeof(listeners))
+    if (amount < 0)
+      amount = 0;
+
+    EXPERIENCE_D->emit_combat_impact(actor, actor, room, "is struck for", amount);
     return;
+  }
 
-  for (i = 0; i < sizeof(listeners); i++) {
-    listener = listeners[i];
+  if (!undefinedp(mutation_map["combat"])) {
+    payload = mutation_map["combat"];
 
-    if (!objectp(listener) || listener == player)
-      continue;
+    if (mapp(payload))
+      amount = combat_amount_from_mutation(payload);
+    else if (intp(payload))
+      amount = payload;
+    else
+      amount = 0;
 
-    if (!userp(listener))
-      continue;
+    if (amount < 0)
+      amount = 0;
 
-    tell_object(listener, line);
+    EXPERIENCE_D->emit_combat_impact(actor, actor, room, "is hit for", amount);
   }
 
   return;
@@ -272,7 +328,7 @@ void announce_arrival(object player, object destination, string direction) {
  * Purpose:
  *   Handles try_move_label for this object.
  * Parameters:
- *   - object player, string label
+ *   - object avatar, string label
  * Approach:
  *   Validates inputs and executes explicit local logic for try_move_label.
  * Side effects:
@@ -281,16 +337,15 @@ void announce_arrival(object player, object destination, string direction) {
  * Returns:
  *   object result from try_move_label.
  */
-object try_move_label(object player, string label) {
+object try_move_label(object avatar, string label) {
   object origin, link;
   object destination;
   mapping exits, result;
   string msg;
-  string arrival_direction;
   mapping direction_aliases;
   int is_direction;
 
-  if (!objectp(player))
+  if (!objectp(avatar))
     return 0;
 
   if (!stringp(label))
@@ -317,7 +372,7 @@ object try_move_label(object player, string label) {
   if (mapp(direction_aliases) && stringp(direction_aliases[label]))
     label = direction_aliases[label];
 
-  origin = environment(player);
+  origin = environment(avatar);
 
   if (!objectp(origin))
     return 0;
@@ -341,7 +396,7 @@ object try_move_label(object player, string label) {
     })) != -1);
 
     if (is_direction)
-      write("You can't go " + label + " from here.\n");
+      avatar_experience(avatar, "You can't go " + label + " from here.\n");
 
     return 0;
   }
@@ -349,10 +404,16 @@ object try_move_label(object player, string label) {
   link = exits[label];
 
   /* THE ONE TRUE MOVE */
-  result = link->traverse(player, origin);
+  result = link->traverse(avatar, origin);
 
   if (!mapp(result))
     return 0;
+
+  emit_combat_events_from_mutations(
+    avatar,
+    origin,
+    result[LINK_RESULT_MUTATIONS]
+  );
 
   if (!link->is_allowed_result(result)) {
     msg = result[LINK_RESULT_MESSAGE];
@@ -362,7 +423,7 @@ object try_move_label(object player, string label) {
     else if (msg[<1] != '\n')
       msg += "\n";
 
-    write(msg);
+    avatar_experience(avatar, msg);
 
     return 0;
   }
@@ -375,13 +436,10 @@ object try_move_label(object player, string label) {
    *
    * MOVE_D does not second-guess outcomes.
    */
-  destination = environment(player);
+  destination = environment(avatar);
 
   if (objectp(destination) && destination != origin) {
-    announce_departure(player, origin, label);
-
-    arrival_direction = direction_for_link_from_room(destination, link);
-    announce_arrival(player, destination, arrival_direction);
+    announce_transition(avatar, origin, destination, link, label);
   }
 
   return destination;
@@ -391,7 +449,7 @@ object try_move_label(object player, string label) {
  * Purpose:
  *   Handles try_move for this object.
  * Parameters:
- *   - object player, string direction
+ *   - object avatar, string direction
  * Approach:
  *   Validates inputs and executes explicit local logic for try_move.
  * Side effects:
@@ -400,6 +458,6 @@ object try_move_label(object player, string label) {
  * Returns:
  *   object result from try_move.
  */
-object try_move(object player, string direction) {
-  return try_move_label(player, direction);
+object try_move(object avatar, string direction) {
+  return try_move_label(avatar, direction);
 }

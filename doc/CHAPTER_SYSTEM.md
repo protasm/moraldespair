@@ -1,11 +1,11 @@
 # Chapter System Overview
 
-This document captures the chapter tracking primitives used by player saves
+This document captures the chapter tracking primitives used by avatar saves
 and the chapter daemon.
 
 ## Avatar Save Excerpts
 
-Player save data stores only stable chapter IDs, never filesystem paths:
+Avatar save data stores only stable chapter IDs, never filesystem paths:
 
 ```
 ([
@@ -19,14 +19,14 @@ Player save data stores only stable chapter IDs, never filesystem paths:
 
 ## Example Usage
 
-### Setting a Player's Current Chapter
+### Setting an Avatar's Current Chapter
 
 ```
 string desired;
 int updated;
 
 desired = "prologue";
-updated = player->set_current_chapter(desired);
+updated = avatar->set_current_chapter(desired);
 
 if (!updated)
   write("That chapter is unknown.\n");
@@ -37,9 +37,9 @@ if (!updated)
 ```
 string start_room;
 
-start_room = CHAPTER_D->resolve_player_start_room(player);
-player->move(start_room);
-player->show_location();
+start_room = CHAPTER_D->resolve_avatar_start_room(avatar);
+avatar->move(start_room);
+avatar->show_location();
 ```
 
 ### Rejecting Invalid or Locked Chapters
@@ -51,9 +51,9 @@ requested = "chapter_2";
 
 if (!CHAPTER_D->chapter_exists(requested)) {
   write("That chapter does not exist.\n");
-} else if (!CHAPTER_D->can_player_access(player, requested)) {
+} else if (!CHAPTER_D->can_avatar_access(avatar, requested)) {
   write("You have not unlocked that chapter.\n");
 } else {
-  player->set_current_chapter(requested);
+  avatar->set_current_chapter(requested);
 }
 ```

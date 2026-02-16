@@ -96,6 +96,7 @@ mapping check_link(object actor, string origin_id, string destination_id);
 void create();
 mapping deny_result(string message, int cost, mixed mutations);
 string describe_from_endpoint(string endpoint_id);
+void deliver_link_feedback(object actor, object room, string message, string verb);
 string direction_label(string endpoint);
 mapping dirs();
 string endpoint_a();

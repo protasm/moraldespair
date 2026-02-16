@@ -53,12 +53,12 @@ void create() {
 }
 
 int main(string arg) {
-  object player;
+  object avatar;
   int is_direction;
 
-  player = this_player();
+  avatar = current_avatar();
 
-  if (!objectp(player))
+  if (!is_avatar(avatar))
     return 0;
 
   if (!stringp(arg))
@@ -67,7 +67,7 @@ int main(string arg) {
   arg = lower_case(trim(arg));
 
   if (arg == "") {
-    write("Go where?\n");
+    avatar_experience(avatar, "Go where?\n");
 
     return 1;
   }
@@ -78,12 +78,12 @@ int main(string arg) {
   is_direction = (member_array(arg, direction_words) != -1);
 
   if (is_direction) {
-    MOVE_D->try_move(player, arg);
+    MOVE_D->try_move(avatar, arg);
 
     return 1;
   }
 
-  if (MOVE_D->try_move_label(player, arg))
+  if (MOVE_D->try_move_label(avatar, arg))
     return 1;
 
   return 0;
