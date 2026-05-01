@@ -1096,6 +1096,29 @@ void set_awaiting_combat_input(int state) {
 
 /* Method Summary:
  * Purpose:
+ *   Handles auto_combat for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Reads persisted auto-combat toggle state from avatar save data.
+ * Side effects:
+ *   None.
+ * Returns:
+ *   int result from auto_combat.
+ */
+int auto_combat() {
+  mapping player_data;
+
+  player_data = load_player_data();
+
+  if (!mapp(player_data))
+    return 0;
+
+  return player_data["auto_combat"];
+}
+
+/* Method Summary:
+ * Purpose:
  *   Handles brief for this object.
  * Parameters:
  *   - none
@@ -1149,6 +1172,34 @@ int set_brief(int state) {
 
 /* Method Summary:
  * Purpose:
+ *   Handles set_auto_combat for this object.
+ * Parameters:
+ *   - int state
+ * Approach:
+ *   Persists normalized auto-combat toggle state to avatar save data.
+ * Side effects:
+ *   May update avatar save data on disk.
+ * Returns:
+ *   int result from set_auto_combat.
+ */
+int set_auto_combat(int state) {
+  mapping player_data;
+
+  player_data = load_player_data();
+
+  if (!mapp(player_data))
+    return 0;
+
+  if (state)
+    player_data["auto_combat"] = 1;
+  else
+    player_data["auto_combat"] = 0;
+
+  return save_player_data(player_data);
+}
+
+/* Method Summary:
+ * Purpose:
  *   Handles toggle_brief for this object.
  * Parameters:
  *   - none
@@ -1180,6 +1231,40 @@ int toggle_brief() {
     return 0;
 
   return player_data["brief"];
+}
+
+/* Method Summary:
+ * Purpose:
+ *   Handles toggle_auto_combat for this object.
+ * Parameters:
+ *   - none
+ * Approach:
+ *   Flips persisted auto-combat toggle state for this avatar.
+ * Side effects:
+ *   May update avatar save data on disk.
+ * Returns:
+ *   int result from toggle_auto_combat.
+ */
+int toggle_auto_combat() {
+  mapping player_data;
+  int enabled;
+
+  player_data = load_player_data();
+
+  if (!mapp(player_data))
+    return 0;
+
+  enabled = player_data["auto_combat"];
+
+  if (enabled)
+    player_data["auto_combat"] = 0;
+  else
+    player_data["auto_combat"] = 1;
+
+  if (!save_player_data(player_data))
+    return 0;
+
+  return player_data["auto_combat"];
 }
 
 /* Method Summary:

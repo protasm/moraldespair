@@ -6,7 +6,9 @@ int start_fight(object attacker, object defender);
 
 /* Alphabetized forward declarations (ctags) for core/daemon/combat_d.c */
 void begin_player_turn(string fight_id, object actor);
+int auto_combat_enabled(object actor);
 int choose_default_slot(mapping state);
+int choose_highest_slot(mapping state);
 int choose_npc_slot(mapping fight, object actor);
 void clear_combat_flags(object actor);
 mapping default_avatar_abilities();
@@ -17,8 +19,7 @@ string format_action_line(
   mapping fight,
   object actor,
   object target,
-  mapping ability,
-  int damage
+  mapping ability
 );
 string format_prompt_line(mapping state);
 int handle_input(object avatar, string raw);

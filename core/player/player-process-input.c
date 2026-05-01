@@ -58,15 +58,17 @@ string process_input(string raw) {
 
   if (function_exists("query_in_combat", avatar_object)) {
     if (avatar_object->query_in_combat()) {
-      combat_daemon = find_object(COMBAT_D);
+      if (verb != "auto") {
+        combat_daemon = find_object(COMBAT_D);
 
-      if (!objectp(combat_daemon))
-        combat_daemon = load_object(COMBAT_D);
+        if (!objectp(combat_daemon))
+          combat_daemon = load_object(COMBAT_D);
 
-      if (objectp(combat_daemon) && function_exists("handle_input", combat_daemon)) {
-        combat_daemon->handle_input(avatar_object, raw);
+        if (objectp(combat_daemon) && function_exists("handle_input", combat_daemon)) {
+          combat_daemon->handle_input(avatar_object, raw);
 
-        return "";
+          return "";
+        }
       }
     }
   }

@@ -29,7 +29,7 @@ inherit "/core/login/phases/base_phase";
  */
 void begin_phase() {
   prompt_line(
-    "Enter account name, type 'create' to make a new account, "
+    "Enter account name, type 'create' to make a new account,\n"
     "or 'guest' to play now:"
   );
 

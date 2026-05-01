@@ -4,6 +4,7 @@
 
 /* Alphabetized forward declarations (ctags) for core/avatar/avatar-data.c */
 object account();
+int auto_combat();
 int brief();
 mapping combat_abilities();
 int combat_max_hp();
@@ -32,6 +33,7 @@ mapping soul_emotes();
 string soul_emotes_path();
 void set_account(object new_account);
 void set_awaiting_combat_input(int state);
+int set_auto_combat(int state);
 int set_brief(int state);
 void set_combat_id(string combat_id);
 int set_current_chapter(string chapter_id);
@@ -46,6 +48,7 @@ int set_sensory_form(string new_form);
 int set_unlocked_chapters(string *chapter_ids);
 mapping sensory_profile();
 string sensory_form();
+int toggle_auto_combat();
 int toggle_brief();
 int unlock_chapter(string chapter_id);
 string *unlocked_chapters();

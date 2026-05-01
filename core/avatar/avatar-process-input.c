@@ -396,21 +396,6 @@ string process_input(string raw) {
   if (raw == "")
     return "";
 
-  if (function_exists("query_in_combat", this_object())) {
-    if (this_object()->query_in_combat()) {
-      combat_daemon = find_object(COMBAT_D);
-
-      if (!objectp(combat_daemon))
-        combat_daemon = load_object(COMBAT_D);
-
-      if (objectp(combat_daemon) && function_exists("handle_input", combat_daemon)) {
-        combat_daemon->handle_input(this_object(), raw);
-
-        return "";
-      }
-    }
-  }
-
   // Split verb from argument, defaulting to empty arg.
   if (sscanf(raw, "%s %s", verb, arg) != 2) {
     verb = raw;
@@ -419,6 +404,23 @@ string process_input(string raw) {
 
   // Commands are case-insensitive, keep the verb normalized.
   verb = lower_case(verb);
+
+  if (function_exists("query_in_combat", this_object())) {
+    if (this_object()->query_in_combat()) {
+      if (verb != "auto") {
+        combat_daemon = find_object(COMBAT_D);
+
+        if (!objectp(combat_daemon))
+          combat_daemon = load_object(COMBAT_D);
+
+        if (objectp(combat_daemon) && function_exists("handle_input", combat_daemon)) {
+          combat_daemon->handle_input(this_object(), raw);
+
+          return "";
+        }
+      }
+    }
+  }
 
   // Look for core command implementations first.
   command_path = "/core/command/" + verb;

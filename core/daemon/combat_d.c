@@ -597,6 +597,57 @@ int choose_default_slot(mapping state) {
   return 1;
 }
 
+int choose_highest_slot(mapping state) {
+  mapping abilities;
+  mapping cooldowns;
+  mixed *slots;
+  int slot;
+  int i;
+
+  if (!mapp(state))
+    return 1;
+
+  abilities = state["abilities"];
+  cooldowns = state["cooldowns"];
+
+  if (!mapp(abilities))
+    return 1;
+
+  slots = sort_array(keys(abilities), 1);
+
+  for (i = sizeof(slots) - 1; i >= 0; i--) {
+    if (!intp(slots[i]))
+      continue;
+
+    slot = slots[i];
+
+    if (!mapp(abilities[slot]))
+      continue;
+
+    if (!mapp(cooldowns) || !intp(cooldowns[slot]) || cooldowns[slot] < 1)
+      return slot;
+  }
+
+  return choose_default_slot(state);
+}
+
+int auto_combat_enabled(object actor) {
+  int enabled;
+
+  if (!objectp(actor))
+    return 0;
+
+  if (!function_exists("auto_combat", actor))
+    return 0;
+
+  enabled = actor->auto_combat();
+
+  if (!intp(enabled) || !enabled)
+    return 0;
+
+  return 1;
+}
+
 int choose_npc_slot(mapping fight, object actor) {
   mapping state;
   mapping cooldowns;
@@ -725,6 +776,7 @@ void begin_player_turn(string fight_id, object actor) {
   mapping fight;
   mapping state;
   object player;
+  int slot;
   int token;
 
   fight = active_fights[fight_id];
@@ -738,6 +790,19 @@ void begin_player_turn(string fight_id, object actor) {
     return;
 
   player = fight["player_avatar"];
+
+  if (auto_combat_enabled(actor)) {
+    slot = choose_highest_slot(state);
+
+    if (function_exists("set_awaiting_combat_input", actor))
+      actor->set_awaiting_combat_input(0);
+
+    if (!execute_action(fight_id, actor, slot, 0))
+      return;
+
+    return;
+  }
+
   fight["awaiting_player"] = actor;
 
   if (function_exists("set_awaiting_combat_input", actor))
@@ -936,7 +1001,15 @@ void process_fight(string fight_id) {
     if (state["is_player"]) {
       begin_player_turn(fight_id, actor);
 
-      break;
+      fight = active_fights[fight_id];
+
+      if (!mapp(fight) || !fight["active"])
+        break;
+
+      if (fight["awaiting_player"] == actor)
+        break;
+
+      continue;
     }
 
     begin_npc_turn(fight_id, actor);
